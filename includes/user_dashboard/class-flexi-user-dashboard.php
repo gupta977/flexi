@@ -17,9 +17,11 @@ class Flexi_User_Dashboard
    if (is_user_logged_in()) {
 
     $current_user = wp_get_current_user();
+
+    //var_dump($current_user);
     ?>
 
-<div style="text-align:center;"><?php echo flexi_author(); ?>
+<div style="text-align:center;"><?php echo flexi_author($current_user->user_login); ?>
 
 <form method="get" class="pure-form">
    <input type="text" name="search" placeholder="<?php echo __('Search post', 'flexi'); ?>" class="pure-input-rounded">
