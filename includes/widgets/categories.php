@@ -104,8 +104,8 @@ class flexi_category_Widget extends WP_Widget
    foreach ($terms as $term) {
     $settings['term_id'] = $term->term_id;
 
-    $flexi_show_cate = get_term_meta($term->term_id, 'flexi_show_cate', true);
-    if ("1" != $flexi_show_cate) {
+    $flexi_hide_cate = get_term_meta($term->term_id, 'flexi_hide_cate', true);
+    if ("on" != $flexi_hide_cate) {
 
      $count = 0;
      if (!empty($settings['hide_empty']) || !empty($settings['show_count'])) {

@@ -614,9 +614,31 @@ function flexi_pro_required()
  return "<div class='flexi_alert-box flexi_warning'>" . __('Required Flexi-PRO or UPG-PRO', 'flexi') . "</div>";
 }
 
+//Return array of hidden category
+function flexi_hidden_album()
+{
+ //if ( get_post_meta( term_id, 'flexi_show_cate', 1 ) )
+ $skip       = array();
+ $categories = get_categories(array('taxonomy' => 'flexi_category', 'hide_empty' => 0));
+
+ foreach ($categories as $category) {
+  $flexi_hide_cate = get_term_meta($category->term_id, 'flexi_hide_cate', true);
+  if ("on" == $flexi_hide_cate) {
+   array_push($skip, $category->term_id);
+
+  }
+ }
+ return $skip;
+
+}
+
 //Drop down list of albums
 function flexi_droplist_album($taxonomy = 'flexi_category', $selected_album = "", $skip = array(), $parent = '')
 {
+
+ if (empty($skip)) {
+  $skip = flexi_hidden_album();
+ }
 
  if (0 == $parent) {
   $parent = '';

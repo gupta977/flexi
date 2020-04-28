@@ -125,6 +125,14 @@ class Flexi_Meta_boxes
    'preview_size' => 'medium', // Image size to use when previewing in the admin.
   ));
 
+  $cmb_category->add_field(array(
+   'name'       => 'Hide this category',
+   'desc'       => 'Category is hidden in forms & list. But contents are visible.',
+   'id'         => 'flexi_hide_cate',
+   'show_names' => true, // Show field names on the left
+   'type'       => 'checkbox',
+  ));
+
   $cmb_side = new_cmb2_box(array(
    'id'           => 'flexi_metabox_side',
    'title'        => __('Flexi Shortcode', 'flexi'),
