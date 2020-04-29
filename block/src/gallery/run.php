@@ -24,7 +24,7 @@ register_block_type(
    ),
    'column'        => array(
     'type'    => 'integer',
-    'default' => 2,
+    'default' => 4,
    ),
    'cat'           => array(
     'type'    => 'integer',
