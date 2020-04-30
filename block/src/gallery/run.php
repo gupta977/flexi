@@ -34,6 +34,10 @@ register_block_type(
     'type'    => 'integer',
     'default' => 8,
    ),
+   'padding'       => array(
+    'type'    => 'integer',
+    'default' => 1,
+   ),
    'popup'         => array(
     'type'    => 'boolean',
     'default' => false,
@@ -115,6 +119,7 @@ function flexi_gallery_render_callback($args)
   $shortcode = '[flexi-gallery
   column="' . $args['column'] . '"
   perpage="' . $args['perpage'] . '"
+  padding="' . $args['padding'] . '"
   layout="' . $args['layout'] . '"
   popup="' . $popup . '"
   ' . $cat . '

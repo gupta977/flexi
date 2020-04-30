@@ -964,7 +964,7 @@ function flexi_show_icon_grid()
  }
 
  if (count($icon) > 0) {
-  $list .= '<div id="flexi_' . get_the_ID() . '">';
+  $list .= '<div class="flexi_icon_grid_group" id="flexi_' . get_the_ID() . '">';
  }
 
  for ($r = 0; $r < count($icon); $r++) {

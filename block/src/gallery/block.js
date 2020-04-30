@@ -90,6 +90,10 @@ registerBlockType("cgb/block-flexi-block", {
 			type: "number",
 			default: 8,
 		},
+		padding: {
+			type: "number",
+			default: 1,
+		},
 		popup: {
 			type: "boolean",
 			default: false,

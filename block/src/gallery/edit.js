@@ -63,6 +63,7 @@ class FlexiGalleryEdit extends Component {
 			column,
 			orderby,
 			perpage,
+			padding,
 			popup,
 			hover_caption,
 			hover_effect,
@@ -209,6 +210,13 @@ class FlexiGalleryEdit extends Component {
 								onChange={onChangePerpage}
 								min={1}
 								max={100}
+							/>
+							<RangeControl
+								label="Padding"
+								value={padding}
+								onChange={toggleAttribute("padding")}
+								min={1}
+								max={10}
 							/>
 							<RangeControl
 								label="Thumbnail Image Width .px"
