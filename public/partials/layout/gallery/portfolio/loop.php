@@ -6,9 +6,9 @@ $data = flexi_image_data('thumbnail', $post, $popup);
 <!-- Loop start -->
 
 
-<div class="flexi-blog_basic">
-  <div class="flexi-blog_basic_sub">
-<div class="flexi-blog_basic_img <?php echo $data['popup']; ?> flexi_effect" id="<?php echo $hover_effect; ?>">
+<div class="flexi-gallery-portfolio">
+  <div class="flexi-gallery-portfolio_sub">
+<div class="flexi-gallery-portfolio_img <?php echo $data['popup']; ?> flexi_effect" id="<?php echo $hover_effect; ?>">
     <a <?php echo $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" border="0"'; ?>>
       <img
         src="<?php echo esc_url(flexi_image_src('thumbnail', $post)); ?>"
@@ -17,12 +17,12 @@ $data = flexi_image_data('thumbnail', $post, $popup);
       <?php echo ' <div class="flexi_figcaption" id="flexi_cap_' . get_the_ID() . '"></div>'; ?>
     </a>
 </div>
-    <div class="flexi-blog_basic_info">
+    <div class="flexi-gallery-portfolio_info">
       <h2><?php echo $data['title']; ?></h2>
       <p>
       <?php echo flexi_excerpt(20); ?>
       </p>
-      <a href="<?php echo get_permalink(); ?>" class="read-more"><?php echo __('Read more', 'flexi'); ?> &rarr;</a>
+      <?php echo flexi_show_icon_grid(); ?>
     </div>
   </div>
 </div>

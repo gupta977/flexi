@@ -24,7 +24,7 @@ register_block_type(
    ),
    'column'        => array(
     'type'    => 'integer',
-    'default' => 4,
+    'default' => 2,
    ),
    'cat'           => array(
     'type'    => 'integer',
@@ -32,7 +32,7 @@ register_block_type(
    ),
    'perpage'       => array(
     'type'    => 'integer',
-    'default' => 10,
+    'default' => 8,
    ),
    'popup'         => array(
     'type'    => 'boolean',

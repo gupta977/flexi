@@ -178,6 +178,10 @@ class FlexiGalleryEdit extends Component {
 										value: "masonry",
 									},
 									{
+										label: "Portfolio",
+										value: "portfolio",
+									},
+									{
 										label: "Regular",
 										value: "regular",
 									},

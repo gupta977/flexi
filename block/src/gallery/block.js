@@ -84,7 +84,7 @@ registerBlockType("cgb/block-flexi-block", {
 		},
 		column: {
 			type: "number",
-			default: 4,
+			default: 2,
 		},
 		perpage: {
 			type: "number",
