@@ -1,16 +1,16 @@
-jQuery(function($) {
-  jQuery(".filter_tag").click(function() {
+jQuery(function ($) {
+  jQuery(".filter_tag").click(function () {
     var $imgs = $("#flexi_gallery .flexi_gallery_child"); // Store all images
     var tagged = {}; // Create tagged object
 
-    $imgs.each(function() {
+    $imgs.each(function () {
       // Loop through images and
       var img = this; // Store img in variable
       var tags = $(this).data("tags"); // Get this element's tags
 
       if (tags) {
         // If the element had tags
-        tags.split(",").forEach(function(tagName) {
+        tags.split(",").forEach(function (tagName) {
           // Split at comma and
 
           if (tagged[tagName] == null) {
@@ -28,12 +28,12 @@ jQuery(function($) {
 
     if (pos == "show_all") {
       //alert("show all");
-      $(".active").removeClass("active");
+      $(".flexi_tag_active").removeClass("flexi_tag_active");
       $(this).addClass("active");
       $imgs.hide().fadeIn(500);
     } else {
-      $(".active").removeClass("active");
-      $(this).addClass("active"); // Make clicked item active
+      $(".flexi_tag_active").removeClass("flexi_tag_active");
+      $(this).addClass("flexi_tag_active"); // Make clicked item active
 
       $imgs // With all of the images
         .hide() // Hide them

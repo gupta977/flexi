@@ -257,13 +257,13 @@ function flexi_get_taxonomy_raw($post_id, $taxonomy_name)
 }
 
 //Generate gallery_tags link
-function flexi_generate_tags($tags_array, $upg_tag_class = 'flexi_tag flexi_tag-default', $filter_class = 'filter_tag')
+function flexi_generate_tags($tags_array, $upg_tag_class = 'flexi_tag', $filter_class = 'filter_tag')
 {
  $taglink = '';
  if (count($tags_array) > 1) {
-  $taglink .= '<div class="flexi_list_tags">';
+  $taglink .= '<div class="flexi_tags">';
 
-  $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' ' . $upg_tag_class . ' active">' . __('Show All', 'wp-upg') . '</a> ';
+  $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' ' . $upg_tag_class . ' flexi_tag_active">' . __('Show All', 'wp-upg') . '</a> ';
   if (count($tags_array) > 1) {
    foreach ($tags_array as $tags => $value) {
     $taglink .= '<a href="javascript:void(0)" id="' . $tags . '" class="' . $filter_class . ' ' . $upg_tag_class . ' ">' . $value . '</a> ';
