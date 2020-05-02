@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
-"POT-Creation-Date: 2020-04-20 22:36+0545\n"
+"POT-Creation-Date: 2020-05-02 21:39+0545\n"
 "PO-Revision-Date: 2020-02-09 12:49+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Plugin Settings"
 msgstr ""
 
-#: block/src/form/block.js:59 includes/functions.php:1041
+#: block/src/form/block.js:59 includes/functions.php:1064
 msgid "Flexi Submission Form"
 msgstr ""
 
@@ -123,15 +123,19 @@ msgstr ""
 msgid "picture"
 msgstr ""
 
-#: block/src/gallery/edit.js:99
+#: block/src/gallery/edit.js:104
 msgid "Gallery based on Selection"
 msgstr ""
 
-#: block/src/gallery/edit.js:169
+#: block/src/gallery/edit.js:168
+msgid "Toggle Controls"
+msgstr ""
+
+#: block/src/gallery/edit.js:205
 msgid "Layout Controls"
 msgstr ""
 
-#: block/src/gallery/edit.js:231
+#: block/src/gallery/edit.js:272
 msgid "Effects"
 msgstr ""
 
@@ -163,50 +167,6 @@ msgstr ""
 #: includes/addon/class-flexi-buddypress.php:71
 #: includes/addon/class-flexi-ultimate-member.php:69
 msgid "Name of the tab displays on profile page"
-msgstr ""
-
-#: includes/addon/class-flexi-captcha.php:31
-msgid "Google reCaptcha v2"
-msgstr ""
-
-#: includes/addon/class-flexi-captcha.php:32
-msgid "Get API information from https://www.google.com/recaptcha. It will ask for security code during form submission if captcha field is added."
-msgstr ""
-
-#: includes/addon/class-flexi-captcha.php:47
-msgid "Enable Captcha"
-msgstr ""
-
-#: includes/addon/class-flexi-captcha.php:48
-msgid "Security code during form submission. https://www.google.com/recaptcha"
-msgstr ""
-
-#: includes/addon/class-flexi-captcha.php:69
-msgid "Site key"
-msgstr ""
-
-#: includes/addon/class-flexi-captcha.php:70
-msgid "Google Captcha Site Key."
-msgstr ""
-
-#: includes/addon/class-flexi-captcha.php:77
-msgid "Secret Key"
-msgstr ""
-
-#: includes/addon/class-flexi-captcha.php:78
-msgid "Google Captcha secret Key"
-msgstr ""
-
-#: includes/addon/class-flexi-captcha.php:92
-msgid "Security Check"
-msgstr ""
-
-#: includes/addon/class-flexi-captcha.php:145
-msgid "Please complete the security spam check."
-msgstr ""
-
-#: includes/addon/class-flexi-captcha.php:148
-msgid "Google Server Error"
 msgstr ""
 
 #: includes/addon/class-flexi-custom-field.php:29
@@ -361,7 +321,7 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: includes/class-flexi-gallery.php:306
+#: includes/class-flexi-gallery.php:314
 msgid "Layout not available"
 msgstr ""
 
@@ -373,11 +333,11 @@ msgstr ""
 msgid "Category Thumbnail"
 msgstr ""
 
-#: includes/class-flexi-metabox.php:130
+#: includes/class-flexi-metabox.php:138
 msgid "Flexi Shortcode"
 msgstr ""
 
-#: includes/class-flexi-metabox.php:139
+#: includes/class-flexi-metabox.php:147
 msgid "Save & reopen to get shortcode"
 msgstr ""
 
@@ -607,7 +567,7 @@ msgid "Effect on mouse over image."
 msgstr ""
 
 #: includes/class-flexi-settings.php:234 includes/class-flexi-settings.php:247
-#: includes/functions.php:640
+#: includes/functions.php:662
 msgid "None"
 msgstr ""
 
@@ -910,43 +870,43 @@ msgstr ""
 msgid "Required Flexi-PRO or UPG-PRO"
 msgstr ""
 
-#: includes/functions.php:995
+#: includes/functions.php:1018
 msgid "Title cannot be blank."
 msgstr ""
 
-#: includes/functions.php:998
+#: includes/functions.php:1021
 msgid "This file is not supported or file too big."
 msgstr ""
 
-#: includes/functions.php:1001
+#: includes/functions.php:1024
 msgid "This file type is not supported. Only image files are allowed."
 msgstr ""
 
-#: includes/functions.php:1004
+#: includes/functions.php:1027
 msgid "Captcha security code is invalid."
 msgstr ""
 
-#: includes/functions.php:1027
+#: includes/functions.php:1050
 msgid "Flexi Primary Gallery"
 msgstr ""
 
-#: includes/functions.php:1034
+#: includes/functions.php:1057
 msgid "Flexi User Dashboard"
 msgstr ""
 
-#: includes/functions.php:1048
+#: includes/functions.php:1071
 msgid "Flexi Edit/Modify"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:25
+#: includes/user_dashboard/class-flexi-user-dashboard.php:27
 msgid "Search post"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:31
+#: includes/user_dashboard/class-flexi-user-dashboard.php:33
 msgid "My Posts"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:62
+#: includes/user_dashboard/class-flexi-user-dashboard.php:64
 msgid "My Dashboard"
 msgstr ""
 
@@ -993,6 +953,7 @@ msgstr ""
 
 #: public/partials/layout/gallery/basic/footer.php:6
 #: public/partials/layout/gallery/masonry/footer.php:6
+#: public/partials/layout/gallery/portfolio/footer.php:5
 #: public/partials/layout/gallery/regular/footer.php:6
 #: public/partials/layout/gallery/wide/footer.php:5
 msgid "No records"

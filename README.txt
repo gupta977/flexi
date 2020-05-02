@@ -129,6 +129,12 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.20 =
+* Added toggle for title,excerpt, custom fields & icons
+* Updated basic, regular, portfolio Layouts
+* Added padding to block editor
+* Updated tags css look & feel
+
 = 1.0.19 =
 * Added 'portfolio gallery layout'
 
