@@ -35,7 +35,7 @@ class flexi_delete_post
   }
 
   if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-   $result = evalue_encode($result);
+   $result = json_encode($result);
    echo $result;
   } else {
    header("Location: " . $_SERVER["HTTP_REFERER"]);
