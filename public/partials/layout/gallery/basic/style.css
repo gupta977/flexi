@@ -8,7 +8,7 @@
 .flexi-list-small .flexi-list-sub {
   display: inline-block;
   width: var(--flexi_t_width);
-  margin: 0 1px 1px;
+  margin: 0 0px 0px;
 }
 
 /* Photo */

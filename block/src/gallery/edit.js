@@ -73,6 +73,7 @@ class FlexiGalleryEdit extends Component {
 			evalue_title,
 			evalue_excerpt,
 			evalue_custom,
+			evalue_icon,
 		} = attributes;
 
 		const categories = this.getCategoriesTree();
@@ -180,7 +181,7 @@ class FlexiGalleryEdit extends Component {
 							/>
 
 							<ToggleControl
-								label="Display title text"
+								label="Display title"
 								checked={evalue_title}
 								onChange={toggleAttribute("evalue_title")}
 							/>
@@ -193,6 +194,11 @@ class FlexiGalleryEdit extends Component {
 								label="Display Custom Fields"
 								checked={evalue_custom}
 								onChange={toggleAttribute("evalue_custom")}
+							/>
+							<ToggleControl
+								label="Display Icon grid"
+								checked={evalue_icon}
+								onChange={toggleAttribute("evalue_icon")}
 							/>
 						</PanelBody>
 						<PanelBody

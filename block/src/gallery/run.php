@@ -86,6 +86,10 @@ register_block_type(
     'type'    => 'boolean',
     'default' => false,
    ),
+   'evalue_icon'    => array(
+    'type'    => 'boolean',
+    'default' => false,
+   ),
   ),
   'render_callback' => 'flexi_gallery_render_callback',
  )
@@ -125,6 +129,9 @@ function flexi_gallery_render_callback($args)
   }
   if (isset($args['evalue_custom']) && '1' == $args['evalue_custom']) {
    $evalue .= "custom:on,";
+  }
+  if (isset($args['evalue_icon']) && '1' == $args['evalue_icon']) {
+   $evalue .= "icon:on,";
   }
 
   if (isset($args['filter']) && 'none' == $args['filter']) {

@@ -46,7 +46,8 @@
 }
 
 /* Article excerpt */
-.flexi-gallery-portfolio_info p {
+.flexi-gallery-portfolio_info p,
+span {
   line-height: 20px;
   color: #5d5d5d;
   font-family: "Roboto", Sans-serif;

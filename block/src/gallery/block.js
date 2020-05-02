@@ -134,6 +134,10 @@ registerBlockType("cgb/block-flexi-block", {
 			type: "boolean",
 			default: false,
 		},
+		evalue_icon: {
+			type: "boolean",
+			default: false,
+		},
 	},
 
 	edit,

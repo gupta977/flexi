@@ -261,7 +261,7 @@ function flexi_generate_tags($tags_array, $upg_tag_class = 'flexi_tag', $filter_
 {
  $taglink = '';
  if (count($tags_array) > 1) {
-  $taglink .= '<div class="flexi_tags">';
+  $taglink .= '<div class="flexi_tags" style="margin: 5px">';
 
   $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' ' . $upg_tag_class . ' flexi_tag_active">' . __('Show All', 'wp-upg') . '</a> ';
   if (count($tags_array) > 1) {
