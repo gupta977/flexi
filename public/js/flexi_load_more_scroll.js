@@ -12,6 +12,7 @@ jQuery(document).ready(function () {
     padding = jQuery("#padding").text();
     hover_effect = jQuery("#hover_effect").text();
     hover_caption = jQuery("#hover_caption").text();
+    evalue = jQuery("#evalue").text();
     column = jQuery("#column").text();
     max_paged = jQuery("#max_paged").text();
     album = jQuery("#album").text();
@@ -43,6 +44,7 @@ jQuery(document).ready(function () {
           padding: padding,
           hover_effect: hover_effect,
           hover_caption: hover_caption,
+          evalue: evalue,
           column: column,
           album: album,
           search: search,

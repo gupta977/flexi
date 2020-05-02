@@ -1075,3 +1075,30 @@ function flexi_page_post_state_label($states, $post)
  return $states;
 }
 add_filter('display_post_states', 'flexi_page_post_state_label', 20, 2);
+
+//Shortcode evalue set into array
+function flexi_evalue_setarray($evalue)
+{
+ $main = array();
+
+ $values = explode(',', $evalue);
+ foreach ($values as $option) {
+  $cap = explode(":", $option);
+  if ('' != $cap[0]) {
+   $main[$cap[0]] = trim($cap[1]);
+  }
+ }
+ return $main;
+}
+
+//Determine to show div element
+function flexi_evalue_toggle($key, $evalue)
+{
+ $extra_param = flexi_evalue_setarray($evalue);
+ //var_dump($extra_param);
+ if (isset($extra_param[$key]) && 'on' == $extra_param[$key]) {
+  echo '';
+ } else {
+  echo 'display:none';
+ }
+}

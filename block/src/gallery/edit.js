@@ -70,6 +70,9 @@ class FlexiGalleryEdit extends Component {
 			height,
 			width,
 			filter,
+			evalue_title,
+			evalue_excerpt,
+			evalue_custom,
 		} = attributes;
 
 		const categories = this.getCategoriesTree();
@@ -132,12 +135,6 @@ class FlexiGalleryEdit extends Component {
 								onChange={(value) => setAttributes({ filter: value })}
 							/>
 
-							<ToggleControl
-								label="Display tags above gallery"
-								checked={tag_show}
-								onChange={toggleAttribute("tag_show")}
-							/>
-
 							<SelectControl
 								label="Order By"
 								value={orderby}
@@ -164,6 +161,38 @@ class FlexiGalleryEdit extends Component {
 									},
 								]}
 								onChange={(value) => setAttributes({ orderby: value })}
+							/>
+						</PanelBody>
+						<PanelBody
+							title={__("Toggle Controls", "flexi")}
+							initialOpen={false}
+						>
+							<ToggleControl
+								label="Display tags above gallery"
+								checked={tag_show}
+								onChange={toggleAttribute("tag_show")}
+							/>
+
+							<ToggleControl
+								label="Enable Popup Lightbox"
+								checked={popup}
+								onChange={toggleAttribute("popup")}
+							/>
+
+							<ToggleControl
+								label="Display title text"
+								checked={evalue_title}
+								onChange={toggleAttribute("evalue_title")}
+							/>
+							<ToggleControl
+								label="Display Excerpt"
+								checked={evalue_excerpt}
+								onChange={toggleAttribute("evalue_excerpt")}
+							/>
+							<ToggleControl
+								label="Display Custom Fields"
+								checked={evalue_custom}
+								onChange={toggleAttribute("evalue_custom")}
 							/>
 						</PanelBody>
 						<PanelBody
@@ -232,12 +261,6 @@ class FlexiGalleryEdit extends Component {
 								onChange={toggleAttribute("height")}
 								min={50}
 								max={500}
-							/>
-
-							<ToggleControl
-								label="Popup"
-								checked={popup}
-								onChange={toggleAttribute("popup")}
 							/>
 						</PanelBody>
 						<PanelBody title={__("Effects", "flexi")} initialOpen={false}>

@@ -47,6 +47,7 @@ echo "<div id='keyword' style='display:none'>" . $keyword . "</div>";
 echo "<div id='padding' style='display:none'>" . $padding . "</div>";
 echo "<div id='hover_effect' style='display:none'>" . $hover_effect . "</div>";
 echo "<div id='hover_caption' style='display:none'>" . $hover_caption . "</div>";
+echo "<div id='evalue' style='display:none'>" . $evalue . "</div>";
 ?>
 <style>
 :root {

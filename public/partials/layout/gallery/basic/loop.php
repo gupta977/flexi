@@ -14,7 +14,7 @@ echo '<img src="' . esc_url(flexi_image_src('medium', $post)) . '">';
 ?>
 <?php echo ' <div class="flexi_figcaption" id="flexi_cap_' . get_the_ID() . '"></div>'; ?>
 
-                  <div id="flexi_info" class="flexi_caption_none">
+                  <div id="flexi_info" class="<?php echo $hover_caption; ?>">
                         <div class="flexi_title"><?php echo $data['title']; ?></div>
                         <div class="flexi_p"><?php echo flexi_excerpt(); ?></div>
                   </div>
@@ -23,7 +23,7 @@ echo '</a>';
 echo '</div>';
 ?>
 
-        <div class="flexi_details">
+        <div class="flexi_details" style="<?php flexi_evalue_toggle('title', $evalue);?>">
             <h3><?php echo $data['title']; ?></h3>
         </div>
 

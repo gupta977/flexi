@@ -9,6 +9,7 @@ $toolbar = new Flexi_Gallery_Toolbar();
 if ($show_tag) {
  echo flexi_generate_tags($tags_array, 'flexi_tag--inverse', 'filter_tag') . "<div style='clear:both;'></div>";
 }
+//var_dump($evalue);
 ?>
 
 <?php

@@ -122,6 +122,18 @@ registerBlockType("cgb/block-flexi-block", {
 			type: "number",
 			default: 150,
 		},
+		evalue_title: {
+			type: "boolean",
+			default: false,
+		},
+		evalue_excerpt: {
+			type: "boolean",
+			default: false,
+		},
+		evalue_custom: {
+			type: "boolean",
+			default: false,
+		},
 	},
 
 	edit,

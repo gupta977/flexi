@@ -17,6 +17,7 @@ class Flexi_Shortcode_Gallery
   global $post;
   global $wp_query;
 
+  //var_dump($params);
   //Album
   //Get redirected sub album
   $term_slug  = get_query_var('flexi_category');
@@ -143,6 +144,13 @@ class Flexi_Shortcode_Gallery
    $popup = $params['popup'];
   } else {
    $popup = flexi_get_option('lightbox_switch', 'flexi_detail_settings', 1);
+  }
+
+  //evalue data
+  if (isset($params['evalue'])) {
+   $evalue = $params['evalue'];
+  } else {
+   $evalue = "";
   }
 
   //padding

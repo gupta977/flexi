@@ -68,7 +68,7 @@ if (is_flexi_pro()) {
    echo "<b>Flexi-PRO version </b>:" . FLEXI_PRO_VERSION;
   }
   ?>
-<br>
+<br>...
 <?php
 echo get_option('FLEXI_PRO_RESPONSE', '');
   ?>

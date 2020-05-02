@@ -26,7 +26,7 @@ function flexi_ajax_post()
   $response['error_message'] = 'Improper form fields. Ajax cannot continue.';
 
   // Exit here, for not processing further because of the error
-  exit(json_encode($response));
+  exit(evalue_encode($response));
  }
 
  $attr          = flexi_default_args('');

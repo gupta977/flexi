@@ -18,11 +18,10 @@ $data = flexi_image_data('thumbnail', $post, $popup);
     </a>
 </div>
     <div class="flexi-gallery-portfolio_info">
-      <h2><?php echo $data['title']; ?></h2>
-      <p>
-      <?php echo flexi_excerpt(20); ?>
-      </p>
-      <?php echo flexi_show_icon_grid(); ?>
+      <h2 style="<?php flexi_evalue_toggle('title', $evalue);?>"><?php echo $data['title']; ?></h2>
+      <p style="<?php flexi_evalue_toggle('custom', $evalue);?>"><?php echo flexi_custom_field_loop($post, 'gallery', 2); ?></p>
+      <p style="<?php flexi_evalue_toggle('excerpt', $evalue);?>"><?php echo flexi_excerpt(20); ?></p>
+      <p style="<?php flexi_evalue_toggle('icon', $evalue);?>"><?php echo flexi_show_icon_grid(); ?></p>
     </div>
   </div>
 </div>
