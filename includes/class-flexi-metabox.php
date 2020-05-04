@@ -53,6 +53,16 @@ class Flexi_Meta_boxes
    'preview_size' => 'medium', // Image size to use when previewing in the admin.
   ));
 
+  $cmb->add_field(array(
+   'name' => 'Physical file',
+   'desc' => 'Select file other then images',
+   'id'   => 'flexi_file',
+   'type' => 'file',
+   'text' => array(
+    'add_upload_file_text' => 'Add file',
+   ),
+  ));
+
 //Add Image gallery
   $cmb->add_field(array(
    'name'       => 'Standalone Image Gallery',

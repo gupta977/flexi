@@ -90,7 +90,7 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
 
    //Assign preview layout
    add_post_meta($post_id, 'flexi_layout', $preview);
-   add_post_meta($post_id, 'flexi_type', 'plain');
+
    $attach_ids = array();
    //Execute only if files is available
    if ($files && !empty($check_file_exist)) {
@@ -115,11 +115,31 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
     //if (!is_wp_error($attach_id) && wp_attachment_is_image($attach_id)) {
 
     if (!is_wp_error($attach_id) & ('' == trim($file_data['error'][0]))) {
-     // flexi_log('OK File, start post');
+
      $attach_ids[] = $attach_id;
-     add_post_meta($post_id, 'flexi_image_id', $attach_id);
-     add_post_meta($post_id, 'flexi_image', flexi_image_src('large', get_post($post_id)));
-     add_post_meta($post_id, 'flexi_type', 'image');
+
+     if (wp_attachment_is('image', $attach_id)) {
+      add_post_meta($post_id, 'flexi_type', 'image');
+      add_post_meta($post_id, 'flexi_image_id', $attach_id);
+      add_post_meta($post_id, 'flexi_image', flexi_image_src('large', get_post($post_id)));
+
+     } else if (wp_attachment_is('video', $attach_id)) {
+      add_post_meta($post_id, 'flexi_type', 'video');
+      add_post_meta($post_id, 'flexi_file_id', $attach_id);
+      add_post_meta($post_id, 'flexi_file', wp_get_attachment_url($attach_id));
+
+     } else if (wp_attachment_is('audio', $attach_id)) {
+      add_post_meta($post_id, 'flexi_type', 'audio');
+      add_post_meta($post_id, 'flexi_file_id', $attach_id);
+      add_post_meta($post_id, 'flexi_file', wp_get_attachment_url($attach_id));
+
+     } else {
+      add_post_meta($post_id, 'flexi_type', 'other');
+      add_post_meta($post_id, 'flexi_file_id', $attach_id);
+      add_post_meta($post_id, 'flexi_file', wp_get_attachment_url($attach_id));
+
+     }
+
     } else {
      if ($attach_id) {
       //Delete attachment if uploaded

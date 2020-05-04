@@ -681,6 +681,13 @@ function flexi_log($message)
  }
 }
 
+//get URL of physical file
+function flexi_file_src($attach_id)
+{
+ return wp_get_attachment_image(get_post_meta($attach_id, 'flexi_file_id', 1), 'medium');
+
+}
+
 //
 // All commonly used function are listed
 //
@@ -1105,15 +1112,15 @@ function flexi_evalue_toggle($key, $evalue)
 
 //Get error code while submitting form
 function flexi_get_error($result)
-   {
-    $notice = "";
-    if (isset($result['notice'][0])) {
-     $reindex_array = array_values(array_filter($result['error']));
-     $notice_array  = array_values(array_filter($result['notice']));
-     for ($x = 0; $x < count($reindex_array); $x++) {
-      // $err .= $reindex_array[$x] . "  ";
-      $notice .= "<div class='flexi_alert-box flexi_error'>" . flexi_error_code($reindex_array[$x]) . " : " . $notice_array[$x] . "</div>";
-     }
-    }
-    return $notice;
-   }
+{
+ $notice = "";
+ if (isset($result['notice'][0])) {
+  $reindex_array = array_values(array_filter($result['error']));
+  $notice_array  = array_values(array_filter($result['notice']));
+  for ($x = 0; $x < count($reindex_array); $x++) {
+   // $err .= $reindex_array[$x] . "  ";
+   $notice .= "<div class='flexi_alert-box flexi_error'>" . flexi_error_code($reindex_array[$x]) . " : " . $notice_array[$x] . "</div>";
+  }
+ }
+ return $notice;
+}
