@@ -69,24 +69,39 @@ function flexi_ajax_post()
     $error = array_filter(array_unique($result['error']));
    }
 
-   if ($post_id) {
-    //Submit extra fields data
-    for ($x = 1; $x <= 10; $x++) {
-     if (isset($_POST['flexi_field_' . $x])) {
-      add_post_meta($post_id, 'flexi_field_' . $x, $_POST['flexi_field_' . $x]);
-     }
+   function flexi_get_error($result)
+   {
+    $notice = "";
+    if (isset($result['notice'][0])) {
+     $reindex_array = array_values(array_filter($result['notice']));
 
+     for ($x = 0; $x < count($reindex_array); $x++) {
+      // $err .= $reindex_array[$x] . "  ";
+      $notice .= flexi_error_code($reindex_array[$x]);
+     }
     }
+    return $notice;
+   }
+   //$response['msg'] = $msg . ' ';
+
+   if ($post_id) {
+    /* //Submit extra fields data
+    for ($x = 1; $x <= 10; $x++) {
+    if (isset($_POST['flexi_field_' . $x])) {
+    add_post_meta($post_id, 'flexi_field_' . $x, $_POST['flexi_field_' . $x]);
+    }
+
+    } */
 
     do_action("flexi_submit_complete");
     $response['type'] = "success";
 
     if (flexi_get_option('publish', 'flexi_form_settings', 1) == 1) {
 
-     $response['msg'] = "<div class='flexi_alert-box flexi_success'>" . __('Successfully posted', 'flexi') . "</div> " . flexi_post_toolbar_grid($post_id, true);
+     $response['msg'] = "<div class='flexi_alert-box flexi_success'>" . __('Submission completed', 'flexi') . "</div> " . '' . flexi_get_error($result) . '' . flexi_post_toolbar_grid($post_id, true);
     } else {
 
-     $response['msg'] = "<div class='flexi_alert-box flexi_warning'>" . __('Your submission is under review', 'flexi') . "</div>" . flexi_post_toolbar_grid($post_id, true);
+     $response['msg'] = "<div class='flexi_alert-box flexi_warning'>" . __('Your submission is under review', 'flexi') . "</div>" . '' . flexi_get_error($result) . '' . flexi_post_toolbar_grid($post_id, true);
     }
 
    } else {
