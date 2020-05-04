@@ -1013,15 +1013,15 @@ function flexi_post_toolbar_grid($id, $bool)
 //Error Code
 function flexi_error_code($err)
 {
- $msg = "<div class='flexi_alert-box flexi_error'>";
+ $msg = "";
  if ('required-title' == $err) {
   $msg .= __("Title cannot be blank.", "flexi");
 
  } else if ('file-type' == $err) {
-  $msg .= __("This file is not supported or file too big.", "flexi");
+  $msg .= __("Invalid file type", "flexi");
 
  } else if ('exif_imagetype' == $err) {
-  $msg .= __("This file type is not supported. Only image files are allowed.", "flexi");
+  $msg .= __("Only image files are allowed.", "flexi");
 
  } else if ('invalid-captcha' == $err) {
   $msg .= __("Captcha security code is invalid.", "flexi");
@@ -1030,7 +1030,7 @@ function flexi_error_code($err)
   $msg .= $err;
  }
  //$msg .= "</div>" . flexi_post_toolbar_grid('', true);
- $msg .= "</div>";
+ //$msg .= "</div>";
  return $msg;
 }
 /**

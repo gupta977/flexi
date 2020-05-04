@@ -1,5 +1,5 @@
-jQuery(document).ready(function() {
-  jQuery(".flexi_ajax_post").on("submit", function(e) {
+jQuery(document).ready(function () {
+  jQuery(".flexi_ajax_post").on("submit", function (e) {
     e.preventDefault();
     //post_id = jQuery(this).attr("data-post_id")
     //nonce = jQuery(this).attr("data-nonce")
@@ -17,7 +17,7 @@ jQuery(document).ready(function() {
       processData: false,
       contentType: false,
       data: formData,
-      xhr: function() {
+      xhr: function () {
         var jqXHR = null;
         if (window.ActiveXObject) {
           jqXHR = new window.ActiveXObject("Microsoft.XMLHTTP");
@@ -28,7 +28,7 @@ jQuery(document).ready(function() {
         //Upload progress
         jqXHR.upload.addEventListener(
           "progress",
-          function(evt) {
+          function (evt) {
             if (evt.lengthComputable) {
               var percentComplete = Math.round((evt.loaded * 100) / evt.total);
               //Do something with upload progress
@@ -39,7 +39,7 @@ jQuery(document).ready(function() {
                 percentComplete + "%";
 
               if (percentComplete > 90) {
-                setInterval(function() {
+                setInterval(function () {
                   if (i < 100 && progress) {
                     document.getElementById(
                       "flexi_progress_process"
@@ -60,7 +60,7 @@ jQuery(document).ready(function() {
         //Download progress
         jqXHR.addEventListener(
           "progress",
-          function(evt) {
+          function (evt) {
             if (evt.lengthComputable) {
               var percentComplete = Math.round((evt.loaded * 100) / evt.total);
               //Do something with download progress
@@ -71,7 +71,7 @@ jQuery(document).ready(function() {
         );
         return jqXHR;
       },
-      beforeSend: function() {
+      beforeSend: function () {
         //console.log("Send to UPG");
         jQuery("#flexi_form").slideUp();
         jQuery("#flexi_loader").show();
@@ -79,7 +79,7 @@ jQuery(document).ready(function() {
         progress = true;
       },
 
-      success: function(response) {
+      success: function (response) {
         if (response.type == "success") {
           jQuery(".flexi_response").show();
           jQuery(".flexi_response").empty();
@@ -93,7 +93,7 @@ jQuery(document).ready(function() {
           jQuery(".flexi_response").append(response.msg);
         }
       },
-      complete: function(data) {
+      complete: function (data) {
         // Hide image container
         console.log("Submission completed");
         jQuery("#flexi_loader").hide();
@@ -101,18 +101,20 @@ jQuery(document).ready(function() {
         i = 0;
         progress = false;
       },
-      error: function(jqXHR, textStatus, errorThrown) {
+      error: function (jqXHR, textStatus, errorThrown) {
         console.log("Error occurred");
         jQuery(".flexi_response").show();
         jQuery(".flexi_response").empty();
         jQuery(".flexi_response").append(
-          "<div class='flexi_error'>Error: " + errorThrown + "</div>"
+          "<div class='flexi_alert-box flexi_error'>Error: " +
+            errorThrown +
+            "</div>"
         );
-      }
+      },
     });
   });
 
-  jQuery(document).on("click", ".flexi_send_again", function(e) {
+  jQuery(document).on("click", ".flexi_send_again", function (e) {
     e.preventDefault();
     //alert("hello");
     jQuery("#flexi_after_response").hide();
@@ -126,5 +128,5 @@ jQuery(document).ready(function() {
     document.getElementById("flexi_progress_process").innerHTML = "0%";
   });
 
-  jQuery(".flexi_send_again").click(function(e) {});
+  jQuery(".flexi_send_again").click(function (e) {});
 });

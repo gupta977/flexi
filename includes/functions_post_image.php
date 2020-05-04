@@ -129,8 +129,9 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
      }
      //flexi_log('delete post');
      wp_delete_post($post_id, true);
-     $newPost['error'][]  = 'upload-error';
-     $newPost['notice'][] = __('Error', 'flexi') . ': ' . $_FILES[$key]['name'];
+     $newPost['error'][]  = $file_data['error'][0];
+     $newPost['notice'][] = $_FILES[$key]['name'];
+     flexi_log($file_data);
      //unset($newPost['id']);
      //return $newPost;
     }
@@ -184,7 +185,7 @@ function flexi_check_file($files)
   $error[0]  = '';
   $notice[0] = '';
  } else {
-  $error[0]  = 'invalid-file';
+  $error[0]  = 'file-type';
   $notice[0] = $files['name'] . ' invalid-file';
  }
  $file_data = array('error' => $error, 'notice' => $notice);
