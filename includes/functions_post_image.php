@@ -131,7 +131,7 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
      wp_delete_post($post_id, true);
      $newPost['error'][]  = $file_data['error'][0];
      $newPost['notice'][] = $_FILES[$key]['name'];
-     flexi_log($file_data);
+     //flexi_log($file_data);
      //unset($newPost['id']);
      //return $newPost;
     }

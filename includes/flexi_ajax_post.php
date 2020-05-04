@@ -69,19 +69,6 @@ function flexi_ajax_post()
     $error = array_filter(array_unique($result['error']));
    }
 
-   function flexi_get_error($result)
-   {
-    $notice = "";
-    if (isset($result['notice'][0])) {
-     $reindex_array = array_values(array_filter($result['error']));
-     $notice_array  = array_values(array_filter($result['notice']));
-     for ($x = 0; $x < count($reindex_array); $x++) {
-      // $err .= $reindex_array[$x] . "  ";
-      $notice .= "<div class='flexi_alert-box flexi_error'>" . flexi_error_code($reindex_array[$x]) . " : " . $notice_array[$x] . "</div>";
-     }
-    }
-    return $notice;
-   }
    //$response['msg'] = $msg . ' ';
 
    if ($post_id) {

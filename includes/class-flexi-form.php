@@ -220,10 +220,10 @@ action="' . admin_url("admin-ajax.php") . '"
 
    if (flexi_get_option('publish', 'flexi_form_settings', 1) == 1) {
 
-    echo "<div class='flexi_alert-box flexi_success'>" . __('Successfully posted', 'flexi') . "</div>";
+    echo "<div class='flexi_alert-box flexi_success'>" . __('Submission completed', 'flexi') . "</div>" . '' . flexi_get_error($result);
 
    } else {
-    echo "<div class='flexi_alert-box flexi_warning'>" . __('Your submission is under review.', 'flexi') . "</div>";
+    echo "<div class='flexi_alert-box flexi_warning'>" . __('Your submission is under review.', 'flexi') . "</div>" . '' . flexi_get_error($result);
    }
 
   } else {
