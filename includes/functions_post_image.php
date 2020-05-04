@@ -61,7 +61,7 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
  }
 
  for ($x = 1; $x <= $file_count; $x++) {
-  //flexi_log("Loop: " . $x);
+
   $newPost['id'] = wp_insert_post($postData);
   if ($newPost['id']) {
    //echo "Successfully added $x <hr>";
@@ -103,16 +103,14 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
     $_FILES[$key]['error']    = $files['error'][$i];
     $_FILES[$key]['size']     = $files['size'][$i];
 
+    //Check the file before processing
     $file_data = flexi_check_file($_FILES[$key]);
     // $newPost['error'] = array_unique(array_merge($file_data['error'], $newPost['error']));
-    //flexi_log($i . "--");
+
     //flexi_log($file_data);
 
     $attach_id = media_handle_upload($key, $post_id);
 
-    //$my_image_alt = preg_replace( ‘%[^0-9a-z]+%i’, ‘ ‘, $title );
-    //$my_image_alt = preg_replace( ‘%[\s]+%’, ‘ ‘, $my_image_alt );
-    //update_post_meta( $attach_id, '_wp_attachment_image_alt', $my_image_alt );
     //wp_attachment_is('image', $post)
     //if (!is_wp_error($attach_id) && wp_attachment_is_image($attach_id)) {
 
@@ -124,14 +122,14 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
      add_post_meta($post_id, 'flexi_type', 'image');
     } else {
      if ($attach_id) {
-      // flexi_log('found error, deleting image');
+      //Delete attachment if uploaded
       wp_delete_attachment($attach_id);
      }
-     //flexi_log('delete post');
+     //Delete post if error found
      wp_delete_post($post_id, true);
      $newPost['error'][]  = $file_data['error'][0];
      $newPost['notice'][] = $_FILES[$key]['name'];
-     //flexi_log($file_data);
+
      //unset($newPost['id']);
      //return $newPost;
     }
@@ -172,15 +170,32 @@ function flexi_upload_get_file_count($files)
 //Check the file before upload or processing
 function flexi_check_file($files)
 {
- //flexi_log($files);
- //flexi_log("------");
 
+ $enable_mime        = flexi_get_option('enable_mime_type', 'flexi_extension', 0);
  $error              = array();
  $error[0]           = '';
  $notice             = array();
  $notice[0]          = '';
  $uploaded_file_type = $files['type'];
- $allowed_file_types = array('image/jpg', 'image/jpeg', 'application/pdf');
+ if ("0" == $enable_mime) {
+  $allowed_file_types = array('image/jpg', 'image/jpeg', 'image/gif', 'image/png');
+ } else {
+  $allowed            = flexi_get_option('flexi_mime_type_list', 'flexi_mime_type', '');
+  $allowed_file_types = array();
+  if (is_array($allowed)) {
+
+   $allowed_file_types = $allowed;
+
+  }
+  //Merge comma separated mime type into array
+  $allowed_textarea = flexi_get_option('flexi_extra_mime', 'flexi_mime_type', '');
+  if ('' != $allowed_textarea && is_flexi_pro()) {
+   $str_arr            = explode(",", $allowed_textarea);
+   $allowed_file_types = array_merge($str_arr, $allowed_file_types);
+  }
+  //flexi_log($allowed_file_types);
+
+ }
  if (in_array($uploaded_file_type, $allowed_file_types)) {
   $error[0]  = '';
   $notice[0] = '';
@@ -189,8 +204,7 @@ function flexi_check_file($files)
   $notice[0] = $files['name'] . ' invalid-file';
  }
  $file_data = array('error' => $error, 'notice' => $notice);
- //flexi_log("+++++++++++++");
- //flexi_log($file_data);
+
  return $file_data;
 
 }

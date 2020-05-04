@@ -125,14 +125,11 @@ class Flexi
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/user_dashboard/class-flexi-user-dashboard.php';
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/user_dashboard/class-flexi-user-gallery.php';
 
-  //Addon Custom Fields
+  //Addon
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-custom-field.php';
-
-  //Addon Ultimate Member Plugin
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-ultimate-member.php';
-
-  //Addon BuddyPress Plugin
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-buddypress.php';
+  require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-mime-type.php';
 
   //Toolbar
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/toolbar/class-flexi-gallery-toolbar.php';
