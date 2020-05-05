@@ -103,11 +103,7 @@ class FlexiGalleryEdit extends Component {
 								value={flexi_type}
 								options={[
 									{
-										label: "Plain",
-										value: "plain",
-									},
-									{
-										label: "Image",
+										label: "Supported Files",
 										value: "image",
 									},
 									{

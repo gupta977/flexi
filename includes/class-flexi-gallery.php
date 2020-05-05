@@ -190,13 +190,7 @@ class Flexi_Shortcode_Gallery
 
 //Filter gallery based on images, url and more.
   if (isset($params['filter'])) {
-   if ('image' == $params['filter']) {
-    $filter = 'flexi_image';
-   } else if ('url' == $params['filter']) {
-    $filter = 'flexi_url';
-   } else {
-    $filter = trim($params['filter']);
-   }
+   $filter = trim($params['filter']);
 
   } else {
    $filter = '';
@@ -254,7 +248,8 @@ class Flexi_Shortcode_Gallery
   if ('' != $filter) {
    $args['meta_query'] = array(
     array(
-     'key' => $filter,
+     'key'   => 'flexi_type',
+     'value' => $filter,
     ),
    );
   }

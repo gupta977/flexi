@@ -141,7 +141,7 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
      }
 
     } else {
-     if ($attach_id) {
+     if (!is_wp_error($attach_id)) {
       //Delete attachment if uploaded
       wp_delete_attachment($attach_id);
      }

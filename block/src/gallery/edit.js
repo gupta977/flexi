@@ -117,11 +117,11 @@ class FlexiGalleryEdit extends Component {
 								onChange={onChangeTag}
 							/>
 							<SelectControl
-								label="Filter"
+								label="Filter gallery contains"
 								value={filter}
 								options={[
 									{
-										label: "None",
+										label: "Show All",
 										value: "none",
 									},
 									{
@@ -129,8 +129,20 @@ class FlexiGalleryEdit extends Component {
 										value: "image",
 									},
 									{
-										label: "URL",
+										label: "Video URL",
 										value: "url",
+									},
+									{
+										label: "Video File",
+										value: "video",
+									},
+									{
+										label: "Audio File",
+										value: "audio",
+									},
+									{
+										label: "Other Documents",
+										value: "other",
 									},
 								]}
 								onChange={(value) => setAttributes({ filter: value })}
