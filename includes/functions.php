@@ -695,6 +695,7 @@ function flexi_file_src($post_id)
 function flexi_image_src($size = 'thumbnail', $post)
 {
  $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'flexi_image_id', 1), $size);
+ $ftype            = flexi_get_type($post);
 
  if ($image_attributes) {
   return $image_attributes[0];
@@ -711,17 +712,7 @@ function flexi_image_src($size = 'thumbnail', $post)
    return $thumb_url[0];
   } else {
 
-   if ('thumbnail' == $size) {
-    $ftype = flexi_get_type($post);
-
-    if ('video' == $ftype || "audio" == $ftype || "other" == $ftype) {
-     return flexi_get_icon_by_file_extension(get_post_meta($post->ID, 'flexi_file', 1));
-    } else {
-     return FLEXI_ROOT_URL . 'public/images/noimg_thumb.jpg';
-    }
-   } else {
-    return FLEXI_ROOT_URL . 'public/images/noimg.png';
-   }
+   return FLEXI_ROOT_URL . 'public/images/' . $ftype . '.png';
   }
  }
 }
