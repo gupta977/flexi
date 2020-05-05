@@ -11,7 +11,7 @@ $data = flexi_image_data('thumbnail', $post, $popup);
 <div class="flexi-gallery-portfolio_img <?php echo $data['popup']; ?> flexi_effect" id="<?php echo $hover_effect; ?>">
     <a <?php echo $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" border="0"'; ?>>
       <img
-        src="<?php echo esc_url(flexi_image_src('thumbnail', $post)); ?>"
+        src="<?php echo esc_url(flexi_image_src('medium', $post)); ?>"
         alt="<?php echo $data['title']; ?>"
       />
       <?php echo ' <div class="flexi_figcaption" id="flexi_cap_' . get_the_ID() . '"></div>'; ?>

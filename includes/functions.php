@@ -682,9 +682,9 @@ function flexi_log($message)
 }
 
 //get URL of physical file
-function flexi_file_src($attach_id)
+function flexi_file_src($post_id)
 {
- return wp_get_attachment_image(get_post_meta($attach_id, 'flexi_file_id', 1), 'medium');
+ return wp_get_attachment_image_src(get_post_meta($post_id, 'flexi_file_id', 1));
 
 }
 
@@ -692,22 +692,16 @@ function flexi_file_src($attach_id)
 // All commonly used function are listed
 //
 //Return image url
-function flexi_image_src($size = 'thumbnail', $post = '')
+function flexi_image_src($size = 'thumbnail', $post)
 {
- if ('' == $post) {
-  global $post;
- }
-
- //If $post is numeric
- //$post   = get_post($post);
-
- // $image_attributes = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $size);
  $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'flexi_image_id', 1), $size);
- //flexi_log($image_attributes[0] . "--");
+
  if ($image_attributes) {
   return $image_attributes[0];
  } else {
-  //If no image ID found, check if it has direct URL for thumbnail & for large size give video URL
+  //If no image ID found, check if it has direct URL for thumbnail & large size for video URL
+  //Use flexi_large_media() at detail page
+
   if ('large' == $size) {
    $thumb_url = get_post_meta($post->ID, 'flexi_url', '');
   } else {
@@ -718,11 +712,49 @@ function flexi_image_src($size = 'thumbnail', $post = '')
   } else {
 
    if ('thumbnail' == $size) {
-    return FLEXI_ROOT_URL . 'public/images/noimg_thumb.jpg';
+    $ftype = flexi_get_type($post);
+
+    if ('video' == $ftype || "audio" == $ftype || "other" == $ftype) {
+     return flexi_get_icon_by_file_extension(get_post_meta($post->ID, 'flexi_file', 1));
+    } else {
+     return FLEXI_ROOT_URL . 'public/images/noimg_thumb.jpg';
+    }
    } else {
     return FLEXI_ROOT_URL . 'public/images/noimg.png';
    }
   }
+ }
+}
+
+/**
+ * Get mime type icon URL based on file extension.
+ *
+ * @param $file_ext The file extension to get the icon for.
+ * @return string Icon URL.
+ */
+function flexi_get_icon_by_file_extension($file)
+{
+ $filetype = wp_check_filetype($file);
+ $file_ext = $filetype['ext'];
+
+ $mimes = get_allowed_mime_types();
+ if (!empty($mimes)) {
+  foreach ($mimes as $type => $mime) {
+   if (false !== strpos($type, $file_ext)) {
+    return wp_mime_type_icon($mime);
+   }
+  }
+ }
+}
+
+//Return the type of flexi post is image,video,audio,url,other
+function flexi_get_type($post)
+{
+ $flexi_type = get_post_meta($post->ID, 'flexi_type', '');
+ if (isset($flexi_type[0])) {
+  return $flexi_type[0];
+ } else {
+  return '';
  }
 }
 
