@@ -15,7 +15,7 @@
           <div class="flexi_badge"> <?php echo __("Under Review", "flexi"); ?></div>
         </small><?php }?>
         <?php
-echo "<div class='flexi-image-wrapper_large'>" . flexi_large_media($post->ID) . "</div>";
+echo "<div class='flexi-image-wrapper_large'>" . flexi_large_media($post) . "</div>";
 ?>
         <?php echo flexi_show_icon_grid(); ?>
 
@@ -58,9 +58,6 @@ $arr_params = array('download' => $post->ID);
 $src        = esc_url(add_query_arg($arr_params), get_permalink($post->ID));
 ?>
 
-
-                <a href="javascript:void(0);" onclick="flexi_download_file('<?php echo $src; ?>'); return false;"><?php echo $src; ?></a>
-  <hr>
   <?php flexi_list_album($post, 'flexi-icon-list-frame');?>
 
 </div>

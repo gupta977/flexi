@@ -439,9 +439,9 @@ function flexi_login_link()
 
  if ('0' != $login) {
   $linku = get_permalink($login);
-  echo "<a href='" . $linku . "' class='button'>" . __("Login Please !", "flexi") . "</a>";
+  echo "<a href='" . $linku . "' class='pure-button'>" . __("Login Please !", "flexi") . "</a>";
  } else {
-  echo __("Login Please !", "flexi");
+  echo "<div class='flexi_alert-box flexi_notice'>" . __("Login Please !", "flexi") . "</div>";
  }
 }
 
@@ -746,25 +746,33 @@ function flexi_get_type($post)
  }
 }
 
-function flexi_large_media($post_id, $class = 'flexi_large_image')
+function flexi_large_media($post, $class = 'flexi_large_image')
 {
- $post      = get_post($post_id);
- $media_url = esc_url(flexi_image_src('large', $post));
- if ($post) {
-  $flexi_type = get_post_meta($post->ID, 'flexi_type', '');
-  if (isset($flexi_type[0]) && 'url' == $flexi_type[0]) {
-   $attr = array(
-    'src' => $media_url,
 
-   );
+ $flexi_type = flexi_get_type($post);
 
-   //echo wp_video_shortcode( $attr );
-   return wp_oembed_get($attr['src']);
+ if ("url" == $flexi_type) {
+  $media_url = esc_url(flexi_image_src('large', $post));
+  $attr      = array('src' => $media_url);
+  return wp_oembed_get($attr['src']);
 
-   return "<img id='" . $class . "' src='" . $media_url . "' >";
-  } else {
-   return "<img id='" . $class . "' src='" . $media_url . "' >";
-  }
+ } else if ("video" == $flexi_type) {
+  $video = flexi_file_src($post, true);
+  $attr  = array('src' => $video);
+  return wp_video_shortcode($attr);
+
+ } else if ("audio" == $flexi_type) {
+  $audio = flexi_file_src($post, true);
+  $attr  = array('src' => $audio);
+  return wp_audio_shortcode($attr);
+
+ } else if ("other" == $flexi_type) {
+  $other = flexi_file_src($post, true);
+  return '<iframe src="https://docs.google.com/viewer?url=' . $other . '" style="width:100%;height:100%;"></iframe>';
+
+ } else {
+  $media_url = esc_url(flexi_image_src('large', $post));
+  return "<img id='" . $class . "' src='" . $media_url . "' >";
  }
 
 }
