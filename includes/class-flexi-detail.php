@@ -26,6 +26,19 @@ class Flexi_Public_Detail
     */
    // Process output
    ob_start();
+   if (isset($_GET['download'])) {
+    //$file = $_GET['download'];
+
+    //$file = "http://localhost/wp5/wp-content/uploads/2020/01/20200111_174431-scaled.jpg";
+
+    // if (file_exists($file)) {
+    //flexi_log("i found...");
+    //header('Content-Type: image/jpeg');
+    //header("Content-Disposition: attachment; filename=\"$file\"");
+    ///readfile($file);
+    //} else {
+    // flexi_log("no url");
+   }
    require apply_filters('flexi_load_template', FLEXI_PLUGIN_DIR . 'public/partials/layout/detail/attach.php');
 
    $content = ob_get_clean();

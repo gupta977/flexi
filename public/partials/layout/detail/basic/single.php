@@ -50,8 +50,34 @@ echo flexi_custom_field_loop($post, 'detail');
     </div>
 
   </div>
+  <?php
+//echo flexi_file_src($post) . "----<hr>";
+//echo flexi_file_src($post, false) . "----";
+// This would output '/client/?s=word&foo=bar&baz=tiny'
+$arr_params = array('download' => $post->ID);
+$src        = esc_url(add_query_arg($arr_params), get_permalink($post->ID));
+?>
 
+
+                <a href="javascript:void(0);" onclick="flexi_download_file('<?php echo $src; ?>'); return false;"><?php echo $src; ?></a>
   <hr>
   <?php flexi_list_album($post, 'flexi-icon-list-frame');?>
 
 </div>
+
+<?php
+if (isset($_GET['download'])) {
+ //$file = $_GET['download'];
+
+ //$file = "http://localhost/wp5/wp-content/uploads/2020/01/20200111_174431-scaled.jpg";
+
+// if (file_exists($file)) {
+ //flexi_log("i found...");
+ //header('Content-Type: image/jpeg');
+ //header("Content-Disposition: attachment; filename=\"$file\"");
+ //readfile($file);
+ //} else {
+ // flexi_log("no url");
+ // }
+}
+?>

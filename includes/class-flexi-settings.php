@@ -385,6 +385,13 @@ class FLEXI_Admin_Settings
      'type'              => 'checkbox',
      'sanitize_callback' => 'intval',
     ),
+    array(
+     'name'              => 'download_flexi_icon',
+     'label'             => __('Download icon', 'flexi') . '<span class="dashicons dashicons-download"></span>',
+     'description'       => __('Hide/Show download icon at gallery & detail page.', 'flexi'),
+     'type'              => 'checkbox',
+     'sanitize_callback' => 'intval',
+    ),
    ),
    'flexi_detail_settings'             => array(
     array(

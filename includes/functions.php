@@ -681,10 +681,28 @@ function flexi_log($message)
  }
 }
 
-//get URL of physical file
-function flexi_file_src($post_id)
+//Get full size media server path. Not URL
+function flexi_file_src($post, $url = true)
 {
- return wp_get_attachment_image_src(get_post_meta($post_id, 'flexi_file_id', 1));
+ $ftype = flexi_get_type($post);
+
+ if ("image" == $ftype || '' == $ftype) {
+  $rawfile = get_post_meta($post->ID, 'flexi_image_id', 1);
+ } else if ("url" == $ftype) {
+  $rawfile = '';
+ } else {
+  $rawfile = get_post_meta($post->ID, 'flexi_file_id', 1);
+ }
+
+ if ('' != $rawfile) {
+  if ($url) {
+   return wp_get_attachment_url($rawfile);
+  } else {
+   return get_attached_file($rawfile);
+  }
+ } else {
+  return '';
+ }
 
 }
 
@@ -713,27 +731,6 @@ function flexi_image_src($size = 'thumbnail', $post)
   } else {
 
    return FLEXI_ROOT_URL . 'public/images/' . $ftype . '.png';
-  }
- }
-}
-
-/**
- * Get mime type icon URL based on file extension.
- *
- * @param $file_ext The file extension to get the icon for.
- * @return string Icon URL.
- */
-function flexi_get_icon_by_file_extension($file)
-{
- $filetype = wp_check_filetype($file);
- $file_ext = $filetype['ext'];
-
- $mimes = get_allowed_mime_types();
- if (!empty($mimes)) {
-  foreach ($mimes as $type => $mime) {
-   if (false !== strpos($type, $file_ext)) {
-    return wp_mime_type_icon($mime);
-   }
   }
  }
 }
@@ -1000,8 +997,12 @@ function flexi_show_icon_grid()
  for ($r = 0; $r < count($icon); $r++) {
   $nonce = wp_create_nonce($icon[$r][3]);
 
+  if (!isset($icon[$r][5])) {
+   $icon[$r][5] = "";
+  }
+
   if ("" != $icon[$r][0]) {
-   $list .= '<a class="' . $icon[$r][3] . '" href="' . $icon[$r][2] . '" title="' . $icon[$r][1] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '"><small>&nbsp;<span class="dashicons ' . $icon[$r][0] . '">&nbsp;</span>&nbsp;</small></a>';
+   $list .= '<a class="' . $icon[$r][3] . '" href="' . $icon[$r][2] . '" title="' . $icon[$r][1] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '" ' . $icon[$r][5] . '><small>&nbsp;<span class="dashicons ' . $icon[$r][0] . '">&nbsp;</span>&nbsp;</small></a>';
   }
 
  }
@@ -1011,7 +1012,7 @@ function flexi_show_icon_grid()
  return $list;
 }
 
-//Icon container. Eg. Author icon, Delete icon, Edit icon
+//button toolbar
 function flexi_post_toolbar_grid($id, $bool)
 {
  global $post;

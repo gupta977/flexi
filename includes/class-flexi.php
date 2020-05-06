@@ -167,6 +167,9 @@ class Flexi
   //Load Ajax Delete
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi_ajax_delete.php';
 
+  //Load Ajax Download
+  require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi_ajax_download.php';
+
   // [flexi-gallery] shortcode
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-gallery.php';
 
@@ -297,6 +300,10 @@ class Flexi
   //Ajax Delete
   $delete = new flexi_delete_post();
   $this->loader->add_filter('flexi_add_icon_grid', $delete, 'flexi_add_icon_grid_delete');
+
+  //Ajax Download
+  $download = new flexi_download_post();
+  $this->loader->add_filter('flexi_add_icon_grid', $download, 'flexi_add_icon_grid_download');
 
   //[flexi-form] & [flexi-form-tag]
   $form = new Flexi_Shortcode_Form();

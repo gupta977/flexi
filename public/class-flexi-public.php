@@ -118,8 +118,9 @@ class Flexi_Public
   global $wp_query;
   // Localize the script with new data
   $translation_array = array(
-   'delete_string' => __('Are you sure you want to delete?', 'flexi'),
-   'ajaxurl'       => admin_url('admin-ajax.php'),
+   'delete_string'   => __('Are you sure you want to delete?', 'flexi'),
+   'download_string' => __('Download file?', 'flexi'),
+   'ajaxurl'         => admin_url('admin-ajax.php'),
   );
 
   //flexi_log($navigation);
@@ -143,5 +144,10 @@ class Flexi_Public
   //Ajax Delete
   wp_register_script('flexi_ajax_delete', plugin_dir_url(__FILE__) . 'js/flexi_ajax_delete.js', array('jquery'), $this->version);
   wp_enqueue_script('flexi_ajax_delete');
+
+  //Ajax Download
+  // wp_register_script('flexi_ajax_download', plugin_dir_url(__FILE__) . 'js/flexi_ajax_download.js', array('jquery'), $this->version);
+  //  wp_enqueue_script('flexi_ajax_download');
+
  }
 }
