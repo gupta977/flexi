@@ -274,10 +274,10 @@ div.flexi_gallery_grid {
 
 .flexi_row {
   display: table-row;
-  background: #f6f6f6;
+  background: #fff;
 }
 .flexi_row:nth-of-type(odd) {
-  background: #e9e9e9;
+  background: #f9f9f9;
 }
 .flexi_row.flexi_header {
   font-weight: 900;
@@ -285,7 +285,7 @@ div.flexi_gallery_grid {
 }
 
 .flexi_row.flexi_gray {
-  background: rgb(68, 67, 67);
+  background: #8a8989;
 }
 @media screen and (max-width: 580px) {
   .flexi_row {
