@@ -124,7 +124,7 @@ registerBlockType("cgb/block-flexi-block", {
 		},
 		evalue_title: {
 			type: "boolean",
-			default: false,
+			default: true,
 		},
 		evalue_excerpt: {
 			type: "boolean",
@@ -136,7 +136,7 @@ registerBlockType("cgb/block-flexi-block", {
 		},
 		evalue_icon: {
 			type: "boolean",
-			default: false,
+			default: true,
 		},
 	},
 

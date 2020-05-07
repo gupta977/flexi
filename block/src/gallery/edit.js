@@ -177,43 +177,6 @@ class FlexiGalleryEdit extends Component {
 							/>
 						</PanelBody>
 						<PanelBody
-							title={__("Toggle Controls", "flexi")}
-							initialOpen={false}
-						>
-							<ToggleControl
-								label="Display tags above gallery"
-								checked={tag_show}
-								onChange={toggleAttribute("tag_show")}
-							/>
-
-							<ToggleControl
-								label="Enable Popup Lightbox"
-								checked={popup}
-								onChange={toggleAttribute("popup")}
-							/>
-
-							<ToggleControl
-								label="Display title"
-								checked={evalue_title}
-								onChange={toggleAttribute("evalue_title")}
-							/>
-							<ToggleControl
-								label="Display Excerpt"
-								checked={evalue_excerpt}
-								onChange={toggleAttribute("evalue_excerpt")}
-							/>
-							<ToggleControl
-								label="Display Custom Fields"
-								checked={evalue_custom}
-								onChange={toggleAttribute("evalue_custom")}
-							/>
-							<ToggleControl
-								label="Display Icon grid"
-								checked={evalue_icon}
-								onChange={toggleAttribute("evalue_icon")}
-							/>
-						</PanelBody>
-						<PanelBody
 							title={__("Layout Controls", "flexi")}
 							initialOpen={false}
 						>
@@ -281,6 +244,44 @@ class FlexiGalleryEdit extends Component {
 								max={500}
 							/>
 						</PanelBody>
+						<PanelBody
+							title={__("Toggle Controls", "flexi")}
+							initialOpen={false}
+						>
+							<ToggleControl
+								label="Display tags above gallery"
+								checked={tag_show}
+								onChange={toggleAttribute("tag_show")}
+							/>
+
+							<ToggleControl
+								label="Enable Popup Lightbox"
+								checked={popup}
+								onChange={toggleAttribute("popup")}
+							/>
+
+							<ToggleControl
+								label="Display title"
+								checked={evalue_title}
+								onChange={toggleAttribute("evalue_title")}
+							/>
+							<ToggleControl
+								label="Display Excerpt"
+								checked={evalue_excerpt}
+								onChange={toggleAttribute("evalue_excerpt")}
+							/>
+							<ToggleControl
+								label="Display Custom Fields"
+								checked={evalue_custom}
+								onChange={toggleAttribute("evalue_custom")}
+							/>
+							<ToggleControl
+								label="Display Icon grid"
+								checked={evalue_icon}
+								onChange={toggleAttribute("evalue_icon")}
+							/>
+						</PanelBody>
+
 						<PanelBody title={__("Effects", "flexi")} initialOpen={false}>
 							<SelectControl
 								label="Image Hover Effect"

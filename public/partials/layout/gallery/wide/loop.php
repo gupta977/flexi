@@ -1,42 +1,34 @@
 <?php
 $data = flexi_image_data('thumbnail', $post, $popup);
 ?>
-
 <div class="pure-u-1 pure-u-md-1-<?php echo $column; ?> flexi_gallery_child flexi_padding"
     id="flexi_<?php echo get_the_ID(); ?>" style="position: relative;" data-tags="<?php echo $tags; ?>">
+<!-- Loop start -->
 
-    <div class='flexi_loop_content flexi_frame_2'>
 
-        <div class="flexi_media flexi-image-wrapper <?php echo $data['popup']; ?>">
-            <a
-                <?php echo $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" border="0"'; ?>>
-                <img src="<?php echo esc_url(flexi_image_src('thumbnail', $post)); ?>">
-                <?php echo ' <div class="flexi_figcaption" id="flexi_cap_' . get_the_ID() . '"></div>'; ?>
-            </a>
-        </div>
-        <div class="flexi_group">
-            <div class="pure-g">
-                <div class="pure-u-1">
-                    <div class="flexi_title"><?php echo $data['title']; ?></div>
-                </div>
-                <div class="pure-u-1 pure-u-md-1-2">
-                    <div class="flexi_p"><?php echo flexi_excerpt(20); ?>
-                        </div>
+<div class="flexi-gallery-wide flexi_frame_2">
+  <div class="flexi-gallery-wide_sub">
+    <div class="flexi-gallery-wide_img <?php echo $data['popup']; ?>  flexi_effect" id="<?php echo $hover_effect; ?>">
+    <a <?php echo $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" border="0"'; ?>>
+    <img
+        src="<?php echo esc_url(flexi_image_src('medium', $post)); ?>"
+        alt="<?php echo $data['title']; ?>"
+      />
+</a>
+</div>
+    <div class="flexi-gallery-wide_info">
+    <h2 style="<?php flexi_evalue_toggle('title', $evalue);?>"><?php echo $data['title']; ?></h2>
+      <span style="<?php flexi_evalue_toggle('custom', $evalue);?>"><?php echo flexi_custom_field_loop($post, 'gallery', 2); ?></span>
+      <p style="<?php flexi_evalue_toggle('excerpt', $evalue);?>"><?php echo flexi_excerpt(20); ?></p>
 
-                </div>
-                <div class="pure-u-1 pure-u-md-1-2">
-                    <div class="flexi_meta_container">
-
-                        <?php
-echo flexi_custom_field_loop($post, 'gallery', 2);
-?> </div>
-                </div>
-            </div>
-        </div>
-        <div class="flexi_bar"><?php echo flexi_show_icon_grid(); ?></div>
+      <span class="flexi_set_bottom" style="<?php flexi_evalue_toggle('icon', $evalue);?>"><?php echo flexi_show_icon_grid(); ?></span>
 
     </div>
+  </div>
+</div>
 
+
+<!-- Loop End -->
 </div>
 <script>
 jQuery(document).ready(function() {

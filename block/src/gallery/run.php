@@ -76,7 +76,7 @@ register_block_type(
    ),
    'evalue_title'   => array(
     'type'    => 'boolean',
-    'default' => false,
+    'default' => true,
    ),
    'evalue_excerpt' => array(
     'type'    => 'boolean',
@@ -88,7 +88,7 @@ register_block_type(
    ),
    'evalue_icon'    => array(
     'type'    => 'boolean',
-    'default' => false,
+    'default' => true,
    ),
   ),
   'render_callback' => 'flexi_gallery_render_callback',

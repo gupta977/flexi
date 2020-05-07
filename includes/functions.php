@@ -766,10 +766,6 @@ function flexi_large_media($post, $class = 'flexi_large_image')
   $attr  = array('src' => $audio);
   return wp_audio_shortcode($attr);
 
- } else if ("other" == $flexi_type) {
-  $other = flexi_file_src($post, true);
-  return '<iframe src="https://docs.google.com/viewer?url=' . $other . '" style="width:100%;height:100%;"></iframe>';
-
  } else {
   $media_url = esc_url(flexi_image_src('large', $post));
   return "<img id='" . $class . "' src='" . $media_url . "' >";
