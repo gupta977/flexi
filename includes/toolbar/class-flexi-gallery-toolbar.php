@@ -1,6 +1,7 @@
 <?php
 class Flexi_Gallery_Toolbar
 {
+ //TOOLBAR PLACEHOLDER ABOVE GALLERY
  public function __construct()
  {
 

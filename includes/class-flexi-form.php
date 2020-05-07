@@ -18,7 +18,7 @@ class Flexi_Shortcode_Form
 //Add icon after form submitted to post new
   add_filter("flexi_submit_toolbar", array($this, 'flexi_add_icon_submit_toolbar'), 10, 3);
   //Add icon after form submitted to view post
-  add_filter("flexi_submit_toolbar", array($this, 'flexi_add_icon_view_post_toolbar'), 10, 3);
+  //add_filter("flexi_submit_toolbar", array($this, 'flexi_add_icon_view_post_toolbar'), 10, 3);
  }
 
  public function render_form($params, $content = null)
@@ -576,26 +576,26 @@ action="' . admin_url("admin-ajax.php") . '"
   return $icon;
  }
 
- //Add post again button after form submit
- public function flexi_add_icon_view_post_toolbar($icon, $id = '', $bool)
- {
-  if ('' != $id) {
-   $extra_icon = array();
-   $link       = get_permalink($id);
+ //Add VIEW button after form submit
+ /* public function flexi_add_icon_view_post_toolbar($icon, $id = '', $bool)
+{
+if ('' != $id) {
+$extra_icon = array();
+$link       = get_permalink($id);
 
-   if ("#" != $link) {
-    $extra_icon = array(
-     array("dashicons-visibility", __('View', 'flexi'), $link, $id, 'pure-button'),
+if ("#" != $link) {
+$extra_icon = array(
+array("dashicons-visibility", __('View', 'flexi'), $link, $id, 'pure-button'),
 
-    );
-   }
+);
+}
 
-   // combine the two arrays
-   if (is_array($extra_icon) && is_array($icon)) {
-    $icon = array_merge($extra_icon, $icon);
-   }
-  }
-  return $icon;
- }
+// combine the two arrays
+if (is_array($extra_icon) && is_array($icon)) {
+$icon = array_merge($extra_icon, $icon);
+}
+}
+return $icon;
+} */
 
 }

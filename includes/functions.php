@@ -1016,7 +1016,7 @@ function flexi_show_icon_grid()
  return $list;
 }
 
-//button toolbar
+//button toolbar to display after user submit post
 function flexi_post_toolbar_grid($id, $bool)
 {
  global $post;
