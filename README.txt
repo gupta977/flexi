@@ -138,6 +138,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.22 =
+* Supported mp4 at Lightbox
+* fixed css for tags
+
 = 1.0.21 =
 * Added support to upload any type of files
 * Multiple filter selection

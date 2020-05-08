@@ -45,17 +45,20 @@ function flexi_file_src($post, $url = true)
 function flexi_image_src($size = 'thumbnail', $post)
 {
  $ftype = flexi_get_type($post);
+ flexi_log("fffff " . $ftype);
  if ('large' == $size) {
 
   if ("mp4" == $ftype) {
    $thumb_url = get_post_meta($post->ID, 'flexi_file', 1);
   } else if ("url" == $ftype) {
    $thumb_url = get_post_meta($post->ID, 'flexi_url', 1);
-  } else {
+  } else if ("image" == $ftype) {
    $thumb_url = get_post_meta($post->ID, 'flexi_image', 1);
-   if (!file_exists($thumb_url)) {
-    return FLEXI_ROOT_URL . 'public/images/' . $ftype . '.png';
-   }
+
+  } else {
+
+   $thumb_url = FLEXI_ROOT_URL . 'public/images/' . $ftype . '.png';
+
   }
   return $thumb_url;
 
@@ -103,7 +106,7 @@ function flexi_get_type($post)
    return $flexi_type[0];
   }
  } else {
-  return '';
+  return 'image';
  }
 }
 

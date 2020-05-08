@@ -6,7 +6,7 @@ class Flexi_Gallery_Toolbar
  {
 
  }
- public function label()
+ public function label($class = "flexi_tag--inverse", $class_main = "flexi_tags")
  {
   //Display label at Main gallery page
   if (is_flexi_page('primary_page', 'flexi_image_layout_settings')) {
@@ -16,7 +16,7 @@ class Flexi_Gallery_Toolbar
    $tag      = get_term_by('slug', $tag_slug, 'flexi_tag');
 
    if ("" != $tag_slug && true == $tag) {
-    return '<div class="flexi_list_tags"><a class="flexi_tag flexi_tag-default">' . $tag->name . '</a></div>';
+    return '<div class="' . $class_main . '"><a class="' . $class . '">' . $tag->name . '</a></div>';
    }
 
    //Show Album Label

@@ -245,8 +245,8 @@ function flexi_get_taxonomy_raw($post_id, $taxonomy_name)
  return rtrim($data, ',') . ',';
 }
 
-//Generate gallery_tags link
-function flexi_generate_tags($tags_array, $flexi_tag_class = 'flexi_tag', $filter_class = 'filter_tag')
+//Generate gallery_tags link for above gallery
+function flexi_generate_tags($tags_array, $flexi_tag_class = 'flexi_tag--inverse', $filter_class = 'filter_tag')
 {
  $taglink = '';
  if (count($tags_array) > 1) {
@@ -266,14 +266,14 @@ function flexi_generate_tags($tags_array, $flexi_tag_class = 'flexi_tag', $filte
 }
 
 //Flexi List TAGs
-function flexi_list_tags($post, $class = "flexi_tag flexi_tag-default")
+function flexi_list_tags($post, $class = "flexi_tag--inverse", $class_main = "flexi_tags")
 {
  //Returns All Term Items for "my_taxonomy"
  $term_list = wp_get_post_terms($post->ID, 'flexi_tag', array("fields" => "all"));
  //var_dump($term_list);
 
  if (count($term_list) > 0) {
-  echo '<div class="flexi_list_tags">';
+  echo '<div class="' . $class_main . '">';
  }
 
  for ($x = 0; $x < count($term_list); $x++) {
@@ -281,7 +281,7 @@ function flexi_list_tags($post, $class = "flexi_tag flexi_tag-default")
   $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
   $link = add_query_arg("flexi_tag", $term_list[$x]->slug, $link);
 
-  echo '<a href="' . $link . '" class="' . $class . '">' . $term_list[$x]->name . '</a>';
+  echo ' <a href="' . $link . '" class="' . $class . '">' . $term_list[$x]->name . '</a> ';
  }
 
  if (count($term_list) > 0) {
