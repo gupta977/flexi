@@ -45,7 +45,6 @@ function flexi_file_src($post, $url = true)
 function flexi_image_src($size = 'thumbnail', $post)
 {
  $ftype = flexi_get_type($post);
- flexi_log("fffff " . $ftype);
  if ('large' == $size) {
 
   if ("mp4" == $ftype) {

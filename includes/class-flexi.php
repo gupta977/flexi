@@ -107,6 +107,10 @@ class Flexi
  private function load_dependencies()
  {
 
+//Appsero stats
+  require_once plugin_dir_path(dirname(__FILE__)) . 'includes/appsero/Client.php';
+  require_once plugin_dir_path(dirname(__FILE__)) . 'includes/appsero/run.php';
+
   //oEmbed URL
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/oembed/class-flexi-oembed.php';
 
