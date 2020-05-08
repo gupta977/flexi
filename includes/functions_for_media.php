@@ -41,40 +41,67 @@ function flexi_file_src($post, $url = true)
 
 }
 
-
-
 //Return image url
 function flexi_image_src($size = 'thumbnail', $post)
 {
- $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'flexi_image_id', 1), $size);
- $ftype            = flexi_get_type($post);
+ $ftype = flexi_get_type($post);
+ if ('large' == $size) {
 
- if ($image_attributes) {
-  return $image_attributes[0];
- } else {
-  //If no image ID found, check if it has direct URL for thumbnail & large size for video URL
-  //Use flexi_large_media() at detail page
-
-  if ('large' == $size) {
-   $thumb_url = get_post_meta($post->ID, 'flexi_url', '');
+  if ("mp4" == $ftype) {
+   $thumb_url = get_post_meta($post->ID, 'flexi_file', 1);
+  } else if ("url" == $ftype) {
+   $thumb_url = get_post_meta($post->ID, 'flexi_url', 1);
   } else {
-   $thumb_url = get_post_meta($post->ID, 'flexi_image', '');
+   $thumb_url = get_post_meta($post->ID, 'flexi_image', 1);
+   if (!file_exists($thumb_url)) {
+    return FLEXI_ROOT_URL . 'public/images/' . $ftype . '.png';
+   }
   }
-  if (!empty($thumb_url)) {
-   return $thumb_url[0];
-  } else {
+  return $thumb_url;
 
+ } else {
+
+  if ("url" == $ftype) {
+   return get_post_meta($post->ID, 'flexi_image', '')[0];
+  } else if ("video" == $ftype || "audio" == $ftype || "other" == $ftype) {
    return FLEXI_ROOT_URL . 'public/images/' . $ftype . '.png';
+  } else {
+   $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'flexi_image_id', 1), $size);
+   if ($image_attributes) {
+    return $image_attributes[0];
+   } else {
+    return FLEXI_ROOT_URL . 'public/images/' . $ftype . '.png';
+   }
   }
  }
+
+ return FLEXI_ROOT_URL . 'public/images/' . $ftype . '.png';
 }
 
 //Return the type of flexi post is image,video,audio,url,other
 function flexi_get_type($post)
 {
  $flexi_type = get_post_meta($post->ID, 'flexi_type', '');
+
  if (isset($flexi_type[0])) {
-  return $flexi_type[0];
+  if ("video" == $flexi_type[0] || "audio" == $flexi_type[0] || "other" == $flexi_type[0]) {
+   $rawfile  = get_post_meta($post->ID, 'flexi_file', 1);
+   $filetype = wp_check_filetype($rawfile);
+   $ext      = $filetype['ext'];
+   if ("pdf" == $ext) {
+    return "pdf";
+   } else if ("mp4" == $ext) {
+    return "mp4";
+   } else if ("mp3" == $ext) {
+    return "mp3";
+
+   } else {
+    return $flexi_type[0];
+   }
+
+  } else {
+   return $flexi_type[0];
+  }
  } else {
   return '';
  }
@@ -91,12 +118,12 @@ function flexi_large_media($post, $class = 'flexi_large_image')
   $attr      = array('src' => $media_url);
   return wp_oembed_get($attr['src']);
 
- } else if ("video" == $flexi_type) {
+ } else if ("video" == $flexi_type || "mp4" == $flexi_type) {
   $video = flexi_file_src($post, true);
   $attr  = array('src' => $video);
   return wp_video_shortcode($attr);
 
- } else if ("audio" == $flexi_type) {
+ } else if ("audio" == $flexi_type || "mp3" == $flexi_type) {
   $audio = flexi_file_src($post, true);
   $attr  = array('src' => $audio);
   return wp_audio_shortcode($attr);
