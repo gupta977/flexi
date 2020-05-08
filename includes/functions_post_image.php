@@ -301,8 +301,6 @@ function flexi_prepare_post($title, $content, $post_type = 'flexi')
  $postData['post_author']  = flexi_get_author();
  $postData['post_type']    = 'flexi';
 
- //upg_log($content."---".$post_type);
-
  if (flexi_get_option('publish', 'flexi_form_settings', 1) == 1) {
   $postData['post_status'] = 'publish';
  }

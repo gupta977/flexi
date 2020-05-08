@@ -138,7 +138,6 @@ function flexi_ajax_post()
   $result['error'][] = "Upload Type Not Supported. Check your form parameters.";
  }
  // Don't forget to exit at the end of processing
- //upg_log($result['error']);
  $data = json_encode($response);
  echo $data;
  die();

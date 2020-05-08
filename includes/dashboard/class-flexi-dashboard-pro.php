@@ -81,6 +81,7 @@ echo get_option('FLEXI_PRO_RESPONSE', '');
 <li>Bulk image upload (drag and drop multiple file) <a href="#TB_inline?width=600&height=200&inlineId=drag" title="Drag & Drop multiple files" class="thickbox">Sample code</a></li>
 <li>Let users to modify own submitted post (Edit Button)  <a href="#TB_inline?width=600&height=200&inlineId=modify" title="Edit page content" class="thickbox">Sample code</a></li>
 <li>Extra 7 custom fields</li>
+<li>Add more own mime-type files</li>
 </ul>
 </div>
 

@@ -9,12 +9,12 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Advance responsive photo,video gallery plugin submitted by user without login.
+Let visitors submit photo,video,pdf,mp3 and any type file without login.
 
 == Description ==
 
 No more looking for fast, easy gallery plugin with simple and very beautiful, highly customizable design.
-With our plugin you can let your visitors to post images, youtube video, vimeo video & text content from frontend without login and convert those content into gallery. If you allow membership, visitors can manage their submitted post & administrator have option for it's visibility. At the same time WordPress professionals get advanced tools and freedom of creativity. 
+With our plugin you can let your visitors to post images, youtube video, vimeo video, PDF, MP3, MP4 & type of files from frontend without login and convert those content into gallery. If you allow membership, visitors can manage their submitted post & administrator have option for it's visibility. At the same time WordPress professionals get advanced tools and freedom of creativity. 
 Just download and use blocks to generate gallery & forms.
 Fall in Love with this plugin like we do!
 
@@ -25,7 +25,7 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 <a href="https://odude.com/docs/flexi-gallery/">Documentation</a>
 
 = Flexi is divided into 3 parts =
-1- Forms - Let visitors submit content from frontend (Eg. youtube, vimeo, images)
+1- Forms - Let visitors submit content from frontend (Eg. URL, images,video,audio, others)
 2- Gallery - Showcase of content into various layouts (Eg. Masonry Layout)
 3- Detail - View content into popup or in full detail single page. (Eg. Lightbox)
 
@@ -52,6 +52,7 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 *   **Temporary Disable** - Ability to temporary disable all forms in one click from settings.
 *   **Custom Fields** - Collect extra information from visitors while submitting form and display/hide it at gallery, lightbox & detail page. 
 *   **Moderation** - All submitted can be moderated so that it is visible only after approval by administrator.
+*   **Any Type of File** - Ability to submit any type of file format allowed by administrator
 
 = WORKS GREAT WITH =
 
@@ -64,6 +65,16 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 * **Auto Thumbnail** -  Thumbnail image for video is auto generated. No need to post thumbnail manually.
 * **Lightbox** - Video is played over popup with full media controls given by provider.
 * **Full Page** - Option to view video in full page with video detail long description & custom fields submitted by visitors.
+
+= SUPPORTED FILES to UPLOAD =
+* YouTube URL
+* Vimeo URL
+* All type of images
+* All type of Videos Eg. MP4, m4v, webm
+* All type of Audio Eg. MP3, m4a, m4b
+* All most all type of files Eg. PDF, DOC, XLS, TXT, CSV
+* Flexi-PRO user has ability to add own file/type in settings.
+* Admin has ability to restrict & allow certain type of files
 
 = CORE FEATURES =
 
@@ -83,6 +94,7 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 * **Google reCaptcha** support for form security while submitting form.
 * **Custom Fields** extra 7 fields on top of free version. 
 * **Edit Post** Let visitors to update the submitted post with own set of fields. 
+* **More Mime Types** - Add more file type to allow visitors to upload.
 
 > If any suggestion, contact me directly at navneet@odude.com
 > Byte update at https://github.com/gupta977/flexi
@@ -109,9 +121,6 @@ At Wordpress dashboard, click on ADD NEW FLEXI POST and select file and upload a
 
 UPG is very advance and people feel it complicated. Flexi is only for images with basic important features similar to UPG.
 
-= Can I use UPG-PRO =
-Unless we release FLEXI-PRO version, you can use UPG-PRO which will enabled all other premium features.  
-
 = Important Settings  =
 At Flexi Settings all configuration are ready, but do check all automatically created pages should be assigned at selected field. Do not delete page even if not required. 
 
@@ -129,6 +138,12 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.21 =
+* Added support to upload any type of files
+* Multiple filter selection
+* shortcodes Updated
+* updated all available layouts
+
 = 1.0.20 =
 * Added toggle for title,excerpt, custom fields & icons
 * Updated basic, regular, portfolio Layouts

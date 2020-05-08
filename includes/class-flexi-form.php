@@ -57,7 +57,7 @@ class Flexi_Shortcode_Form
    }
   }
 
-  //Prevent form update if not UPG pro
+  //Prevent form update if not Flexi-PRO
   if ($current_page_id == $edit_page_id) {
    if (!is_flexi_pro()) {
     $edit_post = false;

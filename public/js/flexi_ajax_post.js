@@ -72,7 +72,6 @@ jQuery(document).ready(function () {
         return jqXHR;
       },
       beforeSend: function () {
-        //console.log("Send to UPG");
         jQuery("#flexi_form").slideUp();
         jQuery("#flexi_loader").show();
         i = 0;

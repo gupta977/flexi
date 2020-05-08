@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
-"POT-Creation-Date: 2020-05-02 21:39+0545\n"
+"POT-Creation-Date: 2020-05-08 11:56+0545\n"
 "PO-Revision-Date: 2020-02-09 12:49+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Plugin Settings"
 msgstr ""
 
-#: block/src/form/block.js:59 includes/functions.php:1064
+#: block/src/form/block.js:59 includes/functions.php:966
 msgid "Flexi Submission Form"
 msgstr ""
 
@@ -83,35 +83,35 @@ msgstr ""
 msgid "Form Settings"
 msgstr ""
 
-#: block/src/form/edit.js:139
+#: block/src/form/edit.js:135
 msgid "Title Field"
 msgstr ""
 
-#: block/src/form/edit.js:152
+#: block/src/form/edit.js:148
 msgid "Description Field"
 msgstr ""
 
-#: block/src/form/edit.js:176
+#: block/src/form/edit.js:172
 msgid "Category Field"
 msgstr ""
 
-#: block/src/form/edit.js:200
+#: block/src/form/edit.js:196
 msgid "Tag Field"
 msgstr ""
 
-#: block/src/form/edit.js:216
+#: block/src/form/edit.js:212
 msgid "Image Upload Field"
 msgstr ""
 
-#: block/src/form/edit.js:242
+#: block/src/form/edit.js:238
 msgid "URL Submit Field"
 msgstr ""
 
-#: block/src/form/edit.js:260
+#: block/src/form/edit.js:256
 msgid "Security reCaptcha Field"
 msgstr ""
 
-#: block/src/form/edit.js:269
+#: block/src/form/edit.js:265
 msgid "Submit Button"
 msgstr ""
 
@@ -127,15 +127,15 @@ msgstr ""
 msgid "Gallery based on Selection"
 msgstr ""
 
-#: block/src/gallery/edit.js:168
-msgid "Toggle Controls"
-msgstr ""
-
-#: block/src/gallery/edit.js:205
+#: block/src/gallery/edit.js:180
 msgid "Layout Controls"
 msgstr ""
 
-#: block/src/gallery/edit.js:272
+#: block/src/gallery/edit.js:248
+msgid "Toggle Controls"
+msgstr ""
+
+#: block/src/gallery/edit.js:285
 msgid "Effects"
 msgstr ""
 
@@ -213,6 +213,63 @@ msgstr ""
 msgid "Label: flexi_field_"
 msgstr ""
 
+#: includes/addon/class-flexi-mime-type.php:29
+msgid "Manage Mime Type"
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:30
+msgid "Add new file type to upload."
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:45
+msgid "Enable Mime Type"
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:46
+msgid "Select the list of file type user is allowed to upload."
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:68
+msgid "Select allowed file type"
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:72
+#: includes/addon/class-flexi-mime-type.php:73
+#: includes/addon/class-flexi-mime-type.php:74
+msgid "Image format"
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:75
+#: includes/addon/class-flexi-mime-type.php:76
+#: includes/addon/class-flexi-mime-type.php:77
+msgid "Video format"
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:78
+#: includes/addon/class-flexi-mime-type.php:79
+msgid "Text format"
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:80
+msgid "Audio format"
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:81
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:82
+msgid "Word Document (DOC)"
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:89
+msgid "Extra Mime type"
+msgstr ""
+
+#: includes/addon/class-flexi-mime-type.php:90
+msgid "Add extra file type if not listed above separated with comma.<br>Eg. video/avi,video/3gpp,audio/midi<br>Required Flexi-PRO"
+msgstr ""
+
 #: includes/addon/class-flexi-ultimate-member.php:30
 msgid "Ultimate-Member"
 msgstr ""
@@ -269,15 +326,15 @@ msgstr ""
 msgid "Posts"
 msgstr ""
 
-#: includes/class-flexi-detail.php:45
+#: includes/class-flexi-detail.php:58
 msgid "Detail icon"
 msgstr ""
 
-#: includes/class-flexi-detail.php:46
+#: includes/class-flexi-detail.php:59
 msgid "Hide/Show detail icon at gallery lightbox"
 msgstr ""
 
-#: includes/class-flexi-detail.php:67 includes/class-flexi-settings.php:106
+#: includes/class-flexi-detail.php:80 includes/class-flexi-settings.php:106
 msgid "Detail"
 msgstr ""
 
@@ -297,15 +354,15 @@ msgstr ""
 msgid "Processing"
 msgstr ""
 
-#: includes/class-flexi-form.php:223 includes/flexi_ajax_post.php:86
-msgid "Successfully posted"
+#: includes/class-flexi-form.php:223 includes/flexi_ajax_post.php:88
+msgid "Submission completed"
 msgstr ""
 
 #: includes/class-flexi-form.php:226 includes/class-flexi-form.php:289
 msgid "Your submission is under review."
 msgstr ""
 
-#: includes/class-flexi-form.php:286 includes/flexi_ajax_post.php:124
+#: includes/class-flexi-form.php:286 includes/flexi_ajax_post.php:126
 msgid "Successfully updated"
 msgstr ""
 
@@ -317,11 +374,7 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#: includes/class-flexi-form.php:588
-msgid "View"
-msgstr ""
-
-#: includes/class-flexi-gallery.php:314
+#: includes/class-flexi-gallery.php:309
 msgid "Layout not available"
 msgstr ""
 
@@ -329,15 +382,15 @@ msgstr ""
 msgid "Flexi Meta Controls"
 msgstr ""
 
-#: includes/class-flexi-metabox.php:91
+#: includes/class-flexi-metabox.php:101
 msgid "Category Thumbnail"
 msgstr ""
 
-#: includes/class-flexi-metabox.php:138
+#: includes/class-flexi-metabox.php:148
 msgid "Flexi Shortcode"
 msgstr ""
 
-#: includes/class-flexi-metabox.php:147
+#: includes/class-flexi-metabox.php:157
 msgid "Save & reopen to get shortcode"
 msgstr ""
 
@@ -567,7 +620,7 @@ msgid "Effect on mouse over image."
 msgstr ""
 
 #: includes/class-flexi-settings.php:234 includes/class-flexi-settings.php:247
-#: includes/functions.php:662
+#: includes/functions.php:651
 msgid "None"
 msgstr ""
 
@@ -671,7 +724,7 @@ msgstr ""
 msgid "Select gallery layout"
 msgstr ""
 
-#: includes/class-flexi-settings.php:314 includes/class-flexi-settings.php:400
+#: includes/class-flexi-settings.php:314 includes/class-flexi-settings.php:407
 msgid "Selected layout will be used as default layout, if not specified in shortcode parameter."
 msgstr ""
 
@@ -751,81 +804,89 @@ msgstr ""
 msgid "Hide/Show user icon at gallery & detail page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:392
-msgid "Enable Lightbox or Popup"
+#: includes/class-flexi-settings.php:390
+msgid "Download icon"
 msgstr ""
 
-#: includes/class-flexi-settings.php:393
-msgid "If popup is unchecked, It will open content in single dedicated page."
+#: includes/class-flexi-settings.php:391
+msgid "Hide/Show download icon at gallery & detail page."
 msgstr ""
 
 #: includes/class-flexi-settings.php:399
+msgid "Enable Lightbox or Popup"
+msgstr ""
+
+#: includes/class-flexi-settings.php:400
+msgid "If popup is unchecked, It will open content in single dedicated page."
+msgstr ""
+
+#: includes/class-flexi-settings.php:406
 msgid "Select Detail Page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:410
+#: includes/class-flexi-settings.php:417
 msgid "Default Post Category"
 msgstr ""
 
-#: includes/class-flexi-settings.php:411
+#: includes/class-flexi-settings.php:418
 msgid "This category will be selected if no category is assigned by visitor."
 msgstr ""
 
-#: includes/class-flexi-settings.php:422
+#: includes/class-flexi-settings.php:429
 msgid "Thumbnail size"
 msgstr ""
 
-#: includes/class-flexi-settings.php:423 includes/class-flexi-settings.php:446
-#: includes/class-flexi-settings.php:460
+#: includes/class-flexi-settings.php:430 includes/class-flexi-settings.php:453
+#: includes/class-flexi-settings.php:467
 msgid "Width"
 msgstr ""
 
-#: includes/class-flexi-settings.php:424 includes/class-flexi-settings.php:447
-#: includes/class-flexi-settings.php:461
+#: includes/class-flexi-settings.php:431 includes/class-flexi-settings.php:454
+#: includes/class-flexi-settings.php:468
 msgid "Height"
 msgstr ""
 
-#: includes/class-flexi-settings.php:425
+#: includes/class-flexi-settings.php:432
 msgid "Applied at gallery page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:445
+#: includes/class-flexi-settings.php:452
 msgid "Medium size"
 msgstr ""
 
-#: includes/class-flexi-settings.php:448
+#: includes/class-flexi-settings.php:455
 msgid "medium"
 msgstr ""
 
-#: includes/class-flexi-settings.php:459
+#: includes/class-flexi-settings.php:466
 msgid "Large size"
 msgstr ""
 
-#: includes/class-flexi-settings.php:462
+#: includes/class-flexi-settings.php:469
 msgid "Specially applied at detail page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:476
+#: includes/class-flexi-settings.php:483
 msgid "Image Detail Page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:477
+#: includes/class-flexi-settings.php:484
 msgid "Replaces the SLUG value used by custom post type \"flexi\"."
 msgstr ""
 
-#: includes/class-flexi-settings.php:741
+#: includes/class-flexi-settings.php:748
 msgid "Select layout"
 msgstr ""
 
-#: includes/class-flexi-settings.php:823
+#: includes/class-flexi-settings.php:830
 msgid "Choose File"
 msgstr ""
 
-#: includes/class-flexi-settings.php:875
+#: includes/class-flexi-settings.php:882
 msgid "Select a page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:898
+#: includes/class-flexi-settings.php:905
 msgid "Select category"
 msgstr ""
 
@@ -837,8 +898,9 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: includes/class-flexi_ajax_delete.php:50 includes/functions.php:442
-#: includes/functions.php:444
+#: includes/class-flexi_ajax_delete.php:50
+#: includes/class-flexi_ajax_download.php:57 includes/functions.php:431
+#: includes/functions.php:433
 msgid "Login Please !"
 msgstr ""
 
@@ -846,55 +908,59 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: includes/flexi_ajax_post.php:89
+#: includes/class-flexi_ajax_download.php:76
+msgid "Download"
+msgstr ""
+
+#: includes/flexi_ajax_post.php:91
 msgid "Your submission is under review"
 msgstr ""
 
-#: includes/flexi_ajax_post.php:127
+#: includes/flexi_ajax_post.php:129
 msgid "Your modification is under review."
 msgstr ""
 
-#: includes/flexi_ajax_post.php:131
+#: includes/flexi_ajax_post.php:133
 msgid "Submission failed"
 msgstr ""
 
-#: includes/functions.php:266
+#: includes/functions.php:255
 msgid "Show All"
 msgstr ""
 
-#: includes/functions.php:373
+#: includes/functions.php:362
 msgid "Album"
 msgstr ""
 
-#: includes/functions.php:614
-msgid "Required Flexi-PRO or UPG-PRO"
+#: includes/functions.php:603
+msgid "Required Flexi-PRO"
 msgstr ""
 
-#: includes/functions.php:1018
+#: includes/functions.php:920
 msgid "Title cannot be blank."
 msgstr ""
 
-#: includes/functions.php:1021
-msgid "This file is not supported or file too big."
+#: includes/functions.php:923
+msgid "Invalid file type"
 msgstr ""
 
-#: includes/functions.php:1024
-msgid "This file type is not supported. Only image files are allowed."
+#: includes/functions.php:926
+msgid "Only image files are allowed."
 msgstr ""
 
-#: includes/functions.php:1027
+#: includes/functions.php:929
 msgid "Captcha security code is invalid."
 msgstr ""
 
-#: includes/functions.php:1050
+#: includes/functions.php:952
 msgid "Flexi Primary Gallery"
 msgstr ""
 
-#: includes/functions.php:1057
+#: includes/functions.php:959
 msgid "Flexi User Dashboard"
 msgstr ""
 
-#: includes/functions.php:1071
+#: includes/functions.php:973
 msgid "Flexi Edit/Modify"
 msgstr ""
 
@@ -951,10 +1017,14 @@ msgstr ""
 msgid "Are you sure you want to delete?"
 msgstr ""
 
+#: public/class-flexi-public.php:122
+msgid "Download file?"
+msgstr ""
+
 #: public/partials/layout/gallery/basic/footer.php:6
 #: public/partials/layout/gallery/masonry/footer.php:6
 #: public/partials/layout/gallery/portfolio/footer.php:5
 #: public/partials/layout/gallery/regular/footer.php:6
-#: public/partials/layout/gallery/wide/footer.php:5
+#: public/partials/layout/gallery/wide/footer.php:6
 msgid "No records"
 msgstr ""

@@ -3,6 +3,8 @@
 require_once plugin_dir_path(__FILE__) . 'functions_post_image.php';
 //Functions used during submission of URL only
 require_once plugin_dir_path(__FILE__) . 'functions_post_url.php';
+//Functions related to media only
+require_once plugin_dir_path(__FILE__) . 'functions_for_media.php';
 
 //Gets link of post author with it's avatar icon.
 function flexi_author($author = '', $redirect = true)
@@ -49,19 +51,6 @@ function flexi_custom_field_value($post_id, $field_name)
  } else {
   return '';
  }
-}
-//Get attachment detail
-function flexi_get_attachment($attachment_id)
-{
- $attachment = get_post($attachment_id);
- return array(
-  'alt'         => get_post_meta($attachment->ID, '_wp_attachment_image_alt', true),
-  'caption'     => $attachment->post_excerpt,
-  'description' => $attachment->post_content,
-  'href'        => get_permalink($attachment->ID),
-  'src'         => $attachment->guid,
-  'title'       => $attachment->post_title,
- );
 }
 
 /**
@@ -257,16 +246,16 @@ function flexi_get_taxonomy_raw($post_id, $taxonomy_name)
 }
 
 //Generate gallery_tags link
-function flexi_generate_tags($tags_array, $upg_tag_class = 'flexi_tag', $filter_class = 'filter_tag')
+function flexi_generate_tags($tags_array, $flexi_tag_class = 'flexi_tag', $filter_class = 'filter_tag')
 {
  $taglink = '';
  if (count($tags_array) > 1) {
   $taglink .= '<div class="flexi_tags" style="margin: 5px">';
 
-  $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' ' . $upg_tag_class . ' flexi_tag_active">' . __('Show All', 'wp-upg') . '</a> ';
+  $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' ' . $flexi_tag_class . ' flexi_tag_active">' . __('Show All', 'flexi') . '</a> ';
   if (count($tags_array) > 1) {
    foreach ($tags_array as $tags => $value) {
-    $taglink .= '<a href="javascript:void(0)" id="' . $tags . '" class="' . $filter_class . ' ' . $upg_tag_class . ' ">' . $value . '</a> ';
+    $taglink .= '<a href="javascript:void(0)" id="' . $tags . '" class="' . $filter_class . ' ' . $flexi_tag_class . ' ">' . $value . '</a> ';
    }
   }
 
@@ -611,7 +600,7 @@ function flexi_sanitize_content($content)
 //Required Flexi-PRO
 function flexi_pro_required()
 {
- return "<div class='flexi_alert-box flexi_warning'>" . __('Required Flexi-PRO or UPG-PRO', 'flexi') . "</div>";
+ return "<div class='flexi_alert-box flexi_warning'>" . __('Required Flexi-PRO', 'flexi') . "</div>";
 }
 
 //Return array of hidden category
@@ -681,98 +670,6 @@ function flexi_log($message)
  }
 }
 
-//Get full size media server path. Not URL
-function flexi_file_src($post, $url = true)
-{
- $ftype = flexi_get_type($post);
-
- if ("image" == $ftype || '' == $ftype) {
-  $rawfile = get_post_meta($post->ID, 'flexi_image_id', 1);
- } else if ("url" == $ftype) {
-  $rawfile = '';
- } else {
-  $rawfile = get_post_meta($post->ID, 'flexi_file_id', 1);
- }
-
- if ('' != $rawfile) {
-  if ($url) {
-   return wp_get_attachment_url($rawfile);
-  } else {
-   return get_attached_file($rawfile);
-  }
- } else {
-  return '';
- }
-
-}
-
-//
-// All commonly used function are listed
-//
-//Return image url
-function flexi_image_src($size = 'thumbnail', $post)
-{
- $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'flexi_image_id', 1), $size);
- $ftype            = flexi_get_type($post);
-
- if ($image_attributes) {
-  return $image_attributes[0];
- } else {
-  //If no image ID found, check if it has direct URL for thumbnail & large size for video URL
-  //Use flexi_large_media() at detail page
-
-  if ('large' == $size) {
-   $thumb_url = get_post_meta($post->ID, 'flexi_url', '');
-  } else {
-   $thumb_url = get_post_meta($post->ID, 'flexi_image', '');
-  }
-  if (!empty($thumb_url)) {
-   return $thumb_url[0];
-  } else {
-
-   return FLEXI_ROOT_URL . 'public/images/' . $ftype . '.png';
-  }
- }
-}
-
-//Return the type of flexi post is image,video,audio,url,other
-function flexi_get_type($post)
-{
- $flexi_type = get_post_meta($post->ID, 'flexi_type', '');
- if (isset($flexi_type[0])) {
-  return $flexi_type[0];
- } else {
-  return '';
- }
-}
-
-function flexi_large_media($post, $class = 'flexi_large_image')
-{
-
- $flexi_type = flexi_get_type($post);
-
- if ("url" == $flexi_type) {
-  $media_url = esc_url(flexi_image_src('large', $post));
-  $attr      = array('src' => $media_url);
-  return wp_oembed_get($attr['src']);
-
- } else if ("video" == $flexi_type) {
-  $video = flexi_file_src($post, true);
-  $attr  = array('src' => $video);
-  return wp_video_shortcode($attr);
-
- } else if ("audio" == $flexi_type) {
-  $audio = flexi_file_src($post, true);
-  $attr  = array('src' => $audio);
-  return wp_audio_shortcode($attr);
-
- } else {
-  $media_url = esc_url(flexi_image_src('large', $post));
-  return "<img id='" . $class . "' src='" . $media_url . "' >";
- }
-
-}
-
 //Returns author ID of logged in user. If not returns the id of default user in UPG settings.
 function flexi_get_author()
 {
@@ -815,36 +712,6 @@ function is_flexi_pro()
  }
 }
 
-//Get link and added attributes of the image based on lightbox
-function flexi_image_data($size = 'full', $post = '', $popup = "on")
-{
- //flexi_log($popup);
- if ("on" == $popup || '1' == $popup) {
-  $popup    = 1;
-  $lightbox = true;
- } else {
-  $popup    = 0;
-  $lightbox = false;
- }
-
- $data          = array();
- $data['title'] = get_the_title();
-
- if ('' == $post) {
-  global $post;
- }
-
- if ($lightbox) {
-  $data['url']   = flexi_image_src('large', $post);
-  $data['extra'] = 'data-fancybox-trigger';
-  $data['popup'] = 'flexi_show_popup';
- } else {
-  $data['url']   = get_permalink();
-  $data['extra'] = '';
-  $data['popup'] = 'flexi_media_holder';
- }
- return $data;
-}
 /**
  * Get default plugin settings.
  *
