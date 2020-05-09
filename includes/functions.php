@@ -424,14 +424,27 @@ function flexi_layout_list($args = '')
 //Displays login link
 function flexi_login_link()
 {
- $login = flexi_get_option('my_login', 'flexi_general_settings', '0');
 
- if ('0' != $login) {
-  $linku = get_permalink($login);
-  echo "<a href='" . $linku . "' class='pure-button'>" . __("Login Please !", "flexi") . "</a>";
- } else {
-  echo "<div class='flexi_alert-box flexi_notice'>" . __("Login Please !", "flexi") . "</div>";
- }
+ echo "<div class='flexi_alert-box flexi_notice'>" . __("Login", "flexi") . "</div>";
+ echo "<div class='flexi_frame_2' style='padding:30px;'>";
+ $args = array(
+  'echo'           => true,
+  'redirect'       => flexi_get_button_url('', false, 'my_gallery', 'flexi_image_layout_settings'),
+  'form_id'        => 'loginform',
+  'label_username' => __('Username', "flexi"),
+  'label_password' => __('Password', "flexi"),
+  'label_remember' => __('Remember Me', "flexi"),
+  'label_log_in'   => __('Login', "flexi"),
+  'id_username'    => 'user_login',
+  'id_password'    => 'user_pass',
+  'id_remember'    => 'rememberme',
+  'id_submit'      => 'wp-submit',
+  'remember'       => true,
+  'value_username' => null,
+  'value_remember' => false);
+
+ wp_login_form($args);
+ echo "</div>";
 }
 
 //Get post button link

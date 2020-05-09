@@ -63,7 +63,7 @@ class Flexi_Admin_Dashboard_Intro
           <a href='<?php echo flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings'); ?>' target='_blank'><div class="tooltip-container">Submission Form<span class="tooltip"><b>Let's user to submit</b><br>[flexi-form]<br> Add it into menu bar</span></div></a>
 			<ul>
 				<li>
-                    <a href='<?php echo flexi_get_button_url('', false, 'my_login', 'flexi_general_settings'); ?>' target='_blank'><div class="tooltip-container">Login Page<span class="tooltip"><b>Member Login Page</b><br>Where user enters username & password<br> Use it only if you want members to manage submitted post or want only member to submit.</span></div></a>
+                    <a href='#' target='_blank'><div class="tooltip-container">Login Page<span class="tooltip"><b>Member Login Page</b><br>Where user enters username & password<br> Use it only if you want members to manage submitted post or want only member to submit.</span></div></a>
 					<ul>
 							<li> <a href='<?php echo flexi_get_button_url('', false, 'my_gallery', 'flexi_image_layout_settings'); ?>' target='_blank'><div class="tooltip-container">User Dashboard<span class="tooltip"><b>Gallery submitted by current user</b><br>[flexi-user-dashboard]<br> Add it into menu bar.</span></div></a>
 

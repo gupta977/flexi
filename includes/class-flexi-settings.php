@@ -120,20 +120,15 @@ class FLEXI_Admin_Settings
  {
   $sections = array(
    array(
-    'id'    => 'flexi_general_settings',
-    'title' => __('General settings', 'flexi'),
-    'tab'   => 'general',
+    'id'          => 'flexi_icon_settings',
+    'title'       => __('Icons & user access settings', 'flexi'),
+    'description' => __('Show/Hide Icons at gallery & detail page.', 'flexi'),
+    'tab'         => 'general',
    ),
    array(
     'id'          => 'flexi_media_settings',
     'title'       => __('Media settings', 'flexi'),
     'description' => __('The sizes listed below determine only the image container size. It do not affect original sizes.', 'flexi'),
-    'tab'         => 'general',
-   ),
-   array(
-    'id'          => 'flexi_icon_settings',
-    'title'       => __('Icons & user access settings', 'flexi'),
-    'description' => __('Show/Hide Icons at gallery & detail page.', 'flexi'),
     'tab'         => 'general',
    ),
 
@@ -191,16 +186,6 @@ class FLEXI_Admin_Settings
  {
 
   $fields = array(
-   'flexi_general_settings'            => array(
-    array(
-     'name'              => 'my_login',
-     'label'             => __('Select Login Page', 'flexi'),
-     'description'       => __('Optional: Login page where user enters username & passwords. Install 3rd party plugins eg. Login Page, Ultimate-Member, Social Login.', 'flexi'),
-     'type'              => 'pages',
-     'sanitize_callback' => 'sanitize_key',
-    ),
-
-   ),
 
    'flexi_gallery_appearance_settings' => array(
     array(

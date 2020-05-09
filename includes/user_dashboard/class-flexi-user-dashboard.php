@@ -18,7 +18,7 @@ class Flexi_User_Dashboard
 
     $current_user = wp_get_current_user();
 
-    //var_dump($current_user);
+    echo '<a href="' . wp_logout_url(home_url()) . '">' . __('Logout', 'flexi') . '</a>';
     ?>
 
 <div style="text-align:center;"><?php echo flexi_author($current_user->user_login); ?>
