@@ -165,5 +165,8 @@ function flexi_image_data($size = 'full', $post = '', $popup = "on")
   $data['extra'] = '';
   $data['popup'] = 'flexi_media_holder';
  }
+
+ $data['type'] = flexi_get_type($post);
+
  return $data;
 }

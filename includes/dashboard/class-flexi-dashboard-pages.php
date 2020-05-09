@@ -48,14 +48,14 @@ echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_for
 Page should contain <code>[flexi-form]</code> shortcode enclosed with <code>[flexi-form-tag]</code>. Link this page at <a href="<?php echo admin_url('nav-menus.php'); ?>">frontend menu</a>.
 <div id="sample_post_form" style="display:none;">
      <p>
-     [flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"]<br>
-		[flexi-form-tag type="post_title" title="Title" value="" placeholder="main title"]<br>
+    [flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"]<br>
+		[flexi-form-tag type="post_title" title="Title" value="" placeholder="main title" required="true"]<br>
 		[flexi-form-tag type="category" title="Select category"]<br>
 		[flexi-form-tag type="tag" title="Insert tag"]<br>
 		[flexi-form-tag type="article" title="Description"  placeholder="Content"]<br>
-		[flexi-form-tag type="file" title="Select file"]<br>
+		[flexi-form-tag type="file" title="Select file" required="true"]<br>
 		[flexi-form-tag type="submit" name="submit" value="Submit Now"]<br>
-		[/flexi-form]<br>
+    [/flexi-form]
      </p>
 </div>
 

@@ -146,6 +146,11 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.23 =
+* Own user login page
+* Updated admin dashboard
+* Updated progress bar during upload
+
 = 1.0.22 =
 * Supported mp4 at Lightbox
 * fixed css for tags
