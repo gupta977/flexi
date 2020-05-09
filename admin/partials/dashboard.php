@@ -1,9 +1,14 @@
 <div class="wrap about-wrap">
 	<h1><?php echo __('Welcome to Flexi', 'flexi') . ' ' . FLEXI_VERSION; ?></h1>
 		<div class="about-text">
-		<?php echo __('Let visitors to post images from frontend with full controls.', 'flexi'); ?>
-		<br><a href="https://odude.com/docs/flexi-gallery/" target="_blank">Online Documentation</a>
-		<br><a href="https://odude.com/demo/flexi/" target="_blank">Live Demo</a>
+			<div class="card">
+		<?php echo __('Let visitors to post images,video,audio,youtube from frontend with full controls.', 'flexi'); ?><br>
+		<?php echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . "' target='_blank' class='button button-primary'>Post Files</a>" ?>
+		<?php echo " <a href='" . flexi_get_button_url('', false, 'primary_page', 'flexi_image_layout_settings') . "' target='_blank' class='button button-primary'>View Gallery</a>" ?>
+	<a href="https://odude.com/docs/flexi-gallery/" target="_blank" class='button'>Documentation</a>
+<a href="https://odude.com/demo/flexi/" target="_blank" class='button'>Live Demo</a>
+
+</div>
 		</div>
 		<div class="flexi-badge-logo"></div>
 <nav class="nav-tab-wrapper">

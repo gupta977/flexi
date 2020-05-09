@@ -46,7 +46,7 @@ jQuery(document).ready(function () {
                     ).style.width = i + "%";
                     document.getElementById(
                       "flexi_progress_process"
-                    ).innerHTML = i + "%";
+                    ).innerHTML = i;
                     i++;
                   } else {
                     clearInterval(this);
@@ -124,7 +124,7 @@ jQuery(document).ready(function () {
     document.getElementById("flexi_progress").style.width = "0%"; // width
     document.getElementById("flexi_progress_process").style.width = "0%";
     document.getElementById("flexi_progress").innerHTML = "0%";
-    document.getElementById("flexi_progress_process").innerHTML = "0%";
+    document.getElementById("flexi_progress_process").innerHTML = "0";
   });
 
   jQuery(".flexi_send_again").click(function (e) {});
