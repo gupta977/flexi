@@ -29,10 +29,10 @@ function flexi_author($author = '', $redirect = true)
   $linku = "";
  }
  return '<ul class="flexi_user-list"><li>
- <div class="user-avatar">
+ <div class="flexi-user-avatar">
  <a href="' . $linku . '"><img src="' . get_avatar_url($author->user_email, $size = '50') . '" width="50" alt="' . $author->display_name . '" /></a>
  </div>
- <p class="user-name"><a href="' . $linku . '">' . $author->first_name . ' ' . $author->last_name . '</a><span>@' . $author->user_login . '</span></p>
+ <p class="flexi-user-name"><a href="' . $linku . '">' . $author->first_name . ' ' . $author->last_name . '</a><span>@' . $author->user_login . '</span></p>
  </li></ul>';
 /*
 return ' <a href="' . $linku . '" title=' . $author->display_name . '><h2 class="ui header">
@@ -309,13 +309,13 @@ function flexi_list_album($post, $class = "flexi-icon-list-frame")
 
 <li>
 
-    <div class="user-avatar">
+    <div class="flexi-user-avatar">
         <a href="' . $link . '">
             <img src="' . flexi_album_image($term_list[$x]->slug) . '" width="75" alt="' . $term_list[$x]->name . '" />
         </a>
     </div>
 
-    <p class="user-name">
+    <p class="flexi-user-name">
         <a href="' . $link . '">' . $term_list[$x]->name . '</a>
         <span>' . $term_list[$x]->description . '</span>
     </p>
@@ -356,10 +356,10 @@ function flexi_album_single($term_slug, $class = 'flexi_user-list')
   </a>';
    */
   return '<ul class="' . $class . '"><li>
-      <div class="user-avatar">
+      <div class="flexi-user-avatar">
       <a href="' . $link . '"><img src="' . flexi_album_image($term_slug) . '" width="50" alt="' . $term->name . '" /></a>
       </div>
-      <p class="user-name"><a href="' . $link . '">' . $term->name . '</a><span>' . __('Album', 'flexi') . '</span></p>
+      <p class="flexi-user-name"><a href="' . $link . '">' . $term->name . '</a><span>' . __('Album', 'flexi') . '</span></p>
       </li></ul>';
 
  } else {
