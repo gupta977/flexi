@@ -138,6 +138,14 @@ registerBlockType("cgb/block-flexi-block", {
 			type: "boolean",
 			default: true,
 		},
+		evalue_category: {
+			type: "boolean",
+			default: true,
+		},
+		evalue_tag: {
+			type: "boolean",
+			default: true,
+		},
 	},
 
 	edit,

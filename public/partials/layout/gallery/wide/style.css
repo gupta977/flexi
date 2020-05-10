@@ -43,10 +43,6 @@
 }
 
 .flexi-gallery-wide_info .flexi_set_bottom {
-  position: absolute;
-  bottom: 1px;
-  margin: 2px;
-  left: 0;
   text-align: center;
   width: 100%;
 }
@@ -62,10 +58,9 @@
 
 /* Article excerpt */
 
-.flexi-gallery-wide_info p {
+.flexi-gallery-wide_info span {
   line-height: 20px;
-  color: #5d5d5d;
-  font-size: 12px;
+  margin-bottom: 5px;
 }
 
 .flexi-gallery-wide_info a.read-more {
@@ -92,8 +87,7 @@
 
   .flexi-gallery-wide_info {
     float: none;
-    padding: 1px;
-    text-align: center;
+    padding: 10px;
     width: 100%;
     min-height: 50px;
   }

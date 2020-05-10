@@ -266,32 +266,33 @@ function flexi_generate_tags($tags_array, $flexi_tag_class = 'flexi_tag--inverse
 }
 
 //Flexi List TAGs & Category
-function flexi_list_tags($post, $class = "flexi_tag--inverse", $class_main = "flexi_tags", $icon = "",$type="flexi_tag")
+function flexi_list_tags($post, $class = "flexi_tag--inverse", $class_main = "flexi_tags", $icon = "", $type = "flexi_tag")
 {
  //Returns All Term Items for "my_taxonomy"
  $term_list = wp_get_post_terms($post->ID, $type, array("fields" => "all"));
  //var_dump($term_list);
-
+ $output = "";
  if (count($term_list) > 0) {
-  echo '<div class="' . $class_main . '">';
+  $output .= '<div class="' . $class_main . '">';
  }
 
  if ("" != $icon && count($term_list) > 0) {
-  echo '<span class="' . $icon . '"></span>';
+  $output .= '<span class="' . $icon . '"></span>';
  }
 
  for ($x = 0; $x < count($term_list); $x++) {
 
   $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
-  $link = add_query_arg("flexi_tag", $term_list[$x]->slug, $link);
+  $link = add_query_arg($type, $term_list[$x]->slug, $link);
 
-  echo ' <a href="' . $link . '" class="' . $class . '">' . $term_list[$x]->name . '</a> ';
+  $output .= ' <a href="' . $link . '" class="' . $class . '">' . $term_list[$x]->name . '</a> ';
  }
 
  if (count($term_list) > 0) {
-  echo '</div>';
+  $output .= '</div>';
  }
 
+ return $output;
 }
 //Flexi List TAGs
 function flexi_list_album($post, $class = "flexi-icon-list-frame")
@@ -1016,9 +1017,9 @@ function flexi_evalue_toggle($key, $evalue)
  $extra_param = flexi_evalue_setarray($evalue);
  //var_dump($extra_param);
  if (isset($extra_param[$key]) && 'on' == $extra_param[$key]) {
-  echo '';
+  return '';
  } else {
-  echo 'display:none';
+  return 'display:none';
  }
 }
 

@@ -150,6 +150,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Own user login page
 * Updated admin dashboard
 * Updated progress bar during upload
+* Added tag & category display at wide gallery layout
 
 = 1.0.22 =
 * Supported mp4 at Lightbox

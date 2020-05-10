@@ -18,75 +18,83 @@ register_block_type(
   // Enqueue blocks.editor.build.css in the editor only.
   'editor_style'    => 'flexi_block-cgb-block-editor-css',
   'attributes'      => array(
-   'layout'         => array(
+   'layout'          => array(
     'type'    => 'string',
     'default' => 'masonry',
    ),
-   'column'         => array(
+   'column'          => array(
     'type'    => 'integer',
     'default' => 2,
    ),
-   'cat'            => array(
+   'cat'             => array(
     'type'    => 'integer',
     'default' => 0,
    ),
-   'perpage'        => array(
+   'perpage'         => array(
     'type'    => 'integer',
     'default' => 8,
    ),
-   'padding'        => array(
+   'padding'         => array(
     'type'    => 'integer',
     'default' => 1,
    ),
-   'popup'          => array(
+   'popup'           => array(
     'type'    => 'boolean',
     'default' => false,
    ),
-   'tag_show'       => array(
+   'tag_show'        => array(
     'type'    => 'boolean',
     'default' => false,
    ),
-   'orderby'        => array(
+   'orderby'         => array(
     'type'    => 'string',
     'default' => 'asc',
    ),
-   'tag'            => array(
+   'tag'             => array(
     'type'    => 'string',
     'default' => '',
    ),
-   'filter'         => array(
+   'filter'          => array(
     'type'    => 'string',
     'default' => 'none',
    ),
-   'hover_effect'   => array(
+   'hover_effect'    => array(
     'type'    => 'string',
     'default' => '',
    ),
-   'hover_caption'  => array(
+   'hover_caption'   => array(
     'type'    => 'string',
     'default' => 'flexi_caption_none',
    ),
-   'width'          => array(
+   'width'           => array(
     'type'    => 'integer',
     'default' => 150,
    ),
-   'height'         => array(
+   'height'          => array(
     'type'    => 'integer',
     'default' => 150,
    ),
-   'evalue_title'   => array(
+   'evalue_title'    => array(
     'type'    => 'boolean',
     'default' => true,
    ),
-   'evalue_excerpt' => array(
+   'evalue_excerpt'  => array(
     'type'    => 'boolean',
     'default' => false,
    ),
-   'evalue_custom'  => array(
+   'evalue_custom'   => array(
     'type'    => 'boolean',
     'default' => false,
    ),
-   'evalue_icon'    => array(
+   'evalue_icon'     => array(
+    'type'    => 'boolean',
+    'default' => true,
+   ),
+   'evalue_tag'      => array(
+    'type'    => 'boolean',
+    'default' => true,
+   ),
+   'evalue_category' => array(
     'type'    => 'boolean',
     'default' => true,
    ),
@@ -132,6 +140,12 @@ function flexi_gallery_render_callback($args)
   }
   if (isset($args['evalue_icon']) && '1' == $args['evalue_icon']) {
    $evalue .= "icon:on,";
+  }
+  if (isset($args['evalue_category']) && '1' == $args['evalue_category']) {
+   $evalue .= "category:on,";
+  }
+  if (isset($args['evalue_tag']) && '1' == $args['evalue_tag']) {
+   $evalue .= "tag:on,";
   }
 
   if (isset($args['filter']) && 'none' == $args['filter']) {
