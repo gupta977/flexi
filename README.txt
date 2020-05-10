@@ -4,7 +4,7 @@ Donate link: https://odude.com/
 Tags: gallery, photo gallery, image gallery, video gallery, responsive gallery
 Requires at least: 4.0.0
 Requires PHP: 5.5
-Tested up to: 5.4
+Tested up to: 5.4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -98,15 +98,6 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 
 > If any suggestion, contact me directly at navneet@odude.com
 > Byte update at https://github.com/gupta977/flexi
-
-## Privacy Policy 
-Flexi Gallery uses [Appsero](https://appsero.com) SDK to collect some telemetry data upon user's confirmation. This helps us to troubleshoot problems faster & make product improvements.
-
-Appsero SDK **does not gather any data by default.** The SDK only starts gathering basic telemetry data **when a user allows it via the admin notice**. We collect the data to ensure a great user experience for all our users. 
-
-Integrating Appsero SDK **DOES NOT IMMEDIATELY** start gathering data, **without confirmation from users in any case.**
-
-
 
 == Installation ==
 

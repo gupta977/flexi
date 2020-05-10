@@ -18,9 +18,9 @@ function flexi_author($author = '', $redirect = true)
  if (flexi_get_option('primary_page', 'flexi_image_layout_settings', 0) != '0') {
   if (flexi_get_option('enable_ultimate_member', 'flexi_extension', 0) == '1' && function_exists('um_user_profile_url') && $redirect) {
    $linku = um_user_profile_url($author->ID);
-   $linku = esc_url(add_query_arg('profiletab', 'flexi', $linku));
+   // $linku = esc_url(add_query_arg('profiletab', 'flexi', $linku));
   } else if (flexi_get_option('enable_buddypress', 'flexi_extension', 0) == '1' && function_exists('bp_core_get_user_domain') && $redirect) {
-   $linku = bp_core_get_user_domain($author->ID) . "flexi";
+   $linku = bp_core_get_user_domain($author->ID);
   } else {
    $linku = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
    $linku = add_query_arg("flexi_user", $author->user_nicename, $linku);
