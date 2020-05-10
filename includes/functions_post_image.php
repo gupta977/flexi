@@ -121,7 +121,7 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
      if (wp_attachment_is('image', $attach_id)) {
       add_post_meta($post_id, 'flexi_type', 'image');
       add_post_meta($post_id, 'flexi_image_id', $attach_id);
-      add_post_meta($post_id, 'flexi_image', flexi_image_src('large', get_post($post_id)));
+      add_post_meta($post_id, 'flexi_image', wp_get_attachment_url($attach_id));
 
      } else if (wp_attachment_is('video', $attach_id)) {
       add_post_meta($post_id, 'flexi_type', 'video');

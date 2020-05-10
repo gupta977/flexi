@@ -52,7 +52,11 @@ function flexi_image_src($size = 'thumbnail', $post)
   } else if ("url" == $ftype) {
    $thumb_url = get_post_meta($post->ID, 'flexi_url', 1);
   } else if ("image" == $ftype) {
-   $thumb_url = get_post_meta($post->ID, 'flexi_image', 1);
+   //$thumb_url = get_post_meta($post->ID, 'flexi_image', 1);
+   $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'flexi_image_id', 1), $size);
+   if ($image_attributes) {
+    return $image_attributes[0];
+   }
 
   } else {
 
@@ -132,7 +136,7 @@ function flexi_large_media($post, $class = 'flexi_large_image')
 
  } else {
   $media_url = esc_url(flexi_image_src('large', $post));
-  flexi_log($media_url . '---' . $flexi_type);
+  //flexi_log($media_url . '---' . $flexi_type);
   return "<img id='" . $class . "' src='" . $media_url . "' >";
  }
 
