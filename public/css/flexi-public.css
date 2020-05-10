@@ -1,3 +1,26 @@
+/* List tags,album in small text with icons */
+
+.flexi_text_group a {
+  color: #999;
+  text-decoration: none;
+}
+.flexi_text_group a:hover {
+  text-decoration: underline;
+}
+
+.flexi_text_group .dashicons {
+  margin-right: 4px;
+  vertical-align: middle;
+  font-size: medium;
+  line-height: 1;
+}
+
+.flexi_text_small {
+  display: block;
+  color: #757575;
+  font-size: 0.8em;
+}
+
 /* Flexi Icon Grid Container */
 .flexi_icon_grid_group a,
 a:hover {

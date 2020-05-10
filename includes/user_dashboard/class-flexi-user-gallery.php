@@ -27,8 +27,6 @@ class Flexi_User_Dashboard_Gallery
    $postsperpage = 20;
    ?>
 
-
-
 <div class="flexi_wrapper">
     <div class="flexi_table">
 
@@ -78,7 +76,8 @@ class Flexi_User_Dashboard_Gallery
 				        </div>
 				        <div class="flexi_cell" data-title="Title">
 				            <?php echo $data['title']; ?>
-			                <?php flexi_list_tags($post, '', 'flexi_text_small');?>
+		                    <div class="flexi_text_group">  <?php flexi_list_tags($post, '', 'flexi_text_small', 'dashicons dashicons-tag');?> </div>
+		                    <div class="flexi_text_group">  <?php flexi_list_tags($post, '', 'flexi_text_small', 'dashicons dashicons-category', 'flexi_category');?> </div>
 				        </div>
 				        <div class="flexi_cell" data-title="Status">
 				            <?php

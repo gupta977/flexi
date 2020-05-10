@@ -132,6 +132,7 @@ function flexi_large_media($post, $class = 'flexi_large_image')
 
  } else {
   $media_url = esc_url(flexi_image_src('large', $post));
+  flexi_log($media_url . '---' . $flexi_type);
   return "<img id='" . $class . "' src='" . $media_url . "' >";
  }
 

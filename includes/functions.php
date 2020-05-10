@@ -265,15 +265,19 @@ function flexi_generate_tags($tags_array, $flexi_tag_class = 'flexi_tag--inverse
  return $taglink;
 }
 
-//Flexi List TAGs
-function flexi_list_tags($post, $class = "flexi_tag--inverse", $class_main = "flexi_tags")
+//Flexi List TAGs & Category
+function flexi_list_tags($post, $class = "flexi_tag--inverse", $class_main = "flexi_tags", $icon = "",$type="flexi_tag")
 {
  //Returns All Term Items for "my_taxonomy"
- $term_list = wp_get_post_terms($post->ID, 'flexi_tag', array("fields" => "all"));
+ $term_list = wp_get_post_terms($post->ID, $type, array("fields" => "all"));
  //var_dump($term_list);
 
  if (count($term_list) > 0) {
   echo '<div class="' . $class_main . '">';
+ }
+
+ if ("" != $icon && count($term_list) > 0) {
+  echo '<span class="' . $icon . '"></span>';
  }
 
  for ($x = 0; $x < count($term_list); $x++) {
