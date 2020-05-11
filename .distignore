@@ -1,0 +1,4 @@
+/.vscode
+/block/node_modules
+.distignore
+.gitignore

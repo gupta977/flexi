@@ -104,7 +104,9 @@ function flexi_load_more()
  while ($query->have_posts()): $query->the_post();
   $tags = flexi_get_taxonomy_raw($post->ID, 'flexi_tag');
   $count++;
-  require FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/' . $layout . '/loop.php';
+  if ('' != $layout) {
+   require FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/' . $layout . '/loop.php';
+  }
 
  endwhile;
 
