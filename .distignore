@@ -3,5 +3,8 @@
 /.git
 /.github
 /block/node_modules
+/block/package-lock.json
+/block/package.json
+/block/readme.md
 .distignore
 .gitignore
