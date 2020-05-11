@@ -1,5 +1,6 @@
 /.vscode
 /.wordpress-org
+/.git
 /.github
 /block/node_modules
 .distignore
