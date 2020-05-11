@@ -137,6 +137,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.24 =
+* Fixed error on mouse scroll
+
 = 1.0.23 =
 * Own user login page
 * Updated admin dashboard
