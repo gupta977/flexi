@@ -1,5 +1,7 @@
 /.vscode/
 block/node_modules
+block/package-lock.json
+block/package.json
 
 ## Uncomment line below if you prefer to
 ## keep compiled files out of version control
