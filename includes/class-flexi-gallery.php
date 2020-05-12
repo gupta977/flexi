@@ -342,7 +342,10 @@ jQuery(document).ready(function() {
  // console.log("start");
   document.documentElement.style.setProperty('--flexi_padding', jQuery("#padding").text());
 
-
+<?php
+$enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict_settings', 0);
+  if ("1" != $enable_conflict) {
+   ?>
   jQuery('[data-fancybox-trigger').fancybox({
         selector : '.flexi_show_popup a:visible',
         thumbs   : {
@@ -357,6 +360,9 @@ jQuery(document).ready(function() {
 
         }
     });
+    <?php
+}
+  ?>
 
 });
 </script>

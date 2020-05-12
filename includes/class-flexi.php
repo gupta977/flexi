@@ -72,7 +72,7 @@ class Flexi
   if (defined('FLEXI_VERSION')) {
    $this->version = FLEXI_VERSION;
   } else {
-   $this->version = '1.0.25';
+   $this->version = '1.0.26';
   }
   $this->plugin_name = 'flexi';
 
@@ -129,6 +129,7 @@ class Flexi
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-ultimate-member.php';
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-buddypress.php';
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-mime-type.php';
+  require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-conflict.php';
 
   //Toolbar
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/toolbar/class-flexi-gallery-toolbar.php';

@@ -41,7 +41,8 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 *   **Tags for images** - every image contain tags for easy navigation and visitor can create new one during submission.
 *   **Multi Categories** - multi categories albums support. You can create your own galleries tree, depend of your needs with thumbnail of each category
 *   **User 'My Dashboard'** -  Page to view,modify, delete own submitted records.
-*   **Lightbox or Popup** - Options to enabled popup for large image on thumbnail click & can disable it to open full **Detail Page** for added features.
+*   **Lightbox or Popup** - Popup opens for image,mp4,pdf,youtube,vimeo when clicked on thumbnail.
+*   **Detail page** - Content can be open in full **Detail Page** or single page with added features.
 *   **Extra Controls** - Lots of controls like 'Number of column' , 'Records per page', 'Image dimension' , 'Layouts' , 'Icons visibility' and many more.
 *   **Standalone Gallery** - It will display large image with small thumbnail separated from gallery group.
 *   **Gallery Filter** - Gallery can be filter based on different type (user, category, tags, type)
@@ -53,6 +54,8 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 *   **Custom Fields** - Collect extra information from visitors while submitting form and display/hide it at gallery, lightbox & detail page. 
 *   **Moderation** - All submitted can be moderated so that it is visible only after approval by administrator.
 *   **Any Type of File** - Ability to submit any type of file format allowed by administrator
+*   **File size limit** - Specify each file size (MB) limit that the visitors can upload. 
+*   **Conflict Management** - Special settings available to manage the conflict with other plugins & theme.
 
 = WORKS GREAT WITH =
 
@@ -137,6 +140,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.26 =
+* Conflict management settings added
+* Option to disable fancybox.js if not required. 
+
 = 1.0.25 =
 * Added file size upload limit under form settings. 
 

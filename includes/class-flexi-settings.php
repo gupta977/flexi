@@ -120,10 +120,9 @@ class FLEXI_Admin_Settings
  {
   $sections = array(
    array(
-    'id'          => 'flexi_icon_settings',
-    'title'       => __('Icons & user access settings', 'flexi'),
-    'description' => __('Show/Hide Icons at gallery & detail page.', 'flexi'),
-    'tab'         => 'general',
+    'id'    => 'flexi_icon_settings',
+    'title' => __('Icons & user access settings', 'flexi'),
+    'tab'   => 'general',
    ),
    array(
     'id'          => 'flexi_media_settings',
@@ -133,9 +132,10 @@ class FLEXI_Admin_Settings
    ),
 
    array(
-    'id'    => 'flexi_image_layout_settings',
-    'title' => __('Gallery Settings', 'flexi'),
-    'tab'   => 'gallery',
+    'id'          => 'flexi_image_layout_settings',
+    'title'       => __('Gallery Settings', 'flexi'),
+    'description' => __('Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>Specific settings will be inactive if same attribute is used in shortcode.<br>It is advisable use one gallery per page to avoid conflict.', 'flexi'),
+    'tab'         => 'gallery',
    ),
    array(
     'id'    => 'flexi_gallery_appearance_settings',
@@ -167,9 +167,10 @@ class FLEXI_Admin_Settings
     'tab'         => 'detail',
    ),
    array(
-    'id'    => 'flexi_extension',
-    'title' => __('Extension Management', 'flexi'),
-    'tab'   => 'extension',
+    'id'          => 'flexi_extension',
+    'title'       => __('Extension Management', 'flexi'),
+    'description' => __('A new sub-tab is created as soon as extension is enabled.<br>Click on blue tools icon to navigate<br><b>Note:</b> Disable any extension, will not delete the old settings. It is just hidden.', 'flexi'),
+    'tab'         => 'extension',
    ),
   );
 
@@ -563,7 +564,7 @@ class FLEXI_Admin_Settings
  {
   foreach ($this->sections as $section) {
    if ($section['id'] == $args['id']) {
-    printf('<div class="inside">%s</div>', sanitize_text_field($section['description']));
+    printf('<div class="inside">%s</div>', '<div class="card">' . $section['description'] . '</div>');
     break;
    }
   }

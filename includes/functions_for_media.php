@@ -47,7 +47,7 @@ function flexi_image_src($size = 'thumbnail', $post)
  $ftype = flexi_get_type($post);
  if ('large' == $size) {
 
-  if ("mp4" == $ftype) {
+  if ("mp4" == $ftype || "pdf" == $ftype) {
    $thumb_url = get_post_meta($post->ID, 'flexi_file', 1);
   } else if ("url" == $ftype) {
    $thumb_url = get_post_meta($post->ID, 'flexi_url', 1);
