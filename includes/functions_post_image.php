@@ -107,7 +107,7 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
     $file_data = flexi_check_file($_FILES[$key]);
     // $newPost['error'] = array_unique(array_merge($file_data['error'], $newPost['error']));
 
-    //flexi_log($file_data);
+    flexi_log($file_data);
 
     $attach_id = media_handle_upload($key, $post_id);
 
@@ -221,8 +221,19 @@ function flexi_check_file($files)
   $notice[0] = '';
  } else {
   $error[0]  = 'file-type';
-  $notice[0] = $files['name'] . ' invalid-file';
+  $notice[0] = $files['name'] . ' invalid file';
  }
+
+ //Check file size allowed
+ $allowed_file_size  = (int) flexi_get_option('upload_file_size', 'flexi_form_settings', 1);
+ $uploaded_file_size = (int) (($files['size'] / 1024) / 1024);
+// flexi_log($uploaded_file_size . '>=' . $allowed_file_size);
+ if ($uploaded_file_size >= $allowed_file_size) {
+  $error[0]  = 'max_size';
+  $notice[0] = $files['size'] . ' large size';
+  //flexi_log("error recorded");
+ }
+
  $file_data = array('error' => $error, 'notice' => $notice);
 
  return $file_data;

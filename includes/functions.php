@@ -943,6 +943,9 @@ function flexi_error_code($err)
  } else if ('exif_imagetype' == $err) {
   $msg .= __("Only image files are allowed.", "flexi");
 
+ } else if ('max_size' == $err) {
+  $msg .= __("File size is too big.", "flexi");
+
  } else if ('invalid-captcha' == $err) {
   $msg .= __("Captcha security code is invalid.", "flexi");
 

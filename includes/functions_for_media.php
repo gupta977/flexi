@@ -51,7 +51,7 @@ function flexi_image_src($size = 'thumbnail', $post)
    $thumb_url = get_post_meta($post->ID, 'flexi_file', 1);
   } else if ("url" == $ftype) {
    $thumb_url = get_post_meta($post->ID, 'flexi_url', 1);
-  } else if ("image" == $ftype) {
+  } else if ("image" == $ftype || "plain" == $ftype) {
    //$thumb_url = get_post_meta($post->ID, 'flexi_image', 1);
    $image_attributes = wp_get_attachment_image_src(get_post_meta($post->ID, 'flexi_image_id', 1), $size);
    if ($image_attributes) {

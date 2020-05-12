@@ -324,6 +324,17 @@ class FLEXI_Admin_Settings
      'sanitize_callback' => 'intval',
     ),
     array(
+     'name'              => 'upload_file_size',
+     'label'             => __('File size allowed (MB)', 'flexi'),
+     'description'       => __('Maximum file size allowed to upload by visitor. Your sever limit is:', 'flexi') . ' <b>' . size_format(wp_max_upload_size()) . '</b>',
+     'type'              => 'number',
+     'size'              => 'small',
+     'min'               => '1',
+     'max'               => '100',
+     'sanitize_callback' => 'sanitize_key',
+    ),
+
+    array(
      'name'              => 'default_user',
      'label'             => __('Assign default user', 'flexi'),
      'description'       => __('Type the username to assign for guest submit else no author is assigned.', 'flexi'),
