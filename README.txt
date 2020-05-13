@@ -100,7 +100,7 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 * **More Mime Types** - Add more file type to allow visitors to upload.
 
 > If any suggestion, contact me directly at navneet@odude.com
-> Byte update at https://github.com/gupta977/flexi
+> Byte update at https://github.com/gupta977/flexi/tree/beta
 
 == Installation ==
 
@@ -140,6 +140,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.27 =
+* Detect file size by javascript before file upload
+
 = 1.0.26 =
 * Conflict management settings added
 * Option to disable fancybox.js if not required. 

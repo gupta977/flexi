@@ -145,7 +145,7 @@ action="' . admin_url("admin-ajax.php") . '"
 
     echo '<input type="hidden" name="upload_type" value="flexi">';
 
-    echo '</form></div>';
+    echo '</form><div id="flexi_submit_notice"></div></div>';
 
    }
   }
@@ -325,6 +325,7 @@ action="' . admin_url("admin-ajax.php") . '"
   ), $params);
   $frm = new flexi_HTML_Form(false); // pass false for html rather than xhtml syntax
   $abc = "";
+
   ob_start();
   if ('post_title' == $attr['type']) {
    echo $frm->addLabelFor("user-submitted-title", $attr['title']);
@@ -381,21 +382,6 @@ action="' . admin_url("admin-ajax.php") . '"
     echo $frm->addInput('file', "user-submitted-image[]", '', array('id' => 'file', 'class' => $attr['class'] . '_hide', 'required' => $attr['required'], 'multiple' => $attr['multiple']));
     echo "<p>" . $attr['title'] . "</p>";
     echo $frm->endTag('div');
-    echo '
-      <script>
-      jQuery(document).ready(function()
-      {
-          jQuery("form input").change(function ()
-          {
-              if(this.files && this.files.length)
-              {
-                  jQuery("form p").text(this.files.length + " file(s) selected");
-              }
-
-          });
-        });
-      </script>
-      ';
 
    } else {
     echo "<br>Multiple upload is only available in FLEXI-PRO<br>";
@@ -452,7 +438,10 @@ action="' . admin_url("admin-ajax.php") . '"
   } else if ('submit' == $attr['type']) {
    //submit
 
-   echo $frm->addInput('submit', $attr['name'], $attr['value'], array('class' => $attr['class']));
+   echo $frm->addInput('submit', $attr['name'], $attr['value'], array('id' => $attr['name'], 'class' => $attr['class']));
+   //Generate jasvascript which will check filesize before upload.
+   //Todo: Don't include it if file input button not available.
+   echo flexi_javascript_file_upload('flexi_submit_notice', $attr['name']);
 
   } else if ('radio' == $attr['type'] || 'checkbox' == $attr['type']) {
 

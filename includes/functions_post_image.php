@@ -328,3 +328,65 @@ function flexi_include_deps()
   require_once ABSPATH . '/wp-admin/includes/image.php';
  }
 }
+
+//Generate javascript while uploading file
+//$id= id of the submit button
+function flexi_javascript_file_upload($id = "flexi_submit_notice", $button_id = "flexi_submit_button")
+{
+ $allowed_file_size      = (int) (flexi_get_option('upload_file_size', 'flexi_form_settings', 1));
+ $allowed_file_size_byte = ($allowed_file_size * 1024) * 1024;
+
+ ob_start();
+ ?>
+  <script>
+      jQuery(document).ready(function()
+      {
+          var error=false;
+          jQuery("form input").change(function (e)
+          {
+              if(this.files && this.files.length)
+              {
+                var file_size = this.files[0].size;
+               // console.log(this.files);
+                    var max=<?php echo $allowed_file_size_byte; ?>;
+                  jQuery("form p").text(this.files.length + " file(s) selected");
+                  var notices="";
+                  for (i = 0; i < this.files.length; i++)
+                  {
+                      error=false;
+                      document.getElementById("<?php echo $id; ?>").innerHTML ="";
+                      var cur=this.files[i].size;
+                      var name=this.files[i].name;
+                     //console.log(cur+"--"+max);
+                      if(cur>max)
+                      {
+                        //console.log(e);
+                        error=true;
+                        //console.log(name+" - "+cur);
+                        notices+="<div class=\"flexi_alert-box flexi_error\">"+name+" - "+((cur/1024)/1024).toFixed(2)+"MB <?php echo '(' . $allowed_file_size . 'MB)'; ?></div>";
+
+                      }
+                  }
+                  document.getElementById("<?php echo $id; ?>").innerHTML =notices;
+              }
+              if(error)
+              {
+                console.log("Disable Form");
+                  //Disable Submit Button
+                  jQuery("#<?php echo $button_id; ?>").attr("disabled", true);
+              }
+              else
+              {
+                console.log("Enable Form");
+                  //Disable Submit Button
+                  jQuery("#<?php echo $button_id; ?>").removeAttr("disabled");
+              }
+          });
+
+        });
+      </script>
+
+  <?php
+
+ return ob_get_clean();
+}

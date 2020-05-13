@@ -164,7 +164,7 @@ function flexi_form_render_callback($args)
    $shortcode .= '[flexi-form-tag type="captcha" title="Security"]';
   }
 
-  $shortcode .= '[flexi-form-tag type="submit" name="submit" value="' . $args['button_label'] . '"]';
+  $shortcode .= '[flexi-form-tag type="submit" name="flexi_submit_button" value="' . $args['button_label'] . '"]';
 
   $shortcode .= '[/flexi-form]';
  }
