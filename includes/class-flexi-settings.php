@@ -134,7 +134,7 @@ class FLEXI_Admin_Settings
    array(
     'id'          => 'flexi_image_layout_settings',
     'title'       => __('Gallery Settings', 'flexi'),
-    'description' => __('Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>Specific settings will be inactive if same attribute is used in shortcode.<br>It is advisable use one gallery per page to avoid conflict.', 'flexi'),
+    'description' => __('Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>Specific settings will be inactive if same attribute is used in shortcode.<br>It is advisable use one gallery per page to avoid conflict.<br>Settings will be not be implemented, if shortcode contains specific attributes. ', 'flexi'),
     'tab'         => 'gallery',
    ),
    array(

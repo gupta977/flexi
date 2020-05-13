@@ -143,6 +143,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 1.0.26 =
 * Conflict management settings added
 * Option to disable fancybox.js if not required. 
+* Updated some description in settings. 
 
 = 1.0.25 =
 * Added file size upload limit under form settings. 

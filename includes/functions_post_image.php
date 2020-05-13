@@ -107,7 +107,7 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
     $file_data = flexi_check_file($_FILES[$key]);
     // $newPost['error'] = array_unique(array_merge($file_data['error'], $newPost['error']));
 
-    flexi_log($file_data);
+    //flexi_log($file_data);
 
     $attach_id = media_handle_upload($key, $post_id);
 
