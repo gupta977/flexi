@@ -306,7 +306,7 @@ function flexi_list_album($post, $class = "flexi-icon-list-frame")
  }
 
  for ($x = 0; $x < count($term_list); $x++) {
-  if ('-1' != $term_list[$x]->name) {
+  if ('' != $term_list[$x]->name) {
    $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
    $link = add_query_arg("flexi_category", $term_list[$x]->slug, $link);
 
@@ -460,7 +460,7 @@ function flexi_get_button_url($param = '', $ajax = true, $type = 'submission_for
  } else {
   $default_post = flexi_get_option($type, $setting_tab, '0');
 
-  if ('0' != $default_post && '-1' != $default_post) {
+  if ('0' != $default_post && '' != $default_post) {
    if ('' == $param) {
     $url = esc_url(get_page_link($default_post));
    } else {
@@ -667,7 +667,7 @@ function flexi_droplist_album($taxonomy = 'flexi_category', $selected_album = ""
   'exclude'           => $skip,
   'child_of'          => $parent,
   'show_option_none'  => '-- ' . __('None', 'flexi') . ' --',
-  'option_none_value' => -1,
+  'option_none_value' => '',
  );
 
  wp_dropdown_categories($dropdown_args);

@@ -743,8 +743,8 @@ class FLEXI_Admin_Settings
  {
   $dropdown_args = array(
    'show_option_none'  => '-- ' . __('Select layout', 'flexi') . ' --',
-   'option_none_value' => -1,
-   'selected'          => esc_attr($this->get_option($args['id'], $args['section'], -1)),
+   'option_none_value' => '',
+   'selected'          => esc_attr($this->get_option($args['id'], $args['section'], '')),
    'name'              => $args['section'] . '[' . $args['id'] . ']',
    'id'                => $args['section'] . '[' . $args['id'] . ']',
    'echo'              => 0,
@@ -877,8 +877,8 @@ class FLEXI_Admin_Settings
  {
   $dropdown_args = array(
    'show_option_none'  => '-- ' . __('Select a page', 'flexi') . ' --',
-   'option_none_value' => -1,
-   'selected'          => esc_attr($this->get_option($args['id'], $args['section'], -1)),
+   'option_none_value' => '',
+   'selected'          => esc_attr($this->get_option($args['id'], $args['section'], '')),
    'name'              => $args['section'] . '[' . $args['id'] . ']',
    'id'                => $args['section'] . '[' . $args['id'] . ']',
    'echo'              => 0,
@@ -900,8 +900,8 @@ class FLEXI_Admin_Settings
  {
   $dropdown_args = array(
    'show_option_none'  => '-- ' . __('Select category', 'flexi') . ' --',
-   'option_none_value' => -1,
-   'selected'          => esc_attr($this->get_option($args['id'], $args['section'], -1)),
+   'option_none_value' => '',
+   'selected'          => esc_attr($this->get_option($args['id'], $args['section'], '')),
    'name'              => $args['section'] . '[' . $args['id'] . ']',
    'id'                => $args['section'] . '[' . $args['id'] . ']',
    'echo'              => 0,

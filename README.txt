@@ -140,6 +140,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.28 =
+* Tags at detail layout
+* Fixed wrong category assigned on blank category
+
 = 1.0.27 =
 * Detect file size by javascript before file upload
 

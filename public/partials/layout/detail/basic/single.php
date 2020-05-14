@@ -17,8 +17,6 @@
         <?php
 echo "<div class='flexi-image-wrapper_large'>" . flexi_large_media($post) . "</div>";
 ?>
-        <?php echo flexi_show_icon_grid(); ?>
-
       </div>
     </div>
     <div class="pure-u-1">
@@ -30,14 +28,19 @@ echo "<div class='flexi-image-wrapper_large'>" . flexi_large_media($post) . "</d
       <div class="flexi_margin-box">
 
         <div class="flex-desp"> <?php echo wpautop(stripslashes($post->post_content)); ?></div>
-
+        <div class="flexi_hr"></div>
       </div>
     </div>
   </div>
   <div class="pure-g">
     <div class="pure-u-1 pure-u-md-1-2">
       <div class="flexi_margin-box">
-        <?php flexi_list_tags($post);?>
+
+          <?php echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>'; ?>
+      <?php echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>'; ?>
+
+      <?php echo flexi_show_icon_grid(); ?>
+        <?php //echo flexi_list_tags($post); ?>
       </div>
     </div>
     <div class="pure-u-1 pure-u-md-1-2">
@@ -58,6 +61,6 @@ $arr_params = array('download' => $post->ID);
 $src        = esc_url(add_query_arg($arr_params), get_permalink($post->ID));
 ?>
 
-  <?php flexi_list_album($post, 'flexi-icon-list-frame');?>
+  <?php //flexi_list_album($post, 'flexi-icon-list-frame');?>
 
 </div>
