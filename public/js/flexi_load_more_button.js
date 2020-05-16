@@ -26,6 +26,8 @@ jQuery(document).ready(function () {
     orderby = jQuery("#orderby").text();
     user = jQuery("#user").text();
     keyword = jQuery("#keyword").text();
+    attach = jQuery("#attach").text();
+    filter = jQuery("#filter").text();
     reset = jQuery(this).attr("data-reset");
 
     if (reset == "true") {
@@ -54,6 +56,8 @@ jQuery(document).ready(function () {
         orderby: orderby,
         user: user,
         keyword: keyword,
+        attach: attach,
+        filter: filter,
       },
       beforeSend: function () {
         //alert("about to send");

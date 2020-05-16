@@ -27,6 +27,13 @@ class Flexi_Shortcode_Form
   $abc  = "";
   ob_start();
 
+  // flexi_log($params);
+
+  //Attach form of specific post
+  if (isset($params['attach']) && "true" == $params['attach']) {
+   echo do_shortcode("[flexi-gallery attach='true' filter='image']");
+  }
+
   $check_enable_form = flexi_get_option('enable_form', 'flexi_form_settings', 'everyone');
 
   $enable_form_access = true;
@@ -129,14 +136,22 @@ action="' . admin_url("admin-ajax.php") . '"
 >';
     }
 
-    echo do_shortcode($content);
+    if (trim($content) == "") {
+     $default = ' [flexi-form-tag type="post_title" title="Title"]
+     [flexi-form-tag type="file" title="Select file" required="true"]
+         [flexi-form-tag type="submit" name="submit" value="Submit Now"]';
+     echo do_shortcode($default);
+    } else {
+     echo do_shortcode($content);
+    }
+    //flexi_log($content);
 
     wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
 
     echo '<input type="hidden" name="action" value="flexi_ajax_post">';
     echo '<input type="hidden" name="preview" value="' . $attr['preview'] . '">';
     echo '<input type="hidden" name="form_name" value="' . $attr['name'] . '">';
-    echo '<input type="hidden" name="media_private" value="' . $attr['media_private'] . '">';
+    echo '<input type="hidden" name="flexi_attach_at" value="' . get_the_ID() . '">';
     echo '<input type="hidden" name="edit" value="' . $attr['edit'] . '">';
     echo '<input type="hidden" name="type" value="' . $attr['type'] . '">';
     if (isset($_GET['id'])) {

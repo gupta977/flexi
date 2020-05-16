@@ -21,6 +21,8 @@ function flexi_load_more()
  $hover_caption = $_REQUEST['hover_caption'];
  $evalue        = $_REQUEST['evalue'];
  $column        = $_REQUEST['column'];
+ $attach        = $_REQUEST['attach'];
+ $filter        = $_REQUEST['filter'];
  ob_start();
 
  // A default response holder, which will have data for sending back to our js file
@@ -92,6 +94,33 @@ function flexi_load_more()
    'order'          => 'DESC',
 
   );
+ }
+
+ $args['meta_query'] = array('compare' => 'AND');
+
+ //If filter is used as parameter image,url,video
+ if ('' != $filter) {
+  $filter_array = array(
+   'key'     => 'flexi_type',
+   'value'   => $filter,
+   'compare' => '=',
+  );
+
+  array_push($args['meta_query'], $filter_array);
+ }
+
+ //flexi_log($args);
+ //flexi_log("-----------------");
+ //Add meta query for attach page
+ if (isset($params['attach']) && "true" == $params['attach']) {
+
+  $attach_array = array(
+   'key'     => 'flexi_attach_at',
+   'value'   => get_the_ID(),
+   'compare' => '=',
+  );
+
+  array_push($args['meta_query'], $attach_array);
  }
 
  $query = new WP_Query($args);

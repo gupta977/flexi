@@ -1,5 +1,8 @@
 <?php
 //[flexi-gallery] shortcode
+//Below query works only for page number
+//For load more & scroll use flexi_load_more.php
+
 class Flexi_Shortcode_Gallery
 {
  public function __construct()
@@ -153,6 +156,20 @@ class Flexi_Shortcode_Gallery
    $evalue = "";
   }
 
+  //attach value
+  if (isset($params['attach'])) {
+   $attach = $params['attach'];
+  } else {
+   $attach = "";
+  }
+
+  //filter value
+  if (isset($params['filter'])) {
+   $filter = $params['filter'];
+  } else {
+   $filter = "";
+  }
+
   //padding
   if (isset($params['padding'])) {
    $padding = $params['padding'] . 'px';
@@ -243,18 +260,37 @@ class Flexi_Shortcode_Gallery
     'order'          => 'DESC',
 
    );
+
   }
 
+  $args['meta_query'] = array('compare' => 'AND');
+
+  //If filter is used as parameter image,url,video
   if ('' != $filter) {
-   $args['meta_query'] = array(
-    array(
-     'key'   => 'flexi_type',
-     'value' => $filter,
-    ),
+   $filter_array = array(
+    'key'     => 'flexi_type',
+    'value'   => $filter,
+    'compare' => '=',
    );
+
+   array_push($args['meta_query'], $filter_array);
   }
 
-  //var_dump($args);
+  //flexi_log($args);
+  //flexi_log("-----------------");
+  //Add meta query for attach page
+  if (isset($params['attach']) && "true" == $params['attach']) {
+
+   $attach_array = array(
+    'key'     => 'flexi_attach_at',
+    'value'   => get_the_ID(),
+    'compare' => '=',
+   );
+
+   array_push($args['meta_query'], $attach_array);
+  }
+
+  //flexi_log($args);
 
   //Empty array if not logged in
   if (!is_user_logged_in() & isset($params['user']) && "show_mine" == $params['user']) {

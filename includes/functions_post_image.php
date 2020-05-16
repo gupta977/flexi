@@ -118,6 +118,11 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
 
      $attach_ids[] = $attach_id;
 
+     //Attach ID of the post where it is submitted
+     if (isset($_POST['flexi_attach_at'])) {
+      add_post_meta($post_id, 'flexi_attach_at', $_POST['flexi_attach_at']);
+     }
+
      if (wp_attachment_is('image', $attach_id)) {
       add_post_meta($post_id, 'flexi_type', 'image');
       add_post_meta($post_id, 'flexi_image_id', $attach_id);
