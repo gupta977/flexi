@@ -140,6 +140,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.29 =
+* Added form attach to specific page [flexi-form attach="true"]
+
 = 1.0.28 =
 * Tags at detail layout
 * Fixed wrong category assigned on blank category

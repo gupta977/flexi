@@ -119,7 +119,7 @@ jQuery(document).ready(function () {
     jQuery("#flexi_after_response").hide();
     jQuery("#flexi_form").slideDown();
     jQuery(".flexi_response").empty();
-    //jQuery('.flexi_response').hide();
+    jQuery("#flexi_attach_form_link").slideUp();
 
     document.getElementById("flexi_progress").style.width = "0%"; // width
     document.getElementById("flexi_progress_process").style.width = "0%";

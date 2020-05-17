@@ -31,7 +31,7 @@ class Flexi_Shortcode_Form
 
   //Attach form of specific post
   if (isset($params['attach']) && "true" == $params['attach']) {
-   echo do_shortcode("[flexi-gallery attach='true' filter='image']");
+   echo do_shortcode("[flexi-gallery attach='true']");
   }
 
   $check_enable_form = flexi_get_option('enable_form', 'flexi_form_settings', 'everyone');
@@ -88,6 +88,20 @@ class Flexi_Shortcode_Form
     }
 
    } else {
+
+    //Attach form of specific post
+    if (isset($params['attach']) && "true" == $params['attach']) {
+
+     ?>
+    <script>
+    jQuery(document).ready(function () {
+        jQuery("#flexi_form").slideUp();
+    });
+    </script>
+<a id="flexi_attach_form_link" href="#admin-ajax.php?action=flexi_send_again&amp;post_id=1683" class="pure-button flexi_send_again"><span class="dashicons dashicons-plus"></span> New</a>
+
+    <?php
+}
 
     if ('false' == $attr['ajax']) {
 
