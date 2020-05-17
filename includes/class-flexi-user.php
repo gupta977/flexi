@@ -20,7 +20,7 @@ class Flexi_User
   $link   = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
   $author = get_user_by('id', get_the_author_meta('ID'));
   if ($author) {
-   $link = add_query_arg("flexi_user", $author->user_nicename, $link);
+   $link = add_query_arg("flexi_user", $author->user_login, $link);
 
    $extra_icon      = array();
    $user_flexi_icon = flexi_get_option('user_flexi_icon', 'flexi_icon_settings', 1);
