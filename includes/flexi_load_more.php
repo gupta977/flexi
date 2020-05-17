@@ -22,6 +22,7 @@ function flexi_load_more()
  $evalue        = $_REQUEST['evalue'];
  $column        = $_REQUEST['column'];
  $attach        = $_REQUEST['attach'];
+ $attach_id     = $_REQUEST['attach_id'];
  $filter        = $_REQUEST['filter'];
  ob_start();
 
@@ -112,11 +113,11 @@ function flexi_load_more()
  //flexi_log($args);
  //flexi_log("-----------------");
  //Add meta query for attach page
- if (isset($params['attach']) && "true" == $params['attach']) {
+ if ("true" == $attach && '' != $attach_id) {
 
   $attach_array = array(
    'key'     => 'flexi_attach_at',
-   'value'   => get_the_ID(),
+   'value'   => $attach_id,
    'compare' => '=',
   );
 
@@ -127,7 +128,7 @@ function flexi_load_more()
 
  $put = "";
 
- //var_dump($args);
+ //flexi_log($args);
  //echo "----";
  $count = 0;
  while ($query->have_posts()): $query->the_post();

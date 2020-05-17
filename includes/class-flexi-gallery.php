@@ -163,6 +163,9 @@ class Flexi_Shortcode_Gallery
    $attach = "";
   }
 
+  //Current page ID
+  $cur_page_id = get_the_ID();
+
   //filter value
   if (isset($params['filter'])) {
    $filter = $params['filter'];

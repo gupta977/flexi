@@ -27,6 +27,7 @@ jQuery(document).ready(function () {
     user = jQuery("#user").text();
     keyword = jQuery("#keyword").text();
     attach = jQuery("#attach").text();
+    attach_id = jQuery("#attach_id").text();
     filter = jQuery("#filter").text();
     reset = jQuery(this).attr("data-reset");
 
@@ -57,6 +58,7 @@ jQuery(document).ready(function () {
         user: user,
         keyword: keyword,
         attach: attach,
+        attach_id: attach_id,
         filter: filter,
       },
       beforeSend: function () {

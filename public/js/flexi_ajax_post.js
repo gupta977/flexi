@@ -64,7 +64,7 @@ jQuery(document).ready(function () {
             if (evt.lengthComputable) {
               var percentComplete = Math.round((evt.loaded * 100) / evt.total);
               //Do something with download progress
-              console.log("Downloaded percent", percentComplete);
+              // console.log("Downloaded percent", percentComplete);
             }
           },
           false
@@ -86,7 +86,7 @@ jQuery(document).ready(function () {
           jQuery("#load_more_reset").click();
           jQuery(".flexi_response").append(response);
 
-          console.log(response);
+          //console.log(response);
         } else {
           //console.log("Blank Response");
           jQuery(".flexi_response").append(response.msg);
@@ -94,14 +94,14 @@ jQuery(document).ready(function () {
       },
       complete: function (data) {
         // Hide image container
-        console.log("Submission completed");
+        //console.log("Submission completed");
         jQuery("#flexi_loader").hide();
         jQuery("#flexi_after_response").show();
         i = 0;
         progress = false;
       },
       error: function (jqXHR, textStatus, errorThrown) {
-        console.log("Error occurred");
+        //console.log("Error occurred");
         jQuery(".flexi_response").show();
         jQuery(".flexi_response").empty();
         jQuery(".flexi_response").append(

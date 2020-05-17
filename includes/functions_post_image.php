@@ -376,13 +376,13 @@ function flexi_javascript_file_upload($id = "flexi_submit_notice", $button_id = 
               }
               if(error)
               {
-                console.log("Disable Form");
+                //console.log("Disable Form");
                   //Disable Submit Button
                   jQuery("#<?php echo $button_id; ?>").attr("disabled", true);
               }
               else
               {
-                console.log("Enable Form");
+                //console.log("Enable Form");
                   //Disable Submit Button
                   jQuery("#<?php echo $button_id; ?>").removeAttr("disabled");
               }
