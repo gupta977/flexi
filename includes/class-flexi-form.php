@@ -466,11 +466,12 @@ action="' . admin_url("admin-ajax.php") . '"
    }
   } else if ('submit' == $attr['type']) {
    //submit
-
+   do_action("flexi_before_submit");
    echo $frm->addInput('submit', $attr['name'], $attr['value'], array('id' => $attr['name'], 'class' => $attr['class']));
    //Generate jasvascript which will check filesize before upload.
    //Todo: Don't include it if file input button not available.
    echo flexi_javascript_file_upload('flexi_submit_notice', $attr['name']);
+   do_action("flexi_after_submit");
 
   } else if ('radio' == $attr['type'] || 'checkbox' == $attr['type']) {
 
