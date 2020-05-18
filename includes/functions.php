@@ -685,6 +685,8 @@ function flexi_log($message)
   } else {
    error_log($message);
   }
+
+  error_log('------------------------------------------');
  }
 }
 
