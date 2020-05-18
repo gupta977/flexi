@@ -263,6 +263,7 @@ action="' . admin_url("admin-ajax.php") . '"
    for ($x = 0; $x < count($reindex_array); $x++) {
     //echo $reindex_array[$x] . "-";
     echo flexi_error_code($reindex_array[$x]);
+    //echo "<div class='flexi_alert-box flexi_error'>" . flexi_error_code($reindex_array[$x]) . "</div>";
    }
 
   }

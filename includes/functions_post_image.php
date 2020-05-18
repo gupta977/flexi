@@ -12,7 +12,10 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
  $taxonomy     = 'flexi_category';
  $tag_taxonomy = 'flexi_tag';
 
- $newPost            = array('id' => false, 'error' => false, 'notice' => false);
+ $newPost = array('id' => false, 'error' => false, 'notice' => false);
+ if (has_filter('flexi_verify_submit')) {
+  $newPost = apply_filters('flexi_verify_submit', $newPost);
+ }
  $newPost['error'][] = "";
  $file_count         = 0;
  if (empty($title)) {
@@ -20,8 +23,7 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
  }
 
  //if (empty($content))  $newPost['error'][] = 'required-description';
-
- $newPost['error'][] = apply_filters('flexi_verify_submit', "");
+ //$newPost['error'][] = apply_filters('flexi_verify_submit', "");
 
  if (isset($files['tmp_name'][0])) {
   $check_file_exist = $files['tmp_name'][0];

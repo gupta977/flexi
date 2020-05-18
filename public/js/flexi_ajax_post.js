@@ -86,7 +86,7 @@ jQuery(document).ready(function () {
           jQuery("#load_more_reset").click();
           jQuery(".flexi_response").append(response);
 
-          //console.log(response);
+          console.log(response);
         } else {
           //console.log("Blank Response");
           jQuery(".flexi_response").append(response.msg);

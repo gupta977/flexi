@@ -98,7 +98,7 @@ function flexi_ajax_post()
     $msg           = "";
     for ($x = 0; $x < count($reindex_array); $x++) {
      // $err .= $reindex_array[$x] . "  ";
-     $msg .= flexi_error_code($reindex_array[$x]);
+     $msg .= "<div class='flexi_alert-box flexi_error'>" . flexi_error_code($reindex_array[$x]) . '</div>';
     }
     $response['msg'] = $msg . ' ' . flexi_post_toolbar_grid('', true);
     //flexi_log($reindex_array);
