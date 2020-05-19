@@ -77,11 +77,12 @@ echo get_option('FLEXI_PRO_RESPONSE', '');
 <div class="card">
 <h3 class="title">Features of Flexi-PRO</h3>
 <ul>
-<li>Google reCaptcha (Security code during form submission) <a href="#TB_inline?width=600&height=200&inlineId=reCaptcha" title="Form with Google reCaptcha Option" class="thickbox">Sample code</a></li>
-<li>Bulk image upload (drag and drop multiple file) <a href="#TB_inline?width=600&height=200&inlineId=drag" title="Drag & Drop multiple files" class="thickbox">Sample code</a></li>
-<li>Let users to modify own submitted post (Edit Button)  <a href="#TB_inline?width=600&height=200&inlineId=modify" title="Edit page content" class="thickbox">Sample code</a></li>
-<li>Extra 7 custom fields</li>
-<li>Add more own mime-type files</li>
+<li>1- Google reCaptcha (Security code during form submission) <a href="#TB_inline?width=600&height=200&inlineId=reCaptcha" title="Form with Google reCaptcha Option" class="thickbox">Sample code</a></li>
+<li>2- Bulk image upload (drag and drop multiple file) <a href="#TB_inline?width=600&height=200&inlineId=drag" title="Drag & Drop multiple files" class="thickbox">Sample code</a></li>
+<li>3- Let users to modify own submitted post (Edit Button)  <a href="#TB_inline?width=600&height=200&inlineId=modify" title="Edit page content" class="thickbox">Sample code</a></li>
+<li>4- Extra 7 custom fields</li>
+<li>5- Add more own mime-type files</li>
+<li>6- Limit number of post to upload based on user role.</li>
 </ul>
 </div>
 

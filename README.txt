@@ -143,6 +143,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 1.0.29 =
 * Added form attach to specific page [flexi-form attach="true"]
 * Fixed username when gallery viewed
+* Added User File Limit for Flexi PRO
 
 = 1.0.28 =
 * Tags at detail layout
