@@ -20,8 +20,19 @@ Fall in Love with this plugin like we do!
 
 Look Screenshots below for quick understanding of it's scope. You can do lot more then listed. :)
 
-<a href="https://odude.com/demo/flexi/">Flexi Gallery Demo</a>
+== Live Demo ==
+[Masonry Layout](https://odude.com/demo/flexi/flexi-gallery/)
+[Wide Layout](https://odude.com/demo/flexi/flexi-gallery-wide/)
+[Regular Layout](https://odude.com/demo/flexi/flexi-gallery-regular/)
+[Basic Layout](https://odude.com/demo/flexi/flexi-gallery-basic/)
+[Portfolio Layout](https://odude.com/demo/flexi/flexi-gallery-portfolio/)
+[Stress Free Gallery](https://odude.com/demo/flexi/stress-free-gallery/)
+[Submit File Form](https://odude.com/demo/flexi/post-image/)
+[Submit YouTube/Vimeo Video](https://odude.com/demo/flexi/post-video-url/)
+[User Dashboard](https://odude.com/demo/flexi/my-gallery/)
+[Gallery filtered by Category](https://odude.com/demo/flexi/flexi-gallery/?flexi_category=animals)
 
+== Help ==
 <a href="https://odude.com/docs/flexi-gallery/">Documentation</a>
 
 = Flexi is divided into 3 parts =
@@ -32,7 +43,7 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 
 = KEY FEATURES =
 
-*   **Gutenberg block** - Implemented Flexi Block for simple and fast configuration of the plugin in Gutenberg editor. Shortcode is generated along with live preview. 
+*   **Gutenberg block** - Implemented Flexi Block (Visual Builder) for simple and fast configuration of the plugin in Gutenberg editor. Shortcode is generated along with live preview. 
 *   **Advance Shortcode** - Generate Gallery & Forms and all other features with shortcode. 
 *   **Fully responsive and Mobile features** - Plugin implemented with advanced settings for different devices screen size.
 *   **3 Hover effects** - & **5 Caption effect** at gallery page.
@@ -56,11 +67,20 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 *   **Any Type of File** - Ability to submit any type of file format allowed by administrator
 *   **File size limit** - Specify each file size (MB) limit that the visitors can upload. 
 *   **Conflict Management** - Special settings available to manage the conflict with other plugins & theme.
+*   **Live Reloading** - If gallery & form is on same page, the submitted post will be visible as soon as form is posted without any page refresh.
 
 = WORKS GREAT WITH =
 
 * **Ultimate-Member plugin**. It will display user submitted records on user profile tab.
 * **BuddyPress plugin**. It will display user submitted records on user profile section.
+
+= Stress Free Gallery =
+As on the title, just copy paste `[flexi-form attach="true"]` to any wp-page and wp-post. 
+It will have gallery & form on same page. This form can be toggle display between member & public.
+As soon as the form is posted, the submitted post will be visible at the page which won't be displayed on other pages with same shortcode.
+You can also add/remove form fields based on pages & posts.
+**No more require to generate shortcode after the gallery is created** as other plugins does.
+[Stress Free Gallery](https://odude.com/demo/flexi/stress-free-gallery/)
 
 = VIDEO URL =
 
@@ -98,6 +118,7 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 * **Custom Fields** extra 7 fields on top of free version. 
 * **Edit Post** Let visitors to update the submitted post with own set of fields. 
 * **More Mime Types** - Add more file type to allow visitors to upload.
+* **User File Limit** - Limit the number of post to get submitted based on user roles. 
 
 > If any suggestion, contact me directly at navneet@odude.com
 > Byte update at https://github.com/gupta977/flexi/tree/beta
@@ -114,14 +135,16 @@ Search for 'flexi' and install it as other regular plugins.
 Click on ADD NEW PAGE in wordpress dashboard, at block editor insert FLEXI FORM & similarly on new page insert FLEXI GALLERY block. View form page to collect data and gallery page to display.
 
 **Process 2:**
-Some pages are automatically created including submission page [flexi-form] & gallery page[flexi-primary]. View and use those pages.
+Some pages are automatically created including submission page `[flexi-form]` & gallery page `[flexi-primary]`. View and use those pages.
 
 **Process 3:**
 At Wordpress dashboard, click on ADD NEW FLEXI POST and select file and upload as like regular wordpress post. Then create new page and use shortcode as [flexi-gallery] to view all post as gallery.
 
 = Which one to use UPG or Flexi ? =
 
-UPG is very advance and people feel it complicated. Flexi is only for images with basic important features similar to UPG.
+UPG is popular and people with some css,php knowledge find it as powerful plugins as it has lot's of personal tweaks.
+Flexi is generated based on feedback of UPG users and object oriented plugins so that it can be extended easily by developers.
+
 
 = Important Settings  =
 At Flexi Settings all configuration are ready, but do check all automatically created pages should be assigned at selected field. Do not delete page even if not required. 
@@ -140,8 +163,11 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.30 =
+* Added form display only with publish_posts rights
+
 = 1.0.29 =
-* Added form attach to specific page [flexi-form attach="true"]
+* Added form attach to specific page `[flexi-form attach="true"]`
 * Fixed username when gallery viewed
 * Added User File Limit for Flexi PRO
 
@@ -223,33 +249,8 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 1.0.10 =
 * Fixed user dashboard
 
-= 1.0.9 =
-* Standalone gallery layout Updated
-* Media settings applied only to image container. No more own media sizes.
-
-= 1.0.8 =
-* Rolled back to old cms framework
-* Standalone gallery introduced. 
-
-= 1.0.7 =
-* User avatar 
-* Implemented Semantic UI CSS
-* User Dashboard page with menu toolbar
-
-= 1.0.6 =
-* Added custom field supports
-
-= 1.0.5 =
-* Updated Flexi Dashboard
-
-= 1.0.4 =
-* Added Flexi Dashboard Flow chart
-
-= 1.0.3 =
-* Stable TAG
-
 
 == Upgrade Notice ==
 
-= 1.0.3 =
+= 1.0.30 =
 It will not loose any data after update but recommended to take backup

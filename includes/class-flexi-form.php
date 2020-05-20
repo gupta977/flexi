@@ -45,9 +45,22 @@ class Flexi_Shortcode_Form
     $enable_form_access = false;
     flexi_login_link();
    }
+  } else if ('publish_posts' == $check_enable_form) {
+   if (!is_user_logged_in()) {
+    $enable_form_access = false;
+    //flexi_login_link();
+   } else {
+    if (current_user_can('publish_posts')) {
+     echo "<div class='flexi_alert-box flexi_notice'>" . __('This form will not be visible by visitors.', 'flexi') . "</div>";
+     $enable_form_access = true;
+    } else {
+     $enable_form_access = false;
+     echo "<div class='flexi_alert-box flexi_warning'>" . __('You do not have proper rights to publish posts', 'flexi') . "</div>";
+    }
+   }
   } else {
    $enable_form_access = false;
-   echo "<div class='flexi_alert-box flexi_notice'>" . __('Submission disabled', 'flexi') . "</div>";
+   echo "<div class='flexi_alert-box flexi_error'>" . __('Submission disabled', 'flexi') . "</div>";
   }
 
   $edit_post = true;

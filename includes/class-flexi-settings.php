@@ -311,9 +311,10 @@ class FLEXI_Admin_Settings
      'description'       => __('It will enable/disable frontend form as specified.', 'flexi'),
      'type'              => 'select',
      'options'           => array(
-      'everyone'     => __('Everyone', 'flexi'),
-      'member'       => __('Only members', 'flexi'),
-      'disable_form' => __('Disable submission', 'flexi'),
+      'everyone'      => __('Everyone', 'flexi'),
+      'member'        => __('Only members', 'flexi'),
+      'publish_posts' => __('Only with Publish Post rights', 'flexi'),
+      'disable_form'  => __('Disable submission', 'flexi'),
      ),
      'sanitize_callback' => 'sanitize_key',
     ),
