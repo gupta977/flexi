@@ -37,6 +37,22 @@ class Flexi_Detail_Layout_Basic
   return $new;
  }
 
+ //elements in use
+ public function list_elements()
+ {
+  $labels = array(
+   "Publish Status" => "status",
+   "Large Media"    => "media",
+   "Description"    => "desp",
+   "Category"       => "category",
+   "Tags"           => "tags",
+   "Icon Grid"      => "icon_grid",
+   "Custom Fields"  => "custom_fields",
+  );
+
+  return $labels;
+ }
+
  //Add section fields
  public function add_fields($new)
  {
@@ -53,25 +69,33 @@ class Flexi_Detail_Layout_Basic
 
   ));
 
-  for ($x = 1; $x <= 15; $x++) {
+  $labels = $this->list_elements();
+
+  foreach ($labels as $x => $x_value) {
    $fields_add = array('flexi_detail_layout_basic' => array(
     array(
-     'name'              => 'flexi_location' . $x,
-     'label'             => __('Location ' . $x, 'flexi'),
+     'name'              => 'flexi_' . $x_value,
+     'label'             => __($x, 'flexi'),
      'description'       => __('Select the element want to show/hide', 'flexi'),
      'type'              => 'select',
      'options'           => array(
-      ''              => __('-- None --', 'flexi'),
-      'status'        => __('Status', 'flexi'),
-      'media'         => __('Media', 'flexi'),
-      'standalone'    => __('Standalone Gallery', 'flexi'),
-      'desp'          => __('Description', 'flexi'),
-      'category'      => __('Category', 'flexi'),
-      'tags'          => __('Tags', 'flexi'),
-      'icon_grid'     => __('Icon Grid', 'flexi'),
-      'custom_fields' => __('Custom Fields', 'flexi'),
-      'date_posted'   => __('Date posted', 'flexi'),
-      'author_info'   => __('Author Info', 'flexi'),
+      ''           => __('-- Hide --', 'flexi'),
+      'location1'  => __('Location 1', 'flexi'),
+      'location2'  => __('Location 2', 'flexi'),
+      'location3'  => __('Location 3', 'flexi'),
+      'location4'  => __('Location 4', 'flexi'),
+      'location5'  => __('Location 5', 'flexi'),
+      'location6'  => __('Location 6', 'flexi'),
+      'location7'  => __('Location 7', 'flexi'),
+      'location8'  => __('Location 8', 'flexi'),
+      'location9'  => __('Location 9', 'flexi'),
+      'location10' => __('Location 10', 'flexi'),
+      'location11' => __('Location 11', 'flexi'),
+      'location12' => __('Location 12', 'flexi'),
+      'location13' => __('Location 13', 'flexi'),
+      'location14' => __('Location 14', 'flexi'),
+      'location15' => __('Location 15', 'flexi'),
+
      ),
      'sanitize_callback' => 'sanitize_key',
     ),
@@ -85,29 +109,58 @@ class Flexi_Detail_Layout_Basic
   return $new;
  }
 
- public function flexi_position($param, $post)
+ //Keep all elements into array
+ public function generate_array()
  {
-  $value = flexi_get_option('flexi_location' . $param, 'flexi_detail_layout_basic', 'none');
+  $labels   = $this->list_elements();
+  $elements = array();
+  foreach ($labels as $x => $x_value) {
+   $location           = flexi_get_option('flexi_' . $x_value, 'flexi_detail_layout_basic', '');
+   $elements[$x_value] = $location;
+  }
+  //flexi_log($elements);
+  return $elements;
+
+ }
+
+ //Search into array
+ public function array_ksearch($array, $str)
+ {
+  $result = array();
+  for ($i = 0; $i < count($array); next($array), $i++) {
+   if (strtolower(current($array)) == strtolower($str)) {
+    array_push($result, key($array));
+   }
+
+  }
+  return $result;
+ }
+
+ //Display elements based on array found
+ public function display_element($value, $post)
+ {
+  ob_start();
+
   if ('media' == $value) {
    echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
   } else if ('status' == $value) {
 
    if (get_post_status() == 'draft' || get_post_status() == "pending") {
     ?>
-        <small>
-          <div class="flexi_badge"> <?php echo __("Under Review", "flexi"); ?></div>
-        </small>
-    <?php
+             <small>
+               <div class="flexi_badge"> <?php echo __("Under Review", "flexi"); ?></div>
+             </small>
+         <?php
 }
 
   } else if ('desp' == $value) {
    ?>
-<div class="flex-desp"> <?php echo wpautop(stripslashes($post->post_content)); ?></div>
-      <?php
+     <div class="flex-desp"> <?php echo wpautop(stripslashes($post->post_content)); ?></div>
+           <?php
 } else if ('standalone' == $value) {
    ?>
-  <div id="flexi_thumb_image" style='text-align: center;'> <?php flexi_standalone_gallery(get_the_ID(), 'thumbnail', 75, 75);?></div>
-       <?php
+       <div id="flexi_thumb_image" style='text-align: center;'> <?php flexi_standalone_gallery(get_the_ID(), 'thumbnail', 75, 75);?></div>
+            <?php
 } else if ('category' == $value) {
    echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
   } else if ('tags' == $value) {
@@ -119,6 +172,20 @@ class Flexi_Detail_Layout_Basic
   } else {
    echo "<div>" . $value . "</div>";
   }
+
+  return ob_get_clean();
+
+ }
+
+ public function flexi_position($param, $post)
+ {
+
+  $elements = $this->generate_array();
+  $location = $this->array_ksearch($elements, 'location' . $param);
+  foreach ($location as $v) {
+   echo $this->display_element($v, $post);
+  }
+
  }
 
 }
