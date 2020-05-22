@@ -49,6 +49,14 @@ a:hover {
 
 /* Fit image into div */
 
+.flexi_image_wrap_large {
+  width: 100%;
+}
+.flexi_image_wrap_large img {
+  width: auto;
+  height: auto;
+}
+
 .flexi-image-wrapper_large {
   width: var(--flexi_l_width);
   height: var(--flexi_l_height);

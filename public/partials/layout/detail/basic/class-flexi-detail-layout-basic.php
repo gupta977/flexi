@@ -6,7 +6,9 @@ class Flexi_Detail_Layout_Basic
 
   add_filter('flexi_settings_sections', array($this, 'add_section'));
   add_filter('flexi_settings_fields', array($this, 'add_fields'));
-  add_action('flexi_position_6', array($this, 'flexi_position_6'), 10, 1);
+  for ($x = 1; $x <= 15; $x++) {
+   add_action('flexi_position_' . $x, array($this, 'flexi_position'), 10, 2);
+  }
 
  }
 
@@ -59,7 +61,7 @@ class Flexi_Detail_Layout_Basic
      'description'       => __('Select the element want to show/hide', 'flexi'),
      'type'              => 'select',
      'options'           => array(
-      'none'          => __('-- None --', 'flexi'),
+      ''              => __('-- None --', 'flexi'),
       'status'        => __('Status', 'flexi'),
       'media'         => __('Media', 'flexi'),
       'standalone'    => __('Standalone Gallery', 'flexi'),
@@ -83,10 +85,40 @@ class Flexi_Detail_Layout_Basic
   return $new;
  }
 
- public function flexi_position_6($post)
+ public function flexi_position($param, $post)
  {
-  $value = flexi_get_option('flexi_location6', 'flexi_detail_layout_basic', 'media');
-  echo "<div class='flexi-image-wrapper_large'>" . flexi_large_media($post) . "</div>";
+  $value = flexi_get_option('flexi_location' . $param, 'flexi_detail_layout_basic', 'none');
+  if ('media' == $value) {
+   echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
+  } else if ('status' == $value) {
+
+   if (get_post_status() == 'draft' || get_post_status() == "pending") {
+    ?>
+        <small>
+          <div class="flexi_badge"> <?php echo __("Under Review", "flexi"); ?></div>
+        </small>
+    <?php
+}
+
+  } else if ('desp' == $value) {
+   ?>
+<div class="flex-desp"> <?php echo wpautop(stripslashes($post->post_content)); ?></div>
+      <?php
+} else if ('standalone' == $value) {
+   ?>
+  <div id="flexi_thumb_image" style='text-align: center;'> <?php flexi_standalone_gallery(get_the_ID(), 'thumbnail', 75, 75);?></div>
+       <?php
+} else if ('category' == $value) {
+   echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
+  } else if ('tags' == $value) {
+   echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
+  } else if ('icon_grid' == $value) {
+   echo flexi_show_icon_grid();
+  } else if ('custom_fields' == $value) {
+   echo flexi_custom_field_loop($post, 'detail');
+  } else {
+   echo "<div>" . $value . "</div>";
+  }
  }
 
 }
