@@ -6,6 +6,7 @@ class Flexi_Detail_Layout_Basic
 
   add_filter('flexi_settings_sections', array($this, 'add_section'));
   add_filter('flexi_settings_fields', array($this, 'add_fields'));
+  add_action('flexi_position_6', array($this, 'flexi_position_6'), 10, 1);
 
  }
 
@@ -80,6 +81,12 @@ class Flexi_Detail_Layout_Basic
   $new = array_merge($new, $fields);
 
   return $new;
+ }
+
+ public function flexi_position_6($post)
+ {
+  $value = flexi_get_option('flexi_location6', 'flexi_detail_layout_basic', 'media');
+  echo "<div class='flexi-image-wrapper_large'>" . flexi_large_media($post) . "</div>";
  }
 
 }
