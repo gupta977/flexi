@@ -106,6 +106,10 @@ class Flexi
   */
  private function load_dependencies()
  {
+
+//Attach Layouts controls
+  require_once plugin_dir_path(dirname(__FILE__)) . 'public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php';
+
   //oEmbed URL
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/oembed/class-flexi-oembed.php';
 
