@@ -1,86 +1,86 @@
 <div id="flexi_content_<?php echo get_the_ID(); ?>">
   <div class="pure-g">
   <div class="pure-u-1-1">
-      <div class="flexi_margin-box" style='text-align: center;background-color:#CCCC99;'>
-       <?php do_action('flexi_position_1', '1', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_1" style='text-align: center;'>
+       <?php do_action('flexi_location_1', '1', $post, 'basic');?>
       </div>
     </div>
 
     <div class="pure-u-1-2">
-      <div class="flexi_margin-box" style='text-align: left;background-color:yellow;'>
-      <?php do_action('flexi_position_2', '2', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_2" style='text-align: left;'>
+      <?php do_action('flexi_location_2', '2', $post, 'basic');?>
       </div>
     </div>
     <div class="pure-u-1-2">
-      <div class="flexi_margin-box" style='text-align: right;background-color:green;'>
-      <?php do_action('flexi_position_3', '3', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_3" style='text-align: right;'>
+      <?php do_action('flexi_location_3', '3', $post, 'basic');?>
       </div>
     </div>
 
     <div class="pure-u-3-5">
-      <div class="flexi_margin-box" style='text-align: center;background-color:pink;'>
-      <?php do_action('flexi_position_4', '4', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_4" style='text-align: center;'>
+      <?php do_action('flexi_location_4', '4', $post, 'basic');?>
       </div>
     </div>
     <div class="pure-u-2-5">
-      <div class="flexi_margin-box" style='text-align: center;background-color:orange;'>
-      <?php do_action('flexi_position_5', '5', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_5" style='text-align: center;'>
+      <?php do_action('flexi_location_5', '5', $post, 'basic');?>
       </div>
     </div>
 
     <div class="pure-u-1-1">
-      <div class="flexi_margin-box" style='text-align: center;background-color:white;'>
-      <?php do_action('flexi_position_6', '6', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_6" style='text-align: center;'>
+      <?php do_action('flexi_location_6', '6', $post, 'basic');?>
       </div>
     </div>
 
     <div class="pure-u-2-5">
-      <div class="flexi_margin-box" style='text-align: center;background-color:blue;'>
-      <?php do_action('flexi_position_7', '7', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_7" style='text-align: center;'>
+      <?php do_action('flexi_location_7', '7', $post, 'basic');?>
       </div>
     </div>
     <div class="pure-u-3-5">
-      <div class="flexi_margin-box" style='text-align: center;background-color:purple;'>
-      <?php do_action('flexi_position_8', '8', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_8" style='text-align: center;'>
+      <?php do_action('flexi_location_8', '8', $post, 'basic');?>
       </div>
     </div>
 
     <div class="pure-u-1-1">
-      <div class="flexi_margin-box" style='text-align: center;background-color:red;'>
-      <?php do_action('flexi_position_9', '9', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_9" style='text-align: center;'>
+      <?php do_action('flexi_location_9', '9', $post, 'basic');?>
       </div>
     </div>
 
     <div class="pure-u-1-2">
-      <div class="flexi_margin-box" style='text-align: left;background-color:#66FFCC;'>
-      <?php do_action('flexi_position_10', '10', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_10" style='text-align: left;'>
+      <?php do_action('flexi_location_10', '10', $post, 'basic');?>
       </div>
     </div>
     <div class="pure-u-1-2">
-      <div class="flexi_margin-box" style='text-align: right;background-color:grey;'>
-      <?php do_action('flexi_position_11', '11', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_11" style='text-align: right;'>
+      <?php do_action('flexi_location_11', '11', $post, 'basic');?>
       </div>
     </div>
 
     <div class="pure-u-1-3">
-      <div class="flexi_margin-box" style='text-align: left;background-color:#00FF00;'>
-      <?php do_action('flexi_position_12', '12', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_12" style='text-align: left;'>
+      <?php do_action('flexi_location_12', '12', $post, 'basic');?>
       </div>
     </div>
     <div class="pure-u-1-3">
-      <div class="flexi_margin-box" style='text-align: center;background-color:silver;'>
-      <?php do_action('flexi_position_13', '13', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_13" style='text-align: center;'>
+      <?php do_action('flexi_location_13', '13', $post, 'basic');?>
       </div>
     </div>
     <div class="pure-u-1-3">
-      <div class="flexi_margin-box" style='text-align: right;background-color:brown;'>
-      <?php do_action('flexi_position_14', '14', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_14" style='text-align: right;'>
+      <?php do_action('flexi_location_14', '14', $post, 'basic');?>
       </div>
     </div>
 
     <div class="pure-u-1">
-      <div class="flexi_margin-box" style='background-color:#9999FF;'>
-      <?php do_action('flexi_position_15', '15', $post);?>
+      <div class="flexi_margin-box" id="flexi_location_15">
+      <?php do_action('flexi_location_15', '15', $post, 'basic');?>
       </div>
     </div>
 

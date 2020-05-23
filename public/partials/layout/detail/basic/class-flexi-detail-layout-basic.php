@@ -7,7 +7,7 @@ class Flexi_Detail_Layout_Basic
   add_filter('flexi_settings_sections', array($this, 'add_section'));
   add_filter('flexi_settings_fields', array($this, 'add_fields'));
   for ($x = 1; $x <= 15; $x++) {
-   add_action('flexi_position_' . $x, array($this, 'flexi_position'), 10, 2);
+   add_action('flexi_location_' . $x, array($this, 'flexi_location'), 10, 3);
   }
 
  }
@@ -28,7 +28,10 @@ class Flexi_Detail_Layout_Basic
    array(
     'id'          => 'flexi_detail_layout_basic',
     'title'       => __('Basic - Layout', 'flexi'),
-    'description' => __('xxxxxxxxxxxxxxx', 'flexi'),
+    'description' => __('<ul>
+    <li>One element can have same location</li>
+    <li>Detail page is accessed by clicking on icon <span class="dashicons dashicons-external">&nbsp;</span></li>
+    </ul>', 'flexi'),
     'tab'         => 'detail',
    ),
   );
@@ -61,10 +64,10 @@ class Flexi_Detail_Layout_Basic
    array(
     'name'        => 'basic_chart.png',
     'label'       => __('Detail Layout Chart', 'flexi'),
-    'description' => __('Each number denotes the available position of elements', 'flexi'),
+    'description' => __('Each number denotes the available location of elements', 'flexi'),
     'type'        => 'image',
     'size'        => '100%',
-    'class'       => 'xxxx',
+    'class'       => '',
    ),
 
   ));
@@ -137,7 +140,7 @@ class Flexi_Detail_Layout_Basic
  }
 
  //Display elements based on array found
- public function display_element($value, $post)
+ public function display_element($value, $post, $layout)
  {
   ob_start();
 
@@ -177,18 +180,18 @@ class Flexi_Detail_Layout_Basic
 
  }
 
- public function flexi_position($param, $post)
+ public function flexi_location($param, $post, $layout)
  {
 
   $elements = $this->generate_array();
   $location = $this->array_ksearch($elements, 'location' . $param);
   foreach ($location as $v) {
-   echo $this->display_element($v, $post);
+   echo $this->display_element($v, $post, $layout);
   }
 
  }
 
 }
 
-//List layout positions
+//List layout locations
 $layout = new Flexi_Detail_Layout_Basic();
