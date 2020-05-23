@@ -6,7 +6,7 @@ class Flexi_Detail_Layout_Basic
 
   add_filter('flexi_settings_sections', array($this, 'add_section'));
   add_filter('flexi_settings_fields', array($this, 'add_fields'));
-  for ($x = 1; $x <= 15; $x++) {
+  for ($x = 1; $x <= 5; $x++) {
    add_action('flexi_location_' . $x, array($this, 'flexi_location'), 10, 3);
   }
 
@@ -183,11 +183,12 @@ class Flexi_Detail_Layout_Basic
   flexi_get_option('flexi_custom_fields', 'flexi_detail_layout_basic', 'location4');
   flexi_get_option('flexi_category', 'flexi_detail_layout_basic', 'location3');
   flexi_get_option('flexi_tags', 'flexi_detail_layout_basic', 'location3');
-
-  $elements = $this->generate_array();
-  $location = $this->array_ksearch($elements, 'location' . $param);
-  foreach ($location as $v) {
-   echo $this->display_element($v, $post, $layout);
+  if ('basic' == $layout) {
+   $elements = $this->generate_array();
+   $location = $this->array_ksearch($elements, 'location' . $param);
+   foreach ($location as $v) {
+    echo $this->display_element($v, $post, $layout);
+   }
   }
 
  }

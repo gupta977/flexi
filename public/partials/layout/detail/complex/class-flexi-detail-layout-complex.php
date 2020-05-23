@@ -145,7 +145,8 @@ class Flexi_Detail_Layout_Complex
  {
   ob_start();
   if ('complex' == $layout) {
-   if ('media' == $value && 'complex' == $layout) {
+   //flexi_log($value . '----' . $layout);
+   if ('media' == $value) {
     echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
    } else if ('status' == $value) {
 
@@ -193,10 +194,16 @@ class Flexi_Detail_Layout_Complex
   flexi_get_option('flexi_category', 'flexi_detail_layout_complex', 'location12');
   flexi_get_option('flexi_tags', 'flexi_detail_layout_complex', 'location12');
 
-  $elements = $this->generate_array();
-  $location = $this->array_ksearch($elements, 'location' . $param);
-  foreach ($location as $v) {
-   echo $this->display_element($v, $post, $layout);
+  if ('complex' == $layout) {
+   $elements = $this->generate_array();
+   $location = $this->array_ksearch($elements, 'location' . $param);
+
+   //flexi_log($elements);
+
+   foreach ($location as $v) {
+    echo $this->display_element($v, $post, $layout);
+    //echo $v;
+   }
   }
 
  }
