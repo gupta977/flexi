@@ -134,39 +134,40 @@ class Flexi_Detail_Layout_Basic
  public function display_element($value, $post, $layout)
  {
   ob_start();
+  if ('basic' == $layout) {
 
-  if ('media' == $value) {
-   echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
-  } else if ('status' == $value) {
+   if ('media' == $value) {
+    echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
+   } else if ('status' == $value) {
 
-   if (get_post_status() == 'draft' || get_post_status() == "pending") {
-    ?>
+    if (get_post_status() == 'draft' || get_post_status() == "pending") {
+     ?>
              <small>
                <div class="flexi_badge"> <?php echo __("Under Review", "flexi"); ?></div>
              </small>
          <?php
 }
 
-  } else if ('desp' == $value) {
-   ?>
+   } else if ('desp' == $value) {
+    ?>
      <div class="flex-desp"> <?php echo wpautop(stripslashes($post->post_content)); ?></div>
            <?php
 } else if ('standalone' == $value) {
-   ?>
+    ?>
        <div id="flexi_thumb_image" style='text-align: center;'> <?php flexi_standalone_gallery(get_the_ID(), 'thumbnail', 75, 75);?></div>
             <?php
 } else if ('category' == $value) {
-   echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
-  } else if ('tags' == $value) {
-   echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
-  } else if ('icon_grid' == $value) {
-   echo flexi_show_icon_grid();
-  } else if ('custom_fields' == $value) {
-   echo flexi_custom_field_loop($post, 'detail');
-  } else {
-   echo "<div>" . $value . "</div>";
+    echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
+   } else if ('tags' == $value) {
+    echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
+   } else if ('icon_grid' == $value) {
+    echo flexi_show_icon_grid();
+   } else if ('custom_fields' == $value) {
+    echo flexi_custom_field_loop($post, 'detail');
+   } else {
+    echo "<div>" . $value . "</div>";
+   }
   }
-
   return ob_get_clean();
 
  }

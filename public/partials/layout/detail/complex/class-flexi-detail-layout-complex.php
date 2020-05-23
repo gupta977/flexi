@@ -26,7 +26,7 @@ class Flexi_Detail_Layout_Complex
 
   $sections = array(
    array(
-    'id'          => 'flexi_detail_layout_Complex',
+    'id'          => 'flexi_detail_layout_complex',
     'title'       => __('Complex - Layout', 'flexi'),
     'description' => __('<ul>
     <li>One element can have same location</li>
@@ -61,7 +61,7 @@ class Flexi_Detail_Layout_Complex
  public function add_fields($new)
  {
 
-  $fields = array('flexi_detail_layout_Complex' => array(
+  $fields = array('flexi_detail_layout_complex' => array(
    array(
     'name'        => 'public/partials/layout/detail/complex/complex_chart.png',
     'label'       => __('Detail Layout Chart', 'flexi'),
@@ -76,7 +76,7 @@ class Flexi_Detail_Layout_Complex
   $labels = $this->list_elements();
 
   foreach ($labels as $x => $x_value) {
-   $fields_add = array('flexi_detail_layout_Complex' => array(
+   $fields_add = array('flexi_detail_layout_complex' => array(
     array(
      'name'              => 'flexi_' . $x_value,
      'label'             => __($x, 'flexi'),
@@ -119,7 +119,7 @@ class Flexi_Detail_Layout_Complex
   $labels   = $this->list_elements();
   $elements = array();
   foreach ($labels as $x => $x_value) {
-   $location           = flexi_get_option('flexi_' . $x_value, 'flexi_detail_layout_Complex', '');
+   $location           = flexi_get_option('flexi_' . $x_value, 'flexi_detail_layout_complex', '');
    $elements[$x_value] = $location;
   }
   //flexi_log($elements);
@@ -144,39 +144,39 @@ class Flexi_Detail_Layout_Complex
  public function display_element($value, $post, $layout)
  {
   ob_start();
+  if ('complex' == $layout) {
+   if ('media' == $value && 'complex' == $layout) {
+    echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
+   } else if ('status' == $value) {
 
-  if ('media' == $value) {
-   echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
-  } else if ('status' == $value) {
-
-   if (get_post_status() == 'draft' || get_post_status() == "pending") {
-    ?>
+    if (get_post_status() == 'draft' || get_post_status() == "pending") {
+     ?>
              <small>
                <div class="flexi_badge"> <?php echo __("Under Review", "flexi"); ?></div>
              </small>
          <?php
 }
 
-  } else if ('desp' == $value) {
-   ?>
+   } else if ('desp' == $value) {
+    ?>
      <div class="flex-desp"> <?php echo wpautop(stripslashes($post->post_content)); ?></div>
            <?php
 } else if ('standalone' == $value) {
-   ?>
+    ?>
        <div id="flexi_thumb_image" style='text-align: center;'> <?php flexi_standalone_gallery(get_the_ID(), 'thumbnail', 75, 75);?></div>
             <?php
 } else if ('category' == $value) {
-   echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
-  } else if ('tags' == $value) {
-   echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
-  } else if ('icon_grid' == $value) {
-   echo flexi_show_icon_grid();
-  } else if ('custom_fields' == $value) {
-   echo flexi_custom_field_loop($post, 'detail');
-  } else {
-   echo "<div>" . $value . "</div>";
+    echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
+   } else if ('tags' == $value) {
+    echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
+   } else if ('icon_grid' == $value) {
+    echo flexi_show_icon_grid();
+   } else if ('custom_fields' == $value) {
+    echo flexi_custom_field_loop($post, 'detail');
+   } else {
+    echo "<div>" . $value . "</div>";
+   }
   }
-
   return ob_get_clean();
 
  }
@@ -185,13 +185,13 @@ class Flexi_Detail_Layout_Complex
  {
 
   //Set default location of elements
-  flexi_get_option('flexi_media', 'flexi_detail_layout_expert', 'location6');
-  flexi_get_option('flexi_status', 'flexi_detail_layout_expert', 'location1');
-  flexi_get_option('flexi_desp', 'flexi_detail_layout_expert', 'location15');
-  flexi_get_option('flexi_icon_grid', 'flexi_detail_layout_expert', 'location14');
-  flexi_get_option('flexi_custom_fields', 'flexi_detail_layout_expert', 'location13');
-  flexi_get_option('flexi_category', 'flexi_detail_layout_expert', 'location12');
-  flexi_get_option('flexi_tags', 'flexi_detail_layout_expert', 'location12');
+  flexi_get_option('flexi_media', 'flexi_detail_layout_complex', 'location6');
+  flexi_get_option('flexi_status', 'flexi_detail_layout_complex', 'location1');
+  flexi_get_option('flexi_desp', 'flexi_detail_layout_complex', 'location15');
+  flexi_get_option('flexi_icon_grid', 'flexi_detail_layout_complex', 'location14');
+  flexi_get_option('flexi_custom_fields', 'flexi_detail_layout_complex', 'location13');
+  flexi_get_option('flexi_category', 'flexi_detail_layout_complex', 'location12');
+  flexi_get_option('flexi_tags', 'flexi_detail_layout_complex', 'location12');
 
   $elements = $this->generate_array();
   $location = $this->array_ksearch($elements, 'location' . $param);
