@@ -594,7 +594,7 @@ class FLEXI_Admin_Settings
  public function callback_image($args)
  {
 
-  $src  = FLEXI_ROOT_URL . "admin/img/";
+  $src  = FLEXI_ROOT_URL;
   $html = sprintf('<img src="' . $src . '%1$s" class="%2$s" id="%3$s" size="%4$s"/>', $args['id'], $args['class'], $args['id'], $args['size']);
   $html .= $this->get_field_description($args);
 

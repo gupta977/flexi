@@ -1,5 +1,5 @@
 <?php
-class Flexi_Detail_Layout_Basic
+class Flexi_Detail_Layout_Complex
 {
  public function __construct()
  {
@@ -26,8 +26,8 @@ class Flexi_Detail_Layout_Basic
 
   $sections = array(
    array(
-    'id'          => 'flexi_detail_layout_basic',
-    'title'       => __('Basic - Layout', 'flexi'),
+    'id'          => 'flexi_detail_layout_Complex',
+    'title'       => __('Complex - Layout', 'flexi'),
     'description' => __('<ul>
     <li>One element can have same location</li>
     <li>Detail page is accessed by clicking on icon <span class="dashicons dashicons-external">&nbsp;</span></li>
@@ -61,9 +61,9 @@ class Flexi_Detail_Layout_Basic
  public function add_fields($new)
  {
 
-  $fields = array('flexi_detail_layout_basic' => array(
+  $fields = array('flexi_detail_layout_Complex' => array(
    array(
-    'name'        => 'public/partials/layout/detail/basic/basic_chart.png',
+    'name'        => 'public/partials/layout/detail/complex/complex_chart.png',
     'label'       => __('Detail Layout Chart', 'flexi'),
     'description' => __('Each number denotes the available location of elements', 'flexi'),
     'type'        => 'image',
@@ -76,19 +76,29 @@ class Flexi_Detail_Layout_Basic
   $labels = $this->list_elements();
 
   foreach ($labels as $x => $x_value) {
-   $fields_add = array('flexi_detail_layout_basic' => array(
+   $fields_add = array('flexi_detail_layout_Complex' => array(
     array(
      'name'              => 'flexi_' . $x_value,
      'label'             => __($x, 'flexi'),
      'description'       => __('Select the element want to show/hide', 'flexi'),
      'type'              => 'select',
      'options'           => array(
-      ''          => __('-- Hide --', 'flexi'),
-      'location1' => __('Location 1', 'flexi'),
-      'location2' => __('Location 2', 'flexi'),
-      'location3' => __('Location 3', 'flexi'),
-      'location4' => __('Location 4', 'flexi'),
-      'location5' => __('Location 5', 'flexi'),
+      ''           => __('-- Hide --', 'flexi'),
+      'location1'  => __('Location 1', 'flexi'),
+      'location2'  => __('Location 2', 'flexi'),
+      'location3'  => __('Location 3', 'flexi'),
+      'location4'  => __('Location 4', 'flexi'),
+      'location5'  => __('Location 5', 'flexi'),
+      'location6'  => __('Location 6', 'flexi'),
+      'location7'  => __('Location 7', 'flexi'),
+      'location8'  => __('Location 8', 'flexi'),
+      'location9'  => __('Location 9', 'flexi'),
+      'location10' => __('Location 10', 'flexi'),
+      'location11' => __('Location 11', 'flexi'),
+      'location12' => __('Location 12', 'flexi'),
+      'location13' => __('Location 13', 'flexi'),
+      'location14' => __('Location 14', 'flexi'),
+      'location15' => __('Location 15', 'flexi'),
 
      ),
      'sanitize_callback' => 'sanitize_key',
@@ -109,7 +119,7 @@ class Flexi_Detail_Layout_Basic
   $labels   = $this->list_elements();
   $elements = array();
   foreach ($labels as $x => $x_value) {
-   $location           = flexi_get_option('flexi_' . $x_value, 'flexi_detail_layout_basic', '');
+   $location           = flexi_get_option('flexi_' . $x_value, 'flexi_detail_layout_Complex', '');
    $elements[$x_value] = $location;
   }
   //flexi_log($elements);
@@ -175,13 +185,13 @@ class Flexi_Detail_Layout_Basic
  {
 
   //Set default location of elements
-  flexi_get_option('flexi_media', 'flexi_detail_layout_basic', 'location1');
-  flexi_get_option('flexi_status', 'flexi_detail_layout_basic', 'location2');
-  flexi_get_option('flexi_desp', 'flexi_detail_layout_basic', 'location5');
-  flexi_get_option('flexi_icon_grid', 'flexi_detail_layout_basic', 'location2');
-  flexi_get_option('flexi_custom_fields', 'flexi_detail_layout_basic', 'location4');
-  flexi_get_option('flexi_category', 'flexi_detail_layout_basic', 'location3');
-  flexi_get_option('flexi_tags', 'flexi_detail_layout_basic', 'location3');
+  flexi_get_option('flexi_media', 'flexi_detail_layout_expert', 'location6');
+  flexi_get_option('flexi_status', 'flexi_detail_layout_expert', 'location1');
+  flexi_get_option('flexi_desp', 'flexi_detail_layout_expert', 'location15');
+  flexi_get_option('flexi_icon_grid', 'flexi_detail_layout_expert', 'location14');
+  flexi_get_option('flexi_custom_fields', 'flexi_detail_layout_expert', 'location13');
+  flexi_get_option('flexi_category', 'flexi_detail_layout_expert', 'location12');
+  flexi_get_option('flexi_tags', 'flexi_detail_layout_expert', 'location12');
 
   $elements = $this->generate_array();
   $location = $this->array_ksearch($elements, 'location' . $param);
@@ -194,4 +204,4 @@ class Flexi_Detail_Layout_Basic
 }
 
 //List layout locations
-$layout = new Flexi_Detail_Layout_Basic();
+$layout = new Flexi_Detail_Layout_Complex();
