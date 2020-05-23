@@ -80,7 +80,7 @@ class Flexi_Detail_Layout_Complex
     array(
      'name'              => 'flexi_' . $x_value,
      'label'             => __($x, 'flexi'),
-     'description'       => __('Select the element want to show/hide', 'flexi'),
+     'description'       => __('Select the location where you want to place elements', 'flexi'),
      'type'              => 'select',
      'options'           => array(
       ''           => __('-- Hide --', 'flexi'),
