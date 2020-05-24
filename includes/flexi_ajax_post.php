@@ -30,7 +30,7 @@ function flexi_ajax_post()
  }
 
  $attr          = flexi_default_args('');
- $preview       = $attr['preview'];
+ $detail_layout = $attr['detail_layout'];
  $title         = $attr['user-submitted-title'];
  $content       = $attr['content'];
  $category      = $attr['category'];
@@ -53,11 +53,11 @@ function flexi_ajax_post()
   if ("false" == $edit) {
    //Insert new post
    if ('url' == $attr['type']) {
-
-    $result = flexi_submit_url($title, $url, $content, $category, $preview, $tags);
+    //flexi_log($attr);
+    $result = flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags);
 
    } else {
-    $result = flexi_submit($title, $files, $content, $category, $preview, $tags);
+    $result = flexi_submit($title, $files, $content, $category, $detail_layout, $tags);
    }
    $post_id = false;
    if (isset($result['id'])) {

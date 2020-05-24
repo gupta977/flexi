@@ -29,7 +29,7 @@ class Flexi_Shortcode_Form
 
   // flexi_log($params);
 
-  //Attach form of specific post
+  //Attach form of specific post and add a gallery with it
   if (isset($params['attach']) && "true" == $params['attach']) {
    echo do_shortcode("[flexi-gallery attach='true']");
   }
@@ -176,7 +176,7 @@ action="' . admin_url("admin-ajax.php") . '"
     wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
 
     echo '<input type="hidden" name="action" value="flexi_ajax_post">';
-    echo '<input type="hidden" name="preview" value="' . $attr['preview'] . '">';
+    echo '<input type="hidden" name="detail_layout" value="' . $attr['detail_layout'] . '">';
     echo '<input type="hidden" name="form_name" value="' . $attr['name'] . '">';
     echo '<input type="hidden" name="flexi_attach_at" value="' . get_the_ID() . '">';
     echo '<input type="hidden" name="edit" value="' . $attr['edit'] . '">';
@@ -199,7 +199,7 @@ action="' . admin_url("admin-ajax.php") . '"
   }
  }
 
- //Examine & save the form submitted if ajax is off
+ //Examine & save the form submitted if ajax is off (use flexi_ajax_post.php)
  public function process_new_forms($attr)
  {
   $title    = '';
@@ -219,27 +219,27 @@ action="' . admin_url("admin-ajax.php") . '"
    $files = $_FILES['user-submitted-image'];
   }
 
-  $preview  = $attr['preview'];
-  $title    = $attr['user-submitted-title'];
-  $content  = $attr['content'];
-  $category = $attr['category'];
-  $tags     = $attr['tags'];
-  $url      = $attr['user-submitted-url'];
+  $detail_layout = $attr['detail_layout'];
+  $title         = $attr['user-submitted-title'];
+  $content       = $attr['content'];
+  $category      = $attr['category'];
+  $tags          = $attr['tags'];
+  $url           = $attr['user-submitted-url'];
 
   if (isset($_POST['type'])) {
    if ('url' == $_POST['type']) {
 
-    $result = flexi_submit_url($title, $url, $content, $category, $preview, $tags);
+    $result = flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags);
 
    } else {
 
-    $result = flexi_submit($title, $files, $content, $category, $preview, $tags);
+    $result = flexi_submit($title, $files, $content, $category, $detail_layout, $tags);
 
    }
 
   } else {
 
-   $result = flexi_submit($title, $files, $content, $category, $preview, $tags);
+   $result = flexi_submit($title, $files, $content, $category, $detail_layout, $tags);
   }
 
   //var_dump($result);
@@ -312,12 +312,12 @@ action="' . admin_url("admin-ajax.php") . '"
    $files = $_FILES['user-submitted-image'];
   }
 
-  $preview  = $attr['preview'];
-  $title    = $attr['user-submitted-title'];
-  $content  = $attr['content'];
-  $category = $attr['category'];
-  $tags     = $attr['tags'];
-  $url      = $attr['user-submitted-url'];
+  $detail_layout = $attr['detail_layout'];
+  $title         = $attr['user-submitted-title'];
+  $content       = $attr['content'];
+  $category      = $attr['category'];
+  $tags          = $attr['tags'];
+  $url           = $attr['user-submitted-url'];
 
   $result = flexi_update_post($post_id, $title, $files, $content, $category, $tags);
 

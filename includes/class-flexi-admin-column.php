@@ -20,7 +20,7 @@ class Flexi_Admin_Column
    'author'                  => __('Author'),
    'taxonomy-flexi_category' => __('Categories'),
    'taxonomy-flexi_tag'      => __('Tags'),
-   'flexi_layout'            => __('Detail Page', 'flexi'),
+   'flexi_layout'            => __('Detail Layout', 'flexi'),
    'date'                    => __('Date'),
 
   );

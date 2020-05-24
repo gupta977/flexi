@@ -4,8 +4,8 @@
 //$files = files selected
 //$content= Description
 //category =Album name
-//$preview = layout name for post detail page. Not required if lightbox is enabled.
-function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
+//$detail_layout = layout name for post detail page.
+function flexi_submit($title, $files, $content, $category, $detail_layout, $tags = '')
 {
 
  $post_type    = 'flexi';
@@ -90,8 +90,8 @@ function flexi_submit($title, $files, $content, $category, $preview, $tags = '')
 
    }
 
-   //Assign preview layout
-   add_post_meta($post_id, 'flexi_layout', $preview);
+   //Assign detail_layout
+   add_post_meta($post_id, 'flexi_layout', $detail_layout);
 
    $attach_ids = array();
    //Execute only if files is available

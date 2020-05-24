@@ -482,7 +482,7 @@ function flexi_default_args($params)
  $value = array(
   'class'         => 'pure-form pure-form-stacked',
   'title'         => 'Submit',
-  'preview'       => 'default',
+  'detail_layout' => 'default',
   'name'          => '',
   'id'            => get_the_ID(),
   'taxonomy'      => 'flexi_category',
@@ -528,6 +528,10 @@ function flexi_default_args($params)
 
  if (isset($_POST['edit'])) {
   $value['edit'] = $_POST['edit'];
+ }
+
+ if (isset($_POST['detail_layout'])) {
+  $value['detail_layout'] = $_POST['detail_layout'];
  }
 
  if (isset($_POST['type'])) {

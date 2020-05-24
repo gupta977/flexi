@@ -401,7 +401,7 @@ class FLEXI_Admin_Settings
     ),
     array(
      'name'              => 'detail_layout',
-     'label'             => __('Select Detail Page', 'flexi'),
+     'label'             => __('Select Detail Layout', 'flexi'),
      'description'       => __('Selected layout will be used as default layout, if not specified in shortcode parameter.', 'flexi'),
      'type'              => 'layout',
      'sanitize_callback' => 'sanitize_key',

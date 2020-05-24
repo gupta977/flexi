@@ -4,8 +4,8 @@
 //$url = media url
 //$content= Description
 //category =Album name
-//$preview = layout name for post detail page. Not required if lightbox is enabled.
-function flexi_submit_url($title, $url, $content, $category, $preview, $tags = '')
+//$detail_layout = layout name for post detail page. Not required if lightbox is enabled.
+function flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags = '')
 {
  $post_type    = 'flexi';
  $taxonomy     = 'flexi_category';
@@ -58,8 +58,8 @@ function flexi_submit_url($title, $url, $content, $category, $preview, $tags = '
    }
   }
 
-  //Assign preview layout
-  add_post_meta($post_id, 'flexi_layout', $preview);
+  //Assign detail_layout layout
+  add_post_meta($post_id, 'flexi_layout', $detail_layout);
   //Assign Flexi URL
   add_post_meta($post_id, 'flexi_url', $url);
   //Assign Flexi Type
