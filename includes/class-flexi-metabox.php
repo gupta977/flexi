@@ -180,7 +180,7 @@ class Flexi_Meta_boxes
   $cmb_side->add_field(array(
    'name'             => 'Detail Layout',
    'desc'             => 'Select detail layout',
-   'id'               => 'detail_layout',
+   'id'               => 'flexi_layout',
    'type'             => 'select',
    'show_option_none' => true,
    'default'          => 'default',
