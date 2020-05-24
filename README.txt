@@ -163,6 +163,11 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.31 =
+* Elements position selection for detail layouts
+* Pending notification at dashboard
+* Detail layout change option while editing as administrator
+
 = 1.0.30 =
 * Added form display only with publish_posts rights
 
@@ -252,5 +257,5 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 
 == Upgrade Notice ==
 
-= 1.0.30 =
+= 1.0.31 =
 It will not loose any data after update but recommended to take backup

@@ -1,5 +1,4 @@
-<h1>complex</h1>
-<div id="flexi_content_<?php echo get_the_ID(); ?>">
+<div id="flexi_content_<?php echo get_the_ID(); ?>" class="flexi_complex_layout">
   <div class="pure-g">
   <div class="pure-u-1-1">
       <div class="flexi_margin-box" id="flexi_location_1" style='text-align: center;'>
