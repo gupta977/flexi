@@ -1,6 +1,6 @@
 <?php
 $data = flexi_image_data('thumbnail', $post, $popup);
-echo '<div id="flexi_main_loop">';
+//echo '<div id="flexi_main_loop">';
 echo '<div class="flexi_responsive flexi_gallery_child" id="flexi_' . get_the_ID() . '"  data-tags="' . $tags . '">';
 echo '<div class="flexi_gallery_grid flexi_padding flexi_effect ' . $data['popup'] . '" id="' . $hover_effect . '">';
 echo '<div class="flexi-image-wrapper" style="border: 1px solid #eee">';
@@ -18,8 +18,8 @@ echo '</a>';
 echo '</div>';
 echo "</div>";
 echo "</div>";
-echo "</div>";
-?>
+//echo "</div>";
+ ?>
 <script>
 jQuery(document).ready(function() {
       jQuery('#flexi_cap_<?php echo get_the_ID(); ?>').append('<b><?php echo $data['title']; ?></b>');

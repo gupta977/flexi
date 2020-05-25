@@ -74,8 +74,6 @@ a:hover {
 }
 
 .flexi-image-wrapper {
-  width: var(--flexi_user_width);
-  height: var(--flexi_user_height);
   border: 0px solid #eee;
 }
 @media only screen and (max-width: 768px) {

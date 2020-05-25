@@ -2,7 +2,7 @@
 $tags = flexi_get_taxonomy_raw($post->ID, 'flexi_tag');
 
 //If classic page navigation selected
-if ('page' == $navigation) {
+if ('page' == $navigation || 'off' == $navigation) {
  //Attach loop gallery based based on layout selection
  $loop_file = FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/' . $layout . '/loop.php';
  if (file_exists($loop_file)) {

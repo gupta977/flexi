@@ -29,6 +29,8 @@ jQuery(document).ready(function() {
 })
 </script>
 <?php
+} else if ('off' == $navigation) {
+ echo ''; //Turn off navigation
 } else {
  //Load basic page loading with other plugin support
 

@@ -20,17 +20,23 @@ class Flexi_Shortcode_Gallery
   global $post;
   global $wp_query;
 
+  //Check if the gallery is meant for sidebar
+  $clear = false; //If true, will clear all the extra stuff like pagination, tags, labels will be hidden
+  if (isset($params['clear']) && 'true' == $params['clear']) {
+   $clear = true;
+  }
+
   //var_dump($params);
   //Album
   //Get redirected sub album
   $term_slug  = get_query_var('flexi_category');
   $term       = get_term_by('slug', $term_slug, 'flexi_category');
   $album_name = "";
-  if ("" != $term_slug && true == $term) {
+  if ("" != $term_slug && true == $term && false == $clear) {
    $album_name = $term->name;
   }
 
-  if ("" != $term_slug) {
+  if ("" != $term_slug && false == $clear) {
    //album mentioned in url
    $album = $term_slug;
 
@@ -61,11 +67,11 @@ class Flexi_Shortcode_Gallery
   $tag_slug = get_query_var('flexi_tag', "");
   $tag      = get_term_by('slug', $tag_slug, 'flexi_tag');
   $tag_name = "";
-  if ("" != $tag_slug && true == $tag) {
+  if ("" != $tag_slug && true == $tag && false == $clear) {
    $tag_name = $tag->name;
   }
 
-  if ("" != $tag_slug) {
+  if ("" != $tag_slug && false == $clear) {
    $keyword = $tag_slug;
 //Check if flexi_tag available in URL
   } else if (isset($params['tag'])) {
@@ -103,12 +109,8 @@ class Flexi_Shortcode_Gallery
    $height = flexi_get_option('t_height', 'flexi_media_settings', 150);
   }
 
-  if (isset($params['page'])) {
-   $page = $params['page'];
-  }
-
   //Search
-  if (isset($_GET['search'])) {
+  if (isset($_GET['search']) && false == $clear) {
    $search = $_GET['search'];
   } else {
    $search = "";
@@ -122,7 +124,7 @@ class Flexi_Shortcode_Gallery
 
   //Author
   $username = get_query_var('flexi_user', "");
-  if ("" != $username) {
+  if ("" != $username && false == $clear) {
    $user = $username;
   } else if (isset($params['user'])) {
    $user = $params['user'];
@@ -206,6 +208,13 @@ class Flexi_Shortcode_Gallery
    $navigation = trim($params['navigation']);
   } else {
    $navigation = flexi_get_option('navigation', 'flexi_image_layout_settings', 'button');
+  }
+
+  //If for sidebar, reset the variables
+  if ($clear) {
+   $navigation = "off"; //Disable any type of pagination
+   $show_tag   = false; //Disable tags above gallery
+   $paged      = 1; //Reset to first page
   }
 
 //Filter gallery based on images, url and more.

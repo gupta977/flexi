@@ -7,8 +7,6 @@
 
 .flexi-list-small .flexi-list-sub {
   display: inline-block;
-  width: var(--flexi_t_width);
-  height: var(--flexi_t_width);
   margin: 0 0px 0px;
 }
 
@@ -19,7 +17,6 @@
   text-decoration: none;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 137px;
   margin: 0;
   padding: 0;
   border: 4px solid #ffffff;
