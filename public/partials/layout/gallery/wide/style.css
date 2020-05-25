@@ -83,6 +83,7 @@
   .flexi-gallery-wide_img a img {
     float: none;
     width: 100%;
+    object-fit: scale-down;
   }
 
   .flexi-gallery-wide_info {

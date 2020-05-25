@@ -524,7 +524,7 @@ div.flexi_gallery_grid {
 .flexi_tags .flexi_tag--inverse {
   background-color: #fbfbfb;
   border: 1px solid #a9b1b5;
-  padding: 6px 15px;
+  padding: 1px 15px;
   color: #000000;
   border-radius: 10px;
   transition: all 300ms ease-in-out;
