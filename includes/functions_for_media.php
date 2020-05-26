@@ -148,12 +148,10 @@ function flexi_large_media($post, $class = 'flexi_large_image')
 function flexi_image_data($size = 'full', $post = '', $popup = "on")
 {
  //flexi_log($popup);
- if ("on" == $popup || '1' == $popup) {
-  $popup    = 1;
-  $lightbox = true;
- } else {
-  $popup    = 0;
+ if ("off" == $popup) {
   $lightbox = false;
+ } else {
+  $lightbox = true;
  }
 
  $data          = array();
@@ -166,7 +164,7 @@ function flexi_image_data($size = 'full', $post = '', $popup = "on")
  if ($lightbox) {
   $data['url']   = flexi_image_src('large', $post);
   $data['extra'] = 'data-fancybox-trigger';
-  $data['popup'] = 'flexi_show_popup';
+  $data['popup'] = 'flexi_show_popup_' . $popup;
  } else {
   $data['url']   = get_permalink();
   $data['extra'] = '';

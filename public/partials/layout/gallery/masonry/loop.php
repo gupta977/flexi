@@ -1,7 +1,6 @@
 <?php
 $data = flexi_image_data('thumbnail', $post, $popup);
 ?>
-
 <div class="flexi_gallery_child flexi_padding" id="flexi_<?php echo get_the_ID(); ?>" style="position: relative;" data-tags="<?php echo $tags; ?>">
       <div class="flexi_masonry-item">
             <div class="flexi_effect <?php echo $data['popup']; ?>" id="<?php echo $hover_effect; ?>">

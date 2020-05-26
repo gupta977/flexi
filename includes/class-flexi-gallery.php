@@ -5,11 +5,13 @@
 
 class Flexi_Shortcode_Gallery
 {
+ public $pop;
  public function __construct()
  {
 //For easy understanding two shortcode is created with different name.
   add_shortcode('flexi-gallery', array($this, 'flexi_gallery'));
   add_shortcode('flexi-primary', array($this, 'flexi_gallery'));
+  add_action('flexi_shortcode_processed', array($this, 'pass_shortcode_params'));
 
   $query_arg = array();
   $aa        = "..";
@@ -19,6 +21,7 @@ class Flexi_Shortcode_Gallery
  {
   global $post;
   global $wp_query;
+  $atts = array();
 
   //Check if the gallery is meant for sidebar
   $clear = false; //If true, will clear all the extra stuff like pagination, tags, labels will be hidden
@@ -143,6 +146,7 @@ class Flexi_Shortcode_Gallery
    }
 
   }
+  $atts['user'] = $user;
 
   //Popup
   if (isset($params['popup'])) {
@@ -150,6 +154,8 @@ class Flexi_Shortcode_Gallery
   } else {
    $popup = flexi_get_option('lightbox_switch', 'flexi_detail_settings', 1);
   }
+
+  $atts['popup'] = $popup;
 
   //evalue data
   if (isset($params['evalue'])) {
@@ -331,6 +337,7 @@ class Flexi_Shortcode_Gallery
     //print_r($tags_array);
    }
 
+   do_action('flexi_shortcode_processed', $atts);
    $count = 0;
    $put   = "";
    ob_start();
@@ -359,6 +366,48 @@ class Flexi_Shortcode_Gallery
   }
  }
 
+ public function pass_shortcode_params($atts = array())
+ {
+  //flexi_log($atts);
+  ob_start();
+  ?>
+<script>
+jQuery(document).ready(function() {
+ // console.log("start");
+  document.documentElement.style.setProperty('--flexi_padding', jQuery("#padding").text());
+
+<?php
+$enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict_settings', 0);
+  if ("1" != $enable_conflict) {
+   ?>
+  jQuery('[data-fancybox-trigger').fancybox({
+        selector : '.flexi_show_popup_<?php echo $atts['popup']; ?> a:visible',
+        thumbs   : {
+    autoStart : true
+  },
+  protect: true,
+        caption: function(instance, item) {
+          //This is not working on ajax loading. only for for page navigation.
+         // return jQuery(this).closest('flexi_media_holder').find('flexi_figcaption').html();
+          return jQuery(this).find('.flexi_figcaption').html();
+
+
+        }
+    });
+    <?php
+}
+  ?>
+
+});
+</script>
+
+
+
+<?php
+echo ob_get_clean();
+
+ }
+
  public function enqueue_styles_head()
  {
 
@@ -385,38 +434,7 @@ class Flexi_Shortcode_Gallery
 }
 </style>
 
-<script>
-jQuery(document).ready(function() {
- // console.log("start");
-  document.documentElement.style.setProperty('--flexi_padding', jQuery("#padding").text());
-
-<?php
-$enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict_settings', 0);
-  if ("1" != $enable_conflict) {
-   ?>
-  jQuery('[data-fancybox-trigger').fancybox({
-        selector : '.flexi_show_popup a:visible',
-        thumbs   : {
-    autoStart : true
-  },
-  protect: true,
-        caption: function(instance, item) {
-          //This is not working on ajax loading. only for for page navigation.
-         // return jQuery(this).closest('flexi_media_holder').find('flexi_figcaption').html();
-          return jQuery(this).find('.flexi_figcaption').html();
-
-
-        }
-    });
-    <?php
-}
-  ?>
-
-});
-</script>
-
-
-    <?php
+ <?php
 $put = ob_get_clean();
   echo $put;
  }
