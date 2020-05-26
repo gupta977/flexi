@@ -379,7 +379,19 @@ jQuery(document).ready(function() {
 <?php
 $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict_settings', 0);
   if ("1" != $enable_conflict) {
-   ?>
+   if ('inline' == $atts['popup']) {
+    ?>
+    jQuery('[data-fancybox-trigger').fancybox({
+          selector : '.flexi_show_popup_<?php echo $atts['popup']; ?> a:visible',
+          thumbs   : {
+      autoStart : false
+    },
+    protect: false,
+    arrows:false,
+      });
+      <?php
+} else {
+    ?>
   jQuery('[data-fancybox-trigger').fancybox({
         selector : '.flexi_show_popup_<?php echo $atts['popup']; ?> a:visible',
         thumbs   : {
@@ -396,6 +408,7 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
     });
     <?php
 }
+  }
   ?>
 
 });

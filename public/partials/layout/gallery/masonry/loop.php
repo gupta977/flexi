@@ -6,7 +6,7 @@ $data = flexi_image_data('thumbnail', $post, $popup);
             <div class="flexi_effect <?php echo $data['popup']; ?>" id="<?php echo $hover_effect; ?>">
 
 
-                  <a <?php echo $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" border="0"'; ?>>
+                  <a <?php echo $data['extra'] . ' href="' . $data['url'] . '" data-src="' . $data['src'] . '" data-caption="' . $data['title'] . '" border="0"'; ?>>
                         <img  class="flexi-fit_cover" src="<?php echo esc_url(flexi_image_src('medium', $post)); ?>">
                         <?php echo ' <div class="flexi_figcaption" id="flexi_cap_' . get_the_ID() . '"></div>'; ?>
 
@@ -16,8 +16,14 @@ $data = flexi_image_data('thumbnail', $post, $popup);
                         </div>
                   </a>
 
+
+
             </div>
       </div>
+</div>
+<div style="display: none;" id="flexi_inline_<?php echo get_the_ID(); ?>">
+	<h2><?php echo $data['title']; ?></h2>
+	<p>You are awesome.</p>
 </div>
 <script>
 jQuery(document).ready(function() {

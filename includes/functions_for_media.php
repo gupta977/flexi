@@ -162,11 +162,20 @@ function flexi_image_data($size = 'full', $post = '', $popup = "on")
  }
 
  if ($lightbox) {
-  $data['url']   = flexi_image_src('large', $post);
-  $data['extra'] = 'data-fancybox-trigger';
-  $data['popup'] = 'flexi_show_popup_' . $popup;
+  if ('inline' == $popup) {
+   $data['url']   = 'javascript:;';
+   $data['src']   = '#flexi_inline_' . $post->ID;
+   $data['extra'] = 'data-fancybox-trigger';
+   $data['popup'] = 'flexi_show_popup_' . $popup;
+  } else {
+   $data['url']   = flexi_image_src('large', $post);
+   $data['src']   = $data['url'];
+   $data['extra'] = 'data-fancybox-trigger';
+   $data['popup'] = 'flexi_show_popup_' . $popup;
+  }
  } else {
   $data['url']   = get_permalink();
+  $data['src']   = $data['url'];
   $data['extra'] = '';
   $data['popup'] = 'flexi_media_holder';
  }
