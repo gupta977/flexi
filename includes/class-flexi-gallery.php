@@ -223,7 +223,7 @@ class Flexi_Shortcode_Gallery
    $paged         = 1; //Reset to first page
    $popup         = mt_rand(); //Random number assign to make popup unique at sidebar
    $atts['popup'] = $popup;
-   flexi_log($atts);
+   //flexi_log($atts);
   }
 
 //Filter gallery based on images, url and more.
