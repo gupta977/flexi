@@ -10,6 +10,8 @@ class Flexi_Detail_Layout_Basic
    add_action('flexi_location_' . $x, array($this, 'flexi_location'), 10, 3);
   }
 
+  add_action('widgets_init', array($this, 'flexi_widget'));
+
  }
 
  //add_filter flexi_settings_tabs
@@ -45,13 +47,14 @@ class Flexi_Detail_Layout_Basic
  public function list_elements()
  {
   $labels = array(
-   "Publish Status" => "status",
-   "Large Media"    => "media",
-   "Description"    => "desp",
-   "Category"       => "category",
-   "Tags"           => "tags",
-   "Icon Grid"      => "icon_grid",
-   "Custom Fields"  => "custom_fields",
+   "Publish Status"    => "status",
+   "Large Media"       => "media",
+   "Description"       => "desp",
+   "Category"          => "category",
+   "Tags"              => "tags",
+   "Icon Grid"         => "icon_grid",
+   "Custom Fields"     => "custom_fields",
+   "WordPress Widgets" => "widgets",
   );
 
   return $labels;
@@ -136,8 +139,13 @@ class Flexi_Detail_Layout_Basic
   ob_start();
   if ('basic' == $layout) {
 
-   if ('media' == $value) {
-    echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
+   if ('widgets' == $value) {
+    if (is_active_sidebar('flexi-basic-widget-container')) {
+     dynamic_sidebar('flexi-basic-widget-container');
+    }
+
+   } else if ('media' == $value) {
+    echo "<div class='flexi_image_wrap_large flexi_frame_4'>" . flexi_large_media($post) . "</div>";
    } else if ('status' == $value) {
 
     if (get_post_status() == 'draft' || get_post_status() == "pending") {
@@ -191,6 +199,21 @@ class Flexi_Detail_Layout_Basic
    }
   }
 
+ }
+
+ public function flexi_widget()
+ {
+  register_sidebar(
+   array(
+    'name'          => __('Flexi- Basic Detail Layout', 'flexi'),
+    'id'            => 'flexi-basic-widget-container',
+    'description'   => __('Specify widget location at Flexi detail layout', 'flexi'),
+    'before_widget' => '<div class="widget-content">',
+    'after_widget'  => "</div>",
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
+   )
+  );
  }
 
 }

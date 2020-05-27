@@ -9,7 +9,7 @@ class Flexi_Detail_Layout_Complex
   for ($x = 1; $x <= 15; $x++) {
    add_action('flexi_location_' . $x, array($this, 'flexi_location'), 10, 3);
   }
-
+  add_action('widgets_init', array($this, 'flexi_widget'));
  }
 
  //add_filter flexi_settings_tabs
@@ -45,13 +45,14 @@ class Flexi_Detail_Layout_Complex
  public function list_elements()
  {
   $labels = array(
-   "Publish Status" => "status",
-   "Large Media"    => "media",
-   "Description"    => "desp",
-   "Category"       => "category",
-   "Tags"           => "tags",
-   "Icon Grid"      => "icon_grid",
-   "Custom Fields"  => "custom_fields",
+   "Publish Status"    => "status",
+   "Large Media"       => "media",
+   "Description"       => "desp",
+   "Category"          => "category",
+   "Tags"              => "tags",
+   "Icon Grid"         => "icon_grid",
+   "Custom Fields"     => "custom_fields",
+   "Wordpress Widgets" => "widgets",
   );
 
   return $labels;
@@ -146,7 +147,11 @@ class Flexi_Detail_Layout_Complex
   ob_start();
   if ('complex' == $layout) {
    //flexi_log($value . '----' . $layout);
-   if ('media' == $value) {
+   if ('widgets' == $value) {
+    if (is_active_sidebar('flexi-complex-widget-container')) {
+     dynamic_sidebar('flexi-complex-widget-container');
+    }
+   } else if ('media' == $value) {
     echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
    } else if ('status' == $value) {
 
@@ -208,6 +213,21 @@ class Flexi_Detail_Layout_Complex
 
  }
 
+ //Widgets location
+ public function flexi_widget()
+ {
+  register_sidebar(
+   array(
+    'name'          => __('Flexi- Complex Detail Layout', 'flexi'),
+    'id'            => 'flexi-complex-widget-container',
+    'description'   => __('Specify widget location at Flexi detail layout', 'flexi'),
+    'before_widget' => '<div class="widget-content">',
+    'after_widget'  => "</div>",
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
+   )
+  );
+ }
 }
 
 //List layout locations
