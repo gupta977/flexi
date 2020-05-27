@@ -218,9 +218,12 @@ class Flexi_Shortcode_Gallery
 
   //If for sidebar, reset the variables
   if ($clear) {
-   $navigation = "off"; //Disable any type of pagination
-   $show_tag   = false; //Disable tags above gallery
-   $paged      = 1; //Reset to first page
+   $navigation    = "off"; //Disable any type of pagination
+   $show_tag      = false; //Disable tags above gallery
+   $paged         = 1; //Reset to first page
+   $popup         = mt_rand(); //Random number assign to make popup unique at sidebar
+   $atts['popup'] = $popup;
+   flexi_log($atts);
   }
 
 //Filter gallery based on images, url and more.
