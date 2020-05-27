@@ -163,7 +163,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
-= 1.0.32 =
+= 1.0.33 =
 * Updated all gallery layout css
 * Now shortcodes properly works in homepage and sidebar
 * Unique lightbox name to prevent conflict
@@ -262,5 +262,5 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 
 == Upgrade Notice ==
 
-= 1.0.32 =
+= 1.0.33 =
 It will not loose any data after update but recommended to take backup
