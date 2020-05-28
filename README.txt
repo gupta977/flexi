@@ -166,6 +166,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 1.0.34 =
 * Widgets can be added in detail layouts
+* Toggle "My Dashboard" button
+* Added "My Gallery" button at "My Dashboard"
+* Introduced toolbar at "My Dashboard"
 
 = 1.0.33 =
 * Updated all gallery layout css
