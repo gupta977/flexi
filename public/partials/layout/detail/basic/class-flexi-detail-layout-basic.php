@@ -33,7 +33,8 @@ class Flexi_Detail_Layout_Basic
     'description' => __('<ul>
     <li>One element can have same location</li>
     <li>Detail page is accessed by clicking on icon <span class="dashicons dashicons-external">&nbsp;</span></li>
-    <li>Page title is positioned based on theme</li>
+    <li>Page title is positioned based on theme used</li>
+    <li> To preview, go to Flexi ➾ All Post & view post </li>
     </ul>', 'flexi'),
     'tab'         => 'detail',
    ),
@@ -207,7 +208,7 @@ class Flexi_Detail_Layout_Basic
    array(
     'name'          => __('Flexi- Basic Detail Layout', 'flexi'),
     'id'            => 'flexi-basic-widget-container',
-    'description'   => __('Specify widget location', 'flexi') . '- <a href="' . admin_url('admin.php?page=flexi_settings&tab=detail&section=flexi_detail_layout_basic') . '">' . __("Manage", "flexi") . '</a>',
+    'description'   => __('Add widgets here to appear in detail layout as specified location.', 'flexi') . '- <a href="' . admin_url('admin.php?page=flexi_settings&tab=detail&section=flexi_detail_layout_basic') . '">' . __("Manage", "flexi") . '</a>',
     'before_widget' => '<div class="widget-content">',
     'after_widget'  => "</div>",
     'before_title'  => '<h3 class="widget-title">',

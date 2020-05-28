@@ -68,6 +68,7 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 *   **File size limit** - Specify each file size (MB) limit that the visitors can upload. 
 *   **Conflict Management** - Special settings available to manage the conflict with other plugins & theme.
 *   **Live Reloading** - If gallery & form is on same page, the submitted post will be visible as soon as form is posted without any page refresh.
+*   **Wordpress Widgets** - Any wordpress widgets can be placed at detail layout as selected location. 
 
 = WORKS GREAT WITH =
 
@@ -163,6 +164,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.34 =
+* Widgets can be added in detail layouts
+
 = 1.0.33 =
 * Updated all gallery layout css
 * Now shortcodes properly works in homepage and sidebar
@@ -262,5 +266,5 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 
 == Upgrade Notice ==
 
-= 1.0.33 =
+= 1.0.34 =
 It will not loose any data after update but recommended to take backup
