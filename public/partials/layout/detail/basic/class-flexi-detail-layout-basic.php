@@ -47,14 +47,14 @@ class Flexi_Detail_Layout_Basic
  public function list_elements()
  {
   $labels = array(
-   "Publish Status"    => "status",
-   "Large Media"       => "media",
-   "Description"       => "desp",
-   "Category"          => "category",
-   "Tags"              => "tags",
-   "Icon Grid"         => "icon_grid",
-   "Custom Fields"     => "custom_fields",
-   "WordPress Widgets" => "widgets",
+   "Publish Status"                                                   => "status",
+   "Large Media"                                                      => "media",
+   "Description"                                                      => "desp",
+   "Category"                                                         => "category",
+   "Tags"                                                             => "tags",
+   "Icon Grid"                                                        => "icon_grid",
+   "Custom Fields"                                                    => "custom_fields",
+   "Wordpress <a href='" . admin_url('widgets.php') . "'>Widgets</a>" => "widgets",
   );
 
   return $labels;
@@ -207,7 +207,7 @@ class Flexi_Detail_Layout_Basic
    array(
     'name'          => __('Flexi- Basic Detail Layout', 'flexi'),
     'id'            => 'flexi-basic-widget-container',
-    'description'   => __('Specify widget location at Flexi detail layout', 'flexi'),
+    'description'   => __('Specify widget location', 'flexi') . '- <a href="' . admin_url('admin.php?page=flexi_settings&tab=detail&section=flexi_detail_layout_basic') . '">' . __("Manage", "flexi") . '</a>',
     'before_widget' => '<div class="widget-content">',
     'after_widget'  => "</div>",
     'before_title'  => '<h3 class="widget-title">',
