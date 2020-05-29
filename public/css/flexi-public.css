@@ -1015,3 +1015,8 @@ div.tagsinput div {
   padding: 0px 10px;
   float: left;
 }
+.flexi_css_button-border {
+  border-radius: 5px 0 0 5px;
+  padding: 0px 10px;
+  float: left;
+}

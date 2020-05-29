@@ -169,8 +169,8 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Toggle "My Dashboard" button
 * Added "My Gallery" button at "My Dashboard"
 * Introduced toolbar at "My Dashboard"
-* Introduced Fontawesome icons
-* Toggle fontawesome library
+* Introduced Font Awesome icons
+* Toggle Font Awesome library
 
 = 1.0.33 =
 * Updated all gallery layout css

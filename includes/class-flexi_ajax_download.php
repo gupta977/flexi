@@ -73,7 +73,7 @@ class flexi_download_post
    if ("1" == $download_flexi_icon) {
     $url        = flexi_file_src($post, $url = true);
     $extra_icon = array(
-     array("dashicons-download", __('Download', 'flexi'), $url, 'flexi_ajax_download', $post->ID, 'download=' . $url),
+     array("fa fa-download", __('Download', 'flexi'), $url, 'flexi_ajax_download flexi_css_button', $post->ID, 'download=' . $url),
 
     );
    }

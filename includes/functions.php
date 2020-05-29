@@ -897,7 +897,8 @@ function flexi_show_icon_grid()
   }
 
   if ("" != $icon[$r][0]) {
-   $list .= '<a class="' . $icon[$r][3] . '" href="' . $icon[$r][2] . '" title="' . $icon[$r][1] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '" ' . $icon[$r][5] . '><small>&nbsp;<span class="dashicons ' . $icon[$r][0] . '">&nbsp;</span>&nbsp;</small></a>';
+   $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][3] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '" ' . $icon[$r][5] . '><span class="' . $icon[$r][3] . '-border"><i class="' . $icon[$r][0] . '"  aria-hidden="true"></i></span></a> ';
+   //$list .= '<a class="' . $icon[$r][3] . '" href="' . $icon[$r][2] . '" title="' . $icon[$r][1] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '" ' . $icon[$r][5] . '><small>&nbsp;<span class="dashicons ' . $icon[$r][0] . '">&nbsp;</span>&nbsp;</small></a>';
   }
 
  }
