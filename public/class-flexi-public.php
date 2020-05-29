@@ -82,7 +82,7 @@ class Flexi_Public
   }
   $fontawesome_conflict = flexi_get_option('conflict_disable_fontawesome', 'flexi_conflict_settings', 0);
   if ("1" != $fontawesome_conflict) {
-   wp_enqueue_style($this->plugin_name . '_fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', array(), $this->version, 'all');
+   wp_enqueue_style($this->plugin_name . '_fontawesome', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css', array(), $this->version, 'all');
   }
   wp_enqueue_style($this->plugin_name . '_purecss_base', plugin_dir_url(__FILE__) . 'css/purecss/base-min.css', array(), $this->version, 'all');
   wp_enqueue_style($this->plugin_name . '_purecss_grids', plugin_dir_url(__FILE__) . 'css/purecss/grids-min.css', array(), $this->version, 'all');

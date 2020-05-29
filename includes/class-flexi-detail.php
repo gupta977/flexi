@@ -67,7 +67,7 @@ class Flexi_Public_Detail
 
   if ("1" == $detail_flexi_icon && !is_singular('flexi')) {
    $extra_icon = array(
-    array("fa fa-external-link", __('Detail', 'flexi'), $link, '#', $post->ID, 'flexi_css_button'),
+    array("fas fa-external-link-alt", __('Detail', 'flexi'), $link, '#', $post->ID, 'flexi_css_button'),
 
    );
   }

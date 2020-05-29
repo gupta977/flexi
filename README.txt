@@ -171,6 +171,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Introduced toolbar at "My Dashboard"
 * Introduced Font Awesome icons
 * Toggle Font Awesome library
+* Toolbar grid css updated
 
 = 1.0.33 =
 * Updated all gallery layout css

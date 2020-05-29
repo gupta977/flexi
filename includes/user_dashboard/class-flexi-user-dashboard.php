@@ -74,7 +74,7 @@ class Flexi_User_Dashboard
 
   if ("#" != $link && "1" == $enable_addon) {
    $extra_icon = array(
-    array("fa fa-tachometer", __('My Dashboard', 'flexi'), $link, $id, 'flexi_css_button'),
+    array("fas fa-tachometer-alt", __('My Dashboard', 'flexi'), $link, $id, 'flexi_css_button'),
 
    );
   }
@@ -150,7 +150,7 @@ class Flexi_User_Dashboard
   for ($r = 0; $r < count($icon); $r++) {
 
    if ("" != $icon[$r][0]) {
-    $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][3] . '"><span class="' . $icon[$r][3] . '-icon"><i class="' . $icon[$r][0] . '  aria-hidden="true""></i></span><span class="' . $icon[$r][3] . '-text">' . $icon[$r][1] . '</span></a> ';
+    $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][3] . '"><span class="' . $icon[$r][3] . '-icon"><i class="' . $icon[$r][0] . '"></i></span><span class="' . $icon[$r][3] . '-text">' . $icon[$r][1] . '</span></a> ';
    }
 
   }
@@ -173,7 +173,7 @@ class Flexi_User_Dashboard
    $link = add_query_arg("flexi_user", $current_user->user_login, $link);
 
    $extra_icon = array(
-    array('fa fa-file-image-o', __('My Gallery', 'flexi'), $link, 'flexi_css_button'),
+    array('far fa-images', __('My Gallery', 'flexi'), $link, 'flexi_css_button'),
 
    );
 
