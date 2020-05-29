@@ -69,6 +69,13 @@ class Flexi_Addon_Conflict
      'type'              => 'checkbox',
      'sanitize_callback' => 'intval',
     ),
+    array(
+     'name'              => 'conflict_disable_fontawesome',
+     'label'             => __('Disable Font Awesome Icons', 'flexi'),
+     'description'       => __('Disable it, <br>if fontawesome v4.7.0 is used by other plugins & theme. So that, only one instance of it is available.', 'flexi'),
+     'type'              => 'checkbox',
+     'sanitize_callback' => 'intval',
+    ),
    ),
    );
    $new = array_merge($new, $fields);

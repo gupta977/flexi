@@ -23,6 +23,8 @@ class Flexi_User_Dashboard
     $current_user = wp_get_current_user();
     ?>
 
+
+
 <div class="flexi_text_group" style="text-align:right;">
   <?php echo $this->flexi_member_toolbar(); ?>
 </div>
@@ -66,7 +68,7 @@ class Flexi_User_Dashboard
 
   if ("#" != $link && "1" == $enable_addon) {
    $extra_icon = array(
-    array("dashicons-menu", __('My Dashboard', 'flexi'), $link, $id, 'pure-button'),
+    array("fa fa-tachometer", __('My Dashboard', 'flexi'), $link, $id, 'flexi_css_button'),
 
    );
   }
@@ -136,13 +138,13 @@ class Flexi_User_Dashboard
   }
 
   if (count($icon) > 0) {
-   $list .= '<div class="pure-button-group" role="toolbar" id="flexi_member_toolbar_' . get_the_ID() . '">';
+   $list .= '<div class="flexi_member_toolbar_group" role="toolbar" id="flexi_member_toolbar_' . get_the_ID() . '">';
   }
 
   for ($r = 0; $r < count($icon); $r++) {
 
    if ("" != $icon[$r][0]) {
-    $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][3] . '"><span class="dashicons ' . $icon[$r][0] . '"></span> ' . $icon[$r][1] . '</a>';
+    $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][3] . '"><span class="' . $icon[$r][3] . '-icon"><i class="' . $icon[$r][0] . '  aria-hidden="true""></i></span><span class="' . $icon[$r][3] . '-text">' . $icon[$r][1] . '</span></a> ';
    }
 
   }
@@ -165,7 +167,7 @@ class Flexi_User_Dashboard
    $link = add_query_arg("flexi_user", $current_user->user_login, $link);
 
    $extra_icon = array(
-    array("dashicons-format-gallery", __('My Gallery', 'flexi'), $link, 'pure-button'),
+    array('fa fa-file-image-o', __('My Gallery', 'flexi'), $link, 'flexi_css_button'),
 
    );
 
@@ -183,7 +185,7 @@ class Flexi_User_Dashboard
   $link       = wp_logout_url(home_url());
 
   $extra_icon = array(
-   array("dashicons-info", __('Logout', 'flexi'), $link, 'pure-button'),
+   array("fa fa-power-off", __('Logout', 'flexi'), $link, 'flexi_css_button'),
 
   );
 

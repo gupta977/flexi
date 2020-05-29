@@ -983,3 +983,35 @@ div.tagsinput div {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
+/* Button with icon */
+.flexi_css_button {
+  display: inline-block;
+  cursor: pointer;
+  color: #666666;
+  font-family: Arial;
+  font-size: 16px;
+  border-radius: 5px;
+  border: solid 1px #dcdcdc;
+  background: linear-gradient(180deg, #f9f9f9 5%, #e9e9e9 100%);
+  text-shadow: 1px 1px 0px #ffffff;
+  box-shadow: inset 1px 1px 0px 0px #ffffff;
+}
+.flexi_css_button:hover {
+  background: linear-gradient(180deg, #e9e9e9 5%, #f9f9f9 100%);
+}
+.flexi_css_button:active {
+  position: relative;
+  top: 1px;
+}
+.flexi_css_button-text {
+  padding: 0px 18px;
+  float: left;
+}
+.flexi_css_button-icon {
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: rgba(0, 0, 0, 0.14) -1px 0px 0px inset;
+  border-radius: 5px 0 0 5px;
+  padding: 0px 10px;
+  float: left;
+}

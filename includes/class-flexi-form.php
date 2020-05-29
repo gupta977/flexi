@@ -48,7 +48,7 @@ class Flexi_Shortcode_Form
   } else if ('publish_posts' == $check_enable_form) {
    if (!is_user_logged_in()) {
     $enable_form_access = false;
-    //flexi_login_link();
+    echo "<div class='flexi_alert-box flexi_error'>" . __('Submission disabled', 'flexi') . "</div>";
    } else {
     if (current_user_can('publish_posts')) {
      echo "<div class='flexi_alert-box flexi_notice'>" . __('This form will not be visible by visitors.', 'flexi') . "</div>";
@@ -596,7 +596,7 @@ action="' . admin_url("admin-ajax.php") . '"
 
   if ("#" != $link) {
    $extra_icon = array(
-    array("dashicons-plus", __('New', 'flexi'), $link, $id, 'pure-button ' . $class),
+    array("fa fa-plus", __('New', 'flexi'), $link, $id, $class . ' flexi_css_button'),
 
    );
   }

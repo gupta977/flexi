@@ -920,13 +920,14 @@ function flexi_post_toolbar_grid($id, $bool)
  }
 
  if (count($icon) > 0) {
-  $list .= '<div class="pure-button-group" role="toolbar" id="flexi_toolbar_' . get_the_ID() . '">';
+  $list .= '<div class="flexi_post_toolbar_group" role="toolbar" id="flexi_toolbar_' . get_the_ID() . '">';
  }
 
  for ($r = 0; $r < count($icon); $r++) {
 
   if ("" != $icon[$r][0]) {
-   $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][4] . '"><span class="dashicons ' . $icon[$r][0] . '"></span> ' . $icon[$r][1] . '</a>';
+   $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][4] . '"><span class="' . $icon[$r][4] . '-icon"><i class="' . $icon[$r][0] . '  aria-hidden="true""></i></span><span class="' . $icon[$r][4] . '-text">' . $icon[$r][1] . '</span></a> ';
+   // $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][4] . '"><span class="dashicons ' . $icon[$r][0] . '"></span> ' . $icon[$r][1] . '</a>';
   }
 
  }
