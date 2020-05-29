@@ -3,7 +3,7 @@ function reply_click(clicked_id) {
 }
 
 jQuery(document).ready(function () {
-  jQuery(document).on("click", ".flexi_ajax_delete", function (e) {
+  jQuery(document).on("click", "#flexi_ajax_delete", function (e) {
     e.preventDefault();
     post_id = jQuery(this).attr("data-post_id");
     nonce = jQuery(this).attr("data-nonce");

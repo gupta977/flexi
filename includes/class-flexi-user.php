@@ -28,7 +28,7 @@ class Flexi_User
    // if (isset($options['show_trash_icon'])) {
    if ("1" == $user_flexi_icon) {
     $extra_icon = array(
-     array("fa fa-user", __('Profile', 'flexi'), $link, 'flexi_css_button', $post->ID),
+     array("fa fa-user", __('Profile', 'flexi'), $link, '#', $post->ID, 'flexi_css_button'),
 
     );
    }
