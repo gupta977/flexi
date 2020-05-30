@@ -164,6 +164,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.35 =
+* Fixex popup temporary, we are working on for 1.0.36
+
 = 1.0.34 =
 * Widgets can be added in detail layouts
 * Toggle "My Dashboard" button
@@ -272,5 +275,6 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 
 == Upgrade Notice ==
 
-= 1.0.34 =
-It will not loose any data after update but recommended to take backup
+= 1.0.35 =
+It will not loose any data after update but recommended to take backup.
+Some issues on pupup & guten gallery builder. We are working on. 

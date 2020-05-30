@@ -373,7 +373,8 @@ class Flexi_Shortcode_Gallery
  {
   //flexi_log($atts);
   ob_start();
-  ?>
+  if (!is_admin()) {
+   ?>
 <script>
 jQuery(document).ready(function() {
  // console.log("start");
@@ -381,9 +382,9 @@ jQuery(document).ready(function() {
 
 <?php
 $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict_settings', 0);
-  if ("1" != $enable_conflict) {
-   if ('inline' == $atts['popup']) {
-    ?>
+   if ("1" != $enable_conflict) {
+    if ('inline' == $atts['popup']) {
+     ?>
     jQuery('[data-fancybox-trigger').fancybox({
           selector : '.flexi_show_popup_<?php echo $atts['popup']; ?> a:visible',
           thumbs   : {
@@ -394,7 +395,7 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
       });
       <?php
 } else {
-    ?>
+     ?>
   jQuery('[data-fancybox-trigger').fancybox({
         selector : '.flexi_show_popup_<?php echo $atts['popup']; ?> a:visible',
         thumbs   : {
@@ -411,14 +412,15 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
     });
     <?php
 }
-  }
-  ?>
+   }
+   ?>
 
 });
 </script>
 
 <?php
-return ob_get_clean();
+}
+  echo ob_get_clean();
 
  }
 
