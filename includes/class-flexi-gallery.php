@@ -417,10 +417,8 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
 });
 </script>
 
-
-
 <?php
-echo ob_get_clean();
+return ob_get_clean();
 
  }
 
