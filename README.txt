@@ -164,8 +164,11 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.36 =
+* Visual builder error resolved.
+
 = 1.0.35 =
-* Fixex popup temporary, we are working on for 1.0.36
+* Fixes popup temporary, we are working on for 1.0.36
 
 = 1.0.34 =
 * Widgets can be added in detail layouts
