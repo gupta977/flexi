@@ -372,9 +372,15 @@ class Flexi_Shortcode_Gallery
  public function pass_shortcode_params($atts = array())
  {
   //flexi_log($atts);
-  ob_start();
-  if (!is_admin()) {
+  $put = "";
+
+  //Below javascript will not be executed at guten block. If enabled json error while saving.
+  if (defined('REST_REQUEST') && REST_REQUEST) {
+   return '';
+  } else {
+   ob_start();
    ?>
+
 <script>
 jQuery(document).ready(function() {
  // console.log("start");
@@ -417,10 +423,9 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
 
 });
 </script>
-
 <?php
-}
-  echo ob_get_clean();
+echo ob_get_clean();
+  }
 
  }
 
