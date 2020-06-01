@@ -38,7 +38,7 @@ if (flexi_evalue_toggle('tag', $evalue) == '') {
 
 ?>
 
-      <span class="flexi_set_bottom" style="<?php flexi_evalue_toggle('icon', $evalue);?>"><?php echo flexi_show_icon_grid(); ?></span>
+      <span class="flexi_set_bottom" style="<?php echo flexi_evalue_toggle('icon', $evalue); ?>"><?php echo flexi_show_icon_grid(); ?></span>
 
     </div>
   </div>

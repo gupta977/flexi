@@ -1052,3 +1052,20 @@ function flexi_get_error($result)
  }
  return $notice;
 }
+
+//Display gallery & form to specific page only
+function flexi_execute_shortcode()
+{
+ $boo = false;
+ if (is_archive() || is_singular() || is_home() || (defined('REST_REQUEST') && REST_REQUEST)) {
+  $boo = true;
+ }
+
+ if (did_action('elementor/loaded')) {
+  if (\Elementor\Plugin::$instance->editor->is_edit_mode()) {
+   $boo = true;
+  }
+ }
+ return $boo;
+
+}

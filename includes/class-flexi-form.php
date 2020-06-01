@@ -192,7 +192,7 @@ action="' . admin_url("admin-ajax.php") . '"
    }
   }
   $abc = ob_get_clean();
-  if (is_archive() || is_singular() || is_home() || (defined('REST_REQUEST') && REST_REQUEST)) {
+  if (flexi_execute_shortcode()) {
    return $abc;
   } else {
    return '';

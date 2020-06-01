@@ -358,9 +358,11 @@ class Flexi_Shortcode_Gallery
     $put = ob_get_clean();
     wp_reset_query();
     wp_reset_postdata();
-    if (is_archive() || is_singular() || is_home() || (defined('REST_REQUEST') && REST_REQUEST)) {
+
+    if (flexi_execute_shortcode()) {
      return $put;
     } else {
+
      return '';
     }
    } else {
