@@ -2,8 +2,9 @@
 block/node_modules
 block/package-lock.json
 block/package.json
-block/readme.md
-block/eslintrc.json
+block/.eslintrc.json
+block/.editorconfig
+block/.eslintignore
 
 ## Uncomment line below if you prefer to
 ## keep compiled files out of version control
