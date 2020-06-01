@@ -146,7 +146,7 @@ class Flexi_Detail_Layout_Basic
     }
 
    } else if ('media' == $value) {
-    echo "<div class='flexi_image_wrap_large flexi_frame_4'>" . flexi_large_media($post) . "</div>";
+    echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post, 'flexi_frame_4') . "</div>";
    } else if ('status' == $value) {
 
     if (get_post_status() == 'draft' || get_post_status() == "pending") {

@@ -1015,9 +1015,74 @@ div.tagsinput div {
   padding: 0px 10px;
   float: left;
 }
+
 .flexi_css_button-border {
   border-radius: 5px 0 0 5px;
   padding: 0px 10px;
   float: left;
   color: #333;
+}
+
+/* Flexi Icons */
+
+.flexi_icon_detail:before {
+  font-family: "dashicons";
+  content: "\f504 ";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flexi_icon_user:before {
+  font-family: "dashicons";
+  content: "\f110 ";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flexi_icon_trash:before {
+  font-family: "dashicons";
+  content: "\f182 ";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flexi_icon_download:before {
+  font-family: "dashicons";
+  content: "\f316";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flexi_icon_image:before {
+  font-family: "dashicons";
+  content: "\f233";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flexi_icon_edit:before {
+  font-family: "dashicons";
+  content: "\f464";
+  display: inline-block;
+  vertical-align: middle;
+}
+.flexi_icon_plus:before {
+  font-family: "dashicons";
+  content: "\f543";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flexi_icon_home:before {
+  font-family: "dashicons";
+  content: "\f102";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flexi_icon_alert:before {
+  font-family: "dashicons";
+  content: "\f534";
+  display: inline-block;
+  vertical-align: middle;
 }

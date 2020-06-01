@@ -164,6 +164,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.37 =
+* Support of fontawesome stopped
+
 = 1.0.36 =
 * Visual builder error resolved.
 

@@ -80,10 +80,7 @@ class Flexi_Public
   if ("1" != $enable_conflict) {
    wp_enqueue_style($this->plugin_name . '_fancybox', plugin_dir_url(__FILE__) . 'css/jquery.fancybox.min.css', array(), $this->version, 'all');
   }
-  $fontawesome_conflict = flexi_get_option('conflict_disable_fontawesome', 'flexi_conflict_settings', 0);
-  if ("1" != $fontawesome_conflict) {
-   wp_enqueue_style($this->plugin_name . '_fontawesome', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css', array(), $this->version, 'all');
-  }
+
   wp_enqueue_style($this->plugin_name . '_purecss_base', plugin_dir_url(__FILE__) . 'css/purecss/base-min.css', array(), $this->version, 'all');
   wp_enqueue_style($this->plugin_name . '_purecss_grids', plugin_dir_url(__FILE__) . 'css/purecss/grids-min.css', array(), $this->version, 'all');
   wp_enqueue_style($this->plugin_name . '_purecss_responsive', plugin_dir_url(__FILE__) . 'css/purecss/grids-responsive-min.css', array(), $this->version, 'all');

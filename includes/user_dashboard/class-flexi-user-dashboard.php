@@ -23,24 +23,22 @@ class Flexi_User_Dashboard
     $current_user = wp_get_current_user();
     ?>
 
-
-
 <div class="flexi_text_group" style="text-align:right;">
   <?php echo $this->flexi_member_toolbar(); ?>
 </div>
 
 <div class="pure-g">
   <div class="pure-u-1-2">
-  <?php echo flexi_author($current_user->user_login); ?>
-   </div>
-   <div class="pure-u-1-2" style="text-align:right;">
-   <form method="get" class="pure-form">
-    <input type="text" name="search" placeholder="<?php echo __('Search post', 'flexi'); ?>" class="pure-input-rounded">
-    <button type="submit" class="pure-button">Search</button>
-  </form>
+    <?php echo flexi_author($current_user->user_login); ?>
+  </div>
+  <div class="pure-u-1-2" style="text-align:right;">
+    <form method="get" class="pure-form">
+      <input type="text" name="search" placeholder="<?php echo __('Search post', 'flexi'); ?>"
+        class="pure-input-rounded">
+      <button type="submit" class="pure-button">Search</button>
+    </form>
+  </div>
 </div>
-</div>
-
 
 <ul data-tabs>
   <li><a data-tabby-default href="#my_post"><?php echo __('My Posts', 'flexi'); ?></a></li>
@@ -74,7 +72,7 @@ class Flexi_User_Dashboard
 
   if ("#" != $link && "1" == $enable_addon) {
    $extra_icon = array(
-    array("fas fa-tachometer-alt", __('My Dashboard', 'flexi'), $link, $id, 'flexi_css_button'),
+    array("home", __('My Dashboard', 'flexi'), $link, $id, 'flexi_css_button'),
 
    );
   }
@@ -150,7 +148,7 @@ class Flexi_User_Dashboard
   for ($r = 0; $r < count($icon); $r++) {
 
    if ("" != $icon[$r][0]) {
-    $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][3] . '"><span class="' . $icon[$r][3] . '-icon"><i class="' . $icon[$r][0] . '"></i></span><span class="' . $icon[$r][3] . '-text">' . $icon[$r][1] . '</span></a> ';
+    $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][3] . '"><span class="' . $icon[$r][3] . '-icon"><span class="flexi_icon_' . $icon[$r][0] . '"></span></span><span class="' . $icon[$r][3] . '-text">' . $icon[$r][1] . '</span></a> ';
    }
 
   }
@@ -173,7 +171,7 @@ class Flexi_User_Dashboard
    $link = add_query_arg("flexi_user", $current_user->user_login, $link);
 
    $extra_icon = array(
-    array('far fa-images', __('My Gallery', 'flexi'), $link, 'flexi_css_button'),
+    array('image', __('My Gallery', 'flexi'), $link, 'flexi_css_button'),
 
    );
 
@@ -191,7 +189,7 @@ class Flexi_User_Dashboard
   $link       = wp_logout_url(home_url());
 
   $extra_icon = array(
-   array("fa fa-power-off", __('Logout', 'flexi'), $link, 'flexi_css_button'),
+   array("alert", __('Logout', 'flexi'), $link, 'flexi_css_button'),
 
   );
 

@@ -11,8 +11,8 @@ function flexi_submit($title, $files, $content, $category, $detail_layout, $tags
  $post_type    = 'flexi';
  $taxonomy     = 'flexi_category';
  $tag_taxonomy = 'flexi_tag';
-
- $newPost = array('id' => false, 'error' => false, 'notice' => false);
+ $newPost      = array();
+ $newPost      = array('id' => false, 'error' => false, 'notice' => false);
  if (has_filter('flexi_verify_submit')) {
   $newPost = apply_filters('flexi_verify_submit', $newPost);
  }
