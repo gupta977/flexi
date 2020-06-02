@@ -274,12 +274,12 @@ evalue="' . $evalue . '"
    }
   }
 
-  //echo '<! –– ***[ ' . $shortcode . ' ]*** ––>';
+  echo '<! –– ***[ ' . $shortcode . ' ]*** ––>';
   //echo $shortcode . "<hr>";
   echo do_shortcode('[' . $shortcode . ']');
 
   //echo do_shortcode('[flexi-gallery clear="true"]');
-  //echo $args['after_widget'];
+  echo $args['after_widget'];
  }
 
  public function field_generator($instance)

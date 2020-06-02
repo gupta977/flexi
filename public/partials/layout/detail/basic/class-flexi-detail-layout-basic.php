@@ -10,7 +10,7 @@ class Flexi_Detail_Layout_Basic
    add_action('flexi_location_' . $x, array($this, 'flexi_location'), 10, 3);
   }
 
-  add_action('widgets_init', array($this, 'flexi_widget'));
+  //add_action('widgets_init', array($this, 'flexi_widget'));
 
  }
 
