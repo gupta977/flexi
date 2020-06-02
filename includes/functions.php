@@ -1069,3 +1069,14 @@ function flexi_execute_shortcode()
  return $boo;
 
 }
+
+//Assign default parameters (widgets)
+function flexi_set_value($key, $value, $instance)
+  {
+   if (!isset($instance[$key])) {
+    $output = $value;
+   } else {
+    $output = $instance[$key];
+   }
+   return $output;
+  }

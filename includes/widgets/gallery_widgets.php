@@ -15,7 +15,7 @@ class Flexishowcase_Widget extends WP_Widget
 
  private $widget_fields = array(
   array(
-   'label'   => 'Display at sidebar',
+   'label'   => 'Disable navigation & make independent gallery',
    'id'      => 'at_sidebar',
    'default' => '1',
    'type'    => 'checkbox',
@@ -26,9 +26,9 @@ class Flexishowcase_Widget extends WP_Widget
    'default' => 'date',
    'type'    => 'select',
    'options' => array(
-    'date',
-    'modified',
-    'rand',
+    'Latest Date'   => 'date',
+    'Modified Date' => 'modified',
+    'Random Post'   => 'rand',
    ),
   ),
   array(
@@ -37,12 +37,12 @@ class Flexishowcase_Widget extends WP_Widget
    'default' => 'none',
    'type'    => 'select',
    'options' => array(
-    'none',
-    'image',
-    'url',
-    'video',
-    'audio',
-    'other',
+    '-- None --'  => 'none',
+    'Image'       => 'image',
+    'Video URL'   => 'url',
+    'Video Files' => 'video',
+    'Audio Files' => 'audio',
+    'Others'      => 'other',
    ),
   ),
   array(
@@ -51,11 +51,11 @@ class Flexishowcase_Widget extends WP_Widget
    'default' => 'basic',
    'type'    => 'select',
    'options' => array(
-    'basic',
-    'masonry',
-    'portfolio',
-    'regular',
-    'wide',
+    'Basic'     => 'basic',
+    'Masonry'   => 'masonry',
+    'Portfolio' => 'portfolio',
+    'Regular'   => 'regular',
+    'Wide'      => 'wide',
    ),
   ),
   array(
@@ -98,10 +98,10 @@ class Flexishowcase_Widget extends WP_Widget
    'id'      => 'hover_effect',
    'type'    => 'select',
    'options' => array(
-    'flexi_effect_1',
-    'flexi_effect_2',
-    'flexi_effect_3',
-    '',
+    '-- None --' => '',
+    'Blur'       => 'flexi_effect_1',
+    'Grayscale'  => 'flexi_effect_2',
+    'Zoom Out'   => 'flexi_effect_3',
    ),
   ),
   array(
@@ -110,12 +110,12 @@ class Flexishowcase_Widget extends WP_Widget
    'default' => 'flexi_caption_none',
    'type'    => 'select',
    'options' => array(
-    'flexi_caption_none',
-    'flexi_caption_1',
-    'flexi_caption_2',
-    'flexi_caption_3',
-    'flexi_caption_4',
-    'flexi_caption_5',
+    '-- None --'      => 'flexi_caption_none',
+    '-- Caption 1 --' => 'flexi_caption_1',
+    '-- Caption 2 --' => 'flexi_caption_2',
+    '-- Caption 3 --' => 'flexi_caption_3',
+    '-- Caption 4 --' => 'flexi_caption_4',
+    '-- Caption 5 --' => 'flexi_caption_5',
    ),
   ),
   array(
@@ -249,16 +249,6 @@ class Flexishowcase_Widget extends WP_Widget
    $cat = "";
   }
 
-  function flexi_set_value($key, $value, $instance)
-  {
-   if (!isset($instance[$key])) {
-    $output = $value;
-   } else {
-    $output = $instance[$key];
-   }
-   return $output;
-  }
-
   //flexi_log($cat);
 
   $shortcode = 'flexi-gallery
@@ -285,7 +275,7 @@ evalue="' . $evalue . '"
   }
 
   echo '<! –– ***[ ' . $shortcode . ' ]*** ––>';
-  echo $shortcode . "<hr>";
+  //echo $shortcode . "<hr>";
   echo do_shortcode('[' . $shortcode . ']');
 
   //echo do_shortcode('[flexi-gallery clear="true"]');
@@ -313,11 +303,11 @@ evalue="' . $evalue . '"
      $output .= '<p>';
      $output .= '<label for="' . esc_attr($this->get_field_id($widget_field['id'])) . '">' . esc_attr($widget_field['label'], 'textdomain') . ':</label> ';
      $output .= '<select id="' . esc_attr($this->get_field_id($widget_field['id'])) . '" name="' . esc_attr($this->get_field_name($widget_field['id'])) . '">';
-     foreach ($widget_field['options'] as $option) {
-      if ($widget_value == $option) {
-       $output .= '<option value="' . $option . '" selected>' . $option . '</option>';
+     foreach ($widget_field['options'] as $option => $value) {
+      if ($widget_value == $value) {
+       $output .= '<option value="' . $value . '" selected>' . $option . '</option>';
       } else {
-       $output .= '<option value="' . $option . '">' . $option . '</option>';
+       $output .= '<option value="' . $value . '">' . $option . '</option>';
       }
      }
      $output .= '</select>';
