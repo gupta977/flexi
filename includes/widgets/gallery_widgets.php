@@ -10,9 +10,16 @@ class Flexishowcase_Widget extends WP_Widget
    esc_html__('Flexi Showcase', 'flexi'),
    array('description' => esc_html__('Display specified set of gallery', 'flexi')) // Args
   );
+
  }
 
  private $widget_fields = array(
+  array(
+   'label'   => 'Display at sidebar',
+   'id'      => 'at_sidebar',
+   'default' => '1',
+   'type'    => 'checkbox',
+  ),
   array(
    'label'   => 'Sort as',
    'id'      => 'orderby',
@@ -39,18 +46,6 @@ class Flexishowcase_Widget extends WP_Widget
    ),
   ),
   array(
-   'label'   => 'From category',
-   'id'      => 'cat',
-   'default' => '0',
-   'type'    => 'select',
-   'options' => array(
-    '',
-    '1',
-    '2',
-    '3',
-   ),
-  ),
-  array(
    'label'   => 'Layout',
    'id'      => 'layout',
    'default' => 'basic',
@@ -66,13 +61,13 @@ class Flexishowcase_Widget extends WP_Widget
   array(
    'label'   => 'Number of Column',
    'id'      => 'column',
-   'default' => '1',
+   'default' => '2',
    'type'    => 'number',
   ),
   array(
    'label'   => 'Total number of Post',
    'id'      => 'perpage',
-   'default' => '1',
+   'default' => '4',
    'type'    => 'number',
   ),
   array(
@@ -124,51 +119,55 @@ class Flexishowcase_Widget extends WP_Widget
    ),
   ),
   array(
-   'label' => 'Enable Popup',
-   'id'    => 'popup',
-   'type'  => 'checkbox',
+   'label'   => 'Enable Popup',
+   'id'      => 'popup',
+   'default' => '1',
+   'type'    => 'checkbox',
+  ),
+
+  array(
+   'label'   => 'Display title',
+   'id'      => 'evalue_title',
+   'default' => '1',
+   'type'    => 'checkbox',
   ),
   array(
-   'label' => 'Display tags above gallery',
-   'id'    => 'show_tag',
-   'type'  => 'checkbox',
+   'label'   => 'Display excerpt',
+   'id'      => 'evalue_excerpt',
+   'default' => '1',
+   'type'    => 'checkbox',
   ),
   array(
-   'label' => 'Display title',
-   'id'    => 'evalue_title',
-   'type'  => 'checkbox',
-  ),
-  array(
-   'label' => 'Display excerpt',
-   'id'    => 'evalue_excerpt',
-   'type'  => 'checkbox',
-  ),
-  array(
-   'label' => 'Display custom fields',
-   'id'    => 'evalue_custom',
-   'type'  => 'checkbox',
+   'label'   => 'Display custom fields',
+   'id'      => 'evalue_custom',
+   'default' => '1',
+   'type'    => 'checkbox',
   ),
   array(
    'label'   => 'Display icon grid',
    'id'      => 'evalue_icon',
-   'default' => 'off',
+   'default' => '1',
    'type'    => 'checkbox',
   ),
   array(
-   'label' => 'Display category list',
-   'id'    => 'evalue_category',
-   'type'  => 'checkbox',
+   'label'   => 'Display category list',
+   'id'      => 'evalue_category',
+   'default' => '1',
+   'type'    => 'checkbox',
   ),
   array(
-   'label' => 'Display tag list',
-   'id'    => 'evalue_tag',
-   'type'  => 'checkbox',
+   'label'   => 'Display tag list',
+   'id'      => 'evalue_tag',
+   'default' => '1',
+   'type'    => 'checkbox',
   ),
  );
 
  public function widget($args, $instance)
  {
   echo $args['before_widget'];
+
+  //flexi_log($instance);
 
   if (!empty($instance['title'])) {
    echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
@@ -205,10 +204,10 @@ class Flexishowcase_Widget extends WP_Widget
    $popup = "off";
   }
 
-  if (isset($instance['tag_show']) && '1' == $instance['tag_show']) {
-   $tag_show = "on";
+  if (isset($instance['at_sidebar']) && '1' == $instance['at_sidebar']) {
+   $at_sidebar = 'clear="true"';
   } else {
-   $tag_show = "off";
+   $at_sidebar = "";
   }
 
   $evalue = "";
@@ -232,35 +231,51 @@ class Flexishowcase_Widget extends WP_Widget
    $evalue .= "tag:on,";
   }
 
-  if (isset($instance['filter']) && 'none' == $instance['filter']) {
+  if (!isset($instance['filter'])) {
    $filter = '';
-  } else {
-   $filter = 'filter="' . $instance['filter'] . '"';
+  }
+  if (isset($instance['filter'])) {
+   if ('none' == $instance['filter']) {
+    $filter = "";
+   } else {
+    $filter = 'filter="' . $instance['filter'] . '"';
+   }
   }
 
-  $cat = get_term_by('id', $instance['cat'], 'flexi_category');
-  if ($cat) {
-   $cat = 'album="' . $cat->slug . '"';
+  //$cat = get_term_by('slug', $instance['cat'], 'flexi_category');
+  if (isset($instance['cat'])) {
+   $cat = 'album="' . $instance['cat'] . '"';
   } else {
    $cat = "";
   }
 
+  function flexi_set_value($key, $value, $instance)
+  {
+   if (!isset($instance[$key])) {
+    $output = $value;
+   } else {
+    $output = $instance[$key];
+   }
+   return $output;
+  }
+
+  //flexi_log($cat);
+
   $shortcode = 'flexi-gallery
-column="' . $instance['column'] . '"
-perpage="' . $instance['perpage'] . '"
-padding="' . $instance['padding'] . '"
-layout="' . $instance['layout'] . '"
-popup="' . $popup . '"
-' . $cat . '
-tag="' . $instance['tags'] . '"
-orderby="' . $instance['orderby'] . '"
-tag_show="' . $tag_show . '"
-hover_effect="' . $instance['hover_effect'] . '"
-hover_caption="' . $instance['hover_caption'] . '"
-width="' . $instance['width'] . '"
-height="' . $instance['height'] . '"
+column="' . flexi_set_value('column', '2', $instance) . '"
+perpage="' . flexi_set_value('perpage', '4', $instance) . '"
+padding="' . flexi_set_value('padding', '1', $instance) . '"
+layout="' . flexi_set_value('layout', 'basic', $instance) . '"
+popup="' . $popup . '" ' . $cat . '
+tag="' . flexi_set_value('tags', '', $instance) . '"
+orderby="' . flexi_set_value('orderby', 'date', $instance) . '"
+hover_effect="' . flexi_set_value('hover_effect', '', $instance) . '"
+hover_caption="' . flexi_set_value('hover_caption', 'flexi_caption_none', $instance) . '"
+width="' . flexi_set_value('width', '100', $instance) . '"
+height="' . flexi_set_value('height', '100', $instance) . '"
 ' . $filter . '
 evalue="' . $evalue . '"
+' . $at_sidebar . '
  ';
 
   if (did_action('elementor/loaded')) {
@@ -269,6 +284,7 @@ evalue="' . $evalue . '"
    }
   }
 
+  echo '<! –– ***[ ' . $shortcode . ' ]*** ––>';
   echo $shortcode . "<hr>";
   echo do_shortcode('[' . $shortcode . ']');
 
@@ -279,6 +295,7 @@ evalue="' . $evalue . '"
  public function field_generator($instance)
  {
   $output = '';
+
   foreach ($this->widget_fields as $widget_field) {
    $default = '';
    if (isset($widget_field['default'])) {
@@ -319,11 +336,34 @@ evalue="' . $evalue . '"
  public function form($instance)
  {
   $title = !empty($instance['title']) ? $instance['title'] : esc_html__('', 'flexi');
+  $cat   = !empty($instance['cat']) ? $instance['cat'] : esc_html__('', 'flexi');
   ?>
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_attr_e('Title:', 'flexi');?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
 		</p>
+        <p>
+        <label for="<?php echo esc_attr($this->get_field_id('cat')); ?>"><?php esc_attr_e('Post from Category:', 'flexi');?></label>
+<?php
+
+  $dropdown_args = array(
+   'show_option_none'  => '-- ' . __('Select category', 'flexi') . ' --',
+   'option_none_value' => '',
+   'selected'          => esc_attr($cat),
+   'name'              => esc_attr($this->get_field_name('cat')),
+   'id'                => esc_attr($this->get_field_id('cat')),
+   'echo'              => 0,
+   'show_count'        => 1,
+   'hierarchical'      => 1,
+   'taxonomy'          => 'flexi_category',
+   'value_field'       => 'slug',
+   'hide_empty'        => 0,
+
+  );
+  echo wp_dropdown_categories($dropdown_args);
+
+  ?>
+        </p>
 		<?php
 $this->field_generator($instance);
  }
@@ -332,6 +372,7 @@ $this->field_generator($instance);
  {
   $instance          = array();
   $instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
+  $instance['cat']   = (!empty($new_instance['cat'])) ? strip_tags($new_instance['cat']) : '';
   foreach ($this->widget_fields as $widget_field) {
    switch ($widget_field['type']) {
     default:
