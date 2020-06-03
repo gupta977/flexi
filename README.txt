@@ -68,7 +68,7 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 *   **File size limit** - Specify each file size (MB) limit that the visitors can upload. 
 *   **Conflict Management** - Special settings available to manage the conflict with other plugins & theme.
 *   **Live Reloading** - If gallery & form is on same page, the submitted post will be visible as soon as form is posted without any page refresh.
-*   **Wordpress Widgets** - Any wordpress widgets can be placed at detail layout as selected location. 
+
 
 = WORKS GREAT WITH =
 
@@ -111,6 +111,7 @@ You can also add/remove form fields based on pages & posts.
 = Widgets =
 
 * **List Album** List all or selected album at sidebar or any widget location.
+* **Flexi Showcase Widgets** - Easily place gallery at sidebar based on latest, modified & random post (Elementor supported) 
 
 = PRO KEY FEATURES =
 
@@ -167,6 +168,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 1.0.38 =
 * Removed widget support at detail layouts
 * Updated regular & basic layout for responsive layout
+* Introduce Flexi Showcase widgets
 
 = 1.0.37 =
 * Support of fontawesome stopped

@@ -302,7 +302,7 @@ evalue="' . $evalue . '"
     case 'select':
      $output .= '<p>';
      $output .= '<label for="' . esc_attr($this->get_field_id($widget_field['id'])) . '">' . esc_attr($widget_field['label'], 'textdomain') . ':</label> ';
-     $output .= '<select id="' . esc_attr($this->get_field_id($widget_field['id'])) . '" name="' . esc_attr($this->get_field_name($widget_field['id'])) . '">';
+     $output .= '<select class="widefat" id="' . esc_attr($this->get_field_id($widget_field['id'])) . '" name="' . esc_attr($this->get_field_name($widget_field['id'])) . '">';
      foreach ($widget_field['options'] as $option => $value) {
       if ($widget_value == $value) {
        $output .= '<option value="' . $value . '" selected>' . $option . '</option>';
@@ -348,7 +348,7 @@ evalue="' . $evalue . '"
    'taxonomy'          => 'flexi_category',
    'value_field'       => 'slug',
    'hide_empty'        => 0,
-
+   'class'             => 'widefat',
   );
   echo wp_dropdown_categories($dropdown_args);
 
