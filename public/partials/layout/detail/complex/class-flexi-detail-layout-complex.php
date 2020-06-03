@@ -10,6 +10,7 @@ class Flexi_Detail_Layout_Complex
    add_action('flexi_location_' . $x, array($this, 'flexi_location'), 10, 3);
   }
   add_action('widgets_init', array($this, 'flexi_widget'));
+
  }
 
  //add_filter flexi_settings_tabs
@@ -151,7 +152,9 @@ class Flexi_Detail_Layout_Complex
    if ('widgets' == $value) {
     if (is_active_sidebar('flexi-complex-widget-container')) {
      dynamic_sidebar('flexi-complex-widget-container');
+     echo "wid here " . $post->ID;
     }
+    
    } else if ('media' == $value) {
     echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
    } else if ('status' == $value) {
@@ -191,15 +194,6 @@ class Flexi_Detail_Layout_Complex
  public function flexi_location($param, $post, $layout)
  {
 
-  //Set default location of elements
-  flexi_get_option('flexi_media', 'flexi_detail_layout_complex', 'location6');
-  flexi_get_option('flexi_status', 'flexi_detail_layout_complex', 'location1');
-  flexi_get_option('flexi_desp', 'flexi_detail_layout_complex', 'location15');
-  flexi_get_option('flexi_icon_grid', 'flexi_detail_layout_complex', 'location14');
-  flexi_get_option('flexi_custom_fields', 'flexi_detail_layout_complex', 'location13');
-  flexi_get_option('flexi_category', 'flexi_detail_layout_complex', 'location12');
-  flexi_get_option('flexi_tags', 'flexi_detail_layout_complex', 'location12');
-
   if ('complex' == $layout) {
    $elements = $this->generate_array();
    $location = $this->array_ksearch($elements, 'location' . $param);
@@ -207,6 +201,7 @@ class Flexi_Detail_Layout_Complex
    //flexi_log($elements);
 
    foreach ($location as $v) {
+    //flexi_log($v . '-' . $post->ID . '-' . $layout);
     echo $this->display_element($v, $post, $layout);
     //echo $v;
    }
@@ -228,6 +223,16 @@ class Flexi_Detail_Layout_Complex
     'after_title'   => '</h3>',
    )
   );
+
+  //Set default location of elements
+  flexi_get_option('flexi_media', 'flexi_detail_layout_complex', 'location6');
+  flexi_get_option('flexi_status', 'flexi_detail_layout_complex', 'location1');
+  flexi_get_option('flexi_desp', 'flexi_detail_layout_complex', 'location15');
+  flexi_get_option('flexi_icon_grid', 'flexi_detail_layout_complex', 'location14');
+  flexi_get_option('flexi_custom_fields', 'flexi_detail_layout_complex', 'location13');
+  flexi_get_option('flexi_category', 'flexi_detail_layout_complex', 'location12');
+  flexi_get_option('flexi_tags', 'flexi_detail_layout_complex', 'location12');
+
  }
 }
 

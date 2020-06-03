@@ -10,7 +10,7 @@ class Flexi_Detail_Layout_Basic
    add_action('flexi_location_' . $x, array($this, 'flexi_location'), 10, 3);
   }
 
-  //add_action('widgets_init', array($this, 'flexi_widget'));
+  add_action('widgets_init', array($this, 'flexi_widget'));
 
  }
 
@@ -143,6 +143,7 @@ class Flexi_Detail_Layout_Basic
    if ('widgets' == $value) {
     if (is_active_sidebar('flexi-basic-widget-container')) {
      dynamic_sidebar('flexi-basic-widget-container');
+     echo "wid here " . $post->ID;
     }
 
    } else if ('media' == $value) {
@@ -193,9 +194,13 @@ class Flexi_Detail_Layout_Basic
   flexi_get_option('flexi_category', 'flexi_detail_layout_basic', 'location3');
   flexi_get_option('flexi_tags', 'flexi_detail_layout_basic', 'location3');
   if ('basic' == $layout) {
+   $elements = array();
+   $location = array();
    $elements = $this->generate_array();
    $location = $this->array_ksearch($elements, 'location' . $param);
+   //flexi_log($location);
    foreach ($location as $v) {
+    //flexi_log($v . '-' . $post->ID . '-' . $layout);
     echo $this->display_element($v, $post, $layout);
    }
   }
