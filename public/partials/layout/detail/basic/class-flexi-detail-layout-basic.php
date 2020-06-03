@@ -10,7 +10,7 @@ class Flexi_Detail_Layout_Basic
    add_action('flexi_location_' . $x, array($this, 'flexi_location'), 10, 3);
   }
 
-  add_action('widgets_init', array($this, 'flexi_widget'));
+  // add_action('widgets_init', array($this, 'flexi_widget'));
 
  }
 
@@ -48,14 +48,14 @@ class Flexi_Detail_Layout_Basic
  public function list_elements()
  {
   $labels = array(
-   "Publish Status"                                                   => "status",
-   "Large Media"                                                      => "media",
-   "Description"                                                      => "desp",
-   "Category"                                                         => "category",
-   "Tags"                                                             => "tags",
-   "Icon Grid"                                                        => "icon_grid",
-   "Custom Fields"                                                    => "custom_fields",
-   "Wordpress <a href='" . admin_url('widgets.php') . "'>Widgets</a>" => "widgets",
+   "Publish Status" => "status",
+   "Large Media"    => "media",
+   "Description"    => "desp",
+   "Category"       => "category",
+   "Tags"           => "tags",
+   "Icon Grid"      => "icon_grid",
+   "Custom Fields"  => "custom_fields",
+   // "Wordpress <a href='" . admin_url('widgets.php') . "'>Widgets</a>" => "widgets",
   );
 
   return $labels;
@@ -138,7 +138,7 @@ class Flexi_Detail_Layout_Basic
  public function display_element($value, $post, $layout)
  {
   ob_start();
-  if ('basic' == $layout) {
+  if ('basic' == $layout && is_singular('flexi')) {
 
    if ('widgets' == $value) {
     if (is_active_sidebar('flexi-basic-widget-container')) {
@@ -193,7 +193,7 @@ class Flexi_Detail_Layout_Basic
   flexi_get_option('flexi_custom_fields', 'flexi_detail_layout_basic', 'location4');
   flexi_get_option('flexi_category', 'flexi_detail_layout_basic', 'location3');
   flexi_get_option('flexi_tags', 'flexi_detail_layout_basic', 'location3');
-  if ('basic' == $layout) {
+  if ('basic' == $layout && is_singular('flexi')) {
    $elements = array();
    $location = array();
    $elements = $this->generate_array();

@@ -9,7 +9,7 @@ class Flexi_Detail_Layout_Complex
   for ($x = 1; $x <= 15; $x++) {
    add_action('flexi_location_' . $x, array($this, 'flexi_location'), 10, 3);
   }
-  add_action('widgets_init', array($this, 'flexi_widget'));
+  //add_action('widgets_init', array($this, 'flexi_widget'));
 
  }
 
@@ -47,14 +47,14 @@ class Flexi_Detail_Layout_Complex
  public function list_elements()
  {
   $labels = array(
-   "Publish Status"                                                   => "status",
-   "Large Media"                                                      => "media",
-   "Description"                                                      => "desp",
-   "Category"                                                         => "category",
-   "Tags"                                                             => "tags",
-   "Icon Grid"                                                        => "icon_grid",
-   "Custom Fields"                                                    => "custom_fields",
-   "Wordpress <a href='" . admin_url('widgets.php') . "'>Widgets</a>" => "widgets",
+   "Publish Status" => "status",
+   "Large Media"    => "media",
+   "Description"    => "desp",
+   "Category"       => "category",
+   "Tags"           => "tags",
+   "Icon Grid"      => "icon_grid",
+   "Custom Fields"  => "custom_fields",
+   // "Wordpress <a href='" . admin_url('widgets.php') . "'>Widgets</a>" => "widgets",
   );
 
   return $labels;
@@ -147,14 +147,14 @@ class Flexi_Detail_Layout_Complex
  public function display_element($value, $post, $layout)
  {
   ob_start();
-  if ('complex' == $layout) {
+  if ('complex' == $layout && is_singular('flexi')) {
    //flexi_log($value . '----' . $layout);
    if ('widgets' == $value) {
     if (is_active_sidebar('flexi-complex-widget-container')) {
      dynamic_sidebar('flexi-complex-widget-container');
      echo "wid here " . $post->ID;
     }
-    
+
    } else if ('media' == $value) {
     echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
    } else if ('status' == $value) {
@@ -194,7 +194,7 @@ class Flexi_Detail_Layout_Complex
  public function flexi_location($param, $post, $layout)
  {
 
-  if ('complex' == $layout) {
+  if ('complex' == $layout && is_singular('flexi')) {
    $elements = $this->generate_array();
    $location = $this->array_ksearch($elements, 'location' . $param);
 
