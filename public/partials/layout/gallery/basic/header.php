@@ -9,6 +9,12 @@
   height: <?php echo $height; ?>px;
 }
 
+@media only screen and (max-width: 768px) {
+  .flexi_basic_width_<?php echo $width; ?> .flexi-list-sub {
+    width: 100%;
+  }
+}
+
 .flexi_basic_width_<?php echo $width; ?> .flexi-list-sub > a {
     height: <?php echo $height; ?>px;
 }

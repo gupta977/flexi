@@ -164,6 +164,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.38 =
+* Removed widget support at detail layouts
+* Updated regular & basic layout for responsive layout
+
 = 1.0.37 =
 * Support of fontawesome stopped
 
