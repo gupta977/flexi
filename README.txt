@@ -32,6 +32,8 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 [User Dashboard](https://odude.com/demo/flexi/my-gallery/)
 [Gallery filtered by Category](https://odude.com/demo/flexi/flexi-gallery/?flexi_category=animals)
 
+[youtube https://youtu.be/2EUZPCMlwq8]
+
 == Help ==
 <a href="https://odude.com/docs/flexi-gallery/">Documentation</a>
 
