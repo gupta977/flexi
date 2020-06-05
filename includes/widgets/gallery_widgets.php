@@ -285,7 +285,6 @@ evalue="' . $evalue . '"
  public function field_generator($instance)
  {
   $output = '';
-
   foreach ($this->widget_fields as $widget_field) {
    $default = '';
    if (isset($widget_field['default'])) {
