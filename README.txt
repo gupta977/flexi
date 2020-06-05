@@ -169,6 +169,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 1.0.39 =
 * Popup fixed on/off fixed for Flexi Showcase widgets
+* Javascript toggle in Showcase widgets
 
 = 1.0.38 =
 * Removed widget support at detail layouts
