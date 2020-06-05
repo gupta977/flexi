@@ -274,7 +274,7 @@ evalue="' . $evalue . '"
    }
   }
 
-  //echo '<! –– ***[ ' . $shortcode . ' ]*** ––>';
+  echo '<! –– ***[ ' . $shortcode . ' ]*** ––>';
   //echo $shortcode . "<hr>";
   echo do_shortcode('[' . $shortcode . ']');
 
