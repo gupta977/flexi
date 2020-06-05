@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
-"POT-Creation-Date: 2020-05-24 15:52+0545\n"
+"POT-Creation-Date: 2020-06-05 14:34+0545\n"
 "PO-Revision-Date: 2020-02-09 12:49+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Flexi Plugin Settings"
 msgstr ""
 
-#: block/src/form/block.js:59 includes/functions.php:993
+#: block/src/form/block.js:59 includes/functions.php:999
 msgid "Flexi Submission Form"
 msgstr ""
 
@@ -123,19 +123,19 @@ msgstr ""
 msgid "picture"
 msgstr ""
 
-#: block/src/gallery/edit.js:106
+#: block/src/gallery/edit.js:104
 msgid "Gallery based on Selection"
 msgstr ""
 
-#: block/src/gallery/edit.js:182
+#: block/src/gallery/edit.js:180
 msgid "Layout Controls"
 msgstr ""
 
-#: block/src/gallery/edit.js:250
+#: block/src/gallery/edit.js:248
 msgid "Toggle Controls"
 msgstr ""
 
-#: block/src/gallery/edit.js:298
+#: block/src/gallery/edit.js:296
 msgid "Effects"
 msgstr ""
 
@@ -356,16 +356,16 @@ msgstr ""
 msgid "Detail"
 msgstr ""
 
+#: includes/class-flexi-form.php:51 includes/class-flexi-form.php:63
+msgid "Submission disabled"
+msgstr ""
+
 #: includes/class-flexi-form.php:54
 msgid "This form will not be visible by visitors."
 msgstr ""
 
 #: includes/class-flexi-form.php:58
 msgid "You do not have proper rights to publish posts"
-msgstr ""
-
-#: includes/class-flexi-form.php:63
-msgid "Submission disabled"
 msgstr ""
 
 #: includes/class-flexi-form.php:90
@@ -400,7 +400,7 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#: includes/class-flexi-gallery.php:348
+#: includes/class-flexi-gallery.php:371
 msgid "Layout not available"
 msgstr ""
 
@@ -925,6 +925,7 @@ msgid "Select a page"
 msgstr ""
 
 #: includes/class-flexi-settings.php:914
+#: includes/widgets/gallery_widgets.php:339
 msgid "Select category"
 msgstr ""
 
@@ -989,57 +990,77 @@ msgstr ""
 msgid "Required Flexi-PRO"
 msgstr ""
 
-#: includes/functions.php:944
+#: includes/functions.php:950
 msgid "Title cannot be blank."
 msgstr ""
 
-#: includes/functions.php:947
+#: includes/functions.php:953
 msgid "Invalid file type"
 msgstr ""
 
-#: includes/functions.php:950
+#: includes/functions.php:956
 msgid "Only image files are allowed."
 msgstr ""
 
-#: includes/functions.php:953
+#: includes/functions.php:959
 msgid "File size is too big."
 msgstr ""
 
-#: includes/functions.php:956
+#: includes/functions.php:962
 msgid "Captcha security code is invalid."
 msgstr ""
 
-#: includes/functions.php:979
+#: includes/functions.php:985
 msgid "Flexi Primary Gallery"
 msgstr ""
 
-#: includes/functions.php:986
+#: includes/functions.php:992
 msgid "Flexi User Dashboard"
 msgstr ""
 
-#: includes/functions.php:1000
+#: includes/functions.php:1006
 msgid "Flexi Edit/Modify"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:21
-msgid "Logout"
-msgstr ""
-
-#: includes/user_dashboard/class-flexi-user-dashboard.php:27
+#: includes/user_dashboard/class-flexi-user-dashboard.php:36
 msgid "Search post"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:33
+#: includes/user_dashboard/class-flexi-user-dashboard.php:44
 msgid "My Posts"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:64
+#: includes/user_dashboard/class-flexi-user-dashboard.php:75
 msgid "My Dashboard"
 msgstr ""
 
+#: includes/user_dashboard/class-flexi-user-dashboard.php:95
+msgid "\"My Dashboard\" button"
+msgstr ""
+
+#: includes/user_dashboard/class-flexi-user-dashboard.php:96
+msgid "Display button after form submission"
+msgstr ""
+
+#: includes/user_dashboard/class-flexi-user-dashboard.php:103
+msgid "\"My Gallery\" button"
+msgstr ""
+
+#: includes/user_dashboard/class-flexi-user-dashboard.php:104
+msgid "Display button at \"My Dashboard\""
+msgstr ""
+
+#: includes/user_dashboard/class-flexi-user-dashboard.php:174
+msgid "My Gallery"
+msgstr ""
+
+#: includes/user_dashboard/class-flexi-user-dashboard.php:192
+msgid "Logout"
+msgstr ""
+
 #: includes/user_dashboard/class-flexi-user-gallery.php:87
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:146
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:156
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:156
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:165
 msgid "Under Review"
 msgstr ""
 
@@ -1075,115 +1096,151 @@ msgstr ""
 msgid "Show Listing Counts"
 msgstr ""
 
-#: public/class-flexi-public.php:127
-msgid "Are you sure you want to delete?"
+#: includes/widgets/gallery_widgets.php:10
+msgid "Flexi Showcase"
+msgstr ""
+
+#: includes/widgets/gallery_widgets.php:11
+msgid "Display specified set of gallery"
 msgstr ""
 
 #: public/class-flexi-public.php:128
+msgid "Are you sure you want to delete?"
+msgstr ""
+
+#: public/class-flexi-public.php:129
 msgid "Download file?"
 msgstr ""
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:30
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:32
 msgid "Basic - Layout"
 msgstr ""
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:31
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:33
+msgid ""
+"<ul>\n"
+"    <li>One element can have same location</li>\n"
+"    <li>Detail page is accessed by clicking on icon <span class=\"dashicons dashicons-external\">&nbsp;</span></li>\n"
+"    <li>Page title is positioned based on theme used</li>\n"
+"    <li> To preview, go to Flexi ➾ All Post & view post </li>\n"
+"    </ul>"
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:71
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:70
+msgid "Detail Layout Chart"
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:72
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:71
+msgid "Each number denotes the available location of elements"
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:87
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:86
+msgid "Select the location where you want to place elements"
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:90
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:89
+msgid "-- Hide --"
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:91
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:90
+msgid "Location 1"
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:92
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:91
+msgid "Location 2"
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:93
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:92
+msgid "Location 3"
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:94
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:93
+msgid "Location 4"
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:95
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:94
+msgid "Location 5"
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:206
+msgid "Flexi- Basic Detail Layout"
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:208
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
+msgid "Add widgets here to appear in detail layout as specified location."
+msgstr ""
+
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:208
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
+msgid "Manage"
+msgstr ""
+
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:31
+msgid "Complex - Layout"
+msgstr ""
+
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:32
 msgid ""
 "<ul>\n"
 "    <li>One element can have same location</li>\n"
 "    <li>Detail page is accessed by clicking on icon <span class=\"dashicons dashicons-external\">&nbsp;</span></li>\n"
 "    <li>Page title is positioned based on theme</li>\n"
+"    <li> To preview, go to Flexi ➾ All Post & view post </li>\n"
 "    </ul>"
 msgstr ""
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:67
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:67
-msgid "Detail Layout Chart"
-msgstr ""
-
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:68
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:68
-msgid "Each number denotes the available location of elements"
-msgstr ""
-
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:83
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:83
-msgid "Select the location where you want to place elements"
-msgstr ""
-
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:86
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:86
-msgid "-- Hide --"
-msgstr ""
-
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:87
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:87
-msgid "Location 1"
-msgstr ""
-
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:88
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:88
-msgid "Location 2"
-msgstr ""
-
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:89
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:89
-msgid "Location 3"
-msgstr ""
-
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:90
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:90
-msgid "Location 4"
-msgstr ""
-
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:91
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:91
-msgid "Location 5"
-msgstr ""
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:30
-msgid "Complex - Layout"
-msgstr ""
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:92
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:95
 msgid "Location 6"
 msgstr ""
 
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:93
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:96
 msgid "Location 7"
 msgstr ""
 
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:94
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:97
 msgid "Location 8"
 msgstr ""
 
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:95
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:98
 msgid "Location 9"
 msgstr ""
 
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:96
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:99
 msgid "Location 10"
 msgstr ""
 
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:97
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:100
 msgid "Location 11"
 msgstr ""
 
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:98
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:101
 msgid "Location 12"
 msgstr ""
 
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:99
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:102
 msgid "Location 13"
 msgstr ""
 
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:100
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:103
 msgid "Location 14"
 msgstr ""
 
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:101
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:104
 msgid "Location 15"
+msgstr ""
+
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:217
+msgid "Flexi- Complex Detail Layout"
 msgstr ""
 
 #: public/partials/layout/gallery/basic/footer.php:6
