@@ -23,15 +23,16 @@
 class Flexi_Deactivator
 {
 
-	/**
-	 * Short Description. (use period)
-	 *
-	 * Long Description.
-	 *
-	 * @since    1.0.0
-	 */
-	public static function deactivate()
-	{
-		flush_rewrite_rules();
-	}
+ /**
+  * Short Description. (use period)
+  *
+  * Long Description.
+  *
+  * @since    1.0.0
+  */
+ public static function deactivate()
+ {
+  do_action("flexi_deactivated");
+  flush_rewrite_rules();
+ }
 }

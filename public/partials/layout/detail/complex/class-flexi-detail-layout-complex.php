@@ -9,8 +9,8 @@ class Flexi_Detail_Layout_Complex
   for ($x = 1; $x <= 15; $x++) {
    add_action('flexi_location_' . $x, array($this, 'flexi_location'), 10, 3);
   }
-  //add_action('widgets_init', array($this, 'flexi_widget'));
 
+  add_action('flexi_activated', array($this, 'set_value'));
  }
 
  //add_filter flexi_settings_tabs
@@ -224,7 +224,11 @@ class Flexi_Detail_Layout_Complex
    )
   );
 
-  //Set default location of elements
+ }
+
+ public function set_value()
+ {
+//Set default location of elements
   flexi_get_option('flexi_media', 'flexi_detail_layout_complex', 'location6');
   flexi_get_option('flexi_status', 'flexi_detail_layout_complex', 'location1');
   flexi_get_option('flexi_desp', 'flexi_detail_layout_complex', 'location15');
@@ -232,8 +236,8 @@ class Flexi_Detail_Layout_Complex
   flexi_get_option('flexi_custom_fields', 'flexi_detail_layout_complex', 'location13');
   flexi_get_option('flexi_category', 'flexi_detail_layout_complex', 'location12');
   flexi_get_option('flexi_tags', 'flexi_detail_layout_complex', 'location12');
-
  }
+
 }
 
 //List layout locations

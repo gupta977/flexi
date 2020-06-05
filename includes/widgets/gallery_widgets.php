@@ -110,12 +110,12 @@ class Flexishowcase_Widget extends WP_Widget
    'default' => 'flexi_caption_none',
    'type'    => 'select',
    'options' => array(
-    '-- None --'      => 'flexi_caption_none',
-    '-- Caption 1 --' => 'flexi_caption_1',
-    '-- Caption 2 --' => 'flexi_caption_2',
-    '-- Caption 3 --' => 'flexi_caption_3',
-    '-- Caption 4 --' => 'flexi_caption_4',
-    '-- Caption 5 --' => 'flexi_caption_5',
+    '-- None --'                  => 'flexi_caption_none',
+    '-- Slide left --'            => 'flexi_caption_1',
+    '-- Pull up with info --'     => 'flexi_caption_2',
+    '-- Slide right with info --' => 'flexi_caption_3',
+    '-- Pull up --'               => 'flexi_caption_4',
+    '-- Top & Bottom --'          => 'flexi_caption_5',
    ),
   ),
   array(

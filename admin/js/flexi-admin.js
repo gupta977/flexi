@@ -3,6 +3,8 @@
 
   $(window).load(function () {
     function flexi_layout_value(lname) {
+      // console.log(lname + " update");
+
       if (lname == "basic" || lname == "regular") {
         $('form input[id*="column"]').prop("disabled", true);
         $('form input[id*="evalue_excerpt"]').prop("disabled", true);
@@ -27,9 +29,9 @@
       }
     }
 
-    flexi_layout_value($("select[id*='layout']").val());
+    //flexi_layout_value($("select[id*='-layout']").val());
 
-    $("select[id*='layout']").change(function () {
+    $("select[id*='-layout']").change(function () {
       $(this)
         .find("option:selected")
         .each(function () {
