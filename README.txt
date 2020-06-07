@@ -115,6 +115,9 @@ You can also add/remove form fields based on pages & posts.
 * **List Album** List all or selected album at sidebar or any widget location.
 * **Flexi Showcase Widgets** - Easily place gallery at sidebar based on latest, modified & random post (Elementor supported) 
 
+= Language Support =
+* German language (de_DE) (Thanks to contributor: CruxDesign)
+
 = PRO KEY FEATURES =
 
 * **Batch images upload** - Allow to upload batch of the images by one click. Just drag and drop set of the gallery images and it's upload automatically to the server.
@@ -122,7 +125,7 @@ You can also add/remove form fields based on pages & posts.
 * **Custom Fields** extra 7 fields on top of free version. 
 * **Edit Post** Let visitors to update the submitted post with own set of fields. 
 * **More Mime Types** - Add more file type to allow visitors to upload.
-* **User File Limit** - Limit the number of post to get submitted based on user roles. 
+* **User File Limit** - Limit the number of post to get submitted based on user roles. (Thanks to sponsor: Shane)
 
 > If any suggestion, contact me directly at navneet@odude.com
 > Byte update at https://github.com/gupta977/flexi/tree/beta
@@ -167,6 +170,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.40 =
+* Added language German de_DE
+
 = 1.0.39 =
 * Popup fixed on/off fixed for Flexi Showcase widgets
 * Javascript toggle in Showcase widgets
