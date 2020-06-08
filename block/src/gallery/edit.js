@@ -74,6 +74,7 @@ class FlexiGalleryEdit extends Component {
 			evalue_icon,
 			evalue_tag,
 			evalue_category,
+			at_sidebar,
 		} = attributes;
 
 		const categories = this.getCategoriesTree();
@@ -248,6 +249,12 @@ class FlexiGalleryEdit extends Component {
 							title={__("Toggle Controls", "flexi")}
 							initialOpen={false}
 						>
+							<ToggleControl
+								label="Disable navigation & make independent gallery"
+								checked={at_sidebar}
+								onChange={toggleAttribute("at_sidebar")}
+							/>
+
 							<ToggleControl
 								label="Display tags above gallery"
 								checked={tag_show}

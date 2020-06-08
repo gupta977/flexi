@@ -146,6 +146,10 @@ registerBlockType("cgb/block-flexi-block", {
 			type: "boolean",
 			default: true,
 		},
+		at_sidebar: {
+			type: "boolean",
+			default: true,
+		},
 	},
 
 	edit,

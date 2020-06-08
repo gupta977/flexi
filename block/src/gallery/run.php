@@ -98,6 +98,10 @@ register_block_type(
     'type'    => 'boolean',
     'default' => true,
    ),
+   'at_sidebar'      => array(
+    'type'    => 'boolean',
+    'default' => true,
+   ),
   ),
   'render_callback' => 'flexi_gallery_render_callback',
  )
@@ -148,6 +152,12 @@ function flexi_gallery_render_callback($args)
    $evalue .= "tag:on,";
   }
 
+  if (isset($args['at_sidebar']) && '1' == $args['at_sidebar']) {
+   $at_sidebar = "clear='true'";
+  } else {
+   $at_sidebar = '';
+  }
+
   if (isset($args['filter']) && 'none' == $args['filter']) {
    $filter = '';
   } else {
@@ -162,6 +172,7 @@ function flexi_gallery_render_callback($args)
   }
 
   $shortcode = '[flexi-gallery
+  ' . $at_sidebar . '
   column="' . $args['column'] . '"
   perpage="' . $args['perpage'] . '"
   padding="' . $args['padding'] . '"
@@ -184,12 +195,11 @@ function flexi_gallery_render_callback($args)
  echo do_shortcode($shortcode);
  //echo $shortcode;
  if (defined('REST_REQUEST') && REST_REQUEST) {
-  echo "<div style='clear:both;border: 1px solid #999; background: #eee'>";
+  echo "<small><div style='clear:both;border: 1px solid #999; background: #eee'>";
   echo "<ul><li>Preview is for reference and may not view same.
   <li> Ajax function like page load & popup will not be executed.
-  <li>Some settings may not work on specific layout.
-  <li>Below shortcode generated for this page</ul>";
-  echo '<code>' . $shortcode . '</code></div>';
+  <li>Some settings may not work on specific layout.</ul>";
+  echo '<code>' . $shortcode . '</code></div></small>';
 
   ?>
   <link rel='stylesheet' id='flexi_public_layout'  href='<?php echo FLEXI_PLUGIN_URL; ?>/public/partials/layout/gallery/<?php echo $args['layout']; ?>/style.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
