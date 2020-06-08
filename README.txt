@@ -116,7 +116,7 @@ You can also add/remove form fields based on pages & posts.
 * **Flexi Showcase Widgets** - Easily place gallery at sidebar based on latest, modified & random post (Elementor supported) 
 
 = Language Support =
-* German language (de_DE) (Thanks to contributor: CruxDesign)
+* German language (de_DE) (Thanks to contributor: Radek)
 
 = PRO KEY FEATURES =
 
@@ -124,7 +124,7 @@ You can also add/remove form fields based on pages & posts.
 * **Google reCaptcha** support for form security while submitting form.
 * **Custom Fields** extra 7 fields on top of free version. 
 * **Edit Post** Let visitors to update the submitted post with own set of fields. 
-* **More Mime Types** - Add more file type to allow visitors to upload.
+* **More Mime Types** - Add more file type to allow visitors to upload. (Thanks to sponsor: Rekha)
 * **User File Limit** - Limit the number of post to get submitted based on user roles. (Thanks to sponsor: Shane)
 
 > If any suggestion, contact me directly at navneet@odude.com
@@ -172,6 +172,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 1.0.40 =
 * Added language German de_DE
+* Added turning off navigation at visual builder
 
 = 1.0.39 =
 * Popup fixed on/off fixed for Flexi Showcase widgets
