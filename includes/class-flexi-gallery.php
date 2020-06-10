@@ -409,6 +409,17 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
     arrows:false,
       });
       <?php
+} else if ('basic' == $atts['popup']) {
+     ?>
+ jQuery('[data-fancybox').fancybox({
+       selector : '.flexi_show_popup_basic a:visible',
+       thumbs   : {
+   autoStart : false
+ },
+ protect: false,
+ arrows:false,
+   });
+   <?php
 } else {
      ?>
   jQuery('[data-fancybox-trigger').fancybox({
