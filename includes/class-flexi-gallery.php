@@ -222,8 +222,13 @@ class Flexi_Shortcode_Gallery
    $show_tag   = false; //Disable tags above gallery
    $paged      = 1; //Reset to first page
    if ('off' != $atts['popup']) {
-    $popup         = mt_rand(); //Random number assign to make popup unique at sidebar
-    $atts['popup'] = $popup;
+    if ('basic' == $atts['popup']) {
+     $popup         = 'basic';
+     $atts['popup'] = $popup;
+    } else {
+     $popup         = mt_rand(); //Random number assign to make popup unique at sidebar
+     $atts['popup'] = $popup;
+    }
    }
    //flexi_log($atts);
   }

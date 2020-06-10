@@ -9,7 +9,8 @@ echo '<div class="flexi_gallery_grid">';
 
         <?php
 echo '<div class="flexi-image-wrapper flexi-list-sub ' . $data['popup'] . ' flexi_effect" id="' . $hover_effect . '">';
-echo '<a class="" href="' . $data['url'] . '" data-caption="' . $data['title'] . '" border="0">';
+echo '<a class="" ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">';
+//echo '<a  data-src="http://localhost/wp5/wp-admin/admin-ajax.php?action=flexi_ajax_post_view&id=' . $post->ID . '" href="javascript:;">';
 echo '<img src="' . esc_url(flexi_image_src('medium', $post)) . '">';
 ?>
 <?php echo ' <div class="flexi_figcaption" id="flexi_cap_' . get_the_ID() . '"></div>'; ?>

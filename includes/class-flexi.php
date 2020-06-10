@@ -170,6 +170,9 @@ class Flexi
   //Load Ajax form submit
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/flexi_ajax_post.php';
 
+  //Load Ajax Post View
+  require_once plugin_dir_path(dirname(__FILE__)) . 'public/partials/layout/popup/flexi_ajax_post_view.php';
+
   //Load Ajax Delete
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi_ajax_delete.php';
 

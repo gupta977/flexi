@@ -170,6 +170,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.41 =
+* Option to 'bulk edit' & 'quick edit' 'detail layout'
+
 = 1.0.40 =
 * Added language German de_DE
 * Added turning off navigation at visual builder
