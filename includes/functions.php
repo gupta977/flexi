@@ -415,6 +415,10 @@ function flexi_layout_list($args = '')
  $filelist = "";
  $files    = array_map("htmlspecialchars", scandir($dir));
  //echo $dir;
+ if (isset($parsed_args['show_option_none'])) {
+  $output .= '<option value="' . $parsed_args['show_option_none'] . '" ' . selected($value, $value, false) . '>' . $parsed_args['show_option_none'] . '</option>';
+ }
+
  foreach ($files as $file) {
   if (!strpos($file, '.') && "." != $file && ".." != $file) {
    $output .= sprintf('<option value="%s" %s >%s layout</option>' . PHP_EOL, $file, selected($value, $file, false), $file);
@@ -1072,11 +1076,11 @@ function flexi_execute_shortcode()
 
 //Assign default parameters (widgets)
 function flexi_set_value($key, $value, $instance)
-  {
-   if (!isset($instance[$key])) {
-    $output = $value;
-   } else {
-    $output = $instance[$key];
-   }
-   return $output;
-  }
+{
+ if (!isset($instance[$key])) {
+  $output = $value;
+ } else {
+  $output = $instance[$key];
+ }
+ return $output;
+}

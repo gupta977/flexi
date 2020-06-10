@@ -6,6 +6,13 @@
 class Flexi_Meta_boxes
 {
 
+ public function __construct()
+ {
+  add_action('bulk_edit_custom_box', array($this, 'quick_edit_add'), 10, 2);
+  add_action('quick_edit_custom_box', array($this, 'quick_edit_add'), 10, 2);
+  add_action('save_post', array($this, 'save_quick_edit_data'));
+ }
+
  /**
   * Register CMB2 Meta-boxes
   *
@@ -189,6 +196,64 @@ class Flexi_Meta_boxes
     'complex' => __('Complex', 'flexi'),
    ),
   ));
+
+ }
+
+ /**
+  * Add detail layout selection quick edit screen
+  *
+  * @param string $column_name Custom column name, used to check
+  * @param string $post_type
+  *
+  * @return void
+  */
+ public function quick_edit_add($column_name, $post_type)
+ {
+  if ('flexi_layout' != $column_name) {
+   return;
+  }
+  wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
+  $dropdown_args = array(
+   'show_option_none'  => '-- ' . __('Default layout', 'flexi') . ' --',
+   'option_none_value' => '',
+   'selected'          => '',
+   'name'              => 'flexi_layout',
+   'id'                => 'flexi_layout',
+   'folder'            => 'detail',
+
+  );
+  // echo $args['name'] . "--------";
+  //var_dump($args);
+  echo '<label class="inline-edit-layout alignleft">
+  <span class="title">' . __('Detail Layout', 'flexi') . '</span> ';
+  echo flexi_layout_list($dropdown_args);
+  echo '</label>';
+
+ }
+
+/**
+ * Save quick edit data
+ *
+ * @param int $post_id
+ *
+ * @return void|int
+ */
+ public function save_quick_edit_data($post_id)
+ {
+  // check user capabilities
+  if (!current_user_can('edit_post', $post_id)) {
+   return;
+  }
+
+  // check nonce
+  if (!isset($_REQUEST['flexi-nonce']) || !wp_verify_nonce($_REQUEST['flexi-nonce'], 'flexi-nonce')) {
+   return;
+  }
+
+// update the price
+  if (isset($_REQUEST['flexi_layout'])) {
+   update_post_meta($post_id, 'flexi_layout', $_REQUEST['flexi_layout']);
+  }
 
  }
 }
