@@ -214,7 +214,7 @@ class Flexi_Meta_boxes
   }
   wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
   $dropdown_args = array(
-   'show_option_none'  => '-- ' . __('Default layout', 'flexi') . ' --',
+   'show_option_none'  => '-- ' . __('Default', 'flexi') . ' --',
    'option_none_value' => '',
    'selected'          => '',
    'name'              => 'flexi_layout',

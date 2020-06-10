@@ -416,7 +416,7 @@ function flexi_layout_list($args = '')
  $files    = array_map("htmlspecialchars", scandir($dir));
  //echo $dir;
  if (isset($parsed_args['show_option_none'])) {
-  $output .= '<option value="' . $parsed_args['show_option_none'] . '" ' . selected($value, $value, false) . '>' . $parsed_args['show_option_none'] . '</option>';
+  $output .= '<option value="' . $parsed_args['option_none_value'] . '" ' . selected($value, $value, false) . '>' . $parsed_args['show_option_none'] . '</option>';
  }
 
  foreach ($files as $file) {
