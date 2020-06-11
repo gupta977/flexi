@@ -46,13 +46,13 @@ class Flexi_Popup_Layout_Custom
  public function list_elements()
  {
   $labels = array(
-   "Publish Status" => "status",
-   "Large Media"    => "media",
-   "Description"    => "desp",
-   "Category"       => "category",
-   "Tags"           => "tags",
-   "Icon Grid"      => "icon_grid",
-   "Custom Fields"  => "custom_fields",
+   //"Publish Status" => "status",
+   "Large Media"   => "media",
+   "Description"   => "desp",
+   "Category"      => "category",
+   "Tags"          => "tags",
+   "Icon Grid"     => "icon_grid",
+   "Custom Fields" => "custom_fields",
   );
 
   return $labels;

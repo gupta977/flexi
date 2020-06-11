@@ -9,19 +9,35 @@ function flexi_ajax_post_view()
 
  if (isset($_GET['id'])) {
   $id = $_GET['id'];
+  //global $post;
+  $post        = get_post($id);
+  $layout      = "custom";
+  $header_file = FLEXI_PLUGIN_DIR . 'public/partials/layout/popup/' . $layout . '/content.php';
+  $the_query   = new WP_Query(array('post_type' => 'flexi', 'p' => $id));
 
-  $post = get_post($id);
-  if (is_object($post)) {
-   //var_dump($post);
+  // The Loop
+  if ($the_query->have_posts()) {
 
-   //Attach layout
-   $layout      = "custom";
-   $header_file = FLEXI_PLUGIN_DIR . 'public/partials/layout/popup/' . $layout . '/content.php';
-   if (file_exists($header_file)) {
-    require $header_file;
+   while ($the_query->have_posts()) {
+    $the_query->the_post();
+    if (file_exists($header_file)) {
+     require $header_file;
+    }
    }
 
+  } else {
+   echo '<div id="flexi_no_record" class="flexi_alert-box flexi_notice">' . __('No records', 'flexi') . '</div>';
   }
+/* Restore original Post Data */
+  wp_reset_postdata();
+/*
+if (is_object($post)) {
+//var_dump($post);
+
+//Attach layout
+
+}
+ */
  }
  die();
 

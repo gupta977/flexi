@@ -58,9 +58,11 @@ class Flexi_Public_Detail
  }
 
 //Add icons at user grid
- public function add_icon($icon)
+ public function add_icon($icon, $post = null)
  {
-  global $post;
+  if (null == $post) {
+   global $post;
+  }
   $link              = get_permalink();
   $extra_icon        = array();
   $detail_flexi_icon = flexi_get_option('detail_flexi_icon', 'flexi_icon_settings', 1);

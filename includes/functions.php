@@ -883,7 +883,6 @@ function flexi_excerpt($limit = null, $separator = null, $post = null)
 //Icon container. Eg. Author icon, Delete icon, Edit icon
 function flexi_show_icon_grid()
 {
- global $post;
  $icon = array();
 
  $list = '';
