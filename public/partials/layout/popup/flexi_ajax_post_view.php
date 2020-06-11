@@ -15,7 +15,7 @@ function flexi_ajax_post_view()
    //var_dump($post);
 
    //Attach layout
-   $layout      = "basic";
+   $layout      = "custom";
    $header_file = FLEXI_PLUGIN_DIR . 'public/partials/layout/popup/' . $layout . '/content.php';
    if (file_exists($header_file)) {
     require $header_file;

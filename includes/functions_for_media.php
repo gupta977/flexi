@@ -167,7 +167,7 @@ function flexi_image_data($size = 'full', $post = '', $popup = "on")
    $data['src']   = '#flexi_inline_' . $post->ID;
    $data['extra'] = 'data-fancybox-trigger';
    $data['popup'] = 'flexi_show_popup_' . $popup;
-  } else if ('basic' == $popup) {
+  } else if ('custom' == $popup) {
    $nonce         = wp_create_nonce("flexi_ajax_popup");
    $data['url']   = 'javascript:;';
    $data['src']   = admin_url('admin-ajax.php?action=flexi_ajax_post_view&id=' . $post->ID . '&nonce=' . $nonce);

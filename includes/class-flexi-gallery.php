@@ -222,8 +222,8 @@ class Flexi_Shortcode_Gallery
    $show_tag   = false; //Disable tags above gallery
    $paged      = 1; //Reset to first page
    if ('off' != $atts['popup']) {
-    if ('basic' == $atts['popup']) {
-     $popup         = 'basic';
+    if ('custom' == $atts['popup']) {
+     $popup         = 'custom';
      $atts['popup'] = $popup;
     } else {
      $popup         = mt_rand(); //Random number assign to make popup unique at sidebar
@@ -409,7 +409,7 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
     arrows:false,
       });
       <?php
-} else if ('basic' == $atts['popup']) {
+} else if ('custom' == $atts['popup']) {
      ?>
  jQuery('[data-fancybox').fancybox({
        selector : '.flexi_show_popup_basic a:visible',
