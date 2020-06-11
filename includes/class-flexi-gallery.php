@@ -410,12 +410,17 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
       });
       <?php
 } else if ('custom' == $atts['popup']) {
+     $l_width  = flexi_get_option('l_width', 'flexi_media_settings', 600);
+     $l_height = flexi_get_option('l_height', 'flexi_media_settings', 400);
      ?>
  jQuery('[data-fancybox').fancybox({
-       selector : '.flexi_show_popup_basic a:visible',
+       selector : '.flexi_show_popup_custom a:visible',
        thumbs   : {
    autoStart : false
  },
+ autoSize: false,
+width: <?php echo $l_width; ?>,
+height: <?php echo $l_height; ?>,
  protect: false,
  arrows:false,
    });
