@@ -64,7 +64,7 @@ class Flexi_Popup_Layout_Custom
 
   $fields = array('flexi_popup_layout_custom' => array(
    array(
-    'name'        => 'public/partials/layout/detail/basic/basic_chart.png',
+    'name'        => 'public/partials/layout/popup/custom/custom_chart.png',
     'label'       => __('Detail Layout Chart', 'flexi'),
     'description' => __('Each number denotes the available location of elements', 'flexi'),
     'type'        => 'image',

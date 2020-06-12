@@ -17,7 +17,8 @@ function flexi_ajax_post_view()
 
   // The Loop
   if ($the_query->have_posts()) {
-
+   $l_width  = flexi_get_option('l_width', 'flexi_media_settings', 600);
+   $l_height = flexi_get_option('l_height', 'flexi_media_settings', 400);
    while ($the_query->have_posts()) {
     $the_query->the_post();
     if (file_exists($header_file)) {

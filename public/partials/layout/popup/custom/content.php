@@ -1,4 +1,4 @@
-<div id="flexi_content_<?php echo get_the_ID(); ?>" style="width:600px;height=500px;" class="flexi_popup_custom">
+<div id="flexi_content_<?php echo get_the_ID(); ?>" style="width:<?php echo $l_width; ?>px;height=<?php echo $l_height; ?>px" class="flexi_popup_custom">
   <div class="pure-g">
   <div class="pure-u-1-1">
       <div class="flexi_margin-box" style='text-align: center;'>
