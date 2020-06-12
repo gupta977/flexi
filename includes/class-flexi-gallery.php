@@ -419,8 +419,8 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
    autoStart : false
  },
  autoSize: false,
-width: <?php echo $l_width; ?>,
-height: <?php echo $l_height; ?>,
+//width: <?php echo $l_width; ?>,
+//height: <?php echo $l_height; ?>,
  protect: false,
  arrows:false,
    });
