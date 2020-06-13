@@ -46,7 +46,7 @@ class Flexi_Popup_Layout_Custom
  public function list_elements()
  {
   $labels = array(
-   //"Publish Status" => "status",
+   "Title"         => "title",
    "Large Media"   => "media",
    "Description"   => "desp",
    "Category"      => "category",
@@ -139,24 +139,22 @@ class Flexi_Popup_Layout_Custom
 
    if ('media' == $value) {
     echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post, 'flexi_frame_4') . "</div>";
-   } else if ('status' == $value) {
+   } else if ('title' == $value) {
 
-    if (get_post_status() == 'draft' || get_post_status() == "pending") {
-     ?>
-             <small>
-               <div class="flexi_badge"> <?php echo __("Under Review", "flexi"); ?></div>
-             </small>
-         <?php
-}
+    ?>
+<h3 class="flexi_headline"> <?php echo get_the_title(); ?></h3>
+
+<?php
 
    } else if ('desp' == $value) {
     ?>
-     <div class="flex-desp"> <?php echo flexi_excerpt(20, null, $post); ?></div>
-           <?php
+<div class="flex-desp"> <?php echo flexi_excerpt(20, null, $post); ?></div>
+<?php
 } else if ('standalone' == $value) {
     ?>
-       <div id="flexi_thumb_image" style='text-align: center;'> <?php flexi_standalone_gallery(get_the_ID(), 'thumbnail', 75, 75);?></div>
-            <?php
+<div id="flexi_thumb_image" style='text-align: center;'>
+  <?php flexi_standalone_gallery(get_the_ID(), 'thumbnail', 75, 75);?></div>
+<?php
 } else if ('category' == $value) {
     echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
    } else if ('tags' == $value) {

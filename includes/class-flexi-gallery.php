@@ -153,6 +153,9 @@ class Flexi_Shortcode_Gallery
    $popup = $params['popup'];
   } else {
    $popup = flexi_get_option('lightbox_switch', 'flexi_detail_settings', 1);
+   if ('1' == $popup) {
+    $popup = flexi_get_option('popup_style', 'flexi_detail_settings', 'on');
+   }
   }
 
   $atts['popup'] = $popup;

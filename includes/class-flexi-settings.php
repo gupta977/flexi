@@ -400,12 +400,22 @@ class FLEXI_Admin_Settings
      'sanitize_callback' => 'intval',
     ),
     array(
+     'name'              => 'popup_style',
+     'label'             => __('Popup style', 'flexi'),
+     'description'       => __('Layout of lightbox', 'flexi'),
+     'type'              => 'select',
+     'options'           => array(
+      'on'     => __('Regular', 'flexi'),
+      'custom' => __('Custom', 'flexi'),
+     ),
+     'sanitize_callback' => 'sanitize_key',
+    ),
+    array(
      'name'              => 'detail_layout',
      'label'             => __('Select Detail Layout', 'flexi'),
      'description'       => __('Selected layout will be used as default layout, if not specified in shortcode parameter.', 'flexi'),
      'type'              => 'layout',
      'sanitize_callback' => 'sanitize_key',
-     'step'              => 'detail',
     ),
 
    ),
