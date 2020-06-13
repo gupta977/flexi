@@ -172,6 +172,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 1.0.41 =
 * Option to 'bulk edit' & 'quick edit' 'detail layout'
+* Lightbox with custom layouts
 
 = 1.0.40 =
 * Added language German de_DE
