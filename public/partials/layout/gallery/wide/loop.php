@@ -9,9 +9,9 @@ $data = flexi_image_data('thumbnail', $post, $popup);
 <div class="flexi-gallery-wide flexi_frame_2">
   <div class="flexi-gallery-wide_sub">
     <div class="flexi-gallery-wide_img <?php echo $data['popup']; ?>  flexi_effect" id="<?php echo $hover_effect; ?>">
-    <a <?php echo $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" border="0"'; ?>>
+    <?php echo '<a class="" ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">'; ?>
     <img
-        src="<?php echo esc_url(flexi_image_src('medium', $post)); ?>"
+        src="<?php echo esc_url(flexi_image_src('thumbnail', $post)); ?>"
         alt="<?php echo $data['title']; ?>"
       />
 </a>

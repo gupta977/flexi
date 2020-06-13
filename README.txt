@@ -71,6 +71,10 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 *   **Conflict Management** - Special settings available to manage the conflict with other plugins & theme.
 *   **Live Reloading** - If gallery & form is on same page, the submitted post will be visible as soon as form is posted without any page refresh.
 
+= Layout Builder =
+* **Basic - Detail layout** - 5 changeable location
+* **Complex - Detail layout** - 12 changeable location
+* **Custom - Lightbox layout** - 5 changeable location for popup
 
 = WORKS GREAT WITH =
 
@@ -170,6 +174,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.42 =
+* Fixed regular & wide layout for custom popup layout
+
 = 1.0.41 =
 * Option to 'bulk edit' & 'quick edit' 'detail layout'
 * Lightbox with custom layouts
