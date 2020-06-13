@@ -150,6 +150,10 @@ registerBlockType("cgb/block-flexi-block", {
 			type: "boolean",
 			default: true,
 		},
+		popup_style: {
+			type: "string",
+			default: "on",
+		},
 	},
 
 	edit,

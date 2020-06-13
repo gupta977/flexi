@@ -102,6 +102,10 @@ register_block_type(
     'type'    => 'boolean',
     'default' => true,
    ),
+   'popup_style'   => array(
+    'type'    => 'string',
+    'default' => 'on',
+   ),
   ),
   'render_callback' => 'flexi_gallery_render_callback',
  )
@@ -120,7 +124,7 @@ function flexi_gallery_render_callback($args)
  if (isset($args['column'])) {
 
   if (isset($args['popup']) && '1' == $args['popup']) {
-   $popup = "on";
+   $popup = $args['popup_style'];
   } else {
    $popup = "off";
   }
