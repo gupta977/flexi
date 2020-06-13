@@ -209,6 +209,21 @@ class FlexiGalleryEdit extends Component {
 								]}
 								onChange={(value) => setAttributes({ layout: value })}
 							/>
+							<SelectControl
+								label="Popup Style"
+								value={popup_style}
+								options={[
+									{
+										label: "Regular",
+										value: "on",
+									},
+									{
+										label: "Custom",
+										value: "custom",
+									},
+								]}
+								onChange={(value) => setAttributes({ popup_style: value })}
+							/>
 							<RangeControl
 								label="Columns"
 								value={column}
@@ -355,21 +370,6 @@ class FlexiGalleryEdit extends Component {
 									},
 								]}
 								onChange={(value) => setAttributes({ hover_caption: value })}
-							/>
-							<SelectControl
-								label="Popup Style"
-								value={popup_style}
-								options={[
-									{
-										label: "Regular",
-										value: "on",
-									},
-									{
-										label: "Custom",
-										value: "custom",
-									},
-								]}
-								onChange={(value) => setAttributes({ popup_style: value })}
 							/>
 						</PanelBody>
 					</InspectorControls>
