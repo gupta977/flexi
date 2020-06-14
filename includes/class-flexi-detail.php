@@ -26,9 +26,7 @@ class Flexi_Public_Detail
     */
    // Process output
    ob_start();
-   if (isset($_GET['download'])) {
 
-   }
    require apply_filters('flexi_load_template', FLEXI_PLUGIN_DIR . 'public/partials/layout/detail/attach.php');
 
    $content = ob_get_clean();

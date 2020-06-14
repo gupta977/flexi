@@ -421,6 +421,7 @@ class FLEXI_Admin_Settings
      'label'             => __('Select Detail Layout', 'flexi'),
      'description'       => __('Selected layout will be used as default layout, if not specified in shortcode parameter.', 'flexi'),
      'type'              => 'layout',
+     'step'              => 'detail', //step is used to select folder
      'sanitize_callback' => 'sanitize_key',
     ),
 

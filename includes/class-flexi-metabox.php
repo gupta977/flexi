@@ -185,13 +185,15 @@ class Flexi_Meta_boxes
   ));
 
   $cmb_side->add_field(array(
-   'name'             => 'Detail Layout',
-   'desc'             => 'Select detail layout',
-   'id'               => 'flexi_layout',
-   'type'             => 'select',
-   'show_option_none' => true,
-   'default'          => 'default',
-   'options'          => array(
+   'name'              => 'Detail Layout',
+   'desc'              => 'Select detail layout',
+   'show_option_none'  => '-- ' . __('Default', 'flexi') . ' --',
+   'option_none_value' => '',
+   'id'                => 'flexi_layout',
+   'type'              => 'select',
+   //'show_option_none'  => true,
+   'default'           => 'default',
+   'options'           => array(
     'basic'   => __('Basic', 'flexi'),
     'complex' => __('Complex', 'flexi'),
    ),
