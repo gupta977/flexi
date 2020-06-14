@@ -186,6 +186,12 @@ class FLEXI_Admin_Settings
  public function get_fields()
  {
 
+  if (is_flexi_pro()) {
+   $file_size_limit = 9999;
+  } else {
+   $file_size_limit = 100;
+  }
+
   $fields = array(
 
    'flexi_gallery_appearance_settings' => array(
@@ -332,7 +338,7 @@ class FLEXI_Admin_Settings
      'type'              => 'number',
      'size'              => 'small',
      'min'               => '1',
-     'max'               => '100',
+     'max'               => $file_size_limit,
      'sanitize_callback' => 'sanitize_key',
     ),
 

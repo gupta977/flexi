@@ -83,6 +83,7 @@ echo get_option('FLEXI_PRO_RESPONSE', '');
 <li>4- Extra 7 custom fields</li>
 <li>5- Add more own mime-type files</li>
 <li>6- Limit number of post to upload based on user role.</li>
+<li>7- Allow visitors to upload huge file size from 100MB to 9999MB</li>
 </ul>
 </div>
 

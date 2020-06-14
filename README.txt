@@ -130,6 +130,7 @@ You can also add/remove form fields based on pages & posts.
 * **Edit Post** Let visitors to update the submitted post with own set of fields. 
 * **More Mime Types** - Add more file type to allow visitors to upload. (Thanks to sponsor: Rekha)
 * **User File Limit** - Limit the number of post to get submitted based on user roles. (Thanks to sponsor: Shane)
+* **File Size** - Visitors can upload more then 100MB cap limit to 9999MB.
 
 > If any suggestion, contact me directly at navneet@odude.com
 > Byte update at https://github.com/gupta977/flexi/tree/beta
