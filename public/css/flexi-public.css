@@ -1,3 +1,8 @@
+/* override fancybox padding for custom lightbox */
+.fancybox-content {
+  padding: 18px 1px 5px 1px;
+}
+
 /* List tags,album in small text with icons */
 
 .flexi_text_group a {

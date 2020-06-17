@@ -4,7 +4,7 @@ Donate link: https://odude.com/
 Tags: gallery, photo gallery, image gallery, video gallery, responsive gallery
 Requires at least: 4.0.0
 Requires PHP: 5.5
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
