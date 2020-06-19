@@ -175,6 +175,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.44 =
+* Italian language included
+* Custom lightbox padding
+
 = 1.0.43 =
 * Flexi-PRO user can upload above 100MB of files
 * Fixed detail layout issue selection.
