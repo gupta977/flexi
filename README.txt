@@ -121,6 +121,7 @@ You can also add/remove form fields based on pages & posts.
 
 = Language Support =
 * German language (de_DE) (Thanks to contributor: Radek)
+* Italian Language (it_IT) (Thanks to contributor: Avelino)
 
 = PRO KEY FEATURES =
 
