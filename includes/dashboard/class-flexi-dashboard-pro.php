@@ -43,9 +43,19 @@ class Flexi_Admin_Dashboard_Pro
 </form>
 </div>
 
+
 <?php
 if (isset($_POST['flexi_license'])) {
    if (function_exists('flexi_process_license')) {
+
+    //First deactivate old license and renew new one
+    if (is_flexi_pro()) {
+     $old_license = get_option('FLEXI_PRO_LICENSE', ''); //'FLEXI_PRO_LICENSE'
+     if ('' != $old_license) {
+      flexi_get_license($old_license, 'deactivate');
+     }
+    }
+
     $res = flexi_process_license($_POST['flexi_license']);
     if ('404' == $res->data->status) {
      echo '<div class="update-nag">' . $res->message . '</div>';
@@ -66,6 +76,19 @@ if (isset($_POST['flexi_license'])) {
 <?php
 if (is_flexi_pro()) {
    echo "<b>Flexi-PRO version </b>:" . FLEXI_PRO_VERSION;
+
+   $expire = get_option('FLEXI_PRO_EXPIRE', '');
+   if ('' != $expire) {
+    $expdAt = date($expire);
+    $today  = date("Y-m-d H:i:s");
+    if ($today >= $expdAt) {
+     echo "<br><b>Expired:</b> " . $expdAt . '<br><code> Please renew to regain access for premium features.</code>';
+     update_option('FLEXI_PRO', 'FAIL');
+    } else {
+     echo "<br>" . $today . "<b>---Expires:</b> " . $expdAt->format('Y-m-d H:i:s');
+    }
+   }
+
   }
   ?>
 <br>

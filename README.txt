@@ -176,6 +176,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.45 =
+* Improved license management
+
 = 1.0.44 =
 * Italian language included
 * Custom lightbox padding
