@@ -178,6 +178,8 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 1.0.45 =
 * Improved license management
+* Fixed user avatar at gallery
+* Updated Italian language
 
 = 1.0.44 =
 * Italian language included

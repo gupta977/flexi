@@ -12,7 +12,7 @@ function flexi_author($author = '', $redirect = true)
  if ('' == $author) {
   $author = get_user_by('id', get_the_author_meta('ID'));
  } else {
-  $author = get_user_by('slug', $author);
+  $author = get_user_by('login', $author);
  }
 
  if (flexi_get_option('primary_page', 'flexi_image_layout_settings', 0) != '0') {
