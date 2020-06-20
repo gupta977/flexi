@@ -85,7 +85,7 @@ if (is_flexi_pro()) {
      echo "<br><b>Expired:</b> " . $expdAt . '<br><code> Please renew to regain access for premium features.</code>';
      update_option('FLEXI_PRO', 'FAIL');
     } else {
-     echo "<br>" . $today . "<b>---Expires:</b> " . $expdAt->format('Y-m-d H:i:s');
+     echo "<br><b>Expires:</b> " . $expdAt;
     }
    }
 
