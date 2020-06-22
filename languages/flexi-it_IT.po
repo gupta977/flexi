@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "POT-Creation-Date: 2020-06-18 13:14+0545\n"
-"PO-Revision-Date: 2020-06-20 15:50+0545\n"
+"PO-Revision-Date: 2020-06-22 12:14+0545\n"
 "Language-Team: navneet@odude.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -148,7 +148,8 @@ msgstr "BuddyPress"
 #: includes/addon/class-flexi-buddypress.php:31
 msgid "If you have installed BuddyPress plugin, user can see own submitted images at their profile page. https://wordpress.org/plugins/buddypress/"
 msgstr ""
-"Se hai installato il plugin BuddyPress, l'utente può vedere le proprie immagini inviate alla pagina del suo profilo. https://wordpress.org/plugins"
+"Se hai installato il plugin BuddyPress, l'utente può vedere le proprie immagini inviate nella pagina del suo profilo. https://wordpress.org/"
+"plugins/buddypress/"
 
 #: includes/addon/class-flexi-buddypress.php:48
 msgid "Enable BuddyPress"
@@ -164,7 +165,7 @@ msgstr "Nome della scheda"
 
 #: includes/addon/class-flexi-buddypress.php:71 includes/addon/class-flexi-ultimate-member.php:69
 msgid "Name of the tab displays on profile page"
-msgstr "Il nome della scheda viene visualizzato sulla pagina del profilo"
+msgstr "Il nome della scheda viene visualizzato nella pagina del profilo"
 
 #: includes/addon/class-flexi-conflict.php:29 includes/addon/class-flexi-conflict.php:45
 msgid "Conflict & Fixes"
@@ -183,7 +184,7 @@ msgid ""
 "Disable it, <br>if fancyBox v3.5.7 is used by other plugins & theme. So that, only one instance of it is available.<br>If you are not using "
 "lightbox at all."
 msgstr ""
-"Disattivarlo, <br>se fancyBox v3.5.7 è utilizzato da altri plugin e temi. Così che, solo un'istanza del plug-in sia disponibile.<br>Se non si "
+"Disattivarlo,se fancyBox v3.5.7 è utilizzato da altri plugin e temi.<br>Così che, solo un'istanza del plug-in sia disponibile.<br>Se non si "
 "utilizza lightbox per niente."
 
 #: includes/addon/class-flexi-custom-field.php:29
@@ -583,7 +584,7 @@ msgid ""
 msgstr ""
 "Le impostazioni saranno applicate sui shortcode [flexi-primary] e [flexi-gallery].<br>Impostazioni specifiche saranno inattive se lo stesso "
 "attributo viene utilizzato in shortcode.<br>Si consiglia di utilizzare una galleria per pagina per evitare conflitti<br>Le impostazioni non "
-"saranno applicate, se il shortcode contiene attributi specifici"
+"saranno applicate, se il shortcode contiene attributi specifici."
 
 #: includes/class-flexi-settings.php:142
 msgid "Gallery appearance"
@@ -626,7 +627,7 @@ msgid ""
 "A new sub-tab is created as soon as extension is enabled.<br>Click on blue tools icon to navigate<br><b>Note:</b> Disable any extension, will not "
 "delete the old settings. It is just hidden."
 msgstr ""
-"Una nuova sotto scheda viene creata non appena l'estensione è abilitata.<br>Clicca sull'icona blu per andare alla scheda<br><b>Nota:</b> "
+"Viene creata una nuova sotto scheda non appena l'estensione è abilitata.<br>Clicca sull'icona blu per andare alla scheda.<br><b>Nota:</b> "
 "Disabilitando qualsiasi estensione, non vengono eliminate le vecchie impostazioni. Sono solo nascoste."
 
 #: includes/class-flexi-settings.php:200
@@ -635,7 +636,7 @@ msgstr "Spazio tra le immagini"
 
 #: includes/class-flexi-settings.php:201
 msgid "Padding between images. Set shortcode [flexi-gallery padding=\"0\"] for none"
-msgstr ""
+msgstr "Spazio tra le immagini. Impostare lo shortcode [flexi-gallery padding=\"0\"] per nessuno"
 
 #: includes/class-flexi-settings.php:211
 msgid "Excerpt Length"
@@ -651,7 +652,7 @@ msgstr "Effetto Thumbnail hover"
 
 #: includes/class-flexi-settings.php:223
 msgid "Effect on mouse over image."
-msgstr "Effetto del mouse sopra l'immagine'"
+msgstr "Effetto del mouse sopra l'immagine"
 
 #: includes/class-flexi-settings.php:226 includes/class-flexi-settings.php:239 includes/functions.php:677
 msgid "None"
@@ -751,7 +752,7 @@ msgstr "Galleria Ordinamento Tags"
 
 #: includes/class-flexi-settings.php:299
 msgid "Shows tags above gallery, only if few tags available."
-msgstr ""
+msgstr "Mostra i tag sopra la galleria, solo se sono pochi i tag disponibili."
 
 #: includes/class-flexi-settings.php:305
 msgid "Select gallery layout"
@@ -763,7 +764,7 @@ msgstr "Il layout selezionato verrà utilizzato come layout predefinito, se non 
 
 #: includes/class-flexi-settings.php:316
 msgid "Form submission access"
-msgstr "accesso al modulo di invio"
+msgstr "Accesso al modulo di invio"
 
 #: includes/class-flexi-settings.php:317
 msgid "It will enable/disable frontend form as specified."
@@ -791,7 +792,7 @@ msgstr "Approva automaticamente il post"
 
 #: includes/class-flexi-settings.php:330
 msgid "Automatically publish Post as soon as user submit."
-msgstr "Pubblica il post automaticamente appena l'utente lo invia'"
+msgstr "Pubblica il post automaticamente appena l'utente lo invia"
 
 #: includes/class-flexi-settings.php:336
 msgid "File size allowed (MB)"
@@ -811,7 +812,7 @@ msgstr "Digitare il nome utente da assegnare per l'invio da parte di utenti ospi
 
 #: includes/class-flexi-settings.php:355
 msgid "Submission form"
-msgstr "Modulo per l'invio'"
+msgstr "Modulo per l'invio"
 
 #: includes/class-flexi-settings.php:356
 msgid "Page which will be used at frontend to let users to submit flexi post."
@@ -883,7 +884,7 @@ msgstr "Personalizzato"
 
 #: includes/class-flexi-settings.php:421
 msgid "Select Detail Layout"
-msgstr "Seleziona il layout di dettaglio"
+msgstr "Seleziona il dettaglio del layout"
 
 #: includes/class-flexi-settings.php:432
 msgid "Default Post Category"
@@ -1290,7 +1291,7 @@ msgstr "Non ci sono record"
 
 #: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:32
 msgid "Custom - Popup Layout"
-msgstr "Personale - Popup Layout"
+msgstr "Layout Popup Personale"
 
 #: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:33
 msgid ""
