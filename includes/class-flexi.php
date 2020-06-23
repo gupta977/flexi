@@ -114,6 +114,9 @@ class Flexi
   //oEmbed URL
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/oembed/class-flexi-oembed.php';
 
+  //Links
+  require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-links.php';
+
   //Block
   require_once plugin_dir_path(dirname(__FILE__)) . 'block/plugin.php';
 
