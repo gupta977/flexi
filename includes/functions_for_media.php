@@ -120,7 +120,7 @@ function flexi_large_media($post, $class = 'flexi_large_image')
 {
 
  $flexi_type = flexi_get_type($post);
-
+ //flexi_log($flexi_type);
  if ("url" == $flexi_type) {
   $media_url = esc_url(flexi_image_src('large', $post));
   $attr      = array('src' => $media_url);
@@ -129,7 +129,13 @@ function flexi_large_media($post, $class = 'flexi_large_image')
  } else if ("video" == $flexi_type || "mp4" == $flexi_type) {
   $video = flexi_file_src($post, true);
   $attr  = array('src' => $video);
-  return wp_video_shortcode($attr);
+  $src   = wp_check_filetype($video)['ext'];
+  //flexi_log($src);
+  if ('mp4' == $src || 'm4v' == $src || 'webm' == $src || 'ogv' == $src || 'wmv' == $src || 'flv' == $src || 'mp4' == $src) {
+   return wp_video_shortcode($attr); //mp4, m4v, webm, ogv, wmv, flv
+  } else {
+   return '';
+  }
 
  } else if ("audio" == $flexi_type || "mp3" == $flexi_type) {
   $audio = flexi_file_src($post, true);

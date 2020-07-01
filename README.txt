@@ -100,7 +100,7 @@ You can also add/remove form fields based on pages & posts.
 * YouTube URL
 * Vimeo URL
 * All type of images
-* All type of Videos Eg. MP4, m4v, webm
+* All type of Videos Eg. MP4, m4v, webm (Video Player supports: //mp4, m4v, webm, ogv, wmv, flv)
 * All type of Audio Eg. MP3, m4a, m4b
 * All most all type of files Eg. PDF, DOC, XLS, TXT, CSV
 * Flexi-PRO user has ability to add own file/type in settings.
@@ -176,6 +176,13 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.48 =
+* Updated edit page with thumbnail preview
+* updated [[flexi-standalone] shortcode 
+
+= 1.0.47 =
+* Links at plugin list
+
 = 1.0.46 =
 * Updated Italian language
 

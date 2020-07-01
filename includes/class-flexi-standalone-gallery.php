@@ -12,10 +12,21 @@ class Flexi_Standalone_Gallery
   ob_start();
 
   if (isset($params['id'])) {
-   $id   = $params['id'];
-   $post = get_post($id);
+   $id = $params['id'];
+  } else {
+   if (isset($_REQUEST["id"])) {
+    $id = $_REQUEST["id"];
+   } else {
+    $id = 0;
+   }
+  }
+  $post = get_post($id);
 
-   if ($post) {
+  if ($post) {
+
+   if (isset($_REQUEST["id"])) {
+    echo '<div class="flexi-image-wrapper-thumb"><img src="' . esc_url(flexi_image_src('thumbnail', $post)) . '"></div>';
+   } else {
 
     ?>
        <div class="pure-g">
@@ -23,7 +34,7 @@ class Flexi_Standalone_Gallery
 
 
          <div class="flexi_margin-box" style="text-align: center;">
-                <div class="flexi-image-wrapper_large"><img id="flexi_large_image" src="<?php echo flexi_image_src('flexi-large', $post); ?>"></div>
+                <div class="flexi-image-wrapper_large"><img id="flexi_large_image" src="<?php echo flexi_image_src('large', $post); ?>"></div>
       </div>
 
 
@@ -35,12 +46,12 @@ class Flexi_Standalone_Gallery
          </div>
      </div>
 <?php
+}
 
-   } else {
-    echo '<div id="flexi_no_record" class="flexi_alert-box flexi_error">' . __('Wrong ID', 'flexi') . '</div>';
-   }
-
+  } else {
+   echo '<div id="flexi_no_record" class="flexi_alert-box flexi_error">' . __('Wrong ID', 'flexi') . '</div>';
   }
+
   $put = ob_get_clean();
   return $put;
  }
