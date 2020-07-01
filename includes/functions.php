@@ -832,6 +832,7 @@ function flexi_create_pages()
 
   $str_edit_image = '
   <!-- wp:shortcode -->
+  [flexi-standalone]
   [flexi-form class="pure-form pure-form-stacked" title="Update Flexi" name="my_form" ajax="true" edit="true"]
   [flexi-form-tag type="post_title" title="Title" placeholder="main title" edit="true" required="true"]
   [flexi-form-tag type="category" title="Select category" edit="true"]

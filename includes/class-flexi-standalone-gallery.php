@@ -20,13 +20,34 @@ class Flexi_Standalone_Gallery
     $id = 0;
    }
   }
-  $post = get_post($id);
+  $flexi_post = get_post($id);
 
-  if ($post) {
+  if ($flexi_post) {
 
    if (isset($_REQUEST["id"])) {
-    echo '<div class="flexi-image-wrapper-thumb"><img src="' . esc_url(flexi_image_src('thumbnail', $post)) . '"></div>';
-   } else {
+    $popup = flexi_get_option('lightbox_switch', 'flexi_detail_settings', 1);
+    if ('1' == $popup) {
+     $popup = flexi_get_option('popup_style', 'flexi_detail_settings', 'on');
+    }
+    $data = flexi_image_data('thumbnail', $flexi_post, $popup);
+    echo '<div class="' . $data['popup'] . ' flexi_effect">';
+    echo '<a class="" ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">';
+    echo '<div class="flexi-image-wrapper-thumb"><img src="' . esc_url(flexi_image_src('thumbnail', $flexi_post)) . '"></div></a></div>';
+    ?>
+
+<script>
+
+jQuery('[data-fancybox-trigger').fancybox({
+        selector : '.flexi_show_popup_on a:visible',
+        thumbs   : {
+    autoStart : true
+  },
+  protect: true,
+
+    });
+   </script>
+<?php
+} else {
 
     ?>
        <div class="pure-g">

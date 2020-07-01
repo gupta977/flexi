@@ -161,7 +161,7 @@ function flexi_image_data($size = 'full', $post = '', $popup = "on")
  }
 
  $data          = array();
- $data['title'] = get_the_title();
+ $data['title'] = $post->post_title;
 
  if ('' == $post) {
   global $post;
@@ -186,7 +186,7 @@ function flexi_image_data($size = 'full', $post = '', $popup = "on")
    $data['popup'] = 'flexi_show_popup_' . $popup;
   }
  } else {
-  $data['url']   = get_permalink();
+  $data['url']   = get_permalink($post->ID);
   $data['src']   = $data['url'];
   $data['extra'] = '';
   $data['popup'] = 'flexi_media_holder';
