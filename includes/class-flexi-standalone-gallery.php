@@ -20,9 +20,10 @@ class Flexi_Standalone_Gallery
     $id = 0;
    }
   }
+
   $flexi_post = get_post($id);
 
-  if ($flexi_post) {
+  if ($flexi_post && 0 != $id) {
 
    if (isset($_REQUEST["id"])) {
     $popup = flexi_get_option('lightbox_switch', 'flexi_detail_settings', 1);
@@ -55,7 +56,7 @@ jQuery('[data-fancybox-trigger').fancybox({
 
 
          <div class="flexi_margin-box" style="text-align: center;">
-                <div class="flexi-image-wrapper_large"><img id="flexi_large_image" src="<?php echo flexi_image_src('large', $post); ?>"></div>
+                <div class="flexi-image-wrapper_large"><img id="flexi_large_image" src="<?php echo flexi_image_src('large', $flexi_post); ?>"></div>
       </div>
 
 
