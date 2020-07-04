@@ -48,6 +48,8 @@ class Flexi_Activator
   // Insert the plugin version
   add_option('flexi_version', FLEXI_VERSION);
 
+  add_option('flexi_activated', true);
+
   do_action("flexi_activated");
 
   flush_rewrite_rules();

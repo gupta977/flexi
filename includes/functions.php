@@ -798,7 +798,7 @@ function flexi_create_pages()
 {
  global $wpdb;
 
- //Set defualt image sizes
+ //Set default image sizes
  flexi_set_option('t_width', 'flexi_media_settings', 150);
  flexi_set_option('t_height', 'flexi_media_settings', 150);
  flexi_set_option('m_width', 'flexi_media_settings', 300);
@@ -813,13 +813,7 @@ function flexi_create_pages()
 
   $str_post_image = '
         <!-- wp:shortcode -->
-		[flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"]
-		[flexi-form-tag type="post_title" title="Title" value="" placeholder="main title" required="true"]
-		[flexi-form-tag type="category" title="Select category"]
-		[flexi-form-tag type="tag" title="Insert tag"]
-		[flexi-form-tag type="article" title="Description"  placeholder="Content"]
-		[flexi-form-tag type="file" title="Select file" required="true"]
-		[flexi-form-tag type="submit" name="submit" value="Submit Now"]
+        [flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"][flexi-form-tag type="post_title" title="Title" value="" placeholder="main title" required="true"][flexi-form-tag type="category" title="Select category"][flexi-form-tag type="tag" title="Insert tag"][flexi-form-tag type="article" title="Description"  placeholder="Content"][flexi-form-tag type="file" title="Select file" required="true"][flexi-form-tag type="submit" name="submit" value="Submit Now"]
         [/flexi-form]
         <!-- /wp:shortcode -->
 		';

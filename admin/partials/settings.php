@@ -25,6 +25,24 @@ foreach ($this->sections as $section) {
 ?>
 
 <div id="flexi-settings" class="wrap flexi-settings">
+<?php
+$flexi_activated = get_option('flexi_activated');
+if ($flexi_activated) {
+ ?>
+<h1><?php esc_html_e('Welcome to Flexi', 'flexi');?></h1>
+<div class="card"><?php echo __('Post one file & click "My Dashboard" button to auto setup Flexi settings. You will have full setting page in next visit.', 'flexi'); ?></div>
+<br><?php echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . "' class='button button-primary'>" . __('Post files', 'flexi') . "</a>" ?>
+<br><br>
+<?php
+echo "<a href='" . flexi_get_button_url('', false, 'my_gallery', 'flexi_image_layout_settings') . "' >" . __('Skip, I will setup manually', 'flexi') . "</a><br>"
+ ?>
+
+ <?php
+
+} else {
+
+ ?>
+
     <h1><?php esc_html_e('Flexi Plugin Settings', 'flexi');?></h1>
 
     <?php settings_errors();?>
@@ -32,49 +50,49 @@ foreach ($this->sections as $section) {
     <h2 class="nav-tab-wrapper">
         <?php
 foreach ($this->tabs as $tab => $title) {
- $url = add_query_arg('tab', $tab, admin_url('admin.php?page=flexi_settings'));
+  $url = add_query_arg('tab', $tab, admin_url('admin.php?page=flexi_settings'));
 
- foreach ($sections[$tab] as $section) {
-  $url = add_query_arg('section', $section['id'], $url);
+  foreach ($sections[$tab] as $section) {
+   $url = add_query_arg('section', $section['id'], $url);
 
-  if ($tab == $active_tab && empty($active_section)) {
-   $active_section = $section['id'];
+   if ($tab == $active_tab && empty($active_section)) {
+    $active_section = $section['id'];
+   }
+
+   break;
   }
 
-  break;
+  printf(
+   '<a href="%s" class="%s">%s</a>',
+   esc_url($url),
+   ($tab == $active_tab ? 'nav-tab nav-tab-active' : 'nav-tab'),
+   esc_html($title)
+  );
  }
-
- printf(
-  '<a href="%s" class="%s">%s</a>',
-  esc_url($url),
-  ($tab == $active_tab ? 'nav-tab nav-tab-active' : 'nav-tab'),
-  esc_html($title)
- );
-}
-?>
+ ?>
     </h2>
 
     <?php
 $section_links = array();
 
-foreach ($sections[$active_tab] as $section) {
- $url = add_query_arg(
-  array(
-   'tab'     => $active_tab,
-   'section' => $section['id'],
-  ),
-  admin_url('admin.php?page=flexi_settings')
- );
+ foreach ($sections[$active_tab] as $section) {
+  $url = add_query_arg(
+   array(
+    'tab'     => $active_tab,
+    'section' => $section['id'],
+   ),
+   admin_url('admin.php?page=flexi_settings')
+  );
 
- $section_links[] = sprintf(
-  '<a href="%s" class="%s">%s</a>',
-  esc_url($url),
-  ($section['id'] == $active_section ? 'current' : ''),
-  esc_html($section['title'])
- );
-}
+  $section_links[] = sprintf(
+   '<a href="%s" class="%s">%s</a>',
+   esc_url($url),
+   ($section['id'] == $active_section ? 'current' : ''),
+   esc_html($section['title'])
+  );
+ }
 
-if (count($section_links) > 1): ?>
+ if (count($section_links) > 1): ?>
         <ul class="subsubsub">
             <li><?php echo implode(' | </li><li>', $section_links); ?></li>
         </ul>
@@ -85,10 +103,13 @@ if (count($section_links) > 1): ?>
         <?php
 $page_hook = $active_section;
 
-settings_fields($page_hook);
-do_settings_sections($page_hook);
+ settings_fields($page_hook);
+ do_settings_sections($page_hook);
 
-submit_button();
-?>
+ submit_button();
+ ?>
     </form>
+    <?php
+}
+?>
 </div>

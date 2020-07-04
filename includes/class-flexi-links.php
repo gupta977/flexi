@@ -15,7 +15,7 @@ class Flexi_admin_links
 
   $mylinks = array(
    '<a href="' . admin_url('admin.php?page=flexi_settings') . '">' . __("Settings", "flexi") . '</a>',
-   '<a href="' . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . '">' . __('Start', 'flexi') . '</a>',
+   '<a href="' . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . '">' . __('Post files', 'flexi') . '</a>',
   );
   return array_merge($links, $mylinks);
  }
@@ -28,6 +28,7 @@ class Flexi_admin_links
   }
 
   //    $more_links[] = '<a target="_blank" href="https://wordpress.org/support/plugin/wp-upg/reviews/?rate=5#new-post" title="' . __('Rate the plugin', 'wp-reset') . '">' . __('Rate the plugin', 'wp-upg') . ' ★★★★★</a>';
+  $more_links[] = 'Version ' . FLEXI_VERSION;
   $more_links[] = '<a href="https://odude.com/docs/flexi-gallery/" target="_blank">' . __('Docs & FAQs', 'flexi') . '</a>';
   //$more_links[] = '<a href="' . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . '">' . __('Post Files', 'flexi') . '</a>';
   $links = $more_links + $links;

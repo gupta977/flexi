@@ -74,13 +74,14 @@ echo "<a href='" . flexi_get_button_url('', false, 'edit_flexi_page', 'flexi_for
 Page should contain <code>[flexi-form edit="true"]</code> shortcode enclosed with <code>[flexi-form-tag edit="true"]</code>
 <div id="sample_edit_form" style="display:none;">
      <p>
-    [flexi-form class="pure-form pure-form-stacked" title="Update Flexi" name="my_form" ajax="true" edit="true"]<br>
-    [flexi-form-tag type="post_title" title="Title" placeholder="main title" edit="true" ]<br>
-    [flexi-form-tag type="category" title="Select category" edit="true"]<br>
-    [flexi-form-tag type="tag" title="Insert tag" edit="true"]<br>
-    [flexi-form-tag type="article" title="Description" placeholder="Content" edit="true"]<br>
-    [flexi-form-tag type="submit" name="submit" value="Update Now"]<br>
-    [/flexi-form]<br>
+  [flexi-standalone]
+  [flexi-form class="pure-form pure-form-stacked" title="Update Flexi" name="my_form" ajax="true" edit="true"]
+  [flexi-form-tag type="post_title" title="Title" placeholder="main title" edit="true" required="true"]
+  [flexi-form-tag type="category" title="Select category" edit="true"]
+  [flexi-form-tag type="tag" title="Insert tag" edit="true"]
+  [flexi-form-tag type="article" title="Description" placeholder="Content" edit="true"]
+  [flexi-form-tag type="submit" name="submit" value="Update Now"]
+  [/flexi-form]<br>
      </p>
 </div>
 

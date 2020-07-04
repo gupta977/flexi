@@ -3,10 +3,10 @@
 		<div class="about-text">
 			<div class="card">
 		<?php echo __('Let visitors to post images,video,audio,youtube from frontend with full controls.', 'flexi'); ?><br>
-		<?php echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . "' target='_blank' class='button button-primary'>Post Files</a>" ?>
-		<?php echo " <a href='" . flexi_get_button_url('', false, 'primary_page', 'flexi_image_layout_settings') . "' target='_blank' class='button button-primary'>View Gallery</a>" ?>
-	<a href="https://odude.com/docs/flexi-gallery/" target="_blank" class='button'>Documentation</a>
-<a href="https://odude.com/demo/flexi/" target="_blank" class='button'>Live Demo</a>
+		<?php echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . "' target='_blank' class='button button-primary'>" . __('Post files', 'flexi') . "</a>" ?>
+		<?php echo " <a href='" . flexi_get_button_url('', false, 'primary_page', 'flexi_image_layout_settings') . "' target='_blank' class='button button-primary'>" . __('View Gallery', 'flexi') . "</a>" ?>
+	<a href="https://odude.com/docs/flexi-gallery/" target="_blank" class='button'><?php echo __('Documentation', 'flexi'); ?></a>
+<a href="https://odude.com/demo/flexi/" target="_blank" class='button'><?php echo __('Live Demo', 'flexi'); ?></a>
 
 </div>
 		</div>

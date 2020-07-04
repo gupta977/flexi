@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-18 13:10+0545\n"
-"PO-Revision-Date: 2020-06-18 13:13+0545\n"
+"POT-Creation-Date: 2020-07-04 15:31+0545\n"
+"PO-Revision-Date: 2020-07-04 15:32+0545\n"
 "Last-Translator: Radoslaw Piechowicz\n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -51,7 +51,7 @@ msgstr "Flexi-Schlagwörter"
 msgid "Tags"
 msgstr "Schlagwörter"
 
-#: admin/partials/dashboard.php:2
+#: admin/partials/dashboard.php:2 admin/partials/settings.php:32
 msgid "Welcome to Flexi"
 msgstr "Willkommen bei Flexi"
 
@@ -63,11 +63,39 @@ msgstr ""
 "Lassen Sie Besucher Bilder, Videos, Audio und Youtube-Videos mit voller "
 "Kontrolle vom Frontend aus posten."
 
-#: admin/partials/settings.php:28
+#: admin/partials/dashboard.php:6 admin/partials/settings.php:34
+#: includes/class-flexi-links.php:18
+#| msgid "Profile"
+msgid "Post files"
+msgstr ""
+
+#: admin/partials/dashboard.php:7
+msgid "View Gallery"
+msgstr "Galerie ansehen"
+
+#: admin/partials/dashboard.php:8
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: admin/partials/dashboard.php:9
+msgid "Live Demo"
+msgstr "Live Demo"
+
+#: admin/partials/settings.php:33
+msgid ""
+"Post one file & click \"My Dashboard\" button to auto setup Flexi settings. "
+"You will have full setting page in next visit."
+msgstr ""
+
+#: admin/partials/settings.php:37
+msgid "Skip, I will setup manually"
+msgstr ""
+
+#: admin/partials/settings.php:46
 msgid "Flexi Plugin Settings"
 msgstr "Flexi Plugin Einstellungen"
 
-#: block/src/form/block.js:59 includes/functions.php:1005
+#: block/src/form/block.js:59 includes/functions.php:1000
 msgid "Flexi Submission Form"
 msgstr "Flexi-Anmeldeformular"
 
@@ -452,6 +480,14 @@ msgstr "Neu"
 msgid "Layout not available"
 msgstr "Layout nicht verfügbar"
 
+#: includes/class-flexi-links.php:17 includes/class-flexi-settings.php:62
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: includes/class-flexi-links.php:32
+msgid "Docs & FAQs"
+msgstr ""
+
 #: includes/class-flexi-metabox.php:28
 msgid "Flexi Meta Controls"
 msgstr "Flexi Meta-Kontrollen"
@@ -596,10 +632,6 @@ msgstr "Wählen Sie aus den am häufigsten verwendeten %s "
 #: includes/class-flexi-settings.php:61
 msgid "Flexi - Settings"
 msgstr "Flexi-Einstellungen"
-
-#: includes/class-flexi-settings.php:62
-msgid "Settings"
-msgstr "Einstellungen"
 
 #: includes/class-flexi-settings.php:103
 msgid "General"
@@ -1061,7 +1093,7 @@ msgstr "Seite wählen"
 msgid "Select category"
 msgstr "Kategorie wählen"
 
-#: includes/class-flexi-standalone-gallery.php:40
+#: includes/class-flexi-standalone-gallery.php:74
 msgid "Wrong ID"
 msgstr "Falsche ID"
 
@@ -1122,71 +1154,71 @@ msgstr "An mich erinnern"
 msgid "Required Flexi-PRO"
 msgstr "Flexi-Pro erforderlich"
 
-#: includes/functions.php:956
+#: includes/functions.php:951
 msgid "Title cannot be blank."
 msgstr "Der Titel darf nicht leer sein."
 
-#: includes/functions.php:959
+#: includes/functions.php:954
 msgid "Invalid file type"
 msgstr "ungültiger Dateityp"
 
-#: includes/functions.php:962
+#: includes/functions.php:957
 msgid "Only image files are allowed."
 msgstr "Nur Bilddateien sind zulässig."
 
-#: includes/functions.php:965
+#: includes/functions.php:960
 msgid "File size is too big."
 msgstr "Die Datei ist zu groß."
 
-#: includes/functions.php:968
+#: includes/functions.php:963
 msgid "Captcha security code is invalid."
 msgstr "Der Captcha-Sicherheitscode ist ungültig."
 
-#: includes/functions.php:991
+#: includes/functions.php:986
 msgid "Flexi Primary Gallery"
 msgstr "Flexi Hauptgalerie"
 
-#: includes/functions.php:998
+#: includes/functions.php:993
 msgid "Flexi User Dashboard"
 msgstr "Flexi Benutzer-Dashboard"
 
-#: includes/functions.php:1012
+#: includes/functions.php:1007
 msgid "Flexi Edit/Modify"
 msgstr "Flexi Bearbeiten / Ändern"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:36
+#: includes/user_dashboard/class-flexi-user-dashboard.php:41
 msgid "Search post"
 msgstr "Beitrag suchen"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:44
+#: includes/user_dashboard/class-flexi-user-dashboard.php:49
 msgid "My Posts"
 msgstr "Meine Beiträge"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:75
+#: includes/user_dashboard/class-flexi-user-dashboard.php:80
 msgid "My Dashboard"
 msgstr "Mein Dashboard"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:95
+#: includes/user_dashboard/class-flexi-user-dashboard.php:100
 msgid "\"My Dashboard\" button"
 msgstr "\"Mein Dashboard\" button"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:96
+#: includes/user_dashboard/class-flexi-user-dashboard.php:101
 msgid "Display button after form submission"
 msgstr "Button nach dem Absenden des Formulars anzeigen"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:103
+#: includes/user_dashboard/class-flexi-user-dashboard.php:108
 msgid "\"My Gallery\" button"
 msgstr "\"Meine Galerie\" button"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:104
+#: includes/user_dashboard/class-flexi-user-dashboard.php:109
 msgid "Display button at \"My Dashboard\""
 msgstr "Button unter \"Mein Dashboard\" anzeigen"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:174
+#: includes/user_dashboard/class-flexi-user-dashboard.php:179
 msgid "My Gallery"
 msgstr "Meine Galerie"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:192
+#: includes/user_dashboard/class-flexi-user-dashboard.php:197
 msgid "Logout"
 msgstr "Abmelden"
 

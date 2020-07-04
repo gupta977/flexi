@@ -176,12 +176,11 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
-= 1.0.48 =
-* Updated edit page with thumbnail preview
-* updated [[flexi-standalone] shortcode 
-
 = 1.0.47 =
 * Links at plugin list
+* Updated edit page with thumbnail preview
+* updated [[flexi-standalone] shortcode
+* Setup activation for first time user
 
 = 1.0.46 =
 * Updated Italian language
