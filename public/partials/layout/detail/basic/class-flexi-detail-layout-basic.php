@@ -148,6 +148,10 @@ class Flexi_Detail_Layout_Basic
 
    } else if ('media' == $value) {
     echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post, 'flexi_frame_4') . "</div>";
+    //$video = flexi_file_src($post, false);
+    //echo $video . "----";
+    //Check if thumbnail is available before generate
+    //flexi_ffmpeg($video, $post->ID);
    } else if ('status' == $value) {
 
     if (get_post_status() == 'draft' || get_post_status() == "pending") {

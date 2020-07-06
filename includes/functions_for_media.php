@@ -196,3 +196,80 @@ function flexi_image_data($size = 'full', $post = '', $popup = "on")
 
  return $data;
 }
+
+//FFMPEG generate thumbnails
+function flexi_ffmpeg($video, $post_id)
+{
+ $flexi_post = get_post($post_id);
+
+ if (!function_exists('wp_generate_attachment_metadata')) {
+  require_once ABSPATH . 'wp-admin/includes/image.php';
+ }
+ $upload_dir_paths = wp_upload_dir();
+
+ $ffmpegpath = "E:\\ffmpeg\bin\\ffmpeg.exe";
+ $image_name = $post_id . '_thumbnail.jpg';
+ $input      = $video;
+ $output     = $upload_dir_paths['path'] . "/" . $image_name; // Create image file name
+
+ if (make_jpg($input, $output, $ffmpegpath)) {
+
+  $image_data       = file_get_contents($output); // Get image data
+  $unique_file_name = wp_unique_filename($upload_dir_paths['path'], $image_name); // Generate unique name
+
+  // Create the image  file on the server
+  file_put_contents($output, $image_data);
+
+  // Check image file type
+  $wp_filetype = wp_check_filetype($output, null);
+
+  // Set attachment data
+  $attachment = array(
+   'post_mime_type' => $wp_filetype['type'],
+   'post_title'     => sanitize_file_name($image_name),
+   'post_content'   => '',
+   'post_status'    => 'inherit',
+  );
+
+  // Create the attachment
+  $attach_id = wp_insert_attachment($attachment, $output, $post_id);
+  // Define attachment metadata
+  $attach_data = wp_generate_attachment_metadata($attach_id, $output);
+
+  // Assign metadata to attachment
+  wp_update_attachment_metadata($attach_id, $attach_data);
+
+  add_post_meta($post_id, 'flexi_image_id', $attach_id);
+  add_post_meta($post_id, 'flexi_image', wp_get_attachment_url($attach_id));
+
+  echo 'success';
+
+ } else {
+  echo 'bah!';
+ }
+
+ //echo exec('dir');
+ //extension_loaded('ffmpeg') or die('Error in loading ffmpeg');
+
+}
+
+function make_jpg($input, $output, $ffmpegpath, $fromdurasec = "01")
+{
+
+ if (!file_exists($input)) {
+  return false;
+ }
+
+ $command = "$ffmpegpath -i $input -an -ss 00:00:$fromdurasec -r 1 -vframes 1 -f mjpeg -y $output";
+
+ @exec($command, $ret);
+ if (!file_exists($output)) {
+  return false;
+ }
+
+ if (filesize($output) == 0) {
+  return false;
+ }
+
+ return true;
+}
