@@ -107,6 +107,9 @@ class Flexi
  private function load_dependencies()
  {
 
+  //Flexi post info
+  require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-post-info.php';
+
 //Attach Layouts controls
   require_once plugin_dir_path(dirname(__FILE__)) . 'public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php';
   require_once plugin_dir_path(dirname(__FILE__)) . 'public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php';
@@ -152,8 +155,8 @@ class Flexi
   //Flexi flexi_category columns
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-category.php';
 
-  //Flexi own media settings
-  //require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-media.php';
+  //Flexi media management
+  require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-media.php';
 
   //[flexi-form] & [flexi-form-tag] shortcode
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-form.php';

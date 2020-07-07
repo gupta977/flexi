@@ -137,17 +137,24 @@ class Flexi_Detail_Layout_Basic
  //Display elements based on array found
  public function display_element($value, $post, $layout)
  {
+
+  $info = new Flexi_Post_Info();
+
   ob_start();
   if ('basic' == $layout && is_singular('flexi')) {
 
    if ('widgets' == $value) {
     if (is_active_sidebar('flexi-basic-widget-container')) {
      dynamic_sidebar('flexi-basic-widget-container');
-     echo "wid here " . $post->ID;
+     //echo "widget here " . $post->ID;
     }
 
    } else if ('media' == $value) {
     echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post, 'flexi_frame_4') . "</div>";
+
+    echo $info->post_meta($post->ID, 'flexi_type', '');
+    echo "<hr>";
+    echo $info->media_path($post->ID, false);
     //$video = flexi_file_src($post, false);
     //echo $video . "----";
     //Check if thumbnail is available before generate

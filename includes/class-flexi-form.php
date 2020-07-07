@@ -258,7 +258,7 @@ action="' . admin_url("admin-ajax.php") . '"
 
    $post = get_post($post_id);
 
-   do_action("flexi_submit_complete");
+   do_action("flexi_submit_complete", $post_id);
 
    if (flexi_get_option('publish', 'flexi_form_settings', 1) == 1) {
 
@@ -322,7 +322,7 @@ action="' . admin_url("admin-ajax.php") . '"
   $result = flexi_update_post($post_id, $title, $files, $content, $category, $tags);
 
   if ($result) {
-   do_action("flexi_submit_complete");
+   do_action("flexi_submit_complete_update", $post_id);
 
    if (flexi_get_option('publish', 'flexi_form_settings', 1) == 1) {
 

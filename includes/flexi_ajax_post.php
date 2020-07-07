@@ -80,7 +80,8 @@ function flexi_ajax_post()
 
     } */
 
-    do_action("flexi_submit_complete");
+    do_action("flexi_submit_complete", $post_id);
+
     $response['type'] = "success";
 
     if (flexi_get_option('publish', 'flexi_form_settings', 1) == 1) {
@@ -118,7 +119,7 @@ function flexi_ajax_post()
    $result = flexi_update_post($flexi_id, $title, $files, $content, $category, $tags);
 
    if ($flexi_id) {
-    do_action("flexi_submit_complete");
+    do_action("flexi_submit_complete_update", $post_id);
     $response['type'] = "success";
 
     if (flexi_get_option('publish', 'flexi_form_settings', 1) == 1) {

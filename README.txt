@@ -176,6 +176,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.48 =
+* Manually assign thumbnail of any media from backend
+
 = 1.0.47 =
 * Links at plugin list
 * Updated edit page with thumbnail preview
