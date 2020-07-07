@@ -142,6 +142,7 @@ class Flexi
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-buddypress.php';
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-mime-type.php';
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-conflict.php';
+  require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-ffmpeg.php';
 
   //Toolbar
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/toolbar/class-flexi-gallery-toolbar.php';
