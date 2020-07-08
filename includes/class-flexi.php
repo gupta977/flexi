@@ -156,9 +156,6 @@ class Flexi
   //Flexi flexi_category columns
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-category.php';
 
-  //Flexi media management
-  require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-media.php';
-
   //[flexi-form] & [flexi-form-tag] shortcode
   require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-form.php';
 
