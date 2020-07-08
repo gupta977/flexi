@@ -110,12 +110,12 @@ class Flexi_Addon_FFMPEG
   }
   $upload_dir_paths = wp_upload_dir();
   $ffmpegpath       = flexi_get_option('ffmpeg_path', 'flexi_ffmpeg_setting', '/usr/local/bin');
-  //$ffmpegpath = "E:\\ffmpeg\bin\\ffmpeg.exe";
-  $image_name = $post_id . '_thumbnail.jpg';
-  $input      = $video;
-  $output     = $upload_dir_paths['path'] . "/" . $image_name; // Create image file name
+  $palette          = $upload_dir_paths['path'] . "/" . $post_id . '_palette.png';
+  $image_name       = $post_id . '_thumbnail.gif';
+  $input            = $video;
+  $output           = $upload_dir_paths['path'] . "/" . $image_name; // Create image file name
 
-  if ($this->make_jpg($input, $output, $ffmpegpath)) {
+  if ($this->make_jpg($input, $output, $ffmpegpath, $palette)) {
 
    $image_data       = file_get_contents($output); // Get image data
    $unique_file_name = wp_unique_filename($upload_dir_paths['path'], $image_name); // Generate unique name
@@ -156,7 +156,7 @@ class Flexi_Addon_FFMPEG
 
  }
 
- public function make_jpg($input, $output, $ffmpegpath, $fromdurasec = "05")
+ public function make_jpg($input, $output, $ffmpegpath, $palette, $fromdurasec = "05")
  {
 
   if (!file_exists($input)) {
@@ -168,9 +168,23 @@ class Flexi_Addon_FFMPEG
   //screenshot size
   $size = $m_width . 'x' . $m_height;
 
-  $command = "$ffmpegpath -i $input -an -ss 00:00:$fromdurasec -r 1 -vframes 1 -f mjpeg -y -s $size $output";
+  //$command = "$ffmpegpath -i $input -an -ss 00:00:$fromdurasec -r 1 -vframes 1 -f mjpeg -y -s $size $output";
 
+  //image size based on media setting
+  //$command = "$ffmpegpath -i $input -ss 00:00:03 -t 00:00:08 -async 1 -s $size $output";
+
+  //Low quality
+  // $command = "$ffmpegpath -i $input -ss 00:00:03 -t 00:00:08 -async 1 -vf fps=5,scale=$m_width:-1,smartblur=ls=-0.5 $output";
+
+  $command = "$ffmpegpath -y -i $input -vf trim=3:6,fps=20,palettegen $palette";
   @exec($command, $ret);
+  //flexi_log($command);
+  if (file_exists($palette)) {
+   $command2 = $ffmpegpath . ' -y -i ' . $input . ' -i ' . $palette . ' -filter_complex "trim=3:6,scale=200:-1,fps=20[x];[x][1:v]paletteuse" ' . $output;
+   @exec($command2, $ret);
+   //flexi_log($command2);
+  }
+
   if (!file_exists($output)) {
    return false;
   }
