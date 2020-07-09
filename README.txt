@@ -178,6 +178,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 1.0.48 =
 * Manually assign thumbnail of any media from backend
+* Generate thumbnail for video files
 
 = 1.0.47 =
 * Links at plugin list

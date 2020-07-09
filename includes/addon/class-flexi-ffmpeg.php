@@ -14,13 +14,28 @@ class Flexi_Addon_FFMPEG
  //Add Section tab
  public function add_section($new)
  {
+
   $enable_addon = flexi_get_option('enable_ffmpeg', 'flexi_extension', 0);
   if ("1" == $enable_addon) {
+
+   function flexi_ffmpeg_report()
+   {
+    $ffmpegpath = flexi_get_option('ffmpeg_path', 'flexi_ffmpeg_setting', '/usr/local/bin');
+    $command    = $ffmpegpath . " -version";
+    $out        = array();
+    $msg        = 'Searching FFMPEG....<br>';
+    @exec($command, $out);
+    foreach ($out as $line) {
+     $msg .= $line;
+    }
+    return $msg;
+   }
+
    $sections = array(
     array(
      'id'          => 'flexi_ffmpeg_setting',
      'title'       => 'FFMPEG ' . __('settings', 'flexi'),
-     'description' => '<a href="https://ffmpeg.org/">FFMPEG</a> PHP ' . __('extension must be installed on your server.<br>This will only get applied to newly submitted video files.<br>Processing time based on video file sizes.<br>Thumbnail are based on media settings, medium size<br>Animated video results poor quality. Install Flexi-PRO for higher resolution.', 'flexi'),
+     'description' => '<a href="https://ffmpeg.org/">FFMPEG</a> PHP ' . __('extension must be installed on your server.<br>This will only get applied to newly submitted video files.<br>Processing time based on video file sizes.<br>Thumbnail are based on media settings, medium size<br>Animated video results poor quality. Install Flexi-PRO for higher resolution.<hr><b>FFMPEG Report:</b><br><code>' . flexi_ffmpeg_report() . '</code>', 'flexi'),
      'tab'         => 'general',
     ),
    );
@@ -165,9 +180,6 @@ class Flexi_Addon_FFMPEG
    //echo 'bah!';
   }
 
-  //echo exec('dir');
-  //extension_loaded('ffmpeg') or die('Error in loading ffmpeg');
-
  }
 
  public function make_jpg($input, $output, $ffmpegpath, $palette, $fromdurasec = "05")
@@ -181,18 +193,17 @@ class Flexi_Addon_FFMPEG
   $video_thumbnail = flexi_get_option('video_thumbnail', 'flexi_ffmpeg_setting', 'animated');
   if ('static' == $video_thumbnail) {
    $command = $ffmpegpath . ' -i ' . $input . ' -an -ss 00:00:' . $fromdurasec . ' -r 1 -vframes 1 -f mjpeg -y -vf "scale=' . $m_width . ':-1" ' . $output;
-   flexi_log($command);
-   @exec($command, $ret);
-  } else if ('animated' == $video_thumbnail) {
-   $command = "$ffmpegpath -y -i $input -vf trim=3:6,fps=20,palettegen $palette";
-   @exec($command, $ret);
    //flexi_log($command);
-   if (file_exists($palette)) {
-    $command2 = $ffmpegpath . ' -y -i ' . $input . ' -i ' . $palette . ' -filter_complex "trim=3:6,scale=' . $m_width . ':-1,fps=20[x];[x][1:v]paletteuse" ' . $output;
-    @exec($command2, $ret);
-    //flexi_log($command2);
-    wp_delete_file($palette);
+   @exec($command);
+  } else if ('animated' == $video_thumbnail) {
+
+   if (is_flexi_pro()) {
+    flexi_ffmpeg_video_gif($ffmpegpath, $input, $palette, $m_width, $output);
+   } else {
+    $command = "$ffmpegpath -i $input -ss 00:00:03 -t 00:00:08 -async 1 -vf fps=5,scale=$m_width:-1,smartblur=ls=-0.5 $output";
+    @exec($command);
    }
+
   } else {
    //It will set default icons
   }
