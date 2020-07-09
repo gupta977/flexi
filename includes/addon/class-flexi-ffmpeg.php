@@ -20,7 +20,7 @@ class Flexi_Addon_FFMPEG
     array(
      'id'          => 'flexi_ffmpeg_setting',
      'title'       => 'FFMPEG ' . __('settings', 'flexi'),
-     'description' => '<a href="https://ffmpeg.org/">FFMPEG</a> PHP ' . __('extension must be installed on your server.', 'flexi'),
+     'description' => '<a href="https://ffmpeg.org/">FFMPEG</a> PHP ' . __('extension must be installed on your server.<br>This will only get applied to newly submitted video files.<br>Processing time based on video file sizes.<br>Thumbnail are based on media settings, medium size<br>Animated video results poor quality. Install Flexi-PRO for higher resolution.', 'flexi'),
      'tab'         => 'general',
     ),
    );
@@ -71,6 +71,19 @@ class Flexi_Addon_FFMPEG
      'sanitize_callback' => 'sanitize_text_field',
     ),
 
+    array(
+     'name'              => 'video_thumbnail',
+     'label'             => __('Video Thumbnail', 'flexi'),
+     'description'       => '',
+     'type'              => 'radio',
+     'options'           => array(
+      'static'   => __('Static image', 'flexi'),
+      'animated' => __('Animated 3 second image', 'flexi'),
+      'none'     => __('Dynamic file icon', 'flexi'),
+     ),
+     'sanitize_callback' => 'sanitize_key',
+    ),
+
    ),
    );
    $new = array_merge_recursive($new, $fields);
@@ -82,6 +95,7 @@ class Flexi_Addon_FFMPEG
  {
 //Set default location of elements
   flexi_get_option('ffmpeg_path', 'flexi_ffmpeg_setting', '/usr/local/bin');
+  flexi_get_option('video_thumbnail', 'flexi_ffmpeg_setting', 'animated');
  }
 
  //Generate thumbnail for video
@@ -162,28 +176,34 @@ class Flexi_Addon_FFMPEG
   if (!file_exists($input)) {
    return false;
   }
-  $m_width  = flexi_get_option('m_width', 'flexi_media_settings', 300);
-  $m_height = flexi_get_option('m_height', 'flexi_media_settings', 300);
+  $m_width = flexi_get_option('m_width', 'flexi_media_settings', 300);
 
-  //screenshot size
-  $size = $m_width . 'x' . $m_height;
+  $video_thumbnail = flexi_get_option('video_thumbnail', 'flexi_ffmpeg_setting', 'animated');
+  if ('static' == $video_thumbnail) {
+   $command = $ffmpegpath . ' -i ' . $input . ' -an -ss 00:00:' . $fromdurasec . ' -r 1 -vframes 1 -f mjpeg -y -vf "scale=' . $m_width . ':-1" ' . $output;
+   flexi_log($command);
+   @exec($command, $ret);
+  } else if ('animated' == $video_thumbnail) {
+   $command = "$ffmpegpath -y -i $input -vf trim=3:6,fps=20,palettegen $palette";
+   @exec($command, $ret);
+   //flexi_log($command);
+   if (file_exists($palette)) {
+    $command2 = $ffmpegpath . ' -y -i ' . $input . ' -i ' . $palette . ' -filter_complex "trim=3:6,scale=' . $m_width . ':-1,fps=20[x];[x][1:v]paletteuse" ' . $output;
+    @exec($command2, $ret);
+    //flexi_log($command2);
+    wp_delete_file($palette);
+   }
+  } else {
+   //It will set default icons
+  }
 
-  //$command = "$ffmpegpath -i $input -an -ss 00:00:$fromdurasec -r 1 -vframes 1 -f mjpeg -y -s $size $output";
+  //
 
   //image size based on media setting
   //$command = "$ffmpegpath -i $input -ss 00:00:03 -t 00:00:08 -async 1 -s $size $output";
 
   //Low quality
   // $command = "$ffmpegpath -i $input -ss 00:00:03 -t 00:00:08 -async 1 -vf fps=5,scale=$m_width:-1,smartblur=ls=-0.5 $output";
-
-  $command = "$ffmpegpath -y -i $input -vf trim=3:6,fps=20,palettegen $palette";
-  @exec($command, $ret);
-  //flexi_log($command);
-  if (file_exists($palette)) {
-   $command2 = $ffmpegpath . ' -y -i ' . $input . ' -i ' . $palette . ' -filter_complex "trim=3:6,scale=200:-1,fps=20[x];[x][1:v]paletteuse" ' . $output;
-   @exec($command2, $ret);
-   //flexi_log($command2);
-  }
 
   if (!file_exists($output)) {
    return false;
