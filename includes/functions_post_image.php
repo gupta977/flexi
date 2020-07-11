@@ -232,7 +232,7 @@ function flexi_check_file($files)
  }
 
  //Check file size allowed
- $allowed_file_size  = (int) flexi_get_option('upload_file_size', 'flexi_form_settings', 1);
+ $allowed_file_size  = (int) flexi_get_option('upload_file_size', 'flexi_form_settings', 5);
  $uploaded_file_size = (int) (($files['size'] / 1024) / 1024);
 // flexi_log($uploaded_file_size . '>=' . $allowed_file_size);
  if ($uploaded_file_size >= $allowed_file_size) {
@@ -340,7 +340,7 @@ function flexi_include_deps()
 //$id= id of the submit button
 function flexi_javascript_file_upload($id = "flexi_submit_notice", $button_id = "flexi_submit_button")
 {
- $allowed_file_size      = (int) (flexi_get_option('upload_file_size', 'flexi_form_settings', 1));
+ $allowed_file_size      = (int) (flexi_get_option('upload_file_size', 'flexi_form_settings', 5));
  $allowed_file_size_byte = ($allowed_file_size * 1024) * 1024;
 
  ob_start();

@@ -24,11 +24,7 @@ class Flexi_Addon_FFMPEG
     $command    = $ffmpegpath . " -version";
     $out        = array();
     $msg        = 'Searching FFMPEG....<br>';
-    @exec($command, $out);
-    foreach ($out as $line) {
-     $msg .= $line;
-    }
-    return $msg;
+    return @shell_exec($command);
    }
 
    $sections = array(

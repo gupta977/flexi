@@ -152,9 +152,9 @@ class Flexi_Detail_Layout_Basic
    } else if ('media' == $value) {
     echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post, 'flexi_frame_4') . "</div>";
 
-    echo $info->post_meta($post->ID, 'flexi_type', '');
-    echo "<hr>";
-    echo $info->media_path($post->ID, false);
+    //  echo $info->post_meta($post->ID, 'flexi_type', '');
+    //  echo "<hr>";
+    // echo $info->media_path($post->ID, false);
     //$video = flexi_file_src($post, false);
     //echo $video . "----";
     //Check if thumbnail is available before generate
