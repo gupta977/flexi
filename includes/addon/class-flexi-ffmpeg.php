@@ -26,12 +26,12 @@ class Flexi_Addon_FFMPEG
     $msg        = 'Searching FFMPEG....<br>';
     return @shell_exec($command);
    }
-
+   //flexi_ffmpeg_report();
    $sections = array(
     array(
      'id'          => 'flexi_ffmpeg_setting',
      'title'       => 'FFMPEG ' . __('settings', 'flexi'),
-     'description' => '<a href="https://ffmpeg.org/">FFMPEG</a> PHP ' . __('extension must be installed on your server.<br>This will only get applied to newly submitted video files.<br>Processing time based on video file sizes.<br>Thumbnail are based on media settings, medium size<br>Animated video results poor quality. Install Flexi-PRO for higher resolution.<hr><b>FFMPEG Report:</b><br><code>' . flexi_ffmpeg_report() . '</code>', 'flexi'),
+     'description' => '<b><a href="https://ffmpeg.org/">FFMPEG</a></b> PHP ' . __('extension must be installed on your server.<br><b>shell_exec</b> should be enabled at php.ini<br>This will only get applied to newly submitted video files.<br>Processing time based on video file sizes.<br>Thumbnail are based on media settings, medium size<br>Animated video results poor quality. Install Flexi-PRO for higher resolution.<hr>FFMPEG Library required purchase of flexi_ffmpeg.<hr>', 'flexi'),
      'tab'         => 'general',
     ),
    );
@@ -83,6 +83,18 @@ class Flexi_Addon_FFMPEG
     ),
 
     array(
+     'name'              => 'ffmpeg_processor',
+     'label'             => __('FFMPEG Processor', 'flexi'),
+     'description'       => '',
+     'type'              => 'radio',
+     'options'           => array(
+      'exec'    => __('shell_exec command', 'flexi'),
+      'library' => __('FFMPEG PHP Library', 'flexi'),
+     ),
+     'sanitize_callback' => 'sanitize_key',
+    ),
+
+    array(
      'name'              => 'video_thumbnail',
      'label'             => __('Video Thumbnail', 'flexi'),
      'description'       => '',
@@ -114,19 +126,26 @@ class Flexi_Addon_FFMPEG
  {
   $enable_addon = flexi_get_option('enable_ffmpeg', 'flexi_extension', 0);
   if ("1" == $enable_addon) {
-   $flexi_post = get_post($post_id);
-   $info       = new Flexi_Post_Info();
-   $type       = $info->post_meta($post_id, 'flexi_type', '');
+
+   $flexi_post       = get_post($post_id);
+   $info             = new Flexi_Post_Info();
+   $type             = $info->post_meta($post_id, 'flexi_type', '');
+   $ffmpeg_processor = flexi_get_option('ffmpeg_processor', 'flexi_ffmpeg_setting', 'exec');
+
+   //Execute only if it is video media type. Not valid for youtube/vimeo urls
    if ('video' == $type) {
+
     $video = $info->media_path($post_id, false);
-    $this->flexi_ffmpeg($video, $post_id);
+    $this->flexi_ffmpeg($video, $post_id, $ffmpeg_processor);
+
    }
+
   }
   return true;
  }
 
 //FFMPEG generate thumbnails
- public function flexi_ffmpeg($video, $post_id)
+ public function flexi_ffmpeg($video, $post_id, $ffmpeg_processor)
  {
   $flexi_post = get_post($post_id);
 
@@ -140,7 +159,7 @@ class Flexi_Addon_FFMPEG
   $input            = $video;
   $output           = $upload_dir_paths['path'] . "/" . $image_name; // Create image file name
 
-  if ($this->make_jpg($input, $output, $ffmpegpath, $palette)) {
+  if ($this->make_jpg($input, $output, $ffmpegpath, $palette, $ffmpeg_processor)) {
 
    $image_data       = file_get_contents($output); // Get image data
    $unique_file_name = wp_unique_filename($upload_dir_paths['path'], $image_name); // Generate unique name
@@ -178,26 +197,35 @@ class Flexi_Addon_FFMPEG
 
  }
 
- public function make_jpg($input, $output, $ffmpegpath, $palette, $fromdurasec = "05")
+ public function make_jpg($input, $output, $ffmpegpath, $palette, $ffmpeg_processor, $fromdurasec = "05")
  {
 
   if (!file_exists($input)) {
    return false;
   }
+
   $m_width = flexi_get_option('m_width', 'flexi_media_settings', 300);
 
   $video_thumbnail = flexi_get_option('video_thumbnail', 'flexi_ffmpeg_setting', 'animated');
   if ('static' == $video_thumbnail) {
-   $command = $ffmpegpath . ' -i ' . $input . ' -an -ss 00:00:' . $fromdurasec . ' -r 1 -vframes 1 -f mjpeg -y -vf "scale=' . $m_width . ':-1" ' . $output;
-   //flexi_log($command);
-   @exec($command);
+   if ('library' == $ffmpeg_processor) {
+    if (function_exists('flexi_ffmpeg_video_static')) {
+     flexi_ffmpeg_video_static($ffmpegpath, $input, $palette, $m_width, $output, $ffmpeg_processor);
+    }
+   } else {
+    $command = $ffmpegpath . ' -i ' . $input . ' -an -ss 00:00:' . $fromdurasec . ' -r 1 -vframes 1 -f mjpeg -y -vf "scale=' . $m_width . ':-1" ' . $output;
+    //flexi_log($command);
+    @shell_exec($command);
+   }
   } else if ('animated' == $video_thumbnail) {
 
    if (is_flexi_pro()) {
-    flexi_ffmpeg_video_gif($ffmpegpath, $input, $palette, $m_width, $output);
+    if (function_exists('flexi_ffmpeg_video_gif')) {
+     flexi_ffmpeg_video_gif($ffmpegpath, $input, $palette, $m_width, $output, $ffmpeg_processor);
+    }
    } else {
     $command = "$ffmpegpath -i $input -ss 00:00:03 -t 00:00:08 -async 1 -vf fps=5,scale=$m_width:-1,smartblur=ls=-0.5 $output";
-    @exec($command);
+    @shell_exec($command);
    }
 
   } else {

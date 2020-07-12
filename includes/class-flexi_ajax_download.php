@@ -35,7 +35,7 @@ class flexi_download_post
    //$file = "http://localhost/wp5/wp-content/uploads/2020/01/20200111_174431-scaled.jpg";
    $file = "E:\wamp64\www\wp5/wp-content/uploads/2020/05/SampleVideo_1280x720_1mb.mp4";
    if (file_exists($file)) {
-    flexi_log("file found");
+    // flexi_log("file found");
     // header('Content-Type: image/jpeg');
     //header("Content-Disposition: attachment; filename=\"$file\"");
     //readfile($file);
