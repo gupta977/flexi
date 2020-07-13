@@ -31,7 +31,7 @@ class Flexi_Addon_FFMPEG
     array(
      'id'          => 'flexi_ffmpeg_setting',
      'title'       => 'FFMPEG ' . __('settings', 'flexi'),
-     'description' => '<b><a href="https://ffmpeg.org/">FFMPEG</a></b> PHP ' . __('extension must be installed on your server.<br><b>shell_exec</b> should be enabled at php.ini<br>This will only get applied to newly submitted video files.<br>Processing time based on video file sizes.<br>Thumbnail are based on media settings, medium size<br>Animated video results poor quality. Install Flexi-PRO for higher resolution.<hr>FFMPEG Library required purchase of flexi_ffmpeg.<hr>', 'flexi'),
+     'description' => '<b><a href="https://ffmpeg.org/">FFMPEG</a></b> PHP ' . __('extension must be installed on your server.<br><b>shell_exec</b> should be enabled by PHP or purchase <a href="https://odude.com/wp-content/uploads/woocommerce-placeholder.png">FFMPEG- Flexi Library</a><br>This will only get applied to newly submitted video files.<br>Processing time based on video file sizes.<br>Thumbnail are based on media settings, medium size<br>Animated video results poor quality. Install Flexi-PRO for higher resolution.<hr>FFMPEG Library required purchase of flexi_ffmpeg.<hr>', 'flexi'),
      'tab'         => 'general',
     ),
    );
@@ -89,7 +89,7 @@ class Flexi_Addon_FFMPEG
      'type'              => 'radio',
      'options'           => array(
       'exec'    => __('shell_exec command', 'flexi'),
-      'library' => __('FFMPEG PHP Library', 'flexi'),
+      'library' => __('FFMPEG - Flexi Library', 'flexi'),
      ),
      'sanitize_callback' => 'sanitize_key',
     ),
