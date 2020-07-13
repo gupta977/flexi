@@ -211,8 +211,10 @@ class Flexi_Addon_FFMPEG
    if ('library' == $ffmpeg_processor) {
     if (function_exists('flexi_ffmpeg_video_static')) {
      flexi_ffmpeg_video_static($ffmpegpath, $input, $palette, $m_width, $output, $ffmpeg_processor);
+
     }
    } else {
+
     $command = $ffmpegpath . ' -i ' . $input . ' -an -ss 00:00:' . $fromdurasec . ' -r 1 -vframes 1 -f mjpeg -y -vf "scale=' . $m_width . ':-1" ' . $output;
     //flexi_log($command);
     @shell_exec($command);
