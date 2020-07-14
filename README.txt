@@ -27,8 +27,11 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 [Basic Layout](https://odude.com/demo/flexi/flexi-gallery-basic/)
 [Portfolio Layout](https://odude.com/demo/flexi/flexi-gallery-portfolio/)
 [Stress Free Gallery](https://odude.com/demo/flexi/stress-free-gallery/)
+
 [Submit File Form](https://odude.com/demo/flexi/post-image/)
 [Submit YouTube/Vimeo Video](https://odude.com/demo/flexi/post-video-url/)
+[Submit MP4 Video with dynamic animated thumbnail](https://odude.com/demo/flexi/submit-mp4-video/)
+
 [User Dashboard](https://odude.com/demo/flexi/my-gallery/)
 [Gallery filtered by Category](https://odude.com/demo/flexi/flexi-gallery/?flexi_category=animals)
 

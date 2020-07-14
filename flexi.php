@@ -12,7 +12,7 @@
  * @package           Flexi
  *
  * @wordpress-plugin
- * Plugin Name:       Flexi Gallery
+ * Plugin Name:       Flexi Guest Upload
  * Plugin URI:        https://odude.com/
  * Description:       User submitted images/video into gallery
  * Version:           1.0.48
