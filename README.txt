@@ -1,4 +1,4 @@
-=== Flexi Gallery ===
+=== Flexi Guest Upload ===
 Contributors: odude
 Donate link: https://odude.com/
 Tags: gallery, photo gallery, image gallery, video gallery, responsive gallery
@@ -101,6 +101,7 @@ You can also add/remove form fields based on pages & posts.
 * Vimeo URL
 * All type of images
 * All type of Videos Eg. MP4, m4v, webm (Video Player supports: //mp4, m4v, webm, ogv, wmv, flv)
+* Video files like mp4 will generate animated video thumbnail in gif format. 
 * All type of Audio Eg. MP3, m4a, m4b
 * All most all type of files Eg. PDF, DOC, XLS, TXT, CSV
 * Flexi-PRO user has ability to add own file/type in settings.
@@ -132,6 +133,7 @@ You can also add/remove form fields based on pages & posts.
 * **More Mime Types** - Add more file type to allow visitors to upload. (Thanks to sponsor: Rekha)
 * **User File Limit** - Limit the number of post to get submitted based on user roles. (Thanks to sponsor: Shane)
 * **File Size** - Visitors can upload more then 100MB cap limit to 9999MB.
+* **Animated thumbnail** - High quality animated gif file for mp4 and other video formats
 
 > If any suggestion, contact me directly at navneet@odude.com
 > Byte update at https://github.com/gupta977/flexi/tree/beta
@@ -179,6 +181,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 1.0.48 =
 * Manually assign thumbnail of any media from backend
 * Generate thumbnail for video files
+* Introduced FFMPEG - Flexi Library
 
 = 1.0.47 =
 * Links at plugin list

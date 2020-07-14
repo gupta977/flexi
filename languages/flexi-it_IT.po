@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
-"POT-Creation-Date: 2020-07-04 15:32+0545\n"
-"PO-Revision-Date: 2020-07-04 15:33+0545\n"
+"POT-Creation-Date: 2020-07-14 15:40+0545\n"
+"PO-Revision-Date: 2020-07-14 15:41+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
 "Language: it\n"
@@ -63,12 +63,10 @@ msgstr ""
 
 #: admin/partials/dashboard.php:6 admin/partials/settings.php:34
 #: includes/class-flexi-links.php:18
-#| msgid "Profile"
 msgid "Post files"
 msgstr ""
 
 #: admin/partials/dashboard.php:7
-#| msgid "Gallery"
 msgid "View Gallery"
 msgstr ""
 
@@ -287,6 +285,77 @@ msgstr "Mostra a Popup"
 msgid "Label: flexi_field_"
 msgstr "Etichetta flexi_field_"
 
+#: includes/addon/class-flexi-ffmpeg.php:33
+msgid "settings"
+msgstr "Impostazioni"
+
+#: includes/addon/class-flexi-ffmpeg.php:34
+msgid ""
+"extension must be installed on your server.<br><b>shell_exec</b> should be "
+"enabled by PHP or purchase <a href=\"https://odude.com/wp-content/uploads/"
+"woocommerce-placeholder.png\">FFMPEG- Flexi Library</a><br>This will only "
+"get applied to newly submitted video files.<br>Processing time based on "
+"video file sizes.<br>Thumbnail are based on media settings, medium "
+"size<br>Animated video results poor quality. Install Flexi-PRO for higher "
+"resolution.<hr>FFMPEG Library required purchase of flexi_ffmpeg.<hr>"
+msgstr ""
+
+#: includes/addon/class-flexi-ffmpeg.php:57
+msgid "Video"
+msgstr ""
+
+#: includes/addon/class-flexi-ffmpeg.php:57
+msgid "encoding"
+msgstr ""
+
+#: includes/addon/class-flexi-ffmpeg.php:58
+msgid ""
+"This will generate thumbnail for video files like mp4,3gp,mov. Your server "
+"must have ffmpeg installed."
+msgstr ""
+
+#: includes/addon/class-flexi-ffmpeg.php:78
+msgid "FFMPEG folder path"
+msgstr ""
+
+#: includes/addon/class-flexi-ffmpeg.php:79
+msgid ""
+"This should be the folder where FFMPEG installed on your server. Eg. /usr/"
+"local/bin or E:\\ffmpeg\\bin\\ffmpeg.exe"
+msgstr ""
+
+#: includes/addon/class-flexi-ffmpeg.php:87
+msgid "FFMPEG Processor"
+msgstr ""
+
+#: includes/addon/class-flexi-ffmpeg.php:91
+msgid "shell_exec command"
+msgstr ""
+
+#: includes/addon/class-flexi-ffmpeg.php:92
+msgid "FFMPEG - Flexi Library"
+msgstr ""
+
+#: includes/addon/class-flexi-ffmpeg.php:99
+#, fuzzy
+#| msgid "Category Thumbnail"
+msgid "Video Thumbnail"
+msgstr "Miniatura della categoria"
+
+#: includes/addon/class-flexi-ffmpeg.php:103
+msgid "Static image"
+msgstr ""
+
+#: includes/addon/class-flexi-ffmpeg.php:104
+msgid "Animated 3 second image"
+msgstr ""
+
+#: includes/addon/class-flexi-ffmpeg.php:105
+#, fuzzy
+#| msgid "Detail icon"
+msgid "Dynamic file icon"
+msgstr "Icona di dettaglio"
+
 #: includes/addon/class-flexi-mime-type.php:29
 msgid "Manage Mime Type"
 msgstr "Gestisci i Mime Type"
@@ -450,7 +519,7 @@ msgstr "Caricamento"
 msgid "Processing"
 msgstr "Elaborazione"
 
-#: includes/class-flexi-form.php:265 includes/flexi_ajax_post.php:88
+#: includes/class-flexi-form.php:265 includes/flexi_ajax_post.php:89
 msgid "Submission completed"
 msgstr "Invio completato"
 
@@ -458,7 +527,7 @@ msgstr "Invio completato"
 msgid "Your submission is under review."
 msgstr "Il tuo invio è in corso di revisione."
 
-#: includes/class-flexi-form.php:329 includes/flexi_ajax_post.php:126
+#: includes/class-flexi-form.php:329 includes/flexi_ajax_post.php:127
 msgid "Successfully updated"
 msgstr "Aggiornato con successo"
 
@@ -1104,15 +1173,15 @@ msgstr "Cancella"
 msgid "Download"
 msgstr "Scarica CV"
 
-#: includes/flexi_ajax_post.php:91
+#: includes/flexi_ajax_post.php:92
 msgid "Your submission is under review"
 msgstr "Il tuo invio è in corso di revisione"
 
-#: includes/flexi_ajax_post.php:129
+#: includes/flexi_ajax_post.php:130
 msgid "Your modification is under review."
 msgstr "Le tue modifiche sono in corso do revisione."
 
-#: includes/flexi_ajax_post.php:133
+#: includes/flexi_ajax_post.php:134
 msgid "Submission failed"
 msgstr "Invio fallito"
 
@@ -1213,7 +1282,7 @@ msgid "Logout"
 msgstr "Esci"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:87
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:156
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:169
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:165
 msgid "Under Review"
 msgstr "In corso di revisione"
@@ -1344,18 +1413,18 @@ msgstr "Posizione 4"
 msgid "Location 5"
 msgstr "Posizione 5"
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:206
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:219
 msgid "Flexi- Basic Detail Layout"
 msgstr "Flexi - Dettaglio del Layout Basic"
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:208
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:221
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
 msgid "Add widgets here to appear in detail layout as specified location."
 msgstr ""
 "Aggiungi qui i widget per farli apparire nella posizione specificata nel "
 "dettaglio del layout."
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:208
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:221
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
 msgid "Manage"
 msgstr "Gestisci"
