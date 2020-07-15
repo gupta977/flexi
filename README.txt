@@ -181,7 +181,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
-= 1.0.48 =
+= 1.0.481 =
 * Manually assign thumbnail of any media from backend
 * Generate thumbnail for video files
 * Introduced FFMPEG - Flexi Library
