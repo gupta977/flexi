@@ -85,12 +85,11 @@ class Flexi_Popup_Layout_Custom
      'type'              => 'select',
      'options'           => array(
       ''          => __('-- Hide --', 'flexi'),
-      'location1' => __('Location 1', 'flexi'),
-      'location2' => __('Location 2', 'flexi'),
-      'location3' => __('Location 3', 'flexi'),
-      'location4' => __('Location 4', 'flexi'),
-      'location5' => __('Location 5', 'flexi'),
-
+      'location1' => __('Location', 'flexi') . ' 1',
+      'location2' => __('Location', 'flexi') . ' 2',
+      'location3' => __('Location', 'flexi') . ' 3',
+      'location4' => __('Location', 'flexi') . ' 4',
+      'location5' => __('Location', 'flexi') . ' 5',
      ),
      'sanitize_callback' => 'sanitize_key',
     ),

@@ -1,202 +1,213 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "POT-Creation-Date: 2020-07-18 15:18+0545\n"
-"PO-Revision-Date: 2020-02-09 12:49+0545\n"
+"PO-Revision-Date: 2020-07-18 09:53+0000\n"
 "Last-Translator: \n"
-"Language-Team: navneet@odude.com\n"
+"Language-Team: Hindi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language: hi_IN\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html__\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: block/node_modules\n"
 "X-Poedit-SearchPathExcluded-1: includes/cmb2\n"
+"Report-Msgid-Bugs-To: \n"
+"X-Loco-Version: 2.3.3; wp-5.4.2"
 
 #: admin/class-flexi-admin.php:116
 msgid "flexi"
-msgstr ""
+msgstr "फ्लेक्सी"
 
 #: admin/class-flexi-admin.php:117
 msgid "Flexi"
-msgstr ""
+msgstr "फ्लेक्सी"
 
 #: admin/class-flexi-admin.php:127 admin/class-flexi-admin.php:128
 msgid "Dashboard"
-msgstr ""
+msgstr "डैशबोर्ड"
 
 #: admin/class-flexi-admin.php:136 admin/class-flexi-admin.php:137
 msgid "All Posts"
-msgstr ""
+msgstr "सभी डाक"
 
 #: admin/class-flexi-admin.php:144
 msgid "Flexi Categories"
-msgstr ""
+msgstr "फ्लेक्सी श्रेणियां"
 
 #: admin/class-flexi-admin.php:145 includes/class-flexi-admin-column.php:23
 msgid "Categories"
-msgstr ""
+msgstr "श्रेणीः"
 
 #: admin/class-flexi-admin.php:151
 msgid "Flexi Tags"
-msgstr ""
+msgstr "फ्लेक्सी टैग्स"
 
 #: admin/class-flexi-admin.php:152 includes/class-flexi-admin-column.php:24
 msgid "Tags"
-msgstr ""
+msgstr "टैग"
 
 #: admin/partials/dashboard.php:2 admin/partials/settings.php:32
 msgid "Welcome to Flexi"
-msgstr ""
+msgstr "फ्लेक्सी में आपका स्वागत है"
 
 #: admin/partials/dashboard.php:5
-msgid "Let visitors to post images,video,audio,youtube from frontend with full controls."
+msgid ""
+"Let visitors to post images,video,audio,youtube from frontend with full "
+"controls."
 msgstr ""
+"आगंतुकों को छवियों, वीडियो, ऑडियो, यूट्यूब के लिए पूर्ण नियंत्रण के साथ आगे "
+"की ओर जाने के लिए."
 
 #: admin/partials/dashboard.php:6 admin/partials/settings.php:34
 #: includes/class-flexi-links.php:18
 msgid "Post files"
-msgstr ""
+msgstr "फ़ाइलें पोस्ट करें"
 
 #: admin/partials/dashboard.php:7
 msgid "View Gallery"
-msgstr ""
+msgstr "दीर्घा देखें"
 
 #: admin/partials/dashboard.php:8
 msgid "Documentation"
-msgstr ""
+msgstr "दस्तावेज़ीकरण"
 
 #: admin/partials/dashboard.php:9
 msgid "Live Demo"
-msgstr ""
+msgstr "लाइव डेमो"
 
 #: admin/partials/settings.php:33
-msgid "Post one file & click \"My Dashboard\" button to auto setup Flexi settings. You will have full setting page in next visit."
+msgid ""
+"Post one file & click \"My Dashboard\" button to auto setup Flexi settings. "
+"You will have full setting page in next visit."
 msgstr ""
 
 #: admin/partials/settings.php:37
 msgid "Skip, I will setup manually"
-msgstr ""
+msgstr "छोड़ें, मैं मैन्युअल रूप से सेटअप होगा"
 
 #: admin/partials/settings.php:46
 msgid "Flexi Plugin Settings"
-msgstr ""
+msgstr "फ्लेक्सी प्लगइन विन्यास"
 
 #: block/src/form/block.js:59 includes/functions.php:1000
 msgid "Flexi Submission Form"
-msgstr ""
+msgstr "फ्लेक्सी प्रस्तुतिकरण फॉर्म"
 
 #: block/src/form/block.js:62 block/src/gallery/block.js:62
 #: includes/class-flexi-admin-column.php:20
 msgid "Image"
-msgstr ""
+msgstr "छवि"
 
 #: block/src/form/block.js:62
 msgid "submit"
-msgstr ""
+msgstr "प्रस्तुत करना"
 
 #: block/src/form/block.js:62
 msgid "form"
-msgstr ""
+msgstr "प्रपत्र"
 
 #: block/src/form/edit.js:94
 msgid "Form Settings"
-msgstr ""
+msgstr "फ़ॉर्म विन्यास"
 
 #: block/src/form/edit.js:135
 msgid "Title Field"
-msgstr ""
+msgstr "शीर्षक क्षेत्र"
 
 #: block/src/form/edit.js:148
 msgid "Description Field"
-msgstr ""
+msgstr "विवरण क्षेत्र"
 
 #: block/src/form/edit.js:172
 msgid "Category Field"
-msgstr ""
+msgstr "श्रेणी क्षेत्र"
 
 #: block/src/form/edit.js:196
 msgid "Tag Field"
-msgstr ""
+msgstr "टैग क्षेत्र"
 
 #: block/src/form/edit.js:212
 msgid "Image Upload Field"
-msgstr ""
+msgstr "छवि अपलोड क्षेत्र"
 
 #: block/src/form/edit.js:238
 msgid "URL Submit Field"
-msgstr ""
+msgstr "यूआरएल सबमिट क्षेत्र"
 
 #: block/src/form/edit.js:256
 msgid "Security reCaptcha Field"
-msgstr ""
+msgstr "सुरक्षा रीकैट्चा फील्ड"
 
 #: block/src/form/edit.js:265
 msgid "Submit Button"
-msgstr ""
+msgstr "बटन जमा करें"
 
 #: block/src/gallery/block.js:59
 msgid "Flexi Gallery"
-msgstr ""
+msgstr "फ्लेक्सी गैलरी"
 
 #: block/src/gallery/block.js:62
 msgid "gallery"
-msgstr ""
+msgstr "गेलरी"
 
 #: block/src/gallery/block.js:62
 msgid "picture"
-msgstr ""
+msgstr "तस्वीर"
 
 #: block/src/gallery/edit.js:106
 msgid "Gallery based on Selection"
-msgstr ""
+msgstr "चयन पर आधारित गैलरी"
 
 #: block/src/gallery/edit.js:182
 msgid "Layout Controls"
-msgstr ""
+msgstr "अभिन्यास नियंत्रण"
 
 #: block/src/gallery/edit.js:265
 msgid "Toggle Controls"
-msgstr ""
+msgstr "नियंत्रण टॉगल करें"
 
 #: block/src/gallery/edit.js:319
 msgid "Effects"
-msgstr ""
+msgstr "प्रभाव"
 
 #: block/src/init.php:88
 msgid "Flexi Plugin"
-msgstr ""
+msgstr "फ्लेक्सी प्लगइन"
 
 #: includes/addon/class-flexi-buddypress.php:30
 msgid "BuddyPress"
-msgstr ""
+msgstr "बुड्डिप्रेस"
 
 #: includes/addon/class-flexi-buddypress.php:31
-msgid "If you have installed BuddyPress plugin, user can see own submitted images at their profile page. https://wordpress.org/plugins/buddypress/"
+msgid ""
+"If you have installed BuddyPress plugin, user can see own submitted images "
+"at their profile page. https://wordpress.org/plugins/buddypress/"
 msgstr ""
 
 #: includes/addon/class-flexi-buddypress.php:48
 msgid "Enable BuddyPress"
-msgstr ""
+msgstr "बुडडायप्रेस सक्षम करें"
 
 #: includes/addon/class-flexi-buddypress.php:49
 msgid "Displays tab on user profile page of BuddyPress members page."
 msgstr ""
+"बुडडायप्रेस सदस्यों पृष्ठ के उपयोगकर्ता प्रोफ़ाइल पृष्ठ पर टैब प्रदर्शित "
+"करता है."
 
 #: includes/addon/class-flexi-buddypress.php:70
 #: includes/addon/class-flexi-ultimate-member.php:68
 msgid "Tab name"
-msgstr ""
+msgstr "टैब नाम"
 
 #: includes/addon/class-flexi-buddypress.php:71
 #: includes/addon/class-flexi-ultimate-member.php:69
 msgid "Name of the tab displays on profile page"
-msgstr ""
+msgstr "प्रोफ़ाइल पृष्ठ पर टैब प्रदर्शित करने के लिए नाम"
 
 #: includes/addon/class-flexi-conflict.php:29
 #: includes/addon/class-flexi-conflict.php:45
@@ -210,23 +221,32 @@ msgstr ""
 
 #: includes/addon/class-flexi-conflict.php:67
 msgid "Disable FancyBox Lightbox"
-msgstr ""
+msgstr "Fancyबक्सा लाइटबॉक्स अक्षम करें"
 
 #: includes/addon/class-flexi-conflict.php:68
-msgid "Disable it, <br>if fancyBox v3.5.7 is used by other plugins & theme. So that, only one instance of it is available.<br>If you are not using lightbox at all."
+msgid ""
+"Disable it, <br>if fancyBox v3.5.7 is used by other plugins & theme. So that,"
+" only one instance of it is available.<br>If you are not using lightbox at "
+"all."
 msgstr ""
 
 #: includes/addon/class-flexi-custom-field.php:29
 msgid "Flexi Custom Fields"
-msgstr ""
+msgstr "फ्लेक्सी कस्टम फील्ड्स"
 
 #: includes/addon/class-flexi-custom-field.php:30
-msgid "These are the reserved input field name assigned at submission form with [flexi-form-tag name=\".....\"] shortcode. Custom fields display is based on layouts used. It will not work for all layouts."
+msgid ""
+"These are the reserved input field name assigned at submission form with "
+"[flexi-form-tag name=\".....\"] shortcode. Custom fields display is based on "
+"layouts used. It will not work for all layouts."
 msgstr ""
+"ये आरक्षित इनपुट क्षेत्र नाम हैं जिन्हें सबलिड-फार्म-टैग नाम = \" ..\"] "
+"Textकोड के साथ सौंपा गया है। कस्टम फ़ील्ड्स प्रदर्शन, लेआउट पर आधारित होता "
+"है. यह सब लेआउट के लिए काम नहीं करेगा."
 
 #: includes/addon/class-flexi-custom-field.php:45
 msgid "Enable Flexi Custom Fields"
-msgstr ""
+msgstr "फ्लेक्स कस्टम फील्ड्स सक्षम करें"
 
 #: includes/addon/class-flexi-custom-field.php:46
 msgid "Manage Flexi custom fields at gallery & detail page."
@@ -234,265 +254,289 @@ msgstr ""
 
 #: includes/addon/class-flexi-custom-field.php:68
 msgid "Label: flexi_field_1"
-msgstr ""
+msgstr "लेबलः फ्लिक्सि_क्षेत्र_1"
 
 #: includes/addon/class-flexi-custom-field.php:69
 #: includes/addon/class-flexi-custom-field.php:99
-msgid "Enter the label name to be displayed at frontend along with submitted value."
-msgstr ""
+msgid ""
+"Enter the label name to be displayed at frontend along with submitted value."
+msgstr "सबमिट मूल्य के साथ प्रदर्शित करने के लिए लेबल नाम दर्ज करें."
 
 #: includes/addon/class-flexi-custom-field.php:80
 #: includes/addon/class-flexi-custom-field.php:110
 msgid "Display at Gallery Page"
-msgstr ""
+msgstr "दीर्घा पृष्ठ पर प्रदर्शित करें"
 
 #: includes/addon/class-flexi-custom-field.php:81
 #: includes/addon/class-flexi-custom-field.php:111
 msgid "Display at Detail Page"
-msgstr ""
+msgstr "पता पृष्ठ पर प्रदर्शित करें"
 
 #: includes/addon/class-flexi-custom-field.php:82
 #: includes/addon/class-flexi-custom-field.php:112
 msgid "Display at Popup"
-msgstr ""
+msgstr "पॉप अप में प्रदर्शित करें"
 
 #: includes/addon/class-flexi-custom-field.php:98
 msgid "Label: flexi_field_"
-msgstr ""
+msgstr "लेबल: फ्लेक्सि_क्षेत्र_"
 
 #: includes/addon/class-flexi-ffmpeg.php:33
 msgid "settings"
-msgstr ""
+msgstr "विन्यास"
 
 #: includes/addon/class-flexi-ffmpeg.php:34
-msgid "extension must be installed on your server.<br><b>shell_exec</b> should be enabled by PHP or purchase <a href=\"https://odude.com/wp-content/uploads/woocommerce-placeholder.png\">FFMPEG- Flexi Library</a><br>This will only get applied to newly submitted video files.<br>Processing time based on video file sizes.<br>Thumbnail are based on media settings, medium size<br>Animated video results poor quality. Install Flexi-PRO for higher resolution.<hr>FFMPEG Library required purchase of flexi_ffmpeg.<hr>"
+msgid ""
+"extension must be installed on your server.<br><b>shell_exec</b> should be "
+"enabled by PHP or purchase <a href=\"https://odude.com/wp-"
+"content/uploads/woocommerce-placeholder.png\">FFMPEG- Flexi Library</a><br>"
+"This will only get applied to newly submitted video files.<br>Processing "
+"time based on video file sizes.<br>Thumbnail are based on media settings, "
+"medium size<br>Animated video results poor quality. Install Flexi-PRO for "
+"higher resolution.<hr>FFMPEG Library required purchase of flexi_ffmpeg.<hr>"
 msgstr ""
 
 #: includes/addon/class-flexi-ffmpeg.php:57
 msgid "Video"
-msgstr ""
+msgstr "वीडियो"
 
 #: includes/addon/class-flexi-ffmpeg.php:57
 msgid "encoding"
-msgstr ""
+msgstr "एनकोडिंग"
 
 #: includes/addon/class-flexi-ffmpeg.php:58
-msgid "This will generate thumbnail for video files like mp4,3gp,mov. Your server must have ffmpeg installed."
+msgid ""
+"This will generate thumbnail for video files like mp4,3gp,mov. Your server "
+"must have ffmpeg installed."
 msgstr ""
+"यह mp4,3gp, mov. जैसे वीडियो फ़ाइलों के लिए थंबनेल उत्पन्न करेगा. आपके सर्वर "
+"में ffmpeg संस्थापित होना चाहिए."
 
 #: includes/addon/class-flexi-ffmpeg.php:78
 msgid "FFMPEG folder path"
-msgstr ""
+msgstr "FFMPEG फ़ोल्डर पथ"
 
 #: includes/addon/class-flexi-ffmpeg.php:79
-msgid "This should be the folder where FFMPEG installed on your server. Eg. /usr/local/bin or E:\\ffmpeg\\bin\\ffmpeg.exe"
+msgid ""
+"This should be the folder where FFMPEG installed on your server. Eg. "
+"/usr/local/bin or E:\\ffmpeg\\bin\\ffmpeg.exe"
 msgstr ""
+"यह वह फ़ोल्डर होना चाहिए जहां आपके सर्वर पर FFMPEG स्थापित किया गया है. उदा. "
+"/usr/local/bin या E: \\ffmpepg\\bin\\fmpg.exe"
 
 #: includes/addon/class-flexi-ffmpeg.php:87
 msgid "FFMPEG Processor"
-msgstr ""
+msgstr "FFMPEG प्रोसेसर"
 
 #: includes/addon/class-flexi-ffmpeg.php:91
 msgid "shell_exec command"
-msgstr ""
+msgstr "shell_exec कमांड"
 
 #: includes/addon/class-flexi-ffmpeg.php:92
 msgid "FFMPEG - Flexi Library"
-msgstr ""
+msgstr "FFMPEG-फ्लेक्सी लाइब्रेरी"
 
 #: includes/addon/class-flexi-ffmpeg.php:99
 msgid "Video Thumbnail"
-msgstr ""
+msgstr "वीडियो लघुछवि"
 
 #: includes/addon/class-flexi-ffmpeg.php:103
 msgid "Static image"
-msgstr ""
+msgstr "स्थैतिक छवि"
 
 #: includes/addon/class-flexi-ffmpeg.php:104
 msgid "Animated 3 second image"
-msgstr ""
+msgstr "एनिमेटेड 3 दूसरी छवि"
 
 #: includes/addon/class-flexi-ffmpeg.php:105
 msgid "Dynamic file icon"
-msgstr ""
+msgstr "गतिक/परिवर्तनशील फाइल प्रतीक"
 
 #: includes/addon/class-flexi-mime-type.php:29
 msgid "Manage Mime Type"
-msgstr ""
+msgstr "माइम क़िस्म प्रबंधित करें"
 
 #: includes/addon/class-flexi-mime-type.php:30
 msgid "Add new file type to upload."
-msgstr ""
+msgstr "अपलोड करने के लिए नया फ़ाइल क़िस्म जोड़ें."
 
 #: includes/addon/class-flexi-mime-type.php:45
 msgid "Enable Mime Type"
-msgstr ""
+msgstr "माइम क़िस्म सक्षम करें"
 
 #: includes/addon/class-flexi-mime-type.php:46
 msgid "Select the list of file type user is allowed to upload."
-msgstr ""
+msgstr "फ़ाइल क़िस्म उपयोक्ता की सूची को अपलोड करने के लिए अनुमति दी गई है."
 
 #: includes/addon/class-flexi-mime-type.php:68
 msgid "Select allowed file type"
-msgstr ""
+msgstr "अनुमति फ़ाइल क़िस्म चुनें"
 
 #: includes/addon/class-flexi-mime-type.php:72
 #: includes/addon/class-flexi-mime-type.php:73
 #: includes/addon/class-flexi-mime-type.php:74
 msgid "Image format"
-msgstr ""
+msgstr "छवि फ़ॉर्मेट"
 
 #: includes/addon/class-flexi-mime-type.php:75
 #: includes/addon/class-flexi-mime-type.php:76
 #: includes/addon/class-flexi-mime-type.php:77
 msgid "Video format"
-msgstr ""
+msgstr "वीडियो प्रारूप"
 
 #: includes/addon/class-flexi-mime-type.php:78
 #: includes/addon/class-flexi-mime-type.php:79
 msgid "Text format"
-msgstr ""
+msgstr "पाठ प्रारूप"
 
 #: includes/addon/class-flexi-mime-type.php:80
 msgid "Audio format"
-msgstr ""
+msgstr "ऑडियो प्रारूप"
 
 #: includes/addon/class-flexi-mime-type.php:81
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "पोर्टेबल दस्तावेज़ प्रारूप (पीडीएफ)"
 
 #: includes/addon/class-flexi-mime-type.php:82
 msgid "Word Document (DOC)"
-msgstr ""
+msgstr "शब्द दस्तावेज़ (DOC)"
 
 #: includes/addon/class-flexi-mime-type.php:89
 msgid "Extra Mime type"
-msgstr ""
+msgstr "अतिरिक्त Mime प्रकार"
 
 #: includes/addon/class-flexi-mime-type.php:90
-msgid "Add extra file type if not listed above separated with comma.<br>Eg. video/avi,video/3gpp,audio/midi<br>Required Flexi-PRO"
+msgid ""
+"Add extra file type if not listed above separated with comma.<br>Eg. "
+"video/avi,video/3gpp,audio/midi<br>Required Flexi-PRO"
 msgstr ""
 
 #: includes/addon/class-flexi-ultimate-member.php:30
 msgid "Ultimate-Member"
-msgstr ""
+msgstr "अंतिम-सदस्य"
 
 #: includes/addon/class-flexi-ultimate-member.php:31
-msgid "If you have installed Ultimate-Member plugin, user can see own submitted images at their profile page. https://wordpress.org/plugins/ultimate-member/"
+msgid ""
+"If you have installed Ultimate-Member plugin, user can see own submitted "
+"images at their profile page. https://wordpress.org/plugins/ultimate-member/"
 msgstr ""
 
 #: includes/addon/class-flexi-ultimate-member.php:46
 msgid "Enable Ultimate Member"
-msgstr ""
+msgstr "अंतिम सदस्य सक्षम करें"
 
 #: includes/addon/class-flexi-ultimate-member.php:47
 msgid "Displays tab on user profile page of Ultimate Member plugin."
 msgstr ""
+"अंतिम सदस्य प्लगिन के उपयोगकर्ता प्रोफ़ाइल पृष्ठ पर टैब प्रदर्शित करता है."
 
 #: includes/addon/class-flexi-ultimate-member.php:76
 msgid "Tab icon"
-msgstr ""
+msgstr "टैब प्रतीक"
 
 #: includes/addon/class-flexi-ultimate-member.php:77
-msgid "Ultimate Member's icons to be used at profile page. Eg. um-faicon-picture-o"
+msgid ""
+"Ultimate Member's icons to be used at profile page. Eg. um-faicon-picture-o"
 msgstr ""
+"अंतिम सदस्य के प्रतीक को प्रोफाइल पृष्ठ पर इस्तेमाल किया जा सकता है. उदा. उम-"
+"फाइकॉन-तस्वीर-ओ"
 
 #: includes/class-flexi-admin-column.php:21
 msgid "Title"
-msgstr ""
+msgstr "शीर्षक"
 
 #: includes/class-flexi-admin-column.php:22
 msgid "Author"
-msgstr ""
+msgstr "लेखक"
 
 #: includes/class-flexi-admin-column.php:25
 #: includes/class-flexi-metabox.php:230
 msgid "Detail Layout"
-msgstr ""
+msgstr "खाका विस्तृत करें"
 
 #: includes/class-flexi-admin-column.php:26
 msgid "Date"
-msgstr ""
+msgstr "तिथि"
 
 #: includes/class-flexi-category.php:22 includes/class-flexi-category.php:51
 msgid "Name"
-msgstr ""
+msgstr "नाम"
 
 #: includes/class-flexi-category.php:23 includes/class-flexi-category.php:52
 msgid "Shortcode"
-msgstr ""
+msgstr "छोटा कूट"
 
 #: includes/class-flexi-category.php:24 includes/class-flexi-category.php:53
 msgid "Slug"
-msgstr ""
+msgstr "स्लुग"
 
 #: includes/class-flexi-category.php:25 includes/class-flexi-category.php:54
 msgid "Posts"
-msgstr ""
+msgstr "पद"
 
 #: includes/class-flexi-detail.php:46
 msgid "Detail icon"
-msgstr ""
+msgstr "विवरण प्रतीक"
 
 #: includes/class-flexi-detail.php:47
 msgid "Detail icon at gallery lightbox"
-msgstr ""
+msgstr "गैलरी लाइटबाक्स में विवरण चिह्न"
 
 #: includes/class-flexi-detail.php:70 includes/class-flexi-settings.php:106
 msgid "Detail"
-msgstr ""
+msgstr "विवरण"
 
 #: includes/class-flexi-form.php:51 includes/class-flexi-form.php:63
 msgid "Submission disabled"
-msgstr ""
+msgstr "सबमिशन अक्षम"
 
 #: includes/class-flexi-form.php:54
 msgid "This form will not be visible by visitors."
-msgstr ""
+msgstr "यह फार्म आगंतुकों द्वारा दिखाई नहीं देगा."
 
 #: includes/class-flexi-form.php:58
 msgid "You do not have proper rights to publish posts"
-msgstr ""
+msgstr "पदों को प्रकाशित करने के लिए आपके पास उचित अधिकार नहीं है"
 
 #: includes/class-flexi-form.php:90
 msgid "No permission to modify or update"
-msgstr ""
+msgstr "संशोधित या अद्यतन करने की अनुमति नहीं"
 
 #: includes/class-flexi-form.php:133
 msgid "Uploading"
-msgstr ""
+msgstr "अपलोडिंग"
 
 #: includes/class-flexi-form.php:138
 msgid "Processing"
-msgstr ""
+msgstr "संसाधन"
 
 #: includes/class-flexi-form.php:265 includes/flexi_ajax_post.php:89
 msgid "Submission completed"
-msgstr ""
+msgstr "समर्पण पूर्ण"
 
 #: includes/class-flexi-form.php:268 includes/class-flexi-form.php:332
 msgid "Your submission is under review."
-msgstr ""
+msgstr "आपकी प्रस्तुति की समीक्षा की जा रही है."
 
 #: includes/class-flexi-form.php:329 includes/flexi_ajax_post.php:127
 msgid "Successfully updated"
-msgstr ""
+msgstr "सफलतापूर्वक अद्यतन किया"
 
 #: includes/class-flexi-form.php:569
 msgid "Modify"
-msgstr ""
+msgstr "परिवर्धित करें"
 
 #: includes/class-flexi-form.php:599
 msgid "New"
-msgstr ""
+msgstr "नया"
 
 #: includes/class-flexi-gallery.php:379
 msgid "Layout not available"
-msgstr ""
+msgstr "खाका उपलब्ध नहीं"
 
 #: includes/class-flexi-links.php:17 includes/class-flexi-settings.php:62
 msgid "Settings"
-msgstr ""
+msgstr "विन्यास"
 
 #: includes/class-flexi-links.php:32
 msgid "Docs & FAQs"
@@ -500,15 +544,15 @@ msgstr ""
 
 #: includes/class-flexi-metabox.php:28
 msgid "Flexi Meta Controls"
-msgstr ""
+msgstr "फ्लेक्सी मेटा नियंत्रण"
 
 #: includes/class-flexi-metabox.php:108
 msgid "Category Thumbnail"
-msgstr ""
+msgstr "श्रेणी लघुछवि"
 
 #: includes/class-flexi-metabox.php:155
 msgid "Flexi Shortcode"
-msgstr ""
+msgstr "फ्लेक्सी शॉर्टकट"
 
 #: includes/class-flexi-metabox.php:164
 msgid "Save & reopen to get shortcode"
@@ -516,148 +560,148 @@ msgstr ""
 
 #: includes/class-flexi-metabox.php:190 includes/class-flexi-metabox.php:219
 msgid "Default"
-msgstr ""
+msgstr "डिफ़ॉल्ट"
 
 #: includes/class-flexi-metabox.php:197
 msgid "Basic"
-msgstr ""
+msgstr "मूल"
 
 #: includes/class-flexi-metabox.php:198
 msgid "Complex"
-msgstr ""
+msgstr "जटिल"
 
 #: includes/class-flexi-post_types.php:26
 #, php-format
 msgid "New %s"
-msgstr ""
+msgstr "नया %s"
 
 #: includes/class-flexi-post_types.php:27
 #, php-format
 msgid "Add new %s"
-msgstr ""
+msgstr "नया %s जोड़ें"
 
 #: includes/class-flexi-post_types.php:28
 #: includes/class-flexi-post_types.php:162
 #, php-format
 msgid "Edit %s"
-msgstr ""
+msgstr "%s संपादित करें"
 
 #: includes/class-flexi-post_types.php:29
 #: includes/class-flexi-post_types.php:30
 #: includes/class-flexi-post_types.php:163
 #, php-format
 msgid "View %s"
-msgstr ""
+msgstr "दृश्य %s"
 
 #: includes/class-flexi-post_types.php:31
 #: includes/class-flexi-post_types.php:169
 #, php-format
 msgid "Search %s"
-msgstr ""
+msgstr "खोज %s"
 
 #: includes/class-flexi-post_types.php:32
 #: includes/class-flexi-post_types.php:174
 #, php-format
 msgid "No %s found"
-msgstr ""
+msgstr "कोई %s नहीं मिला"
 
 #: includes/class-flexi-post_types.php:33
 #, php-format
 msgid "No %s found in trash"
-msgstr ""
+msgstr "रद्दी में कोई %s नहीं मिला"
 
 #: includes/class-flexi-post_types.php:34
 #: includes/class-flexi-post_types.php:161
 #, php-format
 msgid "All %s"
-msgstr ""
+msgstr "सभी %s"
 
 #: includes/class-flexi-post_types.php:35
 #, php-format
 msgid "%s Archives"
-msgstr ""
+msgstr "%s अभिलेखागार"
 
 #: includes/class-flexi-post_types.php:36
 #, php-format
 msgid "%s Attributes"
-msgstr ""
+msgstr "%s विशेषताएँ"
 
 #: includes/class-flexi-post_types.php:37
 #, php-format
 msgid "Insert into %s"
-msgstr ""
+msgstr "%s में प्रविष्ट करें"
 
 #: includes/class-flexi-post_types.php:38
 #, php-format
 msgid "Uploaded to this %s"
-msgstr ""
+msgstr "इस %s पर अपलोड किया गया"
 
 #: includes/class-flexi-post_types.php:41
 #: includes/class-flexi-post_types.php:167
 #, php-format
 msgid "Parent %s"
-msgstr ""
+msgstr "जनक %s"
 
 #: includes/class-flexi-post_types.php:42
 #: includes/class-flexi-post_types.php:168
 #, php-format
 msgid "Parent %s:"
-msgstr ""
+msgstr "जनक %s:"
 
 #: includes/class-flexi-post_types.php:164
 #, php-format
 msgid "Update %s"
-msgstr ""
+msgstr "अद्यतन %s"
 
 #: includes/class-flexi-post_types.php:165
 #, php-format
 msgid "Add New %s"
-msgstr ""
+msgstr "नया %s जोड़ें"
 
 #: includes/class-flexi-post_types.php:166
 #, php-format
 msgid "New %s Name"
-msgstr ""
+msgstr "नया %s नाम"
 
 #: includes/class-flexi-post_types.php:170
 #, php-format
 msgid "Popular %s"
-msgstr ""
+msgstr "लोकप्रिय %s"
 
 #: includes/class-flexi-post_types.php:171
 #, php-format
 msgid "Separate %s with commas"
-msgstr ""
+msgstr "अलग %s अल्पविराम के साथ"
 
 #: includes/class-flexi-post_types.php:172
 #, php-format
 msgid "Add or remove %s"
-msgstr ""
+msgstr "जोड़ें या हटाएँ %s"
 
 #: includes/class-flexi-post_types.php:173
 #, php-format
 msgid "Choose from the most used %s"
-msgstr ""
+msgstr "सबसे अधिक उपयोग किया %s से चुनें"
 
 #: includes/class-flexi-settings.php:61
 msgid "Flexi - Settings"
-msgstr ""
+msgstr "फ्लेक्सी-विन्यास"
 
 #: includes/class-flexi-settings.php:103
 msgid "General"
-msgstr ""
+msgstr "सामान्य"
 
 #: includes/class-flexi-settings.php:104
 msgid "Gallery"
-msgstr ""
+msgstr "गेलरी"
 
 #: includes/class-flexi-settings.php:105
 msgid "Form"
-msgstr ""
+msgstr "फॉर्म"
 
 #: includes/class-flexi-settings.php:107
 msgid "Extension"
-msgstr ""
+msgstr "विस्तार"
 
 #: includes/class-flexi-settings.php:124
 msgid "Icons & user access settings"
@@ -665,27 +709,35 @@ msgstr ""
 
 #: includes/class-flexi-settings.php:129
 msgid "Media settings"
-msgstr ""
+msgstr "मीडिया सेटिंग"
 
 #: includes/class-flexi-settings.php:130
-msgid "The sizes listed below determine only the image container size. It do not affect original sizes."
+msgid ""
+"The sizes listed below determine only the image container size. It do not "
+"affect original sizes."
 msgstr ""
+"नीचे सूचीबद्ध आकार केवल छवि कंटेनर आकार का निर्धारण करता है. यह मूल आकार को "
+"प्रभावित नहीं करता है."
 
 #: includes/class-flexi-settings.php:136
 msgid "Gallery Settings"
-msgstr ""
+msgstr "दीर्घा विन्यास"
 
 #: includes/class-flexi-settings.php:137
-msgid "Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>Specific settings will be inactive if same attribute is used in shortcode.<br>It is advisable use one gallery per page to avoid conflict.<br>Settings will be not be implemented, if shortcode contains specific attributes. "
+msgid ""
+"Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>"
+"Specific settings will be inactive if same attribute is used in shortcode."
+"<br>It is advisable use one gallery per page to avoid conflict.<br>Settings "
+"will be not be implemented, if shortcode contains specific attributes. "
 msgstr ""
 
 #: includes/class-flexi-settings.php:142
 msgid "Gallery appearance"
-msgstr ""
+msgstr "गैलरी प्रकटन"
 
 #: includes/class-flexi-settings.php:148
 msgid "Submission Form Settings"
-msgstr ""
+msgstr "सबमिशन फॉर्म विन्यास"
 
 #: includes/class-flexi-settings.php:153
 msgid "Category & Tags Settings"
@@ -693,7 +745,7 @@ msgstr ""
 
 #: includes/class-flexi-settings.php:159
 msgid "Detail Page Settings"
-msgstr ""
+msgstr "विवरण पृष्ठ विन्यास"
 
 #: includes/class-flexi-settings.php:160
 msgid "Detail & Popup page displays full content."
@@ -701,84 +753,93 @@ msgstr ""
 
 #: includes/class-flexi-settings.php:165
 msgid "Permalink URL Slugs"
-msgstr ""
+msgstr "पेरलिंक URL"
 
 #: includes/class-flexi-settings.php:166
-msgid "NOTE: Just make sure that, after updating the fields in this section, you flush the rewrite rules by visiting \"Settings > Permalinks\". Otherwise you'll still see the old links."
+msgid ""
+"NOTE: Just make sure that, after updating the fields in this section, you "
+"flush the rewrite rules by visiting \"Settings > Permalinks\". Otherwise "
+"you'll still see the old links."
 msgstr ""
 
 #: includes/class-flexi-settings.php:171
 msgid "Extension Management"
-msgstr ""
+msgstr "विस्तार प्रबंधन"
 
 #: includes/class-flexi-settings.php:172
-msgid "A new sub-tab is created as soon as extension is enabled.<br>Click on blue tools icon to navigate<br><b>Note:</b> Disable any extension, will not delete the old settings. It is just hidden."
+msgid ""
+"A new sub-tab is created as soon as extension is enabled.<br>Click on blue "
+"tools icon to navigate<br><b>Note:</b> Disable any extension, will not "
+"delete the old settings. It is just hidden."
 msgstr ""
 
 #: includes/class-flexi-settings.php:200
 msgid "Space between images"
-msgstr ""
+msgstr "छवियों के बीच स्थान"
 
 #: includes/class-flexi-settings.php:201
-msgid "Padding between images. Set shortcode [flexi-gallery padding=\"0\"] for none"
+msgid ""
+"Padding between images. Set shortcode [flexi-gallery padding=\"0\"] for none"
 msgstr ""
+"छवियों के बीच जोड़ रहा है. चुना हुआ छोटा कोड [flax-गैलरी pading=\"0 \"] किसी "
+"भी नहीं के लिए"
 
 #: includes/class-flexi-settings.php:211
 msgid "Excerpt Length"
-msgstr ""
+msgstr "Excerpt लंबाई"
 
 #: includes/class-flexi-settings.php:212
 msgid "Number of words of short description"
-msgstr ""
+msgstr "संक्षिप्त विवरण के शब्दों की संख्या"
 
 #: includes/class-flexi-settings.php:222
 msgid "Thumbnail hover effect"
-msgstr ""
+msgstr "लघुछवि हॉवर प्रभाव"
 
 #: includes/class-flexi-settings.php:223
 msgid "Effect on mouse over image."
-msgstr ""
+msgstr "छवि पर माउस पर प्रभाव."
 
 #: includes/class-flexi-settings.php:226 includes/class-flexi-settings.php:239
 #: includes/functions.php:677
 msgid "None"
-msgstr ""
+msgstr "कुछ नहीं"
 
 #: includes/class-flexi-settings.php:227
 msgid "Blur"
-msgstr ""
+msgstr "धुंधला"
 
 #: includes/class-flexi-settings.php:228
 msgid "Grayscale"
-msgstr ""
+msgstr "ग्रेस्केल"
 
 #: includes/class-flexi-settings.php:229
 msgid "Zoom In"
-msgstr ""
+msgstr "ज़ूम इन करें"
 
 #: includes/class-flexi-settings.php:235
 msgid "Thumbnail hover style"
-msgstr ""
+msgstr "लघुछवि हॉवर शैली"
 
 #: includes/class-flexi-settings.php:236
 msgid "Display title or icon on mouse over image"
-msgstr ""
+msgstr "छवि पर माउस का चिह्न दिखाएं या दिखाएँ"
 
 #: includes/class-flexi-settings.php:240
 msgid "Slide title"
-msgstr ""
+msgstr "स्लाइड शीर्षक"
 
 #: includes/class-flexi-settings.php:241
 msgid "Pull up card"
-msgstr ""
+msgstr "खींचो कार्ड"
 
 #: includes/class-flexi-settings.php:242
 msgid "Slide right"
-msgstr ""
+msgstr "सही स्लाइड"
 
 #: includes/class-flexi-settings.php:243
 msgid "Pull up title"
-msgstr ""
+msgstr "ऊपर खींचने का शीर्षक"
 
 #: includes/class-flexi-settings.php:244
 msgid "Top & Bottom"
@@ -786,135 +847,155 @@ msgstr ""
 
 #: includes/class-flexi-settings.php:253
 msgid "Primary Gallery Page"
-msgstr ""
+msgstr "प्राथमिक गैलरी पृष्ठ"
 
 #: includes/class-flexi-settings.php:254
 msgid "Flexi home page with shortcode [flexi-primary]"
-msgstr ""
+msgstr "Watcode के साथ फ्लेक्सी होम पेज [flX-प्राथमिक]"
 
 #: includes/class-flexi-settings.php:260
 msgid "Member \"User Dashboard\" Page"
-msgstr ""
+msgstr "सदस्य \"उपयोगकर्ता डैशबोर्ड\" पृष्ठ"
 
 #: includes/class-flexi-settings.php:261
-msgid "Page with shortcode [flexi-user-dashboard]. Display gallery of own posts."
+msgid ""
+"Page with shortcode [flexi-user-dashboard]. Display gallery of own posts."
 msgstr ""
+"शॉर्ट कोड (फ्लेक्सी-यूजर-डैशबोर्ड) के साथ पृष्ठ. अपने पदों की गैलरी "
+"प्रदर्शित करें."
 
 #: includes/class-flexi-settings.php:267
 msgid "Post per page"
-msgstr ""
+msgstr "प्रति पृष्ठ पोस्ट"
 
 #: includes/class-flexi-settings.php:268
 msgid "Number of images/post/videos to be shown at a time."
-msgstr ""
+msgstr "छवियों/पोस्ट/वीडियो की संख्या एक समय में दिखाए जाने के लिए."
 
 #: includes/class-flexi-settings.php:276
 msgid "Number of Columns"
-msgstr ""
+msgstr "स्तम्भों की संख्या"
 
 #: includes/class-flexi-settings.php:277
-msgid "Maximum number of post to be shown horizontally & changes based on screen size. May not work for all layouts."
+msgid ""
+"Maximum number of post to be shown horizontally & changes based on screen "
+"size. May not work for all layouts."
 msgstr ""
 
 #: includes/class-flexi-settings.php:286
 msgid "Navigation Style"
-msgstr ""
+msgstr "नेविगेशन शैली"
 
 #: includes/class-flexi-settings.php:290
 msgid "Page Number"
-msgstr ""
+msgstr "पृष्ठ संख्या"
 
 #: includes/class-flexi-settings.php:291
 msgid "Load More Button"
-msgstr ""
+msgstr "अधिक बटन लोड करें"
 
 #: includes/class-flexi-settings.php:292
 msgid " Mouse Scroll"
-msgstr ""
+msgstr " माउस स्क्रॉल"
 
 #: includes/class-flexi-settings.php:298
 msgid "Gallery sorting tags"
-msgstr ""
+msgstr "गैलरी छंटाई टैग"
 
 #: includes/class-flexi-settings.php:299
 msgid "Shows tags above gallery, only if few tags available."
-msgstr ""
+msgstr "दीर्घा के ऊपर टैग प्रदर्शित करता है, केवल यदि कुछ टैग उपलब्ध हैं."
 
 #: includes/class-flexi-settings.php:305
 msgid "Select gallery layout"
-msgstr ""
+msgstr "दीर्घा खाका चुनें"
 
 #: includes/class-flexi-settings.php:306 includes/class-flexi-settings.php:422
-msgid "Selected layout will be used as default layout, if not specified in shortcode parameter."
+msgid ""
+"Selected layout will be used as default layout, if not specified in "
+"shortcode parameter."
 msgstr ""
+"चुने गए अभिन्यास को डिफ़ॉल्ट अभिन्यास के रूप में इस्तेमाल किया जाएगा, यदि "
+"रिक्त कोड पैरामीटर में निर्दिष्ट नहीं है."
 
 #: includes/class-flexi-settings.php:316
 msgid "Form submission access"
-msgstr ""
+msgstr "फॉर्म जमा करने की सुविधा"
 
 #: includes/class-flexi-settings.php:317
 msgid "It will enable/disable frontend form as specified."
-msgstr ""
+msgstr "यह फ्रन्टएण्ड फॉर्म को निर्दिष्ट के रूप में सक्षम/अक्षम कर देगा."
 
 #: includes/class-flexi-settings.php:320
 msgid "Everyone"
-msgstr ""
+msgstr "हर कोई"
 
 #: includes/class-flexi-settings.php:321
 msgid "Only members"
-msgstr ""
+msgstr "केवल सदस्य"
 
 #: includes/class-flexi-settings.php:322
 msgid "Only with Publish Post rights"
-msgstr ""
+msgstr "केवल प्रकाशित पोस्ट अधिकार के साथ"
 
 #: includes/class-flexi-settings.php:323
 msgid "Disable submission"
-msgstr ""
+msgstr "निवेदन अक्षम करें"
 
 #: includes/class-flexi-settings.php:329
 msgid "Auto approve post"
-msgstr ""
+msgstr "स्वतः अनुमोदन डाक"
 
 #: includes/class-flexi-settings.php:330
 msgid "Automatically publish Post as soon as user submit."
-msgstr ""
+msgstr "उपयोक्ता प्रस्तुत करें के रूप में जल्दी ही पोस्ट प्रकाशित करें."
 
 #: includes/class-flexi-settings.php:336
 msgid "File size allowed (MB)"
-msgstr ""
+msgstr "फ़ाइल आकार स्वीकार्य (MB)"
 
 #: includes/class-flexi-settings.php:337
 msgid "Maximum file size allowed to upload by visitor. Your sever limit is:"
 msgstr ""
+"अधिकतम फ़ाइल आकार आगंतुक द्वारा अपलोड करने के लिए अनुमति दी. आपकी एलिमिट "
+"सीमा है:"
 
 #: includes/class-flexi-settings.php:347
 msgid "Assign default user"
-msgstr ""
+msgstr "तयशुदा उपयोक्ता आबंटित करें"
 
 #: includes/class-flexi-settings.php:348
-msgid "Type the username to assign for guest submit else no author is assigned."
+msgid ""
+"Type the username to assign for guest submit else no author is assigned."
 msgstr ""
+"अतिथि प्रस्तुत करने के लिए नाम देने के लिए उपयोक्तानाम टाइप करें और कोई लेखक "
+"नहीं सौंपा गया है."
 
 #: includes/class-flexi-settings.php:355
 msgid "Submission form"
-msgstr ""
+msgstr "प्रस्तुतीकरण"
 
 #: includes/class-flexi-settings.php:356
 msgid "Page which will be used at frontend to let users to submit flexi post."
 msgstr ""
+"पृष्ठ जो सबसे आगे का उपयोग किया जाएगा करने के लिए उपयोगकर्ताओं को फ्लेक्सी "
+"पोस्ट प्रस्तुत करने के लिए."
 
 #: includes/class-flexi-settings.php:363
 msgid "Edit Flexi Post Page"
-msgstr ""
+msgstr "फ्लीशी पोस्ट पेज संपादित करें"
 
 #: includes/class-flexi-settings.php:364
-msgid "Page with shortcode [flexi-form] with edit=\"true\" as parameter. Lets visitor to edit submitted post."
+msgid ""
+"Page with shortcode [flexi-form] with edit=\"true\" as parameter. Lets "
+"visitor to edit submitted post."
 msgstr ""
+"पैरामीटर के रूप में एक छोटा कोड (flite-form) के साथ पृष्ठ \"सत्य\" के रूप "
+"में पैरामीटर. प्रस्तुत पोस्ट को संपादित करने के लिए आगंतुक देता है."
 
 #: includes/class-flexi-settings.php:373
 msgid "Edit icon"
-msgstr ""
+msgstr "प्रतीक संपादित करें"
 
 #: includes/class-flexi-settings.php:374
 msgid "Edit icon at gallery & detail page."
@@ -922,7 +1003,7 @@ msgstr ""
 
 #: includes/class-flexi-settings.php:380
 msgid "Delete icon"
-msgstr ""
+msgstr "प्रतीक मिटाएँ"
 
 #: includes/class-flexi-settings.php:381
 msgid "Trash icon at gallery & detail page."
@@ -930,7 +1011,7 @@ msgstr ""
 
 #: includes/class-flexi-settings.php:387
 msgid "User icon"
-msgstr ""
+msgstr "उपयोक्ता प्रतीक"
 
 #: includes/class-flexi-settings.php:388
 msgid "Profile icon at gallery & detail page."
@@ -938,7 +1019,7 @@ msgstr ""
 
 #: includes/class-flexi-settings.php:394
 msgid "Download icon"
-msgstr ""
+msgstr "फाइल डाउनलोड करें"
 
 #: includes/class-flexi-settings.php:395
 msgid "Download icon at gallery & detail page."
@@ -946,287 +1027,293 @@ msgstr ""
 
 #: includes/class-flexi-settings.php:403
 msgid "Enable Lightbox or Popup"
-msgstr ""
+msgstr "लाइटबॉक्स या पॉपअप सक्षम करें"
 
 #: includes/class-flexi-settings.php:404
 msgid "If popup is unchecked, It will open content in single dedicated page."
 msgstr ""
+"यदि पॉपअप नहीं चुना जाता है, तो यह एकल समर्पित पृष्ठ में सामग्री खोलेगा."
 
 #: includes/class-flexi-settings.php:410
 msgid "Popup style"
-msgstr ""
+msgstr "पॉपअप शैली"
 
 #: includes/class-flexi-settings.php:411
 msgid "Layout of lightbox"
-msgstr ""
+msgstr "लाइटबॉक्स का लेआउट"
 
 #: includes/class-flexi-settings.php:414
 msgid "Regular"
-msgstr ""
+msgstr "नियमित"
 
 #: includes/class-flexi-settings.php:415
 msgid "Custom"
-msgstr ""
+msgstr "मनपसंद"
 
 #: includes/class-flexi-settings.php:421
 msgid "Select Detail Layout"
-msgstr ""
+msgstr "विस्तृत ख़ाका का चयन करें"
 
 #: includes/class-flexi-settings.php:432
 msgid "Default Post Category"
-msgstr ""
+msgstr "डिफ़ॉल्ट पोस्ट श्रेणी"
 
 #: includes/class-flexi-settings.php:433
 msgid "This category will be selected if no category is assigned by visitor."
 msgstr ""
+"यदि आगंतुक द्वारा कोई श्रेणी नियत नहीं की गई है तो इस श्रेणी का चयन किया "
+"जाएगा."
 
 #: includes/class-flexi-settings.php:444
 msgid "Thumbnail size"
-msgstr ""
+msgstr "लघु छवि आकार"
 
 #: includes/class-flexi-settings.php:445 includes/class-flexi-settings.php:468
 #: includes/class-flexi-settings.php:482
 msgid "Width"
-msgstr ""
+msgstr "चौड़ाई"
 
 #: includes/class-flexi-settings.php:446 includes/class-flexi-settings.php:469
 #: includes/class-flexi-settings.php:483
 msgid "Height"
-msgstr ""
+msgstr "ऊँचाई"
 
 #: includes/class-flexi-settings.php:447
 msgid "Applied at gallery page"
-msgstr ""
+msgstr "गैलरी पृष्ठ पर लागू किया गया"
 
 #: includes/class-flexi-settings.php:467
 msgid "Medium size"
-msgstr ""
+msgstr "मध्यम आकार"
 
 #: includes/class-flexi-settings.php:481
 msgid "Large size"
-msgstr ""
+msgstr "बड़ा आकार"
 
 #: includes/class-flexi-settings.php:484
 msgid "Specially applied at detail page"
-msgstr ""
+msgstr "विशेष रूप से विस्तार पृष्ठ पर लागू"
 
 #: includes/class-flexi-settings.php:498
 msgid "Image Detail Page"
-msgstr ""
+msgstr "छवि विवरण पृष्ठ"
 
 #: includes/class-flexi-settings.php:499
 msgid "Replaces the SLUG value used by custom post type \"flexi\"."
 msgstr ""
+"मनपसंद पोस्ट प्रकार \"फ्लेक्सी\" द्वारा उपयोग के लिए SLUG मूल्य को "
+"प्रतिस्थापित करें."
 
 #: includes/class-flexi-settings.php:774
 msgid "Select layout"
-msgstr ""
+msgstr "खाका चुनें"
 
 #: includes/class-flexi-settings.php:856
 msgid "Choose File"
-msgstr ""
+msgstr "फ़ाइल चुनें"
 
 #: includes/class-flexi-settings.php:908
 msgid "Select a page"
-msgstr ""
+msgstr "एक पृष्ठ का चयन करें"
 
 #: includes/class-flexi-settings.php:931
 #: includes/widgets/gallery_widgets.php:339
 msgid "Select category"
-msgstr ""
+msgstr "श्रेणी चुनें"
 
 #: includes/class-flexi-standalone-gallery.php:74
 msgid "Wrong ID"
-msgstr ""
+msgstr "गलत आईडी"
 
 #: includes/class-flexi-user.php:31
 msgid "Profile"
-msgstr ""
+msgstr "प्रोफाइल"
 
 #: includes/class-flexi_ajax_delete.php:50
 #: includes/class-flexi_ajax_download.php:57
 msgid "Login Please !"
-msgstr ""
+msgstr "लॉगिन कृपया!"
 
 #: includes/class-flexi_ajax_delete.php:100
 msgid "Delete"
-msgstr ""
+msgstr "मिटाएँ"
 
 #: includes/class-flexi_ajax_download.php:76
 msgid "Download"
-msgstr ""
+msgstr "डाउनलोड करें"
 
 #: includes/flexi_ajax_post.php:92
 msgid "Your submission is under review"
-msgstr ""
+msgstr "आपका निवेदन समीक्षा के अधीन है"
 
 #: includes/flexi_ajax_post.php:130
 msgid "Your modification is under review."
-msgstr ""
+msgstr "आपका संशोधन समीक्षाधीन है."
 
 #: includes/flexi_ajax_post.php:134
 msgid "Submission failed"
-msgstr ""
+msgstr "निवेदन असफल"
 
 #: includes/functions.php:255
 msgid "Show All"
-msgstr ""
+msgstr "सभी दिखाएँ"
 
 #: includes/functions.php:367
 msgid "Album"
-msgstr ""
+msgstr "एल्बम"
 
 #: includes/functions.php:437 includes/functions.php:446
 msgid "Login"
-msgstr ""
+msgstr "लॉगइन"
 
 #: includes/functions.php:443
 msgid "Username"
-msgstr ""
+msgstr "उपयोक्ता नाम"
 
 #: includes/functions.php:444
 msgid "Password"
-msgstr ""
+msgstr "पासवर्ड"
 
 #: includes/functions.php:445
 msgid "Remember Me"
-msgstr ""
+msgstr "मुझे याद रखें"
 
 #: includes/functions.php:629
 msgid "Required Flexi-PRO"
-msgstr ""
+msgstr "आवश्यक फ्लेक्सी-पीआरओ"
 
 #: includes/functions.php:951
 msgid "Title cannot be blank."
-msgstr ""
+msgstr "शीर्षक खाली नहीं किया जा सकता है."
 
 #: includes/functions.php:954
 msgid "Invalid file type"
-msgstr ""
+msgstr "अवैध फ़ाइल प्रकार"
 
 #: includes/functions.php:957
 msgid "Only image files are allowed."
-msgstr ""
+msgstr "सिर्फ छवि फ़ाइलों की अनुमति दी जाती है."
 
 #: includes/functions.php:960
 msgid "File size is too big."
-msgstr ""
+msgstr "फ़ाइल आकार बहुत बड़ा है."
 
 #: includes/functions.php:963
 msgid "Captcha security code is invalid."
-msgstr ""
+msgstr "कैप्टाचा सुरक्षा कोड अवैध है."
 
 #: includes/functions.php:986
 msgid "Flexi Primary Gallery"
-msgstr ""
+msgstr "फ्लेक्सी प्राथमिक गैलरी"
 
 #: includes/functions.php:993
 msgid "Flexi User Dashboard"
-msgstr ""
+msgstr "फ्लेक्सी उपयोगकर्ता डैशबोर्ड"
 
 #: includes/functions.php:1007
 msgid "Flexi Edit/Modify"
-msgstr ""
+msgstr "फ्लेक्सी संपादन/रूपांतरित"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:41
 msgid "Search post"
-msgstr ""
+msgstr "खोज पोस्ट"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:49
 msgid "My Posts"
-msgstr ""
+msgstr "मेरे पोस्ट"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:80
 msgid "My Dashboard"
-msgstr ""
+msgstr "मेरा डैशबोर्ड"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:100
 msgid "\"My Dashboard\" button"
-msgstr ""
+msgstr "\"मेरे डैशबोर्ड\" बटन"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:101
 msgid "Display button after form submission"
-msgstr ""
+msgstr "फॉर्म जमा करने के बाद बटन प्रदर्शित करें"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:108
 msgid "\"My Gallery\" button"
-msgstr ""
+msgstr "\"मेरी गैलरी\" बटन"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:109
 msgid "Display button at \"My Dashboard\""
-msgstr ""
+msgstr "\"मेरे डैशबोर्ड\" पर प्रदर्शन बटन"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:179
 msgid "My Gallery"
-msgstr ""
+msgstr "मेरी गैलरी"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:197
 msgid "Logout"
-msgstr ""
+msgstr "लॉगआउट"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:87
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:168
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:165
 msgid "Under Review"
-msgstr ""
+msgstr "समीक्षा के अंतर्गत"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:91
 msgid "Live"
-msgstr ""
+msgstr "जीना"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:112
 msgid "Total number of records you have submitted: "
-msgstr ""
+msgstr "रिकॉर्ड की कुल संख्या आपने प्रस्तुत किया है: "
 
 #: includes/widgets/categories.php:155
 msgid "New title"
-msgstr ""
+msgstr "नया शीर्षक"
 
 #: includes/widgets/categories.php:158
 msgid "Title:"
-msgstr ""
+msgstr "शीर्षक:"
 
 #: includes/widgets/categories.php:162 includes/widgets/categories.php:165
 msgid "Select Parent"
-msgstr ""
+msgstr "जनक चुनें"
 
 #: includes/widgets/categories.php:184
 msgid "Show only the immediate children of the selected category."
-msgstr ""
+msgstr "केवल चयनित वर्ग के तुरंत बच्चों को ही दिखाएँ।"
 
 #: includes/widgets/categories.php:189
 msgid "Hide Empty Categories"
-msgstr ""
+msgstr "खाली श्रेणियां छुपाएं"
 
 #: includes/widgets/categories.php:194
 msgid "Show Listing Counts"
-msgstr ""
+msgstr "सूचीकरण की गणना दिखाएँ"
 
 #: includes/widgets/gallery_widgets.php:10
 msgid "Flexi Showcase"
-msgstr ""
+msgstr "फ्लेक्सी प्रदर्शन"
 
 #: includes/widgets/gallery_widgets.php:11
 msgid "Display specified set of gallery"
-msgstr ""
+msgstr "दीर्घा का निर्दिष्ट सेट प्रदर्शित करें"
 
 #: public/class-flexi-public.php:128
 msgid "Are you sure you want to delete?"
-msgstr ""
+msgstr "क्या आप सुनिश्चित हैं कि आप हटाना चाहते हैं?"
 
 #: public/class-flexi-public.php:129
 msgid "Download file?"
-msgstr ""
+msgstr "फ़ाइल डाउनलोड करें?"
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:32
 msgid "Basic - Layout"
-msgstr ""
+msgstr "बेसिक-लेआउट"
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:33
 msgid ""
 "<ul>\n"
 "    <li>One element can have same location</li>\n"
-"    <li>Detail page is accessed by clicking on icon <span class=\"dashicons dashicons-external\">&nbsp;</span></li>\n"
+"    <li>Detail page is accessed by clicking on icon <span class=\"dashicons "
+"dashicons-external\">&nbsp;</span></li>\n"
 "    <li>Page title is positioned based on theme used</li>\n"
 "    <li> To preview, go to Flexi ➾ All Post & view post </li>\n"
 "    </ul>"
@@ -1236,25 +1323,25 @@ msgstr ""
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:70
 #: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:68
 msgid "Detail Layout Chart"
-msgstr ""
+msgstr "खाका चार्ट विस्तृत करें"
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:72
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:71
 #: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:69
 msgid "Each number denotes the available location of elements"
-msgstr ""
+msgstr "प्रत्येक संख्या तत्वों के उपलब्ध स्थान को दर्शाता है"
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:87
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:86
 #: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:84
 msgid "Select the location where you want to place elements"
-msgstr ""
+msgstr "स्थान चुनें जहाँ आप तत्वों को रखना चाहते हैं"
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:90
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:89
 #: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:87
 msgid "-- Hide --"
-msgstr ""
+msgstr "-छुपाएँ (H)"
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:91
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:92
@@ -1282,31 +1369,33 @@ msgstr ""
 #: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:91
 #: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:92
 msgid "Location"
-msgstr ""
+msgstr "स्थान"
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:218
 msgid "Flexi- Basic Detail Layout"
-msgstr ""
+msgstr "Flei-बुनियादी डालमेल लेआउट"
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:220
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
 msgid "Add widgets here to appear in detail layout as specified location."
 msgstr ""
+"यहाँ विजेट जोड़ें के रूप में विस्तृत लेआउट के रूप में विवरण में प्रकट करें."
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:220
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
 msgid "Manage"
-msgstr ""
+msgstr "प्रबंधित करें"
 
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:31
 msgid "Complex - Layout"
-msgstr ""
+msgstr "जटिल-लेआउट"
 
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:32
 msgid ""
 "<ul>\n"
 "    <li>One element can have same location</li>\n"
-"    <li>Detail page is accessed by clicking on icon <span class=\"dashicons dashicons-external\">&nbsp;</span></li>\n"
+"    <li>Detail page is accessed by clicking on icon <span class=\"dashicons "
+"dashicons-external\">&nbsp;</span></li>\n"
 "    <li>Page title is positioned based on theme</li>\n"
 "    <li> To preview, go to Flexi ➾ All Post & view post </li>\n"
 "    </ul>"
@@ -1314,7 +1403,7 @@ msgstr ""
 
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:217
 msgid "Flexi- Complex Detail Layout"
-msgstr ""
+msgstr "फ्लेग-कॉम्प्लेकल डिटेल्स लेआउट"
 
 #: public/partials/layout/gallery/basic/footer.php:6
 #: public/partials/layout/gallery/masonry/footer.php:6
@@ -1323,11 +1412,11 @@ msgstr ""
 #: public/partials/layout/gallery/wide/footer.php:6
 #: public/partials/layout/popup/flexi_ajax_post_view.php:30
 msgid "No records"
-msgstr ""
+msgstr "कोई रिकॉर्ड नहीं"
 
 #: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:32
 msgid "Custom - Popup Layout"
-msgstr ""
+msgstr "पसंदीदा-पॉपअप लेआउट"
 
 #: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:33
 msgid ""

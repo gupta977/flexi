@@ -9,7 +9,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Let visitors submit photo,video,pdf,mp3 and any type file without login.
+Visitors submitted images, video, documents, music, youtube file without registration and display into gallery.
 
 == Description ==
 
@@ -126,6 +126,8 @@ You can also add/remove form fields based on pages & posts.
 = Language Support =
 * German language (de_DE) (Thanks to contributor: Radek)
 * Italian Language (it_IT) (Thanks to contributor: Avelino)
+* Dutch langauge (nl_NL)
+* Hindi India langauge (hi_IN) (Thanks to Aaditya Naman Gupta)
 
 = PRO KEY FEATURES =
 
@@ -181,6 +183,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.49 =
+* Updated language
+* Added Hindi language
+
 = 1.0.481 =
 * Manually assign thumbnail of any media from backend
 * Generate thumbnail for video files

@@ -114,7 +114,7 @@ class Flexi_Admin
 
   add_menu_page(
    __('flexi', 'flexi'),
-   __('Flexi Gallery', 'flexi'),
+   __('Flexi', 'flexi'),
    'manage_options',
    'flexi',
    array($this, 'display_dashboard_content'),

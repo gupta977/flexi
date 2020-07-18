@@ -1,29 +1,31 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
-"POT-Creation-Date: 2020-07-14 15:40+0545\n"
-"PO-Revision-Date: 2020-07-14 15:41+0545\n"
+"POT-Creation-Date: 2020-07-18 15:19+0545\n"
+"PO-Revision-Date: 2020-07-18 09:42+0000\n"
 "Last-Translator: \n"
-"Language-Team: navneet@odude.com\n"
-"Language: it\n"
+"Language-Team: Italian\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html__\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: block/node_modules\n"
 "X-Poedit-SearchPathExcluded-1: includes/cmb2\n"
+"Report-Msgid-Bugs-To: \n"
+"X-Loco-Version: 2.3.3; wp-5.4.2"
 
 #: admin/class-flexi-admin.php:116
 msgid "flexi"
 msgstr "Flexi"
 
-#: admin/class-flexi-admin.php:117 block/src/gallery/block.js:59
-msgid "Flexi Gallery"
-msgstr "Galleria Flexi"
+#: admin/class-flexi-admin.php:117
+msgid "Flexi"
+msgstr "Flexi"
 
 #: admin/class-flexi-admin.php:127 admin/class-flexi-admin.php:128
 msgid "Dashboard"
@@ -64,11 +66,11 @@ msgstr ""
 #: admin/partials/dashboard.php:6 admin/partials/settings.php:34
 #: includes/class-flexi-links.php:18
 msgid "Post files"
-msgstr ""
+msgstr "File post"
 
 #: admin/partials/dashboard.php:7
 msgid "View Gallery"
-msgstr ""
+msgstr "Visualizza Galleria"
 
 #: admin/partials/dashboard.php:8
 msgid "Documentation"
@@ -86,7 +88,7 @@ msgstr ""
 
 #: admin/partials/settings.php:37
 msgid "Skip, I will setup manually"
-msgstr ""
+msgstr "Skip, mi setup manualmente"
 
 #: admin/partials/settings.php:46
 msgid "Flexi Plugin Settings"
@@ -94,7 +96,7 @@ msgstr "Impostazioni del plug-in Flexi"
 
 #: block/src/form/block.js:59 includes/functions.php:1000
 msgid "Flexi Submission Form"
-msgstr ""
+msgstr "Modulo Di Presentazione Flexi"
 
 #: block/src/form/block.js:62 block/src/gallery/block.js:62
 #: includes/class-flexi-admin-column.php:20
@@ -127,7 +129,7 @@ msgstr "Campo della categoria"
 
 #: block/src/form/edit.js:196
 msgid "Tag Field"
-msgstr ""
+msgstr "Campo tag"
 
 #: block/src/form/edit.js:212
 msgid "Image Upload Field"
@@ -139,11 +141,15 @@ msgstr "Campo dell'URL'"
 
 #: block/src/form/edit.js:256
 msgid "Security reCaptcha Field"
-msgstr ""
+msgstr "Campo reCaptcha di sicurezza"
 
 #: block/src/form/edit.js:265
 msgid "Submit Button"
 msgstr "Pulsante Invia"
+
+#: block/src/gallery/block.js:59
+msgid "Flexi Gallery"
+msgstr "Galleria Flexi"
 
 #: block/src/gallery/block.js:62
 msgid "gallery"
@@ -163,7 +169,7 @@ msgstr "Controlli del Layout"
 
 #: block/src/gallery/edit.js:265
 msgid "Toggle Controls"
-msgstr ""
+msgstr "Controlli Toggle"
 
 #: block/src/gallery/edit.js:319
 msgid "Effects"
@@ -171,7 +177,7 @@ msgstr "Effetti"
 
 #: block/src/init.php:88
 msgid "Flexi Plugin"
-msgstr ""
+msgstr "Plugin Flexi"
 
 #: includes/addon/class-flexi-buddypress.php:30
 msgid "BuddyPress"
@@ -183,8 +189,8 @@ msgid ""
 "at their profile page. https://wordpress.org/plugins/buddypress/"
 msgstr ""
 "Se hai installato il plugin BuddyPress, l'utente può vedere le proprie "
-"immagini inviate nella pagina del suo profilo. https://wordpress.org/plugins/"
-"buddypress/"
+"immagini inviate nella pagina del suo profilo. https://wordpress."
+"org/plugins/buddypress/"
 
 #: includes/addon/class-flexi-buddypress.php:48
 msgid "Enable BuddyPress"
@@ -223,9 +229,9 @@ msgstr "Disabilitare FancyBox Lightbox"
 
 #: includes/addon/class-flexi-conflict.php:68
 msgid ""
-"Disable it, <br>if fancyBox v3.5.7 is used by other plugins & theme. So "
-"that, only one instance of it is available.<br>If you are not using lightbox "
-"at all."
+"Disable it, <br>if fancyBox v3.5.7 is used by other plugins & theme. So that,"
+" only one instance of it is available.<br>If you are not using lightbox at "
+"all."
 msgstr ""
 "Disattivarlo,se fancyBox v3.5.7 è utilizzato da altri plugin e temi.<br>Così "
 "che, solo un'istanza del plug-in sia disponibile.<br>Se non si utilizza "
@@ -265,6 +271,8 @@ msgstr "Etichetta: flexi_field_1"
 msgid ""
 "Enter the label name to be displayed at frontend along with submitted value."
 msgstr ""
+"Inserire il nome etichetta da visualizzare a frontend insieme al valore "
+"inoltrato."
 
 #: includes/addon/class-flexi-custom-field.php:80
 #: includes/addon/class-flexi-custom-field.php:110
@@ -292,69 +300,69 @@ msgstr "Impostazioni"
 #: includes/addon/class-flexi-ffmpeg.php:34
 msgid ""
 "extension must be installed on your server.<br><b>shell_exec</b> should be "
-"enabled by PHP or purchase <a href=\"https://odude.com/wp-content/uploads/"
-"woocommerce-placeholder.png\">FFMPEG- Flexi Library</a><br>This will only "
-"get applied to newly submitted video files.<br>Processing time based on "
-"video file sizes.<br>Thumbnail are based on media settings, medium "
-"size<br>Animated video results poor quality. Install Flexi-PRO for higher "
-"resolution.<hr>FFMPEG Library required purchase of flexi_ffmpeg.<hr>"
+"enabled by PHP or purchase <a href=\"https://odude.com/wp-"
+"content/uploads/woocommerce-placeholder.png\">FFMPEG- Flexi Library</a><br>"
+"This will only get applied to newly submitted video files.<br>Processing "
+"time based on video file sizes.<br>Thumbnail are based on media settings, "
+"medium size<br>Animated video results poor quality. Install Flexi-PRO for "
+"higher resolution.<hr>FFMPEG Library required purchase of flexi_ffmpeg.<hr>"
 msgstr ""
 
 #: includes/addon/class-flexi-ffmpeg.php:57
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: includes/addon/class-flexi-ffmpeg.php:57
 msgid "encoding"
-msgstr ""
+msgstr "codifica"
 
 #: includes/addon/class-flexi-ffmpeg.php:58
 msgid ""
 "This will generate thumbnail for video files like mp4,3gp,mov. Your server "
 "must have ffmpeg installed."
 msgstr ""
+"Questo genererà miniatura per file video come mp4,3gp, mov. Il tuo server "
+"deve avere ffmpeg installato."
 
 #: includes/addon/class-flexi-ffmpeg.php:78
 msgid "FFMPEG folder path"
-msgstr ""
+msgstr "Percorso cartella FFMPEG"
 
 #: includes/addon/class-flexi-ffmpeg.php:79
 msgid ""
-"This should be the folder where FFMPEG installed on your server. Eg. /usr/"
-"local/bin or E:\\ffmpeg\\bin\\ffmpeg.exe"
+"This should be the folder where FFMPEG installed on your server. Eg. "
+"/usr/local/bin or E:\\ffmpeg\\bin\\ffmpeg.exe"
 msgstr ""
+"Questa dovrebbe essere la cartella in cui FFMPEG installato sul tuo server. "
+"Eg. /usr/local/bin o E: \\ffmpeg\\bin\\ffmpeg.exe"
 
 #: includes/addon/class-flexi-ffmpeg.php:87
 msgid "FFMPEG Processor"
-msgstr ""
+msgstr "Processore FFMPEG"
 
 #: includes/addon/class-flexi-ffmpeg.php:91
 msgid "shell_exec command"
-msgstr ""
+msgstr "comando shell_exec"
 
 #: includes/addon/class-flexi-ffmpeg.php:92
 msgid "FFMPEG - Flexi Library"
-msgstr ""
+msgstr "FFMPEG - Libreria Flexi"
 
 #: includes/addon/class-flexi-ffmpeg.php:99
-#, fuzzy
-#| msgid "Category Thumbnail"
 msgid "Video Thumbnail"
-msgstr "Miniatura della categoria"
+msgstr "Video Thumbnail"
 
 #: includes/addon/class-flexi-ffmpeg.php:103
 msgid "Static image"
-msgstr ""
+msgstr "Immagine statica"
 
 #: includes/addon/class-flexi-ffmpeg.php:104
 msgid "Animated 3 second image"
-msgstr ""
+msgstr "Immagine animata 3 second"
 
 #: includes/addon/class-flexi-ffmpeg.php:105
-#, fuzzy
-#| msgid "Detail icon"
 msgid "Dynamic file icon"
-msgstr "Icona di dettaglio"
+msgstr "Icona del file dinamico"
 
 #: includes/addon/class-flexi-mime-type.php:29
 msgid "Manage Mime Type"
@@ -399,7 +407,7 @@ msgstr "Formato audio"
 
 #: includes/addon/class-flexi-mime-type.php:81
 msgid "Portable Document Format (PDF)"
-msgstr ""
+msgstr "Formato documento portatile (PDF)"
 
 #: includes/addon/class-flexi-mime-type.php:82
 msgid "Word Document (DOC)"
@@ -411,15 +419,15 @@ msgstr "Mime type extra"
 
 #: includes/addon/class-flexi-mime-type.php:90
 msgid ""
-"Add extra file type if not listed above separated with comma.<br>Eg. video/"
-"avi,video/3gpp,audio/midi<br>Required Flexi-PRO"
+"Add extra file type if not listed above separated with comma.<br>Eg. "
+"video/avi,video/3gpp,audio/midi<br>Required Flexi-PRO"
 msgstr ""
 "Aggiungi un altro tipo di file se non elencato sopra separato con virgola."
 "<br>Ad es. video/3gpp,audio/midi<br>E' richiesto Flexi-PRO"
 
 #: includes/addon/class-flexi-ultimate-member.php:30
 msgid "Ultimate-Member"
-msgstr ""
+msgstr "Ultimate - Member"
 
 #: includes/addon/class-flexi-ultimate-member.php:31
 msgid ""
@@ -473,11 +481,11 @@ msgstr "Nome"
 
 #: includes/class-flexi-category.php:23 includes/class-flexi-category.php:52
 msgid "Shortcode"
-msgstr ""
+msgstr "Shortcode"
 
 #: includes/class-flexi-category.php:24 includes/class-flexi-category.php:53
 msgid "Slug"
-msgstr ""
+msgstr "Slug"
 
 #: includes/class-flexi-category.php:25 includes/class-flexi-category.php:54
 msgid "Posts"
@@ -488,8 +496,8 @@ msgid "Detail icon"
 msgstr "Icona di dettaglio"
 
 #: includes/class-flexi-detail.php:47
-msgid "Hide/Show detail icon at gallery lightbox"
-msgstr "Mostra/Nascondi l'icona del dettaglio nella lightbox della galleria"
+msgid "Detail icon at gallery lightbox"
+msgstr "l'icona del dettaglio nella lightbox della galleria"
 
 #: includes/class-flexi-detail.php:70 includes/class-flexi-settings.php:106
 msgid "Detail"
@@ -734,11 +742,10 @@ msgstr "Impostazioni della galleria"
 
 #: includes/class-flexi-settings.php:137
 msgid ""
-"Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes."
-"<br>Specific settings will be inactive if same attribute is used in "
-"shortcode.<br>It is advisable use one gallery per page to avoid conflict."
-"<br>Settings will be not be implemented, if shortcode contains specific "
-"attributes. "
+"Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>"
+"Specific settings will be inactive if same attribute is used in shortcode."
+"<br>It is advisable use one gallery per page to avoid conflict.<br>Settings "
+"will be not be implemented, if shortcode contains specific attributes. "
 msgstr ""
 "Le impostazioni saranno applicate sui shortcode [flexi-primary] e [flexi-"
 "gallery].<br>Impostazioni specifiche saranno inattive se lo stesso attributo "
@@ -790,10 +797,10 @@ msgid ""
 "tools icon to navigate<br><b>Note:</b> Disable any extension, will not "
 "delete the old settings. It is just hidden."
 msgstr ""
-"Viene creata una nuova sotto scheda non appena l'estensione è abilitata."
-"<br>Clicca sull'icona blu per andare alla scheda.<br><b>Nota:</b> "
-"Disabilitando qualsiasi estensione, non vengono eliminate le vecchie "
-"impostazioni. Sono solo nascoste."
+"Viene creata una nuova sotto scheda non appena l'estensione è abilitata.<br>"
+"Clicca sull'icona blu per andare alla scheda.<br><b>Nota:</b> Disabilitando "
+"qualsiasi estensione, non vengono eliminate le vecchie impostazioni. Sono "
+"solo nascoste."
 
 #: includes/class-flexi-settings.php:200
 msgid "Space between images"
@@ -829,7 +836,7 @@ msgstr "Nessuno"
 
 #: includes/class-flexi-settings.php:227
 msgid "Blur"
-msgstr ""
+msgstr "Blur"
 
 #: includes/class-flexi-settings.php:228
 msgid "Grayscale"
@@ -837,7 +844,7 @@ msgstr "Scala di grigi"
 
 #: includes/class-flexi-settings.php:229
 msgid "Zoom In"
-msgstr ""
+msgstr "Zoom In"
 
 #: includes/class-flexi-settings.php:235
 msgid "Thumbnail hover style"
@@ -1022,34 +1029,32 @@ msgid "Edit icon"
 msgstr "Icona Editing"
 
 #: includes/class-flexi-settings.php:374
-msgid "Hide/Show edit icon at gallery & detail page."
-msgstr ""
-"Mostra/Nascondi icona per l'editing nelle pagine della galleria e di "
-"dettaglio"
+msgid "Edit icon at gallery & detail page."
+msgstr "icona per l'editing nelle pagine della galleria e di dettaglio"
 
 #: includes/class-flexi-settings.php:380
 msgid "Delete icon"
 msgstr "Icona per la cancellazione"
 
 #: includes/class-flexi-settings.php:381
-msgid "Hide/Show trash icon at gallery & detail page."
-msgstr "Mostra/Nascondi l'icona nelle pagine della galleria e di dettaglio"
+msgid "Trash icon at gallery & detail page."
+msgstr "l'icona nelle pagine della galleria e di dettaglio"
 
 #: includes/class-flexi-settings.php:387
 msgid "User icon"
 msgstr "Icona dell'utente"
 
 #: includes/class-flexi-settings.php:388
-msgid "Hide/Show user icon at gallery & detail page."
-msgstr "Mostra/Nascondi l'icona nelle pagine della galleria e di dettaglio"
+msgid "Profile icon at gallery & detail page."
+msgstr "icona per l'editing nelle pagine della galleria e di dettaglio"
 
 #: includes/class-flexi-settings.php:394
 msgid "Download icon"
 msgstr "Icona per il download"
 
 #: includes/class-flexi-settings.php:395
-msgid "Hide/Show download icon at gallery & detail page."
-msgstr "Mostra/Nascondi l'icona nelle pagine della galleria e di dettaglio"
+msgid "Download icon at gallery & detail page."
+msgstr "l'icona nelle pagine della galleria e di dettaglio"
 
 #: includes/class-flexi-settings.php:403
 msgid "Enable Lightbox or Popup"
@@ -1113,10 +1118,6 @@ msgstr "Applicato alla pagina della galleria"
 msgid "Medium size"
 msgstr "Dimensione media"
 
-#: includes/class-flexi-settings.php:470
-msgid "medium"
-msgstr "media"
-
 #: includes/class-flexi-settings.php:481
 msgid "Large size"
 msgstr "Dimensione grande"
@@ -1132,8 +1133,8 @@ msgstr "Pagina di dettaglio immagine"
 #: includes/class-flexi-settings.php:499
 msgid "Replaces the SLUG value used by custom post type \"flexi\"."
 msgstr ""
-"Sostituisce il valore SLUG utilizzato dal tipo di post personalizzato \"flexi"
-"\"."
+"Sostituisce il valore SLUG utilizzato dal tipo di post personalizzato "
+"\"flexi\"."
 
 #: includes/class-flexi-settings.php:774
 msgid "Select layout"
@@ -1282,7 +1283,7 @@ msgid "Logout"
 msgstr "Esci"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:87
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:169
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:168
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:165
 msgid "Under Review"
 msgstr "In corso di revisione"
@@ -1351,12 +1352,12 @@ msgid ""
 msgstr ""
 "<ul>\n"
 "    <li>Un elemento può avere la stessa posizione</li>\n"
-"    <li>Si accede alla pagina di dettaglio cliccando sull'icona <span class="
-"\"dashicons dashicons-external\">&nbsp;</span></li>\n"
-"    <li>Il titolo della pagina viene posizionato in base al tema utilizzato</"
-"li>\n"
-"    <li> Per un'anteprima, vai su Flexi ➾ Tutti i post & mostra il post </"
-"li>\n"
+"    <li>Si accede alla pagina di dettaglio cliccando sull'icona <span "
+"class=\"dashicons dashicons-external\">&nbsp;</span></li>\n"
+"    <li>Il titolo della pagina viene posizionato in base al tema "
+"utilizzato</li>\n"
+"    <li> Per un'anteprima, vai su Flexi ➾ Tutti i post & mostra il post </li>"
+"\n"
 "    </ul>"
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:71
@@ -1384,47 +1385,45 @@ msgid "-- Hide --"
 msgstr "-- Nascondi --"
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:91
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:90
-#: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:88
-msgid "Location 1"
-msgstr "Posizione 1"
-
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:92
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:91
-#: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:89
-msgid "Location 2"
-msgstr "Posizione 2"
-
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:93
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:92
-#: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:90
-msgid "Location 3"
-msgstr "Posizione 3"
-
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:94
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:93
-#: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:91
-msgid "Location 4"
-msgstr "Posizione 4"
-
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:95
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:90
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:91
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:92
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:93
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:94
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:95
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:96
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:97
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:98
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:99
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:100
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:101
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:102
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:103
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:104
+#: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:88
+#: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:89
+#: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:90
+#: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:91
 #: public/partials/layout/popup/custom/class-flexi-popup-layout-custom.php:92
-msgid "Location 5"
-msgstr "Posizione 5"
+msgid "Location"
+msgstr "Posizione"
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:219
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:218
 msgid "Flexi- Basic Detail Layout"
 msgstr "Flexi - Dettaglio del Layout Basic"
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:221
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:220
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
 msgid "Add widgets here to appear in detail layout as specified location."
 msgstr ""
 "Aggiungi qui i widget per farli apparire nella posizione specificata nel "
 "dettaglio del layout."
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:221
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:220
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
 msgid "Manage"
 msgstr "Gestisci"
@@ -1445,53 +1444,13 @@ msgid ""
 msgstr ""
 "<ul>\n"
 "    <li>Un elemento può avere la stessa posizione</li>\n"
-"    <li>Si accede alla pagina di dettaglio cliccando sull'icona <span class="
-"\"dashicons dashicons-external\">&nbsp;</span></li>\n"
-"    <li>Il titolo della pagina viene posizionato in base al tema utilizzato</"
-"li>\n"
-"    <li> Per un'anteprima, vai su Flexi ➾ Tutti i post & mostra il post </"
-"li>\n"
+"    <li>Si accede alla pagina di dettaglio cliccando sull'icona <span "
+"class=\"dashicons dashicons-external\">&nbsp;</span></li>\n"
+"    <li>Il titolo della pagina viene posizionato in base al tema "
+"utilizzato</li>\n"
+"    <li> Per un'anteprima, vai su Flexi ➾ Tutti i post & mostra il post </li>"
+"\n"
 "    </ul>"
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:95
-msgid "Location 6"
-msgstr "Posizione 6"
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:96
-msgid "Location 7"
-msgstr "Posizione 7"
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:97
-msgid "Location 8"
-msgstr "Posizione 8"
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:98
-msgid "Location 9"
-msgstr "Posizione 9"
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:99
-msgid "Location 10"
-msgstr "Posizione 10"
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:100
-msgid "Location 11"
-msgstr "Posizione 11"
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:101
-msgid "Location 12"
-msgstr "Posizione12"
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:102
-msgid "Location 13"
-msgstr "Posizione 13"
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:103
-msgid "Location 14"
-msgstr "Posizione 14"
-
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:104
-msgid "Location 15"
-msgstr "Posizione 15"
 
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:217
 msgid "Flexi- Complex Detail Layout"

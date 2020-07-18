@@ -74,7 +74,7 @@ class Flexi_Admin_Dashboard_Intro
 						</ul>
 				</li>
 				<li>
-                    <a href='<?php echo flexi_get_button_url('', false, 'primary_page', 'flexi_image_layout_settings'); ?>' target='_blank'><div class="tooltip-container">Primary Gallery Page<span class="tooltip"><b>Base of Flexi Gallery</b><br>[flexi-primary]<br>Do not add additional filter parameters.<br>Permalinks refers to this page.</span></div></a>
+                    <a href='<?php echo flexi_get_button_url('', false, 'primary_page', 'flexi_image_layout_settings'); ?>' target='_blank'><div class="tooltip-container">Primary Gallery Page<span class="tooltip"><b>Base of Flexi Plugin</b><br>[flexi-primary]<br>Do not add additional filter parameters.<br>Permalinks refers to this page.</span></div></a>
 					<ul>
 						<li><a href="#"><div class="tooltip-container">Filters by URL<span class="tooltip"><b>Filters by URL Parameter</b><br>Search Keyword, Album, Username, Tags</span></div></a>
 							<ul>
