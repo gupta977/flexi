@@ -27,15 +27,25 @@ foreach ($this->sections as $section) {
 <div id="flexi-settings" class="wrap flexi-settings">
 <?php
 $flexi_activated = get_option('flexi_activated');
+//if (true) {
 if ($flexi_activated) {
+ //Setup completed at: \flexi\includes\user_dashboard\class-flexi-user-dashboard.php
  ?>
+<div class="card">
 <h1><?php esc_html_e('Welcome to Flexi', 'flexi');?></h1>
-<div class="card"><?php echo __('Post one file & click "My Dashboard" button to auto setup Flexi settings. You will have full setting page in next visit.', 'flexi'); ?></div>
-<br><?php echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . "' class='button button-primary'>" . __('Post files', 'flexi') . "</a>" ?>
-<br><br>
-<?php
+    <p>Flexi is activated but not yet fully setup. Follow the steps below to auto configure the installation.</p>
+    <p>
+    <b>Step 1:</b> Click 'Post to Configure' button below to upload one sample file.
+    <br><b>Step 2:</b> Click on 'My Dashboard' button appeared just after file is uploaded.
+    <br><br><b>All settings will be applied automatically based on server configuration</b>
+    </p>
+
+    <p><?php echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . "' class='button button-primary'>" . __('Post to Configure', 'flexi') . "</a>" ?>
+    <br> <br><?php
 echo "<a href='" . flexi_get_button_url('', false, 'my_gallery', 'flexi_image_layout_settings') . "' >" . __('Skip, I will setup manually', 'flexi') . "</a><br>"
  ?>
+ </p>
+</div>
 
  <?php
 

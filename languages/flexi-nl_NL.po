@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-18 15:18+0545\n"
-"PO-Revision-Date: 2020-07-18 15:25+0545\n"
+"POT-Creation-Date: 2020-07-19 14:55+0545\n"
+"PO-Revision-Date: 2020-07-19 09:14+0000\n"
 "Last-Translator: \n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html__\n"
@@ -51,7 +51,7 @@ msgstr "Flexi-tags"
 msgid "Tags"
 msgstr "Tags"
 
-#: admin/partials/dashboard.php:2 admin/partials/settings.php:32
+#: admin/partials/dashboard.php:2 admin/partials/settings.php:35
 msgid "Welcome to Flexi"
 msgstr "Welkom bij Flexi"
 
@@ -63,8 +63,7 @@ msgstr ""
 "Laat bezoekers om beelden, video, audio, youtube van frontend met volledige "
 "controles te plaatsen."
 
-#: admin/partials/dashboard.php:6 admin/partials/settings.php:34
-#: includes/class-flexi-links.php:18
+#: admin/partials/dashboard.php:6 includes/class-flexi-links.php:18
 msgid "Post files"
 msgstr "Bestanden posten"
 
@@ -80,17 +79,15 @@ msgstr "Documentatie"
 msgid "Live Demo"
 msgstr "Live-demo"
 
-#: admin/partials/settings.php:33
-msgid ""
-"Post one file & click \"My Dashboard\" button to auto setup Flexi settings. "
-"You will have full setting page in next visit."
-msgstr ""
+#: admin/partials/settings.php:43
+msgid "Post to Configure"
+msgstr "Te configureren post"
 
-#: admin/partials/settings.php:37
+#: admin/partials/settings.php:45
 msgid "Skip, I will setup manually"
 msgstr "Overslaan, ik zal handmatig instellen"
 
-#: admin/partials/settings.php:46
+#: admin/partials/settings.php:56
 msgid "Flexi Plugin Settings"
 msgstr "Instellingen voor flexi-plugins"
 
@@ -225,9 +222,9 @@ msgstr "FancyBox Lightbox uitschakelen"
 
 #: includes/addon/class-flexi-conflict.php:68
 msgid ""
-"Disable it, <br>if fancyBox v3.5.7 is used by other plugins & theme. So "
-"that, only one instance of it is available.<br>If you are not using lightbox "
-"at all."
+"Disable it, <br>if fancyBox v3.5.7 is used by other plugins & theme. So that,"
+" only one instance of it is available.<br>If you are not using lightbox at "
+"all."
 msgstr ""
 
 #: includes/addon/class-flexi-custom-field.php:29
@@ -291,12 +288,12 @@ msgstr "instellingen"
 #: includes/addon/class-flexi-ffmpeg.php:34
 msgid ""
 "extension must be installed on your server.<br><b>shell_exec</b> should be "
-"enabled by PHP or purchase <a href=\"https://odude.com/wp-content/uploads/"
-"woocommerce-placeholder.png\">FFMPEG- Flexi Library</a><br>This will only "
-"get applied to newly submitted video files.<br>Processing time based on "
-"video file sizes.<br>Thumbnail are based on media settings, medium "
-"size<br>Animated video results poor quality. Install Flexi-PRO for higher "
-"resolution.<hr>FFMPEG Library required purchase of flexi_ffmpeg.<hr>"
+"enabled by PHP or purchase <a href=\"https://odude.com/wp-"
+"content/uploads/woocommerce-placeholder.png\">FFMPEG- Flexi Library</a><br>"
+"This will only get applied to newly submitted video files.<br>Processing "
+"time based on video file sizes.<br>Thumbnail are based on media settings, "
+"medium size<br>Animated video results poor quality. Install Flexi-PRO for "
+"higher resolution.<hr>FFMPEG Library required purchase of flexi_ffmpeg.<hr>"
 msgstr ""
 
 #: includes/addon/class-flexi-ffmpeg.php:57
@@ -321,11 +318,11 @@ msgstr "Pad FFMPEG-map"
 
 #: includes/addon/class-flexi-ffmpeg.php:79
 msgid ""
-"This should be the folder where FFMPEG installed on your server. Eg. /usr/"
-"local/bin or E:\\ffmpeg\\bin\\ffmpeg.exe"
+"This should be the folder where FFMPEG installed on your server. Eg. "
+"/usr/local/bin or E:\\ffmpeg\\bin\\ffmpeg.exe"
 msgstr ""
-"Dit moet de map zijn waar FFMPEG op uw server is geïnstalleerd. "
-"Bijvoorbeeld. /usr/local/bin of E: \\ffmpeg\\bin\\ffmpeg.exe"
+"Dit moet de map zijn waar FFMPEG op uw server is geïnstalleerd. Bijvoorbeeld."
+" /usr/local/bin of E: \\ffmpeg\\bin\\ffmpeg.exe"
 
 #: includes/addon/class-flexi-ffmpeg.php:87
 msgid "FFMPEG Processor"
@@ -410,8 +407,8 @@ msgstr "Extra MIME-type"
 
 #: includes/addon/class-flexi-mime-type.php:90
 msgid ""
-"Add extra file type if not listed above separated with comma.<br>Eg. video/"
-"avi,video/3gpp,audio/midi<br>Required Flexi-PRO"
+"Add extra file type if not listed above separated with comma.<br>Eg. "
+"video/avi,video/3gpp,audio/midi<br>Required Flexi-PRO"
 msgstr ""
 
 #: includes/addon/class-flexi-ultimate-member.php:30
@@ -445,6 +442,7 @@ msgstr ""
 "profielpagina. Bijvoorbeeld. um-faicon-foto-o"
 
 #: includes/class-flexi-admin-column.php:21
+#: includes/user_dashboard/class-flexi-user-gallery.php:78
 msgid "Title"
 msgstr "Titel"
 
@@ -729,11 +727,10 @@ msgstr "Galerij-instellingen"
 
 #: includes/class-flexi-settings.php:137
 msgid ""
-"Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes."
-"<br>Specific settings will be inactive if same attribute is used in "
-"shortcode.<br>It is advisable use one gallery per page to avoid conflict."
-"<br>Settings will be not be implemented, if shortcode contains specific "
-"attributes. "
+"Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>"
+"Specific settings will be inactive if same attribute is used in shortcode."
+"<br>It is advisable use one gallery per page to avoid conflict.<br>Settings "
+"will be not be implemented, if shortcode contains specific attributes. "
 msgstr ""
 
 #: includes/class-flexi-settings.php:142
@@ -1225,6 +1222,10 @@ msgstr "Flexi bewerken/wijzigen"
 msgid "Search post"
 msgstr "Zoeken"
 
+#: includes/user_dashboard/class-flexi-user-dashboard.php:43
+msgid "Search"
+msgstr "Zoeken"
+
 #: includes/user_dashboard/class-flexi-user-dashboard.php:49
 msgid "My Posts"
 msgstr "Mijn Posts"
@@ -1257,6 +1258,10 @@ msgstr "Mijn galerij"
 msgid "Logout"
 msgstr "Afmelden"
 
+#: includes/user_dashboard/class-flexi-user-gallery.php:83
+msgid "Status"
+msgstr "Status"
+
 #: includes/user_dashboard/class-flexi-user-gallery.php:87
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:168
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:165
@@ -1264,8 +1269,12 @@ msgid "Under Review"
 msgstr "Onder revisie"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:91
-msgid "Live"
-msgstr "Levende"
+msgid "Visible"
+msgstr "Zichtbaar"
+
+#: includes/user_dashboard/class-flexi-user-gallery.php:96
+msgid "Action"
+msgstr "Action"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:112
 msgid "Total number of records you have submitted: "

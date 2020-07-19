@@ -40,7 +40,7 @@ class Flexi_User_Dashboard
     <form method="get" class="pure-form">
       <input type="text" name="search" placeholder="<?php echo __('Search post', 'flexi'); ?>"
         class="pure-input-rounded">
-      <button type="submit" class="pure-button">Search</button>
+      <button type="submit" class="pure-button"><?php echo __("Search", "flexi"); ?></button>
     </form>
   </div>
 </div>

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-18 15:18+0545\n"
-"PO-Revision-Date: 2020-07-18 09:42+0000\n"
+"POT-Creation-Date: 2020-07-19 14:54+0545\n"
+"PO-Revision-Date: 2020-07-19 09:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -51,7 +51,7 @@ msgstr "Flexi-Schlagwörter"
 msgid "Tags"
 msgstr "Schlagwörter"
 
-#: admin/partials/dashboard.php:2 admin/partials/settings.php:32
+#: admin/partials/dashboard.php:2 admin/partials/settings.php:35
 msgid "Welcome to Flexi"
 msgstr "Willkommen bei Flexi"
 
@@ -63,8 +63,7 @@ msgstr ""
 "Lassen Sie Besucher Bilder, Videos, Audio und Youtube-Videos mit voller "
 "Kontrolle vom Frontend aus posten."
 
-#: admin/partials/dashboard.php:6 admin/partials/settings.php:34
-#: includes/class-flexi-links.php:18
+#: admin/partials/dashboard.php:6 includes/class-flexi-links.php:18
 msgid "Post files"
 msgstr "Postdateien"
 
@@ -80,17 +79,15 @@ msgstr "Dokumentation"
 msgid "Live Demo"
 msgstr "Live Demo"
 
-#: admin/partials/settings.php:33
-msgid ""
-"Post one file & click \"My Dashboard\" button to auto setup Flexi settings. "
-"You will have full setting page in next visit."
-msgstr ""
+#: admin/partials/settings.php:43
+msgid "Post to Configure"
+msgstr "Nach der Konfiguration"
 
-#: admin/partials/settings.php:37
+#: admin/partials/settings.php:45
 msgid "Skip, I will setup manually"
 msgstr "Überspringen, ich werde manuell einrichten"
 
-#: admin/partials/settings.php:46
+#: admin/partials/settings.php:56
 msgid "Flexi Plugin Settings"
 msgstr "Flexi Plugin Einstellungen"
 
@@ -461,6 +458,7 @@ msgstr ""
 "werden sollen. Beispiel: um-faicon-picture-o"
 
 #: includes/class-flexi-admin-column.php:21
+#: includes/user_dashboard/class-flexi-user-gallery.php:78
 msgid "Title"
 msgstr "Titel"
 
@@ -1258,6 +1256,10 @@ msgstr "Flexi Bearbeiten / Ändern"
 msgid "Search post"
 msgstr "Beitrag suchen"
 
+#: includes/user_dashboard/class-flexi-user-dashboard.php:43
+msgid "Search"
+msgstr "Suche"
+
 #: includes/user_dashboard/class-flexi-user-dashboard.php:49
 msgid "My Posts"
 msgstr "Meine Beiträge"
@@ -1290,6 +1292,10 @@ msgstr "Meine Galerie"
 msgid "Logout"
 msgstr "Abmelden"
 
+#: includes/user_dashboard/class-flexi-user-gallery.php:83
+msgid "Status"
+msgstr "Status"
+
 #: includes/user_dashboard/class-flexi-user-gallery.php:87
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:168
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:165
@@ -1297,8 +1303,12 @@ msgid "Under Review"
 msgstr "Wird überprüft"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:91
-msgid "Live"
-msgstr "Live"
+msgid "Visible"
+msgstr "Sichtbar"
+
+#: includes/user_dashboard/class-flexi-user-gallery.php:96
+msgid "Action"
+msgstr "Aktion"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:112
 msgid "Total number of records you have submitted: "

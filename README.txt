@@ -128,6 +128,11 @@ You can also add/remove form fields based on pages & posts.
 * Italian Language (it_IT) (Thanks to contributor: Avelino)
 * Dutch langauge (nl_NL)
 * Hindi India langauge (hi_IN) (Thanks to Aaditya Naman Gupta)
+* Russian Language (ru_RU)
+* Spanish Language (es_ES)
+* French Language (fr_FR)
+* Japanese Language (ja)
+* Portuguese Language (pa_PT)
 
 = PRO KEY FEATURES =
 
@@ -183,9 +188,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
-= 1.0.49 =
+= 1.0.490 =
 * Updated language
-* Added Hindi language
+* Added Hindi , French, Spanish , Russian, Japanese, Portuguese Language
 
 = 1.0.481 =
 * Manually assign thumbnail of any media from backend
