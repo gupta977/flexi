@@ -520,6 +520,9 @@ function flexi_default_args($params)
 
  if (isset($_POST['cat'])) {
   $value['category'] = intval($_POST['cat']);
+  if (empty(intval($_POST['cat']))) {
+   $value['category'] = flexi_get_option('global_album', 'flexi_categories_settings', '');
+  }
  } else {
   $value['category'] = flexi_get_option('global_album', 'flexi_categories_settings', '');
  }

@@ -188,6 +188,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.590 =
+* Fixed default album selection for -none- category
+
 = 1.0.490 =
 * Updated language
 * Added Hindi , French, Spanish , Russian, Japanese, Portuguese Language
