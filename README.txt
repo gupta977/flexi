@@ -151,6 +151,7 @@ You can also add/remove form fields based on pages & posts.
 == Installation ==
 
 Search for 'flexi' and install it as other regular plugins.
+Go to Flexi Settings and follow the guideline, it will auto configure the required settings. 
 
 
 == Frequently Asked Questions ==
