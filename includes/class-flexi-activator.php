@@ -42,9 +42,6 @@ class Flexi_Activator
   // Insert the plugin settings and default values for the first time
   $defaults = flexi_get_default_settings();
 
-  //Create Pages and assign to settings
-  $pages = flexi_create_pages();
-
   // Insert the plugin version
   add_option('flexi_version', FLEXI_VERSION);
 

@@ -190,6 +190,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 1.0.590 =
 * Fixed default album selection for -none- category
+* Prevent creating duplicate pages
 
 = 1.0.490 =
 * Updated language

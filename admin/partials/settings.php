@@ -30,6 +30,10 @@ $flexi_activated = get_option('flexi_activated');
 //if (true) {
 if ($flexi_activated) {
  //Setup completed at: \flexi\includes\user_dashboard\class-flexi-user-dashboard.php
+
+ //Create Pages and assign to settings
+ flexi_create_pages();
+
  ?>
 <div class="card">
 <h1><?php esc_html_e('Welcome to Flexi', 'flexi');?></h1>
