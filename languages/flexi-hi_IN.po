@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-19 14:52+0545\n"
-"PO-Revision-Date: 2020-07-19 09:12+0000\n"
+"POT-Creation-Date: 2020-07-21 16:52+0545\n"
+"PO-Revision-Date: 2020-07-21 11:11+0000\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "Language: hi_IN\n"
@@ -51,7 +51,7 @@ msgstr "फ्लेक्सी टैग्स"
 msgid "Tags"
 msgstr "टैग"
 
-#: admin/partials/dashboard.php:2 admin/partials/settings.php:35
+#: admin/partials/dashboard.php:2 admin/partials/settings.php:39
 msgid "Welcome to Flexi"
 msgstr "फ्लेक्सी में आपका स्वागत है"
 
@@ -79,19 +79,19 @@ msgstr "दस्तावेज़ीकरण"
 msgid "Live Demo"
 msgstr "लाइव डेमो"
 
-#: admin/partials/settings.php:43
+#: admin/partials/settings.php:47
 msgid "Post to Configure"
 msgstr "कॉन्फ़िगर करने के लिए पोस्ट"
 
-#: admin/partials/settings.php:45
+#: admin/partials/settings.php:49
 msgid "Skip, I will setup manually"
 msgstr "छोड़ें, मैं मैन्युअल रूप से सेटअप होगा"
 
-#: admin/partials/settings.php:56
+#: admin/partials/settings.php:60
 msgid "Flexi Plugin Settings"
 msgstr "फ्लेक्सी प्लगइन विन्यास"
 
-#: block/src/form/block.js:59 includes/functions.php:1000
+#: block/src/form/block.js:59 includes/functions.php:1003
 msgid "Flexi Submission Form"
 msgstr "फ्लेक्सी प्रस्तुतिकरण फॉर्म"
 
@@ -799,7 +799,7 @@ msgid "Effect on mouse over image."
 msgstr "छवि पर माउस पर प्रभाव."
 
 #: includes/class-flexi-settings.php:226 includes/class-flexi-settings.php:239
-#: includes/functions.php:677
+#: includes/functions.php:680
 msgid "None"
 msgstr "कुछ नहीं"
 
@@ -1140,6 +1140,18 @@ msgstr "मिटाएँ"
 msgid "Download"
 msgstr "डाउनलोड करें"
 
+#: includes/dashboard/class-flexi-dashboard-intro.php:13
+msgid "Flexi Intro"
+msgstr "फ्लेक्सी इंट्रो"
+
+#: includes/dashboard/class-flexi-dashboard-pages.php:13
+msgid "Flexi Pages"
+msgstr "फ्लेक्सी पृष्ठ"
+
+#: includes/dashboard/class-flexi-dashboard-pro.php:13
+msgid "Flexi-Pro"
+msgstr "फ्लेक्सी-प्रो"
+
 #: includes/flexi_ajax_post.php:92
 msgid "Your submission is under review"
 msgstr "आपका निवेदन समीक्षा के अधीन है"
@@ -1176,39 +1188,39 @@ msgstr "पासवर्ड"
 msgid "Remember Me"
 msgstr "मुझे याद रखें"
 
-#: includes/functions.php:629
+#: includes/functions.php:632
 msgid "Required Flexi-PRO"
 msgstr "आवश्यक फ्लेक्सी-पीआरओ"
 
-#: includes/functions.php:951
+#: includes/functions.php:954
 msgid "Title cannot be blank."
 msgstr "शीर्षक खाली नहीं किया जा सकता है."
 
-#: includes/functions.php:954
+#: includes/functions.php:957
 msgid "Invalid file type"
 msgstr "अवैध फ़ाइल प्रकार"
 
-#: includes/functions.php:957
+#: includes/functions.php:960
 msgid "Only image files are allowed."
 msgstr "सिर्फ छवि फ़ाइलों की अनुमति दी जाती है."
 
-#: includes/functions.php:960
+#: includes/functions.php:963
 msgid "File size is too big."
 msgstr "फ़ाइल आकार बहुत बड़ा है."
 
-#: includes/functions.php:963
+#: includes/functions.php:966
 msgid "Captcha security code is invalid."
 msgstr "कैप्टाचा सुरक्षा कोड अवैध है."
 
-#: includes/functions.php:986
+#: includes/functions.php:989
 msgid "Flexi Primary Gallery"
 msgstr "फ्लेक्सी प्राथमिक गैलरी"
 
-#: includes/functions.php:993
+#: includes/functions.php:996
 msgid "Flexi User Dashboard"
 msgstr "फ्लेक्सी उपयोगकर्ता डैशबोर्ड"
 
-#: includes/functions.php:1007
+#: includes/functions.php:1010
 msgid "Flexi Edit/Modify"
 msgstr "फ्लेक्सी संपादन/रूपांतरित"
 
@@ -1257,7 +1269,7 @@ msgid "Status"
 msgstr "स्थिति"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:87
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:168
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:163
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:165
 msgid "Under Review"
 msgstr "समीक्षा के अंतर्गत"
@@ -1381,17 +1393,17 @@ msgstr "-छुपाएँ (H)"
 msgid "Location"
 msgstr "स्थान"
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:218
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:213
 msgid "Flexi- Basic Detail Layout"
 msgstr "Flei-बुनियादी डालमेल लेआउट"
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:220
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:215
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
 msgid "Add widgets here to appear in detail layout as specified location."
 msgstr ""
 "यहाँ विजेट जोड़ें के रूप में विस्तृत लेआउट के रूप में विवरण में प्रकट करें."
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:220
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:215
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
 msgid "Manage"
 msgstr "प्रबंधित करें"
@@ -1414,6 +1426,10 @@ msgstr ""
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:217
 msgid "Flexi- Complex Detail Layout"
 msgstr "फ्लेग-कॉम्प्लेकल डिटेल्स लेआउट"
+
+#: public/partials/layout/gallery/attach_footer.php:14
+msgid "Load More"
+msgstr "अधिक लोड करें"
 
 #: public/partials/layout/gallery/basic/footer.php:6
 #: public/partials/layout/gallery/masonry/footer.php:6

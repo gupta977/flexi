@@ -324,8 +324,8 @@ evalue="' . $evalue . '"
 
  public function form($instance)
  {
-  $title = !empty($instance['title']) ? $instance['title'] : esc_html__('', 'flexi');
-  $cat   = !empty($instance['cat']) ? $instance['cat'] : esc_html__('', 'flexi');
+  $title = !empty($instance['title']) ? $instance['title'] : '';
+  $cat   = !empty($instance['cat']) ? $instance['cat'] : '';
   ?>
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_attr_e('Title:', 'flexi');?></label>

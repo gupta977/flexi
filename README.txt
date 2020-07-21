@@ -182,13 +182,16 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 3. Masonry Layout
 4. Regular Layout
 5. Wide Layout
-6. Flexi Guten Block editor
+6. Flexi Gutenblock editor
 7. Detail Page
 8. Backend List post
 9. Frontend User Dashboard
 10. Simple easy setting page
 
 == Changelog ==
+= 1.0.600 =
+* Tooltip over button
+
 = 1.0.590 =
 * Fixed default album selection for -none- category
 * Prevent creating duplicate pages

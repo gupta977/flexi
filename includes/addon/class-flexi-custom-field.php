@@ -73,7 +73,7 @@ class Flexi_Addon_Custom_Fields
     ),
     array(
      'name'        => 'flexi_field_1_display',
-     'label'       => __('', 'flexi'),
+     'label'       => '',
      'description' => '',
      'type'        => 'multicheck',
      'options'     => array(
@@ -103,7 +103,7 @@ class Flexi_Addon_Custom_Fields
      ),
      array(
       'name'        => 'flexi_field_' . $x . '_display',
-      'label'       => __('', 'flexi'),
+      'label'       => '',
       'description' => '',
       'type'        => 'multicheck',
       'options'     => array(

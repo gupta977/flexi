@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-19 14:54+0545\n"
-"PO-Revision-Date: 2020-07-19 09:13+0000\n"
+"POT-Creation-Date: 2020-07-21 16:52+0545\n"
+"PO-Revision-Date: 2020-07-21 11:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -51,7 +51,7 @@ msgstr "Flexi-Schlagwörter"
 msgid "Tags"
 msgstr "Schlagwörter"
 
-#: admin/partials/dashboard.php:2 admin/partials/settings.php:35
+#: admin/partials/dashboard.php:2 admin/partials/settings.php:39
 msgid "Welcome to Flexi"
 msgstr "Willkommen bei Flexi"
 
@@ -79,19 +79,19 @@ msgstr "Dokumentation"
 msgid "Live Demo"
 msgstr "Live Demo"
 
-#: admin/partials/settings.php:43
+#: admin/partials/settings.php:47
 msgid "Post to Configure"
 msgstr "Nach der Konfiguration"
 
-#: admin/partials/settings.php:45
+#: admin/partials/settings.php:49
 msgid "Skip, I will setup manually"
 msgstr "Überspringen, ich werde manuell einrichten"
 
-#: admin/partials/settings.php:56
+#: admin/partials/settings.php:60
 msgid "Flexi Plugin Settings"
 msgstr "Flexi Plugin Einstellungen"
 
-#: block/src/form/block.js:59 includes/functions.php:1000
+#: block/src/form/block.js:59 includes/functions.php:1003
 msgid "Flexi Submission Form"
 msgstr "Flexi-Anmeldeformular"
 
@@ -833,7 +833,7 @@ msgid "Effect on mouse over image."
 msgstr "Effekt für Maus-über-Bild"
 
 #: includes/class-flexi-settings.php:226 includes/class-flexi-settings.php:239
-#: includes/functions.php:677
+#: includes/functions.php:680
 msgid "None"
 msgstr "Keiner"
 
@@ -1180,6 +1180,18 @@ msgstr "Löschen"
 msgid "Download"
 msgstr "Download"
 
+#: includes/dashboard/class-flexi-dashboard-intro.php:13
+msgid "Flexi Intro"
+msgstr "Flexi Intro"
+
+#: includes/dashboard/class-flexi-dashboard-pages.php:13
+msgid "Flexi Pages"
+msgstr "Flexi-Seiten"
+
+#: includes/dashboard/class-flexi-dashboard-pro.php:13
+msgid "Flexi-Pro"
+msgstr "Flexi-Pro"
+
 #: includes/flexi_ajax_post.php:92
 msgid "Your submission is under review"
 msgstr "Ihre Einreichung wird derzeit überprüft"
@@ -1216,39 +1228,39 @@ msgstr "Passwort"
 msgid "Remember Me"
 msgstr "An mich erinnern"
 
-#: includes/functions.php:629
+#: includes/functions.php:632
 msgid "Required Flexi-PRO"
 msgstr "Flexi-Pro erforderlich"
 
-#: includes/functions.php:951
+#: includes/functions.php:954
 msgid "Title cannot be blank."
 msgstr "Der Titel darf nicht leer sein."
 
-#: includes/functions.php:954
+#: includes/functions.php:957
 msgid "Invalid file type"
 msgstr "ungültiger Dateityp"
 
-#: includes/functions.php:957
+#: includes/functions.php:960
 msgid "Only image files are allowed."
 msgstr "Nur Bilddateien sind zulässig."
 
-#: includes/functions.php:960
+#: includes/functions.php:963
 msgid "File size is too big."
 msgstr "Die Datei ist zu groß."
 
-#: includes/functions.php:963
+#: includes/functions.php:966
 msgid "Captcha security code is invalid."
 msgstr "Der Captcha-Sicherheitscode ist ungültig."
 
-#: includes/functions.php:986
+#: includes/functions.php:989
 msgid "Flexi Primary Gallery"
 msgstr "Flexi Hauptgalerie"
 
-#: includes/functions.php:993
+#: includes/functions.php:996
 msgid "Flexi User Dashboard"
 msgstr "Flexi Benutzer-Dashboard"
 
-#: includes/functions.php:1007
+#: includes/functions.php:1010
 msgid "Flexi Edit/Modify"
 msgstr "Flexi Bearbeiten / Ändern"
 
@@ -1297,7 +1309,7 @@ msgid "Status"
 msgstr "Status"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:87
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:168
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:163
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:165
 msgid "Under Review"
 msgstr "Wird überprüft"
@@ -1432,18 +1444,18 @@ msgstr "-- Ausblenden --"
 msgid "Location"
 msgstr "Standort"
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:218
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:213
 msgid "Flexi- Basic Detail Layout"
 msgstr "Flexi- Basic Detaillayout"
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:220
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:215
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
 msgid "Add widgets here to appear in detail layout as specified location."
 msgstr ""
 "Fügen Sie hier Widgets hinzu, um sie im Detaillayout an spezifischer Stelle "
 "anzuzeigen."
 
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:220
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:215
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:219
 msgid "Manage"
 msgstr "Verwalten"
@@ -1474,6 +1486,10 @@ msgstr ""
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:217
 msgid "Flexi- Complex Detail Layout"
 msgstr "Flexi- Komplexes Detaillayout"
+
+#: public/partials/layout/gallery/attach_footer.php:14
+msgid "Load More"
+msgstr "Mehr laden"
 
 #: public/partials/layout/gallery/basic/footer.php:6
 #: public/partials/layout/gallery/masonry/footer.php:6
