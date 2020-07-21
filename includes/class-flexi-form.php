@@ -371,7 +371,7 @@ action="' . admin_url("admin-ajax.php") . '"
 
   ob_start();
   if ('post_title' == $attr['type']) {
-   echo $frm->addLabelFor("user-submitted-title", $attr['title']);
+   echo $frm->addLabelFor("user-submitted-title", __($attr['title'], 'flexi'));
    // arguments: type, name, value
    if ('' == $attr['edit']) {
     echo $frm->addInput('text', "user-submitted-title", $attr['value'], array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
@@ -380,14 +380,14 @@ action="' . admin_url("admin-ajax.php") . '"
    }
 
   } else if ('video_url' == $attr['type']) {
-   echo $frm->addLabelFor("user-submitted-url", $attr['title']);
+   echo $frm->addLabelFor("user-submitted-url", __($attr['title'], 'flexi'));
    if ('' == $attr['edit']) {
     echo $frm->addInput('url', "user-submitted-url", $attr['value'], array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
    } else {
     echo $frm->addInput('url', "user-submitted-url", flexi_get_detail($_GET['id'], 'flexi_url'), array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
    }
   } else if ('category' == $attr['type']) {
-   echo $frm->addLabelFor('cat', $attr['title']);
+   echo $frm->addLabelFor('cat', __($attr['title'], 'flexi'));
    if ('' == $attr['edit']) {
     echo flexi_droplist_album('flexi_category', '', array(), $attr['id']);
    } else {
@@ -396,7 +396,7 @@ action="' . admin_url("admin-ajax.php") . '"
    }
 
   } else if ('tag' == $attr['type']) {
-   echo $frm->addLabelFor("tags", $attr['title']);
+   echo $frm->addLabelFor("tags", __($attr['title'], 'flexi'));
    // arguments: type, name, value
    if ('' == $attr['edit']) {
     echo $frm->addInput('', "tags", $attr['value'], array('id' => 'tags', 'placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
@@ -416,14 +416,14 @@ action="' . admin_url("admin-ajax.php") . '"
    do_action("flexi_captcha");
 
   } else if ('file' == $attr['type']) {
-   echo $frm->addLabelFor('user-submitted-image[]', $attr['title']);
+   echo $frm->addLabelFor('user-submitted-image[]', __($attr['title'], 'flexi'));
    echo $frm->addInput('file', "user-submitted-image[]", '', array('id' => 'file', 'class' => $attr['class'], 'required' => $attr['required']));
 
   } else if ('file_multiple' == $attr['type']) {
    if (is_flexi_pro()) {
     echo $frm->startTag('div', array('class' => $attr['class']));
     echo $frm->addInput('file', "user-submitted-image[]", '', array('id' => 'file', 'class' => $attr['class'] . '_hide', 'required' => $attr['required'], 'multiple' => $attr['multiple']));
-    echo "<p>" . $attr['title'] . "</p>";
+    echo "<p>" . __($attr['title'], 'flexi') . "</p>";
     echo $frm->endTag('div');
 
    } else {
@@ -431,7 +431,7 @@ action="' . admin_url("admin-ajax.php") . '"
    }
 
   } else if ('article' == $attr['type']) {
-   echo $frm->addLabelFor('user-submitted-content', $attr['title']);
+   echo $frm->addLabelFor('user-submitted-content', __($attr['title'], 'flexi'));
 
    // arguments: name, rows, cols, value, optional assoc. array
    if ('' == $attr['edit']) {
@@ -455,12 +455,12 @@ action="' . admin_url("admin-ajax.php") . '"
   } else if ('text' == $attr['type']) {
    if ('' == $attr['edit']) {
     // arguments: for (id of associated form element), text
-    echo $frm->addLabelFor($attr['name'], $attr['title']);
+    echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
     // arguments: type, name, value
     echo $frm->addInput('text', $attr['name'], $attr['value'], array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
    } else {
     // arguments: for (id of associated form element), text
-    echo $frm->addLabelFor($attr['name'], $attr['title']);
+    echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
     // arguments: type, name, value
     echo $frm->addInput('text', $attr['name'], flexi_custom_field_value($_GET['id'], $attr['name']), array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
 
@@ -468,12 +468,12 @@ action="' . admin_url("admin-ajax.php") . '"
   } else if ('other' == $attr['type']) {
    if ('' == $attr['edit']) {
     // arguments: for (id of associated form element), text
-    echo $frm->addLabelFor($attr['name'], $attr['title']);
+    echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
     // arguments: type, name, value
     echo $frm->addInput($attr['new_type'], $attr['name'], $attr['value'], array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
    } else {
     // arguments: for (id of associated form element), text
-    echo $frm->addLabelFor($attr['name'], $attr['title']);
+    echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
     // arguments: type, name, value
     echo $frm->addInput($attr['new_type'], $attr['name'], flexi_custom_field_value($_GET['id'], $attr['name']), array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
 
@@ -490,7 +490,7 @@ action="' . admin_url("admin-ajax.php") . '"
   } else if ('radio' == $attr['type'] || 'checkbox' == $attr['type']) {
 
    $values = explode(',', $attr['value']);
-   echo $frm->addLabelFor($attr['name'], $attr['title']);
+   echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
    foreach ($values as $option) {
     $val     = explode(":", $option);
     $caption = isset($val[1]) ? $val[1] : $val[0];
@@ -523,7 +523,7 @@ action="' . admin_url("admin-ajax.php") . '"
     *   name, array containing option values, array containing option text,
     *   optional: selected option's value, header, additional attributes in associative array
     */
-   echo $frm->addLabelFor($attr['name'], $attr['title']);
+   echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
    if ('' == $attr['placeholder']) {
     echo $frm->addSelectListArrays($attr['name'], $val, $label, '');
    } else {
@@ -531,7 +531,7 @@ action="' . admin_url("admin-ajax.php") . '"
    }
 
   } else if ('textarea' == $attr['type']) {
-   echo $frm->addLabelFor($attr['name'], $attr['title']);
+   echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
    // arguments: name, rows, cols, value, optional assoc. array
    echo $frm->addTextArea(
     $attr['name'],

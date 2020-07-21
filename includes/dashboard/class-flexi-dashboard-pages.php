@@ -49,7 +49,7 @@ Page should contain <code>[flexi-form]</code> shortcode enclosed with <code>[fle
 <div id="sample_post_form" style="display:none;">
      <p>
     [flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"]<br>
-		[flexi-form-tag type="post_title" title="Title" value="" placeholder="main title" required="true"]<br>
+		[flexi-form-tag type="post_title" title="Title" value="" placeholder="Main Title" required="true"]<br>
 		[flexi-form-tag type="category" title="Select category"]<br>
 		[flexi-form-tag type="tag" title="Insert tag"]<br>
 		[flexi-form-tag type="article" title="Description"  placeholder="Content"]<br>
@@ -76,7 +76,7 @@ Page should contain <code>[flexi-form edit="true"]</code> shortcode enclosed wit
      <p>
   [flexi-standalone]
   [flexi-form class="pure-form pure-form-stacked" title="Update Flexi" name="my_form" ajax="true" edit="true"]
-  [flexi-form-tag type="post_title" title="Title" placeholder="main title" edit="true" required="true"]
+  [flexi-form-tag type="post_title" title="Title" placeholder="Main Title" edit="true" required="true"]
   [flexi-form-tag type="category" title="Select category" edit="true"]
   [flexi-form-tag type="tag" title="Insert tag" edit="true"]
   [flexi-form-tag type="article" title="Description" placeholder="Content" edit="true"]

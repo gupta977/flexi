@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 16:52+0545\n"
-"PO-Revision-Date: 2020-07-21 11:11+0000\n"
+"POT-Creation-Date: 2020-07-21 17:39+0545\n"
+"PO-Revision-Date: 2020-07-21 11:55+0000\n"
 "Last-Translator: \n"
 "Language-Team: Hindi\n"
 "Language: hi_IN\n"
@@ -48,6 +48,7 @@ msgid "Flexi Tags"
 msgstr "फ्लेक्सी टैग्स"
 
 #: admin/class-flexi-admin.php:152 includes/class-flexi-admin-column.php:24
+#: includes/functions.php:757
 msgid "Tags"
 msgstr "टैग"
 
@@ -91,7 +92,7 @@ msgstr "छोड़ें, मैं मैन्युअल रूप से 
 msgid "Flexi Plugin Settings"
 msgstr "फ्लेक्सी प्लगइन विन्यास"
 
-#: block/src/form/block.js:59 includes/functions.php:1003
+#: block/src/form/block.js:59 includes/functions.php:1011
 msgid "Flexi Submission Form"
 msgstr "फ्लेक्सी प्रस्तुतिकरण फॉर्म"
 
@@ -439,6 +440,7 @@ msgstr ""
 "फाइकॉन-तस्वीर-ओ"
 
 #: includes/class-flexi-admin-column.php:21
+#: includes/user_dashboard/class-flexi-user-gallery.php:38
 #: includes/user_dashboard/class-flexi-user-gallery.php:78
 msgid "Title"
 msgstr "शीर्षक"
@@ -1192,35 +1194,55 @@ msgstr "मुझे याद रखें"
 msgid "Required Flexi-PRO"
 msgstr "आवश्यक फ्लेक्सी-पीआरओ"
 
-#: includes/functions.php:954
+#: includes/functions.php:756
+msgid "Insert tag"
+msgstr "टैग प्रविष्ट करें"
+
+#: includes/functions.php:758
+msgid "Description"
+msgstr "वर्णन"
+
+#: includes/functions.php:759
+msgid "Content"
+msgstr "सामग्री"
+
+#: includes/functions.php:760
+msgid "Select file"
+msgstr "फ़ाइल चुनें"
+
+#: includes/functions.php:761
+msgid "No file chosen"
+msgstr "कोई फ़ाइल चुना नहीं गया"
+
+#: includes/functions.php:962
 msgid "Title cannot be blank."
 msgstr "शीर्षक खाली नहीं किया जा सकता है."
 
-#: includes/functions.php:957
+#: includes/functions.php:965
 msgid "Invalid file type"
 msgstr "अवैध फ़ाइल प्रकार"
 
-#: includes/functions.php:960
+#: includes/functions.php:968
 msgid "Only image files are allowed."
 msgstr "सिर्फ छवि फ़ाइलों की अनुमति दी जाती है."
 
-#: includes/functions.php:963
+#: includes/functions.php:971
 msgid "File size is too big."
 msgstr "फ़ाइल आकार बहुत बड़ा है."
 
-#: includes/functions.php:966
+#: includes/functions.php:974
 msgid "Captcha security code is invalid."
 msgstr "कैप्टाचा सुरक्षा कोड अवैध है."
 
-#: includes/functions.php:989
+#: includes/functions.php:997
 msgid "Flexi Primary Gallery"
 msgstr "फ्लेक्सी प्राथमिक गैलरी"
 
-#: includes/functions.php:996
+#: includes/functions.php:1004
 msgid "Flexi User Dashboard"
 msgstr "फ्लेक्सी उपयोगकर्ता डैशबोर्ड"
 
-#: includes/functions.php:1010
+#: includes/functions.php:1018
 msgid "Flexi Edit/Modify"
 msgstr "फ्लेक्सी संपादन/रूपांतरित"
 
@@ -1264,9 +1286,15 @@ msgstr "मेरी गैलरी"
 msgid "Logout"
 msgstr "लॉगआउट"
 
+#: includes/user_dashboard/class-flexi-user-gallery.php:41
 #: includes/user_dashboard/class-flexi-user-gallery.php:83
 msgid "Status"
 msgstr "स्थिति"
+
+#: includes/user_dashboard/class-flexi-user-gallery.php:44
+#: includes/user_dashboard/class-flexi-user-gallery.php:96
+msgid "Action"
+msgstr "कार्य"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:87
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:163
@@ -1277,10 +1305,6 @@ msgstr "समीक्षा के अंतर्गत"
 #: includes/user_dashboard/class-flexi-user-gallery.php:91
 msgid "Visible"
 msgstr "दृश्यमान"
-
-#: includes/user_dashboard/class-flexi-user-gallery.php:96
-msgid "Action"
-msgstr "कार्य"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:112
 msgid "Total number of records you have submitted: "

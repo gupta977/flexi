@@ -752,6 +752,12 @@ function is_flexi_pro()
 function flexi_get_default_settings()
 {
 
+ //Dynamic Language translate common terms
+ __('Insert tag', 'flexi');
+ __('Tags', 'flexi');
+ __('Description', 'flexi');
+ __('Select file', 'flexi');
+
  //Lightbox Enabled
  //flexi_set_option('lightbox_switch', 'flexi_detail_settings', 1);
  return;
@@ -816,7 +822,7 @@ function flexi_create_pages()
 
   $str_post_image = '
         <!-- wp:shortcode -->
-        [flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"][flexi-form-tag type="post_title" title="Title" value="" placeholder="main title" required="true"][flexi-form-tag type="category" title="Select category"][flexi-form-tag type="tag" title="Insert tag"][flexi-form-tag type="article" title="Description"  placeholder="Content"][flexi-form-tag type="file" title="Select file" required="true"][flexi-form-tag type="submit" name="submit" value="Submit Now"]
+        [flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"][flexi-form-tag type="post_title" title="Title" value="" required="true"][flexi-form-tag type="category" title="Select category"][flexi-form-tag type="tag" title="Insert tag"][flexi-form-tag type="article" title="Description" ][flexi-form-tag type="file" title="Select file" required="true"][flexi-form-tag type="submit" name="submit" value="Submit Now"]
         [/flexi-form]
         <!-- /wp:shortcode -->
 		';
@@ -831,7 +837,7 @@ function flexi_create_pages()
   <!-- wp:shortcode -->
   [flexi-standalone]
   [flexi-form class="pure-form pure-form-stacked" title="Update Flexi" name="my_form" ajax="true" edit="true"]
-  [flexi-form-tag type="post_title" title="Title" placeholder="main title" edit="true" required="true"]
+  [flexi-form-tag type="post_title" title="Title" edit="true" required="true"]
   [flexi-form-tag type="category" title="Select category" edit="true"]
   [flexi-form-tag type="tag" title="Insert tag" edit="true"]
   [flexi-form-tag type="article" title="Description" placeholder="Content" edit="true"]

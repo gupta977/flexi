@@ -114,7 +114,7 @@ echo get_option('FLEXI_PRO_RESPONSE', '');
 <div id="reCaptcha" style="display:none;">
      <p>
    [flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"]<br>
-	 [flexi-form-tag type="post_title" title="Title" value="" placeholder="main title"]<br>
+	 [flexi-form-tag type="post_title" title="Title" value=""]<br>
 		[flexi-form-tag type="file" title="Select file"]<br>
     <code>[flexi-form-tag type="captcha" title="Security"]</code><br>
     [flexi-form-tag type="submit" name="submit" value="Submit Now"]<br>
@@ -125,7 +125,7 @@ echo get_option('FLEXI_PRO_RESPONSE', '');
 <div id="drag" style="display:none;">
      <p>
    [flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"]<br>
-	 [flexi-form-tag type="post_title" title="Title" value="" placeholder="main title"]<br>
+	 [flexi-form-tag type="post_title" title="Title" value=""]<br>
     <code>[flexi-form-tag type="file_multiple" title="Drag &amp; Drop multiple files" class="flexi_drag_file" multiple="true"]</code><br>
     [flexi-form-tag type="submit" name="submit" value="Submit Now"]<br>
 		[/flexi-form]<br>
@@ -136,7 +136,7 @@ echo get_option('FLEXI_PRO_RESPONSE', '');
      <p>
      <b>Add edit="true" as parameter</b><br><br>
 [flexi-form class="xxx_class" title="Update Flexi" name="my_form" ajax="true" edit="true"]<br>
-[flexi-form-tag type="post_title" title="Title" placeholder="main title" edit="true" ]<br>
+[flexi-form-tag type="post_title" title="Title" edit="true" ]<br>
 [flexi-form-tag type="category" title="Select category" edit="true"]<br>
 [flexi-form-tag type="tag" title="Insert tag" edit="true"]<br>
 [flexi-form-tag type="article" title="Description" placeholder="Content" edit="true"]<br>
