@@ -153,13 +153,8 @@ class Flexi_Detail_Layout_Basic
 
     //  echo $info->post_meta($post->ID, 'flexi_type', '');
     //  echo "<hr>";
-    // echo $info->media_path($post->ID, false);
+    //echo $info->media_path($post->ID, false);
     $video = flexi_file_src($post, false);
-    //echo $video . "----";
-
-//E:\wampserver\www\wp5/wp-content/uploads/2020/07/SampleVideo_1280x720_1mb.mp4
-    //Check if thumbnail is available before generate
-    //flexi_ffmpeg($video, $post->ID);
    } else if ('status' == $value) {
 
     if (get_post_status() == 'draft' || get_post_status() == "pending") {

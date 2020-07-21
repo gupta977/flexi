@@ -1,3 +1,93 @@
+/* ToolTip */
+[flexi-tooltip] {
+  position: relative;
+  display: inline-block;
+}
+
+[flexi-tooltip]:before,
+[flexi-tooltip]:after {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -12px);
+  z-index: 1000;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.35s ease 0.25s;
+}
+
+[flexi-tooltip]:before {
+  content: attr(flexi-tooltip);
+  background: #333;
+  color: #eee;
+  padding: 8px 12px;
+  white-space: nowrap;
+  bottom: 100%;
+  border-radius: 3px;
+  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.65);
+}
+
+[flexi-tooltip]:after {
+  content: "";
+  background: transparent;
+  border: 8px solid transparent;
+  border-top-color: #333;
+}
+
+[flexi-tooltip]:hover:before,
+[flexi-tooltip]:hover:after,
+[flexi-tooltip]:focus:before,
+[flexi-tooltip]:focus:after,
+[flexi-tooltip]:active:before,
+[flexi-tooltip]:active:after {
+  opacity: 1;
+}
+
+[flexi-tooltip].tooltip-multiline:before {
+  width: 100vw;
+  max-width: 240px;
+  white-space: normal;
+}
+
+[flexi-tooltip][class*="tooltip-bottom"]:before,
+[flexi-tooltip][class*="tooltip-bottom"]:after {
+  transform: translate(-50%, 12px);
+}
+
+[flexi-tooltip][class*="tooltip-bottom"]:before {
+  bottom: auto;
+  top: 100%;
+}
+
+[flexi-tooltip][class*="tooltip-bottom"]:after {
+  bottom: 0;
+  border: 8px solid transparent;
+  border-bottom-color: #333;
+}
+
+[flexi-tooltip].tooltip-bottom-left:before {
+  transform: translate(-24px, 12px);
+}
+
+[flexi-tooltip].tooltip-bottom-right:before {
+  left: auto;
+  right: 50%;
+  transform: translate(24px, 12px);
+}
+
+[flexi-tooltip].tooltip-top-left:before {
+  transform: translate(-24px, -12px);
+}
+
+[flexi-tooltip].tooltip-top-right:before {
+  left: auto;
+  right: 50%;
+  transform: translate(24px, -12px);
+}
+
 /* override fancybox padding for custom lightbox */
 .fancybox-content {
   padding: 18px 1px 5px 1px;
@@ -1000,7 +1090,6 @@ div.tagsinput div {
   border-radius: 5px;
   border: solid 1px #dcdcdc;
   background: linear-gradient(180deg, #f9f9f9 5%, #e9e9e9 100%);
-  text-shadow: 1px 1px 0px #ffffff;
   box-shadow: inset 1px 1px 0px 0px #ffffff;
 }
 .flexi_css_button:hover {
