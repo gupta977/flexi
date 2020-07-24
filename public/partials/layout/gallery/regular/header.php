@@ -12,5 +12,6 @@
 }
 
     </style>
+
 <div id="flexi_gallery" class="flexi_user_width_<?php echo $width; ?>">
 <div id="flexi_main_loop">

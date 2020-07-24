@@ -181,6 +181,11 @@ function flexi_image_data($size = 'full', $post = '', $popup = "on")
    $data['src']   = admin_url('admin-ajax.php?action=flexi_ajax_post_view&id=' . $post->ID . '&nonce=' . $nonce);
    $data['extra'] = 'data-fancybox data-type="ajax"';
    $data['popup'] = 'flexi_show_popup_' . $popup;
+  } else if ('simple' == $popup) {
+   $data['url']   = flexi_image_src('large', $post);
+   $data['src']   = $data['url'];
+   $data['extra'] = 'class="godude"';
+   $data['popup'] = 'flexi_show_popup_' . $popup;
   } else {
    $data['url']   = flexi_image_src('large', $post);
    $data['src']   = $data['url'];

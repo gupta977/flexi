@@ -228,6 +228,9 @@ class Flexi_Shortcode_Gallery
     if ('custom' == $atts['popup']) {
      $popup         = 'custom';
      $atts['popup'] = $popup;
+    } else if ('simple' == $atts['popup']) {
+     $popup         = 'simple';
+     $atts['popup'] = $popup;
     } else {
      $popup         = mt_rand(); //Random number assign to make popup unique at sidebar
      $atts['popup'] = $popup;
@@ -383,7 +386,7 @@ class Flexi_Shortcode_Gallery
 
  public function pass_shortcode_params($atts = array())
  {
-  //flexi_log($atts);
+  // flexi_log($atts);
   $put = "";
 
   //Below javascript will not be executed at guten block. If enabled json error while saving.
@@ -425,6 +428,14 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
  arrows:false,
    });
    <?php
+} else if ('simple' == $atts['popup']) {
+     ?>
+
+var lightbox = GODude();
+var lightboxDescription = GODude({
+    selector: '.godude',
+});
+<?php
 } else {
      ?>
   jQuery('[data-fancybox-trigger').fancybox({
@@ -447,7 +458,10 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
    ?>
 
 });
+
+
 </script>
+
 <?php
 echo ob_get_clean();
   }

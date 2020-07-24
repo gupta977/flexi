@@ -12,8 +12,6 @@ echo '<div class="flexi-image-wrapper flexi-list-sub ' . $data['popup'] . ' flex
 echo '<a class="" ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">';
 echo '<img src="' . esc_url(flexi_image_src('medium', $post)) . '">';
 ?>
-<?php echo ' <div class="flexi_figcaption" id="flexi_cap_' . get_the_ID() . '"></div>'; ?>
-
                   <div id="flexi_info" class="<?php echo $hover_caption; ?>">
                         <div class="flexi_title"><?php echo $data['title']; ?></div>
                         <div class="flexi_p"><?php echo flexi_excerpt(); ?></div>
@@ -30,12 +28,3 @@ echo '</div>';
 </div>
 </div>
 </div>
-<script>
-jQuery(document).ready(function() {
-      jQuery('#flexi_cap_<?php echo get_the_ID(); ?>').append('<b><?php echo $data['title']; ?></b>');
-      jQuery('#flexi_cap_<?php echo get_the_ID(); ?>').append('<br><?php echo flexi_custom_field_loop($post, 'popup', 1, false) ?>');
-      jQuery('#flexi_cap_<?php echo get_the_ID(); ?>').append('<br><?php echo flexi_excerpt(); ?>');
-      jQuery('#flexi_cap_<?php echo get_the_ID(); ?>').append('<br><?php echo flexi_show_icon_grid(); ?>');
-});
-
-</script>
