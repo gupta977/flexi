@@ -418,7 +418,7 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
 } else if ('custom' == $atts['popup']) {
 
      ?>
- jQuery('[data-fancybox').fancybox({
+ jQuery('[custom-lightbox').fancybox({
        selector : '.flexi_show_popup_custom a:visible',
        thumbs   : {
    autoStart : false
