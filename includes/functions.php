@@ -1040,7 +1040,7 @@ function flexi_evalue_setarray($evalue)
 function flexi_evalue_toggle($key, $evalue)
 {
  $extra_param = flexi_evalue_setarray($evalue);
- //var_dump($extra_param);
+ //flexi_log($extra_param);
  if (isset($extra_param[$key]) && 'on' == $extra_param[$key]) {
   return '';
  } else {

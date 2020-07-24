@@ -191,6 +191,8 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 1.0.600 =
 * Tooltip over button
+* Added 'Simple' lightbox
+* Updated portfolio layout, now support tags, category icons
 
 = 1.0.590 =
 * Fixed default album selection for -none- category

@@ -21,7 +21,12 @@ $data = flexi_image_data('thumbnail', $post, $popup);
       <h2 style="<?php echo flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></h2>
       <span style="<?php echo flexi_evalue_toggle('custom', $evalue); ?>"><?php echo flexi_custom_field_loop($post, 'gallery', 2); ?></span>
       <p style="<?php echo flexi_evalue_toggle('excerpt', $evalue); ?>"><?php echo flexi_excerpt(20); ?></p>
-      <span style="<?php echo flexi_evalue_toggle('icon', $evalue); ?>"><?php echo flexi_show_icon_grid(); ?></span>
+
+      <?php
+echo '<span style="' . flexi_evalue_toggle('category', $evalue) . '"><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
+echo '<span style="' . flexi_evalue_toggle('tag', $evalue) . '"><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
+?>
+ <span style="<?php echo flexi_evalue_toggle('icon', $evalue); ?>"><?php echo flexi_show_icon_grid(); ?></span>
     </div>
   </div>
 </div>
