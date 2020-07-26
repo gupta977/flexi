@@ -412,6 +412,7 @@ class FLEXI_Admin_Settings
      'type'              => 'select',
      'options'           => array(
       'on'     => __('Regular', 'flexi'),
+      'simple' => __('Simple', 'flexi'),
       'custom' => __('Custom', 'flexi'),
      ),
      'sanitize_callback' => 'sanitize_key',

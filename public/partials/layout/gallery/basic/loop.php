@@ -9,7 +9,7 @@ echo '<div class="flexi_gallery_grid">';
 
         <?php
 echo '<div class="flexi-image-wrapper flexi-list-sub ' . $data['popup'] . ' flexi_effect" id="' . $hover_effect . '">';
-echo '<a class="" ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">';
+echo '<a ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">';
 echo '<img src="' . esc_url(flexi_image_src('medium', $post)) . '">';
 ?>
                   <div id="flexi_info" class="<?php echo $hover_caption; ?>">

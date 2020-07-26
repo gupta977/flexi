@@ -193,6 +193,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Tooltip over button
 * Added 'Simple' lightbox
 * Updated portfolio layout, now support tags, category icons
+* Title removed from 'custom lightbox'
 
 = 1.0.590 =
 * Fixed default album selection for -none- category

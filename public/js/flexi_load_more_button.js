@@ -77,7 +77,10 @@ jQuery(document).ready(function () {
         // Hide image container
         jQuery("#flexi_loader_gallery").hide();
         jQuery("#flexi_load_more").slideDown();
-
+        var lightbox = GODude();
+        var lightboxDescription = GODude({
+          selector: ".godude",
+        });
         // alert("response complete");
         // alert(count);
         if (count > 0) jQuery("#flexi_no_record").hide();

@@ -84,6 +84,13 @@ jQuery(document).ready(function () {
             jQuery("#flexi_load_more").hide();
           }
 
+          //Load GODude Lightbox
+
+          var lightbox = GODude();
+          var lightboxDescription = GODude({
+            selector: ".godude",
+          });
+
           // alert("response complete");
           if (paged > max_paged) {
             //Stop scrolling. No more post left.
