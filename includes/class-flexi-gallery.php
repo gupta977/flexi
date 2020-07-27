@@ -231,6 +231,9 @@ class Flexi_Shortcode_Gallery
     } else if ('simple' == $atts['popup']) {
      $popup         = 'simple';
      $atts['popup'] = $popup;
+    } else if ('simple_info' == $atts['popup']) {
+     $popup         = 'simple_info';
+     $atts['popup'] = $popup;
     } else {
      $popup         = mt_rand(); //Random number assign to make popup unique at sidebar
      $atts['popup'] = $popup;
@@ -428,7 +431,7 @@ $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict
  arrows:false,
    });
    <?php
-} else if ('simple' == $atts['popup']) {
+} else if ('simple' == $atts['popup'] || 'simple_info' == $atts['popup']) {
      ?>
 
 var lightbox = GODude();

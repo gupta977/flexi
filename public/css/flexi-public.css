@@ -683,6 +683,11 @@ div.tagsinput div {
   display: none;
 }
 
+/* Required to hide at admin block editor */
+.godude-desc {
+  display: none;
+}
+
 /* ------------------------------- */
 
 /* flexi_effect_1 Blur */

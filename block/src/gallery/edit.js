@@ -222,6 +222,10 @@ class FlexiGalleryEdit extends Component {
 										value: "simple",
 									},
 									{
+										label: "Simple with Info.",
+										value: "simple_info",
+									},
+									{
 										label: "Custom",
 										value: "custom",
 									},

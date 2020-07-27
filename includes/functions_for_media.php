@@ -187,6 +187,11 @@ function flexi_image_data($size = 'full', $post = '', $popup = "on")
    $data['src']   = $data['url'];
    $data['extra'] = 'class="godude"';
    $data['popup'] = 'flexi_show_popup_' . $popup;
+  } else if ('simple_info' == $popup) {
+   $data['url']   = flexi_image_src('large', $post);
+   $data['src']   = $data['url'];
+   $data['extra'] = 'class="godude" data-godude="title: ' . $post->post_title . '; description: .flexi_desc_' . $post->ID . '"';
+   $data['popup'] = 'flexi_show_popup_' . $popup;
   } else {
    $data['url']   = flexi_image_src('large', $post);
    $data['src']   = $data['url'];

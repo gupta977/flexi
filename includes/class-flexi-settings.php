@@ -411,9 +411,10 @@ class FLEXI_Admin_Settings
      'description'       => __('Layout of lightbox', 'flexi'),
      'type'              => 'select',
      'options'           => array(
-      'on'     => __('Regular', 'flexi'),
-      'simple' => __('Simple', 'flexi'),
-      'custom' => __('Custom', 'flexi'),
+      'on'          => __('Regular', 'flexi'),
+      'simple'      => __('Simple', 'flexi'),
+      'simple_info' => __('Simple with info', 'flexi'),
+      'custom'      => __('Custom', 'flexi'),
      ),
      'sanitize_callback' => 'sanitize_key',
     ),
