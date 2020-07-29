@@ -43,13 +43,9 @@ if (flexi_evalue_toggle('tag', $evalue) == '') {
     </div>
   </div>
 </div>
-
-
 <!-- Loop End -->
 </div>
-<script>
-jQuery(document).ready(function() {
-    jQuery('#flexi_cap_<?php echo get_the_ID(); ?>').append('<b><?php echo $data['title']; ?></b>');
-    jQuery('#flexi_cap_<?php echo get_the_ID(); ?>').append('<br><?php echo flexi_excerpt(); ?>');
-});
-</script>
+
+<div class="godude-desc flexi_desc_<?php echo get_the_ID(); ?>">
+    <p><?php echo flexi_excerpt(); ?></p>
+</div>
