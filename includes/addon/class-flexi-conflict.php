@@ -69,6 +69,13 @@ class Flexi_Addon_Conflict
      'type'              => 'checkbox',
      'sanitize_callback' => 'intval',
     ),
+    array(
+     'name'              => 'conflict_disable_godude',
+     'label'             => __('Disable godude Lightbox', 'flexi'),
+     'description'       => __('Disable it, <br>if godude.js is used by other plugins & theme. So that, only one instance of it is available.', 'flexi'),
+     'type'              => 'checkbox',
+     'sanitize_callback' => 'intval',
+    ),
 
    ),
    );

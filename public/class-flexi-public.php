@@ -109,9 +109,12 @@ class Flexi_Public
    */
 
   wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/flexi-public.js', array('jquery'), $this->version, false);
-  $enable_conflict = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict_settings', 0);
-  if ("1" != $enable_conflict) {
+  $enable_conflict_fancybox = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict_settings', 0);
+  if ("1" != $enable_conflict_fancybox) {
    wp_enqueue_script($this->plugin_name . '_fancybox', plugin_dir_url(__FILE__) . 'js/jquery.fancybox.min.js', array('jquery'), $this->version, false);
+  }
+  $enable_conflict_godude = flexi_get_option('conflict_disable_godude', 'flexi_conflict_settings', 0);
+  if ("1" != $enable_conflict_godude) {
    wp_enqueue_script($this->plugin_name . '_godude', plugin_dir_url(__FILE__) . 'js/godude.js', array('jquery'), $this->version, false);
   }
   wp_enqueue_script($this->plugin_name . '_tags', plugin_dir_url(__FILE__) . 'js/jquery.tagsinput.js', '', $this->version, false);
