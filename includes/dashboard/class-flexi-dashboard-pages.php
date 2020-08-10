@@ -64,7 +64,7 @@ Page should contain <code>[flexi-form]</code> shortcode enclosed with <code>[fle
 
 
 <?php
-echo "<a href='" . flexi_get_button_url('', false, 'my_gallery', 'flexi_image_layout_settings') . "' target='_blank'>Member Dashboard Page:</a><br>"
+echo "<a href='" . flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings') . "' target='_blank'>Member Dashboard Page:</a><br>"
   ?>
 Page should contain <code>[flexi-user-dashboard]</code> shortcode. Add this page into <a href="<?php echo admin_url('nav-menus.php'); ?>">member menu</a>. <br><br>
 

@@ -256,12 +256,14 @@ class FLEXI_Admin_Settings
      'sanitize_callback' => 'sanitize_key',
     ),
     array(
-     'name'              => 'my_gallery',
-     'label'             => __('Member "User Dashboard" Page', 'flexi'),
-     'description'       => __('Page with shortcode [flexi-user-dashboard]. Display gallery of own posts.', 'flexi'),
-     'type'              => 'pages',
+     'name'              => 'gallery_layout',
+     'label'             => __('Select gallery layout', 'flexi'),
+     'description'       => __('Selected layout will be used as default layout, if not specified in shortcode parameter.', 'flexi'),
+     'type'              => 'layout',
      'sanitize_callback' => 'sanitize_key',
+     'step'              => 'gallery',
     ),
+
     array(
      'name'              => 'perpage',
      'label'             => __('Post per page', 'flexi'),
@@ -299,14 +301,6 @@ class FLEXI_Admin_Settings
      'description'       => __('Shows tags above gallery, only if few tags available.', 'flexi'),
      'type'              => 'checkbox',
      'sanitize_callback' => 'intval',
-    ),
-    array(
-     'name'              => 'gallery_layout',
-     'label'             => __('Select gallery layout', 'flexi'),
-     'description'       => __('Selected layout will be used as default layout, if not specified in shortcode parameter.', 'flexi'),
-     'type'              => 'layout',
-     'sanitize_callback' => 'sanitize_key',
-     'step'              => 'gallery',
     ),
 
    ),

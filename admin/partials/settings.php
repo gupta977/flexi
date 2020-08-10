@@ -46,7 +46,7 @@ if ($flexi_activated) {
 
     <p><?php echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . "' class='button button-primary'>" . __('Post to Configure', 'flexi') . "</a>" ?>
     <br> <br><?php
-echo "<a href='" . flexi_get_button_url('', false, 'my_gallery', 'flexi_image_layout_settings') . "' >" . __('Skip, I will setup manually', 'flexi') . "</a><br>"
+echo "<a href='" . flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings') . "' >" . __('Skip, I will setup manually', 'flexi') . "</a><br>"
  ?>
  </p>
 </div>

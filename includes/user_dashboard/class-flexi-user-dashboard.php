@@ -6,12 +6,65 @@ class Flexi_User_Dashboard
  public function __construct()
  {
   add_shortcode('flexi-user-dashboard', array($this, 'flexi_user_dashboard'));
-  add_filter('flexi_settings_fields', array($this, 'add_fields'));
+
   add_filter("flexi_submit_toolbar", array($this, 'flexi_add_icon_submit_toolbar'), 10, 2);
   add_action('wp', array($this, 'enqueue_styles'));
-
+  add_filter('flexi_settings_sections', array($this, 'add_section'));
+  add_filter('flexi_settings_fields', array($this, 'add_fields_general'));
   add_filter("flexi_member_toolbar", array($this, 'logout_button'), 10, 1);
   add_filter("flexi_member_toolbar", array($this, 'gallery_button'), 10, 1);
+ }
+
+ //Add Section title & description at settings
+ public function add_section($new)
+ {
+
+  $sections = array(
+   array(
+    'id'          => 'flexi_user_dashboard_settings',
+    'title'       => __('User Dashboard', 'flexi'),
+    'description' => __('Configuration for user dashboard page.', 'flexi'),
+    'tab'         => 'general',
+   ),
+  );
+  $new = array_merge($new, $sections);
+
+  return $new;
+ }
+
+ //Add section fields
+ public function add_fields_general($new)
+ {
+
+  $fields = array('flexi_user_dashboard_settings' => array(
+   array(
+    'name'              => 'my_gallery',
+    'label'             => __('Member "User Dashboard" Page', 'flexi'),
+    'description'       => __('Page with shortcode [flexi-user-dashboard]. Display gallery of own posts.', 'flexi'),
+    'type'              => 'pages',
+    'sanitize_callback' => 'sanitize_key',
+   ),
+   array(
+    'name'              => 'enable_dashboard_button',
+    'label'             => __('"My Dashboard" button', 'flexi'),
+    'description'       => __('Display button after form submission', 'flexi'),
+    'type'              => 'checkbox',
+    'sanitize_callback' => 'intval',
+   ),
+
+   array(
+    'name'              => 'enable_mygallery_button',
+    'label'             => __('"My Gallery" button', 'flexi'),
+    'description'       => __('Display button at "My Dashboard"', 'flexi'),
+    'type'              => 'checkbox',
+    'sanitize_callback' => 'intval',
+   ),
+
+  ),
+  );
+  $new = array_merge($new, $fields);
+
+  return $new;
  }
 
  public function flexi_user_dashboard()
@@ -72,8 +125,8 @@ class Flexi_User_Dashboard
 
   $extra_icon = array();
 
-  $link         = flexi_get_button_url('', false, 'my_gallery', 'flexi_image_layout_settings');
-  $enable_addon = flexi_get_option('enable_dashboard_button', 'flexi_icon_settings', 1);
+  $link         = flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings');
+  $enable_addon = flexi_get_option('enable_dashboard_button', 'flexi_user_dashboard_settings', 1);
 
   if ("#" != $link && "1" == $enable_addon) {
    $extra_icon = array(
@@ -90,40 +143,12 @@ class Flexi_User_Dashboard
   return $icon;
  }
 
- //Add button to enable user dashboard
- public function add_fields($new)
- {
-  $fields = array('flexi_icon_settings' => array(
-
-   array(
-    'name'              => 'enable_dashboard_button',
-    'label'             => __('"My Dashboard" button', 'flexi'),
-    'description'       => __('Display button after form submission', 'flexi'),
-    'type'              => 'checkbox',
-    'sanitize_callback' => 'intval',
-   ),
-
-   array(
-    'name'              => 'enable_mygallery_button',
-    'label'             => __('"My Gallery" button', 'flexi'),
-    'description'       => __('Display button at "My Dashboard"', 'flexi'),
-    'type'              => 'checkbox',
-    'sanitize_callback' => 'intval',
-   ),
-
-  ),
-  );
-  $new = array_merge_recursive($new, $fields);
-
-  return $new;
- }
-
  //Styles only related to user dashboard
  public function enqueue_styles()
  {
   global $post;
 
-  $my_gallery_id   = flexi_get_option('my_gallery', 'flexi_image_layout_settings', 0);
+  $my_gallery_id   = flexi_get_option('my_gallery', 'flexi_user_dashboard_settings', 0);
   $current_page_id = get_queried_object_id();
 
   if ($current_page_id == $my_gallery_id) {
@@ -165,7 +190,7 @@ class Flexi_User_Dashboard
 
  public function gallery_button($icon)
  {
-  $enable_addon = flexi_get_option('enable_mygallery_button', 'flexi_icon_settings', 1);
+  $enable_addon = flexi_get_option('enable_mygallery_button', 'flexi_user_dashboard_settings', 1);
 
   if ("1" == $enable_addon) {
 

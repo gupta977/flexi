@@ -438,7 +438,7 @@ function flexi_login_link()
  echo "<div class='flexi_frame_2' style='padding:30px;'>";
  $args = array(
   'echo'           => true,
-  'redirect'       => flexi_get_button_url('', false, 'my_gallery', 'flexi_image_layout_settings'),
+  'redirect'       => flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings'),
   'form_id'        => 'loginform',
   'label_username' => __('Username', "flexi"),
   'label_password' => __('Password', "flexi"),
@@ -831,7 +831,7 @@ function flexi_create_pages()
   flexi_set_option('submission_form', 'flexi_form_settings', $bid);
 
   $did = wp_insert_post(array('post_title' => 'User Dashboard', 'post_content' => '   <!-- wp:shortcode -->[flexi-user-dashboard]<!-- /wp:shortcode -->', 'post_type' => 'page', 'post_status' => 'publish'));
-  flexi_set_option('my_gallery', 'flexi_image_layout_settings', $did);
+  flexi_set_option('my_gallery', 'flexi_user_dashboard_settings', $did);
 
   $str_edit_image = '
   <!-- wp:shortcode -->
@@ -996,7 +996,7 @@ function flexi_page_post_state_label($states, $post)
   }
  }
 
- $my_gallery = flexi_get_option('my_gallery', 'flexi_image_layout_settings', 0);
+ $my_gallery = flexi_get_option('my_gallery', 'flexi_user_dashboard_settings', 0);
  if (0 != $my_gallery) {
   if ($my_gallery == $post->ID) {
    $states['flexi-user-dashboard'] = __('Flexi User Dashboard', 'flexi');
