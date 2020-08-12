@@ -10,7 +10,7 @@ class Flexi_Admin_Dashboard_Pages
  public function add_tabs($tabs)
  {
 
-  $extra_tabs = array("pages" => __('Flexi Pages', 'flexi'));
+  $extra_tabs = array("pages" => 'Flexi ' . __('Health', 'flexi'));
 
   // combine the two arrays
   $new = array_merge($tabs, $extra_tabs);
@@ -32,18 +32,31 @@ class Flexi_Admin_Dashboard_Pages
   ?>
 
 <h3>Generate Pages</h3>
-<b><i>Below pages are automatically generated and it must be available. Create it again if not exist or deleted. </i></b><br><br>
-
+<b><i>Below pages are automatically generated and it must be available. <br>Create it again if not exist or deleted. <br>Click on the link to check if it is properly assigned.</i></b><br><br>
+<div class="update-nag">
 <?php
-echo "<a href='" . flexi_get_button_url('', false, 'primary_page', 'flexi_image_layout_settings') . "' target='_blank'>Primary Gallery Page:</a><br>"
+$primary_page_link = flexi_get_button_url('', false, 'primary_page', 'flexi_image_layout_settings');
+  if ('#' != $primary_page_link) {
+   echo "<a href='" . $primary_page_link . "' target='_blank'>Primary Gallery Page:</a><br>";
+  } else {
+   echo '<div style="color:red; font-weight:bold;">Primary Gallery Page : Not assigned</div><br>';
+  }
+  echo '<a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=gallery&section=flexi_image_layout_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a> ';
   ?>
 Page should contain <code>[flexi-primary]</code> shortcode. Primary gallery page cannot be WordPress's front or homepage.<br><br>
 
+</div>
 
-
-
+<div class="update-nag">
 <?php
-echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . "' target='_blank'>Submission form Page:</a><br>"
+$submission_form_link = flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings');
+  if ('#' != $submission_form_link) {
+   echo "<a href='" . $submission_form_link . "' target='_blank'>Submission form Page:</a><br>";
+  } else {
+   echo '<div style="color:red; font-weight:bold;">Submission form Page : Not assigned</div><br>';
+  }
+
+  echo '<a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=form&section=flexi_form_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a> ';
   ?>
 Page should contain <code>[flexi-form]</code> shortcode enclosed with <code>[flexi-form-tag]</code>. Link this page at <a href="<?php echo admin_url('nav-menus.php'); ?>">frontend menu</a>.
 <div id="sample_post_form" style="display:none;">
@@ -60,16 +73,31 @@ Page should contain <code>[flexi-form]</code> shortcode enclosed with <code>[fle
 </div>
 
 <a href="#TB_inline?width=600&height=200&inlineId=sample_post_form" title="Sample Code for Post Form" class="thickbox">[View dummy content!]</a>
-<br><br>
+</div>
+<br>
 
-
+<div class="update-nag">
 <?php
-echo "<a href='" . flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings') . "' target='_blank'>Member Dashboard Page:</a><br>"
+$my_gallery_link = flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings');
+  if ('#' != $my_gallery_link) {
+   echo "<a href='" . $my_gallery_link . "' target='_blank'>Member Dashboard Page:</a><br>";
+  } else {
+   echo '<div style="color:red; font-weight:bold;">Member Dashboard Page : Not assigned</div><br>';
+  }
+  echo '<a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=general&section=flexi_user_dashboard_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a> ';
   ?>
-Page should contain <code>[flexi-user-dashboard]</code> shortcode. Add this page into <a href="<?php echo admin_url('nav-menus.php'); ?>">member menu</a>. <br><br>
+Page should contain <code>[flexi-user-dashboard]</code> shortcode. You can add this page into <a href="<?php echo admin_url('nav-menus.php'); ?>">member menu</a>. <br><br>
+</div>
 
+<div class="update-nag">
 <?php
-echo "<a href='" . flexi_get_button_url('', false, 'edit_flexi_page', 'flexi_form_settings') . "' target='_blank'>Edit Page:</a><br>"
+$edit_flexi_link = flexi_get_button_url('', false, 'edit_flexi_page', 'flexi_form_settings');
+  if ('#' != $edit_flexi_link) {
+   echo "<a href='" . $edit_flexi_link . "' target='_blank'>Edit Page:</a><br>";
+  } else {
+   echo '<div style="color:red; font-weight:bold;">Edit Page : Not assigned</div><br>';
+  }
+  echo '<a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=form&section=flexi_form_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a> ';
   ?>
 Page should contain <code>[flexi-form edit="true"]</code> shortcode enclosed with <code>[flexi-form-tag edit="true"]</code>
 <div id="sample_edit_form" style="display:none;">
@@ -86,7 +114,7 @@ Page should contain <code>[flexi-form edit="true"]</code> shortcode enclosed wit
 </div>
 
 <a href="#TB_inline?width=600&height=200&inlineId=sample_edit_form" title="Sample Code for Edit Form" class="thickbox">[View dummy content!]</a>
-
+</div>
 <?php
 $content = ob_get_clean();
   return $content;

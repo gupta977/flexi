@@ -10,7 +10,7 @@ class Flexi_Admin_Dashboard_Intro
  public function add_tabs($tabs)
  {
 
-  $extra_tabs = array("intro" => __('Flexi Intro', 'flexi'));
+  $extra_tabs = array("intro" => 'Flexi ' . __('Guide', 'flexi'));
 
   // combine the two arrays
   $new = array_merge($tabs, $extra_tabs);

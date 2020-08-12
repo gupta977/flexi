@@ -752,11 +752,22 @@ function is_flexi_pro()
 function flexi_get_default_settings()
 {
 
+ //Update values for old Flexi versions
+ /*
+ $old_version = get_option('flexi_version');
+ if ('1.0.600' == $old_version) {
+ //execute if update required
+ }
+  */
+
  //Dynamic Language translate common terms
  __('Insert tag', 'flexi');
  __('Tags', 'flexi');
  __('Description', 'flexi');
  __('Select file', 'flexi');
+
+ //update flexi version to current one
+ update_option('flexi_version', FLEXI_VERSION);
 
  //Lightbox Enabled
  //flexi_set_option('lightbox_switch', 'flexi_detail_settings', 1);
