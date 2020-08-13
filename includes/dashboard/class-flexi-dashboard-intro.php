@@ -50,7 +50,7 @@ class Flexi_Admin_Dashboard_Intro
 				<p>Add these pages to menu so that visitor can find it. Thats all!</p>
 
 				<h4>#. Guten Block not available ?</h4>
-				<p>At top of this page you will see FLEXI PAGES tab, under that some pages are automatically generated. Add those pages to menu & view page as visitors. All is ready to go with the power of shortcode. These pages are totally based on Flexi settings and shortcodes.</p>
+				<p>At top of this page you will see FLEXI HEALTH tab, under that some pages are automatically generated. Add those pages to menu & view page as visitors. All is ready to go with the power of shortcode. These pages are totally based on Flexi settings and shortcodes.</p>
 			</div>
 		</div>
 

@@ -189,6 +189,12 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 2.0 =
+* Updated and compatible with WordPress 5.5
+* Updated languages
+* User Dashboard has own setting tab. Old user should manually update the User Dashboard page.
+* Updated Flexi Pages into Flexi Health with option to investigate wrong Flexi Settings. 
+
 = 1.0.600 =
 * Tooltip over button
 * Added 'Simple' lightbox
