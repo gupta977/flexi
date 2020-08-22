@@ -736,7 +736,7 @@ function is_flexi_pro()
 {
  include_once ABSPATH . 'wp-admin/includes/plugin.php';
  $a = get_option('FLEXI_PRO', 'FAIL');
- if (is_plugin_active('flexi-pro/flexi-pro.php' && 'FAIL' != $a) && defined('FLEXI_PRO_VERSION')) {
+ if (is_plugin_active('flexi-pro/flexi-pro.php') && 'FAIL' != $a && defined('FLEXI_PRO_VERSION')) {
   return true;
  } else {
   return false;
