@@ -1,7 +1,7 @@
-(function ($) {
+jQuery(document).ready(function($) { 
   "use strict";
 
-  $(window).load(function () {
+  
     function flexi_layout_value(lname) {
       // console.log(lname + " update");
 
@@ -39,7 +39,7 @@
           flexi_layout_value(optionValue);
         });
     });
-  });
+
 
   /**
    * All of the code for your admin-facing JavaScript source
@@ -68,4 +68,4 @@
    * Although scripts in the WordPress core, Plugins and Themes may be
    * practising this, we should strive to set a better example in our own work.
    */
-})(jQuery);
+});
