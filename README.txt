@@ -190,7 +190,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 
 == Changelog ==
 = 2.0 =
-* Updated and compatible with WordPress 5.5
+* User updated need to re-assign 'user dashboard' page.
 * Added new .js file for wordpress 5.5 and above
 * Updated languages
 * User Dashboard has own setting tab. Old user should manually update the User Dashboard page.
