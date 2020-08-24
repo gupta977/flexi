@@ -107,8 +107,15 @@ class Flexi_Public
    * between the defined hooks and the functions defined in this
    * class.
    */
-
+  global $wp_version;
+  if(version_compare( $wp_version, '5.4', '>' ))
+  {
+    wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/flexi-public_new.js', array('jquery'), $this->version, false);
+  }
+  else
+  {
   wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/flexi-public.js', array('jquery'), $this->version, false);
+  }
   $enable_conflict_fancybox = flexi_get_option('conflict_disable_fancybox', 'flexi_conflict_settings', 0);
   if ("1" != $enable_conflict_fancybox) {
    wp_enqueue_script($this->plugin_name . '_fancybox', plugin_dir_url(__FILE__) . 'js/jquery.fancybox.min.js', array('jquery'), $this->version, false);

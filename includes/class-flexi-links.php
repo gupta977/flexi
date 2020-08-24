@@ -14,8 +14,7 @@ class Flexi_admin_links
  {
 
   $mylinks = array(
-   '<a href="' . admin_url('admin.php?page=flexi_settings') . '">' . __("Settings", "flexi") . '</a>',
-   '<a href="' . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . '">' . __('Post files', 'flexi') . '</a>',
+   '<a href="' . admin_url('admin.php?page=flexi_settings') . '">' . __("Settings", "flexi") . '</a>'
   );
   return array_merge($links, $mylinks);
  }

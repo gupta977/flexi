@@ -4,7 +4,7 @@ Donate link: https://odude.com/
 Tags: gallery, photo gallery, image gallery, video gallery, responsive gallery
 Requires at least: 4.0.0
 Requires PHP: 5.5
-Tested up to: 5.4.2
+Tested up to: 5.5
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -191,6 +191,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 2.0 =
 * Updated and compatible with WordPress 5.5
+* Added new .js file for wordpress 5.5 and above
 * Updated languages
 * User Dashboard has own setting tab. Old user should manually update the User Dashboard page.
 * Updated Flexi Pages into Flexi Health with option to investigate wrong Flexi Settings. 

@@ -100,8 +100,16 @@ class Flexi_Admin
    * between the defined hooks and the functions defined in this
    * class.
    */
+  global $wp_version;
   add_thickbox();
+  if(version_compare( $wp_version, '5.4', '>' ))
+  {
+    wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/flexi-admin_new.js', array('jquery'), $this->version, false);
+  }
+  else
+  {
   wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/flexi-admin.js', array('jquery'), $this->version, false);
+  }
  }
 
  /**
