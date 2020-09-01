@@ -189,6 +189,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+=2.1 =
+* Added dashboard buttons at Flexi Settings
+
 = 2.0 =
 * User updated need to re-assign 'user dashboard' page.
 * Added new .js file for wordpress 5.5 and above

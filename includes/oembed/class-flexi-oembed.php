@@ -7,7 +7,31 @@ class Flexi_oEmbed
 
  }
 
- public function getUrlThumbnail($url, $post_id)
+
+/***********************************************/
+/* Get a Youtube or Vimeo video's Thumbnail from a URL
+/* ODude.com
+/* 
+/* Copyright 2020, ODude Network
+/* 
+/***********************************************/
+function get_video_thumbnail($url){
+    $image_url = parse_url($url);
+    if($image_url['host'] == 'www.youtube.com' || $image_url['host'] == 'youtube.com'){
+      $array = explode('&', $image_url['query']);
+      return 'http://img.youtube.com/vi/'.substr($array[0], 2).'/0.jpg';
+    } else if($image_url['host'] == 'www.vimeo.com' || $image_url['host'] == 'vimeo.com'){
+      $hash = unserialize(file_get_contents('http://vimeo.com/api/v2/video/'.substr($image_url['path'], 1).'.php'));
+      return $hash[0]['thumbnail_small'];
+    }
+    else
+    {
+        return '';
+    }
+  }
+
+
+  public function getUrlThumbnail($url, $post_id)
  {
   $check_file = ABSPATH . 'wp-includes/class-wp-oembed.php';
   if (file_exists($check_file)) {
@@ -20,19 +44,21 @@ class Flexi_oEmbed
   if (!wp_http_validate_url($url)) {
    return FLEXI_ROOT_URL . 'public/images/noimg_thumb.jpg';
   }
-
+  
   $raw_provider = parse_url($oembed->get_provider($url));
+  
   if (isset($raw_provider['host'])) {
+    
+   //$provider = $oembed->discover($url);
+   //$video    = $oembed->fetch($provider, $url);
 
-   $provider = $oembed->discover($url);
-   $video    = $oembed->fetch($provider, $url);
-   if (isset($video) && false != $video) {
-    // Video Provider Name
-    $provider = $video->provider_name;
+   $video=$this->get_video_thumbnail($url);
 
-    if (isset($video->thumbnail_url)) {
-     add_post_meta($post_id, 'flexi_image', $video->thumbnail_url);
-     return $video->thumbnail_url;
+   if (isset($video) && '' != $video) {
+    
+    if (isset($video)) {
+     add_post_meta($post_id, 'flexi_image', $video);
+      return $video;
     } else {
      return FLEXI_ROOT_URL . 'public/images/noimg_thumb.jpg';
     }

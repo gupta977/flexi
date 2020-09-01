@@ -230,6 +230,7 @@ action="' . admin_url("admin-ajax.php") . '"
    if ('url' == $_POST['type']) {
 
     $result = flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags);
+    
 
    } else {
 

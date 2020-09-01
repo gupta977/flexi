@@ -46,7 +46,7 @@ if ($flexi_activated) {
 
     <p><?php echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . "' class='button button-primary'>" . __('Post to Configure', 'flexi') . "</a>" ?>
     <br> <br><?php
-echo "<a href='" . flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings') . "' >" . __('Skip, I will setup manually', 'flexi') . "</a><br>"
+echo "<a href='" . flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings') . "' >" . __('Skip, I have already done.', 'flexi') . "</a><br>"
  ?>
  </p>
 </div>
@@ -58,7 +58,11 @@ echo "<a href='" . flexi_get_button_url('', false, 'my_gallery', 'flexi_user_das
  ?>
 
     <h1><?php esc_html_e('Flexi Plugin Settings', 'flexi');?></h1>
-
+    <div style="text-align:right">
+<a href="<?php echo admin_url('admin.php?page=flexi'); ?>" class="button"><?php echo __('Flexi','flexi'); ?> <?php echo __('Dashboard','flexi'); ?> </a>
+<a href="<?php echo admin_url('admin.php?page=flexi&tab=pages'); ?>" class="button"><?php echo __('Flexi','flexi'); ?> <?php echo __('Health','flexi'); ?> </a>
+<a href="<?php echo admin_url('admin.php?page=flexi&tab=pro'); ?>" class="button"><?php echo __('Flexi-Pro','flexi'); ?></a>
+</div>
     <?php settings_errors();?>
 
     <h2 class="nav-tab-wrapper">
