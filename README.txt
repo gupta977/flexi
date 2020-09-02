@@ -191,6 +191,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 =2.1 =
 * Added dashboard buttons at Flexi Settings
+* Updated blank thumbnail for youtube
 
 = 2.0 =
 * User updated need to re-assign 'user dashboard' page.
