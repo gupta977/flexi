@@ -227,7 +227,8 @@ action="' . admin_url("admin-ajax.php") . '"
   $url           = $attr['user-submitted-url'];
 
   if (isset($_POST['type'])) {
-   if ('url' == $_POST['type']) {
+   if ('url' == $_POST['type']) 
+   {
 
     $result = flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags);
     

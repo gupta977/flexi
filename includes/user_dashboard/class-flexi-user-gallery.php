@@ -35,13 +35,13 @@ class Flexi_User_Dashboard_Gallery
 
             </div>
             <div class="flexi_cell">
-                <?php echo __('Title', 'flexi'); ?>
+                &nbsp;
             </div>
             <div class="flexi_cell">
-            <?php echo __('Status', 'flexi'); ?>
+                &nbsp;
             </div>
             <div class="flexi_cell">
-            <?php echo __('Action', 'flexi'); ?>
+                &nbsp;
             </div>
         </div>
 
@@ -66,37 +66,68 @@ class Flexi_User_Dashboard_Gallery
                 $data = flexi_image_data('thumbnail', $post, $popup);
 
                 ?>
-															    <div class="flexi_row" id="flexi_content_<?php echo get_the_ID(); ?>">
+        <div class="flexi_row" id="flexi_content_<?php echo get_the_ID(); ?>">
 
-															        <div class="flexi_cell flexi-image-wrapper-icon">
-															            <a data-fancybox="gallery"
-															                <?php echo ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" border="0"'; ?>>
-															                <img src="<?php echo esc_url(flexi_image_src('thumbnail', $post)); ?>">
+            <div class="flexi_cell flexi-image-wrapper-icon">
+                <a data-fancybox="gallery"
+                    <?php echo ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" border="0"'; ?>>
+                    <img src="<?php echo esc_url(flexi_image_src('thumbnail', $post)); ?>">
 
-															            </a>
-															        </div>
-															        <div class="flexi_cell" data-title="<?php echo __("Title", "flexi"); ?>">
-															            <?php echo $data['title']; ?>
-													                    <div class="flexi_text_group">  <?php echo flexi_list_tags($post, '', 'flexi_text_small', 'dashicons dashicons-tag'); ?> </div>
-													                    <div class="flexi_text_group">  <?php echo flexi_list_tags($post, '', 'flexi_text_small', 'dashicons dashicons-category', 'flexi_category'); ?> </div>
-															        </div>
-															        <div class="flexi_cell" data-title="<?php echo __("Status", "flexi"); ?>">
-															            <?php
+                </a>
+            </div>
+            <div class="flexi_cell" data-title="">
+                <?php echo $data['title']; ?>
+                <div class="flexi_text_group">
+                    <?php echo flexi_list_tags($post, '', 'flexi_text_small', 'dashicons dashicons-tag'); ?> </div>
+                <div class="flexi_text_group">
+                    <?php echo flexi_list_tags($post, '', 'flexi_text_small', 'dashicons dashicons-category', 'flexi_category'); ?>
+                </div>
+            </div>
+            <div class="flexi_cell" data-title="">
+                <?php
     if (get_post_status() == 'draft' || get_post_status() == "pending") {
                     ?>
-															            <div class="flexi_badge"><?php echo __("Under Review", "flexi"); ?></div>
-															            <?php
+
+                <div class="flexi_text_group">
+                    <div class="flexi_text_small">
+                        <span class="dashicons dashicons-hidden"></span>
+                        <?php echo __("Under Review", "flexi"); ?>
+                    </div>
+                </div>
+
+
+                <?php
     } else {
                     ?>
-															            <div class="flexi_badge_green"><?php echo __("Visible", "flexi"); ?></div>
-															            <?php
+
+                <div class="flexi_text_group">
+                    <div class="flexi_text_small">
+                        <span class="dashicons dashicons-visibility"></span>
+                        <?php echo __("Public", "flexi"); ?>
+                    </div>
+                </div>
+
+
+                <?php
     }
                 ?>
-															        </div>
-															        <div class="flexi_cell" data-title="<?php echo __("Action", "flexi"); ?>">
-															            <?php echo flexi_show_icon_grid(); ?>
-															        </div>
-															    </div>										    <?php
+
+                <div class="flexi_text_group">
+                    <div class="flexi_text_small">
+                        <span class="dashicons dashicons-calendar-alt"></span>
+                        <?php echo get_the_date(); ?>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="flexi_cell" data-title="">
+                <?php echo flexi_show_icon_grid(); ?>
+            </div>
+        </div> <?php
     $count++;
             endwhile;
 

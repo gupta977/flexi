@@ -82,32 +82,32 @@ class Flexi_User_Dashboard
     ?>
 
 <div class="flexi_text_group" style="text-align:right;">
-  <?php echo $this->flexi_member_toolbar(); ?>
+    <?php echo $this->flexi_member_toolbar(); ?>
 </div>
 
 <div class="pure-g">
-  <div class="pure-u-1-2">
-    <?php echo flexi_author($current_user->user_login); ?>
-  </div>
-  <div class="pure-u-1-2" style="text-align:right;">
-    <form method="get" class="pure-form">
-      <input type="text" name="search" placeholder="<?php echo __('Search post', 'flexi'); ?>"
-        class="pure-input-rounded">
-      <button type="submit" class="pure-button"><?php echo __("Search", "flexi"); ?></button>
-    </form>
-  </div>
+    <div class="pure-u-2-5">
+        <?php echo flexi_author($current_user->user_login); ?>
+    </div>
+    <div class="pure-u-3-5" style="text-align:right;">
+        <form method="get" class="pure-form">
+            <input type="text" name="search" placeholder="<?php echo __('Search post', 'flexi'); ?>"
+                class="pure-input-rounded">
+            <button type="submit" class="pure-button"><?php echo __("Search", "flexi"); ?></button>
+        </form>
+    </div>
 </div>
 
 <ul data-tabs>
-  <li><a data-tabby-default href="#my_post"><?php echo __('My Posts', 'flexi'); ?></a></li>
+    <li><a data-tabby-default href="#my_post"><?php echo __('My Posts', 'flexi'); ?></a></li>
 </ul>
 
 <div id="my_post">
-  <?php do_action('flexi_user_dashboard');?>
+    <?php do_action('flexi_user_dashboard');?>
 </div>
 
 <script>
-  var tabs = new Tabby('[data-tabs]');
+var tabs = new Tabby('[data-tabs]');
 </script>
 
 <?php
