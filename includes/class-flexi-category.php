@@ -13,7 +13,150 @@ class Flexi_Category
   add_action('manage_' . $taxonomy_tag . '_custom_column', array($this, 'manage_tag_columns'), 10, 3);
 
   add_action('template_redirect', array($this, 'category_rewrite_view_link'));
+
+  add_shortcode('flexi-category', array($this, 'flexi_category'));
+
  }
+
+//List category/album at frontend
+public function flexi_category($params)
+{
+
+  //Parent category
+if (isset($params['parent']) && $params['parent'] != '') {
+  $term_slug = $params['parent'];
+} else {
+  $term_slug = "";
+}
+  
+  $term = get_term_by('slug', $term_slug, 'flexi_category');
+
+  if ($term_slug != "") {
+    $album_name = $term->name;
+    $term_id = $term->term_id;
+} else {
+    $album_name = "";
+    $term_id = 0;
+}
+
+//Show album count
+if (isset($params['count']) && $params['count'] == 'show') {
+  $count = true;
+} else {
+  $count = false;
+}
+
+//Hide hidden category
+$skip = array();
+$skip = flexi_hidden_album();
+
+  $args = array(
+    'orderby'      => 'name',
+    'order' => 'ASC',
+    'hide_empty'   => 0,
+    'exclude'            => $skip,
+    'parent' => $term_id,
+
+);
+
+$terms = get_terms('flexi_category', $args);
+
+//Layout
+if (isset($params['layout'])) {
+  $layout = trim($params['layout']);
+ } else {
+  $layout = "basic";
+ }
+
+$count_category = 0;
+$put   = "";
+ob_start();
+
+if (!empty($terms) && !is_wp_error($terms)) 
+{
+
+  $check_file = FLEXI_PLUGIN_DIR . 'public/partials/layout/category/' . $layout . '/loop.php';
+  if (file_exists($check_file)) 
+  {
+    if (isset($params['column']) && $params['column'] > 0) {
+      $column = $params['column'];
+     } else {
+      $column = flexi_get_option('column', 'flexi_image_layout_settings', 3);
+     }
+   
+     if (isset($params['width']) && $params['width'] > 0) {
+      $width = $params['width'];
+     } else {
+      $width = flexi_get_option('t_width', 'flexi_media_settings', 150);
+     }
+   
+     if (isset($params['height']) && $params['height'] > 0) {
+      $height = $params['height'];
+     } else {
+      $height = flexi_get_option('t_height', 'flexi_media_settings', 150);
+     }
+
+     //padding
+  if (isset($params['padding'])) {
+    $padding = $params['padding'] . 'px';
+   } else {
+    $padding = flexi_get_option('image_space', 'flexi_gallery_appearance_settings', 0) . 'px';
+   }
+ 
+   //hover_effect
+   if (isset($params['hover_effect'])) {
+    $hover_effect = $params['hover_effect'];
+   } else {
+    $hover_effect = flexi_get_option('hover_effect', 'flexi_gallery_appearance_settings', 'flexi_effect_2');
+   }
+ 
+   //hover_effect
+   if (isset($params['hover_caption'])) {
+    $hover_caption = $params['hover_caption'];
+   } else {
+    $hover_caption = flexi_get_option('hover_caption', 'flexi_gallery_appearance_settings', 'flexi_caption_4');
+   }
+
+   //evalue data
+  if (isset($params['evalue'])) {
+    $evalue = $params['evalue'];
+   } else {
+    $evalue = "";
+   }
+   
+    wp_register_style('flexi_category_' . $layout . '_layout', FLEXI_PLUGIN_URL . '/public/partials/layout/category/' . $layout . '/style.css', null, FLEXI_VERSION);
+    wp_enqueue_style('flexi_category_' . $layout . '_layout');
+    require FLEXI_PLUGIN_DIR . 'public/partials/layout/category/attach_header.php';
+
+      foreach ($terms as $term) {
+          if ($count) {
+              $count_result='(<b>'.$term->count.'</b>)';
+          } else {
+              $count_result='';
+          }
+          require FLEXI_PLUGIN_DIR . 'public/partials/layout/category/attach_loop.php';
+          $count_category++;
+      }
+
+      require FLEXI_PLUGIN_DIR . 'public/partials/layout/category/attach_footer.php';
+  }
+
+}
+
+$put = ob_get_clean();
+    wp_reset_query();
+    wp_reset_postdata();
+
+    if (flexi_execute_shortcode()) {
+      return $put;
+     } else {
+ 
+      return '';
+     }
+
+}
+
+
  public function new_column_category($columns)
  {
 

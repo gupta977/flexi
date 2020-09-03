@@ -126,8 +126,8 @@ You can also add/remove form fields based on pages & posts.
 = Language Support =
 * German language (de_DE) (Thanks to contributor: Radek)
 * Italian Language (it_IT) (Thanks to contributor: Avelino)
-* Dutch langauge (nl_NL)
-* Hindi India langauge (hi_IN) (Thanks to Aaditya Naman Gupta)
+* Dutch language (nl_NL)
+* Hindi India language (hi_IN) (Thanks to Aaditya Naman Gupta)
 * Russian Language (ru_RU)
 * Spanish Language (es_ES)
 * French Language (fr_FR)
@@ -189,7 +189,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
-=2.1 =
+= 2.2 =
+* Added multiple youtube url format
+
+= 2.1 =
 * Added dashboard buttons at Flexi Settings
 * Updated blank thumbnail for youtube
 

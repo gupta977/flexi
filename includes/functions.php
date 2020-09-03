@@ -364,7 +364,7 @@ function flexi_album_single($term_slug, $class = 'flexi_user-list')
       <div class="flexi-user-avatar">
       <a href="' . $link . '"><img src="' . flexi_album_image($term_slug) . '" width="50" alt="' . $term->name . '" /></a>
       </div>
-      <p class="flexi-user-name"><a href="' . $link . '">' . $term->name . '</a><span>' . __('Album', 'flexi') . '</span></p>
+      <p class="flexi-user-name"><a href="' . $link . '">' . $term->name . '</a><span>' . __('Category', 'flexi') . '</span></p>
       </li></ul>';
 
  } else {
