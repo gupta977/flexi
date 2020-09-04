@@ -123,6 +123,13 @@ You can also add/remove form fields based on pages & posts.
 * **List Album** List all or selected album at sidebar or any widget location.
 * **Flexi Showcase Widgets** - Easily place gallery at sidebar based on latest, modified & random post (Elementor supported) 
 
+= Category & Tags =
+* **Album** - Administrator can create unlimited deep tree category.
+* **Tags** - User can generate their tags from frontend. 
+* **Album List** - Shortcode `[flexi-category]` can display album to frontend
+* **Album Widget** - List of categories can be displayed at sidebar
+* **Album Thumbnail** - Admin can set own custom thumbnail image.  
+
 = Language Support =
 * German language (de_DE) (Thanks to contributor: Radek)
 * Italian Language (it_IT) (Thanks to contributor: Avelino)
@@ -191,6 +198,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 2.2 =
 * Added multiple youtube url format
+* Added [flexi-category] shortcode
 
 = 2.1 =
 * Added dashboard buttons at Flexi Settings

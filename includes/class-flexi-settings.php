@@ -150,8 +150,8 @@ class FLEXI_Admin_Settings
    ),
    array(
     'id'    => 'flexi_categories_settings',
-    'title' => __('Category & Tags Settings', 'flexi'),
-    'tab'   => 'form',
+    'title' => __('Category & Tags', 'flexi'),
+    'tab'   => 'gallery',
    ),
 
    array(
@@ -430,6 +430,13 @@ class FLEXI_Admin_Settings
      'type'              => 'category',
      'sanitize_callback' => 'sanitize_key',
     ),
+    array(
+        'name'              => 'category_page',
+        'label'             => __('Category Page', 'flexi'),
+        'description'       => __('Page which will be used to display albums.', 'flexi'),
+        'type'              => 'pages',
+        'sanitize_callback' => 'sanitize_key',
+       ),
 
    ),
 

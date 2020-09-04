@@ -22,12 +22,17 @@ class Flexi_Category
 public function flexi_category($params)
 {
 
-  //Parent category
+//Parent category
 if (isset($params['parent']) && $params['parent'] != '') {
   $term_slug = $params['parent'];
 } else {
   $term_slug = "";
 }
+
+//check category in url
+$term_slug_in_url = get_query_var('flexi_category');
+if($term_slug_in_url!='')
+$term_slug = get_query_var('flexi_category');
   
   $term = get_term_by('slug', $term_slug, 'flexi_category');
 
@@ -105,22 +110,29 @@ if (!empty($terms) && !is_wp_error($terms))
  
    
   
-   
+$category_page_link = flexi_get_button_url('', false, 'category_page', 'flexi_categories_settings');
+if ('#' != $category_page_link) {
     wp_register_style('flexi_category_' . $layout . '_layout', FLEXI_PLUGIN_URL . '/public/partials/layout/category/' . $layout . '/style.css', null, FLEXI_VERSION);
     wp_enqueue_style('flexi_category_' . $layout . '_layout');
     require FLEXI_PLUGIN_DIR . 'public/partials/layout/category/attach_header.php';
 
-      foreach ($terms as $term) {
-          if ($count) {
-              $count_result='('.$term->count.')';
-          } else {
-              $count_result='';
-          }
-          require FLEXI_PLUGIN_DIR . 'public/partials/layout/category/attach_loop.php';
-          $count_category++;
-      }
+    foreach ($terms as $term) {
+        if ($count) {
+            $count_result='('.$term->count.')';
+        } else {
+            $count_result='';
+        }
+        require FLEXI_PLUGIN_DIR . 'public/partials/layout/category/attach_loop.php';
+        $count_category++;
+    }
 
-      require FLEXI_PLUGIN_DIR . 'public/partials/layout/category/attach_footer.php';
+    require FLEXI_PLUGIN_DIR . 'public/partials/layout/category/attach_footer.php';
+}
+else
+{
+  echo '<div id="flexi_no_record" class="flexi_alert-box flexi_error">' . __('Flexi category page is not assigned in settings.', 'flexi') . '</div>';
+}
+    
   }
 
 }

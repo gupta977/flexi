@@ -49,6 +49,21 @@ Page should contain <code>[flexi-primary]</code> shortcode. Primary gallery page
 
 <div class="update-nag">
 <?php
+$category_page_link = flexi_get_button_url('', false, 'category_page', 'flexi_categories_settings');
+  if ('#' != $category_page_link) {
+   echo "<a href='" . $category_page_link . "' target='_blank'>Category Page:</a><br>";
+  } else {
+   echo '<div style="color:red; font-weight:bold;">Category Page : Not assigned</div><br>';
+  }
+  echo '<a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=gallery&section=flexi_categories_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a> ';
+  ?>
+Page should contain <code>[flexi-category]</code> shortcode.<br><br>
+
+</div>
+
+
+<div class="update-nag">
+<?php
 $submission_form_link = flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings');
   if ('#' != $submission_form_link) {
    echo "<a href='" . $submission_form_link . "' target='_blank'>Submission form Page:</a><br>";
