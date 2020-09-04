@@ -9,7 +9,7 @@ echo '<div class="flexi_gallery_grid">';
 <div class="flexi-list-small_category">
 
     <?php
-echo '<div class="flexi-image-wrapper flexi-list-sub">';
+echo '<div class="flexi-image-wrapper flexi-list-sub_category">';
 echo '<a href="'.$link.'" data-caption="" data-src="" border="0">';
 echo '<img src="'.flexi_album_image($term->slug).'">';
 
@@ -17,7 +17,7 @@ echo '</a>';
 echo '</div>';
 ?>
 
-    <div class="flexi_details">
+    <div class="flexi_details_category">
         <h3><?php echo $term->name; ?> <?php echo  $count_result; ?></h3>
     </div>
 
