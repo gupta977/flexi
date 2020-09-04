@@ -43,7 +43,7 @@ $primary_page_link = flexi_get_button_url('', false, 'primary_page', 'flexi_imag
   }
   echo '<a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=gallery&section=flexi_image_layout_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a> ';
   ?>
-Page should contain <code>[flexi-primary]</code> shortcode. Primary gallery page cannot be WordPress's front or homepage.<br><br>
+Page should contain <code>[flexi-primary]</code> shortcode. Primary gallery page cannot be WordPress's front or homepage.<br>
 
 </div>
 
@@ -57,7 +57,7 @@ $category_page_link = flexi_get_button_url('', false, 'category_page', 'flexi_ca
   }
   echo '<a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=gallery&section=flexi_categories_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a> ';
   ?>
-Page should contain <code>[flexi-category]</code> shortcode.<br><br>
+Page should contain <code>[flexi-category]</code> shortcode. Link this page at <a href="<?php echo admin_url('nav-menus.php'); ?>">frontend menu</a> <br>
 
 </div>
 
@@ -101,7 +101,7 @@ $my_gallery_link = flexi_get_button_url('', false, 'my_gallery', 'flexi_user_das
   }
   echo '<a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=general&section=flexi_user_dashboard_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a> ';
   ?>
-Page should contain <code>[flexi-user-dashboard]</code> shortcode. You can add this page into <a href="<?php echo admin_url('nav-menus.php'); ?>">member menu</a>. <br><br>
+Page should contain <code>[flexi-user-dashboard]</code> shortcode. You can add this page into <a href="<?php echo admin_url('nav-menus.php'); ?>">member menu</a>. <br>
 </div>
 
 <div class="update-nag">
