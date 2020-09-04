@@ -212,9 +212,17 @@ function flexi_get_category_page_link($term, $taxonomy)
  $link = '/';
 
  if (flexi_get_option('primary_page', 'flexi_image_layout_settings', 0) > 0) {
-  $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
-  $link = add_query_arg($taxonomy, $term->slug, $link);
 
+    $flexi_link_sub_cate = get_term_meta($term->term_id, 'flexi_link_sub_cate', true);
+if ("on" == $flexi_link_sub_cate) {
+    $category_page_link = get_permalink(flexi_get_option('category_page', 'flexi_categories_settings', 0));
+    $link = add_query_arg($taxonomy, $term->slug, $category_page_link);
+}
+else
+{
+    $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
+    $link = add_query_arg($taxonomy, $term->slug, $link);
+}
  }
 
  return $link;

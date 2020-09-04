@@ -20,5 +20,10 @@
 }
 
     </style>
+
+    <?php
+$primary_page_link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
+$category_page_link = get_permalink(flexi_get_option('category_page', 'flexi_categories_settings', 0));
+?>
 <div id="flexi_gallery" class="flexi_basic_width_category_<?php echo $width; ?>">
 <div id="flexi_main_loop">

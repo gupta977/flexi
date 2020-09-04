@@ -150,6 +150,14 @@ class Flexi_Meta_boxes
    'type'       => 'checkbox',
   ));
 
+  $cmb_category->add_field(array(
+    'name'       => 'Link to sub-category',
+    'desc'       => 'Category page is linked which displays sub-category',
+    'id'         => 'flexi_link_sub_cate',
+    'show_names' => true, // Show field names on the left
+    'type'       => 'checkbox',
+   ));
+
   $cmb_side = new_cmb2_box(array(
    'id'           => 'flexi_metabox_side',
    'title'        => __('Flexi Shortcode', 'flexi'),

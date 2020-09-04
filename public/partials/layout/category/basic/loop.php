@@ -1,7 +1,12 @@
 <?php
-//$data = flexi_image_data('thumbnail', $post, $popup);
-$link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
-$link = add_query_arg("flexi_category", $term->slug, $link);
+
+$flexi_link_sub_cate = get_term_meta($term->term_id, 'flexi_link_sub_cate', true);
+if ("on" == $flexi_link_sub_cate) {
+    $link = add_query_arg("flexi_category", $term->slug, $category_page_link);
+}
+else{
+    $link = add_query_arg("flexi_category", $term->slug, $primary_page_link);
+}
 echo '<div class="flexi_responsive flexi_gallery_child" id="flexi_' . get_the_ID() . '">';
 echo '<div class="flexi_gallery_grid">';
 ?>
