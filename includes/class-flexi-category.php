@@ -103,26 +103,8 @@ if (!empty($terms) && !is_wp_error($terms))
     $padding = flexi_get_option('image_space', 'flexi_gallery_appearance_settings', 0) . 'px';
    }
  
-   //hover_effect
-   if (isset($params['hover_effect'])) {
-    $hover_effect = $params['hover_effect'];
-   } else {
-    $hover_effect = flexi_get_option('hover_effect', 'flexi_gallery_appearance_settings', 'flexi_effect_2');
-   }
- 
-   //hover_effect
-   if (isset($params['hover_caption'])) {
-    $hover_caption = $params['hover_caption'];
-   } else {
-    $hover_caption = flexi_get_option('hover_caption', 'flexi_gallery_appearance_settings', 'flexi_caption_4');
-   }
-
-   //evalue data
-  if (isset($params['evalue'])) {
-    $evalue = $params['evalue'];
-   } else {
-    $evalue = "";
-   }
+   
+  
    
     wp_register_style('flexi_category_' . $layout . '_layout', FLEXI_PLUGIN_URL . '/public/partials/layout/category/' . $layout . '/style.css', null, FLEXI_VERSION);
     wp_enqueue_style('flexi_category_' . $layout . '_layout');
@@ -130,7 +112,7 @@ if (!empty($terms) && !is_wp_error($terms))
 
       foreach ($terms as $term) {
           if ($count) {
-              $count_result='(<b>'.$term->count.'</b>)';
+              $count_result='('.$term->count.')';
           } else {
               $count_result='';
           }

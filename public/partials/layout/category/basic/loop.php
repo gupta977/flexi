@@ -8,24 +8,18 @@ echo '<div class="flexi_gallery_grid">';
 
 <div class="flexi-list-small">
 
-        <?php
-echo '<div class="flexi-image-wrapper flexi-list-sub flexi_effect" id="' . $hover_effect . '">';
+    <?php
+echo '<div class="flexi-image-wrapper flexi-list-sub">';
 echo '<a href="'.$link.'" data-caption="" data-src="" border="0">';
 echo '<img src="'.flexi_album_image($term->slug).'">';
-flexi_log($term);
-?>
-                  <div id="flexi_info" class="<?php echo $hover_caption; ?>">
-                        <div class="flexi_title"><?php echo  $term->name; ?></div>
-                        <div class="flexi_p"><?php echo  $count_result; ?></div>
-                  </div>
-<?php
+
 echo '</a>';
 echo '</div>';
 ?>
 
-        <div class="flexi_details" style="<?php echo flexi_evalue_toggle('title', $evalue); ?>">
-            <h3><?php echo $term->name; ?></h3>
-        </div>
+    <div class="flexi_details">
+        <h3><?php echo $term->name; ?> <?php echo  $count_result; ?></h3>
+    </div>
 
 </div>
 </div>

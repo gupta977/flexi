@@ -2,7 +2,7 @@
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 auto;
   text-align: center;
-  padding: 2px;
+  padding: var(--flexi_category_padding);
 }
 
 .flexi-list-small .flexi-list-sub {
@@ -26,6 +26,7 @@
 
 .flexi-list-small .flexi_details {
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 /* Title */

@@ -5,3 +5,8 @@ if (file_exists($footer_file)) {
  require $footer_file;
 }
 ?>
+<style>
+:root {
+  --flexi_category_padding: <?php echo $padding; ?>;
+}
+  </style>
