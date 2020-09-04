@@ -6,7 +6,7 @@ echo '<div class="flexi_responsive flexi_gallery_child" id="flexi_' . get_the_ID
 echo '<div class="flexi_gallery_grid">';
 ?>
 
-<div class="flexi-list-small">
+<div class="flexi-list-small_category">
 
     <?php
 echo '<div class="flexi-image-wrapper flexi-list-sub">';

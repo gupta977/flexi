@@ -1,18 +1,18 @@
-.flexi-list-small {
+.flexi-list-small_category {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 auto;
   text-align: center;
   padding: var(--flexi_category_padding);
 }
 
-.flexi-list-small .flexi-list-sub {
+.flexi-list-small_category .flexi-list-sub {
   display: inline-block;
   margin: 0 0px 0px;
 }
 
 /* Photo */
 
-.flexi-list-small .flexi-list-sub > a {
+.flexi-list-small_category .flexi-list-sub > a {
   display: block;
   text-decoration: none;
   background-size: cover;
@@ -24,14 +24,14 @@
   box-shadow: 0 2px 1px #ddd;
 }
 
-.flexi-list-small .flexi_details {
+.flexi-list-small_category .flexi_details {
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
 /* Title */
 
-.flexi-list-small .flexi_details h3 {
+.flexi-list-small_category .flexi_details h3 {
   display: block;
   font-size: 12px;
   margin: 0 0 3px 0;
