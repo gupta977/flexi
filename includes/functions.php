@@ -837,7 +837,7 @@ function flexi_create_pages()
  if (!$wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[flexi-gallery]%'")) {
 
     //Assign category page
-    $cat_id = wp_insert_post(array('post_title' => 'Flexi Category', 'post_content' => '<!-- wp:shortcode -->[flexi-category]<!-- /wp:shortcode -->', 'post_type' => 'page', 'post_status' => 'publish'));
+    $cat_id = wp_insert_post(array('post_title' => 'Flexi Category', 'post_content' => '<!-- wp:shortcode -->[flexi-category parent="" padding="10"]<!-- /wp:shortcode -->', 'post_type' => 'page', 'post_status' => 'publish'));
     flexi_set_option('category_page', 'flexi_categories_settings', $cat_id);
 
 

@@ -13,53 +13,7 @@ class Flexi_Category
   add_action('manage_' . $taxonomy_tag . '_custom_column', array($this, 'manage_tag_columns'), 10, 3);
   add_action('template_redirect', array($this, 'category_rewrite_view_link'));
   add_shortcode('flexi-category', array($this, 'flexi_category'));
-  
-  //Display category dropdown at gallery page
-//  add_action('flexi_gallery_top_right', array($this, 'flexi_gallery_top_right'));
- }
-
-
- //Display category dropdown at gallery page
- public function flexi_gallery_top_right()
- {
-  $category_page_link = get_permalink(flexi_get_option('category_page', 'flexi_categories_settings', 0));
-  //$link = add_query_arg("flexi_category", $term->slug, $category_page_link);
-
-  $term_slug = get_query_var('flexi_category');
-  $dropdown_args = array(
-    'show_option_none'  => '-- ' . __('All category', 'flexi') . ' --',
-    'option_none_value' => '',
-    'selected'          => $term_slug,
-    'echo'              => 0,
-    'show_count'        => 1,
-    'hierarchical'      => 1,
-    'taxonomy'          => 'flexi_category',
-    'name'               => 'flexi_cat',
-    'value_field'       => 'slug',
-    'hide_empty'        => 0,
- 
-   );
- 
-   $html = wp_dropdown_categories($dropdown_args);
- 
-   echo $html."<br><br>";
-   ?>
-<script>
-var dropdown = document.getElementById("flexi_cat");
-
-function onCatChange() {
-    if (dropdown.options[dropdown.selectedIndex].value != 0) {
-      location.href = "<?php echo $category_page_link; ?>/?flexi_category=" + dropdown.options[dropdown.selectedIndex].value;
-    } else  {
-        alert("home");
-    }
-}
-dropdown.onchange = onCatChange;
-</script>
-<?php
-
-
- }
+   }
 
 
 //List category/album at frontend
