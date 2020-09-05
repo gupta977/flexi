@@ -426,16 +426,23 @@ class FLEXI_Admin_Settings
     array(
      'name'              => 'global_album',
      'label'             => __('Default Post Category', 'flexi'),
-     'description'       => __('This category will be selected if no category is assigned by visitor.', 'flexi'),
+     'description'       => __('This category will be selected if no category is assigned by visitor while submitting form.', 'flexi'),
      'type'              => 'category',
      'sanitize_callback' => 'sanitize_key',
     ),
     array(
         'name'              => 'category_page',
         'label'             => __('Category Page', 'flexi'),
-        'description'       => __('Page which will be used to display albums.', 'flexi'),
+        'description'       => __('Page which will be used to display albums. Should contain [flexi-category] as shortcode.', 'flexi'),
         'type'              => 'pages',
         'sanitize_callback' => 'sanitize_key',
+       ),
+       array(
+        'name'              => 'category_count',
+        'label'             => __('Category count', 'flexi'),
+        'description'       => __('Display post count of specific category at category page.', 'flexi'),
+        'type'              => 'checkbox',
+        'sanitize_callback' => 'intval',
        ),
 
    ),

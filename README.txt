@@ -199,6 +199,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 2.2 =
 * Added multiple youtube url format
 * Added [flexi-category] shortcode
+* Added option at category creation page.
+* Moved category & tags tab settings to gallery tab.
+* Category count on/off at settings.
 
 = 2.1 =
 * Added dashboard buttons at Flexi Settings

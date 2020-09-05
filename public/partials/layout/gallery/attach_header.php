@@ -3,7 +3,18 @@
 $toolbar = new Flexi_Gallery_Toolbar();
 if (false == $clear) {
  ?>
-<div class="flexi_label"><?php echo $toolbar->label(); ?></div>
+ <div class="pure-g">
+    <div class="pure-u-1-3" style="text-align:left;">
+    <div class="flexi_label"><?php echo $toolbar->label(); ?></div>
+       </div>
+    <div class="pure-u-1-3" style="text-align:center;">
+    <?php do_action('flexi_gallery_top_center')?>
+    </div>
+    <div class="pure-u-1-3" style="text-align:right;">
+    <?php do_action('flexi_gallery_top_right')?>
+    </div>
+</div>
+
 
 <?php
 }
