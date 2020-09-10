@@ -1,10 +1,5 @@
-</tbody>
-  </table>
 </div>
-
-</div>
-</div>
-
+</ul>
 <div style="clear: both; display: block; position: relative;"></div>
 <?php
 if (0 == $count) {

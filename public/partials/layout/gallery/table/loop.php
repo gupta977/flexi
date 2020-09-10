@@ -1,10 +1,9 @@
 <?php
 $data = flexi_image_data('thumbnail', $post, $popup);
-echo '<div class="flexi_responsive flexi_gallery_child" id="flexi_' . get_the_ID() . '"  data-tags="' . $tags . '">';
-echo '<div class="flexi_gallery_grid">';
-
-echo "<div a='i'>hiii</div>";
 ?>
-     
-      </div>
-</div>      
+    <li class="flexi-table-row">
+      <div class="flexi-col flexi-col-1" data-label="Job Id">42235</div>
+      <div class="flexi-col flexi-col-2" data-label="Customer Name"> <?php echo $data['title']; ?></div>
+      <div class="flexi-col flexi-col-3" data-label="Amount">$350</div>
+      <div class="flexi-col flexi-col-4" data-label="Payment Status">Pending</div>
+    </li>
