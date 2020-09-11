@@ -1,7 +1,8 @@
 <?php
 $data = flexi_image_data('thumbnail', $post, $popup);
 ?>
-    <li class="flexi-table-row">
+<div class="flexi_gallery_child" id="flexi_<?php echo get_the_ID(); ?>" data-tags="<?php echo $tags; ?>">
+    <li class="flexi-table-row" >
 
       <div class="flexi-col flexi-col-2" data-label="<?php echo __("Title","flexi"); ?>">
       <div class="flexi_title_bold"> <?php echo $data['title']; ?></div>
@@ -53,3 +54,4 @@ if (flexi_evalue_toggle('category', $evalue) == '') {
   
         </div>
     </li>
+</div>

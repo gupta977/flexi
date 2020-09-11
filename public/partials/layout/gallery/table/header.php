@@ -1,4 +1,4 @@
-<ul class="flexi-responsive-table">
+<ul class="flexi-responsive-table" id="flexi_gallery">
 <li class="flexi-table-header">
     
       <div class="flexi-col flexi-col-2"><?php echo __("Title","flexi"); ?></div>
