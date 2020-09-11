@@ -206,6 +206,10 @@ class FlexiGalleryEdit extends Component {
 										label: "Basic",
 										value: "basic",
 									},
+									{
+										label: "Table",
+										value: "table",
+									},
 								]}
 								onChange={(value) => setAttributes({ layout: value })}
 							/>

@@ -2,7 +2,7 @@
 $data = flexi_image_data('thumbnail', $post, $popup);
 ?>
     <li class="flexi-table-row">
-      <div class="flexi-col flexi-col-1" data-label="ddd">
+      <div class="flexi-col flexi-col-1">
         
       <?php
 echo '<div class="' . $data['popup'] . '">';
@@ -14,7 +14,18 @@ echo '</div>';
 
 
       </div>
-      <div class="flexi-col flexi-col-2" data-label="Customer Name"> <?php echo $data['title']; ?></div>
+      <div class="flexi-col flexi-col-2" data-label="<?php echo __("Title","flexi"); ?>">
+       <?php echo $data['title']; ?>
+       <?php
+if (flexi_evalue_toggle('category', $evalue) == '') {
+      echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
+     }
+     
+     if (flexi_evalue_toggle('tag', $evalue) == '') {
+      echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
+     }
+       ?>
+       </div>
       <div class="flexi-col flexi-col-3" data-label="Amount">$350</div>
       <div class="flexi-col flexi-col-4" data-label="Payment Status">
         
