@@ -196,6 +196,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 2.3 =
+* Added Gallery - Table Layout
+* No count shown if category count is empty for [flexi-category]
+
 = 2.2 =
 * Added multiple youtube url format
 * Added [flexi-category] shortcode

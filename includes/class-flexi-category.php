@@ -123,6 +123,9 @@ if ('#' != $category_page_link) {
 
     foreach ($terms as $term) {
         if ($count) {
+          if($term->count==0)
+            $count_result='';
+            else
             $count_result='('.$term->count.')';
         } else {
             $count_result='';
