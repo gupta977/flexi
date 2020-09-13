@@ -199,6 +199,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 2.3 =
 * Added Gallery - Table Layout
 * No count shown if category count is empty for [flexi-category]
+* Block editor- Gallery block toggle controls based on layout selection
 
 = 2.2 =
 * Added multiple youtube url format

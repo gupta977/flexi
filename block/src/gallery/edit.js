@@ -236,13 +236,17 @@ class FlexiGalleryEdit extends Component {
 								]}
 								onChange={(value) => setAttributes({ popup_style: value })}
 							/>
-							<RangeControl
-								label="Columns"
-								value={column}
-								onChange={onChangeColumn}
-								min={1}
-								max={10}
-							/>
+							{(layout == "masonry" ||
+								layout == "portfolio" ||
+								layout == "wide") && (
+								<RangeControl
+									label="Columns"
+									value={column}
+									onChange={onChangeColumn}
+									min={1}
+									max={10}
+								/>
+							)}
 							<RangeControl
 								label="Post Per Page"
 								value={perpage}
@@ -257,21 +261,24 @@ class FlexiGalleryEdit extends Component {
 								min={1}
 								max={10}
 							/>
-							<RangeControl
-								label="Thumbnail Image Width .px"
-								value={width}
-								onChange={toggleAttribute("width")}
-								min={50}
-								max={500}
-							/>
-
-							<RangeControl
-								label="Thumbnail Image Height .px"
-								value={height}
-								onChange={toggleAttribute("height")}
-								min={50}
-								max={500}
-							/>
+							{layout != "table" && (
+								<RangeControl
+									label="Thumbnail Image Width .px"
+									value={width}
+									onChange={toggleAttribute("width")}
+									min={50}
+									max={500}
+								/>
+							)}
+							{layout != "table" && (
+								<RangeControl
+									label="Thumbnail Image Height .px"
+									value={height}
+									onChange={toggleAttribute("height")}
+									min={50}
+									max={500}
+								/>
+							)}
 						</PanelBody>
 						<PanelBody
 							title={__("Toggle Controls", "flexi")}
@@ -294,96 +301,114 @@ class FlexiGalleryEdit extends Component {
 								checked={popup}
 								onChange={toggleAttribute("popup")}
 							/>
-
+							{(layout == "portfolio" ||
+								layout == "basic") && (
 							<ToggleControl
 								label="Display title"
 								checked={evalue_title}
 								onChange={toggleAttribute("evalue_title")}
 							/>
-							<ToggleControl
-								label="Display Excerpt"
-								checked={evalue_excerpt}
-								onChange={toggleAttribute("evalue_excerpt")}
-							/>
-							<ToggleControl
-								label="Display Custom Fields"
-								checked={evalue_custom}
-								onChange={toggleAttribute("evalue_custom")}
-							/>
-							<ToggleControl
-								label="Display Category List"
-								checked={evalue_category}
-								onChange={toggleAttribute("evalue_category")}
-							/>
-
-							<ToggleControl
-								label="Display Tag List"
-								checked={evalue_tag}
-								onChange={toggleAttribute("evalue_tag")}
-							/>
-							<ToggleControl
-								label="Display Icon grid"
-								checked={evalue_icon}
-								onChange={toggleAttribute("evalue_icon")}
-							/>
+								)}
+							{(layout == "portfolio" || layout == "wide") && (
+								<ToggleControl
+									label="Display Excerpt"
+									checked={evalue_excerpt}
+									onChange={toggleAttribute("evalue_excerpt")}
+								/>
+							)}
+							{(layout == "portfolio" ||
+								layout == "wide" ||
+								layout == "table") && (
+								<ToggleControl
+									label="Display Custom Fields"
+									checked={evalue_custom}
+									onChange={toggleAttribute("evalue_custom")}
+								/>
+							)}
+							{(layout == "table" ||
+								layout == "portfolio" ||
+								layout == "wide") && (
+								<ToggleControl
+									label="Display Category List"
+									checked={evalue_category}
+									onChange={toggleAttribute("evalue_category")}
+								/>
+							)}
+							{(layout == "table" ||
+								layout == "portfolio" ||
+								layout == "wide") && (
+								<ToggleControl
+									label="Display Tag List"
+									checked={evalue_tag}
+									onChange={toggleAttribute("evalue_tag")}
+								/>
+							)}
+							{(layout == "portfolio" || layout == "wide") && (
+								<ToggleControl
+									label="Display Icon grid"
+									checked={evalue_icon}
+									onChange={toggleAttribute("evalue_icon")}
+								/>
+							)}
 						</PanelBody>
-
-						<PanelBody title={__("Effects", "flexi")} initialOpen={false}>
-							<SelectControl
-								label="Image Hover Effect"
-								value={hover_effect}
-								options={[
-									{
-										label: "-- None --",
-										value: "",
-									},
-									{
-										label: "Blur",
-										value: "flexi_effect_1",
-									},
-									{
-										label: "Grayscale",
-										value: "flexi_effect_2",
-									},
-									{
-										label: "Zoom",
-										value: "flexi_effect_3",
-									},
-								]}
-								onChange={(value) => setAttributes({ hover_effect: value })}
-							/>
-							<SelectControl
-								label="Image Hover Caption"
-								value={hover_caption}
-								options={[
-									{
-										label: "-- None --",
-										value: "flexi_caption_none",
-									},
-									{
-										label: "Slide Left",
-										value: "flexi_caption_1",
-									},
-									{
-										label: "Pull up with Info",
-										value: "flexi_caption_2",
-									},
-									{
-										label: "Slide Right with Info",
-										value: "flexi_caption_3",
-									},
-									{
-										label: "Pull Up",
-										value: "flexi_caption_4",
-									},
-									{
-										label: "Top & Bottom",
-										value: "flexi_caption_5",
-									},
-								]}
-								onChange={(value) => setAttributes({ hover_caption: value })}
-							/>
-						</PanelBody>
+						{layout != "table" && (
+							<PanelBody title={__("Effects", "flexi")} initialOpen={false}>
+								<SelectControl
+									label="Image Hover Effect"
+									value={hover_effect}
+									options={[
+										{
+											label: "-- None --",
+											value: "",
+										},
+										{
+											label: "Blur",
+											value: "flexi_effect_1",
+										},
+										{
+											label: "Grayscale",
+											value: "flexi_effect_2",
+										},
+										{
+											label: "Zoom",
+											value: "flexi_effect_3",
+										},
+									]}
+									onChange={(value) => setAttributes({ hover_effect: value })}
+								/>
+								<SelectControl
+									label="Image Hover Caption"
+									value={hover_caption}
+									options={[
+										{
+											label: "-- None --",
+											value: "flexi_caption_none",
+										},
+										{
+											label: "Slide Left",
+											value: "flexi_caption_1",
+										},
+										{
+											label: "Pull up with Info",
+											value: "flexi_caption_2",
+										},
+										{
+											label: "Slide Right with Info",
+											value: "flexi_caption_3",
+										},
+										{
+											label: "Pull Up",
+											value: "flexi_caption_4",
+										},
+										{
+											label: "Top & Bottom",
+											value: "flexi_caption_5",
+										},
+									]}
+									onChange={(value) => setAttributes({ hover_caption: value })}
+								/>
+							</PanelBody>
+						)}
 					</InspectorControls>
 
 					<ServerSideRender
