@@ -196,7 +196,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
-= 2.3 =
+= 2.4 =
 * Added Gallery - Table Layout
 * No count shown if category count is empty for [flexi-category]
 * Block editor- Gallery block toggle controls based on layout selection
