@@ -1,13 +1,11 @@
-.flexi_title_bold
-{
+.flexi_title_bold {
   font: bold 16px sans-serif;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin: 0;
-    color: #2b2b2b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  color: #2b2b2b;
 }
-
 
 /* override fancybox padding for custom lightbox */
 .fancybox-content {

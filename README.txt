@@ -26,11 +26,13 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 [Regular Layout](https://odude.com/demo/flexi/flexi-gallery-regular/)
 [Basic Layout](https://odude.com/demo/flexi/flexi-gallery-basic/)
 [Portfolio Layout](https://odude.com/demo/flexi/flexi-gallery-portfolio/)
+[Table Layout](https://odude.com/demo/flexi/flexi-gallery-table/)
 [Stress Free Gallery](https://odude.com/demo/flexi/stress-free-gallery/)
 
 [Submit File Form](https://odude.com/demo/flexi/post-image/)
 [Submit YouTube/Vimeo Video](https://odude.com/demo/flexi/post-video-url/)
 [Submit MP4 Video with dynamic animated thumbnail](https://odude.com/demo/flexi/submit-mp4-video/)
+[Form with custom field](https://odude.com/demo/flexi/flexi-custom-fields/)
 
 [User Dashboard](https://odude.com/demo/flexi/my-gallery/)
 [Gallery filtered by Category](https://odude.com/demo/flexi/flexi-gallery/?flexi_category=animals)
@@ -196,6 +198,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 2.5 =
+* Fixed wide layout
+* Added custom field on popup for table layout
+
 = 2.4 =
 * Added Gallery - Table Layout
 * No count shown if category count is empty for [flexi-category]
