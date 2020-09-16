@@ -120,7 +120,7 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 10, $css = tr
      if ($css) {
       $group .= '<li><label>' . $label . '<span class="dashicons dashicons-arrow-right"></span></label><span>' . $value[0] . '</span></li>';
      } else {
-      $group .= $label . ': ' . $value[0];
+      $group .= $label . ': ' . $value[0]." ";
      }
 
      if ($count == $c) {
