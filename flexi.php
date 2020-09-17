@@ -8,14 +8,14 @@
  * that starts the plugin.
  *
  * @link              https://odude.com/
- * @since             2.4
+ * @since             2.5
  * @package           Flexi
  *
  * @wordpress-plugin
  * Plugin Name:       Flexi Guest Upload
  * Plugin URI:        https://odude.com/
  * Description:       User submitted images/video into gallery
- * Version:           2.4
+ * Version:           2.5
  * Author:            ODude
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -36,7 +36,7 @@ if (!defined('WPINC')) {
 
 // The current version of the plugin
 if (!defined('FLEXI_VERSION')) {
- define('FLEXI_VERSION', '2.4');
+ define('FLEXI_VERSION', '2.5');
 }
 define('FLEXI_FOLDER', dirname(plugin_basename(__FILE__)));
 define('FLEXI_PLUGIN_URL', content_url('/plugins/' . FLEXI_FOLDER));

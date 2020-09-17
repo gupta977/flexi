@@ -142,6 +142,7 @@ You can also add/remove form fields based on pages & posts.
 * French Language (fr_FR)
 * Japanese Language (ja)
 * Portuguese Language (pa_PT)
+* English Language (en_US)
 
 = PRO KEY FEATURES =
 

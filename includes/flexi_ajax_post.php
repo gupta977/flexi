@@ -119,7 +119,7 @@ function flexi_ajax_post()
    $result = flexi_update_post($flexi_id, $title, $files, $content, $category, $tags);
 
    if ($flexi_id) {
-    do_action("flexi_submit_complete_update", $post_id);
+    do_action("flexi_submit_complete_update", $flexi_id);
     $response['type'] = "success";
 
     if (flexi_get_option('publish', 'flexi_form_settings', 1) == 1) {
