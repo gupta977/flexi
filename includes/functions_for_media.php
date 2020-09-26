@@ -153,8 +153,11 @@ function flexi_large_media($post, $class = 'flexi_large_image')
 }
 
 //Get link and added attributes of the image based on lightbox
-function flexi_image_data($size = 'full', $post = '', $popup = "on")
+function flexi_image_data($size = 'full', $post_id, $popup = "on")
 {
+
+    $flexi_post = get_post($post_id);
+
  //flexi_log($popup);
  if ("off" == $popup) {
   $lightbox = false;
@@ -163,49 +166,46 @@ function flexi_image_data($size = 'full', $post = '', $popup = "on")
  }
 
  $data          = array();
- $data['title'] = $post->post_title;
+ $data['title'] = $flexi_post->post_title;
 
- if ('' == $post) {
-  global $post;
- }
 
  if ($lightbox) {
   if ('inline' == $popup) {
    $data['url']   = 'javascript:;';
-   $data['src']   = '#flexi_inline_' . $post->ID;
+   $data['src']   = '#flexi_inline_' . $flexi_post->ID;
    $data['extra'] = 'data-fancybox-trigger';
    $data['popup'] = 'flexi_show_popup_' . $popup;
   } else if ('custom' == $popup) {
    $nonce         = wp_create_nonce("flexi_ajax_popup");
    $data['url']   = 'javascript:;';
-   $data['src']   = admin_url('admin-ajax.php?action=flexi_ajax_post_view&id=' . $post->ID . '&nonce=' . $nonce);
+   $data['src']   = admin_url('admin-ajax.php?action=flexi_ajax_post_view&id=' . $flexi_post->ID . '&nonce=' . $nonce);
    $data['extra'] = 'custom-lightbox data-type="ajax"';
    $data['popup'] = 'flexi_show_popup_' . $popup;
    $data['title'] = '';
   } else if ('simple' == $popup) {
-   $data['url']   = flexi_image_src('large', $post);
+   $data['url']   = flexi_image_src('large', $flexi_post);
    $data['src']   = $data['url'];
    $data['extra'] = 'class="godude"';
    $data['popup'] = 'flexi_show_popup_' . $popup;
   } else if ('simple_info' == $popup) {
-   $data['url']   = flexi_image_src('large', $post);
+   $data['url']   = flexi_image_src('large', $flexi_post);
    $data['src']   = $data['url'];
-   $data['extra'] = 'class="godude" data-godude="title: ' . $post->post_title . '; description: .flexi_desc_' . $post->ID . '"';
+   $data['extra'] = 'class="godude" data-godude="title: ' . $flexi_post->post_title . '; description: .flexi_desc_' . $flexi_post->ID . '"';
    $data['popup'] = 'flexi_show_popup_' . $popup;
   } else {
-   $data['url']   = flexi_image_src('large', $post);
+   $data['url']   = flexi_image_src('large', $flexi_post);
    $data['src']   = $data['url'];
    $data['extra'] = 'data-fancybox-trigger';
    $data['popup'] = 'flexi_show_popup_' . $popup;
   }
  } else {
-  $data['url']   = get_permalink($post->ID);
+  $data['url']   = get_permalink($flexi_post->ID);
   $data['src']   = $data['url'];
   $data['extra'] = '';
   $data['popup'] = 'flexi_media_holder';
  }
 
- $data['type'] = flexi_get_type($post);
+ $data['type'] = flexi_get_type($flexi_post);
 
  return $data;
 }

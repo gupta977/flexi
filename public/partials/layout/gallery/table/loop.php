@@ -1,5 +1,5 @@
 <?php
-$data = flexi_image_data('thumbnail', $post, $popup);
+$data = flexi_image_data('thumbnail', get_the_ID(), $popup);
 ?>
 <div class="flexi_gallery_child" id="flexi_<?php echo get_the_ID(); ?>" data-tags="<?php echo $tags; ?>">
     <li class="flexi-table-row" >

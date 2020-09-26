@@ -18,7 +18,7 @@ class Flexi_User_Dashboard_Gallery
         if (is_user_logged_in()) {
 
             $current_user = wp_get_current_user();
-            $user         = $current_user->user_login;
+            $user         = $current_user->ID;
             $post_status  = array('draft', 'publish', 'pending');
             $orderby      = '';
             $popup        = flexi_get_option('lightbox_switch', 'flexi_detail_settings', 1);
@@ -52,7 +52,7 @@ class Flexi_User_Dashboard_Gallery
                 's'              => $search,
                 'paged'          => $paged,
                 'posts_per_page' => $postsperpage,
-                'author_name'    => $user,
+                'author'    => $user,
                 'post_status'    => $post_status,
                 'orderby'        => $orderby,
                 'order'          => 'DESC',
@@ -63,7 +63,7 @@ class Flexi_User_Dashboard_Gallery
             $query = new WP_Query($args);
             while ($query->have_posts()): $query->the_post();
 
-                $data = flexi_image_data('thumbnail', $post, $popup);
+                $data = flexi_image_data('thumbnail', get_the_ID(), $popup);
 
                 ?>
         <div class="flexi_row" id="flexi_content_<?php echo get_the_ID(); ?>">

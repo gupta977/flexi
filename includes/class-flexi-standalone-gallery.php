@@ -30,7 +30,7 @@ class Flexi_Standalone_Gallery
     if ('1' == $popup) {
      $popup = flexi_get_option('popup_style', 'flexi_detail_settings', 'on');
     }
-    $data = flexi_image_data('thumbnail', $flexi_post, $popup);
+    $data = flexi_image_data('thumbnail', $flexi_post->ID, $popup);
     echo '<div class="' . $data['popup'] . ' flexi_effect">';
     echo '<a class="" ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">';
     echo '<div class="flexi-image-wrapper-thumb"><img src="' . esc_url(flexi_image_src('thumbnail', $flexi_post)) . '"></div></a></div>';

@@ -63,7 +63,7 @@ function flexi_load_more()
    'orderby'        => $orderby,
    'post_status'    => $post_status,
    'order'          => 'DESC',
-   'author_name'    => $user,
+   'author'    => $user,
    'tax_query'      => array(
     'relation' => $relation,
     array(
@@ -89,7 +89,7 @@ function flexi_load_more()
    's'              => $search,
    'paged'          => $paged,
    'posts_per_page' => $postsperpage,
-   'author_name'    => $user,
+   'author'    => $user,
    'post_status'    => $post_status,
    'orderby'        => $orderby,
    'order'          => 'DESC',

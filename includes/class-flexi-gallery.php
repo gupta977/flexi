@@ -128,9 +128,12 @@ class Flexi_Shortcode_Gallery
   //Author
   $username = get_query_var('flexi_user', "");
   if ("" != $username && false == $clear) {
-   $user = $username;
+    $user_data     = get_user_by('login', $username);
+   $user = $user_data->ID;
   } else if (isset($params['user'])) {
-   $user = $params['user'];
+   $user_get = $params['user'];
+   $user_data     = get_user_by('login', $user_get);
+   $user = $user_data->ID;
   } else {
    $user = "";
   }
@@ -141,7 +144,7 @@ class Flexi_Shortcode_Gallery
   if ("show_mine" == $user) {
    if (is_user_logged_in()) {
     $current_user = wp_get_current_user();
-    $user         = $current_user->user_login;
+    $user         = $current_user->ID;
     //$post_status  = array('draft', 'publish', 'pending');
    }
 
@@ -262,7 +265,7 @@ class Flexi_Shortcode_Gallery
     's'              => $search,
     'paged'          => $paged,
     'posts_per_page' => $postsperpage,
-    'author_name'    => $user,
+    'author'    => $user,
     'post_status'    => $post_status,
     'orderby'        => $orderby,
     'order'          => 'DESC',
@@ -291,7 +294,7 @@ class Flexi_Shortcode_Gallery
     's'              => $search,
     'paged'          => $paged,
     'posts_per_page' => $postsperpage,
-    'author_name'    => $user,
+    'author'    => $user,
     'post_status'    => $post_status,
     'orderby'        => $orderby,
     'order'          => 'DESC',
