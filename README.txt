@@ -199,6 +199,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 2.6 =
+* Gallery by author username issue fixed
+* 
+
 = 2.5 =
 * Fixed wide layout
 * Added custom field on popup for table layout
