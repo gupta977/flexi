@@ -13,6 +13,7 @@ class Flexi_User_Dashboard
   add_filter('flexi_settings_fields', array($this, 'add_fields_general'));
   add_filter("flexi_member_toolbar", array($this, 'logout_button'), 10, 1);
   add_filter("flexi_member_toolbar", array($this, 'gallery_button'), 10, 1);
+  add_filter("flexi_member_toolbar", array($this, 'submission_form_button'), 10, 1);
  }
 
  //Add Section title & description at settings
@@ -56,6 +57,14 @@ class Flexi_User_Dashboard
     'name'              => 'enable_mygallery_button',
     'label'             => __('"My Gallery" button', 'flexi'),
     'description'       => __('Display button at "My Dashboard"', 'flexi'),
+    'type'              => 'checkbox',
+    'sanitize_callback' => 'intval',
+   ),
+
+   array(
+    'name'              => 'enable_submission_form_button',
+    'label'             => __('"Submission form" button', 'flexi'),
+    'description'       => __('Display post/submit button at "My Dashboard". Title displayed on button is based on form page linked.', 'flexi'),
     'type'              => 'checkbox',
     'sanitize_callback' => 'intval',
    ),
@@ -195,13 +204,40 @@ var tabs = new Tabby('[data-tabs]');
   if ("1" == $enable_addon) {
 
    $extra_icon   = array();
-   $link         = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
+   $post_form_id=flexi_get_option('primary_page', 'flexi_image_layout_settings', 0);
+   $link         = get_permalink($post_form_id);
    $current_user = wp_get_current_user();
 
    $link = add_query_arg("flexi_user", $current_user->user_login, $link);
 
    $extra_icon = array(
-    array('image', __('My Gallery', 'flexi'), $link, 'flexi_css_button'),
+    array('gallery', __('My Gallery', 'flexi'), $link, 'flexi_css_button'),
+
+   );
+
+   // combine the two arrays
+   if (is_array($extra_icon) && is_array($icon)) {
+    $icon = array_merge($extra_icon, $icon);
+   }
+  }
+  return $icon;
+ }
+
+ public function submission_form_button($icon)
+ {
+  $enable_addon = flexi_get_option('enable_submission_form_button', 'flexi_user_dashboard_settings', 1);
+
+  if ("1" == $enable_addon) {
+
+   $extra_icon   = array();
+   $post_form_id=flexi_get_option('submission_form', 'flexi_form_settings', 0);
+   $post_form_object = get_post($post_form_id);
+   $link         = get_permalink($post_form_id);
+   $current_user = wp_get_current_user();
+   flexi_log($post_form_object);
+  $post_title=$post_form_object->post_title;
+   $extra_icon = array(
+    array('image', __($post_title, 'flexi'), $link, 'flexi_css_button'),
 
    );
 

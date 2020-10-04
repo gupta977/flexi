@@ -1072,9 +1072,16 @@ div.tagsinput div {
   vertical-align: middle;
 }
 
-.flexi_icon_image:before {
+.flexi_icon_gallery:before {
   font-family: "dashicons";
   content: "\f233";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flexi_icon_image:before {
+  font-family: "dashicons";
+  content: "\f128";
   display: inline-block;
   vertical-align: middle;
 }
