@@ -201,7 +201,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 2.8 =
 * Added post button on "User Dashboard" page
-* Option to remove post button at "User Dashboard" settings
+* Option to remove post button at "User Dashboard" settings.
 
 = 2.7 =
 * Gallery by author username issue fixed
