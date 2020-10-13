@@ -199,6 +199,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 2.9 =
+* Fixed show_mine parameter in flexi-gallery shortcode
+
 = 2.8 =
 * Added post button on "User Dashboard" page
 * Option to remove post button at "User Dashboard" settings.
