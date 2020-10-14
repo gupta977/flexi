@@ -123,6 +123,7 @@ class Flexi_Shortcode_Gallery
     }
 
     //Author
+    $user = "";
     $username = get_query_var('flexi_user', "");
     if ("" != $username && false == $clear) {
       $user_data     = get_user_by('login', $username);
