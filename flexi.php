@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The plugin bootstrap file
  *
@@ -8,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://odude.com/
- * @since             2.7
+ * @since             2.9
  * @package           Flexi
  *
  * @wordpress-plugin
  * Plugin Name:       Flexi Guest Upload
  * Plugin URI:        https://odude.com/
  * Description:       User submitted images/video into gallery
- * Version:           2.7
+ * Version:           2.9
  * Author:            ODude
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -25,7 +26,7 @@
 
 // If this file is called directly, abort.
 if (!defined('WPINC')) {
- die;
+    die;
 }
 
 /**
@@ -36,7 +37,7 @@ if (!defined('WPINC')) {
 
 // The current version of the plugin
 if (!defined('FLEXI_VERSION')) {
- define('FLEXI_VERSION', '2.7');
+    define('FLEXI_VERSION', '2.9');
 }
 define('FLEXI_FOLDER', dirname(plugin_basename(__FILE__)));
 define('FLEXI_PLUGIN_URL', content_url('/plugins/' . FLEXI_FOLDER));
@@ -51,8 +52,8 @@ define('FLEXI_CS', 'cs_5bab8367ab36992b00f1fe69d866c3bbf4820dbe');
  */
 function activate_flexi()
 {
- require_once plugin_dir_path(__FILE__) . 'includes/class-flexi-activator.php';
- Flexi_Activator::activate();
+    require_once plugin_dir_path(__FILE__) . 'includes/class-flexi-activator.php';
+    Flexi_Activator::activate();
 }
 
 /**
@@ -61,8 +62,8 @@ function activate_flexi()
  */
 function deactivate_flexi()
 {
- require_once plugin_dir_path(__FILE__) . 'includes/class-flexi-deactivator.php';
- Flexi_Deactivator::deactivate();
+    require_once plugin_dir_path(__FILE__) . 'includes/class-flexi-deactivator.php';
+    Flexi_Deactivator::deactivate();
 }
 
 register_activation_hook(__FILE__, 'activate_flexi');
@@ -86,8 +87,7 @@ require plugin_dir_path(__FILE__) . 'includes/class-flexi.php';
 function run_flexi()
 {
 
- $plugin = new Flexi();
- $plugin->run();
-
+    $plugin = new Flexi();
+    $plugin->run();
 }
 run_flexi();
