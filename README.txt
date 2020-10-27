@@ -199,6 +199,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 3.0 =
+* Fixed popup on/off from setting
+* Added form field : Tag List
+
 = 2.9 =
 * Fixed show_mine parameter in flexi-gallery shortcode
 

@@ -155,6 +155,8 @@ class Flexi_Shortcode_Gallery
       $popup = flexi_get_option('lightbox_switch', 'flexi_detail_settings', 1);
       if ('1' == $popup) {
         $popup = flexi_get_option('popup_style', 'flexi_detail_settings', 'on');
+      } else {
+        $popup = "off";
       }
     }
 
@@ -387,7 +389,7 @@ class Flexi_Shortcode_Gallery
 
   public function pass_shortcode_params($atts = array())
   {
-    // flexi_log($atts);
+    //flexi_log($atts);
     $put = "";
 
     //Below javascript will not be executed at guten block. If enabled json error while saving.
