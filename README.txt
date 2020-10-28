@@ -202,6 +202,8 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 3.0 =
 * Fixed popup on/off from setting
 * Added form field : Tag List
+* Increased custom fields 10 to 20
+* Fixed textarea edit form field
 
 = 2.9 =
 * Fixed show_mine parameter in flexi-gallery shortcode

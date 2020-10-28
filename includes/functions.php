@@ -96,7 +96,7 @@ function flexi_standalone_gallery($post_id, $img_size = 'thumbnail', $width = 15
 }
 
 //Custom Fields
-function flexi_custom_field_loop($post, $page = 'detail', $count = 10, $css = true)
+function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = true)
 {
     $group = '';
 
@@ -105,7 +105,7 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 10, $css = tr
     }
 
     $c = 1;
-    for ($x = 1; $x <= 10; $x++) {
+    for ($x = 1; $x <= 20; $x++) {
         $label   = flexi_get_option('flexi_field_' . $x . '_label', 'flexi_custom_fields', '');
         $display = flexi_get_option('flexi_field_' . $x . '_display', 'flexi_custom_fields', '');
         $value   = get_post_meta($post->ID, 'flexi_field_' . $x, '');
@@ -185,13 +185,13 @@ function flexi_check_rights($post_id = 0)
     return $edit_post;
 }
 //Return album name with and without link
-function flexi_get_album($post_id, $type)
+function flexi_get_album($post_id, $type, $field = 'flexi_category')
 {
     //$type values can be term_id,slug,name,url
-    $categories = get_the_terms($post_id, 'flexi_category');
+    $categories = get_the_terms($post_id, $field);
     foreach ((array) $categories as $category) {
         if ('url' == $type) {
-            return flexi_get_category_page_link($category, 'flexi_category');
+            return flexi_get_category_page_link($category, $field);
         } else {
             if (isset($category->$type)) {
                 return $category->$type;
@@ -588,7 +588,7 @@ function flexi_update_post($post_id, $title, $files, $content, $category, $tags 
         return false;
     } else {
         //Update post meta fields
-        for ($x = 1; $x <= 10; $x++) {
+        for ($x = 1; $x <= 20; $x++) {
             if (isset($_POST["flexi_field_" . $x])) {
                 update_post_meta($post_id, "flexi_field_" . $x, sanitize_text_field($_POST["flexi_field_" . $x]));
             } else {

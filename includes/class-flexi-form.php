@@ -386,7 +386,7 @@ action="' . admin_url("admin-ajax.php") . '"
             if ('' == $attr['edit']) {
                 echo flexi_droplist_tag('flexi_tag', '', array(), $attr['id']);
             } else {
-                $old_tag_id = flexi_get_album($_GET['id'], 'term_id');
+                $old_tag_id = flexi_get_album($_GET['id'], 'term_id', 'flexi_tag');
                 echo flexi_droplist_tag('flexi_tag', $old_tag_id);
             }
         } else if ('tag' == $attr['type']) {
@@ -515,13 +515,23 @@ action="' . admin_url("admin-ajax.php") . '"
         } else if ('textarea' == $attr['type']) {
             echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
             // arguments: name, rows, cols, value, optional assoc. array
-            echo $frm->addTextArea(
-                $attr['name'],
-                $attr['rows'],
-                $attr['cols'],
-                '',
-                array('id' => $attr['id'], 'placeholder' => $attr['placeholder'])
-            );
+            if ('' == $attr['edit']) {
+                echo $frm->addTextArea(
+                    $attr['name'],
+                    $attr['rows'],
+                    $attr['cols'],
+                    '',
+                    array('id' => $attr['id'], 'placeholder' => $attr['placeholder'])
+                );
+            } else {
+                echo $frm->addTextArea(
+                    $attr['name'],
+                    $attr['rows'],
+                    $attr['cols'],
+                    flexi_custom_field_value($_GET['id'], $attr['name']),
+                    array('id' => $attr['id'], 'placeholder' => $attr['placeholder'])
+                );
+            }
         } else {
             echo "Invalid Form tag";
         }
