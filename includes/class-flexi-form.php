@@ -386,7 +386,7 @@ action="' . admin_url("admin-ajax.php") . '"
             if ('' == $attr['edit']) {
                 echo flexi_droplist_tag('flexi_tag', '', array(), $attr['id']);
             } else {
-                $old_tag_id = flexi_get_album($_GET['id'], 'term_id', 'flexi_tag');
+                $old_tag_id = flexi_get_album($_GET['id'], 'slug', 'flexi_tag');
                 echo flexi_droplist_tag('flexi_tag', $old_tag_id);
             }
         } else if ('tag' == $attr['type']) {
@@ -480,12 +480,29 @@ action="' . admin_url("admin-ajax.php") . '"
                 $val     = explode(":", $option);
                 $caption = isset($val[1]) ? $val[1] : $val[0];
 
+
                 if ("radio" == $attr['type']) {
-                    echo $frm->addInput('radio', $attr['name'], $val[0], array('required' => $attr['required'])) . ' ' . $caption . ' ';
+                    if ('' == $attr['edit']) {
+                        echo $frm->addInput('radio', $attr['name'], $val[0], array('required' => $attr['required'])) . ' ' . $caption . ' ';
+                    } else {
+                        if ($val[0] == flexi_custom_field_value($_GET['id'], $attr['name'])) {
+                            echo $frm->addInput('radio', $attr['name'], $val[0], array('required' => $attr['required'], 'checked' => 'checked')) . ' ' . $caption . ' ';
+                        } else {
+                            echo $frm->addInput('radio', $attr['name'], $val[0], array('required' => $attr['required'])) . ' ' . $caption . ' ';
+                        }
+                    }
                 }
 
                 if ("checkbox" == $attr['type']) {
-                    echo $frm->addInput('checkbox', $val[0], $caption, array('required' => $attr['required'])) . ' ' . $caption . ' ';
+                    if ('' == $attr['edit']) {
+                        echo $frm->addInput('checkbox', $val[0], $caption, array('required' => $attr['required'])) . ' ' . $caption . ' ';
+                    } else {
+                        if ($val[0] == flexi_custom_field_value($_GET['id'], $attr['name'])) {
+                            echo $frm->addInput('checkbox', $val[0], $caption, array('required' => $attr['required'], 'checked' => 'checked')) . ' ' . $caption . ' ';
+                        } else {
+                            echo $frm->addInput('checkbox', $val[0], $caption, array('required' => $attr['required'])) . ' ' . $caption . ' ';
+                        }
+                    }
                 }
             }
         } else if ('select' == $attr['type']) {
