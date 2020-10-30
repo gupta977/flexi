@@ -13,13 +13,25 @@
   vertical-align: top;
   margin-bottom: 1px;
 }
-@media only screen and (max-width: 1023px) and (min-width: 768px) {
+@media (min-width: 500px) {
+  .flexi_masonry-wrapper {
+    padding: 1em;
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   .flexi_masonry {
     columns: 2;
+    column-gap: 1px;
+  }
+  .flexi_masonry-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 1px;
   }
 }
 
-.flexi_masonry-item,
 .flexi_masonry-content {
   border-radius: 4px;
   overflow: hidden;
