@@ -80,6 +80,7 @@ function flexi_standalone_gallery($post_id, $img_size = 'thumbnail', $width = 15
 ';
     // Get the list of files
     $files = get_post_meta($post_id, 'flexi_standalone_gallery', 1);
+    //flexi_log($files);
     echo '';
     // Loop through them and output an image
     if (!empty($files)) {
