@@ -29,13 +29,6 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
-  $(window).load(function () {
-    //Uses in standalone gallery
-    $("#flexi_thumb_image .flexi-image-wrapper-icon").hover(function () {
-      var photo_fullsize = $(this).find("img").attr("large-src");
-      $("#flexi_large_image").attr("src", photo_fullsize);
-    });
-  });
 })(jQuery);
 
 function flexi_download_file(id) {
