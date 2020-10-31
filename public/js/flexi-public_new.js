@@ -1,3 +1,5 @@
+//Build for latest version of wordpress
+
 jQuery(document).ready(function($) { 
   "use strict";
   

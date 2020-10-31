@@ -28,7 +28,7 @@ class Flexi_Standalone_Gallery
       if (isset($_REQUEST["id"])) {
 
         if (isset($_REQUEST["id"]) && isset($_REQUEST["manage"])) {
-
+          //Update primary image form
 ?>
           <style>
             #flexi_form {
@@ -37,11 +37,25 @@ class Flexi_Standalone_Gallery
           </style>
 
           <img id="flexi_medium_image" src="<?php echo flexi_image_src('medium', $flexi_post); ?>"><br>
-          <form id="flexi-request-form" class="flexi_ajax_post_primary_image pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
-            <input type="file" name="user-submitted-image[]" value="" id="file" class="" required="">
-            <input type="submit" name="submit" value="Replace image" id="submit" class="">
-          </form>
-          <a href="<?php echo flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings'); ?>"><?php echo __("Cancel", "flexi"); ?></a>
+          <div id="flexi_form_internal">
+            <form id="flexi-request-form-update-primary" class="flexi_ajax_post_update_image pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
+              <input type="file" name="user-submitted-image[]" value="" id="file" class="" required="">
+              <?php
+              wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
+              echo '<input type="hidden" name="flexi_id" value="' . $id . '">';
+              echo '<input type="hidden" name="upload_type" value="flexi">';
+              ?>
+              <input type="submit" name="submit" value="Replace image" id="submit" class="">
+            </form>
+
+          </div>
+          <!-- Image loader -->
+          <div id='flexi_loader_internal' style='display: none;'>
+            Loading
+          </div>
+          <div class="flexi_response_internal"></div>
+          <br>
+          <a href="<?php echo flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings'); ?>"><?php echo __("Go back", "flexi"); ?></a>
 
         <?php
         } else {
@@ -56,6 +70,7 @@ class Flexi_Standalone_Gallery
 
           if (isset($params['edit'])) {
             if ($params["edit"] == "true") {
+              //Update primary image link below image at edit page
               $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
               $link = add_query_arg("manage", "media", $link);
               echo "<a href='" . $link . "'>Manage media</a>";
