@@ -162,8 +162,8 @@ class Flexi_Public
 
 
     //Ajax primary image update
-    wp_register_script('flexi_ajax_post_update_image', plugin_dir_url(__FILE__) . 'js/flexi_ajax_post_update_image.js', array('jquery'), $this->version);
-    wp_enqueue_script('flexi_ajax_post_update_image');
+    wp_register_script('flexi_ajax_update_image', plugin_dir_url(__FILE__) . 'js/flexi_ajax_update_image.js', array('jquery'), $this->version);
+    wp_enqueue_script('flexi_ajax_update_image');
 
     //Ajax Download
     // wp_register_script('flexi_ajax_download', plugin_dir_url(__FILE__) . 'js/flexi_ajax_download.js', array('jquery'), $this->version);

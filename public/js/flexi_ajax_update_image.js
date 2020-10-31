@@ -1,6 +1,6 @@
 jQuery(document).ready(function () {
 //Update primary image
-jQuery(".flexi_ajax_post_update_image").on("submit", function (e) {
+jQuery(".flexi_ajax_update_image").on("submit", function (e) {
     e.preventDefault();
     var form = jQuery("#flexi-request-form-update-primary")[0];
     var formData = new FormData(form);
