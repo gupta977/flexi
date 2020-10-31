@@ -26,39 +26,58 @@ class Flexi_Standalone_Gallery
     if ($flexi_post && 0 != $id) {
 
       if (isset($_REQUEST["id"])) {
-        $popup = flexi_get_option('lightbox_switch', 'flexi_detail_settings', 1);
-        if ('1' == $popup) {
-          $popup = flexi_get_option('popup_style', 'flexi_detail_settings', 'on');
-        }
-        $data = flexi_image_data('thumbnail', $flexi_post->ID, $popup);
-        echo '<div class="' . $data['popup'] . ' flexi_effect">';
-        echo '<a class="" ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">';
-        echo '<div class="flexi-image-wrapper-thumb"><img src="' . esc_url(flexi_image_src('thumbnail', $flexi_post)) . '"></div></a></div>';
 
-        if (isset($params['edit'])) {
-          if ($params["edit"] == "true") {
-            $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
-            $link = add_query_arg("manage", "media", $link);
-            echo "<a href='" . $link . "'>Manage media</a>";
-          }
-        }
+        if (isset($_REQUEST["id"]) && isset($_REQUEST["manage"])) {
 
 ?>
+          <style>
+            #flexi_form {
+              display: none;
+            }
+          </style>
 
-        <script>
-          jQuery('[data-fancybox-trigger').fancybox({
-            selector: '.flexi_show_popup_on a:visible',
-            thumbs: {
-              autoStart: true
-            },
-            protect: true,
+          <img id="flexi_medium_image" src="<?php echo flexi_image_src('medium', $flexi_post); ?>"><br>
+          <form id="flexi-request-form" class="flexi_ajax_post_primary_image pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
+            <input type="file" name="user-submitted-image[]" value="" id="file" class="" required="">
+            <input type="submit" name="submit" value="Replace image" id="submit" class="">
+          </form>
+          <a href="<?php echo flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings'); ?>"><?php echo __("Cancel", "flexi"); ?></a>
 
-          });
-        </script>
-      <?php
+        <?php
+        } else {
+          $popup = flexi_get_option('lightbox_switch', 'flexi_detail_settings', 1);
+          if ('1' == $popup) {
+            $popup = flexi_get_option('popup_style', 'flexi_detail_settings', 'on');
+          }
+          $data = flexi_image_data('thumbnail', $flexi_post->ID, $popup);
+          echo '<div class="' . $data['popup'] . ' flexi_effect">';
+          echo '<a class="" ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">';
+          echo '<div class="flexi-image-wrapper-thumb"><img src="' . esc_url(flexi_image_src('thumbnail', $flexi_post)) . '"></div></a></div>';
+
+          if (isset($params['edit'])) {
+            if ($params["edit"] == "true") {
+              $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
+              $link = add_query_arg("manage", "media", $link);
+              echo "<a href='" . $link . "'>Manage media</a>";
+            }
+          }
+
+        ?>
+
+          <script>
+            jQuery('[data-fancybox-trigger').fancybox({
+              selector: '.flexi_show_popup_on a:visible',
+              thumbs: {
+                autoStart: true
+              },
+              protect: true,
+
+            });
+          </script>
+        <?php }
       } else {
 
-      ?>
+        ?>
         <div class="pure-g">
           <div class="pure-u-1-1" style='text-align: center;'>
 
