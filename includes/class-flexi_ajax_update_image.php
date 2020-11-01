@@ -86,17 +86,75 @@ class flexi_update_image
     //Add more images to standalone gallery
     public function flexi_add_more_image_standalone($files, $flexi_id)
     {
-        //flexi_log("fff");
+        // flexi_log("Adding into standalone gallery");
 
         $newPost      = array();
         $newPost      = array('id' => false, 'error' => false, 'notice' => false);
         $newPost['error'][] = "";
         $post_author_id = get_post_field('post_author', $flexi_id);
+
+        flexi_include_deps();
+
+
+        if (isset($files['tmp_name'][0])) {
+            $check_file_exist = $files['tmp_name'][0];
+        } else {
+            $check_file_exist = "";
+        }
+
+        $file_count = flexi_upload_get_file_count($files);
+        if (0 == $file_count) {
+            //Execute loop at least once
+            $file_count = 1;
+        }
+        $i = 0;
+        $existing_files = get_post_meta($flexi_id, 'flexi_standalone_gallery', 1);
+        //flexi_log($existing_files);
+        for ($x = 1; $x <= $file_count; $x++) {
+            flexi_log("sbbbb");
+            if ($files && !empty($check_file_exist)) {
+                $key = apply_filters('flexi_file_key', 'user-submitted-image-{$i}');
+                $_FILES[$key]             = array();
+                $_FILES[$key]['name']     = $files['name'][$i];
+                $_FILES[$key]['tmp_name'] = $files['tmp_name'][$i];
+                $_FILES[$key]['type']     = $files['type'][$i];
+                $_FILES[$key]['error']    = $files['error'][$i];
+                $_FILES[$key]['size']     = $files['size'][$i];
+
+                //Check the file before processing
+                $file_data = flexi_check_file($_FILES[$key]);
+
+                $attach_id = media_handle_upload($key, $flexi_id);
+                if (!is_wp_error($attach_id) & ('' == trim($file_data['error'][0]))) {
+
+                    $attach_ids[] = $attach_id;
+                    //flexi_log($attach_ids);
+                    $existing_files[$attach_id] = wp_get_attachment_url($attach_id);
+                    flexi_log($attach_id . "--");
+                    //update_post_meta($flexi_id, 'flexi_image', wp_get_attachment_url($attach_id));
+                } else {
+                    if (!is_wp_error($attach_id)) {
+                        //Delete attachment if uploaded
+                        wp_delete_attachment($attach_id);
+                    }
+                    //Delete post if error found
+                    $newPost['error'][]  = $file_data['error'][0];
+                    $newPost['notice'][] = $_FILES[$key]['name'];
+                }
+            }
+            $i++;
+        }
+        //flexi_log($existing_files);
+        update_post_meta($flexi_id, 'flexi_standalone_gallery', $existing_files);
+        return $newPost;
     }
 
     //Delete old image and keep new one
     public function flexi_update_primary_image($files, $flexi_id)
     {
+
+        //flexi_log("update primary");
+
         $newPost      = array();
         $newPost      = array('id' => false, 'error' => false, 'notice' => false);
         $newPost['error'][] = "";
