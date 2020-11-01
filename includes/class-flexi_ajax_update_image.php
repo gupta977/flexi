@@ -47,7 +47,7 @@ class flexi_update_image
         $flexi_id      = $attr['flexi_id'];
         $upload_type   = $attr['upload_type'];
         $replace_type   = $attr['type'];
-
+        $flexi_post = get_post($flexi_id);
         if ('flexi' == $upload_type) {
             if (isset($_FILES['user-submitted-image'])) {
                 $files = $_FILES['user-submitted-image'];
@@ -65,11 +65,12 @@ class flexi_update_image
             if (isset($result['error'])) {
                 $error = array_filter(array_unique($result['error']));
             }
-            $response['msg'] = "<div class='flexi_alert-box flexi_success'>" . __('Successfully updated', 'flexi') . "</div>";
+            $msg           = '<img id="flexi_medium_image" src="' . flexi_image_src('medium', $flexi_post) . '"><br>';
+            $response['msg'] = "<div class='flexi_alert-box flexi_success'>" . __('Successfully updated', 'flexi') . "</div><br>" . $msg;
         } else {
             $result['error'][] = "Upload Type Not Supported. Check your form parameters.";
             $reindex_array = array_values(array_filter($result['error']));
-            $msg           = "";
+            $msg = "";
             for ($x = 0; $x < count($reindex_array); $x++) {
                 // $err .= $reindex_array[$x] . "  ";
                 $msg .= "<div class='flexi_alert-box flexi_error'>" . flexi_error_code($reindex_array[$x]) . '</div>';
