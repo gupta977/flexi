@@ -111,7 +111,7 @@ class flexi_update_image
         $existing_files = get_post_meta($flexi_id, 'flexi_standalone_gallery', 1);
         //flexi_log($existing_files);
         for ($x = 1; $x <= $file_count; $x++) {
-            flexi_log("sbbbb");
+
             if ($files && !empty($check_file_exist)) {
                 $key = apply_filters('flexi_file_key', 'user-submitted-image-{$i}');
                 $_FILES[$key]             = array();
@@ -130,7 +130,7 @@ class flexi_update_image
                     $attach_ids[] = $attach_id;
                     //flexi_log($attach_ids);
                     $existing_files[$attach_id] = wp_get_attachment_url($attach_id);
-                    flexi_log($attach_id . "--");
+                    //flexi_log($attach_id . "--");
                     //update_post_meta($flexi_id, 'flexi_image', wp_get_attachment_url($attach_id));
                 } else {
                     if (!is_wp_error($attach_id)) {
