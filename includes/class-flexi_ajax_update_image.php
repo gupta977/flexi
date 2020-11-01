@@ -46,14 +46,20 @@ class flexi_update_image
         $attr          = flexi_default_args('');
         $flexi_id      = $attr['flexi_id'];
         $upload_type   = $attr['upload_type'];
+        $replace_type   = $attr['type'];
 
         if ('flexi' == $upload_type) {
             if (isset($_FILES['user-submitted-image'])) {
                 $files = $_FILES['user-submitted-image'];
             }
             $response['type'] = "success";
-            //Process image to delete old and keep new one
-            $result = $this->flexi_update_primary_image($files, $flexi_id);
+
+            if ($replace_type == "primary") {
+                //Process image to delete old and keep new one
+                $result = $this->flexi_update_primary_image($files, $flexi_id);
+            } else {
+                $result = $this->flexi_add_more_image_standalone($files, $flexi_id);
+            }
 
             $error = false;
             if (isset($result['error'])) {
@@ -75,6 +81,17 @@ class flexi_update_image
         $data = json_encode($response);
         echo $data;
         die();
+    }
+
+    //Add more images to standalone gallery
+    public function flexi_add_more_image_standalone($files, $flexi_id)
+    {
+        //flexi_log("fff");
+
+        $newPost      = array();
+        $newPost      = array('id' => false, 'error' => false, 'notice' => false);
+        $newPost['error'][] = "";
+        $post_author_id = get_post_field('post_author', $flexi_id);
     }
 
     //Delete old image and keep new one
@@ -107,32 +124,34 @@ class flexi_update_image
             $file_count = 1;
         }
         $i = 0;
-        if ($files && !empty($check_file_exist)) {
-            $key = apply_filters('flexi_file_key', 'user-submitted-image-{$i}');
-            $_FILES[$key]             = array();
-            $_FILES[$key]['name']     = $files['name'][$i];
-            $_FILES[$key]['tmp_name'] = $files['tmp_name'][$i];
-            $_FILES[$key]['type']     = $files['type'][$i];
-            $_FILES[$key]['error']    = $files['error'][$i];
-            $_FILES[$key]['size']     = $files['size'][$i];
+        for ($x = 1; $x <= $file_count; $x++) {
+            if ($files && !empty($check_file_exist)) {
+                $key = apply_filters('flexi_file_key', 'user-submitted-image-{$i}');
+                $_FILES[$key]             = array();
+                $_FILES[$key]['name']     = $files['name'][$i];
+                $_FILES[$key]['tmp_name'] = $files['tmp_name'][$i];
+                $_FILES[$key]['type']     = $files['type'][$i];
+                $_FILES[$key]['error']    = $files['error'][$i];
+                $_FILES[$key]['size']     = $files['size'][$i];
 
-            //Check the file before processing
-            $file_data = flexi_check_file($_FILES[$key]);
+                //Check the file before processing
+                $file_data = flexi_check_file($_FILES[$key]);
 
-            $attach_id = media_handle_upload($key, $flexi_id);
-            if (!is_wp_error($attach_id) & ('' == trim($file_data['error'][0]))) {
+                $attach_id = media_handle_upload($key, $flexi_id);
+                if (!is_wp_error($attach_id) & ('' == trim($file_data['error'][0]))) {
 
-                $attach_ids[] = $attach_id;
-                update_post_meta($flexi_id, 'flexi_image_id', $attach_id);
-                update_post_meta($flexi_id, 'flexi_image', wp_get_attachment_url($attach_id));
-            } else {
-                if (!is_wp_error($attach_id)) {
-                    //Delete attachment if uploaded
-                    wp_delete_attachment($attach_id);
+                    $attach_ids[] = $attach_id;
+                    update_post_meta($flexi_id, 'flexi_image_id', $attach_id);
+                    update_post_meta($flexi_id, 'flexi_image', wp_get_attachment_url($attach_id));
+                } else {
+                    if (!is_wp_error($attach_id)) {
+                        //Delete attachment if uploaded
+                        wp_delete_attachment($attach_id);
+                    }
+                    //Delete post if error found
+                    $newPost['error'][]  = $file_data['error'][0];
+                    $newPost['notice'][] = $_FILES[$key]['name'];
                 }
-                //Delete post if error found
-                $newPost['error'][]  = $file_data['error'][0];
-                $newPost['notice'][] = $_FILES[$key]['name'];
             }
         }
         return $newPost;

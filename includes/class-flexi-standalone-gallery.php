@@ -38,18 +38,57 @@ class Flexi_Standalone_Gallery
 
 
           <div id="flexi_form_internal">
-            <img id="flexi_medium_image" src="<?php echo flexi_image_src('medium', $flexi_post); ?>"><br>
-            <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
-              <input type="file" name="user-submitted-image[]" accept="image/*" value="" id="file" class="" required="">
-              <?php
-              wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
-              echo '<input type="hidden" name="flexi_id" value="' . $id . '">';
-              echo '<input type="hidden" name="upload_type" value="flexi">';
-              echo '<input type="hidden" name="action" value="flexi_ajax_update_image">';
-              ?>
-              <input type="submit" name="submit" value="Replace image" id="submit" class="">
-            </form>
 
+            <?php
+            if ($_REQUEST["manage"] == "media") {
+            ?>
+
+              <img id="flexi_medium_image" src="<?php echo flexi_image_src('medium', $flexi_post); ?>"><br>
+              <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
+                <input type="file" name="user-submitted-image[]" accept="image/*" value="" id="file" class="" required="">
+                <?php
+                wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
+                echo '<input type="hidden" name="flexi_id" value="' . $id . '">';
+                echo '<input type="hidden" name="upload_type" value="flexi">';
+                echo '<input type="hidden" name="type" value="primary">';
+                echo '<input type="hidden" name="action" value="flexi_ajax_update_image">';
+                ?>
+                <input type="submit" name="submit" value="Replace image" id="submit" class="">
+              </form>
+            <?php
+            } else {
+
+              //Update sub-gallery
+            ?>
+
+
+              <div class="pure-g">
+                <div class="pure-u-1">
+                  <div class="flexi_margin-box">
+                    <div id="flexi_thumb_image"> <?php flexi_standalone_gallery($id, 'thumbnail', 75, 75); ?></div>
+                  </div>
+                </div>
+              </div>
+              <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
+
+
+                <div class="flexi_drag_file"><input type="file" accept="image/*" name="user-submitted-image[]" value="" id="file" class="flexi_drag_file_hide" required="" multiple="">
+                  <p>Select File</p>
+                </div>
+
+                <?php
+                wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
+                echo '<input type="hidden" name="flexi_id" value="' . $id . '">';
+                echo '<input type="hidden" name="upload_type" value="flexi">';
+                echo '<input type="hidden" name="type" value="standalone">';
+                echo '<input type="hidden" name="action" value="flexi_ajax_update_image">';
+                ?>
+                <input type="submit" name="submit" value="Add image" id="submit" class="">
+              </form>
+
+            <?php
+            }
+            ?>
           </div>
           <!-- Image loader -->
           <div id='flexi_loader_internal' style='display: none;'>
