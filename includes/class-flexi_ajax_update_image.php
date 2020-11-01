@@ -71,6 +71,9 @@ class flexi_update_image
     //Delete old image and keep new one
     public function flexi_update_primary_image($files, $flexi_id)
     {
+        $newPost      = array();
+        $newPost      = array('id' => false, 'error' => false, 'notice' => false);
+        $newPost['error'][] = "";
         // flexi_log($files);
         $post_author_id = get_post_field('post_author', $flexi_id);
         //Delete the old image 
@@ -123,6 +126,7 @@ class flexi_update_image
                 $newPost['notice'][] = $_FILES[$key]['name'];
             }
         }
+        return $newPost;
     }
 }
 $update_image = new flexi_update_image();

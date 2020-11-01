@@ -6,7 +6,6 @@ jQuery(".flexi_ajax_update_image").on("submit", function (e) {
     var formData = new FormData(form);
     var i = 0;
     var progress = true;
-    alert("heeeexxxx");
     
     jQuery.ajax({
       type: "post",
@@ -31,7 +30,7 @@ jQuery(".flexi_ajax_update_image").on("submit", function (e) {
             if (evt.lengthComputable) {
               var percentComplete = Math.round((evt.loaded * 100) / evt.total);
               //Do something with upload progress
-              console.log('Uploaded percent', percentComplete);
+              //console.log('Uploaded percent', percentComplete);
               
             }
           },

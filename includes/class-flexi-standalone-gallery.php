@@ -36,8 +36,9 @@ class Flexi_Standalone_Gallery
             }
           </style>
 
-          <img id="flexi_medium_image" src="<?php echo flexi_image_src('medium', $flexi_post); ?>"><br>
+
           <div id="flexi_form_internal">
+            <img id="flexi_medium_image" src="<?php echo flexi_image_src('medium', $flexi_post); ?>"><br>
             <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
               <input type="file" name="user-submitted-image[]" value="" id="file" class="" required="">
               <?php
@@ -52,7 +53,7 @@ class Flexi_Standalone_Gallery
           </div>
           <!-- Image loader -->
           <div id='flexi_loader_internal' style='display: none;'>
-            Loading
+            <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
           </div>
           <div class="flexi_response_internal"></div>
           <br>
