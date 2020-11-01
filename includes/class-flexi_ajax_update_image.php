@@ -109,6 +109,9 @@ class flexi_update_image
         }
         $i = 0;
         $existing_files = get_post_meta($flexi_id, 'flexi_standalone_gallery', 1);
+        if (!is_array($existing_files)) {
+            $existing_files = array();
+        }
         //flexi_log($existing_files);
         for ($x = 1; $x <= $file_count; $x++) {
 
