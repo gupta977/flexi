@@ -12,6 +12,7 @@ function flexi_get_attachment($attachment_id)
             'href'        => get_permalink($attachment->ID),
             'src'         => $attachment->guid,
             'title'       => $attachment->post_title,
+            'id'          => $attachment->ID,
         );
     } else {
         return array();

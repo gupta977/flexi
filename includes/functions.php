@@ -59,7 +59,7 @@ function flexi_custom_field_value($post_id, $field_name)
  * @param  string  $post_id
  * @param  string  $img_size           Size of image to show
  */
-function flexi_standalone_gallery($post_id, $img_size = 'thumbnail', $width = 150, $height = 150)
+function flexi_standalone_gallery($post_id, $img_size = 'thumbnail', $width = 150, $height = 150, $trash = false)
 {
     echo '<style>
 .flexi-image-wrapper-icon {
@@ -88,9 +88,15 @@ function flexi_standalone_gallery($post_id, $img_size = 'thumbnail', $width = 15
 
             $image_alt = flexi_get_attachment($attachment_id);
             if (!empty($image_alt)) {
-                echo '<div class="flexi_responsive_fixed"><div class="flexi_gallery_grid"><div class="flexi-image-wrapper-icon"><a data-fancybox="flexi_standalone_gallery" href="' . wp_get_attachment_image_src($attachment_id, 'flexi_large')[0] . '" data-caption="' . $image_alt['title'] . '" border="0">';
+                //flexi_log($image_alt);
+                echo '<div class="flexi_responsive_fixed" style="text-align:center;"><div class="flexi_gallery_grid"><div class="flexi-image-wrapper-icon"><a data-fancybox="flexi_standalone_gallery" href="' . wp_get_attachment_image_src($attachment_id, 'flexi_large')[0] . '" data-caption="' . $image_alt['title'] . '" border="0">';
                 echo '<img src="' . wp_get_attachment_image_src($attachment_id, $img_size)[0] . '" large-src="' . wp_get_attachment_image_src($attachment_id, 'flexi_large')[0] . '">';
-                echo '</a></div></div></div>';
+                echo '</a></div></div>';
+                if ($trash) {
+                    $nonce = wp_create_nonce("flexi_ajax_delete");
+                    echo '<a href="#" class="flexi_css_button" id="flexi_ajax_delete" data-nonce="' . $nonce . '" data-media_id="' . $image_alt['id'] . '" data-post_id="' . $post_id . '" title="Delete"><span class="flexi_css_button-border"><span class="flexi_icon_trash"></span></span></a>';
+                }
+                echo '</div>';
             }
         }
     }

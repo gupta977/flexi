@@ -87,7 +87,7 @@ class flexi_update_image
     //Add more images to standalone gallery
     public function flexi_add_more_image_standalone($files, $flexi_id)
     {
-        flexi_log("Adding into standalone gallery");
+        //flexi_log("Adding into standalone gallery");
 
         $newPost      = array();
         $newPost      = array('id' => false, 'error' => false, 'notice' => false);
@@ -157,7 +157,7 @@ class flexi_update_image
     public function flexi_update_primary_image($files, $flexi_id)
     {
 
-        flexi_log("update primary");
+        //flexi_log("update primary");
 
         $newPost      = array();
         $newPost      = array('id' => false, 'error' => false, 'notice' => false);
