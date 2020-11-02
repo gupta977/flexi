@@ -44,18 +44,25 @@ class Flexi_Standalone_Gallery
             ?>
 
               <img id="flexi_medium_image" src="<?php echo flexi_image_src('medium', $flexi_post); ?>"><br>
-              <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
-                <input type="file" name="user-submitted-image[]" accept="image/*" value="" id="file" class="" required="">
-                <?php
-                wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
-                echo '<input type="hidden" name="flexi_id" value="' . $id . '">';
-                echo '<input type="hidden" name="upload_type" value="flexi">';
-                echo '<input type="hidden" name="type" value="primary">';
-                echo '<input type="hidden" name="action" value="flexi_ajax_update_image">';
-                ?>
-                <input type="submit" name="submit" value="Replace image" id="submit" class="">
+              <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
+                <fieldset>
+                  <legend>Select new image to replace</legend>
+                  <input type="file" name="user-submitted-image[]" accept="image/*" value="" id="file" class="" required="">
+                  <?php
+                  wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
+                  echo '<input type="hidden" name="flexi_id" value="' . $id . '">';
+                  echo '<input type="hidden" name="upload_type" value="flexi">';
+                  echo '<input type="hidden" name="type" value="primary">';
+                  echo '<input type="hidden" name="action" value="flexi_ajax_update_image">';
+                  ?>
+                  <input type="submit" name="submit" value="Replace image" id="submit" class="">
+                </fieldset>
               </form>
+
             <?php
+              $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
+              $link = add_query_arg("manage", "standalone", $link);
+              echo "<a class='pure-button' href='" . $link . "'>Add Sub-Gallery</a>";
             } else {
 
               //Update sub-gallery
@@ -96,7 +103,7 @@ class Flexi_Standalone_Gallery
           </div>
           <div class="flexi_response_internal"></div>
           <br>
-          <a href="<?php echo flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings'); ?>"><?php echo __("Go back", "flexi"); ?></a>
+          <a class="pure-button" href="<?php echo flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings'); ?>"><?php echo __("Go back", "flexi"); ?></a>
 
         <?php
         } else {

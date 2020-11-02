@@ -6,14 +6,15 @@ class Flexi_User_Dashboard
     public function __construct()
     {
         add_shortcode('flexi-user-dashboard', array($this, 'flexi_user_dashboard'));
-
+        add_shortcode('flexi-common-toolbar', array($this, 'flexi_common_toolbar'));
         add_filter("flexi_submit_toolbar", array($this, 'flexi_add_icon_submit_toolbar'), 10, 2);
         add_action('wp', array($this, 'enqueue_styles'));
         add_filter('flexi_settings_sections', array($this, 'add_section'));
         add_filter('flexi_settings_fields', array($this, 'add_fields_general'));
         add_filter("flexi_member_toolbar", array($this, 'logout_button'), 10, 1);
+        add_filter("flexi_common_toolbar", array($this, 'logout_button'), 10, 1);
         add_filter("flexi_member_toolbar", array($this, 'gallery_button'), 10, 1);
-        add_filter("flexi_member_toolbar", array($this, 'submission_form_button'), 10, 1);
+        add_filter("flexi_common_toolbar", array($this, 'user_dashboard_button'), 10, 1);
     }
 
     //Add Section title & description at settings
@@ -194,6 +195,36 @@ class Flexi_User_Dashboard
         return $list;
     }
 
+
+    //common button toolbar shortcode: [flexi-common-toolbar]
+    public function flexi_common_toolbar()
+    {
+        global $post;
+        $icon = array();
+
+        $list = '';
+
+        if (has_filter('flexi_common_toolbar')) {
+            $icon = apply_filters('flexi_common_toolbar', $icon);
+        }
+
+        if (count($icon) > 0) {
+            $list .= '<div class="flexi-common-toolbar_group" role="toolbar" id="flexi-common-toolbar_' . get_the_ID() . '">';
+        }
+
+        for ($r = 0; $r < count($icon); $r++) {
+
+            if ("" != $icon[$r][0]) {
+                $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][3] . '"><span class="' . $icon[$r][3] . '-icon"><span class="flexi_icon_' . $icon[$r][0] . '"></span></span><span class="' . $icon[$r][3] . '-text">' . $icon[$r][1] . '</span></a> ';
+            }
+        }
+        if (count($icon) > 0) {
+            $list .= '</div>';
+        }
+        return $list;
+    }
+
+
     public function gallery_button($icon)
     {
         $enable_addon = flexi_get_option('enable_mygallery_button', 'flexi_user_dashboard_settings', 1);
@@ -256,6 +287,27 @@ class Flexi_User_Dashboard
 
         );
 
+        // combine the two arrays
+        if (is_array($extra_icon) && is_array($icon)) {
+            $icon = array_merge($extra_icon, $icon);
+        }
+
+        return $icon;
+    }
+
+    public function user_dashboard_button($icon)
+    {
+        $extra_icon = array();
+        $link         = flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings');
+        $enable_addon = flexi_get_option('enable_dashboard_button', 'flexi_user_dashboard_settings', 1);
+
+        if ("#" != $link && "1" == $enable_addon) {
+
+            $extra_icon = array(
+                array("home", __('My Dashboard', 'flexi'), $link, 'flexi_css_button'),
+
+            );
+        }
         // combine the two arrays
         if (is_array($extra_icon) && is_array($icon)) {
             $icon = array_merge($extra_icon, $icon);
