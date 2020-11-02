@@ -87,7 +87,7 @@ class flexi_update_image
     //Add more images to standalone gallery
     public function flexi_add_more_image_standalone($files, $flexi_id)
     {
-        // flexi_log("Adding into standalone gallery");
+        flexi_log("Adding into standalone gallery");
 
         $newPost      = array();
         $newPost      = array('id' => false, 'error' => false, 'notice' => false);
@@ -157,18 +157,21 @@ class flexi_update_image
     public function flexi_update_primary_image($files, $flexi_id)
     {
 
-        //flexi_log("update primary");
+        flexi_log("update primary");
 
         $newPost      = array();
         $newPost      = array('id' => false, 'error' => false, 'notice' => false);
         $newPost['error'][] = "";
         // flexi_log($files);
-        $post_author_id = get_post_field('post_author', $flexi_id);
+
         //Delete the old image 
+        /*
+         $post_author_id = get_post_field('post_author', $flexi_id);
         if (get_current_user_id() == $post_author_id) {
             $del = new flexi_delete_post();
             $del->flexi_delete_post_media($flexi_id);
         }
+        */
 
         //Assign new image
         flexi_include_deps();
