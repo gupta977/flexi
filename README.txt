@@ -205,7 +205,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Increased custom fields 10 to 20
 * Fixed textarea edit form field
 * Fixed radio button edit form field
-* Fiexed checkbox edit form field
+* Fixed checkbox edit form field
+* Removed profile icon from user dashboard page
+* Added standalone gallery (Sub-gallery of primary image)
 
 = 2.9 =
 * Fixed show_mine parameter in flexi-gallery shortcode
