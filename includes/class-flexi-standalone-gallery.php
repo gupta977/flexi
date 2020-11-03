@@ -59,10 +59,13 @@ class Flexi_Standalone_Gallery
                 </fieldset>
               </form>
 
-            <?php
+              <?php
               $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
               $link = add_query_arg("manage", "standalone", $link);
               echo "<a class='pure-button' href='" . $link . "'>Add Sub-Gallery</a>";
+              ?>
+              <a class="pure-button" href="<?php echo flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings'); ?>"><?php echo __("Go back", "flexi"); ?></a>
+            <?php
             } else {
 
               //Update sub-gallery
@@ -93,6 +96,13 @@ class Flexi_Standalone_Gallery
                 <input type="submit" name="submit" value="Add image" id="submit" class="">
               </form>
 
+              <?php
+              $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
+              $link = add_query_arg("manage", "media", $link);
+
+              ?>
+              <br>
+              <a class="pure-button" href="<?php echo $link; ?>"><?php echo __("Go back", "flexi"); ?></a>
             <?php
             }
             ?>
@@ -102,8 +112,6 @@ class Flexi_Standalone_Gallery
             <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
           </div>
           <div class="flexi_response_internal"></div>
-          <br>
-          <a class="pure-button" href="<?php echo flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings'); ?>"><?php echo __("Go back", "flexi"); ?></a>
 
         <?php
         } else {
