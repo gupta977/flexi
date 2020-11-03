@@ -57,15 +57,20 @@ class flexi_update_image
             if ($replace_type == "primary") {
                 //Process image to delete old and keep new one
                 $result = $this->flexi_update_primary_image($files, $flexi_id);
+                $msg           = '<img id="flexi_medium_image" src="' . flexi_image_src('medium', $flexi_post) . '"><br>';
             } else {
                 $result = $this->flexi_add_more_image_standalone($files, $flexi_id);
+                //$msg           = '<div id="flexi_thumb_image">' . flexi_standalone_gallery($flexi_id, 'thumbnail', 75, 75, true) . "</div><br>";
+                $msg = $flexi_id;
             }
 
             $error = false;
             if (isset($result['error'])) {
                 $error = array_filter(array_unique($result['error']));
             }
-            $msg           = '<img id="flexi_medium_image" src="' . flexi_image_src('medium', $flexi_post) . '"><br>';
+
+
+
             $response['msg'] = "<div class='flexi_alert-box flexi_success'>" . __('Successfully updated', 'flexi') . "</div><br>" . $msg;
         } else {
             $result['error'][] = "Upload Type Not Supported. Check your form parameters.";

@@ -72,13 +72,7 @@ class Flexi_Standalone_Gallery
             ?>
 
 
-              <div class="pure-g">
-                <div class="pure-u-1">
-                  <div class="flexi_margin-box">
-                    <div id="flexi_thumb_image"> <?php flexi_standalone_gallery($id, 'thumbnail', 75, 75, true); ?></div>
-                  </div>
-                </div>
-              </div>
+
               <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
 
 
@@ -103,6 +97,8 @@ class Flexi_Standalone_Gallery
               ?>
               <br>
               <a class="pure-button" href="<?php echo $link; ?>"><?php echo __("Go back", "flexi"); ?></a>
+
+
             <?php
             }
             ?>
@@ -112,6 +108,20 @@ class Flexi_Standalone_Gallery
             <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
           </div>
           <div class="flexi_response_internal"></div>
+
+
+          <div id='flexi_ajax_refresh_loader' style='display: none;'>
+            <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
+          </div>
+          <div id="flexi_ajax_refresh_content">
+            <div id="flexi_thumb_image"> <?php flexi_standalone_gallery($id, 'thumbnail', 75, 75, true); ?></div>
+          </div>
+
+          <?php
+          $nonce = wp_create_nonce("flexi_ajax_refresh");
+          echo '<a href="#" class="flexi_css_button" id="flexi_ajax_refresh" data-nonce="' . $nonce . '" data-id="' . $id . '" data-method_name="standalone" data-param1="" data-param2="" data-param3="" title="Refresh"></a>';
+          ?>
+
 
         <?php
         } else {

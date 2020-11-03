@@ -61,20 +61,22 @@ jQuery(".flexi_ajax_update_image").on("submit", function (e) {
         if (response.type == "success") {
           jQuery(".flexi_response_internal").show();
           jQuery(".flexi_response_internal").empty();
-          jQuery(".flexi_response_internal").append(response.msg);
+         // jQuery(".flexi_response_internal").append(response.msg);
           //jQuery("#load_more_reset").click();
-          jQuery(".flexi_response_internal").append(response);
+          //jQuery(".flexi_response_internal").append(response);
 
          //console.log(response);
         } else {
           //console.log("Blank Response");
-          jQuery(".flexi_response_internal").append(response.msg);
+          //jQuery(".flexi_response_internal").append(response.msg);
         }
+        jQuery("#flexi_ajax_refresh").click();
       },
       complete: function (data) {
         // Hide image container
         //console.log("Submission completed");
         jQuery("#flexi_loader_internal").hide();
+        jQuery("#flexi_form_internal").slideDown();
         //jQuery("#flexi_after_response").show();
         i = 0;
         progress = false;

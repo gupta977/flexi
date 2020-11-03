@@ -159,7 +159,9 @@ class Flexi_Public
     wp_register_script('flexi_ajax_delete', plugin_dir_url(__FILE__) . 'js/flexi_ajax_delete.js', array('jquery'), $this->version);
     wp_enqueue_script('flexi_ajax_delete');
 
-
+    //Ajax refresh on spot
+    wp_register_script('flexi_ajax_refresh', plugin_dir_url(__FILE__) . 'js/flexi_ajax_refresh.js', array('jquery'), $this->version);
+    wp_enqueue_script('flexi_ajax_refresh');
 
     //Ajax primary image update
     wp_register_script('flexi_ajax_update_image', plugin_dir_url(__FILE__) . 'js/flexi_ajax_update_image.js', array('jquery'), $this->version);

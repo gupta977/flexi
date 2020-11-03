@@ -173,6 +173,9 @@ class Flexi
     //Load Ajax form submit
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/flexi_ajax_post.php';
 
+    //Load Ajax refresh
+    require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi_ajax_refresh.php';
+
     //Load Ajax form to replace primary image
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi_ajax_update_image.php';
 
