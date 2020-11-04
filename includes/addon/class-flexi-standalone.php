@@ -75,7 +75,7 @@ class Flexi_Addon_Standalone
                     'description'       => __('Label of Sub-Gallery button. Eg. Add Sub-Gallery', 'flexi'),
                     'type'              => 'text',
                     'size'              => 'medium',
-                    'sanitize_callback' => 'sanitize_key',
+                    'sanitize_callback' => '',
                 ),
 
             ),);

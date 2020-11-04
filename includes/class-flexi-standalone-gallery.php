@@ -60,9 +60,13 @@ class Flexi_Standalone_Gallery
               </form>
 
               <?php
-              $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
-              $link = add_query_arg("manage", "standalone", $link);
-              echo "<a class='pure-button' href='" . $link . "'>Add Sub-Gallery</a>";
+
+              $enable_addon = flexi_get_option('enable_standalone_button', 'flexi_standalone_settings', 1);
+              if ("1" == $enable_addon) {
+                $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
+                $link = add_query_arg("manage", "standalone", $link);
+                echo "<a class='pure-button' href='" . $link . "'>Add Sub-Gallery</a>";
+              }
               ?>
               <a class="pure-button" href="<?php echo flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings'); ?>"><?php echo __("Go back", "flexi"); ?></a>
             <?php
@@ -96,6 +100,7 @@ class Flexi_Standalone_Gallery
 
               ?>
               <br>
+
               <a class="pure-button" href="<?php echo $link; ?>"><?php echo __("Go back", "flexi"); ?></a>
 
 
