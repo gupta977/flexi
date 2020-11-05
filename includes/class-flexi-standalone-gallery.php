@@ -144,7 +144,8 @@ class Flexi_Standalone_Gallery
               //Update primary image link below image at edit page
               $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
               $link = add_query_arg("manage", "media", $link);
-              echo "<a href='" . $link . "'>Manage media</a>";
+              // echo "<a href='" . $link . "'><span class='dashicons dashicons-admin-tools'></span> Manage media</a>";
+              echo '<a href="' . $link . '" class="flexi_css_button"><span class="flexi_css_button-icon"></span><span class="flexi_css_button-text">Manage media</span></a>';
             }
           }
 
