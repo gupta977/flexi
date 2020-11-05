@@ -46,7 +46,7 @@ class Flexi_Standalone_Gallery
               <img id="flexi_medium_image" src="<?php echo flexi_image_src('medium', $flexi_post); ?>"><br>
               <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
                 <fieldset>
-                  <legend>Select new image to replace</legend>
+                  <legend><?php echo __("Select new image to replace", "flexi"); ?></legend>
                   <input type="file" name="user-submitted-image[]" accept="image/*" value="" id="file" class="" required="">
                   <?php
                   wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
@@ -55,7 +55,7 @@ class Flexi_Standalone_Gallery
                   echo '<input type="hidden" name="type" value="primary">';
                   echo '<input type="hidden" name="action" value="flexi_ajax_update_image">';
                   ?>
-                  <input type="submit" name="submit" value="Replace image" id="submit" class="">
+                  <input type="submit" name="submit" value="<?php echo __("Replace image", "flexi"); ?>" id="submit" class="">
                 </fieldset>
               </form>
 
@@ -65,7 +65,8 @@ class Flexi_Standalone_Gallery
               if ("1" == $enable_addon) {
                 $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
                 $link = add_query_arg("manage", "standalone", $link);
-                echo "<a class='pure-button' href='" . $link . "'>Add Sub-Gallery</a>";
+                $button_label = flexi_get_option('standalone_button_label', 'flexi_standalone_settings', "Add Sub-Gallery");
+                echo "<a class='pure-button' href='" . $link . "'>" . $button_label . "</a>";
               }
               ?>
               <a class="pure-button" href="<?php echo flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings'); ?>"><?php echo __("Go back", "flexi"); ?></a>
@@ -145,7 +146,7 @@ class Flexi_Standalone_Gallery
               $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
               $link = add_query_arg("manage", "media", $link);
               // echo "<a href='" . $link . "'><span class='dashicons dashicons-admin-tools'></span> Manage media</a>";
-              echo '<a href="' . $link . '" class="flexi_css_button"><span class="flexi_css_button-icon"></span><span class="flexi_css_button-text">Manage media</span></a>';
+              echo '<a href="' . $link . '" class="flexi_css_button"><span class="flexi_css_button-icon"></span><span class="flexi_css_button-text">' . __("Manage Media", "flexi") . '</span></a>';
             }
           }
 
