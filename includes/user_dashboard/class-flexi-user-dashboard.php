@@ -70,6 +70,22 @@ class Flexi_User_Dashboard
                 'sanitize_callback' => 'intval',
             ),
 
+            array(
+                'name'              => 'enable_logout_button',
+                'label'             => __('"Logout" button', 'flexi'),
+                'description'       => __('Display logout button at user dashboard & common toolbar.', 'flexi'),
+                'type'              => 'checkbox',
+                'sanitize_callback' => 'intval',
+            ),
+            array(
+                'name'              => 'logout_button_label',
+                'label'             => __('Logout Button Label', 'flexi'),
+                'description'       => __('Label of Logout button. Eg. Sign out', 'flexi'),
+                'type'              => 'text',
+                'size'              => 'medium',
+                'sanitize_callback' => '',
+            ),
+
         ),);
         $new = array_merge($new, $fields);
 
@@ -280,16 +296,22 @@ class Flexi_User_Dashboard
     public function logout_button($icon)
     {
         $extra_icon = array();
-        $link       = wp_logout_url(home_url());
+        $enable_addon = flexi_get_option('enable_logout_button', 'flexi_user_dashboard_settings', 1);
 
-        $extra_icon = array(
-            array("alert", __('Logout', 'flexi'), $link, 'flexi_css_button'),
+        if ("1" == $enable_addon) {
+            $button_label = flexi_get_option('logout_button_label', 'flexi_user_dashboard_settings', "Logout");
 
-        );
+            $link       = wp_logout_url(home_url());
 
-        // combine the two arrays
-        if (is_array($extra_icon) && is_array($icon)) {
-            $icon = array_merge($extra_icon, $icon);
+            $extra_icon = array(
+                array("alert", $button_label, $link, 'flexi_css_button'),
+
+            );
+
+            // combine the two arrays
+            if (is_array($extra_icon) && is_array($icon)) {
+                $icon = array_merge($extra_icon, $icon);
+            }
         }
 
         return $icon;

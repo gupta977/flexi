@@ -210,6 +210,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Added standalone gallery (Sub-gallery of primary image)
 * Introduced [flexi-common-toolbar] shortcode to display flexi toolbar anywhere.
 * Added "Add Sub-Gallery" addon
+* Added "Logout button" toggle switch with label input
 
 = 2.9 =
 * Fixed show_mine parameter in flexi-gallery shortcode
