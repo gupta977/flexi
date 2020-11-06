@@ -63,18 +63,16 @@ class Flexi_Standalone_Gallery
 
               $enable_addon = flexi_get_option('enable_standalone_button', 'flexi_standalone_settings', 1);
               if ("1" == $enable_addon) {
-                $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
+                $link = flexi_get_button_url($id, false, 'edit_standalone_page', 'flexi_standalone_settings');
                 $link = add_query_arg("manage", "standalone", $link);
+                $link = add_query_arg("id", $id, $link);
                 $button_label = flexi_get_option('standalone_button_label', 'flexi_standalone_settings', "Add Sub-Gallery");
-                echo "<a class='pure-button' href='" . $link . "'>" . $button_label . "</a>";
+                echo "<hr><a class='pure-button' href='" . $link . "'>" . $button_label . "</a><br><br>";
               }
-              ?>
-              <a class="pure-button" href="<?php echo flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings'); ?>"><?php echo __("Go back", "flexi"); ?></a>
-            <?php
             } else {
 
               //Update sub-gallery
-            ?>
+              ?>
 
 
 
@@ -96,8 +94,9 @@ class Flexi_Standalone_Gallery
               </form>
 
               <?php
-              $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
+              $link = flexi_get_button_url($id, false, 'edit_standalone_page', 'flexi_standalone_settings');
               $link = add_query_arg("manage", "media", $link);
+              $link = add_query_arg("id", $id, $link);
 
               ?>
               <br>
@@ -143,8 +142,9 @@ class Flexi_Standalone_Gallery
           if (isset($params['edit'])) {
             if ($params["edit"] == "true") {
               //Update primary image link below image at edit page
-              $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
+              $link = flexi_get_button_url($id, false, 'edit_standalone_page', 'flexi_standalone_settings');
               $link = add_query_arg("manage", "media", $link);
+              $link = add_query_arg("id", $id, $link);
               // echo "<a href='" . $link . "'><span class='dashicons dashicons-admin-tools'></span> Manage media</a>";
               echo '<a href="' . $link . '" class="flexi_css_button"><span class="flexi_css_button-icon"></span><span class="flexi_css_button-text">' . __("Manage Media", "flexi") . '</span></a>';
             }

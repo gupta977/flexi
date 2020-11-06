@@ -77,6 +77,13 @@ class Flexi_Addon_Standalone
                     'size'              => 'medium',
                     'sanitize_callback' => '',
                 ),
+                array(
+                    'name'              => 'edit_standalone_page',
+                    'label'             => __('Sub-Gallery form', 'flexi'),
+                    'description'       => __('Page should contain shortcode [flexi-common-toolbar] [flexi-standalone edit="true"]', 'flexi'),
+                    'type'              => 'pages',
+                    'sanitize_callback' => 'sanitize_key',
+                ),
 
             ),);
             $new = array_merge($new, $fields);
@@ -92,9 +99,9 @@ class Flexi_Addon_Standalone
 
         $enable_addon = flexi_get_option('enable_standalone_button', 'flexi_standalone_settings', 1);
 
-        $link = flexi_get_button_url($id, false, 'edit_flexi_page', 'flexi_form_settings');
+        $link = flexi_get_button_url($id, false, 'edit_standalone_page', 'flexi_standalone_settings');
         $link = add_query_arg("manage", "standalone", $link);
-
+        $link = add_query_arg("id", $id, $link);
         if ("#" != $link && "1" == $enable_addon) {
             $button_label = flexi_get_option('standalone_button_label', 'flexi_standalone_settings', "Add Sub-Gallery");
             $extra_icon = array(
