@@ -7,7 +7,7 @@ class Flexi_User_Dashboard
     {
         add_shortcode('flexi-user-dashboard', array($this, 'flexi_user_dashboard'));
         add_shortcode('flexi-common-toolbar', array($this, 'flexi_common_toolbar'));
-        add_filter("flexi_submit_toolbar", array($this, 'flexi_add_icon_submit_toolbar'), 10, 2);
+        // add_filter("flexi_submit_toolbar", array($this, 'flexi_add_icon_submit_toolbar'), 10, 2);
         add_action('wp', array($this, 'enqueue_styles'));
         add_filter('flexi_settings_sections', array($this, 'add_section'));
         add_filter('flexi_settings_fields', array($this, 'add_fields_general'));
@@ -49,7 +49,7 @@ class Flexi_User_Dashboard
             array(
                 'name'              => 'enable_dashboard_button',
                 'label'             => __('"My Dashboard" button', 'flexi'),
-                'description'       => __('Display button after form submission', 'flexi'),
+                'description'       => __('Display "My Dashboard" button at common toolbar', 'flexi'),
                 'type'              => 'checkbox',
                 'sanitize_callback' => 'intval',
             ),
@@ -142,7 +142,7 @@ class Flexi_User_Dashboard
         }
         return ob_get_clean();
     }
-
+    /*
     //Add My-Dashboard button after form submit
     public function flexi_add_icon_submit_toolbar($icon, $id = '')
     {
@@ -166,7 +166,7 @@ class Flexi_User_Dashboard
 
         return $icon;
     }
-
+*/
     //Styles only related to user dashboard
     public function enqueue_styles()
     {

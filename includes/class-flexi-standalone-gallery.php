@@ -14,14 +14,11 @@ class Flexi_Standalone_Gallery
     if (isset($params['id'])) {
       $id = $params['id'];
     } else {
-      if (isset($_REQUEST["id"])) {
-        $id = $_REQUEST["id"];
-      } else {
-        $id = 0;
-      }
+      $id = get_query_var('id', 0);
     }
 
     $flexi_post = get_post($id);
+    //flexi_log($id);
 
     if ($flexi_post && 0 != $id) {
 
@@ -35,6 +32,12 @@ class Flexi_Standalone_Gallery
               display: none;
             }
           </style>
+
+          <!-- Image loader -->
+          <div id='flexi_loader_internal' style='display: none;'>
+            <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
+          </div>
+          <div class="flexi_response_internal"></div>
 
 
           <div id="flexi_form_internal">
@@ -129,11 +132,7 @@ class Flexi_Standalone_Gallery
             }
             ?>
           </div>
-          <!-- Image loader -->
-          <div id='flexi_loader_internal' style='display: none;'>
-            <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
-          </div>
-          <div class="flexi_response_internal">internal</div>
+
 
 
         <?php

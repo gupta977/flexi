@@ -100,9 +100,11 @@ class Flexi_Addon_Standalone
         $enable_addon = flexi_get_option('enable_standalone_button', 'flexi_standalone_settings', 1);
 
         $link = flexi_get_button_url($id, false, 'edit_standalone_page', 'flexi_standalone_settings');
-        $link = add_query_arg("manage", "standalone", $link);
-        $link = add_query_arg("id", $id, $link);
+
         if ("#" != $link && "1" == $enable_addon) {
+
+            $link = add_query_arg("manage", "standalone", $link);
+            $link = add_query_arg("id", $id, $link);
             $button_label = flexi_get_option('standalone_button_label', 'flexi_standalone_settings', "Add Sub-Gallery");
             $extra_icon = array(
                 array("gallery", $button_label, $link, $id, 'flexi_css_button'),

@@ -73,7 +73,7 @@ class flexi_update_image
 
 
 
-            $response['msg'] = "<div class='flexi_alert-box flexi_success'>" . __('Successfully updated', 'flexi') . "</div><br>" . $msg;
+            $response['msg'] = "<div class='flexi_alert-box flexi_success'>" . __('Successfully updated', 'flexi') . "</div><br>";
         } else {
             $result['error'][] = "Upload Type Not Supported. Check your form parameters.";
             $reindex_array = array_values(array_filter($result['error']));
@@ -85,7 +85,7 @@ class flexi_update_image
             $response['msg'] = $msg;
         }
         // Don't forget to exit at the end of processing
-
+        // flexi_log($response['msg']);
         $data = json_encode($response);
         echo $data;
         die();
