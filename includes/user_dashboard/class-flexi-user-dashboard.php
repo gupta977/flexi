@@ -72,8 +72,8 @@ class Flexi_User_Dashboard
 
             array(
                 'name'              => 'enable_logout_button',
-                'label'             => __('"Logout" button', 'flexi'),
-                'description'       => __('Display logout button at user dashboard & common toolbar.', 'flexi'),
+                'label'             => __('"Login/Logout" button', 'flexi'),
+                'description'       => __('Display logout/login button at user dashboard & common toolbar.', 'flexi'),
                 'type'              => 'checkbox',
                 'sanitize_callback' => 'intval',
             ),
@@ -81,6 +81,14 @@ class Flexi_User_Dashboard
                 'name'              => 'logout_button_label',
                 'label'             => __('Logout Button Label', 'flexi'),
                 'description'       => __('Label of Logout button. Eg. Sign out', 'flexi'),
+                'type'              => 'text',
+                'size'              => 'medium',
+                'sanitize_callback' => '',
+            ),
+            array(
+                'name'              => 'login_button_label',
+                'label'             => __('Login Button Label', 'flexi'),
+                'description'       => __('Label of Login button. Eg. Sign in', 'flexi'),
                 'type'              => 'text',
                 'size'              => 'medium',
                 'sanitize_callback' => '',
@@ -299,9 +307,15 @@ class Flexi_User_Dashboard
         $enable_addon = flexi_get_option('enable_logout_button', 'flexi_user_dashboard_settings', 1);
 
         if ("1" == $enable_addon) {
-            $button_label = flexi_get_option('logout_button_label', 'flexi_user_dashboard_settings', "Logout");
 
-            $link       = wp_logout_url(home_url());
+            if (is_user_logged_in()) {
+                $button_label = flexi_get_option('logout_button_label', 'flexi_user_dashboard_settings', "Logout");
+
+                $link       = wp_logout_url(home_url());
+            } else {
+                $link       = esc_url(wp_login_url(get_permalink()));
+                $button_label = flexi_get_option('login_button_label', 'flexi_user_dashboard_settings', "Login");
+            }
 
             $extra_icon = array(
                 array("alert", $button_label, $link, 'flexi_css_button'),
