@@ -43,6 +43,21 @@ class flexi_ajax_refresh
         $put = ob_get_clean();
         return $put;
     }
+    public function primary_image($id, $param1, $param2, $param3)
+    {
+        ob_start();
+        $put = ob_get_clean();
+
+        $flexi_post = get_post($id);
+
+        if ($flexi_post && 0 != $id) {
+            echo '<img id="flexi_medium_image" src="' . esc_url(flexi_image_src($param1, $flexi_post)) . '">';
+        } else {
+            return "";
+        }
+        $put = ob_get_clean();
+        return $put;
+    }
 }
 
 $refresh = new flexi_ajax_refresh();

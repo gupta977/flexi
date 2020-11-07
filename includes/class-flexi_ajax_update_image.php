@@ -48,6 +48,7 @@ class flexi_update_image
         $upload_type   = $attr['upload_type'];
         $replace_type   = $attr['type'];
         $flexi_post = get_post($flexi_id);
+        $msg = '';
         if ('flexi' == $upload_type) {
             if (isset($_FILES['user-submitted-image'])) {
                 $files = $_FILES['user-submitted-image'];
@@ -57,10 +58,11 @@ class flexi_update_image
             if ($replace_type == "primary") {
                 //Process image to delete old and keep new one
                 $result = $this->flexi_update_primary_image($files, $flexi_id);
-                $msg           = '<img id="flexi_medium_image" src="' . flexi_image_src('medium', $flexi_post) . '"><br>';
+                //$msg           = '.....<img id="flexi_medium_image" src="' . flexi_image_src('medium', $flexi_post) . '"><br>';
             } else {
                 $result = $this->flexi_add_more_image_standalone($files, $flexi_id);
                 //$msg           = '<div id="flexi_thumb_image">' . flexi_standalone_gallery($flexi_id, 'thumbnail', 75, 75, true) . "</div><br>";
+                // $msg = "00000";
                 $msg = $flexi_id;
             }
 

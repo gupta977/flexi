@@ -42,8 +42,19 @@ class Flexi_Standalone_Gallery
             <?php
             if ($_REQUEST["manage"] == "media") {
             ?>
+              <div id='flexi_ajax_refresh_loader' style='display: none;'>
+                <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
+              </div>
+              <div id="flexi_ajax_refresh_content">
+                <div id="flexi_thumb_image"> <img id="flexi_medium_image" src="<?php echo flexi_image_src('medium', $flexi_post); ?>"></div>
+              </div>
 
-              <img id="flexi_medium_image" src="<?php echo flexi_image_src('medium', $flexi_post); ?>"><br>
+              <?php
+              $nonce = wp_create_nonce("flexi_ajax_refresh");
+              echo '<a href="#" class="flexi_css_button" id="flexi_ajax_refresh" data-nonce="' . $nonce . '" data-id="' . $id . '" data-method_name="primary_image" data-param1="medium" data-param2="" data-param3="" title="Refresh"></a>';
+              ?>
+
+              <hr>
               <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
                 <fieldset>
                   <legend><?php echo __("Select new image to replace", "flexi"); ?></legend>
@@ -73,9 +84,19 @@ class Flexi_Standalone_Gallery
 
               //Update sub-gallery
               ?>
+              <div id='flexi_ajax_refresh_loader' style='display: none;'>
+                <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
+              </div>
+              <div id="flexi_ajax_refresh_content">
+                <div id="flexi_thumb_image"> <?php flexi_standalone_gallery($id, 'thumbnail', 75, 75, true); ?></div>
+              </div>
 
+              <?php
+              $nonce = wp_create_nonce("flexi_ajax_refresh");
+              echo '<a href="#" class="flexi_css_button" id="flexi_ajax_refresh" data-nonce="' . $nonce . '" data-id="' . $id . '" data-method_name="standalone" data-param1="" data-param2="" data-param3="" title="Refresh"></a>';
+              ?>
 
-
+              <hr>
               <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
 
 
@@ -112,20 +133,7 @@ class Flexi_Standalone_Gallery
           <div id='flexi_loader_internal' style='display: none;'>
             <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
           </div>
-          <div class="flexi_response_internal"></div>
-
-
-          <div id='flexi_ajax_refresh_loader' style='display: none;'>
-            <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
-          </div>
-          <div id="flexi_ajax_refresh_content">
-            <div id="flexi_thumb_image"> <?php flexi_standalone_gallery($id, 'thumbnail', 75, 75, true); ?></div>
-          </div>
-
-          <?php
-          $nonce = wp_create_nonce("flexi_ajax_refresh");
-          echo '<a href="#" class="flexi_css_button" id="flexi_ajax_refresh" data-nonce="' . $nonce . '" data-id="' . $id . '" data-method_name="standalone" data-param1="" data-param2="" data-param3="" title="Refresh"></a>';
-          ?>
+          <div class="flexi_response_internal">internal</div>
 
 
         <?php
