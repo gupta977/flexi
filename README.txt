@@ -208,9 +208,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Fixed checkbox edit form field
 * Removed profile icon from user dashboard page
 * Added standalone gallery (Sub-gallery of primary image)
-* Introduced [flexi-common-toolbar] shortcode to display flexi toolbar anywhere.
+* Introduced [flexi-common-toolbar] shortcode to display flexi toolbar anywhere. Added into 'My Dashboard'
 * Added "Add Sub-Gallery" addon
 * Added "Logout button" toggle switch with label input
+* Removed action 'flexi-member-toolbar'
 
 = 2.9 =
 * Fixed show_mine parameter in flexi-gallery shortcode

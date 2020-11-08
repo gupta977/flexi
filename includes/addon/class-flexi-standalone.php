@@ -80,7 +80,7 @@ class Flexi_Addon_Standalone
                 array(
                     'name'              => 'edit_standalone_page',
                     'label'             => __('Sub-Gallery form', 'flexi'),
-                    'description'       => __('Page should contain shortcode [flexi-common-toolbar] [flexi-standalone edit="true"]', 'flexi'),
+                    'description'       => __('Page should contain shortcode [flexi-common-toolbar] [flexi-standalone edit="true"]. Eg. "Edit Flexi Page"', 'flexi'),
                     'type'              => 'pages',
                     'sanitize_callback' => 'sanitize_key',
                 ),

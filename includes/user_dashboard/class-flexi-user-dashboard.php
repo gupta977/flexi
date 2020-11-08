@@ -11,9 +11,9 @@ class Flexi_User_Dashboard
         add_action('wp', array($this, 'enqueue_styles'));
         add_filter('flexi_settings_sections', array($this, 'add_section'));
         add_filter('flexi_settings_fields', array($this, 'add_fields_general'));
-        add_filter("flexi_member_toolbar", array($this, 'logout_button'), 10, 1);
+        //add_filter("flexi_member_toolbar", array($this, 'logout_button'), 10, 1);
         add_filter("flexi_common_toolbar", array($this, 'logout_button'), 10, 1);
-        add_filter("flexi_member_toolbar", array($this, 'gallery_button'), 10, 1);
+        add_filter("flexi_common_toolbar", array($this, 'gallery_button'), 10, 1);
         add_filter("flexi_common_toolbar", array($this, 'user_dashboard_button'), 10, 1);
     }
 
@@ -115,7 +115,9 @@ class Flexi_User_Dashboard
 ?>
 
                 <div class="flexi_text_group" style="text-align:right;">
-                    <?php echo $this->flexi_member_toolbar(); ?>
+                    <?php // echo $this->flexi_member_toolbar(); 
+                    ?>
+                    <?php echo do_shortcode("[flexi-common-toolbar]"); ?>
                 </div>
 
                 <div class="pure-g">
@@ -190,7 +192,7 @@ class Flexi_User_Dashboard
             wp_enqueue_script('flexi_tab_script');
         }
     }
-
+    /*
     //button toolbar for user dashboard
     public function flexi_member_toolbar()
     {
@@ -218,7 +220,7 @@ class Flexi_User_Dashboard
         }
         return $list;
     }
-
+*/
 
     //common button toolbar shortcode: [flexi-common-toolbar]
     public function flexi_common_toolbar()
@@ -336,19 +338,21 @@ class Flexi_User_Dashboard
         $extra_icon = array();
         $link         = flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings');
         $enable_addon = flexi_get_option('enable_dashboard_button', 'flexi_user_dashboard_settings', 1);
+        $current_page_id = get_the_ID();
+        $dashboard_page_id    = flexi_get_option('my_gallery', 'flexi_user_dashboard_settings', 0);
+        if ($current_page_id != $dashboard_page_id) {
+            if ("#" != $link && "1" == $enable_addon) {
 
-        if ("#" != $link && "1" == $enable_addon) {
+                $extra_icon = array(
+                    array("home", __('My Dashboard', 'flexi'), $link, 'flexi_css_button'),
 
-            $extra_icon = array(
-                array("home", __('My Dashboard', 'flexi'), $link, 'flexi_css_button'),
-
-            );
+                );
+            }
+            // combine the two arrays
+            if (is_array($extra_icon) && is_array($icon)) {
+                $icon = array_merge($extra_icon, $icon);
+            }
         }
-        // combine the two arrays
-        if (is_array($extra_icon) && is_array($icon)) {
-            $icon = array_merge($extra_icon, $icon);
-        }
-
         return $icon;
     }
 }
