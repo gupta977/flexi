@@ -6,7 +6,7 @@ class flexi_update_image
     public function __construct()
     {
         add_action("wp_ajax_flexi_ajax_update_image", array($this, "flexi_ajax_update_image"));
-        add_action("wp_ajax_nopriv_flexi_ajax_update_image", array($this, "flexi_my_must_login"));
+        add_action("wp_ajax_nopriv_flexi_ajax_update_image", array($this, "flexi_ajax_update_image"));
     }
 
     //Used in ajax call, force users to login before any action.
