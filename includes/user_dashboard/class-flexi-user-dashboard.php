@@ -11,10 +11,17 @@ class Flexi_User_Dashboard
         add_action('wp', array($this, 'enqueue_styles'));
         add_filter('flexi_settings_sections', array($this, 'add_section'));
         add_filter('flexi_settings_fields', array($this, 'add_fields_general'));
-        //add_filter("flexi_member_toolbar", array($this, 'logout_button'), 10, 1);
         add_filter("flexi_common_toolbar", array($this, 'logout_button'), 10, 1);
+        add_filter("flexi_common_toolbar", array($this, 'submission_form_button'), 10, 1);
         add_filter("flexi_common_toolbar", array($this, 'gallery_button'), 10, 1);
         add_filter("flexi_common_toolbar", array($this, 'user_dashboard_button'), 10, 1);
+        add_action('flexi_activated', array($this, 'set_value'));
+    }
+    public function set_value()
+    {
+        //Set default location of elements
+        flexi_get_option('logout_button_label', 'flexi_user_dashboard_settings', "Logout");
+        flexi_get_option('login_button_label', 'flexi_user_dashboard_settings', "Login");
     }
 
     //Add Section title & description at settings

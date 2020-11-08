@@ -7,6 +7,13 @@ class flexi_update_image
     {
         add_action("wp_ajax_flexi_ajax_update_image", array($this, "flexi_ajax_update_image"));
         add_action("wp_ajax_nopriv_flexi_ajax_update_image", array($this, "flexi_ajax_update_image"));
+        add_action('flexi_activated', array($this, 'set_value'));
+    }
+
+    public function set_value()
+    {
+        //Set default location of elements
+
     }
 
     //Used in ajax call, force users to login before any action.
