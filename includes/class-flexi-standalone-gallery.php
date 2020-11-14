@@ -103,9 +103,8 @@ class Flexi_Standalone_Gallery
               <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
 
 
-                <div class="flexi_drag_file"><input type="file" accept="image/*" name="user-submitted-image[]" value="" id="file" class="flexi_drag_file_hide" required="" multiple="">
-                  <p>Select File</p>
-                </div>
+                <input type="file" name="user-submitted-image[]" accept="image/*" value="" id="file" class="" required="">
+
 
                 <?php
                 wp_nonce_field('flexi-nonce', 'flexi-nonce', false);
