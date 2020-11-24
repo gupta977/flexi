@@ -569,6 +569,16 @@ action="' . admin_url("admin-ajax.php") . '"
         // $nonce = wp_create_nonce("flexi_ajax_edit");
         $link = flexi_get_button_url($post->ID, false, 'edit_flexi_page', 'flexi_form_settings');
 
+        //Check if special edit form for the page
+        $user_edit_page = get_post_meta($post->ID, 'flexi_new_edit_page', 0);
+
+        if ($user_edit_page != 0) {
+            //flexi_log($user_edit_page);
+            $link = esc_url(get_page_link($user_edit_page[0]));
+            //flexi_log($link);
+        }
+
+
         $extra_icon = array();
 
         if (get_the_author_meta('ID') == get_current_user_id()) {

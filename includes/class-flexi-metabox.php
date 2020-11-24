@@ -210,7 +210,7 @@ class Flexi_Meta_boxes
     // Add edit page select option
     $cmb_side->add_field(array(
       'name'        => 'Edit Page ID',
-      'description' => 'Enter page ID of edit form if you want to change default edit form page.',
+      'description' => 'Enter page ID of edit form if you want to change default edit form page. Set value to 0 to use default setting.',
       'id'          => 'flexi_new_edit_page',
       'type'        => 'text',
       'default'     => '',
