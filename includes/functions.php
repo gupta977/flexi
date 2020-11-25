@@ -185,11 +185,12 @@ function flexi_check_rights($post_id = 0)
         $edit_post = false;
     }
 
+    /*
     //Check if page is edit page to prevent from spam
     if (!is_flexi_page('edit_flexi_page', 'flexi_form_settings')) {
         $edit_post = false;
     }
-
+*/
     return $edit_post;
 }
 //Return album name with and without link
@@ -493,6 +494,7 @@ function flexi_default_args($params)
         'class'         => 'pure-form pure-form-stacked',
         'title'         => 'Submit',
         'detail_layout' => 'default',
+        'edit_page' => '0',
         'name'          => '',
         'id'            => get_the_ID(),
         'taxonomy'      => 'flexi_category',
@@ -545,6 +547,10 @@ function flexi_default_args($params)
 
     if (isset($_POST['detail_layout'])) {
         $value['detail_layout'] = $_POST['detail_layout'];
+    }
+
+    if (isset($_POST['edit_page'])) {
+        $value['edit_page'] = $_POST['edit_page'];
     }
 
     if (isset($_POST['type'])) {

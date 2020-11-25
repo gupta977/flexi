@@ -5,7 +5,7 @@
 //$content= Description
 //category =Album name
 //$detail_layout = layout name for post detail page.
-function flexi_submit($title, $files, $content, $category, $detail_layout, $tags = '')
+function flexi_submit($title, $files, $content, $category, $detail_layout, $tags = '', $edit_page = '0')
 {
 
   $post_type    = 'flexi';
@@ -90,6 +90,10 @@ function flexi_submit($title, $files, $content, $category, $detail_layout, $tags
 
       //Assign detail_layout
       add_post_meta($post_id, 'flexi_layout', $detail_layout);
+
+
+      //Assign edit_page
+      add_post_meta($post_id, 'flexi_new_edit_page', $edit_page);
 
       $attach_ids = array();
       //Execute only if files is available

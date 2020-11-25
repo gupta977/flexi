@@ -34,6 +34,7 @@ function flexi_ajax_post()
 
     $attr          = flexi_default_args('');
     $detail_layout = $attr['detail_layout'];
+    $edit_page = $attr['edit_page'];
     $title         = $attr['user-submitted-title'];
     $content       = $attr['content'];
     $category      = $attr['category'];
@@ -57,9 +58,9 @@ function flexi_ajax_post()
             //Insert new post
             if ('url' == $attr['type']) {
                 //flexi_log($attr);
-                $result = flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags);
+                $result = flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags, $edit_page);
             } else {
-                $result = flexi_submit($title, $files, $content, $category, $detail_layout, $tags);
+                $result = flexi_submit($title, $files, $content, $category, $detail_layout, $tags, $edit_page);
             }
             $post_id = false;
             if (isset($result['id'])) {

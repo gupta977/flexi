@@ -14,9 +14,12 @@ class Flexi_Standalone_Gallery
     if (isset($params['id'])) {
       $id = $params['id'];
     } else {
-      $id = get_query_var('id', 0);
+      if (isset($_REQUEST["id"])) {
+        $id = $_REQUEST["id"];
+      } else {
+        $id = get_query_var('id', 0);
+      }
     }
-
     $flexi_post = get_post($id);
     //flexi_log($id);
 

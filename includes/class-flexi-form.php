@@ -66,9 +66,15 @@ class Flexi_Shortcode_Form
         $edit_post = true;
         if (isset($_REQUEST["id"])) {
             $edit_post = flexi_check_rights($_REQUEST["id"]);
+            //Prevent form update if not Flexi-PRO
+            if (!is_flexi_pro()) {
+                $edit_post = false;
+                echo flexi_pro_required();
+            }
         }
 
         //Check if current page is EDIT page and not having post_id
+        /*
         $current_page_id = get_the_ID();
         $edit_page_id    = flexi_get_option('edit_flexi_page', 'flexi_form_settings', 0);
         if ($current_page_id == $edit_page_id) {
@@ -79,11 +85,13 @@ class Flexi_Shortcode_Form
 
         //Prevent form update if not Flexi-PRO
         if ($current_page_id == $edit_page_id) {
-            if (!is_flexi_pro()) {
-                $edit_post = false;
-                echo flexi_pro_required();
-            }
+        if (!is_flexi_pro()) {
+            $edit_post = false;
+            echo flexi_pro_required();
         }
+         }
+
+         */
 
         //Prevent from modification if wrong wrong edit page & unauthorized access
         if (false == $edit_post) {
@@ -173,6 +181,7 @@ action="' . admin_url("admin-ajax.php") . '"
 
                 echo '<input type="hidden" name="action" value="flexi_ajax_post">';
                 echo '<input type="hidden" name="detail_layout" value="' . $attr['detail_layout'] . '">';
+                echo '<input type="hidden" name="edit_page" value="' . $attr['edit_page'] . '">';
                 echo '<input type="hidden" name="form_name" value="' . $attr['name'] . '">';
                 echo '<input type="hidden" name="flexi_attach_at" value="' . get_the_ID() . '">';
                 echo '<input type="hidden" name="edit" value="' . $attr['edit'] . '">';
@@ -215,6 +224,7 @@ action="' . admin_url("admin-ajax.php") . '"
         }
 
         $detail_layout = $attr['detail_layout'];
+        $edit_page = $attr['edit_page'];
         $title         = $attr['user-submitted-title'];
         $content       = $attr['content'];
         $category      = $attr['category'];
@@ -224,14 +234,14 @@ action="' . admin_url("admin-ajax.php") . '"
         if (isset($_POST['type'])) {
             if ('url' == $_POST['type']) {
 
-                $result = flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags);
+                $result = flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags, $edit_page);
             } else {
 
-                $result = flexi_submit($title, $files, $content, $category, $detail_layout, $tags);
+                $result = flexi_submit($title, $files, $content, $category, $detail_layout, $tags, $edit_page);
             }
         } else {
 
-            $result = flexi_submit($title, $files, $content, $category, $detail_layout, $tags);
+            $result = flexi_submit($title, $files, $content, $category, $detail_layout, $tags, $edit_page);
         }
 
         //var_dump($result);
@@ -302,6 +312,7 @@ action="' . admin_url("admin-ajax.php") . '"
         }
 
         $detail_layout = $attr['detail_layout'];
+        $edit_page = $attr['edit_page'];
         $title         = $attr['user-submitted-title'];
         $content       = $attr['content'];
         $category      = $attr['category'];
@@ -570,14 +581,21 @@ action="' . admin_url("admin-ajax.php") . '"
         $link = flexi_get_button_url($post->ID, false, 'edit_flexi_page', 'flexi_form_settings');
 
         //Check if special edit form for the page
-        $user_edit_page = get_post_meta($post->ID, 'flexi_new_edit_page', 0);
-
-        if ($user_edit_page != 0) {
+        $user_edit_page = get_post_meta($post->ID, 'flexi_new_edit_page', '0');
+        if (!$user_edit_page) {
+            add_post_meta($post->ID, 'flexi_new_edit_page', '0');
+        } else {
             //flexi_log($user_edit_page);
-            $link = esc_url(get_page_link($user_edit_page[0]));
-            //flexi_log($link);
-        }
+            if ($user_edit_page[0] != '0') {
 
+                $link = esc_url(get_page_link($user_edit_page[0]));
+                $link = esc_url(add_query_arg('id', $post->ID, $link));
+                //flexi_log($link);
+            } else {
+                // flexi_log("sss");
+                $link = flexi_get_button_url($post->ID, false, 'edit_flexi_page', 'flexi_form_settings');
+            }
+        }
 
         $extra_icon = array();
 

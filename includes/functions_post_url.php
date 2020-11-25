@@ -5,7 +5,7 @@
 //$content= Description
 //category =Album name
 //$detail_layout = layout name for post detail page. Not required if lightbox is enabled.
-function flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags = '')
+function flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags = '', $edit_page = '0')
 {
 
     $post_type    = 'flexi';
@@ -61,6 +61,11 @@ function flexi_submit_url($title, $url, $content, $category, $detail_layout, $ta
 
         //Assign detail_layout layout
         add_post_meta($post_id, 'flexi_layout', $detail_layout);
+
+        //Assign edit_page
+        add_post_meta($post_id, 'flexi_new_edit_page', $edit_page);
+
+
         //Assign Flexi URL
         add_post_meta($post_id, 'flexi_url', $url);
         //Assign Flexi Type
