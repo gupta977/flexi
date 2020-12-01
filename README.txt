@@ -212,6 +212,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Added "Add Sub-Gallery" addon
 * Added "Logout button" toggle switch with label input
 * Removed action 'flexi-member-toolbar'
+* Added edit_page parameter in form shortcode. Separate modification form for selected submission page.
 
 = 2.9 =
 * Fixed show_mine parameter in flexi-gallery shortcode

@@ -72,7 +72,7 @@ class Flexi
     if (defined('FLEXI_VERSION')) {
       $this->version = FLEXI_VERSION;
     } else {
-      $this->version = '2.9';
+      $this->version = '3.0';
     }
     $this->plugin_name = 'flexi';
 

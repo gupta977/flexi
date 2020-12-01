@@ -93,7 +93,7 @@ class Flexi_Shortcode_Form
 
          */
 
-        //Prevent from modification if wrong wrong edit page & unauthorized access
+        //Prevent from modification if wrong edit page & unauthorized access
         if (false == $edit_post) {
             echo "<div class='flexi_alert-box flexi_warning'>" . __('No permission to modify or update', 'flexi') . "</div>";
         }
@@ -375,30 +375,36 @@ action="' . admin_url("admin-ajax.php") . '"
             if ('' == $attr['edit']) {
                 echo $frm->addInput('text', "user-submitted-title", $attr['value'], array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
             } else {
-                echo $frm->addInput('text', "user-submitted-title", flexi_get_detail($_GET['id'], 'post_title'), array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
+                if (isset($_GET['id']))
+                    echo $frm->addInput('text', "user-submitted-title", flexi_get_detail($_GET['id'], 'post_title'), array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
             }
         } else if ('video_url' == $attr['type']) {
             echo $frm->addLabelFor("user-submitted-url", __($attr['title'], 'flexi'));
             if ('' == $attr['edit']) {
                 echo $frm->addInput('url', "user-submitted-url", $attr['value'], array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
             } else {
-                echo $frm->addInput('url', "user-submitted-url", flexi_get_detail($_GET['id'], 'flexi_url'), array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
+                if (isset($_GET['id']))
+                    echo $frm->addInput('url', "user-submitted-url", flexi_get_detail($_GET['id'], 'flexi_url'), array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
             }
         } else if ('category' == $attr['type']) {
             echo $frm->addLabelFor('cat', __($attr['title'], 'flexi'));
             if ('' == $attr['edit']) {
                 echo flexi_droplist_album('flexi_category', '', array(), $attr['id']);
             } else {
-                $old_category_id = flexi_get_album($_GET['id'], 'term_id');
-                echo flexi_droplist_album('flexi_category', $old_category_id);
+                if (isset($_GET['id'])) {
+                    $old_category_id = flexi_get_album($_GET['id'], 'term_id');
+                    echo flexi_droplist_album('flexi_category', $old_category_id);
+                }
             }
         } else if ('tag_list' == $attr['type']) {
             echo $frm->addLabelFor('tags', __($attr['title'], 'flexi'));
             if ('' == $attr['edit']) {
                 echo flexi_droplist_tag('flexi_tag', '', array(), $attr['id']);
             } else {
-                $old_tag_id = flexi_get_album($_GET['id'], 'slug', 'flexi_tag');
-                echo flexi_droplist_tag('flexi_tag', $old_tag_id);
+                if (isset($_GET['id'])) {
+                    $old_tag_id = flexi_get_album($_GET['id'], 'slug', 'flexi_tag');
+                    echo flexi_droplist_tag('flexi_tag', $old_tag_id);
+                }
             }
         } else if ('tag' == $attr['type']) {
             echo $frm->addLabelFor("tags", __($attr['title'], 'flexi'));
@@ -406,7 +412,8 @@ action="' . admin_url("admin-ajax.php") . '"
             if ('' == $attr['edit']) {
                 echo $frm->addInput('', "tags", $attr['value'], array('id' => 'tags', 'placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
             } else {
-                echo $frm->addInput('', "tags", flexi_get_taxonomy_raw($_GET['id'], 'flexi_tag'), array('id' => 'tags', 'placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
+                if (isset($_GET['id']))
+                    echo $frm->addInput('', "tags", flexi_get_taxonomy_raw($_GET['id'], 'flexi_tag'), array('id' => 'tags', 'placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
             }
             echo " <script>
           jQuery(document).ready(function ()
@@ -443,13 +450,15 @@ action="' . admin_url("admin-ajax.php") . '"
                     array('id' => $attr['id'], 'placeholder' => $attr['placeholder'], 'required' => $attr['required'])
                 );
             } else {
-                echo $frm->addTextArea(
-                    'user-submitted-content',
-                    $attr['rows'],
-                    $attr['cols'],
-                    flexi_get_detail($_GET['id'], 'post_content'),
-                    array('id' => $attr['id'], 'placeholder' => $attr['placeholder'], 'required' => $attr['required'])
-                );
+                if (isset($_GET['id'])) {
+                    echo $frm->addTextArea(
+                        'user-submitted-content',
+                        $attr['rows'],
+                        $attr['cols'],
+                        flexi_get_detail($_GET['id'], 'post_content'),
+                        array('id' => $attr['id'], 'placeholder' => $attr['placeholder'], 'required' => $attr['required'])
+                    );
+                }
             }
         } else if ('text' == $attr['type']) {
             if ('' == $attr['edit']) {
@@ -496,10 +505,12 @@ action="' . admin_url("admin-ajax.php") . '"
                     if ('' == $attr['edit']) {
                         echo $frm->addInput('radio', $attr['name'], $val[0], array('required' => $attr['required'])) . ' ' . $caption . ' ';
                     } else {
-                        if ($val[0] == flexi_custom_field_value($_GET['id'], $attr['name'])) {
-                            echo $frm->addInput('radio', $attr['name'], $val[0], array('required' => $attr['required'], 'checked' => 'checked')) . ' ' . $caption . ' ';
-                        } else {
-                            echo $frm->addInput('radio', $attr['name'], $val[0], array('required' => $attr['required'])) . ' ' . $caption . ' ';
+                        if (isset($_GET['id'])) {
+                            if ($val[0] == flexi_custom_field_value($_GET['id'], $attr['name'])) {
+                                echo $frm->addInput('radio', $attr['name'], $val[0], array('required' => $attr['required'], 'checked' => 'checked')) . ' ' . $caption . ' ';
+                            } else {
+                                echo $frm->addInput('radio', $attr['name'], $val[0], array('required' => $attr['required'])) . ' ' . $caption . ' ';
+                            }
                         }
                     }
                 }
@@ -508,10 +519,12 @@ action="' . admin_url("admin-ajax.php") . '"
                     if ('' == $attr['edit']) {
                         echo $frm->addInput('checkbox', $val[0], $caption, array('required' => $attr['required'])) . ' ' . $caption . ' ';
                     } else {
-                        if ($val[0] == flexi_custom_field_value($_GET['id'], $attr['name'])) {
-                            echo $frm->addInput('checkbox', $val[0], $caption, array('required' => $attr['required'], 'checked' => 'checked')) . ' ' . $caption . ' ';
-                        } else {
-                            echo $frm->addInput('checkbox', $val[0], $caption, array('required' => $attr['required'])) . ' ' . $caption . ' ';
+                        if (isset($_GET['id'])) {
+                            if ($val[0] == flexi_custom_field_value($_GET['id'], $attr['name'])) {
+                                echo $frm->addInput('checkbox', $val[0], $caption, array('required' => $attr['required'], 'checked' => 'checked')) . ' ' . $caption . ' ';
+                            } else {
+                                echo $frm->addInput('checkbox', $val[0], $caption, array('required' => $attr['required'])) . ' ' . $caption . ' ';
+                            }
                         }
                     }
                 }
