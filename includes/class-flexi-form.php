@@ -574,7 +574,7 @@ action="' . admin_url("admin-ajax.php") . '"
                 );
             }
         } else {
-            echo "Invalid Form tag";
+            echo "Invalid form tag";
         }
 
         $abc = ob_get_clean();
