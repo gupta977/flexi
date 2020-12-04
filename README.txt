@@ -28,6 +28,7 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 [Portfolio Layout](https://odude.com/demo/flexi/flexi-gallery-portfolio/)
 [Table Layout](https://odude.com/demo/flexi/flexi-gallery-table/)
 [Stress Free Gallery](https://odude.com/demo/flexi/stress-free-gallery/)
+[Gallery of each post as Sub-Gallery] (https://odude.com/demo/flexi/flexi-categories/standalone-gallery/)
 
 [Submit File Form](https://odude.com/demo/flexi/post-image/)
 [Submit YouTube/Vimeo Video](https://odude.com/demo/flexi/post-video-url/)
