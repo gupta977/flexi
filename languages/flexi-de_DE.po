@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-04 17:02+0545\n"
-"PO-Revision-Date: 2020-12-04 17:02+0545\n"
+"POT-Creation-Date: 2020-12-22 14:40+0545\n"
+"PO-Revision-Date: 2020-12-27 13:00+0545\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -458,10 +458,8 @@ msgstr ""
 "midi <br> Erfordert Flexi-PRO"
 
 #: includes/addon/class-flexi-standalone.php:29
-#, fuzzy
-#| msgid "Gallery"
 msgid "Sub-Gallery"
-msgstr "Galerie"
+msgstr "Unter-Galerie"
 
 #: includes/addon/class-flexi-standalone.php:30
 msgid ""
@@ -470,26 +468,20 @@ msgid ""
 msgstr ""
 
 #: includes/addon/class-flexi-standalone.php:46
-#, fuzzy
-#| msgid "Flexi Gallery"
 msgid "Enable Sub-Gallery"
-msgstr "Flexi Galerie"
+msgstr "Unter-Galerie aktivieren"
 
 #: includes/addon/class-flexi-standalone.php:47
 msgid "Enable standalone sub-gallery of primary image or post."
 msgstr ""
 
 #: includes/addon/class-flexi-standalone.php:67
-#, fuzzy
-#| msgid "\"My Gallery\" button"
 msgid "\"Add Sub-Gallery\" button"
-msgstr "\"Meine Galerie\" button"
+msgstr "\"Unter-Galerie\"-Button aktivieren"
 
 #: includes/addon/class-flexi-standalone.php:68
-#, fuzzy
-#| msgid "Display button after form submission"
 msgid "Display button after form submission and in manage media page."
-msgstr "Button nach dem Absenden des Formulars anzeigen"
+msgstr "Button nach dem Absenden des Formulars anzeigen."
 
 #: includes/addon/class-flexi-standalone.php:74
 msgid "Button Label"
@@ -500,10 +492,8 @@ msgid "Label of Sub-Gallery button. Eg. Add Sub-Gallery"
 msgstr ""
 
 #: includes/addon/class-flexi-standalone.php:82
-#, fuzzy
-#| msgid "Gallery"
 msgid "Sub-Gallery form"
-msgstr "Galerie"
+msgstr "Unter-Galerie"
 
 #: includes/addon/class-flexi-standalone.php:83
 msgid ""
@@ -572,7 +562,7 @@ msgstr "Datum"
 
 #: includes/class-flexi-category.php:141
 msgid "Flexi category page is not assigned in settings."
-msgstr ""
+msgstr "Flexi-Kategorie-Seite wurde in den Einstellungen nicht zugeordnet."
 
 #: includes/class-flexi-category.php:167 includes/class-flexi-category.php:196
 msgid "Name"
@@ -625,11 +615,11 @@ msgstr "Hochladen"
 
 #: includes/class-flexi-form.php:143
 msgid "Processing"
-msgstr "wird bearbeitet"
+msgstr "wird bearbeitet."
 
 #: includes/class-flexi-form.php:267 includes/flexi_ajax_post.php:92
 msgid "Submission completed"
-msgstr "Verzonden"
+msgstr "Erfolgreich versendet"
 
 #: includes/class-flexi-form.php:269 includes/class-flexi-form.php:331
 msgid "Your submission is under review."
@@ -866,10 +856,8 @@ msgid "Submission Form Settings"
 msgstr "Einstellungen für das Übermittlungsformular"
 
 #: includes/class-flexi-settings.php:153
-#, fuzzy
-#| msgid "Category & Tags Settings"
 msgid "Category & Tags"
-msgstr "Kategorie & Tags Einstellungen"
+msgstr "Kategorie & Tags"
 
 #: includes/class-flexi-settings.php:159
 msgid "Detail Page Settings"
@@ -934,7 +922,7 @@ msgstr "Thumbnail Hover-Effekt"
 
 #: includes/class-flexi-settings.php:223
 msgid "Effect on mouse over image."
-msgstr "Effekt für Maus-über-Bild"
+msgstr "Effekt für Maus-über-Bild."
 
 #: includes/class-flexi-settings.php:226 includes/class-flexi-settings.php:239
 #: includes/functions.php:689 includes/functions.php:726
@@ -1038,7 +1026,7 @@ msgstr "\"Mehr laden\"-Button"
 
 #: includes/class-flexi-settings.php:294
 msgid " Mouse Scroll"
-msgstr "Mausrolle"
+msgstr "Mausscroll"
 
 #: includes/class-flexi-settings.php:300
 msgid "Gallery sorting tags"
@@ -1134,7 +1122,7 @@ msgstr "Icon ändern"
 
 #: includes/class-flexi-settings.php:368
 msgid "Edit icon at gallery & detail page."
-msgstr ""
+msgstr "Ändern-Icon auf Galerie & Detail-Seite"
 
 #: includes/class-flexi-settings.php:374
 msgid "Delete icon"
@@ -1142,7 +1130,7 @@ msgstr "Icon löschen"
 
 #: includes/class-flexi-settings.php:375
 msgid "Trash icon at gallery & detail page."
-msgstr ""
+msgstr "Papierkorb-Icon auf Galerie & Detail-Seite"
 
 #: includes/class-flexi-settings.php:381
 msgid "User icon"
@@ -1150,15 +1138,15 @@ msgstr "Benutzersymbol"
 
 #: includes/class-flexi-settings.php:382
 msgid "Profile icon at gallery & detail page."
-msgstr ""
+msgstr "Profil-Icon auf Galerie & Detail-Seite"
 
 #: includes/class-flexi-settings.php:388
 msgid "Download icon"
-msgstr "Icon herunterladen"
+msgstr "Download Icon"
 
 #: includes/class-flexi-settings.php:389
 msgid "Download icon at gallery & detail page."
-msgstr ""
+msgstr "Download Icon auf Galerie & Detail-Seite"
 
 #: includes/class-flexi-settings.php:397
 msgid "Enable Lightbox or Popup"
@@ -1183,14 +1171,12 @@ msgid "Regular"
 msgstr "Regulär"
 
 #: includes/class-flexi-settings.php:409
-#, fuzzy
-#| msgid "Complex"
 msgid "Simple"
 msgstr "Komplex"
 
 #: includes/class-flexi-settings.php:410
 msgid "Simple with info"
-msgstr ""
+msgstr "Einfach mit Info"
 
 #: includes/class-flexi-settings.php:411
 msgid "Custom"
@@ -1205,9 +1191,6 @@ msgid "Default Post Category"
 msgstr "Standard Beitrags-Kategorie"
 
 #: includes/class-flexi-settings.php:429
-#, fuzzy
-#| msgid ""
-#| "This category will be selected if no category is assigned by visitor."
 msgid ""
 "This category will be selected if no category is assigned by visitor while "
 "submitting form."
@@ -1216,10 +1199,8 @@ msgstr ""
 "zugewiesen wurde."
 
 #: includes/class-flexi-settings.php:435
-#, fuzzy
-#| msgid "Category Field"
 msgid "Category Page"
-msgstr "Kategorie-Feld"
+msgstr "Kategorie-Seite"
 
 #: includes/class-flexi-settings.php:436
 msgid ""
@@ -1228,10 +1209,8 @@ msgid ""
 msgstr ""
 
 #: includes/class-flexi-settings.php:442
-#, fuzzy
-#| msgid "Category Thumbnail"
 msgid "Category count"
-msgstr "Kategorie Miniaturansicht"
+msgstr "Anzahl pro Kategorie"
 
 #: includes/class-flexi-settings.php:443
 msgid "Display post count of specific category at category page."
@@ -1295,26 +1274,20 @@ msgid "Select category"
 msgstr "Kategorie wählen"
 
 #: includes/class-flexi-standalone-gallery.php:66
-#, fuzzy
-#| msgid "Select a page"
 msgid "Select new image to replace"
-msgstr "Seite wählen"
+msgstr "Zu ersetzendes Bild wählen"
 
 #: includes/class-flexi-standalone-gallery.php:75
-#, fuzzy
-#| msgid "Static image"
 msgid "Replace image"
-msgstr "Statisches Bild"
+msgstr "Bild ersetzen"
 
 #: includes/class-flexi-standalone-gallery.php:130
 msgid "Go back"
-msgstr ""
+msgstr "zurück"
 
 #: includes/class-flexi-standalone-gallery.php:158
-#, fuzzy
-#| msgid "Manage"
 msgid "Manage Media"
-msgstr "Verwalten"
+msgstr "Medien verwalten"
 
 #: includes/class-flexi-standalone-gallery.php:197
 msgid "Wrong ID"
@@ -1359,10 +1332,8 @@ msgid "Show All"
 msgstr "Zeige alle"
 
 #: includes/functions.php:378
-#, fuzzy
-#| msgid "Categories"
 msgid "Category"
-msgstr "Kategorien"
+msgstr "Kategorie"
 
 #: includes/functions.php:446 includes/functions.php:455
 msgid "Login"
@@ -1408,7 +1379,7 @@ msgstr "Der Titel darf nicht leer sein."
 
 #: includes/functions.php:1022
 msgid "Invalid file type"
-msgstr "ungültiger Dateityp"
+msgstr "Ungültiger Dateityp"
 
 #: includes/functions.php:1024
 msgid "Only image files are allowed."
@@ -1457,27 +1428,24 @@ msgstr ""
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:58
 msgid "\"My Dashboard\" button"
-msgstr "\"Mein Dashboard\" button"
+msgstr "Schaltfläche \"Mein Dashboard\""
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:59
-#, fuzzy
-#| msgid "\"My Dashboard\" button"
 msgid "Display \"My Dashboard\" button at common toolbar"
-msgstr "\"Mein Dashboard\" button"
+msgstr ""
+"Schaltfläche \"Mein Dashboard\" in der gemeinsamen Symbolleiste anzeigen"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:66
 msgid "\"My Gallery\" button"
-msgstr "\"Meine Galerie\" button"
+msgstr "Schaltfläche \"Meine Galerie\""
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:67
 msgid "Display button at \"My Dashboard\""
 msgstr "Button unter \"Mein Dashboard\" anzeigen"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:74
-#, fuzzy
-#| msgid "Submission form"
 msgid "\"Submission form\" button"
-msgstr "Übermittlungsformular"
+msgstr "Schaltfläche \"Einreichformular\""
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:75
 msgid ""
@@ -1537,11 +1505,11 @@ msgstr "Wird überprüft"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:106
 msgid "Public"
-msgstr ""
+msgstr "öffentlich"
 
 #: includes/user_dashboard/class-flexi-user-gallery.php:143
 msgid "Total number of records you have submitted: "
-msgstr "Gesamtzahl der von Ihnen eingereichten Datensätze:"
+msgstr "Gesamtzahl der von Ihnen eingereichten Datensätze: "
 
 #: includes/widgets/categories.php:155
 msgid "New title"
@@ -1553,7 +1521,7 @@ msgstr "Titel:"
 
 #: includes/widgets/categories.php:162 includes/widgets/categories.php:165
 msgid "Select Parent"
-msgstr "Eltern wählen"
+msgstr "Übergeordnetes Element auswählen"
 
 #: includes/widgets/categories.php:184
 msgid "Show only the immediate children of the selected category."
@@ -1586,8 +1554,6 @@ msgid "Download file?"
 msgstr "Datei herunterladen?"
 
 #: public/partials/layout/category/basic/footer.php:6
-#, fuzzy
-#| msgid "Select category"
 msgid "No category"
 msgstr "Kategorie wählen"
 
