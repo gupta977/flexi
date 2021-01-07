@@ -139,6 +139,7 @@ class Flexi
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-custom-field.php';
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-ultimate-member.php';
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-buddypress.php';
+    require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-shortcode-holder.php';
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-standalone.php';
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-mime-type.php';
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/addon/class-flexi-conflict.php';

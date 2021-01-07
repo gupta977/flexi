@@ -58,6 +58,10 @@ class Flexi_Detail_Layout_Basic
       // "Wordpress <a href='" . admin_url('widgets.php') . "'>Widgets</a>" => "widgets",
     );
 
+    if (has_filter('flexi_add_element')) {
+      $labels = apply_filters('flexi_add_element', $labels);
+    }
+
     return $labels;
   }
 
