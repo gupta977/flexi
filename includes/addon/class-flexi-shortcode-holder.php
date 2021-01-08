@@ -8,6 +8,7 @@ class Flexi_Addon_Shortcode_Holder
         add_filter('flexi_settings_fields', array($this, 'add_fields'));
         add_filter('flexi_settings_fields', array($this, 'add_extension'));
         add_filter('flexi_add_element', array($this, 'add_location_element'));
+        add_action('flexi_execute_element', array($this, 'flexi_execute_element_callback'), 10, 2);
     }
 
     //add_filter flexi_settings_tabs
@@ -106,9 +107,9 @@ class Flexi_Addon_Shortcode_Holder
     {
         $extra_labels = array(
             "1st shortcode" => "flexi_shortcode_1",
-            "2nd shortcode"    => "flexi_shortcode_2",
-            "3rd shortcode"    => "flexi_shortcode_3",
-            "4th shortcode"       => "flexi_shortcode_4",
+            "2nd shortcode" => "flexi_shortcode_2",
+            "3rd shortcode" => "flexi_shortcode_3",
+            "4th shortcode" => "flexi_shortcode_4",
 
         );
 
@@ -116,6 +117,26 @@ class Flexi_Addon_Shortcode_Holder
         $labels = array_merge_recursive($labels, $extra_labels);
 
         return $labels;
+    }
+
+    //Display into detail or popup page based on do_action
+    public function flexi_execute_element_callback($value)
+    {
+        if ('flexi_shortcode_1' == $value) {
+            $get_shortcode = flexi_get_option('flexi_shortcode_1', 'flexi_shortcode_holder_settings', '');
+            echo do_shortcode($get_shortcode);
+        } else if ('flexi_shortcode_2' == $value) {
+            $get_shortcode = flexi_get_option('flexi_shortcode_2', 'flexi_shortcode_holder_settings', '');
+            echo do_shortcode($get_shortcode);
+        } else if ('flexi_shortcode_3' == $value) {
+            $get_shortcode = flexi_get_option('flexi_shortcode_3', 'flexi_shortcode_holder_settings', '');
+            echo do_shortcode($get_shortcode);
+        } else if ('flexi_shortcode_4' == $value) {
+            $get_shortcode = flexi_get_option('flexi_shortcode_4', 'flexi_shortcode_holder_settings', '');
+            echo do_shortcode($get_shortcode);
+        } else {
+            echo '';
+        }
     }
 }
 

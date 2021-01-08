@@ -181,7 +181,7 @@ class Flexi_Detail_Layout_Basic
       } else if ('custom_fields' == $value) {
         echo flexi_custom_field_loop($post, 'detail');
       } else {
-        echo "<div>" . $value . "</div>";
+        echo "<div>" .  do_action('flexi_execute_element', $value) . "</div>";
       }
     }
     return ob_get_clean();

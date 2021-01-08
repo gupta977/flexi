@@ -58,6 +58,10 @@ class Flexi_Detail_Layout_Complex
       // "Wordpress <a href='" . admin_url('widgets.php') . "'>Widgets</a>" => "widgets",
     );
 
+    if (has_filter('flexi_add_element')) {
+      $labels = apply_filters('flexi_add_element', $labels);
+    }
+
     return $labels;
   }
 
@@ -180,7 +184,7 @@ class Flexi_Detail_Layout_Complex
       } else if ('custom_fields' == $value) {
         echo flexi_custom_field_loop($post, 'detail');
       } else {
-        echo "<div>" . $value . "</div>";
+        echo "<div>" .  do_action('flexi_execute_element', $value) . "</div>";
       }
     }
     return ob_get_clean();
