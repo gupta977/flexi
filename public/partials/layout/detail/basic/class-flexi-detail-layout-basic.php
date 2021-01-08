@@ -143,12 +143,7 @@ class Flexi_Detail_Layout_Basic
     ob_start();
     if ('basic' == $layout && is_singular('flexi')) {
 
-      if ('widgets' == $value) {
-        if (is_active_sidebar('flexi-basic-widget-container')) {
-          dynamic_sidebar('flexi-basic-widget-container');
-          //echo "widget here " . $post->ID;
-        }
-      } else if ('media' == $value) {
+      if ('media' == $value) {
         echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post, 'flexi_frame_4') . "</div>";
 
         //  echo $info->post_meta($post->ID, 'flexi_type', '');
@@ -201,21 +196,6 @@ class Flexi_Detail_Layout_Basic
         echo $this->display_element($v, $post, $layout);
       }
     }
-  }
-
-  public function flexi_widget()
-  {
-    register_sidebar(
-      array(
-        'name'          => __('Flexi- Basic Detail Layout', 'flexi'),
-        'id'            => 'flexi-basic-widget-container',
-        'description'   => __('Add widgets here to appear in detail layout as specified location.', 'flexi') . '- <a href="' . admin_url('admin.php?page=flexi_settings&tab=detail&section=flexi_detail_layout_basic') . '">' . __("Manage", "flexi") . '</a>',
-        'before_widget' => '<div class="widget-content">',
-        'after_widget'  => "</div>",
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-      )
-    );
   }
 
   public function set_value()

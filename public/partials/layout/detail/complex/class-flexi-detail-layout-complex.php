@@ -151,12 +151,7 @@ class Flexi_Detail_Layout_Complex
     ob_start();
     if ('complex' == $layout && is_singular('flexi')) {
       //flexi_log($value . '----' . $layout);
-      if ('widgets' == $value) {
-        if (is_active_sidebar('flexi-complex-widget-container')) {
-          dynamic_sidebar('flexi-complex-widget-container');
-          echo "wid here " . $post->ID;
-        }
-      } else if ('media' == $value) {
+      if ('media' == $value) {
         echo "<div class='flexi_image_wrap_large'>" . flexi_large_media($post) . "</div>";
       } else if ('status' == $value) {
 
@@ -207,21 +202,6 @@ class Flexi_Detail_Layout_Complex
     }
   }
 
-  //Widgets location
-  public function flexi_widget()
-  {
-    register_sidebar(
-      array(
-        'name'          => __('Flexi- Complex Detail Layout', 'flexi'),
-        'id'            => 'flexi-complex-widget-container',
-        'description'   => __('Add widgets here to appear in detail layout as specified location.', 'flexi') . '- <a href="' . admin_url('admin.php?page=flexi_settings&tab=detail&section=flexi_detail_layout_complex') . '">' . __("Manage", "flexi") . '</a>',
-        'before_widget' => '<div class="widget-content">',
-        'after_widget'  => "</div>",
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-      )
-    );
-  }
 
   public function set_value()
   {

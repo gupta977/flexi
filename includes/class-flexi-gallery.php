@@ -12,6 +12,7 @@ class Flexi_Shortcode_Gallery
     add_shortcode('flexi-gallery', array($this, 'flexi_gallery'));
     add_shortcode('flexi-primary', array($this, 'flexi_gallery'));
     add_action('flexi_shortcode_processed', array($this, 'pass_shortcode_params'));
+    add_action('widgets_init', array($this, 'flexi_register_sidebar'));
 
     $query_arg = array();
     $aa        = "..";
@@ -497,5 +498,22 @@ class Flexi_Shortcode_Gallery
 <?php
     $put = ob_get_clean();
     echo $put;
+  }
+
+  //register sidebar to display at primary gallery
+  public function flexi_register_sidebar()
+  {
+    register_sidebar(
+      array(
+        'name'          => __('Flexi Gallery - Sidebar', 'flexi'),
+        'id'            => 'flexi-gallery-sidebar',
+        'class'            => '',
+        'description'   => __('Add widgets here to appear in Flexi - Primary Gallery', 'flexi'),
+        'before_widget' => '<div class="widget-content">',
+        'after_widget'  => "</div>",
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+      )
+    );
   }
 }
