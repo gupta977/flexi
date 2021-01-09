@@ -3,38 +3,45 @@
 
 $footer_file = FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/' . $layout . '/footer.php';
 if (file_exists($footer_file)) {
- require $footer_file;
+  require $footer_file;
+}
+
+if (false == $clear && is_active_sidebar('flexi-gallery-sidebar') &&  is_flexi_page('primary_page', 'flexi_image_layout_settings')) {
+
+  echo "</div><div class='pure-u-2-5'><div class='sidebar'>";
+  dynamic_sidebar('flexi-gallery-sidebar');
+  echo "</div></div></div>";
 }
 
 //If AJAX loading is enabled
 
 if ('scroll' == $navigation || 'button' == $navigation) {
-// AJAX lazy loading
- echo "<div style='clear:both;'></div>";
- echo "<div id='flexi_load_more' style='text-align:center'><a id='load_more_link' class='flexi_load_more pure-button' style='margin:5px; font-size: 80%;' href='#'>" . __("Load More", "flexi") . "</a></div>";
- echo "<div id='reset' style='display:none'>false</div>";
- echo "<a id='load_more_reset' class='flexi_load_more' style='margin:5px; font-size: 80%;' href='admin-ajax.php?action=flexi_load_more' data-post_id='" . get_the_ID() . "' data-paged='" . $query->max_num_pages . "' data-reset='true'></a>";
- ?>
-<div id='flexi_loader_gallery' style='display: none;text-align:center;'>
- <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
+  // AJAX lazy loading
+  echo "<div style='clear:both;'></div>";
+  echo "<div id='flexi_load_more' style='text-align:center'><a id='load_more_link' class='flexi_load_more pure-button' style='margin:5px; font-size: 80%;' href='#'>" . __("Load More", "flexi") . "</a></div>";
+  echo "<div id='reset' style='display:none'>false</div>";
+  echo "<a id='load_more_reset' class='flexi_load_more' style='margin:5px; font-size: 80%;' href='admin-ajax.php?action=flexi_load_more' data-post_id='" . get_the_ID() . "' data-paged='" . $query->max_num_pages . "' data-reset='true'></a>";
+?>
+  <div id='flexi_loader_gallery' style='display: none;text-align:center;'>
+    <img src="<?php echo FLEXI_PLUGIN_URL . '/public/images/loading.gif'; ?>">
 
- </div>
+  </div>
 
 
-<script>
-//Load first record on page load
-jQuery(document).ready(function() {
-    jQuery('#load_more_link').click();
+  <script>
+    //Load first record on page load
+    jQuery(document).ready(function() {
+      jQuery('#load_more_link').click();
 
-})
-</script>
+    })
+  </script>
 <?php
 } else if ('off' == $navigation) {
- echo ''; //Turn off navigation
+  echo ''; //Turn off navigation
 } else {
- //Load basic page loading with other plugin support
+  //Load basic page loading with other plugin support
 
- echo flexi_page_navi($query);
+  echo flexi_page_navi($query);
 }
 echo "<div id='gallery_layout' style='display:none'>" . $layout . "</div>";
 echo "<div id='popup' style='display:none'>" . $popup . "</div>";
@@ -55,9 +62,9 @@ echo "<div id='attach_id' style='display:none'>" . $cur_page_id . "</div>";
 echo "<div id='filter' style='display:none'>" . $filter . "</div>";
 ?>
 <style>
-:root {
-  --flexi_user_width: <?php echo $width; ?>px;
-  --flexi_user_height: <?php echo $height; ?>px;
-  --flexi_user_column: <?php echo $column; ?>;
-}
-  </style>
+  :root {
+    --flexi_user_width: <?php echo $width; ?>px;
+    --flexi_user_height: <?php echo $height; ?>px;
+    --flexi_user_column: <?php echo $column; ?>;
+  }
+</style>

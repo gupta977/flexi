@@ -23,11 +23,11 @@ if ($show_tag) {
    echo flexi_generate_tags($tags_array, 'flexi_tag--inverse', 'filter_tag') . "<div style='clear:both;'></div>";
 }
 //var_dump($evalue);
-if (false == $clear) {
-   if (is_active_sidebar('flexi-gallery-sidebar')) {
-      dynamic_sidebar('flexi-gallery-sidebar');
-   }
+if (false == $clear && is_active_sidebar('flexi-gallery-sidebar') &&  is_flexi_page('primary_page', 'flexi_image_layout_settings')) {
+
+   echo "<div class='pure-g'><div class='pure-u-3-5'>";
 }
+
 
 ?>
 
@@ -42,10 +42,4 @@ if (file_exists($header_file)) {
 if (defined('REST_REQUEST') && REST_REQUEST) {
    $navigation = "off";
 }
-
-if ('scroll' == $navigation || 'button' == $navigation) {
-
 ?>
-
-<?php
-}
