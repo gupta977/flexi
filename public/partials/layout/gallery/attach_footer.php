@@ -8,7 +8,7 @@ if (file_exists($footer_file)) {
 
 if (false == $clear && is_active_sidebar('flexi-gallery-sidebar') &&  is_flexi_page('primary_page', 'flexi_image_layout_settings')) {
 
-  echo "</div><div class='pure-u-2-5'><div class='sidebar'>";
+  echo "</div><div class='pure-u-2-5'><div class='flexi_gallery_sidebar'>";
   dynamic_sidebar('flexi-gallery-sidebar');
   echo "</div></div></div>";
 }

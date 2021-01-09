@@ -507,9 +507,8 @@ class Flexi_Shortcode_Gallery
       array(
         'name'          => __('Flexi Gallery - Sidebar', 'flexi'),
         'id'            => 'flexi-gallery-sidebar',
-        'class'            => 'widget',
         'description'   => __('Add widgets here to appear in Flexi - Primary Gallery', 'flexi'),
-        'before_widget' => '<div class="widget-content">',
+        'before_widget' => '<div class="flexi_frame_4">',
         'after_widget'  => "</div>",
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',

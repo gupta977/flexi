@@ -14,7 +14,25 @@ if (false == $clear) {
          <?php do_action('flexi_gallery_top_right', $atts) ?>
       </div>
    </div>
+   <style>
+      .flexi_gallery_sidebar {
+         padding-left: 10px;
+         padding-right: 10px;
+         margin: 15px 0px;
+         border-radius: 6px;
+         border: 1px solid #f1f1f1;
+         position: relative;
+         background: #fff;
+      }
 
+      .flexi_gallery_sidebar .widget-title {
+         font-size: 14px;
+         color: #111;
+         line-height: 21px;
+         padding-bottom: 10px;
+         margin-bottom: 0;
+      }
+   </style>
 
 <?php
 }
