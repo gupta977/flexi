@@ -200,6 +200,12 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 3.1 = 
+* Added shortcode holder to display other plugins shortcode into detail & popup
+* Introduced primary gallery widget attractive
+* Added UIkit framework
+
+
 = 3.0 =
 * Fixed popup on/off from setting
 * Added form field : Tag List
