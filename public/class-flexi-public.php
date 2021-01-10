@@ -86,6 +86,9 @@ class Flexi_Public
     wp_enqueue_style($this->plugin_name . '_purecss_buttons', plugin_dir_url(__FILE__) . 'css/purecss/buttons-min.css', array(), $this->version, 'all');
     wp_enqueue_style($this->plugin_name . '_purecss_forms', plugin_dir_url(__FILE__) . 'css/purecss/forms-min.css', array(), $this->version, 'all');
     wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/flexi-public.css', array(), $this->version, 'all');
+
+    //Include uikit
+    wp_enqueue_style($this->plugin_name . '_uikit', plugin_dir_url(__FILE__) . 'uikit/css/uikit.min.css', array(), $this->version, 'all');
   }
 
   /**
@@ -123,6 +126,10 @@ class Flexi_Public
     }
     wp_enqueue_script($this->plugin_name . '_tags', plugin_dir_url(__FILE__) . 'js/jquery.tagsinput.js', '', $this->version, false);
     wp_enqueue_script($this->plugin_name . '_tags_filter', plugin_dir_url(__FILE__) . 'js/filter-tags.js', '', $this->version, false);
+
+    //include uikit 
+    wp_enqueue_script($this->plugin_name . '_uikit', plugin_dir_url(__FILE__) . 'uikit/js/uikit.min.js', '', $this->version, false);
+    wp_enqueue_script($this->plugin_name . '_uikit_icon', plugin_dir_url(__FILE__) . 'uikit/js/uikit-icons.min.js', '', $this->version, false);
 
     //Add wordpress dashicons
     wp_enqueue_style('dashicons');

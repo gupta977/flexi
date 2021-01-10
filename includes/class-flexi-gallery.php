@@ -511,7 +511,7 @@ class Flexi_Shortcode_Gallery
         'before_widget' => '<div class="flexi_frame_4">',
         'after_widget'  => "</div>",
         'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
+        'after_title'   => '</h3><hr class="uk-divider-small">',
       )
     );
   }

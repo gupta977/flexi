@@ -20,17 +20,24 @@ if (false == $clear) {
          padding-right: 10px;
          margin: 15px 0px;
          border-radius: 6px;
-         border: 1px solid #f1f1f1;
-         position: relative;
-         background: #fff;
+      }
+
+      .flexi_gallery_sidebar .flexi_frame_4 {
+         margin-bottom: 10px;
       }
 
       .flexi_gallery_sidebar .widget-title {
-         font-size: 14px;
-         color: #111;
-         line-height: 21px;
-         padding-bottom: 10px;
-         margin-bottom: 0;
+         font-family: "Poppins", sans-serif;
+         font-size: 1.125rem;
+         font-weight: 700;
+         letter-spacing: 0.0625rem;
+         padding: 0;
+         position: relative;
+         margin: 10px;
+      }
+
+      .flexi_gallery_sidebar .widget_categories {
+         list-style: none;
       }
    </style>
 

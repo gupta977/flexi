@@ -147,7 +147,7 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
 
 //Page Number
 //flexi-pagination is same as woocommerce-pagination css
-function flexi_page_navi($query, $class = "flexi-pagination")
+function flexi_page_navi($query, $class = "uk-pagination uk-flex-center")
 {
     $big   = 999999999; // need an unlikely integer
     $pages = paginate_links(array(
@@ -160,11 +160,11 @@ function flexi_page_navi($query, $class = "flexi-pagination")
 
     $pager = '';
     if ($pages) {
-        $pager .= '<nav class="' . $class . '"><ul class="page-numbers">';
+        $pager .= '<ul class="' . $class . '">';
         foreach ($pages as $page) {
             $pager .= "<li>$page</li>";
         }
-        $pager .= '</ul></nav>';
+        $pager .= '</ul>';
     }
     return $pager;
 }
