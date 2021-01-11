@@ -5,16 +5,9 @@ if (false == $clear) {
 ?>
 
    <div class="fuk-child-width-expand@s fuk-text-center" fuk-grid>
-      <div style="text-align:left;">
-         <?php do_action('flexi_gallery_top_center', $atts) ?>
-      </div>
-      <div style="text-align:center;">
-         <div class="flexi_label"><?php echo $toolbar->label(); ?></div>
-      </div>
-      <div style="text-align:right;">
-         <?php do_action('flexi_gallery_top_right', $atts) ?>
-      </div>
+      <div> <?php echo $toolbar->label(); ?></div>
    </div>
+
 
 
    <style>

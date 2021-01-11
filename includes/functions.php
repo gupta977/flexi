@@ -28,16 +28,20 @@ function flexi_author($author = '', $redirect = true)
     } else {
         $linku = "";
     }
-    return '<ul class="flexi_user-list"><li>
- <div class="flexi-user-avatar">
- <a href="' . $linku . '"><img src="' . get_avatar_url($author->user_email, $size = '50') . '" width="50" alt="' . $author->display_name . '" /></a>
- </div>
- <p class="flexi-user-name"><a href="' . $linku . '">' . $author->first_name . ' ' . $author->last_name . '</a><span>@' . $author->user_login . '</span></p>
- </li></ul>';
-    /*
-return ' <a href="' . $linku . '" title=' . $author->display_name . '><h2 class="ui header">
-<img src="' . get_avatar_url($author->user_email, $size = '50') . '" class="ui circular image">
-' . $author->first_name . ' ' . $author->last_name . '</h2></a>';*/
+
+    return '<div class="fuk-card fuk-card-default fuk-width-auto">
+                <div class="fuk-card-header">
+                    <div class="fuk-grid-small fuk-flex-middle" fuk-grid>
+                        <div class="fuk-width-auto">
+                            <a href="' . $linku . '">  <img class="uk-border-circle" width="40" height="40" src="' . get_avatar_url($author->user_email, $size = '50') . '"></a>
+                        </div>
+                        <div class="fuk-width-expand">
+                            <h3 class="fuk-card-title fuk-margin-remove-bottom"><a href="' . $linku . '">' . $author->first_name . ' ' . $author->last_name . '</a></h3>
+                            <p class="fuk-text-meta fuk-margin-remove-top"><time datetime="">@' . $author->user_login . '</time></p>
+                        </div>
+                    </div>
+                </div>
+            </div>';
 }
 
 //Custom field get id
@@ -358,25 +362,26 @@ function flexi_list_album($post, $class = "flexi-icon-list-frame")
 }
 
 //Get single album with title
-function flexi_album_single($term_slug, $class = 'flexi_user-list')
+function flexi_album_single($term_slug, $class = 'fuk-card fuk-card-default fuk-width-auto')
 {
     $term = get_term_by('slug', $term_slug, 'flexi_category');
     if ($term) {
         $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
         $link = add_query_arg("flexi_category", $term->slug, $link);
 
-        /*
-  return '<a href="' . $link . '" class="' . $class . '">
-  <img src="' . flexi_album_image($term_slug) . '">
-  ' . $term->name . '<div class="detail">' . __('Album', 'flexi') . '</div>
-  </a>';
-   */
-        return '<ul class="' . $class . '"><li>
-      <div class="flexi-user-avatar">
-      <a href="' . $link . '"><img src="' . flexi_album_image($term_slug) . '" width="50" alt="' . $term->name . '" /></a>
-      </div>
-      <p class="flexi-user-name"><a href="' . $link . '">' . $term->name . '</a><span>' . __('Category', 'flexi') . '</span></p>
-      </li></ul>';
+        return '<div class="' . $class . '">
+        <div class="fuk-card-header">
+            <div class="fuk-grid-small fuk-flex-middle" fuk-grid>
+                <div class="fuk-width-auto">
+                    <a href="' . $link . '">  <img class="uk-border-circle" width="40" height="40" alt="' . $term->name . '" src="' . flexi_album_image($term_slug) . '"></a>
+                </div>
+                <div class="fuk-width-expand">
+                    <h3 class="fuk-card-title fuk-margin-remove-bottom"><a href="' . $link . '">' . $term->name . '</a></h3>
+                    <p class="fuk-text-meta fuk-margin-remove-top"><time datetime="">'  . __('Category', 'flexi') . '</time></p>
+                </div>
+            </div>
+        </div>
+    </div><br>';
     } else {
         return "";
     }
