@@ -1,9 +1,9 @@
-/*! UIkit 3.6.9 | https://www.getuikit.com | (c) 2014 - 2021 YOOtheme | MIT License */
+/*! fukUIkit 3.6.9 | https://www.getuikit.com | (c) 2014 - 2021 YOOtheme | MIT License */
 
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define('uikit', factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.UIkit = factory());
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.fukUIkit = factory());
 }(this, (function () { 'use strict';
 
     var objPrototype = Object.prototype;
@@ -1434,16 +1434,16 @@
         var docEl = document.documentElement;
 
         if (!isIE) {
-            return getStyles(docEl).getPropertyValue(("--uk-" + name));
+            return getStyles(docEl).getPropertyValue(("--fuk-" + name));
         }
 
         if (!(name in vars)) {
 
-            /* usage in css: .uk-name:before { content:"xyz" } */
+            /* usage in css: .fuk-name:before { content:"xyz" } */
 
             var element = append(docEl, document.createElement('div'));
 
-            addClass(element, ("uk-" + name));
+            addClass(element, ("fuk-" + name));
 
             vars[name] = getStyle(element, 'content', ':before').replace(/^["'](.*)["']$/, '$1');
 
@@ -1509,7 +1509,7 @@
                     var type = ref.type;
 
                     clearTimeout(timer);
-                    removeClass(element, 'uk-transition');
+                    removeClass(element, 'fuk-transition');
                     css(element, {
                         transitionProperty: '',
                         transitionDuration: '',
@@ -1518,7 +1518,7 @@
                     type === 'transitioncanceled' ? reject() : resolve(element);
                 }, {self: true});
 
-                addClass(element, 'uk-transition');
+                addClass(element, 'fuk-transition');
                 css(element, assign({
                     transitionProperty: Object.keys(props).map(propName).join(','),
                     transitionDuration: (duration + "ms"),
@@ -1544,12 +1544,12 @@
         },
 
         inProgress: function(element) {
-            return hasClass(element, 'uk-transition');
+            return hasClass(element, 'fuk-transition');
         }
 
     };
 
-    var animationPrefix = 'uk-animation-';
+    var animationPrefix = 'fuk-animation-';
 
     function animate(element, animation, duration, origin, out) {
         if ( duration === void 0 ) duration = 200;
@@ -1577,7 +1577,7 @@
                 addClass(element, animation, animationPrefix + (out ? 'leave' : 'enter'));
 
                 if (startsWith(animation, animationPrefix)) {
-                    origin && addClass(element, ("uk-transform-origin-" + origin));
+                    origin && addClass(element, ("fuk-transform-origin-" + origin));
                     out && addClass(element, (animationPrefix + "reverse"));
                 }
 
@@ -2656,11 +2656,11 @@
         getViewport: getViewport
     });
 
-    function globalAPI (UIkit) {
+    function globalAPI (fukUIkit) {
 
-        var DATA = UIkit.data;
+        var DATA = fukUIkit.data;
 
-        UIkit.use = function (plugin) {
+        fukUIkit.use = function (plugin) {
 
             if (plugin.installed) {
                 return;
@@ -2672,17 +2672,17 @@
             return this;
         };
 
-        UIkit.mixin = function (mixin, component) {
-            component = (isString(component) ? UIkit.component(component) : component) || this;
+        fukUIkit.mixin = function (mixin, component) {
+            component = (isString(component) ? fukUIkit.component(component) : component) || this;
             component.options = mergeOptions(component.options, mixin);
         };
 
-        UIkit.extend = function (options) {
+        fukUIkit.extend = function (options) {
 
             options = options || {};
 
             var Super = this;
-            var Sub = function UIkitComponent(options) {
+            var Sub = function fukUIkitComponent(options) {
                 this._init(options);
             };
 
@@ -2696,7 +2696,7 @@
             return Sub;
         };
 
-        UIkit.update = function (element, e) {
+        fukUIkit.update = function (element, e) {
 
             element = element ? toNode(element) : document.body;
 
@@ -2706,7 +2706,7 @@
         };
 
         var container;
-        Object.defineProperty(UIkit, 'container', {
+        Object.defineProperty(fukUIkit, 'container', {
 
             get: function() {
                 return container || document.body;
@@ -2733,9 +2733,9 @@
         }
     }
 
-    function hooksAPI (UIkit) {
+    function hooksAPI (fukUIkit) {
 
-        UIkit.prototype._callHook = function (hook) {
+        fukUIkit.prototype._callHook = function (hook) {
             var this$1 = this;
 
 
@@ -2746,7 +2746,7 @@
             }
         };
 
-        UIkit.prototype._callConnected = function () {
+        fukUIkit.prototype._callConnected = function () {
 
             if (this._connected) {
                 return;
@@ -2768,7 +2768,7 @@
             this._callWatches();
         };
 
-        UIkit.prototype._callDisconnected = function () {
+        fukUIkit.prototype._callDisconnected = function () {
 
             if (!this._connected) {
                 return;
@@ -2783,7 +2783,7 @@
 
         };
 
-        UIkit.prototype._callUpdate = function (e) {
+        fukUIkit.prototype._callUpdate = function (e) {
             var this$1 = this;
             if ( e === void 0 ) e = 'update';
 
@@ -2804,7 +2804,7 @@
             this._updates.add(e.type || e);
         };
 
-        UIkit.prototype._callWatches = function () {
+        fukUIkit.prototype._callWatches = function () {
             var this$1 = this;
 
 
@@ -2886,11 +2886,11 @@
         }
     }
 
-    function stateAPI (UIkit) {
+    function stateAPI (fukUIkit) {
 
         var uid = 0;
 
-        UIkit.prototype._init = function (options) {
+        fukUIkit.prototype._init = function (options) {
 
             options = options || {};
             options.data = normalizeData(options, this.constructor.options);
@@ -2910,7 +2910,7 @@
             }
         };
 
-        UIkit.prototype._initData = function () {
+        fukUIkit.prototype._initData = function () {
 
             var ref = this.$options;
             var data = ref.data; if ( data === void 0 ) data = {};
@@ -2920,7 +2920,7 @@
             }
         };
 
-        UIkit.prototype._initMethods = function () {
+        fukUIkit.prototype._initMethods = function () {
 
             var ref = this.$options;
             var methods = ref.methods;
@@ -2932,7 +2932,7 @@
             }
         };
 
-        UIkit.prototype._initComputeds = function () {
+        fukUIkit.prototype._initComputeds = function () {
 
             var ref = this.$options;
             var computed = ref.computed;
@@ -2946,7 +2946,7 @@
             }
         };
 
-        UIkit.prototype._initProps = function (props) {
+        fukUIkit.prototype._initProps = function (props) {
 
             var key;
 
@@ -2966,7 +2966,7 @@
             }
         };
 
-        UIkit.prototype._initEvents = function () {
+        fukUIkit.prototype._initEvents = function () {
             var this$1 = this;
 
 
@@ -2991,19 +2991,19 @@
             }
         };
 
-        UIkit.prototype._unbindEvents = function () {
+        fukUIkit.prototype._unbindEvents = function () {
             this._events.forEach(function (unbind) { return unbind(); });
             delete this._events;
         };
 
-        UIkit.prototype._initObservers = function () {
+        fukUIkit.prototype._initObservers = function () {
             this._observers = [
                 initChildListObserver(this),
                 initPropsObserver(this)
             ];
         };
 
-        UIkit.prototype._disconnectObservers = function () {
+        fukUIkit.prototype._disconnectObservers = function () {
             this._observers.forEach(function (observer) { return observer && observer.disconnect(); }
             );
         };
@@ -3235,15 +3235,15 @@
         }
     }
 
-    function instanceAPI (UIkit) {
+    function instanceAPI (fukUIkit) {
 
-        var DATA = UIkit.data;
+        var DATA = fukUIkit.data;
 
-        UIkit.prototype.$create = function (component, element, data) {
-            return UIkit[component](element, data);
+        fukUIkit.prototype.$create = function (component, element, data) {
+            return fukUIkit[component](element, data);
         };
 
-        UIkit.prototype.$mount = function (el) {
+        fukUIkit.prototype.$mount = function (el) {
 
             var ref = this.$options;
             var name = ref.name;
@@ -3265,12 +3265,12 @@
             }
         };
 
-        UIkit.prototype.$reset = function () {
+        fukUIkit.prototype.$reset = function () {
             this._callDisconnected();
             this._callConnected();
         };
 
-        UIkit.prototype.$destroy = function (removeEl) {
+        fukUIkit.prototype.$destroy = function (removeEl) {
             if ( removeEl === void 0 ) removeEl = false;
 
 
@@ -3299,22 +3299,22 @@
             }
         };
 
-        UIkit.prototype.$emit = function (e) {
+        fukUIkit.prototype.$emit = function (e) {
             this._callUpdate(e);
         };
 
-        UIkit.prototype.$update = function (element, e) {
+        fukUIkit.prototype.$update = function (element, e) {
             if ( element === void 0 ) element = this.$el;
 
-            UIkit.update(element, e);
+            fukUIkit.update(element, e);
         };
 
-        UIkit.prototype.$getComponent = UIkit.getComponent;
+        fukUIkit.prototype.$getComponent = fukUIkit.getComponent;
 
         var names = {};
-        Object.defineProperties(UIkit.prototype, {
+        Object.defineProperties(fukUIkit.prototype, {
 
-            $container: Object.getOwnPropertyDescriptor(UIkit, 'container'),
+            $container: Object.getOwnPropertyDescriptor(fukUIkit, 'container'),
 
             $name: {
 
@@ -3323,7 +3323,7 @@
                     var name = ref.name;
 
                     if (!names[name]) {
-                        names[name] = UIkit.prefix + hyphenate(name);
+                        names[name] = fukUIkit.prefix + hyphenate(name);
                     }
 
                     return names[name];
@@ -3335,13 +3335,13 @@
 
     }
 
-    function componentAPI (UIkit) {
+    function componentAPI (fukUIkit) {
 
-        var DATA = UIkit.data;
+        var DATA = fukUIkit.data;
 
         var components = {};
 
-        UIkit.component = function (name, options) {
+        fukUIkit.component = function (name, options) {
 
             var id = hyphenate(name);
 
@@ -3350,19 +3350,19 @@
             if (!options) {
 
                 if (isPlainObject(components[name])) {
-                    components[name] = UIkit.extend(components[name]);
+                    components[name] = fukUIkit.extend(components[name]);
                 }
 
                 return components[name];
 
             }
 
-            UIkit[name] = function (element, data) {
+            fukUIkit[name] = function (element, data) {
                 var i = arguments.length, argsArray = Array(i);
                 while ( i-- ) argsArray[i] = arguments[i];
 
 
-                var component = UIkit.component(name);
+                var component = fukUIkit.component(name);
 
                 return component.options.functional
                     ? new component({data: isPlainObject(element) ? element : [].concat( argsArray )})
@@ -3370,7 +3370,7 @@
 
                 function init(element) {
 
-                    var instance = UIkit.getComponent(element, name);
+                    var instance = fukUIkit.getComponent(element, name);
 
                     if (instance) {
                         if (!data) {
@@ -3391,20 +3391,20 @@
             opt.name = name;
 
             if (opt.install) {
-                opt.install(UIkit, opt, name);
+                opt.install(fukUIkit, opt, name);
             }
 
-            if (UIkit._initialized && !opt.functional) {
-                fastdom.read(function () { return UIkit[name](("[uk-" + id + "],[data-uk-" + id + "]")); });
+            if (fukUIkit._initialized && !opt.functional) {
+                fastdom.read(function () { return fukUIkit[name](("[fuk-" + id + "],[data-fuk-" + id + "]")); });
             }
 
             return components[name] = isPlainObject(options) ? opt : options;
         };
 
-        UIkit.getComponents = function (element) { return element && element[DATA] || {}; };
-        UIkit.getComponent = function (element, name) { return UIkit.getComponents(element)[name]; };
+        fukUIkit.getComponents = function (element) { return element && element[DATA] || {}; };
+        fukUIkit.getComponent = function (element, name) { return fukUIkit.getComponents(element)[name]; };
 
-        UIkit.connect = function (node) {
+        fukUIkit.connect = function (node) {
 
             if (node[DATA]) {
                 for (var name in node[DATA]) {
@@ -3417,14 +3417,14 @@
                 var name$1 = getComponentName(node.attributes[i].name);
 
                 if (name$1 && name$1 in components) {
-                    UIkit[name$1](node);
+                    fukUIkit[name$1](node);
                 }
 
             }
 
         };
 
-        UIkit.disconnect = function (node) {
+        fukUIkit.disconnect = function (node) {
             for (var name in node[DATA]) {
                 node[DATA][name]._callDisconnected();
             }
@@ -3433,28 +3433,28 @@
     }
 
     function getComponentName(attribute) {
-        return startsWith(attribute, 'uk-') || startsWith(attribute, 'data-uk-')
-            ? camelize(attribute.replace('data-uk-', '').replace('uk-', ''))
+        return startsWith(attribute, 'fuk-') || startsWith(attribute, 'data-fuk-')
+            ? camelize(attribute.replace('data-fuk-', '').replace('fuk-', ''))
             : false;
     }
 
-    var UIkit = function (options) {
+    var fukUIkit = function (options) {
         this._init(options);
     };
 
-    UIkit.util = util;
-    UIkit.data = '__uikit__';
-    UIkit.prefix = 'uk-';
-    UIkit.options = {};
-    UIkit.version = '3.6.9';
+    fukUIkit.util = util;
+    fukUIkit.data = '__uikit__';
+    fukUIkit.prefix = 'fuk-';
+    fukUIkit.options = {};
+    fukUIkit.version = '3.6.9';
 
-    globalAPI(UIkit);
-    hooksAPI(UIkit);
-    stateAPI(UIkit);
-    componentAPI(UIkit);
-    instanceAPI(UIkit);
+    globalAPI(fukUIkit);
+    hooksAPI(fukUIkit);
+    stateAPI(fukUIkit);
+    componentAPI(fukUIkit);
+    instanceAPI(fukUIkit);
 
-    function Core (UIkit) {
+    function Core (fukUIkit) {
 
         if (!inBrowser) {
             return;
@@ -3468,7 +3468,7 @@
             }
             pendingResize = true;
             fastdom.write(function () { return pendingResize = false; });
-            UIkit.update(null, 'resize');
+            fukUIkit.update(null, 'resize');
         };
 
         on(window, 'load resize', handleResize);
@@ -3488,7 +3488,7 @@
             pending = true;
             fastdom.write(function () { return pending = false; });
 
-            UIkit.update(null, e.type);
+            fukUIkit.update(null, e.type);
 
         }, {passive: true, capture: true});
 
@@ -3496,7 +3496,7 @@
         on(document, 'animationstart', function (ref) {
             var target = ref.target;
 
-            if ((css(target, 'animationName') || '').match(/^uk-.*(left|right)/)) {
+            if ((css(target, 'animationName') || '').match(/^fuk-.*(left|right)/)) {
 
                 started++;
                 css(document.documentElement, 'overflowX', 'hidden');
@@ -3549,10 +3549,10 @@
                 : 'Down';
     }
 
-    function boot (UIkit) {
+    function boot (fukUIkit) {
 
-        var connect = UIkit.connect;
-        var disconnect = UIkit.disconnect;
+        var connect = fukUIkit.connect;
+        var disconnect = fukUIkit.disconnect;
 
         if (!inBrowser || !window.MutationObserver) {
             return;
@@ -3576,7 +3576,7 @@
                 subtree: true
             });
 
-            UIkit._initialized = true;
+            fukUIkit._initialized = true;
         });
 
         function applyChildListMutation(ref) {
@@ -3599,16 +3599,16 @@
 
             var name = getComponentName(attributeName);
 
-            if (!name || !(name in UIkit)) {
+            if (!name || !(name in fukUIkit)) {
                 return;
             }
 
             if (hasAttr(target, attributeName)) {
-                UIkit[name](target);
+                fukUIkit[name](target);
                 return;
             }
 
-            var component = UIkit.getComponent(target, name);
+            var component = fukUIkit.getComponent(target, name);
 
             if (component) {
                 component.$destroy();
@@ -3642,8 +3642,8 @@
             duration: 200,
             origin: false,
             transition: 'linear',
-            clsEnter: 'uk-togglabe-enter',
-            clsLeave: 'uk-togglabe-leave',
+            clsEnter: 'fuk-togglabe-enter',
+            clsLeave: 'fuk-togglabe-leave',
 
             initProps: {
                 overflow: '',
@@ -3837,9 +3837,9 @@
             animation: [true],
             collapsible: true,
             multiple: false,
-            clsOpen: 'uk-open',
-            toggle: '> .uk-accordion-title',
-            content: '> .uk-accordion-content',
+            clsOpen: 'fuk-open',
+            toggle: '> .fuk-accordion-title',
+            content: '> .fuk-accordion-content',
             transition: 'ease',
             offset: 0
         },
@@ -3973,7 +3973,7 @@
 
         data: {
             animation: [true],
-            selClose: '.uk-alert-close',
+            selClose: '.fuk-alert-close',
             duration: 150,
             hideProps: assign({opacity: 0}, Togglable.data.hideProps)
         },
@@ -4238,8 +4238,8 @@
             delayShow: 0,
             delayHide: 800,
             clsDrop: false,
-            animation: ['uk-animation-fade'],
-            cls: 'uk-open'
+            animation: ['fuk-animation-fade'],
+            cls: 'fuk-open'
         },
 
         computed: {
@@ -4253,7 +4253,7 @@
             clsDrop: function(ref) {
                 var clsDrop = ref.clsDrop;
 
-                return clsDrop || ("uk-" + (this.$options.name));
+                return clsDrop || ("fuk-" + (this.$options.name));
             },
 
             clsPos: function() {
@@ -4731,8 +4731,8 @@
         },
 
         data: {
-            margin: 'uk-margin-small-top',
-            firstColumn: 'uk-first-column'
+            margin: 'fuk-margin-small-top',
+            firstColumn: 'fuk-first-column'
         },
 
         update: {
@@ -4874,14 +4874,14 @@
         },
 
         data: {
-            margin: 'uk-grid-margin',
-            clsStack: 'uk-grid-stack',
+            margin: 'fuk-grid-margin',
+            clsStack: 'fuk-grid-stack',
             masonry: false,
             parallax: 0
         },
 
         connected: function() {
-            this.masonry && addClass(this.$el, 'uk-flex-top uk-flex-wrap-top');
+            this.masonry && addClass(this.$el, 'fuk-flex-top fuk-flex-wrap-top');
         },
 
         update: [
@@ -5152,7 +5152,7 @@
         return {heights: heights, elements: elements};
     }
 
-    var clsBlock = 'uk-display-block';
+    var clsBlock = 'fuk-display-block';
     function getHeight(element) {
 
         if (!isVisible(element)) {
@@ -5294,7 +5294,7 @@
         },
 
         beforeConnect: function() {
-            this.class += ' uk-svg';
+            this.class += ' fuk-svg';
         },
 
         connected: function() {
@@ -5467,7 +5467,7 @@
         var length = getMaxPathLength(el);
 
         if (length) {
-            el.style.setProperty('--uk-animation-stroke', length);
+            el.style.setProperty('--fuk-animation-stroke', length);
         }
 
     }
@@ -5573,7 +5573,7 @@
         isIcon: true,
 
         beforeConnect: function() {
-            addClass(this.$el, 'uk-icon');
+            addClass(this.$el, 'fuk-icon');
         },
 
         methods: {
@@ -5614,7 +5614,7 @@
         extends: IconComponent,
 
         beforeConnect: function() {
-            addClass(this.$el, 'uk-slidenav');
+            addClass(this.$el, 'fuk-slidenav');
         },
 
         computed: {
@@ -5622,7 +5622,7 @@
             icon: function(ref, $el) {
                 var icon = ref.icon;
 
-                return hasClass($el, 'uk-slidenav-large')
+                return hasClass($el, 'fuk-slidenav-large')
                     ? (icon + "-large")
                     : icon;
             }
@@ -5640,9 +5640,9 @@
             icon: function(ref, $el) {
                 var icon = ref.icon;
 
-                return hasClass($el, 'uk-search-icon') && parents($el, '.uk-search-large').length
+                return hasClass($el, 'fuk-search-icon') && parents($el, '.fuk-search-large').length
                     ? 'search-large'
-                    : parents($el, '.uk-search-navbar').length
+                    : parents($el, '.fuk-search-navbar').length
                         ? 'search-navbar'
                         : icon;
             }
@@ -5658,7 +5658,7 @@
         computed: {
 
             icon: function() {
-                return ("close-" + (hasClass(this.$el, 'uk-close-large') ? 'large' : 'icon'));
+                return ("close-" + (hasClass(this.$el, 'fuk-close-large') ? 'large' : 'icon'));
             }
 
         }
@@ -5678,8 +5678,8 @@
     };
 
     var parsed = {};
-    function install(UIkit) {
-        UIkit.icon.add = function (name, svg) {
+    function install(fukUIkit) {
+        fukUIkit.icon.add = function (name, svg) {
             var obj;
 
 
@@ -5689,8 +5689,8 @@
                 delete parsed[name];
             });
 
-            if (UIkit._initialized) {
-                apply(document.body, function (el) { return each(UIkit.getComponents(el), function (cmp) {
+            if (fukUIkit._initialized) {
+                apply(document.body, function (el) { return each(fukUIkit.getComponents(el), function (cmp) {
                         cmp.$options.isIcon && cmp.icon in added && cmp.$reset();
                     }); }
                 );
@@ -6033,8 +6033,8 @@
 
         data: {
             fill: '',
-            clsWrapper: 'uk-leader-fill',
-            clsHide: 'uk-leader-hide',
+            clsWrapper: 'fuk-leader-fill',
+            clsHide: 'fuk-leader-hide',
             attrFill: 'data-fill'
         },
 
@@ -6131,7 +6131,7 @@
         },
 
         data: {
-            cls: 'uk-open',
+            cls: 'fuk-open',
             escClose: true,
             bgClose: true,
             overlay: true,
@@ -6363,9 +6363,9 @@
         mixins: [Modal],
 
         data: {
-            clsPage: 'uk-modal-page',
-            selPanel: '.uk-modal-dialog',
-            selClose: '.uk-modal-close, .uk-modal-close-default, .uk-modal-close-outside, .uk-modal-close-full'
+            clsPage: 'fuk-modal-page',
+            selPanel: '.fuk-modal-dialog',
+            selClose: '.fuk-modal-close, .fuk-modal-close-default, .fuk-modal-close-outside, .fuk-modal-close-full'
         },
 
         events: [
@@ -6377,8 +6377,8 @@
 
                 handler: function() {
 
-                    if (hasClass(this.panel, 'uk-margin-auto-vertical')) {
-                        addClass(this.$el, 'uk-flex');
+                    if (hasClass(this.panel, 'fuk-margin-auto-vertical')) {
+                        addClass(this.$el, 'fuk-flex');
                     } else {
                         css(this.$el, 'display', 'block');
                     }
@@ -6395,7 +6395,7 @@
                 handler: function() {
 
                     css(this.$el, 'display', '');
-                    removeClass(this.$el, 'uk-flex');
+                    removeClass(this.$el, 'fuk-flex');
 
                 }
             }
@@ -6411,7 +6411,7 @@
         modal.dialog = function (content, options) {
 
             var dialog = modal(
-                ("<div class=\"uk-modal\"> <div class=\"uk-modal-dialog\">" + content + "</div> </div>"),
+                ("<div class=\"fuk-modal\"> <div class=\"fuk-modal-dialog\">" + content + "</div> </div>"),
                 options
             );
 
@@ -6429,7 +6429,7 @@
                 function (ref) {
                     var labels = ref.labels;
 
-                    return ("<div class=\"uk-modal-body\">" + (isString(message) ? message : html(message)) + "</div> <div class=\"uk-modal-footer uk-text-right\"> <button class=\"uk-button uk-button-primary uk-modal-close\" autofocus>" + (labels.ok) + "</button> </div>");
+                    return ("<div class=\"fuk-modal-body\">" + (isString(message) ? message : html(message)) + "</div> <div class=\"fuk-modal-footer fuk-text-right\"> <button class=\"fuk-button fuk-button-primary fuk-modal-close\" autofocus>" + (labels.ok) + "</button> </div>");
             },
                 options,
                 function (deferred) { return deferred.resolve(); }
@@ -6441,7 +6441,7 @@
                 function (ref) {
                     var labels = ref.labels;
 
-                    return ("<form> <div class=\"uk-modal-body\">" + (isString(message) ? message : html(message)) + "</div> <div class=\"uk-modal-footer uk-text-right\"> <button class=\"uk-button uk-button-default uk-modal-close\" type=\"button\">" + (labels.cancel) + "</button> <button class=\"uk-button uk-button-primary\" autofocus>" + (labels.ok) + "</button> </div> </form>");
+                    return ("<form> <div class=\"fuk-modal-body\">" + (isString(message) ? message : html(message)) + "</div> <div class=\"fuk-modal-footer fuk-text-right\"> <button class=\"fuk-button fuk-button-default fuk-modal-close\" type=\"button\">" + (labels.cancel) + "</button> <button class=\"fuk-button fuk-button-primary\" autofocus>" + (labels.ok) + "</button> </div> </form>");
             },
                 options,
                 function (deferred) { return deferred.reject(); }
@@ -6453,7 +6453,7 @@
                 function (ref) {
                     var labels = ref.labels;
 
-                    return ("<form class=\"uk-form-stacked\"> <div class=\"uk-modal-body\"> <label>" + (isString(message) ? message : html(message)) + "</label> <input class=\"uk-input\" value=\"" + (value || '') + "\" autofocus> </div> <div class=\"uk-modal-footer uk-text-right\"> <button class=\"uk-button uk-button-default uk-modal-close\" type=\"button\">" + (labels.cancel) + "</button> <button class=\"uk-button uk-button-primary\">" + (labels.ok) + "</button> </div> </form>");
+                    return ("<form class=\"fuk-form-stacked\"> <div class=\"fuk-modal-body\"> <label>" + (isString(message) ? message : html(message)) + "</label> <input class=\"fuk-input\" value=\"" + (value || '') + "\" autofocus> </div> <div class=\"fuk-modal-footer fuk-text-right\"> <button class=\"fuk-button fuk-button-default fuk-modal-close\" type=\"button\">" + (labels.cancel) + "</button> <button class=\"fuk-button fuk-button-primary\">" + (labels.ok) + "</button> </div> </form>");
             },
                 options,
                 function (deferred) { return deferred.resolve(null); },
@@ -6496,7 +6496,7 @@
         extends: Accordion,
 
         data: {
-            targets: '> .uk-parent',
+            targets: '> .fuk-parent',
             toggle: '> a',
             content: '> ul'
         }
@@ -6524,9 +6524,9 @@
         },
 
         data: {
-            dropdown: '.uk-navbar-nav > li',
+            dropdown: '.fuk-navbar-nav > li',
             align: !isRtl ? 'left' : 'right',
-            clsDrop: 'uk-navbar-dropdown',
+            clsDrop: 'fuk-navbar-dropdown',
             mode: undefined,
             offset: undefined,
             delayShow: undefined,
@@ -6539,7 +6539,7 @@
             dropbarAnchor: false,
             duration: 200,
             forceHeight: true,
-            selMinHeight: '.uk-navbar-nav > li > a, .uk-navbar-item, .uk-navbar-toggle'
+            selMinHeight: '.fuk-navbar-nav > li > a, .fuk-navbar-item, .fuk-navbar-toggle'
         },
 
         computed: {
@@ -6573,14 +6573,14 @@
                         return null;
                     }
 
-                    dropbar = this._dropbar || query(dropbar, this.$el) || $('+ .uk-navbar-dropbar', this.$el);
+                    dropbar = this._dropbar || query(dropbar, this.$el) || $('+ .fuk-navbar-dropbar', this.$el);
 
                     return dropbar ? dropbar : (this._dropbar = $('<div></div>'));
 
                 },
 
                 watch: function(dropbar) {
-                    addClass(dropbar, 'uk-navbar-dropbar');
+                    addClass(dropbar, 'fuk-navbar-dropbar');
                 },
 
                 immediate: true
@@ -6687,7 +6687,7 @@
                     }
 
                     if (this.dropbarMode === 'slide') {
-                        addClass(this.dropbar, 'uk-navbar-dropbar-slide');
+                        addClass(this.dropbar, 'fuk-navbar-dropbar-slide');
                     }
 
                     this.clsDrop && addClass($el, ((this.clsDrop) + "-dropbar"));
@@ -6799,15 +6799,15 @@
             mode: 'slide',
             flip: false,
             overlay: false,
-            clsPage: 'uk-offcanvas-page',
-            clsContainer: 'uk-offcanvas-container',
-            selPanel: '.uk-offcanvas-bar',
-            clsFlip: 'uk-offcanvas-flip',
-            clsContainerAnimation: 'uk-offcanvas-container-animation',
-            clsSidebarAnimation: 'uk-offcanvas-bar-animation',
-            clsMode: 'uk-offcanvas',
-            clsOverlay: 'uk-offcanvas-overlay',
-            selClose: '.uk-offcanvas-close',
+            clsPage: 'fuk-offcanvas-page',
+            clsContainer: 'fuk-offcanvas-container',
+            selPanel: '.fuk-offcanvas-bar',
+            clsFlip: 'fuk-offcanvas-flip',
+            clsContainerAnimation: 'fuk-offcanvas-container-animation',
+            clsSidebarAnimation: 'fuk-offcanvas-bar-animation',
+            clsMode: 'fuk-offcanvas',
+            clsOverlay: 'fuk-offcanvas-overlay',
+            selClose: '.fuk-offcanvas-close',
             container: false
         },
 
@@ -7060,8 +7060,8 @@
         },
 
         data: {
-            selContainer: '.uk-modal',
-            selContent: '.uk-modal-dialog'
+            selContainer: '.fuk-modal',
+            selContent: '.fuk-modal-dialog'
         },
 
         computed: {
@@ -7119,7 +7119,7 @@
         props: ['width', 'height'],
 
         connected: function() {
-            addClass(this.$el, 'uk-responsive-width');
+            addClass(this.$el, 'fuk-responsive-width');
         },
 
         update: {
@@ -7209,7 +7209,7 @@
             offsetLeft: 0,
             repeat: false,
             delay: 0,
-            inViewClass: 'uk-scrollspy-inview'
+            inViewClass: 'fuk-scrollspy-inview'
         }); },
 
         computed: {
@@ -7259,7 +7259,7 @@
                     this.elements.forEach(function (el) {
 
                         if (!el[stateKey$1]) {
-                            el[stateKey$1] = {cls: data(el, 'uk-scrollspy-class') || this$1.cls};
+                            el[stateKey$1] = {cls: data(el, 'fuk-scrollspy-class') || this$1.cls};
                         }
 
                         el[stateKey$1].show = isInView(el, this$1.offsetTop, this$1.offsetLeft);
@@ -7339,7 +7339,7 @@
         },
 
         data: {
-            cls: 'uk-active',
+            cls: 'fuk-active',
             closest: false,
             scroll: false,
             overflow: true,
@@ -7463,10 +7463,10 @@
             bottom: false,
             offset: 0,
             animation: '',
-            clsActive: 'uk-active',
+            clsActive: 'fuk-active',
             clsInactive: '',
-            clsFixed: 'uk-sticky-fixed',
-            clsBelow: 'uk-sticky-below',
+            clsFixed: 'fuk-sticky-fixed',
+            clsBelow: 'fuk-sticky-below',
             selTarget: '',
             widthElement: false,
             showOnUp: false,
@@ -7514,7 +7514,7 @@
         },
 
         connected: function() {
-            this.placeholder = $('+ .uk-sticky-placeholder', this.$el) || $('<div class="uk-sticky-placeholder"></div>');
+            this.placeholder = $('+ .fuk-sticky-placeholder', this.$el) || $('<div class="fuk-sticky-placeholder"></div>');
             this.isFixed = false;
             this.isActive = false;
         },
@@ -7801,12 +7801,12 @@
         },
 
         data: {
-            connect: '~.uk-switcher',
+            connect: '~.fuk-switcher',
             toggle: '> * > :first-child',
             active: 0,
             swiping: true,
-            cls: 'uk-active',
-            attrItem: 'uk-switcher-item'
+            cls: 'fuk-active',
+            attrItem: 'fuk-switcher-item'
         },
 
         computed: {
@@ -7834,7 +7834,7 @@
                 get: function(ref, $el) {
                     var toggle = ref.toggle;
 
-                    return $$(toggle, $el).filter(function (el) { return !matches(el, '.uk-disabled *, .uk-disabled, [disabled]'); });
+                    return $$(toggle, $el).filter(function (el) { return !matches(el, '.fuk-disabled *, .fuk-disabled, [disabled]'); });
                 },
 
                 watch: function(toggles) {
@@ -7961,15 +7961,15 @@
 
         data: {
             media: 960,
-            attrItem: 'uk-tab-item'
+            attrItem: 'fuk-tab-item'
         },
 
         connected: function() {
 
-            var cls = hasClass(this.$el, 'uk-tab-left')
-                ? 'uk-tab-left'
-                : hasClass(this.$el, 'uk-tab-right')
-                    ? 'uk-tab-right'
+            var cls = hasClass(this.$el, 'fuk-tab-left')
+                ? 'fuk-tab-left'
+                : hasClass(this.$el, 'fuk-tab-right')
+                    ? 'fuk-tab-right'
                     : false;
 
             if (cls) {
@@ -8198,13 +8198,13 @@
     });
 
     // register components
-    each(components, function (component, name) { return UIkit.component(name, component); }
+    each(components, function (component, name) { return fukUIkit.component(name, component); }
     );
 
     // core functionality
-    UIkit.use(Core);
+    fukUIkit.use(Core);
 
-    boot(UIkit);
+    boot(fukUIkit);
 
     var countdown = {
 
@@ -8217,7 +8217,7 @@
 
         data: {
             date: '',
-            clsWrapper: '.uk-countdown-%unit%'
+            clsWrapper: '.fuk-countdown-%unit%'
         },
 
         computed: {
@@ -8372,8 +8372,8 @@
         };
     }
 
-    var clsLeave = 'uk-transition-leave';
-    var clsEnter = 'uk-transition-enter';
+    var clsLeave = 'fuk-transition-leave';
+    var clsEnter = 'fuk-transition-enter';
 
     function fade(action, target, duration, stagger) {
         if ( stagger === void 0 ) stagger = 0;
@@ -8404,7 +8404,7 @@
 
             css(children(target), {opacity: 0});
 
-            // Two frames to ensure UIkit updates propagated
+            // Two frames to ensure fukUIkit updates propagated
             return new Promise(function (resolve) { return requestAnimationFrame(function () {
 
                     var nodes = children(target);
@@ -8460,7 +8460,7 @@
         return getRows(children(target)).reduce(function (nodes, row) { return nodes.concat(sortBy(row.filter(function (el) { return isInView(el); }), 'offsetLeft')); }, []);
     }
 
-    var targetClass = 'uk-animation-target';
+    var targetClass = 'fuk-animation-target';
 
     function slide (action, target, duration) {
 
@@ -8653,8 +8653,8 @@
         data: {
             target: null,
             selActive: false,
-            attrItem: 'uk-filter-control',
-            cls: 'uk-active',
+            attrItem: 'fuk-filter-control',
+            cls: 'fuk-active',
             duration: 250
         },
 
@@ -9425,7 +9425,7 @@
                     var cmd = data(el, this$1.attrItem);
 
                     toggleClass(el, this$1.clsActive, toNumber(cmd) === i);
-                    toggleClass(el, 'uk-invisible', this$1.finite && (cmd === 'previous' && i === 0 || cmd === 'next' && i >= this$1.maxIndex));
+                    toggleClass(el, 'fuk-invisible', this$1.finite && (cmd === 'previous' && i === 0 || cmd === 'next' && i >= this$1.maxIndex));
                 });
 
             }
@@ -9455,7 +9455,7 @@
             prevIndex: -1,
             stack: [],
             percent: 0,
-            clsActive: 'uk-active',
+            clsActive: 'fuk-active',
             clsActivated: false,
             Transitioner: false,
             transitionOptions: {}
@@ -9698,7 +9698,7 @@
 
         data: {
             animation: 'slide',
-            clsActivated: 'uk-transition-active',
+            clsActivated: 'fuk-transition-active',
             Animations: Animations,
             Transitioner: Transitioner
         },
@@ -9766,16 +9766,16 @@
             videoAutoplay: false,
             delayControls: 3000,
             items: [],
-            cls: 'uk-open',
-            clsPage: 'uk-lightbox-page',
-            selList: '.uk-lightbox-items',
-            attrItem: 'uk-lightbox-item',
-            selClose: '.uk-close-large',
-            selCaption: '.uk-lightbox-caption',
+            cls: 'fuk-open',
+            clsPage: 'fuk-lightbox-page',
+            selList: '.fuk-lightbox-items',
+            attrItem: 'fuk-lightbox-item',
+            selClose: '.fuk-close-large',
+            selCaption: '.fuk-lightbox-caption',
             pauseOnHover: false,
             velocity: 2,
             Animations: Animations$1,
-            template: "<div class=\"uk-lightbox uk-overflow-hidden\"> <ul class=\"uk-lightbox-items\"></ul> <div class=\"uk-lightbox-toolbar uk-position-top uk-text-right uk-transition-slide-top uk-transition-opaque\"> <button class=\"uk-lightbox-toolbar-icon uk-close-large\" type=\"button\" uk-close></button> </div> <a class=\"uk-lightbox-button uk-position-center-left uk-position-medium uk-transition-fade\" href uk-slidenav-previous uk-lightbox-item=\"previous\"></a> <a class=\"uk-lightbox-button uk-position-center-right uk-position-medium uk-transition-fade\" href uk-slidenav-next uk-lightbox-item=\"next\"></a> <div class=\"uk-lightbox-toolbar uk-lightbox-caption uk-position-bottom uk-text-center uk-transition-slide-bottom uk-transition-opaque\"></div> </div>"
+            template: "<div class=\"fuk-lightbox fuk-overflow-hidden\"> <ul class=\"fuk-lightbox-items\"></ul> <div class=\"fuk-lightbox-toolbar fuk-position-top fuk-text-right fuk-transition-slide-top fuk-transition-opaque\"> <button class=\"fuk-lightbox-toolbar-icon fuk-close-large\" type=\"button\" fuk-close></button> </div> <a class=\"fuk-lightbox-button fuk-position-center-left fuk-position-medium fuk-transition-fade\" href fuk-slidenav-previous fuk-lightbox-item=\"previous\"></a> <a class=\"fuk-lightbox-button fuk-position-center-right fuk-position-medium fuk-transition-fade\" href fuk-slidenav-next fuk-lightbox-item=\"next\"></a> <div class=\"fuk-lightbox-toolbar fuk-lightbox-caption fuk-position-bottom fuk-text-center fuk-transition-slide-bottom fuk-transition-opaque\"></div> </div>"
         }); },
 
         created: function() {
@@ -9793,7 +9793,7 @@
             caption: function(ref, $el) {
                 var selCaption = ref.selCaption;
 
-                return $('.uk-lightbox-caption', $el);
+                return $('.fuk-lightbox-caption', $el);
             }
 
         },
@@ -9956,7 +9956,7 @@
                     var poster = item.poster;
                     var attrs = item.attrs; if ( attrs === void 0 ) attrs = {};
 
-                    this.setItem(item, '<span uk-spinner></span>');
+                    this.setItem(item, '<span fuk-spinner></span>');
 
                     if (!src) {
                         return;
@@ -9968,8 +9968,8 @@
                         allow: 'autoplay',
                         allowfullscreen: '',
                         style: 'max-width: 100%; box-sizing: border-box;',
-                        'uk-responsive': '',
-                        'uk-video': ("" + (this.videoAutoplay))
+                        'fuk-responsive': '',
+                        'fuk-video': ("" + (this.videoAutoplay))
                     };
 
                     // Image
@@ -9993,7 +9993,7 @@
                             poster: poster,
                             controls: '',
                             playsinline: '',
-                            'uk-video': ("" + (this.videoAutoplay))
+                            'fuk-video': ("" + (this.videoAutoplay))
                         }, attrs));
 
                         on(video, 'loadedmetadata', function () {
@@ -10009,7 +10009,7 @@
                             src: src,
                             frameborder: '0',
                             allowfullscreen: '',
-                            class: 'uk-lightbox-iframe'
+                            class: 'fuk-lightbox-iframe'
                         }, attrs)));
 
                     // YouTube
@@ -10078,7 +10078,7 @@
             },
 
             setError: function(item) {
-                this.setItem(item, '<span uk-icon="icon: bolt; ratio: 2"></span>');
+                this.setItem(item, '<span fuk-icon="icon: bolt; ratio: 2"></span>');
             },
 
             showControls: function() {
@@ -10086,12 +10086,12 @@
                 clearTimeout(this.controlsTimer);
                 this.controlsTimer = setTimeout(this.hideControls, this.delayControls);
 
-                addClass(this.$el, 'uk-active', 'uk-transition-active');
+                addClass(this.$el, 'fuk-active', 'fuk-transition-active');
 
             },
 
             hideControls: function() {
-                removeClass(this.$el, 'uk-active', 'uk-transition-active');
+                removeClass(this.$el, 'fuk-active', 'fuk-transition-active');
             }
 
         }
@@ -10141,7 +10141,7 @@
                 name: 'click',
 
                 delegate: function() {
-                    return ((this.toggle) + ":not(.uk-disabled)");
+                    return ((this.toggle) + ":not(.fuk-disabled)");
                 },
 
                 handler: function(e) {
@@ -10189,15 +10189,15 @@
 
     };
 
-    function install$2(UIkit, Lightbox) {
+    function install$2(fukUIkit, Lightbox) {
 
-        if (!UIkit.lightboxPanel) {
-            UIkit.component('lightboxPanel', LightboxPanel);
+        if (!fukUIkit.lightboxPanel) {
+            fukUIkit.component('lightboxPanel', LightboxPanel);
         }
 
         assign(
             Lightbox.props,
-            UIkit.component('lightboxPanel').options.props
+            fukUIkit.component('lightboxPanel').options.props
         );
 
     }
@@ -10229,9 +10229,9 @@
             timeout: 5000,
             group: null,
             pos: 'top-center',
-            clsContainer: 'uk-notification',
-            clsClose: 'uk-notification-close',
-            clsMsg: 'uk-notification-message'
+            clsContainer: 'fuk-notification',
+            clsClose: 'fuk-notification-close',
+            clsMsg: 'fuk-notification-message'
         },
 
         install: install$3,
@@ -10258,7 +10258,7 @@
                 || append(this.$container, ("<div class=\"" + (this.clsContainer) + " " + (this.clsContainer) + "-" + (this.pos) + "\" style=\"display: block\"></div>"));
 
             this.$mount(append(container,
-                ("<div class=\"" + (this.clsMsg) + (this.status ? (" " + (this.clsMsg) + "-" + (this.status)) : '') + "\"> <a href class=\"" + (this.clsClose) + "\" data-uk-close></a> <div>" + (this.message) + "</div> </div>")
+                ("<div class=\"" + (this.clsMsg) + (this.status ? (" " + (this.clsMsg) + "-" + (this.status)) : '') + "\"> <a href class=\"" + (this.clsClose) + "\" data-fuk-close></a> <div>" + (this.message) + "</div> </div>")
             ));
 
         },
@@ -10333,10 +10333,10 @@
 
     };
 
-    function install$3(UIkit) {
-        UIkit.notification.closeAll = function (group, immediate) {
+    function install$3(fukUIkit) {
+        fukUIkit.notification.closeAll = function (group, immediate) {
             apply(document.body, function (el) {
-                var notification = UIkit.getComponent(el, 'notification');
+                var notification = fukUIkit.getComponent(el, 'notification');
                 if (notification && (!group || group === notification.group)) {
                     notification.close(immediate);
                 }
@@ -10964,10 +10964,10 @@
         data: {
             center: false,
             sets: false,
-            attrItem: 'uk-slider-item',
-            selList: '.uk-slider-items',
-            selNav: '.uk-slider-nav',
-            clsContainer: 'uk-slider-container',
+            attrItem: 'fuk-slider-item',
+            selList: '.fuk-slider-items',
+            selNav: '.fuk-slider-nav',
+            clsContainer: 'fuk-slider-container',
             Transitioner: Transitioner$1
         },
 
@@ -11443,9 +11443,9 @@
             ratio: '16:9',
             minHeight: false,
             maxHeight: false,
-            selList: '.uk-slideshow-items',
-            attrItem: 'uk-slideshow-item',
-            selNav: '.uk-slideshow-nav',
+            selList: '.fuk-slideshow-items',
+            attrItem: 'fuk-slideshow-item',
+            selNav: '.fuk-slideshow-nav',
             Animations: Animations$2
         },
 
@@ -11503,13 +11503,13 @@
         data: {
             group: false,
             threshold: 5,
-            clsItem: 'uk-sortable-item',
-            clsPlaceholder: 'uk-sortable-placeholder',
-            clsDrag: 'uk-sortable-drag',
-            clsDragState: 'uk-drag',
-            clsBase: 'uk-sortable',
-            clsNoDrag: 'uk-sortable-nodrag',
-            clsEmpty: 'uk-sortable-empty',
+            clsItem: 'fuk-sortable-item',
+            clsPlaceholder: 'fuk-sortable-placeholder',
+            clsDrag: 'fuk-sortable-drag',
+            clsDragState: 'fuk-drag',
+            clsBase: 'fuk-sortable',
+            clsNoDrag: 'fuk-sortable-nodrag',
+            clsEmpty: 'fuk-sortable-empty',
             clsCustom: '',
             handle: false,
             pos: {}
@@ -11925,10 +11925,10 @@
             pos: 'top',
             title: '',
             delay: 0,
-            animation: ['uk-animation-scale-up'],
+            animation: ['fuk-animation-scale-up'],
             duration: 100,
-            cls: 'uk-active',
-            clsPos: 'uk-tooltip'
+            cls: 'fuk-active',
+            clsPos: 'fuk-tooltip'
         },
 
         beforeConnect: function() {
@@ -12063,7 +12063,7 @@
 
         data: {
             allow: false,
-            clsDragover: 'uk-dragover',
+            clsDragover: 'fuk-dragover',
             concurrent: 1,
             maxSize: 0,
             method: 'POST',
@@ -12261,9 +12261,9 @@
         Upload: upload
     });
 
-    each(components$1, function (component, name) { return UIkit.component(name, component); }
+    each(components$1, function (component, name) { return fukUIkit.component(name, component); }
     );
 
-    return UIkit;
+    return fukUIkit;
 
 })));

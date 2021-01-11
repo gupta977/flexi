@@ -4,7 +4,7 @@ $toolbar = new Flexi_Gallery_Toolbar();
 if (false == $clear) {
 ?>
 
-   <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+   <div class="fuk-child-width-expand@s fuk-text-center" fuk-grid>
       <div style="text-align:left;">
          <?php do_action('flexi_gallery_top_center', $atts) ?>
       </div>
@@ -53,7 +53,7 @@ if ($show_tag) {
 //var_dump($evalue);
 if (false == $clear && is_active_sidebar('flexi-gallery-sidebar') &&  is_flexi_page('primary_page', 'flexi_image_layout_settings')) {
 
-   echo "<div class='uk-grid-small' uk-grid><div class='uk-width-expand@m'>";
+   echo "<div class='fuk-grid-small' fuk-grid><div class='fuk-width-expand@m'>";
 }
 
 

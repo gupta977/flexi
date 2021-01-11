@@ -147,7 +147,7 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
 
 //Page Number
 //flexi-pagination is same as woocommerce-pagination css
-function flexi_page_navi($query, $class = "uk-pagination uk-flex-center")
+function flexi_page_navi($query, $class = "fuk-pagination fuk-flex-center")
 {
     $big   = 999999999; // need an unlikely integer
     $pages = paginate_links(array(
@@ -444,7 +444,7 @@ function flexi_login_link()
 {
 
     echo "<div class='flexi_alert-box flexi_notice'>" . __("Login", "flexi") . "</div>";
-    echo "<div class='flexi_frame_2' style='padding:30px;'>";
+    echo "<div class='flexi_frame_4' style='padding:30px;'>";
     $args = array(
         'echo'           => true,
         'redirect'       => flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings'),
