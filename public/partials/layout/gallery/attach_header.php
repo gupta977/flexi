@@ -55,7 +55,7 @@ if ($show_tag) {
 //var_dump($evalue);
 if (false == $clear && is_active_sidebar('flexi-gallery-sidebar') &&  is_flexi_page('primary_page', 'flexi_image_layout_settings')) {
 
-   echo "<div class='pure-g'><div class='pure-u-3-5'>";
+   echo "<div class='pure-g'><div class='pure-u-1-1 pure-u-md-3-5'>";
 }
 
 
