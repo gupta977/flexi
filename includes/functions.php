@@ -29,19 +29,14 @@ function flexi_author($author = '', $redirect = true)
         $linku = "";
     }
 
-    return '<div class="fuk-card fuk-card-default fuk-width-auto">
-                <div class="fuk-card-header">
-                    <div class="fuk-grid-small fuk-flex-middle" fuk-grid>
-                        <div class="fuk-width-auto">
-                            <a href="' . $linku . '">  <img class="uk-border-circle" width="40" height="40" src="' . get_avatar_url($author->user_email, $size = '50') . '"></a>
-                        </div>
-                        <div class="fuk-width-expand">
-                            <h3 class="fuk-card-title fuk-margin-remove-bottom"><a href="' . $linku . '">' . $author->first_name . ' ' . $author->last_name . '</a></h3>
-                            <p class="fuk-text-meta fuk-margin-remove-top"><time datetime="">@' . $author->user_login . '</time></p>
-                        </div>
+    return '<ul class="flexi_user-list">
+                <li>
+                    <div class="flexi-user-avatar">
+                        <a href="' . $linku . '"><img src="' . get_avatar_url($author->user_email, $size = '50') . '" width="50" alt="' . $author->display_name . '" /></a>
                     </div>
-                </div>
-            </div>';
+                        <p class="flexi-user-name"><a href="' . $linku . '">' . $author->first_name . ' ' . $author->last_name . '</a><span>@' . $author->user_login . '</span></p>
+                </li>
+            </ul>';
 }
 
 //Custom field get id
@@ -151,7 +146,7 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
 
 //Page Number
 //flexi-pagination is same as woocommerce-pagination css
-function flexi_page_navi($query, $class = "fuk-pagination fuk-flex-center")
+function flexi_page_navi($query, $class = "flexi-pagination")
 {
     $big   = 999999999; // need an unlikely integer
     $pages = paginate_links(array(
@@ -164,11 +159,11 @@ function flexi_page_navi($query, $class = "fuk-pagination fuk-flex-center")
 
     $pager = '';
     if ($pages) {
-        $pager .= '<ul class="' . $class . '">';
+        $pager .= '<nav class="' . $class . '"><ul class="page-numbers">';
         foreach ($pages as $page) {
             $pager .= "<li>$page</li>";
         }
-        $pager .= '</ul>';
+        $pager .= '</ul></nav>';
     }
     return $pager;
 }
@@ -362,26 +357,21 @@ function flexi_list_album($post, $class = "flexi-icon-list-frame")
 }
 
 //Get single album with title
-function flexi_album_single($term_slug, $class = 'fuk-card fuk-card-default fuk-width-auto')
+function flexi_album_single($term_slug, $class = 'flexi_user-list')
 {
     $term = get_term_by('slug', $term_slug, 'flexi_category');
     if ($term) {
         $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
         $link = add_query_arg("flexi_category", $term->slug, $link);
 
-        return '<div class="' . $class . '">
-        <div class="fuk-card-header">
-            <div class="fuk-grid-small fuk-flex-middle" fuk-grid>
-                <div class="fuk-width-auto">
-                    <a href="' . $link . '">  <img class="uk-border-circle" width="40" height="40" alt="' . $term->name . '" src="' . flexi_album_image($term_slug) . '"></a>
-                </div>
-                <div class="fuk-width-expand">
-                    <h3 class="fuk-card-title fuk-margin-remove-bottom"><a href="' . $link . '">' . $term->name . '</a></h3>
-                    <p class="fuk-text-meta fuk-margin-remove-top"><time datetime="">'  . __('Category', 'flexi') . '</time></p>
-                </div>
-            </div>
-        </div>
-    </div><br>';
+        return '<ul class="' . $class . '">
+                    <li>
+                        <div class="flexi-user-avatar">
+                            <a href="' . $link . '"><img src="' . flexi_album_image($term_slug) . '" width="50" alt="' . $term->name . '" /></a>
+                         </div>
+                         <p class="flexi-user-name"><a href="' . $link . '">' . $term->name . '</a><span>' . __('Category', 'flexi') . '</span></p>
+                    </li>
+                </ul>';
     } else {
         return "";
     }

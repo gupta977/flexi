@@ -25,7 +25,7 @@ class Flexi_Gallery_Toolbar
 
             if ("" != $term_slug && true == $term) {
                 //return $term->name;
-                return flexi_album_single($term_slug, 'fuk-card fuk-card-default fuk-width-auto');
+                return flexi_album_single($term_slug, 'flexi_user-list');
             }
 
             //Show User Name

@@ -77,13 +77,6 @@ class Flexi_Addon_Conflict
                         'type'              => 'checkbox',
                         'sanitize_callback' => 'intval',
                     ),
-                    array(
-                        'name'              => 'conflict_disable_uikit',
-                        'label'             => __('Disable UIkit framework', 'flexi'),
-                        'description'       => __('Disable it, <br>if UIkit-3.6.9 is used by other plugins or theme. So that, only one instance of it is available.', 'flexi'),
-                        'type'              => 'checkbox',
-                        'sanitize_callback' => 'intval',
-                    ),
 
                 ),
             );

@@ -187,10 +187,6 @@ function flexi_form_render_callback($args)
     <link rel='stylesheet' id='flexi_purecss_responsive-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/grids-responsive-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
     <link rel='stylesheet' id='flexi_purecss_buttons-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/buttons-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
     <link rel='stylesheet' id='flexi_purecss_forms-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/forms-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
-    <link rel='stylesheet' id='flexi_uikit-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/uikit/css/uikit.min.css?ver=3.0' type='text/css' media='all' />
-    <script type='text/javascript' src='<?php echo FLEXI_PLUGIN_URL; ?>/public/uikit/js/uikit.min.js?ver=3.0' id='flexi_uikit-js'></script>
-    <script type='text/javascript' src='<?php echo FLEXI_PLUGIN_URL; ?>/public/uikit/js/uikit-icons.min.js?ver=3.0' id='flexi_uikit_icon-js'></script>
-
 <?php
 
   }

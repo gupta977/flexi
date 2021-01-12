@@ -4,9 +4,18 @@ $toolbar = new Flexi_Gallery_Toolbar();
 if (false == $clear) {
 ?>
 
-   <div class="fuk-child-width-expand@s fuk-text-center" fuk-grid>
-      <div> <?php echo $toolbar->label(); ?></div>
+   <div class="pure-g">
+      <div class="pure-u-1-3" style="text-align:left;">
+         <?php do_action('flexi_gallery_top_center', $atts) ?>
+      </div>
+      <div class="pure-u-1-3" style="text-align:center;">
+         <div class="flexi_label"><?php echo $toolbar->label(); ?></div>
+      </div>
+      <div class="pure-u-1-3" style="text-align:right;">
+         <?php do_action('flexi_gallery_top_right', $atts) ?>
+      </div>
    </div>
+
 
 
 
@@ -46,7 +55,7 @@ if ($show_tag) {
 //var_dump($evalue);
 if (false == $clear && is_active_sidebar('flexi-gallery-sidebar') &&  is_flexi_page('primary_page', 'flexi_image_layout_settings')) {
 
-   echo "<div class='fuk-grid-small' fuk-grid><div class='fuk-width-expand@m'>";
+   echo "<div class='pure-g'><div class='pure-u-3-5'>";
 }
 
 
