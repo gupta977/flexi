@@ -124,6 +124,7 @@ class Flexi
 
     //Widgets
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/widgets/categories.php';
+    require_once plugin_dir_path(dirname(__FILE__)) . 'includes/widgets/tags.php';
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/widgets/gallery_widgets.php';
 
     //Admin Dashboard classes
