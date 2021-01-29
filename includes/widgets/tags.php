@@ -79,41 +79,9 @@ class flexi_tag_Widget extends WP_Widget
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>">
             <br>
-            <br>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Select Parent'); ?></label>
-            <?php
-            wp_dropdown_categories(array(
-                'show_option_none'  => '-- ' . __('Select Parent', 'flexi') . ' --',
-                'option_none_value' => 0,
-                'taxonomy'          => 'flexi_category',
-                'name'              => $this->get_field_name('parent'),
-                'class'             => 'widefat',
-                'orderby'           => 'name',
-                'selected'          => !empty($instance['parent']) ? (int) $instance['parent'] : 0,
-                'hierarchical'      => true,
-                'depth'             => 20,
-                'show_count'        => false,
-                'hide_empty'        => false,
-            ));
 
-            $check_imm_child_only = !empty($instance['imm_child_only']) ? 1 : 0;
-            $check_hide_empty     = !empty($instance['hide_empty']) ? 1 : 0;
-            $check_show_count     = !empty($instance['show_count']) ? 1 : 0;
-            ?>
-            <br><br>
-            <input <?php checked($check_imm_child_only); ?> id="<?php echo $this->get_field_id('imm_child_only'); ?>" name="<?php echo $this->get_field_name('imm_child_only'); ?>" type="checkbox" />
-            <label for="<?php echo $this->get_field_id('imm_child_only'); ?>"><?php _e('Show only the immediate children of the selected category.', 'flexi'); ?></label>
-            <br>
-        </p>
-        <p>
-            <input <?php checked($check_hide_empty); ?> id="<?php echo $this->get_field_id('hide_empty'); ?>" name="<?php echo $this->get_field_name('hide_empty'); ?>" type="checkbox" />
-            <label for="<?php echo $this->get_field_id('hide_empty'); ?>"><?php _e('Hide Empty Categories', 'flexi'); ?></label>
         </p>
 
-        <p>
-            <input <?php checked($check_show_count); ?> id="<?php echo $this->get_field_id('show_count'); ?>" name="<?php echo $this->get_field_name('show_count'); ?>" type="checkbox" />
-            <label for="<?php echo $this->get_field_id('show_count'); ?>"><?php _e('Show Listing Counts', 'flexi'); ?></label>
-        </p>
 <?php
     }
 

@@ -124,7 +124,9 @@ You can also add/remove form fields based on pages & posts.
 = Widgets =
 
 * **List Album** List all or selected album at sidebar or any widget location.
+* **List Tags** List all tags into dropdown list at sidebar or any widget location.
 * **Flexi Showcase Widgets** - Easily place gallery at sidebar based on latest, modified & random post (Elementor supported) 
+* **Flexi Gallery Sidebar** - This is special sidebar for gallery page where any widgets can be added.
 
 = Category & Tags =
 * **Album** - Administrator can create unlimited deep tree category.
@@ -149,7 +151,7 @@ You can also add/remove form fields based on pages & posts.
 
 * **Batch images upload** - Allow to upload batch of the images by one click. Just drag and drop set of the gallery images and it's upload automatically to the server.
 * **Google reCaptcha** support for form security while submitting form.
-* **Custom Fields** extra 7 fields on top of free version. 
+* **Custom Fields** extra 17 fields on top of free version. 
 * **Edit Post** Let visitors to update the submitted post with own set of fields. 
 * **More Mime Types** - Add more file type to allow visitors to upload. (Thanks to sponsor: Rekha)
 * **User File Limit** - Limit the number of post to get submitted based on user roles. (Thanks to sponsor: Shane)
@@ -200,9 +202,12 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 3.2 =
+* Added dropdown widgets to list tags
+
 = 3.1 = 
 * Added shortcode holder to display other plugins shortcode into detail & popup
-* Introduced primary gallery widget attractive
+* Introduced primary gallery sidebar for widgets
 
 
 = 3.0 =
