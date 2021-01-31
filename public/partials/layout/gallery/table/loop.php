@@ -47,6 +47,7 @@ $data = flexi_image_data('thumbnail', get_the_ID(), $popup);
             echo '<div class="' . $data['popup'] . '">';
             echo '<a ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">';
             echo '<img src="' . esc_url(flexi_image_src('thumbnail', $post)) . '">';
+            echo '<div class="flexi_figcaption">' . $data['title'] . '</div>';
             echo '</a>';
             echo '</div>';
             ?>

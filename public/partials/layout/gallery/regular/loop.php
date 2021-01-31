@@ -10,19 +10,20 @@ echo '<img src="' . esc_url(flexi_image_src('medium', $post)) . '" class="flexi_
 ?>
 
 
-                  <div id="flexi_info" class="<?php echo $hover_caption; ?>">
-                        <div class="flexi_title"><?php echo $data['title']; ?></div>
-                        <div class="flexi_p"><?php echo flexi_excerpt(); ?></div>
-                  </div>
+<div id="flexi_info" class="<?php echo $hover_caption; ?>">
+      <div class="flexi_title"><?php echo $data['title']; ?></div>
+      <div class="flexi_p"><?php echo flexi_excerpt(); ?></div>
+</div>
+<div class="flexi_figcaption"><?php echo $data['title']; ?></div>
 <?php
 echo '</a>';
 echo '</div>';
 echo "</div>";
 echo "</div>";
 //echo "</div>";
- ?>
- <div class="godude-desc flexi_desc_<?php echo get_the_ID(); ?>">
-    <p><?php echo flexi_custom_field_loop($post, 'popup', 1, false) ?></p>
-    <p><?php echo flexi_excerpt(); ?></p>
-    <p><?php echo flexi_show_icon_grid(); ?></p>
+?>
+<div class="godude-desc flexi_desc_<?php echo get_the_ID(); ?>">
+      <p><?php echo flexi_custom_field_loop($post, 'popup', 1, false) ?></p>
+      <p><?php echo flexi_excerpt(); ?></p>
+      <p><?php echo flexi_show_icon_grid(); ?></p>
 </div>

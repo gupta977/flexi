@@ -20,7 +20,6 @@ $data = flexi_image_data('thumbnail', get_the_ID(), $popup);
 </div>
 <div style="display: none;" id="flexi_inline_<?php echo get_the_ID(); ?>">
       <h2><?php echo $data['title']; ?></h2>
-      <p>You are awesome.</p>
 </div>
 <div class="godude-desc flexi_desc_<?php echo get_the_ID(); ?>">
       <p><?php echo flexi_custom_field_loop($post, 'popup', 1, false) ?></p>

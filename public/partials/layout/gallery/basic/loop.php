@@ -17,6 +17,7 @@ echo '<div class="flexi_gallery_grid">';
         <div class="flexi_title"><?php echo $data['title']; ?></div>
         <div class="flexi_p"><?php echo flexi_excerpt(); ?></div>
     </div>
+    <div class="flexi_figcaption"><?php echo $data['title']; ?></div>
     <?php
     echo '</a>';
     echo '</div>';

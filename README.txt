@@ -2,9 +2,9 @@
 Contributors: odude
 Donate link: https://odude.com/
 Tags: gallery, photo gallery, image gallery, video gallery, responsive gallery
-Requires at least: 4.0.0
+Requires at least: 5.0.0
 Requires PHP: 5.5
-Tested up to: 5.5
+Tested up to: 5.6
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -85,7 +85,7 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 = WORKS GREAT WITH =
 
 * **Ultimate-Member plugin**. It will display user submitted records on user profile tab.
-* **BuddyPress plugin**. It will display user submitted records on user profile section.
+* **BuddyPress plugin**. It will display user submitted records on user profile section and BuddyPress activity with image thumbnail.
 
 = Stress Free Gallery =
 As on the title, just copy paste `[flexi-form attach="true"]` to any wp-page and wp-post. 
@@ -202,6 +202,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 3.3 =
+* BuddyPress : Image posted will be visible at BuddyPress activity
+* Category page now have gallery sidebar for widgets
+
 = 3.2 =
 * Added dropdown widgets to list tags
 
