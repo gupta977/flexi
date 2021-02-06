@@ -1,6 +1,9 @@
 <?php
 class Flexi_Addon_BuddyPress
 {
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/buddypress-user-gallery/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+
+
     public function __construct()
     {
 
@@ -28,7 +31,7 @@ class Flexi_Addon_BuddyPress
                 array(
                     'id'          => 'flexi_buddypress_settings',
                     'title'       => __('BuddyPress', 'flexi'),
-                    'description' => __('If you have installed BuddyPress plugin, user can see own submitted images at their profile page. https://wordpress.org/plugins/buddypress/', 'flexi'),
+                    'description' => __('If you have installed BuddyPress plugin, user can see own submitted images at their profile page. https://wordpress.org/plugins/buddypress/', 'flexi') . ' ' . $this->help,
                     'tab'         => 'gallery',
                 ),
             );
@@ -41,12 +44,20 @@ class Flexi_Addon_BuddyPress
     public function add_extension($new)
     {
 
+        $enable_addon = flexi_get_option('enable_buddypress', 'flexi_extension', 0);
+        if ("1" == $enable_addon) {
+
+            $description = ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=gallery&section=flexi_buddypress_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a>';
+        } else {
+            $description = '';
+        }
+
         $fields = array(
             'flexi_extension' => array(
                 array(
                     'name'              => 'enable_buddypress',
                     'label'             => __('Enable BuddyPress', 'flexi'),
-                    'description'       => __('Displays tab on user profile page of BuddyPress members page.', 'flexi') . ' https://wordpress.org/plugins/buddypress/ <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=gallery&section=flexi_buddypress_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a>',
+                    'description'       => __('Displays tab on user profile page of BuddyPress members page.', 'flexi') . ' ' . $this->help . ' ' . $description,
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
 

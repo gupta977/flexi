@@ -1,6 +1,7 @@
 <?php
 class Flexi_Addon_Custom_Fields
 {
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/custom-field/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
     public function __construct()
     {
 
@@ -26,7 +27,7 @@ class Flexi_Addon_Custom_Fields
                 array(
                     'id'          => 'flexi_custom_fields',
                     'title'       => __('Flexi Custom Fields', 'flexi'),
-                    'description' => __('These are the reserved input field name assigned at submission form with [flexi-form-tag name="....."] shortcode. Custom fields display is based on layouts used. It will not work for all layouts.', 'flexi'),
+                    'description' => __('These are the reserved input field name assigned at submission form with [flexi-form-tag name="....."] shortcode. Custom fields display is based on layouts used. It will not work for all layouts.', 'flexi') . ' ' . $this->help,
                     'tab'         => 'form',
                 ),
             );
@@ -38,11 +39,20 @@ class Flexi_Addon_Custom_Fields
     //Add enable/disable option at extension tab
     public function add_extension($new)
     {
+
+
+        $enable_addon = flexi_get_option('enable_custom_fields', 'flexi_extension', 0);
+        if ("1" == $enable_addon) {
+
+            $description = ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=form&section=flexi_custom_fields') . '"><span class="dashicons dashicons-admin-tools"></span></a>';
+        } else {
+            $description = '';
+        }
         $fields = array('flexi_extension' => array(
             array(
                 'name'              => 'enable_custom_fields',
                 'label'             => __('Enable Flexi Custom Fields', 'flexi'),
-                'description'       => __('Manage Flexi custom fields at gallery & detail page.', 'flexi') . ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=form&section=flexi_custom_fields') . '"><span class="dashicons dashicons-admin-tools"></span></a>',
+                'description'       => __('Manage Flexi custom fields at gallery & detail page.', 'flexi') . ' ' . $this->help . ' ' . $description,
                 'type'              => 'checkbox',
                 'sanitize_callback' => 'intval',
 

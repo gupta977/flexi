@@ -1,6 +1,10 @@
 <?php
 class Flexi_Addon_Mime_Type
 {
+
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/manage-mime-type/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+
+
     public function __construct()
     {
 
@@ -26,7 +30,7 @@ class Flexi_Addon_Mime_Type
                 array(
                     'id'          => 'flexi_mime_type',
                     'title'       => __('Manage Mime Type', 'flexi'),
-                    'description' => __('Add new file type to upload.', 'flexi'),
+                    'description' => __('Add new file type to upload.', 'flexi') . ' ' . $this->help,
                     'tab'         => 'form',
                 ),
             );
@@ -38,12 +42,20 @@ class Flexi_Addon_Mime_Type
     //Add enable/disable option at extension tab
     public function add_extension($new)
     {
+
+        $enable_addon = flexi_get_option('enable_mime_type', 'flexi_extension', 0);
+        if ("1" == $enable_addon) {
+
+            $description = ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=form&section=flexi_mime_type') . '"><span class="dashicons dashicons-admin-tools"></span></a>';
+        } else {
+            $description = '';
+        }
         $fields = array(
             'flexi_extension' => array(
                 array(
                     'name'              => 'enable_mime_type',
                     'label'             => __('Enable Mime Type', 'flexi'),
-                    'description'       => __('Select the list of file type user is allowed to upload.', 'flexi') . ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=form&section=flexi_mime_type') . '"><span class="dashicons dashicons-admin-tools"></span></a>',
+                    'description'       => __('Select the list of file type user is allowed to upload.', 'flexi') . ' ' . $this->help . ' ' . $description,
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
 

@@ -1,7 +1,7 @@
-=== Flexi Guest Upload ===
+=== Flexi - Frontend Post ===
 Contributors: odude
 Donate link: https://odude.com/
-Tags: gallery, photo gallery, image gallery, video gallery, responsive gallery
+Tags: gallery, photo gallery, image gallery, video gallery, Frontend, visitor
 Requires at least: 5.0.0
 Requires PHP: 5.5
 Tested up to: 5.6
@@ -14,7 +14,7 @@ Visitors submitted images, video, documents, music, youtube file without registr
 == Description ==
 
 No more looking for fast, easy gallery plugin with simple and very beautiful, highly customizable design.
-With our plugin you can let your visitors to post images, youtube video, vimeo video, PDF, MP3, MP4 & type of files from frontend without login and convert those content into gallery. If you allow membership, visitors can manage their submitted post & administrator have option for it's visibility. At the same time WordPress professionals get advanced tools and freedom of creativity. 
+With our plugin you can let your visitors to post images, YouTube , vimeo , PDF, MP3, MP4 & type of files from frontend without login and convert those content into gallery. If you allow membership, visitors can manage their submitted post & administrator have option for it's visibility. At the same time WordPress professionals get advanced tools and freedom of creativity. 
 Just download and use blocks to generate gallery & forms.
 Fall in Love with this plugin like we do!
 
