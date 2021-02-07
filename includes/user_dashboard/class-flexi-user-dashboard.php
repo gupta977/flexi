@@ -1,8 +1,9 @@
 <?php
 //User dashboard
-
 class Flexi_User_Dashboard
 {
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/information/my-gallery-page/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+
     public function __construct()
     {
         add_shortcode('flexi-user-dashboard', array($this, 'flexi_user_dashboard'));
@@ -32,7 +33,7 @@ class Flexi_User_Dashboard
             array(
                 'id'          => 'flexi_user_dashboard_settings',
                 'title'       => __('User Dashboard', 'flexi'),
-                'description' => __('Configuration for user dashboard page.', 'flexi'),
+                'description' => __('Configuration for user dashboard page.', 'flexi') . ' ' . $this->help,
                 'tab'         => 'general',
             ),
         );

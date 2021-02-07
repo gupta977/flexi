@@ -192,6 +192,12 @@ class FLEXI_Admin_Settings
             $file_size_limit = 100;
         }
 
+        $primary_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/information/primary-gallery-page/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+        $popup_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/customize-lightbox-or-popup/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+        $submission_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/shortcode/flexi-form/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+        $edit_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/modify-submission-form/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+
+
         $fields = array(
 
             'flexi_gallery_appearance_settings' => array(
@@ -251,7 +257,7 @@ class FLEXI_Admin_Settings
                 array(
                     'name'              => 'primary_page',
                     'label'             => __('Primary Gallery Page', 'flexi'),
-                    'description'       => __('Flexi home page with shortcode [flexi-primary]', 'flexi'),
+                    'description'       => __('Flexi home page with shortcode [flexi-primary]', 'flexi') . ' ' . $primary_help,
                     'type'              => 'pages',
                     'sanitize_callback' => 'sanitize_key',
                 ),
@@ -347,7 +353,7 @@ class FLEXI_Admin_Settings
                 array(
                     'name'              => 'submission_form',
                     'label'             => __('Submission form', 'flexi'),
-                    'description'       => __('Page which will be used at frontend to let users to submit flexi post. Link this page in your frontend menu.', 'flexi'),
+                    'description'       => __('Page which will be used at frontend to let users to submit flexi post. Link this page in your frontend menu.', 'flexi') . ' ' . $submission_help,
                     'type'              => 'pages',
                     'sanitize_callback' => 'sanitize_key',
                 ),
@@ -355,7 +361,7 @@ class FLEXI_Admin_Settings
                 array(
                     'name'              => 'edit_flexi_page',
                     'label'             => __('Edit Flexi Post Page', 'flexi'),
-                    'description'       => __('Page with shortcode [flexi-form] with edit="true" as parameter. Lets visitor to edit submitted post.', 'flexi'),
+                    'description'       => __('Page with shortcode [flexi-form] with edit="true" as parameter. Lets visitor to edit submitted post.', 'flexi') . ' ' . $edit_help,
                     'type'              => 'pages',
                     'sanitize_callback' => 'sanitize_key',
                 ),
@@ -395,7 +401,7 @@ class FLEXI_Admin_Settings
                 array(
                     'name'              => 'lightbox_switch',
                     'label'             => __('Enable Lightbox or Popup', 'flexi'),
-                    'description'       => __('If popup is unchecked, It will open content in single dedicated page.', 'flexi'),
+                    'description'       => __('If popup is unchecked, It will open content in single dedicated page.', 'flexi') . ' ' . $popup_help,
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
                 ),

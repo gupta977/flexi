@@ -1,6 +1,10 @@
 <?php
 class Flexi_Addon_FFMPEG
 {
+
+  private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/information/ffmpeg-video-encoding/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+
+
   public function __construct()
   {
     add_filter('flexi_settings_sections', array($this, 'add_section'));
@@ -31,7 +35,7 @@ class Flexi_Addon_FFMPEG
         array(
           'id'          => 'flexi_ffmpeg_setting',
           'title'       => 'FFMPEG ' . __('settings', 'flexi'),
-          'description' => '<b><a href="https://ffmpeg.org/">FFMPEG</a></b> PHP ' . __('extension must be installed on your server.<br><b>shell_exec</b> should be enabled by PHP or purchase <a href="https://odude.com/product/flexi-library-ffmpeg/">FFMPEG- Flexi Library</a><br>This will only get applied to newly submitted video files.<br>Processing time based on video file sizes.<br>Thumbnail are based on media settings, medium size<br>Animated video results poor quality. Install Flexi-PRO for higher resolution.<hr>FFMPEG Library required purchase of flexi-pro<hr>' . flexi_ffmpeg_report() . '<hr>This library requires a working FFMpeg install. You will need both FFMpeg and FFProbe binaries to use it.', 'flexi'),
+          'description' => $this->help . ' <b><a href="https://ffmpeg.org/">FFMPEG</a></b> PHP ' . __('extension must be installed on your server.<br><b>shell_exec</b> should be enabled by PHP or purchase <a href="https://odude.com/product/flexi-library-ffmpeg/">FFMPEG- Flexi Library</a><br>This will only get applied to newly submitted video files.<br>Processing time based on video file sizes.<br>Thumbnail are based on media settings, medium size<br>Animated video results poor quality. Install Flexi-PRO for higher resolution.<hr>FFMPEG Library required purchase of flexi-pro<hr>' . flexi_ffmpeg_report() . '<hr>This library requires a working FFMpeg install. You will need both FFMpeg and FFProbe binaries to use it.', 'flexi'),
           'tab'         => 'general',
         ),
       );
@@ -51,12 +55,21 @@ class Flexi_Addon_FFMPEG
   //Add enable/disable option at extension tab
   public function add_extension($new)
   {
+
+    $enable_addon = flexi_get_option('enable_ffmpeg', 'flexi_extension', 0);
+    if ("1" == $enable_addon) {
+
+      $description = ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=general&section=flexi_ffmpeg_setting') . '"><span class="dashicons dashicons-admin-tools"></span></a>';
+    } else {
+      $description = '';
+    }
+
     $fields = array(
       'flexi_extension' => array(
         array(
           'name'              => 'enable_ffmpeg',
           'label'             => __('Video', 'flexi') . ' FFMPEG ' . __('encoding', 'flexi'),
-          'description'       => __('This will generate thumbnail for video files like mp4,3gp,mov. Your server must have ffmpeg installed.', 'flexi') . ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=general&section=flexi_ffmpeg_setting') . '"><span class="dashicons dashicons-admin-tools"></span></a>',
+          'description'       => __('This will generate thumbnail for video files like mp4,3gp,mov. Your server must have ffmpeg installed.', 'flexi') . ' ' . $this->help . ' ' . $description,
           'type'              => 'checkbox',
           'sanitize_callback' => 'intval',
 
