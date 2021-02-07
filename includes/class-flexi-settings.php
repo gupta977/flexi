@@ -371,7 +371,7 @@ class FLEXI_Admin_Settings
                 array(
                     'name'              => 'edit_flexi_icon',
                     'label'             => __('Edit icon', 'flexi') . '<span class="dashicons dashicons-edit"></span>',
-                    'description'       => __('Edit icon at gallery & detail page.', 'flexi'),
+                    'description'       => __('Edit icon at gallery & detail page.', 'flexi') . ' ' . $edit_help,
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
                 ),
