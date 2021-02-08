@@ -1,6 +1,8 @@
 <?php
 class Flexi_Addon_Standalone
 {
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/sub-gallery/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+
     public function __construct()
     {
 
@@ -27,7 +29,7 @@ class Flexi_Addon_Standalone
                 array(
                     'id'          => 'flexi_standalone_settings',
                     'title'       => __('Sub-Gallery', 'flexi'),
-                    'description' => __('You can have sub-gallery of primary post. It will not display in main gallery.', 'flexi'),
+                    'description' => __('You can have sub-gallery of primary post. It will not display in main gallery.', 'flexi') . ' ' . $this->help,
                     'tab'         => 'gallery',
                 ),
             );
@@ -40,11 +42,19 @@ class Flexi_Addon_Standalone
     public function add_extension($new)
     {
 
+        $enable_addon = flexi_get_option('enable_mime_type', 'flexi_extension', 0);
+        if ("1" == $enable_addon) {
+
+            $description = ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=gallery&section=flexi_standalone_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a>';
+        } else {
+            $description = '';
+        }
+
         $fields = array('flexi_extension' => array(
             array(
                 'name'              => 'enable_standalone',
                 'label'             => __('Enable Sub-Gallery', 'flexi'),
-                'description'       => __('Enable standalone sub-gallery of primary image or post.', 'flexi') . '<a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=gallery&section=flexi_standalone_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a>',
+                'description'       => __('Enable standalone sub-gallery of primary image or post.', 'flexi') . ' ' . $this->help . ' ' . $description,
                 'type'              => 'checkbox',
                 'sanitize_callback' => 'intval',
 
