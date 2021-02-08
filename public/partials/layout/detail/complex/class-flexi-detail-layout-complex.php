@@ -54,7 +54,7 @@ class Flexi_Detail_Layout_Complex
       "Tags"           => "tags",
       "Icon Grid"      => "icon_grid",
       "Custom Fields"  => "custom_fields",
-      "Standalone Sub-Gallery" => "standalone"
+      "Sub-Gallery" => "standalone"
       // "Wordpress <a href='" . admin_url('widgets.php') . "'>Widgets</a>" => "widgets",
     );
 

@@ -54,7 +54,7 @@ class Flexi_Addon_Standalone
             array(
                 'name'              => 'enable_standalone',
                 'label'             => __('Enable Sub-Gallery', 'flexi'),
-                'description'       => __('Enable standalone sub-gallery of primary image or post.', 'flexi') . ' ' . $this->help . ' ' . $description,
+                'description'       => __('Enable sub-gallery of primary image or post.', 'flexi') . ' ' . $this->help . ' ' . $description,
                 'type'              => 'checkbox',
                 'sanitize_callback' => 'intval',
 

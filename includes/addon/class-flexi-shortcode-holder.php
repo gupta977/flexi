@@ -1,6 +1,9 @@
 <?php
 class Flexi_Addon_Shortcode_Holder
 {
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/shortcode-holder/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+
+
     public function __construct()
     {
 
@@ -28,7 +31,7 @@ class Flexi_Addon_Shortcode_Holder
                 array(
                     'id'          => 'flexi_shortcode_holder_settings',
                     'title'       => __('Shortcode Holder', 'flexi'),
-                    'description' => __('Display other plugins shortcode at detail page & popup page. Specify shortcode display location at layout settings. Useful shortcode could be share button, contact button and so on.', 'flexi'),
+                    'description' => __('Display other plugins shortcode or text at detail page & popup page. Specify shortcode display location at layout settings. Useful shortcode could be share button, contact button, banner and so on.', 'flexi') . ' ' . $this->help,
                     'tab'         => 'detail',
                 ),
             );
@@ -41,12 +44,22 @@ class Flexi_Addon_Shortcode_Holder
     public function add_extension($new)
     {
 
+
+        $enable_addon = flexi_get_option('enable_shortcode_holder', 'flexi_extension', 0);
+        if ("1" == $enable_addon) {
+
+            $description = ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=detail&section=flexi_shortcode_holder_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a>';
+        } else {
+            $description = '';
+        }
+
+
         $fields = array(
             'flexi_extension' => array(
                 array(
                     'name'              => 'enable_shortcode_holder',
                     'label'             => __('Enable Shortcode Holder', 'flexi'),
-                    'description'       => __('External plugin shortcode to display at detail & popup page. ', 'flexi') . '<a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=detail&section=flexi_shortcode_holder_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a>',
+                    'description'       => __('External plugin shortcode or text to display at detail & popup page. ', 'flexi') . ' ' . $this->help . ' ' . $description,
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
 
@@ -70,27 +83,27 @@ class Flexi_Addon_Shortcode_Holder
                     array(
                         'name'        => 'flexi_shortcode_1',
                         'type'        => 'textarea',
-                        'label'       => __('1st Shortcode', 'flexi'),
+                        'label'       => __('1st Shortcode/text', 'flexi'),
                         'description' => __('Insert no.1 shortcode', 'flexi'),
                     ),
                     array(
                         'name'        => 'flexi_shortcode_2',
                         'type'        => 'textarea',
-                        'label'       => __('2nd Shortcode', 'flexi'),
+                        'label'       => __('2nd Shortcode/text', 'flexi'),
                         'description' => __('Insert no.2 shortcode', 'flexi'),
                     ),
 
                     array(
                         'name'        => 'flexi_shortcode_3',
                         'type'        => 'textarea',
-                        'label'       => __('3rd Shortcode', 'flexi'),
+                        'label'       => __('3rd Shortcode/text', 'flexi'),
                         'description' => __('Insert no.3 shortcode', 'flexi'),
                     ),
 
                     array(
                         'name'        => 'flexi_shortcode_4',
                         'type'        => 'textarea',
-                        'label'       => __('4th Shortcode', 'flexi'),
+                        'label'       => __('4th Shortcode/text', 'flexi'),
                         'description' => __('Insert no.4 shortcode', 'flexi'),
                     ),
 
@@ -122,20 +135,24 @@ class Flexi_Addon_Shortcode_Holder
     //Display into detail or popup page based on do_action
     public function flexi_execute_element_callback($value)
     {
-        if ('flexi_shortcode_1' == $value) {
-            $get_shortcode = flexi_get_option('flexi_shortcode_1', 'flexi_shortcode_holder_settings', '');
-            echo do_shortcode($get_shortcode);
-        } else if ('flexi_shortcode_2' == $value) {
-            $get_shortcode = flexi_get_option('flexi_shortcode_2', 'flexi_shortcode_holder_settings', '');
-            echo do_shortcode($get_shortcode);
-        } else if ('flexi_shortcode_3' == $value) {
-            $get_shortcode = flexi_get_option('flexi_shortcode_3', 'flexi_shortcode_holder_settings', '');
-            echo do_shortcode($get_shortcode);
-        } else if ('flexi_shortcode_4' == $value) {
-            $get_shortcode = flexi_get_option('flexi_shortcode_4', 'flexi_shortcode_holder_settings', '');
-            echo do_shortcode($get_shortcode);
-        } else {
-            echo '';
+
+        $enable_addon = flexi_get_option('enable_shortcode_holder', 'flexi_extension', 0);
+        if ("1" == $enable_addon) {
+            if ('flexi_shortcode_1' == $value) {
+                $get_shortcode = flexi_get_option('flexi_shortcode_1', 'flexi_shortcode_holder_settings', '');
+                echo do_shortcode($get_shortcode);
+            } else if ('flexi_shortcode_2' == $value) {
+                $get_shortcode = flexi_get_option('flexi_shortcode_2', 'flexi_shortcode_holder_settings', '');
+                echo do_shortcode($get_shortcode);
+            } else if ('flexi_shortcode_3' == $value) {
+                $get_shortcode = flexi_get_option('flexi_shortcode_3', 'flexi_shortcode_holder_settings', '');
+                echo do_shortcode($get_shortcode);
+            } else if ('flexi_shortcode_4' == $value) {
+                $get_shortcode = flexi_get_option('flexi_shortcode_4', 'flexi_shortcode_holder_settings', '');
+                echo do_shortcode($get_shortcode);
+            } else {
+                echo '';
+            }
         }
     }
 }
