@@ -20,6 +20,8 @@ Fall in Love with this plugin like we do!
 
 Look Screenshots below for quick understanding of it's scope. You can do lot more then listed. :)
 
+[FLEXI PLUGIN](https://odude.com/flexi-plugin/)
+
 == Live Demo ==
 [Masonry Layout](https://odude.com/demo/flexi/flexi-gallery/)
 [Wide Layout](https://odude.com/demo/flexi/flexi-gallery-wide/)
@@ -136,15 +138,12 @@ You can also add/remove form fields based on pages & posts.
 * **Album Thumbnail** - Admin can set own custom thumbnail image.  
 
 = Language Support =
-* German language (de_DE) (Thanks to contributor: Radek)
-* Italian Language (it_IT) (Thanks to contributor: Avelino)
+* German language (de_DE)
+* Italian Language (it_IT)
 * Dutch language (nl_NL)
 * Hindi India language (hi_IN) (Thanks to Aaditya Naman Gupta)
-* Russian Language (ru_RU)
 * Spanish Language (es_ES)
 * French Language (fr_FR)
-* Japanese Language (ja)
-* Portuguese Language (pa_PT)
 * English Language (en_US)
 
 = PRO KEY FEATURES =
@@ -153,13 +152,13 @@ You can also add/remove form fields based on pages & posts.
 * **Google reCaptcha** support for form security while submitting form.
 * **Custom Fields** extra 17 fields on top of free version. 
 * **Edit Post** Let visitors to update the submitted post with own set of fields. 
-* **More Mime Types** - Add more file type to allow visitors to upload. (Thanks to sponsor: Rekha)
-* **User File Limit** - Limit the number of post to get submitted based on user roles. (Thanks to sponsor: Shane)
+* **More Mime Types** - Add more file type to allow visitors to upload. 
+* **User File Limit** - Limit the number of post to get submitted based on user roles.
 * **File Size** - Visitors can upload more then 100MB cap limit to 9999MB.
 * **Animated thumbnail** - High quality animated gif file for mp4 and other video formats
 
 > If any suggestion, contact me directly at navneet@odude.com
-> Byte update at https://github.com/gupta977/flexi/tree/beta
+> Byte update at https://github.com/gupta977/flexi/
 
 == Installation ==
 
@@ -206,6 +205,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * BuddyPress : Image posted will be visible at BuddyPress activity
 * Category page now have gallery sidebar for widgets
 * Lots of help link added through out the setting page
+* Removed Russian, Japanese language
 
 = 3.2 =
 * Added dropdown widgets to list tags
