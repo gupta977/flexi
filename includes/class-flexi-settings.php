@@ -118,6 +118,8 @@ class FLEXI_Admin_Settings
      */
     public function get_sections()
     {
+        $category_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/shortcode/flexi-category/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+
         $sections = array(
             array(
                 'id'    => 'flexi_icon_settings',
@@ -151,6 +153,7 @@ class FLEXI_Admin_Settings
             array(
                 'id'    => 'flexi_categories_settings',
                 'title' => __('Category & Tags', 'flexi'),
+                'description' => __('Categories and tags management', 'flexi') . ' ' . $category_help,
                 'tab'   => 'gallery',
             ),
 
@@ -196,6 +199,7 @@ class FLEXI_Admin_Settings
         $popup_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/customize-lightbox-or-popup/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
         $submission_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/shortcode/flexi-form/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
         $edit_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/modify-submission-form/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+        $category_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/shortcode/flexi-category/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
 
 
         $fields = array(
@@ -439,7 +443,7 @@ class FLEXI_Admin_Settings
                 array(
                     'name'              => 'category_page',
                     'label'             => __('Category Page', 'flexi'),
-                    'description'       => __('Page which will be used to display albums. Should contain [flexi-category] as shortcode.', 'flexi'),
+                    'description'       => __('Page which will be used to display albums. Should contain [flexi-category] as shortcode.', 'flexi') . ' ' . $category_help,
                     'type'              => 'pages',
                     'sanitize_callback' => 'sanitize_key',
                 ),
