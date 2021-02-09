@@ -50,7 +50,7 @@ class Flexi_User_Dashboard
             array(
                 'name'              => 'my_gallery',
                 'label'             => __('Member "User Dashboard" Page', 'flexi'),
-                'description'       => __('Page with shortcode [flexi-user-dashboard]. Display gallery of own posts.', 'flexi'),
+                'description'       => __('Page with shortcode [flexi-user-dashboard]. Display gallery of own posts.', 'flexi') . ' ' . $this->help,
                 'type'              => 'pages',
                 'sanitize_callback' => 'sanitize_key',
             ),

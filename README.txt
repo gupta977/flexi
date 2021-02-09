@@ -205,6 +205,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 3.3 =
 * BuddyPress : Image posted will be visible at BuddyPress activity
 * Category page now have gallery sidebar for widgets
+* Lots of help link added through out the setting page
 
 = 3.2 =
 * Added dropdown widgets to list tags

@@ -85,6 +85,14 @@ class Flexi_Addon_BuddyPress
                         'size'              => 'medium',
                         'sanitize_callback' => 'sanitize_text_field',
                     ),
+                    array(
+                        'name'              => 'enable_buddypress_activity',
+                        'label'             => __('Enable BuddyPress Activity', 'flexi'),
+                        'description'       => __('Displays activity when any flexi post is posted.', 'flexi'),
+                        'type'              => 'checkbox',
+                        'sanitize_callback' => 'intval',
+
+                    ),
 
                 ),
             );
@@ -139,7 +147,8 @@ class Flexi_Addon_BuddyPress
     public function add_into_activity($post_id)
     {
         $enable_addon = flexi_get_option('enable_buddypress', 'flexi_extension', 0);
-        if ("1" == $enable_addon) {
+        $enable_activity = flexi_get_option('enable_buddypress_activity', 'flexi_buddypress_settings', 1);
+        if ("1" == $enable_addon && "1" == $enable_activity) {
             if (is_user_logged_in()) {
                 $link   = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
                 $author = wp_get_current_user();
