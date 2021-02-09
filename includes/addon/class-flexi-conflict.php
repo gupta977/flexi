@@ -1,6 +1,9 @@
 <?php
 class Flexi_Addon_Conflict
 {
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/troubleshooting/conflict-fixes/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+
+
     public function __construct()
     {
 
@@ -26,7 +29,7 @@ class Flexi_Addon_Conflict
                 array(
                     'id'          => 'flexi_conflict_settings',
                     'title'       => __('Conflict & Fixes', 'flexi'),
-                    'description' => __('Try to fix the conflicts occurred with other plugins & theme.', 'flexi'),
+                    'description' => __('Try to fix the conflicts occurred with other plugins & theme.', 'flexi') . ' ' . $this->help,
                     'tab'         => 'general',
                 ),
             );
@@ -38,12 +41,20 @@ class Flexi_Addon_Conflict
     //Add enable/disable option at extension tab
     public function add_extension($new)
     {
+        $enable_addon = flexi_get_option('enable_conflict_fixes', 'flexi_extension', 0);
+        if ("1" == $enable_addon) {
+
+            $description = ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=general&section=flexi_conflict_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a>';
+        } else {
+            $description = '';
+        }
+
         $fields = array(
             'flexi_extension' => array(
                 array(
                     'name'              => 'enable_conflict_fixes',
                     'label'             => __('Conflict & Fixes', 'flexi'),
-                    'description'       => __('Try to fix the conflicts occurred with other plugins & theme.', 'flexi') . ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=general&section=flexi_conflict_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a>',
+                    'description'       => __('Try to fix the conflicts occurred with other plugins & theme.', 'flexi') . ' ' . $this->help . ' ' . $description,
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
 
