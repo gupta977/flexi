@@ -1120,3 +1120,10 @@ div.tagsinput div {
   display: inline-block;
   vertical-align: middle;
 }
+
+.flexi_icon_link:before {
+  font-family: "dashicons";
+  content: "\f103";
+  display: inline-block;
+  vertical-align: middle;
+}

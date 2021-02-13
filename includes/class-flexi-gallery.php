@@ -1,10 +1,11 @@
 <?php
-//[flexi-gallery] shortcode
-//Below query works only for page number
-//For load more & scroll use flexi_load_more.php
-
 class Flexi_Shortcode_Gallery
 {
+
+  //[flexi-gallery] shortcode
+  //Below query works only for page number
+  //For load more & scroll use flexi_load_more.php
+
   public $pop;
   public function __construct()
   {
@@ -465,7 +466,8 @@ class Flexi_Shortcode_Gallery
       </script>
 
     <?php
-      echo ob_get_clean();
+      $put = ob_get_clean();
+      echo $put;
     }
   }
 
