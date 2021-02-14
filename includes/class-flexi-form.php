@@ -632,7 +632,7 @@ action="' . admin_url("admin-ajax.php") . '"
     }
 
     //Add post again button after form submit
-    public function flexi_add_icon_submit_toolbar($icon, $id = '', $bool)
+    public function flexi_add_icon_submit_toolbar($icon, $id = '', $bool = true)
     {
 
         $extra_icon = array();

@@ -46,7 +46,7 @@ function flexi_file_src($post, $url = true)
 }
 
 //Return image url
-function flexi_image_src($size = 'thumbnail', $post)
+function flexi_image_src($size = 'thumbnail', $post = '')
 {
     $ftype = flexi_get_type($post);
     if ('large' == $size) {
@@ -148,7 +148,7 @@ function flexi_large_media($post, $class = 'flexi_large_image')
 }
 
 //Get link and added attributes of the image based on lightbox
-function flexi_image_data($size = 'full', $post_id, $popup = "on")
+function flexi_image_data($size = 'full', $post_id = '', $popup = "on")
 {
 
     $flexi_post = get_post($post_id);

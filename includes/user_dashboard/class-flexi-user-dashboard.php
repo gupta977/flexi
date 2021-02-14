@@ -114,10 +114,6 @@ class Flexi_User_Dashboard
         if (is_singular()) {
             if (is_user_logged_in()) {
 
-                //Flexi setup complete, enable backend settings
-                if (get_option('flexi_activated', false)) {
-                    delete_option('flexi_activated');
-                }
 
                 $current_user = wp_get_current_user();
 ?>

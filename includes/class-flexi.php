@@ -119,6 +119,9 @@ class Flexi
     //Links
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-links.php';
 
+    //Flexi service handler
+    require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi-handler.php';
+
     //Block
     require_once plugin_dir_path(dirname(__FILE__)) . 'block/plugin.php';
 

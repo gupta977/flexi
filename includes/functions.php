@@ -908,6 +908,8 @@ function flexi_create_pages()
         $eid = wp_insert_post(array('post_title' => 'Edit Flexi Post', 'post_content' => $str_edit_image, 'post_type' => 'page', 'post_status' => 'publish'));
         flexi_set_option('edit_flexi_page', 'flexi_form_settings', $eid);
     }
+
+    add_option('flexi_pages_created', true);
 }
 
 // Flexi Excerpt Function ;)
