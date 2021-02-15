@@ -42,9 +42,8 @@ foreach ($this->sections as $section) {
             <h1><?php esc_html_e('Welcome to Flexi', 'flexi'); ?></h1>
             <p>Flexi is activated but not yet fully setup. Follow the steps below to auto configure the installation.</p>
             <p>
-                <b>Step 1:</b> Click 'Post to Configure' button below to upload one sample file.
-                <br><b>Step 2:</b> Click on 'My Dashboard' button appeared just after file is uploaded.
-                <br><br><b>All settings will be applied automatically based on server configuration</b>
+
+                <br><br><b>Post one image & settings will be applied automatically based on server configuration</b>
             </p>
 
             <p><?php echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . "' class='button button-primary'>" . __('Post to Configure', 'flexi') . "</a>" ?>

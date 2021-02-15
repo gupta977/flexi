@@ -129,9 +129,13 @@ class Flexi_User_Dashboard
                         <?php echo flexi_author($current_user->user_login); ?>
                     </div>
                     <div class="pure-u-3-5" style="text-align:right;">
-                        <form method="get" class="pure-form">
-                            <input type="text" name="search" placeholder="<?php echo __('Search post', 'flexi'); ?>" class="pure-input-rounded">
-                            <button type="submit" class="pure-button"><?php echo __("Search", "flexi"); ?></button>
+                        <form method="get" class="pure-form pure-g">
+                            <div class="pure-u-3-4">
+                                <input type="text" name="search" placeholder="<?php echo __('Search post', 'flexi'); ?>" class="pure-input-rounded">
+                            </div>
+                            <div class="pure-u-1-4">
+                                <button type="submit" class="pure-button"><?php echo __("Search", "flexi"); ?></button>
+                            </div>
                         </form>
                     </div>
                 </div>
