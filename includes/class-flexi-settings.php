@@ -104,7 +104,7 @@ class FLEXI_Admin_Settings
             'gallery'   => __('Gallery', 'flexi'),
             'form'      => __('Form', 'flexi'),
             'detail'    => __('Detail', 'flexi'),
-            'extension' => __('Extension', 'flexi'),
+            'extension' => __('Addon', 'flexi'),
         );
 
         return apply_filters('flexi_settings_tabs', $tabs);

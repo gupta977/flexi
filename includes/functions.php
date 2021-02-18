@@ -1062,6 +1062,13 @@ function flexi_page_post_state_label($states, $post)
         }
     }
 
+    $category_page = flexi_get_option('category_page', 'flexi_categories_settings', 0);
+    if (0 != $category_page) {
+        if ($category_page == $post->ID) {
+            $states['flexi-edit'] = __('Flexi Category', 'flexi');
+        }
+    }
+
     $edit_flexi_page = flexi_get_option('edit_flexi_page', 'flexi_form_settings', 0);
     if (0 != $edit_flexi_page) {
         if ($edit_flexi_page == $post->ID) {
