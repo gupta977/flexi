@@ -133,9 +133,9 @@ class Flexi_User_Dashboard
                                             <input class="fl-input" name="search" type="text" placeholder="<?php echo __('Search post', 'flexi'); ?>">
                                         </div>
                                         <div class="fl-control">
-                                            <a class="fl-button fl-is-info">
+                                            <button class="fl-button fl-is-info">
                                                 <?php echo __("Search", "flexi"); ?>
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </form>
@@ -153,7 +153,7 @@ class Flexi_User_Dashboard
                         <div class="fl-columns fl-is-mobile fl-is-centered">
                             <div class="fl-column fl-is-full">
 
-                                <div class="fl-tabs fl-is-boxed">
+                                <div class="fl-tabs fl-is-centered fl-is-boxed">
                                     <ul>
                                         <li class="fl-is-active">
                                             <a>

@@ -31,21 +31,6 @@ class Flexi_User_Dashboard_Gallery
             <div class="flexi_wrapper">
                 <div class="flexi_table">
 
-                    <div class="flexi_row flexi_header flexi_gray">
-                        <div class="flexi_cell">
-
-                        </div>
-                        <div class="flexi_cell">
-                            &nbsp;
-                        </div>
-                        <div class="flexi_cell">
-                            &nbsp;
-                        </div>
-                        <div class="flexi_cell">
-                            &nbsp;
-                        </div>
-                    </div>
-
                     <?php
 
                     $args = array(
@@ -137,10 +122,10 @@ class Flexi_User_Dashboard_Gallery
 
                 </div>
             </div>
-            <hr>
+
 
 <?php
-            echo __('Total number of records you have submitted: ', 'flexi') . $query->found_posts;
+            echo __('Total', 'flexi') . ": " . $query->found_posts;
             do_action('flexi_user_gallery_dashboard_footer');
             echo flexi_page_navi($query);
         } else {

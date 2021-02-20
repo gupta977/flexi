@@ -88,6 +88,14 @@ class Flexi_Addon_Conflict
                         'type'              => 'checkbox',
                         'sanitize_callback' => 'intval',
                     ),
+                    array(
+                        'name'              => 'conflict_disable_fontawesome',
+                        'label'             => __('Disable Font Awesome Free 5.3.1', 'flexi'),
+                        'description'       => __('Disable it, <br>if fontawesome.js is used by other plugins & theme.', 'flexi') . ' https://fontawesome.com/',
+                        'type'              => 'checkbox',
+                        'sanitize_callback' => 'intval',
+                    ),
+
 
                 ),
             );
