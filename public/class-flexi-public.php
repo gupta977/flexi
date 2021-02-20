@@ -86,6 +86,7 @@ class Flexi_Public
     wp_enqueue_style($this->plugin_name . '_purecss_buttons', plugin_dir_url(__FILE__) . 'css/purecss/buttons-min.css', array(), $this->version, 'all');
     wp_enqueue_style($this->plugin_name . '_purecss_forms', plugin_dir_url(__FILE__) . 'css/purecss/forms-min.css', array(), $this->version, 'all');
     wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/flexi-public.css', array(), $this->version, 'all');
+    wp_enqueue_style($this->plugin_name . '_min', plugin_dir_url(__FILE__) . 'css/flexi-public-min.css', array(), $this->version, 'all');
   }
 
   /**

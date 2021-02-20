@@ -118,39 +118,60 @@ class Flexi_User_Dashboard
                 $current_user = wp_get_current_user();
 ?>
 
-                <div class="flexi_text_group" style="text-align:right;">
-                    <?php // echo $this->flexi_member_toolbar(); 
-                    ?>
-                    <?php echo do_shortcode("[flexi-common-toolbar]"); ?>
-                </div>
 
-                <div class="pure-g">
-                    <div class="pure-u-2-5">
-                        <?php echo flexi_author($current_user->user_login); ?>
-                    </div>
-                    <div class="pure-u-3-5" style="text-align:right;">
-                        <form method="get" class="pure-form pure-g">
-                            <div class="pure-u-3-4">
-                                <input type="text" name="search" placeholder="<?php echo __('Search post', 'flexi'); ?>" class="pure-input-rounded">
+                <div class="fl-card">
+                    <div class="fl-card-content">
+                        <div class="fl-columns fl-is-mobile fl-is-centered">
+                            <div class="fl-column fl-is-one-third fl-has-text-centered">
+                                <?php echo flexi_author($current_user->user_login); ?>
                             </div>
-                            <div class="pure-u-1-4">
-                                <button type="submit" class="pure-button"><?php echo __("Search", "flexi"); ?></button>
+
+                            <div class="fl-column fl-has-text-right">
+                                <form method="get">
+                                    <div class="fl-field fl-has-addons">
+                                        <div class="fl-control">
+                                            <input class="fl-input" name="search" type="text" placeholder="<?php echo __('Search post', 'flexi'); ?>">
+                                        </div>
+                                        <div class="fl-control">
+                                            <a class="fl-button fl-is-info">
+                                                <?php echo __("Search", "flexi"); ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
+
+
+                        <div class="fl-columns fl-is-mobile fl-is-centered">
+                            <div class="fl-column fl-is-full fl-has-text-centered">
+                                <?php echo do_shortcode("[flexi-common-toolbar]"); ?>
+                            </div>
+                        </div>
+
+
+                        <div class="fl-columns fl-is-mobile fl-is-centered">
+                            <div class="fl-column fl-is-full">
+
+                                <div class="fl-tabs fl-is-boxed">
+                                    <ul>
+                                        <li class="fl-is-active">
+                                            <a>
+                                                <span class="fl-icon fl-is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                                                <span><?php echo __('My Posts', 'flexi'); ?></span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <div id="my_post">
+                                    <?php do_action('flexi_user_dashboard'); ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <ul data-tabs>
-                    <li><a data-tabby-default href="#my_post"><?php echo __('My Posts', 'flexi'); ?></a></li>
-                </ul>
-
-                <div id="my_post">
-                    <?php do_action('flexi_user_dashboard'); ?>
-                </div>
-
-                <script>
-                    var tabs = new Tabby('[data-tabs]');
-                </script>
 
 <?php
 
@@ -192,13 +213,6 @@ class Flexi_User_Dashboard
 
         $my_gallery_id   = flexi_get_option('my_gallery', 'flexi_user_dashboard_settings', 0);
         $current_page_id = get_queried_object_id();
-
-        if ($current_page_id == $my_gallery_id) {
-            wp_register_style('flexi_tab_css', FLEXI_PLUGIN_URL . '/public/css/tabby-ui.css', null, FLEXI_VERSION);
-            wp_enqueue_style('flexi_tab_css');
-            wp_enqueue_script('flexi_tab_script', FLEXI_PLUGIN_URL . '/public/js/tabby.js', '', FLEXI_VERSION, false);
-            wp_enqueue_script('flexi_tab_script');
-        }
     }
     /*
     //button toolbar for user dashboard
