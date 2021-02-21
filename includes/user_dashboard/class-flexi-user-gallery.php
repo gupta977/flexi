@@ -20,7 +20,7 @@ class Flexi_User_Dashboard_Gallery
             $shortcode = '[flexi-gallery user="show_mine" layout="regular"]';
             echo do_shortcode($shortcode);
         } else  if ($tab_arg == "private") {
-            $shortcode = '[flexi-gallery user="show_mine" layout="basic" post_status="draft"]';
+            $shortcode = '[flexi-gallery user="show_mine" layout="wide" post_status="draft"]';
             echo do_shortcode($shortcode);
         } else {
             echo '';
