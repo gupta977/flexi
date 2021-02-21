@@ -55,6 +55,33 @@ class Flexi_User_Dashboard
                 'sanitize_callback' => 'sanitize_key',
             ),
             array(
+                'name'              => 'gallery_layout',
+                'label'             => __('Select gallery layout', 'flexi'),
+                'description'       => __('Selected layout will be used as layout for dashboard page only.', 'flexi'),
+                'type'              => 'layout',
+                'sanitize_callback' => 'sanitize_key',
+                'step'              => 'gallery',
+            ),
+            array(
+                'name'              => 'perpage',
+                'label'             => __('Post per page', 'flexi'),
+                'description'       => __('Number of images/post/videos to be shown at a time.', 'flexi'),
+                'type'              => 'number',
+                'size'              => 'small',
+                'min'               => '1',
+                'sanitize_callback' => 'sanitize_key',
+            ),
+            array(
+                'name'              => 'column',
+                'label'             => __('Number of Columns', 'flexi'),
+                'description'       => __('Maximum number of post to be shown horizontally & changes based on screen size. May not work for all layouts.', 'flexi'),
+                'type'              => 'number',
+                'size'              => 'small',
+                'min'               => '1',
+                'max'               => '10',
+                'sanitize_callback' => 'sanitize_key',
+            ),
+            array(
                 'name'              => 'enable_dashboard_button',
                 'label'             => __('"My Dashboard" button', 'flexi'),
                 'description'       => __('Display "My Dashboard" button at common toolbar', 'flexi'),
@@ -170,13 +197,13 @@ class Flexi_User_Dashboard
                                         <li <?php if ($tab_arg == "public") echo 'class="fl-is-active"'; ?>>
                                             <a href="<?php echo $link_public; ?>">
                                                 <span class="fl-icon fl-is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                                                <span><?php echo __('Public', 'flexi'); ?></span>
+                                                <span><?php echo __('Published', 'flexi'); ?></span>
                                             </a>
                                         </li>
                                         <li <?php if ($tab_arg == "private") echo 'class="fl-is-active"'; ?>>
                                             <a href="<?php echo $link_private; ?>">
                                                 <span class="fl-icon fl-is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                                                <span><?php echo __('Private', 'flexi'); ?></span>
+                                                <span><?php echo __('Under review', 'flexi'); ?></span>
                                             </a>
                                         </li>
 

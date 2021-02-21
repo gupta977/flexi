@@ -171,10 +171,31 @@ class Flexi_Shortcode_Gallery
     $atts['popup'] = $popup;
 
     //evalue data
+
+    $evalue_params = ",";
+    if (flexi_get_option('evalue_title', 'flexi_image_layout_settings', 1) == 1) {
+      $evalue_params .= "title:on,";
+    }
+    if (flexi_get_option('evalue_excerpt', 'flexi_image_layout_settings', 1) == 1) {
+      $evalue_params .= "excerpt:on,";
+    }
+    if (flexi_get_option('evalue_custom', 'flexi_image_layout_settings', 1) == 1) {
+      $evalue_params .= "custom:on,";
+    }
+    if (flexi_get_option('evalue_icon', 'flexi_image_layout_settings', 1) == 1) {
+      $evalue_params .= "icon:on,";
+    }
+    if (flexi_get_option('evalue_category', 'flexi_image_layout_settings', 1) == 1) {
+      $evalue_params .= "category:on,";
+    }
+    if (flexi_get_option('evalue_tag', 'flexi_image_layout_settings', 1) == 1) {
+      $evalue_params .= "tag:on,";
+    }
+
     if (isset($params['evalue'])) {
       $evalue = $params['evalue'];
     } else {
-      $evalue = "";
+      $evalue = $evalue_params;
     }
 
     //attach value

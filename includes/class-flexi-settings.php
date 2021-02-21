@@ -312,6 +312,48 @@ class FLEXI_Admin_Settings
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
                 ),
+                array(
+                    'name'              => 'evalue_title',
+                    'label'             => __('Display post title', 'flexi') . ' (evalue)',
+                    'description'       => __('Title of the flexi post', 'flexi'),
+                    'type'              => 'checkbox',
+                    'sanitize_callback' => 'intval',
+                ),
+                array(
+                    'name'              => 'evalue_excerpt',
+                    'label'             => __('Display post excerpt', 'flexi') . ' (evalue)',
+                    'description'       => __('Short description', 'flexi'),
+                    'type'              => 'checkbox',
+                    'sanitize_callback' => 'intval',
+                ),
+                array(
+                    'name'              => 'evalue_custom',
+                    'label'             => __('Display custom fields', 'flexi') . ' (evalue)',
+                    'description'       => __('Associated custom fields enabled', 'flexi'),
+                    'type'              => 'checkbox',
+                    'sanitize_callback' => 'intval',
+                ),
+                array(
+                    'name'              => 'evalue_icon',
+                    'label'             => __('Display icon toolbar', 'flexi') . ' (evalue)',
+                    'description'       => __('Icons like profile, trash, download etc.', 'flexi'),
+                    'type'              => 'checkbox',
+                    'sanitize_callback' => 'intval',
+                ),
+                array(
+                    'name'              => 'evalue_category',
+                    'label'             => __('Display category', 'flexi') . ' (evalue)',
+                    'description'       => __('Associated category of post with link', 'flexi'),
+                    'type'              => 'checkbox',
+                    'sanitize_callback' => 'intval',
+                ),
+                array(
+                    'name'              => 'evalue_tag',
+                    'label'             => __('Display tag', 'flexi') . ' (evalue)',
+                    'description'       => __('Associated tag of post with link', 'flexi'),
+                    'type'              => 'checkbox',
+                    'sanitize_callback' => 'intval',
+                ),
 
             ),
             'flexi_form_settings'               => array(

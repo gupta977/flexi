@@ -10,6 +10,11 @@ class Flexi_User_Dashboard_Gallery
 
     public function flexi_user_gallery()
     {
+
+        $layout = flexi_get_option('gallery_layout', 'flexi_user_dashboard_settings', 'wide');
+        $postsperpage = flexi_get_option('perpage', 'flexi_user_dashboard_settings', 10);
+        $column = flexi_get_option('column', 'flexi_user_dashboard_settings', 1);
+
         if (isset($_GET['tab'])) {
             $tab_arg = $_GET['tab'];
         } else {
@@ -17,15 +22,17 @@ class Flexi_User_Dashboard_Gallery
         }
 
         if ($tab_arg == "public") {
-            $shortcode = '[flexi-gallery user="show_mine" layout="regular"]';
+            $shortcode = '[flexi-gallery user="show_mine" column="' . $column . '" perpage="' . $postsperpage . '" layout="' . $layout . '" popup="off"]';
             echo do_shortcode($shortcode);
         } else  if ($tab_arg == "private") {
-            $shortcode = '[flexi-gallery user="show_mine" layout="wide" post_status="draft,pending"]';
+            $shortcode = '[flexi-gallery user="show_mine" column="' . $column . '" perpage="' . $postsperpage . '" layout="' . $layout . '" popup="off" post_status="draft,pending"]';
             echo do_shortcode($shortcode);
         } else {
             echo '';
         }
     }
+
+    /*
 
     public function flexi_user_gallery1()
     {
@@ -154,5 +161,6 @@ class Flexi_User_Dashboard_Gallery
         $put = ob_get_clean();
         echo $put;
     }
+    */
 }
 $user_dashboard = new Flexi_User_Dashboard_Gallery();
