@@ -148,9 +148,11 @@ class Flexi_Shortcode_Gallery
 
     //Publish Status
     if (isset($params['post_status'])) {
-      $post_status = array($params['post_status']);
+
+      //$post_status = array($params['post_status']);
+      $post_status = $params['post_status'];
     } else {
-      $post_status = array('publish');
+      $post_status = 'publish';
     }
     $atts['user'] = $user;
 
@@ -299,7 +301,7 @@ class Flexi_Shortcode_Gallery
         'paged'          => $paged,
         'posts_per_page' => $postsperpage,
         'author'    => $user,
-        'post_status'    => $post_status,
+        'post_status'    => explode(',', $post_status),
         'orderby'        => $orderby,
         'order'          => 'DESC',
 
