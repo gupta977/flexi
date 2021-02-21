@@ -110,12 +110,24 @@ class Flexi_User_Dashboard
 
     public function flexi_user_dashboard()
     {
+        global $wp_query;
         ob_start();
         if (is_singular()) {
             if (is_user_logged_in()) {
 
 
                 $current_user = wp_get_current_user();
+
+                $link = flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings');
+                $link_public = add_query_arg("tab", "public", $link);
+                $link_private = add_query_arg("tab", "private", $link);
+
+                if (isset($_GET['tab'])) {
+                    $tab_arg = $_GET['tab'];
+                } else {
+                    $tab_arg = "public";
+                }
+
 ?>
 
 
@@ -155,10 +167,16 @@ class Flexi_User_Dashboard
 
                                 <div class="fl-tabs fl-is-centered fl-is-boxed">
                                     <ul>
-                                        <li class="fl-is-active">
-                                            <a>
+                                        <li <?php if ($tab_arg == "public") echo 'class="fl-is-active"'; ?>>
+                                            <a href="<?php echo $link_public; ?>">
                                                 <span class="fl-icon fl-is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
-                                                <span><?php echo __('My Posts', 'flexi'); ?></span>
+                                                <span><?php echo __('Public', 'flexi'); ?></span>
+                                            </a>
+                                        </li>
+                                        <li <?php if ($tab_arg == "private") echo 'class="fl-is-active"'; ?>>
+                                            <a href="<?php echo $link_private; ?>">
+                                                <span class="fl-icon fl-is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                                                <span><?php echo __('Private', 'flexi'); ?></span>
                                             </a>
                                         </li>
 

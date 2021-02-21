@@ -10,6 +10,25 @@ class Flexi_User_Dashboard_Gallery
 
     public function flexi_user_gallery()
     {
+        if (isset($_GET['tab'])) {
+            $tab_arg = $_GET['tab'];
+        } else {
+            $tab_arg = "public";
+        }
+
+        if ($tab_arg == "public") {
+            $shortcode = '[flexi-gallery user="show_mine" layout="regular"]';
+            echo do_shortcode($shortcode);
+        } else  if ($tab_arg == "private") {
+            $shortcode = '[flexi-gallery user="show_mine" layout="basic" post_status="draft"]';
+            echo do_shortcode($shortcode);
+        } else {
+            echo '';
+        }
+    }
+
+    public function flexi_user_gallery1()
+    {
         global $post;
         global $wp_query;
 

@@ -147,7 +147,11 @@ class Flexi_Shortcode_Gallery
     }
 
     //Publish Status
-    $post_status = array('publish');
+    if (isset($params['post_status'])) {
+      $post_status = array($params['post_status']);
+    } else {
+      $post_status = array('publish');
+    }
     $atts['user'] = $user;
 
     //Popup
