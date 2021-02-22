@@ -201,6 +201,13 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 3.4 =
+* Added fontawesome support
+* Option to disable fontawesome if used by theme
+* Lot's of gallery controls added in settings
+* Complete make over of 'User Dashboard'
+* 'User Dashboard' has extra tab to display pending post.
+
 = 3.3 =
 * BuddyPress : Image posted will be visible at BuddyPress activity
 * Category page now have gallery sidebar for widgets
@@ -266,181 +273,6 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Updated languages
 * User Dashboard has own setting tab. Old user should manually update the User Dashboard page.
 * Updated Flexi Pages into Flexi Health with option to investigate wrong Flexi Settings. 
-
-= 1.0.600 =
-* Tooltip over button
-* Added 'Simple' lightbox
-* Updated portfolio layout, now support tags, category icons
-* Title removed from 'custom lightbox'
-
-= 1.0.590 =
-* Fixed default album selection for -none- category
-* Prevent creating duplicate pages
-
-= 1.0.490 =
-* Updated language
-* Added Hindi , French, Spanish , Russian, Japanese, Portuguese Language
-
-= 1.0.481 =
-* Manually assign thumbnail of any media from backend
-* Generate thumbnail for video files
-* Introduced FFMPEG - Flexi Library
-
-= 1.0.47 =
-* Links at plugin list
-* Updated edit page with thumbnail preview
-* updated [[flexi-standalone] shortcode
-* Setup activation for first time user
-
-= 1.0.46 =
-* Updated Italian language
-
-= 1.0.45 =
-* Improved license management
-* Fixed user avatar at gallery
-* Updated Italian language
-
-= 1.0.44 =
-* Italian language included
-* Custom lightbox padding
-
-= 1.0.43 =
-* Flexi-PRO user can upload above 100MB of files
-* Fixed detail layout issue selection.
-
-= 1.0.42 =
-* Fixed regular & wide layout for custom popup layout
-
-= 1.0.41 =
-* Option to 'bulk edit' & 'quick edit' 'detail layout'
-* Lightbox with custom layouts
-
-= 1.0.40 =
-* Added language German de_DE
-* Added turning off navigation at visual builder
-
-= 1.0.39 =
-* Popup fixed on/off fixed for Flexi Showcase widgets
-* Javascript toggle in Showcase widgets
-
-= 1.0.38 =
-* Removed widget support at detail layouts
-* Updated regular & basic layout for responsive layout
-* Introduce Flexi Showcase widgets
-
-= 1.0.37 =
-* Support of fontawesome stopped
-
-= 1.0.36 =
-* Visual builder error resolved.
-
-= 1.0.35 =
-* Fixes popup temporary, we are working on for 1.0.36
-
-= 1.0.34 =
-* Widgets can be added in detail layouts
-* Toggle "My Dashboard" button
-* Added "My Gallery" button at "My Dashboard"
-* Introduced toolbar at "My Dashboard"
-* Introduced Font Awesome icons
-* Toggle Font Awesome library
-* Toolbar grid css updated
-
-= 1.0.33 =
-* Updated all gallery layout css
-* Now shortcodes properly works in homepage and sidebar
-* Unique lightbox name to prevent conflict
-
-= 1.0.31 =
-* Elements position selection for detail layouts
-* Pending notification at dashboard
-* Detail layout change option while editing as administrator
-
-= 1.0.30 =
-* Added form display only with publish_posts rights
-
-= 1.0.29 =
-* Added form attach to specific page `[flexi-form attach="true"]`
-* Fixed username when gallery viewed
-* Added User File Limit for Flexi PRO
-
-= 1.0.28 =
-* Tags at detail layout
-* Fixed wrong category assigned on blank category
-
-= 1.0.27 =
-* Detect file size by javascript before file upload
-
-= 1.0.26 =
-* Conflict management settings added
-* Option to disable fancybox.js if not required. 
-* Updated some description in settings. 
-
-= 1.0.25 =
-* Added file size upload limit under form settings. 
-
-= 1.0.24 =
-* Fixed error on mouse scroll
-
-= 1.0.23 =
-* Own user login page
-* Updated admin dashboard
-* Updated progress bar during upload
-* Added tag & category display at wide gallery layout
-
-= 1.0.22 =
-* Supported mp4 at Lightbox
-* fixed css for tags
-
-= 1.0.21 =
-* Added support to upload any type of files
-* Multiple filter selection
-* shortcodes Updated
-* updated all available layouts
-
-= 1.0.20 =
-* Added toggle for title,excerpt, custom fields & icons
-* Updated basic, regular, portfolio Layouts
-* Added padding to block editor
-* Updated tags css look & feel
-
-= 1.0.19 =
-* Added 'portfolio gallery layout'
-
-= 1.0.18 =
-* Fixed some notices for [flexi-user-dashboard]
-
-= 1.0.17 =
-* Removed some header from cmb2 & plugin.php
-
-= 1.0.16 = 
-* Updated License security
-
-= 1.0.15 =
-* Fixed header error while deleting flexi post
-* language file regenerated
-
-
-= 1.0.14 = 
-* Added YouTube & Viemo Video support
-* Automatic thumbnail generation for video urls
-* Updated Flexi Dashboard
-* Delete media from folder when post deleted
-* Added 'Basic Gallery Layout'
-
-= 1.0.13 =
-* Fixed mobile responsive and lightbox grid link
-
-= 1.0.12 =
-* Introduced Guten block editor
-* 2 Guten block type (Gallery & Form)
-* Added height & width parameter to shortcode
-
-= 1.0.11 =
-* Fixed detail page responsive image
-
-= 1.0.10 =
-* Fixed user dashboard
 
 
 == Upgrade Notice ==

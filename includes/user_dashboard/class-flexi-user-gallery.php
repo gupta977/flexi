@@ -11,9 +11,9 @@ class Flexi_User_Dashboard_Gallery
     public function flexi_user_gallery()
     {
 
-        $layout = flexi_get_option('gallery_layout', 'flexi_user_dashboard_settings', 'wide');
+        $layout = flexi_get_option('gallery_layout', 'flexi_user_dashboard_settings', 'portfolio');
         $postsperpage = flexi_get_option('perpage', 'flexi_user_dashboard_settings', 10);
-        $column = flexi_get_option('column', 'flexi_user_dashboard_settings', 1);
+        $column = flexi_get_option('column', 'flexi_user_dashboard_settings', 2);
 
         if (isset($_GET['tab'])) {
             $tab_arg = $_GET['tab'];

@@ -195,13 +195,13 @@ class Flexi_User_Dashboard
                                 <div class="fl-tabs fl-is-centered fl-is-boxed">
                                     <ul>
                                         <li <?php if ($tab_arg == "public") echo 'class="fl-is-active"'; ?>>
-                                            <a href="<?php echo $link_public; ?>">
+                                            <a href="<?php echo $link_public; ?>" class="flexi-text-style">
                                                 <span class="fl-icon fl-is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
                                                 <span><?php echo __('Published', 'flexi'); ?></span>
                                             </a>
                                         </li>
                                         <li <?php if ($tab_arg == "private") echo 'class="fl-is-active"'; ?>>
-                                            <a href="<?php echo $link_private; ?>">
+                                            <a href="<?php echo $link_private; ?>" class="flexi-text-style">
                                                 <span class="fl-icon fl-is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
                                                 <span><?php echo __('Under review', 'flexi'); ?></span>
                                             </a>
