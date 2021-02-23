@@ -149,6 +149,9 @@ class Flexi_User_Dashboard
                 $link_public = add_query_arg("tab", "public", $link);
                 $link_private = add_query_arg("tab", "private", $link);
 
+                global $wp;
+                $current_url = add_query_arg($_SERVER['QUERY_STRING'], '', home_url($wp->request));
+
                 if (isset($_GET['tab'])) {
                     $tab_arg = $_GET['tab'];
                 } else {
@@ -156,7 +159,64 @@ class Flexi_User_Dashboard
                 }
 
 ?>
+                <script>
+                    function flexi_updateUrl(url, key, value) {
+                        if (value !== undefined) {
+                            value = encodeURI(value);
+                        }
+                        var hashIndex = url.indexOf("#") | 0;
+                        if (hashIndex === -1) hashIndex = url.length | 0;
+                        var urls = url.substring(0, hashIndex).split('?');
+                        var baseUrl = urls[0];
+                        var parameters = '';
+                        var outPara = {};
+                        if (urls.length > 1) {
+                            parameters = urls[1];
+                        }
+                        if (parameters !== '') {
+                            parameters = parameters.split('&');
+                            for (k in parameters) {
+                                var keyVal = parameters[k];
+                                keyVal = keyVal.split('=');
+                                var ekey = keyVal[0];
+                                var evalue = '';
+                                if (keyVal.length > 1) {
+                                    evalue = keyVal[1];
+                                }
+                                outPara[ekey] = evalue;
+                            }
+                        }
 
+                        if (value !== undefined) {
+                            outPara[key] = value;
+                        } else {
+                            delete outPara[key];
+                        }
+                        parameters = [];
+                        for (var k in outPara) {
+                            parameters.push(k + '=' + outPara[k]);
+                        }
+
+                        var finalUrl = baseUrl;
+
+                        if (parameters.length > 0) {
+                            finalUrl += '?' + parameters.join('&');
+                        }
+
+                        return finalUrl + url.substring(hashIndex);
+                    }
+
+
+                    jQuery(document).ready(function() {
+                        jQuery("#flexi_search").click(function(e) {
+
+                            var search_value = jQuery("#search_value").val();
+                            var cur_url = window.location.href;
+                            var i = flexi_updateUrl(cur_url, 'search', search_value);
+                            window.location.replace(i);
+                        });
+                    });
+                </script>
 
                 <div class="fl-card">
                     <div class="fl-card-content">
@@ -166,15 +226,15 @@ class Flexi_User_Dashboard
                             </div>
 
                             <div class="fl-column fl-has-text-right">
-                                <form method="get">
+                                <form id="theForm">
                                     <div class="fl-field fl-has-addons">
                                         <div class="fl-control">
-                                            <input class="fl-input" name="search" type="text" placeholder="<?php echo __('Search post', 'flexi'); ?>">
+                                            <input id="search_value" class="fl-input" name="search" type="text" placeholder="<?php echo __('Search post', 'flexi'); ?>">
                                         </div>
                                         <div class="fl-control">
-                                            <button class="fl-button fl-is-info">
+                                            <a id="flexi_search" class="fl-button fl-is-info">
                                                 <?php echo __("Search", "flexi"); ?>
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </form>

@@ -60,6 +60,7 @@ echo "<div id='evalue' style='display:none'>" . $evalue . "</div>";
 echo "<div id='attach' style='display:none'>" . $attach . "</div>";
 echo "<div id='attach_id' style='display:none'>" . $cur_page_id . "</div>";
 echo "<div id='filter' style='display:none'>" . $filter . "</div>";
+echo "<div id='post_status' style='display:none'>" . $post_status . "</div>";
 ?>
 <style>
   :root {

@@ -5,148 +5,145 @@ add_action("wp_ajax_nopriv_flexi_load_more", "flexi_load_more");
 
 function flexi_load_more()
 {
- global $wp_query;
- global $post;
- $paged         = $_REQUEST["max_paged"];
- $layout        = $_REQUEST['gallery_layout'];
- $popup         = $_REQUEST['popup'];
- $album         = $_REQUEST['album'];
- $search        = $_REQUEST['search'];
- $postsperpage  = $_REQUEST['postsperpage'];
- $orderby       = $_REQUEST['orderby'];
- $user          = $_REQUEST['user'];
- $keyword       = $_REQUEST['keyword'];
- $padding       = $_REQUEST['padding'];
- $hover_effect  = $_REQUEST['hover_effect'];
- $hover_caption = $_REQUEST['hover_caption'];
- $evalue        = $_REQUEST['evalue'];
- $column        = $_REQUEST['column'];
- $attach        = $_REQUEST['attach'];
- $attach_id     = $_REQUEST['attach_id'];
- $filter        = $_REQUEST['filter'];
- ob_start();
+    global $wp_query;
+    global $post;
+    $paged         = $_REQUEST["max_paged"];
+    $layout        = $_REQUEST['gallery_layout'];
+    $popup         = $_REQUEST['popup'];
+    $album         = $_REQUEST['album'];
+    $search        = $_REQUEST['search'];
+    $postsperpage  = $_REQUEST['postsperpage'];
+    $orderby       = $_REQUEST['orderby'];
+    $user          = $_REQUEST['user'];
+    $keyword       = $_REQUEST['keyword'];
+    $padding       = $_REQUEST['padding'];
+    $hover_effect  = $_REQUEST['hover_effect'];
+    $hover_caption = $_REQUEST['hover_caption'];
+    $evalue        = $_REQUEST['evalue'];
+    $column        = $_REQUEST['column'];
+    $attach        = $_REQUEST['attach'];
+    $attach_id     = $_REQUEST['attach_id'];
+    $filter        = $_REQUEST['filter'];
+    $post_status   = $_REQUEST['post_status'];
+    ob_start();
 
- // A default response holder, which will have data for sending back to our js file
- $response = array(
-  'error' => false,
-  'msg'   => 'No Message',
-  'count' => '0',
- );
+    // A default response holder, which will have data for sending back to our js file
+    $response = array(
+        'error' => false,
+        'msg'   => 'No Message',
+        'count' => '0',
+    );
 
- //var_dump($response);
+    //var_dump($response);
 
- //Publish Status
- $post_status = array('publish');
+    if (is_user_logged_in()) {
 
- if (is_user_logged_in()) {
+        $current_user = wp_get_current_user();
+        $cur_user     = $current_user->user_login;
+        if ($cur_user == $user) {
+            //$post_status = array('draft', 'publish', 'pending');
+        }
+    }
 
-  $current_user = wp_get_current_user();
-  $cur_user     = $current_user->user_login;
-  if ($cur_user == $user) {
-   //$post_status = array('draft', 'publish', 'pending');
-  }
+    if ("" != $album && "" != $keyword) {
+        $relation = "AND";
+    } else {
+        $relation = "OR";
+    }
 
- }
+    if ("" != $album || "" != $keyword) {
+        $args = array(
+            'post_type'      => 'flexi',
+            'paged'          => $paged,
+            's'              => $search,
+            'posts_per_page' => $postsperpage,
+            'orderby'        => $orderby,
+            'post_status'    => explode(',', $post_status),
+            'order'          => 'DESC',
+            'author'    => $user,
+            'tax_query'      => array(
+                'relation' => $relation,
+                array(
+                    'taxonomy' => 'flexi_category',
+                    'field'    => 'slug',
+                    'terms'    => explode(',', $album),
+                    //'terms'    => array( 'mobile', 'sports' ),
+                    //'include_children' => 0 //It will not include post of sub categories
+                ),
 
- if ("" != $album && "" != $keyword) {
-  $relation = "AND";
- } else {
-  $relation = "OR";
- }
+                array(
+                    'taxonomy' => 'flexi_tag',
+                    'field'    => 'slug',
+                    'terms'    => explode(',', $keyword),
+                    //'terms'    => array( 'mobile', 'sports' ),
+                ),
 
- if ("" != $album || "" != $keyword) {
-  $args = array(
-   'post_type'      => 'flexi',
-   'paged'          => $paged,
-   's'              => $search,
-   'posts_per_page' => $postsperpage,
-   'orderby'        => $orderby,
-   'post_status'    => $post_status,
-   'order'          => 'DESC',
-   'author'    => $user,
-   'tax_query'      => array(
-    'relation' => $relation,
-    array(
-     'taxonomy' => 'flexi_category',
-     'field'    => 'slug',
-     'terms'    => explode(',', $album),
-     //'terms'    => array( 'mobile', 'sports' ),
-     //'include_children' => 0 //It will not include post of sub categories
-    ),
+            ),
+        );
+    } else {
+        $args = array(
+            'post_type'      => 'flexi',
+            's'              => $search,
+            'paged'          => $paged,
+            'posts_per_page' => $postsperpage,
+            'author'    => $user,
+            'post_status'    => explode(',', $post_status),
+            'orderby'        => $orderby,
+            'order'          => 'DESC',
 
-    array(
-     'taxonomy' => 'flexi_tag',
-     'field'    => 'slug',
-     'terms'    => explode(',', $keyword),
-     //'terms'    => array( 'mobile', 'sports' ),
-    ),
+        );
+    }
 
-   ),
-  );
- } else {
-  $args = array(
-   'post_type'      => 'flexi',
-   's'              => $search,
-   'paged'          => $paged,
-   'posts_per_page' => $postsperpage,
-   'author'    => $user,
-   'post_status'    => $post_status,
-   'orderby'        => $orderby,
-   'order'          => 'DESC',
+    $args['meta_query'] = array('compare' => 'AND');
 
-  );
- }
+    //If filter is used as parameter image,url,video
+    if ('' != $filter) {
+        $filter_array = array(
+            'key'     => 'flexi_type',
+            'value'   => $filter,
+            'compare' => '=',
+        );
 
- $args['meta_query'] = array('compare' => 'AND');
+        array_push($args['meta_query'], $filter_array);
+    }
 
- //If filter is used as parameter image,url,video
- if ('' != $filter) {
-  $filter_array = array(
-   'key'     => 'flexi_type',
-   'value'   => $filter,
-   'compare' => '=',
-  );
+    //flexi_log($args);
+    //flexi_log("-----------------");
+    //Add meta query for attach page
+    if ("true" == $attach && '' != $attach_id) {
 
-  array_push($args['meta_query'], $filter_array);
- }
+        $attach_array = array(
+            'key'     => 'flexi_attach_at',
+            'value'   => $attach_id,
+            'compare' => '=',
+        );
 
- //flexi_log($args);
- //flexi_log("-----------------");
- //Add meta query for attach page
- if ("true" == $attach && '' != $attach_id) {
+        array_push($args['meta_query'], $attach_array);
+    }
 
-  $attach_array = array(
-   'key'     => 'flexi_attach_at',
-   'value'   => $attach_id,
-   'compare' => '=',
-  );
+    $query = new WP_Query($args);
 
-  array_push($args['meta_query'], $attach_array);
- }
+    $put = "";
 
- $query = new WP_Query($args);
+    //flexi_log($args);
+    //echo "----";
+    $count = 0;
+    while ($query->have_posts()) : $query->the_post();
+        $tags = flexi_get_taxonomy_raw($post->ID, 'flexi_tag');
+        $count++;
+        if ('' != $layout) {
+            require FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/' . $layout . '/loop.php';
+        }
 
- $put = "";
+    endwhile;
 
- //flexi_log($args);
- //echo "----";
- $count = 0;
- while ($query->have_posts()): $query->the_post();
-  $tags = flexi_get_taxonomy_raw($post->ID, 'flexi_tag');
-  $count++;
-  if ('' != $layout) {
-   require FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/' . $layout . '/loop.php';
-  }
+    $put = ob_get_clean();
+    //$response['msg'] = "hii";
+    $response['msg']   = $put;
+    $response['count'] = $count;
 
- endwhile;
-
- $put = ob_get_clean();
- //$response['msg'] = "hii";
- $response['msg']   = $put;
- $response['count'] = $count;
-
- $result = json_encode($response);
- echo $result;
- wp_reset_query();
- die();
+    $result = json_encode($response);
+    echo $result;
+    wp_reset_query();
+    die();
 }

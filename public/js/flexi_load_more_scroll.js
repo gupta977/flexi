@@ -25,6 +25,7 @@ jQuery(document).ready(function () {
     attach_id = jQuery("#attach_id").text();
     filter = jQuery("#filter").text();
     reset = jQuery("#reset").text();
+    post_status = jQuery("#post_status").text();
 
     if (reset == "true") {
       paged = 1;
@@ -58,6 +59,7 @@ jQuery(document).ready(function () {
           attach: attach,
           attach_id: attach_id,
           filter: filter,
+          post_status: post_status,
         },
         beforeSend: function () {
           //alert("about to send");
