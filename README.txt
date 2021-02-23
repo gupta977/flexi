@@ -45,7 +45,7 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 == Help ==
 <a href="https://odude.com/docs/flexi-gallery/">Documentation</a>
 
-= Flexi is divided into 3 parts =
+= Flexi is divided into 3 sections =
 1- Forms - Let visitors submit content from frontend (Eg. URL, images,video,audio, others)
 2- Gallery - Showcase of content into various layouts (Eg. Masonry Layout)
 3- Detail - View content into popup or in full detail single page. (Eg. Lightbox)
