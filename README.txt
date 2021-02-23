@@ -207,6 +207,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Lot's of gallery controls added in settings
 * Complete make over of 'User Dashboard'
 * 'User Dashboard' has extra tab to display pending post.
+* Fixed search option at 'User Dashboard'
 
 = 3.3 =
 * BuddyPress : Image posted will be visible at BuddyPress activity
