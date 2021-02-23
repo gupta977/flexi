@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-09 16:39+0545\n"
-"PO-Revision-Date: 2021-02-09 16:41+0545\n"
+"POT-Creation-Date: 2021-02-23 17:56+0545\n"
+"PO-Revision-Date: 2021-02-23 17:57+0545\n"
 "Last-Translator: \n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es_ES\n"
@@ -23,13 +23,13 @@ msgstr ""
 msgid "flexi"
 msgstr "flexi"
 
-#: admin/class-flexi-admin.php:125 admin/partials/settings.php:62
-#: admin/partials/settings.php:63
+#: admin/class-flexi-admin.php:125 admin/partials/settings.php:64
+#: admin/partials/settings.php:65
 msgid "Flexi"
 msgstr "Flexi"
 
 #: admin/class-flexi-admin.php:135 admin/class-flexi-admin.php:136
-#: admin/partials/settings.php:62
+#: admin/partials/settings.php:64
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -54,11 +54,12 @@ msgstr "Etiquetas Flexi"
 msgid "Tags"
 msgstr "Etiquetas"
 
-#: admin/partials/dashboard.php:2 admin/partials/settings.php:39
+#: admin/partials/dashboard.php:7 admin/partials/dashboard.php:19
+#: admin/partials/settings.php:42
 msgid "Welcome to Flexi"
 msgstr "Bienvenido a Flexi"
 
-#: admin/partials/dashboard.php:5
+#: admin/partials/dashboard.php:22
 msgid ""
 "Let visitors to post images,video,audio,youtube from frontend with full "
 "controls."
@@ -66,45 +67,45 @@ msgstr ""
 "Deja que los visitantes publiquen imágenes, video, audio, youtube de "
 "frontend con controles completos."
 
-#: admin/partials/dashboard.php:6
+#: admin/partials/dashboard.php:23
 msgid "Post files"
 msgstr "Archivos posteriores"
 
-#: admin/partials/dashboard.php:7
+#: admin/partials/dashboard.php:24
 msgid "View Gallery"
 msgstr "Ver Galería"
 
-#: admin/partials/dashboard.php:8
+#: admin/partials/dashboard.php:25
 msgid "Documentation"
 msgstr "Documentación"
 
-#: admin/partials/dashboard.php:9
+#: admin/partials/dashboard.php:26
 msgid "Live Demo"
 msgstr "Demostración en directo"
 
-#: admin/partials/settings.php:47
+#: admin/partials/settings.php:49
 msgid "Post to Configure"
 msgstr "Publicar en Configurar"
 
-#: admin/partials/settings.php:49
+#: admin/partials/settings.php:51
 msgid "Skip, I have already done."
 msgstr ""
 
-#: admin/partials/settings.php:60
+#: admin/partials/settings.php:62
 msgid "Flexi Plugin Settings"
 msgstr "Configuración de Plugin Flexi"
 
-#: admin/partials/settings.php:63
+#: admin/partials/settings.php:65
 #: includes/dashboard/class-flexi-dashboard-pages.php:13
 msgid "Health"
 msgstr ""
 
-#: admin/partials/settings.php:64
+#: admin/partials/settings.php:66
 #: includes/dashboard/class-flexi-dashboard-pro.php:13
 msgid "Flexi-Pro"
 msgstr "Flexi-Pro"
 
-#: block/src/form/block.js:59 includes/functions.php:1059
+#: block/src/form/block.js:59 includes/functions.php:1061
 msgid "Flexi Submission Form"
 msgstr "Formulario de envío de Flexi"
 
@@ -220,7 +221,6 @@ msgid "Name of the tab displays on profile page"
 msgstr "Nombre de la pestaña que aparece en la página de perfil"
 
 #: includes/addon/class-flexi-buddypress.php:90
-#| msgid "Enable BuddyPress"
 msgid "Enable BuddyPress Activity"
 msgstr ""
 
@@ -233,36 +233,43 @@ msgstr ""
 msgid "%s has posted: <a target=\"_blank\" href = \"%s\">%s</a>"
 msgstr ""
 
-#: includes/addon/class-flexi-conflict.php:28
-#: includes/addon/class-flexi-conflict.php:45
+#: includes/addon/class-flexi-conflict.php:31
+#: includes/addon/class-flexi-conflict.php:56
 msgid "Conflict & Fixes"
 msgstr ""
 
-#: includes/addon/class-flexi-conflict.php:29
-#: includes/addon/class-flexi-conflict.php:46
+#: includes/addon/class-flexi-conflict.php:32
+#: includes/addon/class-flexi-conflict.php:57
 msgid "Try to fix the conflicts occurred with other plugins & theme."
 msgstr ""
 
-#: includes/addon/class-flexi-conflict.php:68
+#: includes/addon/class-flexi-conflict.php:79
 msgid "Disable FancyBox Lightbox"
 msgstr "Cómo deshabilitar FancyBox Lightbox"
 
-#: includes/addon/class-flexi-conflict.php:69
+#: includes/addon/class-flexi-conflict.php:80
 msgid ""
 "Disable it, <br>if fancyBox v3.5.7 is used by other plugins & theme. So "
 "that, only one instance of it is available.<br>If you are not using lightbox "
 "at all."
 msgstr ""
 
-#: includes/addon/class-flexi-conflict.php:75
-#| msgid "Disable FancyBox Lightbox"
+#: includes/addon/class-flexi-conflict.php:86
 msgid "Disable godude Lightbox"
 msgstr ""
 
-#: includes/addon/class-flexi-conflict.php:76
+#: includes/addon/class-flexi-conflict.php:87
 msgid ""
 "Disable it, <br>if godude.js is used by other plugins & theme. So that, only "
 "one instance of it is available."
+msgstr ""
+
+#: includes/addon/class-flexi-conflict.php:93
+msgid "Disable Font Awesome Free 5.3.1"
+msgstr ""
+
+#: includes/addon/class-flexi-conflict.php:94
+msgid "Disable it, <br>if fontawesome.js is used by other plugins & theme."
 msgstr ""
 
 #: includes/addon/class-flexi-custom-field.php:29
@@ -450,7 +457,6 @@ msgid ""
 msgstr ""
 
 #: includes/addon/class-flexi-shortcode-holder.php:33
-#| msgid "Shortcode"
 msgid "Shortcode Holder"
 msgstr ""
 
@@ -462,7 +468,6 @@ msgid ""
 msgstr ""
 
 #: includes/addon/class-flexi-shortcode-holder.php:61
-#| msgid "Flexi Shortcode"
 msgid "Enable Shortcode Holder"
 msgstr ""
 
@@ -471,47 +476,38 @@ msgid "External plugin shortcode or text to display at detail & popup page. "
 msgstr ""
 
 #: includes/addon/class-flexi-shortcode-holder.php:86
-#| msgid "Shortcode"
 msgid "1st Shortcode/text"
 msgstr ""
 
 #: includes/addon/class-flexi-shortcode-holder.php:87
-#| msgid "Insert into %s"
 msgid "Insert no.1 shortcode"
 msgstr ""
 
 #: includes/addon/class-flexi-shortcode-holder.php:92
-#| msgid "Shortcode"
 msgid "2nd Shortcode/text"
 msgstr ""
 
 #: includes/addon/class-flexi-shortcode-holder.php:93
-#| msgid "Insert into %s"
 msgid "Insert no.2 shortcode"
 msgstr ""
 
 #: includes/addon/class-flexi-shortcode-holder.php:99
-#| msgid "Shortcode"
 msgid "3rd Shortcode/text"
 msgstr ""
 
 #: includes/addon/class-flexi-shortcode-holder.php:100
-#| msgid "Insert into %s"
 msgid "Insert no.3 shortcode"
 msgstr ""
 
 #: includes/addon/class-flexi-shortcode-holder.php:106
-#| msgid "Shortcode"
 msgid "4th Shortcode/text"
 msgstr ""
 
 #: includes/addon/class-flexi-shortcode-holder.php:107
-#| msgid "Insert into %s"
 msgid "Insert no.4 shortcode"
 msgstr ""
 
 #: includes/addon/class-flexi-standalone.php:31
-#| msgid "Gallery"
 msgid "Sub-Gallery"
 msgstr ""
 
@@ -522,7 +518,6 @@ msgid ""
 msgstr ""
 
 #: includes/addon/class-flexi-standalone.php:56
-#| msgid "Flexi Gallery"
 msgid "Enable Sub-Gallery"
 msgstr ""
 
@@ -531,12 +526,10 @@ msgid "Enable sub-gallery of primary image or post."
 msgstr ""
 
 #: includes/addon/class-flexi-standalone.php:77
-#| msgid "\"My Gallery\" button"
 msgid "\"Add Sub-Gallery\" button"
 msgstr ""
 
 #: includes/addon/class-flexi-standalone.php:78
-#| msgid "Display button after form submission"
 msgid "Display button after form submission and in manage media page."
 msgstr ""
 
@@ -549,7 +542,6 @@ msgid "Label of Sub-Gallery button. Eg. Add Sub-Gallery"
 msgstr ""
 
 #: includes/addon/class-flexi-standalone.php:92
-#| msgid "Gallery"
 msgid "Sub-Gallery form"
 msgstr ""
 
@@ -689,17 +681,15 @@ msgstr "Modificar"
 msgid "New"
 msgstr "Nuevo"
 
-#: includes/class-flexi-gallery.php:386
+#: includes/class-flexi-gallery.php:414
 msgid "Layout not available"
 msgstr "Diseño no disponible"
 
-#: includes/class-flexi-gallery.php:508
-#| msgid "Flexi Gallery"
+#: includes/class-flexi-gallery.php:537
 msgid "Flexi Gallery - Sidebar"
 msgstr ""
 
-#: includes/class-flexi-gallery.php:511
-#| msgid "Add widgets here to appear in detail layout as specified location."
+#: includes/class-flexi-gallery.php:540
 msgid "Add widgets here to appear in Flexi - Primary Gallery"
 msgstr ""
 
@@ -739,115 +729,115 @@ msgstr "Básica"
 msgid "Complex"
 msgstr "Complejo"
 
-#: includes/class-flexi-post_types.php:26
+#: includes/class-flexi-post_types.php:27
 #, php-format
 msgid "New %s"
 msgstr "Nuevo %s"
 
-#: includes/class-flexi-post_types.php:27
+#: includes/class-flexi-post_types.php:28
 #, php-format
 msgid "Add new %s"
 msgstr "Añadir nuevo %s"
 
-#: includes/class-flexi-post_types.php:28
-#: includes/class-flexi-post_types.php:162
+#: includes/class-flexi-post_types.php:29
+#: includes/class-flexi-post_types.php:163
 #, php-format
 msgid "Edit %s"
 msgstr "Editar %s"
 
-#: includes/class-flexi-post_types.php:29
 #: includes/class-flexi-post_types.php:30
-#: includes/class-flexi-post_types.php:163
+#: includes/class-flexi-post_types.php:31
+#: includes/class-flexi-post_types.php:164
 #, php-format
 msgid "View %s"
 msgstr "Vista %s"
 
-#: includes/class-flexi-post_types.php:31
-#: includes/class-flexi-post_types.php:169
+#: includes/class-flexi-post_types.php:32
+#: includes/class-flexi-post_types.php:170
 #, php-format
 msgid "Search %s"
 msgstr "Buscar %s"
 
-#: includes/class-flexi-post_types.php:32
-#: includes/class-flexi-post_types.php:174
+#: includes/class-flexi-post_types.php:33
+#: includes/class-flexi-post_types.php:175
 #, php-format
 msgid "No %s found"
 msgstr "No se ha encontrado %s"
 
-#: includes/class-flexi-post_types.php:33
+#: includes/class-flexi-post_types.php:34
 #, php-format
 msgid "No %s found in trash"
 msgstr "No se ha encontrado %s en la papelera"
 
-#: includes/class-flexi-post_types.php:34
-#: includes/class-flexi-post_types.php:161
+#: includes/class-flexi-post_types.php:35
+#: includes/class-flexi-post_types.php:162
 #, php-format
 msgid "All %s"
 msgstr "Todos los %s"
 
-#: includes/class-flexi-post_types.php:35
+#: includes/class-flexi-post_types.php:36
 #, php-format
 msgid "%s Archives"
 msgstr "%s Archivos"
 
-#: includes/class-flexi-post_types.php:36
+#: includes/class-flexi-post_types.php:37
 #, php-format
 msgid "%s Attributes"
 msgstr "%s Atributos"
 
-#: includes/class-flexi-post_types.php:37
+#: includes/class-flexi-post_types.php:38
 #, php-format
 msgid "Insert into %s"
 msgstr "Insertar en %s"
 
-#: includes/class-flexi-post_types.php:38
+#: includes/class-flexi-post_types.php:39
 #, php-format
 msgid "Uploaded to this %s"
 msgstr "Subido a este %s"
 
-#: includes/class-flexi-post_types.php:41
-#: includes/class-flexi-post_types.php:167
+#: includes/class-flexi-post_types.php:42
+#: includes/class-flexi-post_types.php:168
 #, php-format
 msgid "Parent %s"
 msgstr "Padre %s"
 
-#: includes/class-flexi-post_types.php:42
-#: includes/class-flexi-post_types.php:168
+#: includes/class-flexi-post_types.php:43
+#: includes/class-flexi-post_types.php:169
 #, php-format
 msgid "Parent %s:"
 msgstr "Padre %s:"
 
-#: includes/class-flexi-post_types.php:164
+#: includes/class-flexi-post_types.php:165
 #, php-format
 msgid "Update %s"
 msgstr "Actualizar %s"
 
-#: includes/class-flexi-post_types.php:165
+#: includes/class-flexi-post_types.php:166
 #, php-format
 msgid "Add New %s"
 msgstr "Añadir nuevo %s"
 
-#: includes/class-flexi-post_types.php:166
+#: includes/class-flexi-post_types.php:167
 #, php-format
 msgid "New %s Name"
 msgstr "Nuevo nombre de %s"
 
-#: includes/class-flexi-post_types.php:170
+#: includes/class-flexi-post_types.php:171
 #, php-format
 msgid "Popular %s"
 msgstr "Popular %s"
 
-#: includes/class-flexi-post_types.php:171
+#: includes/class-flexi-post_types.php:172
 #, php-format
 msgid "Separate %s with commas"
 msgstr "Separar %s con comas"
 
-#: includes/class-flexi-post_types.php:172
+#: includes/class-flexi-post_types.php:173
 #, php-format
 msgid "Add or remove %s"
 msgstr "Añadir o eliminar %s"
 
-#: includes/class-flexi-post_types.php:173
+#: includes/class-flexi-post_types.php:174
 #, php-format
 msgid "Choose from the most used %s"
 msgstr "Elegir entre los %s más utilizados"
@@ -869,8 +859,8 @@ msgid "Form"
 msgstr "Formulario"
 
 #: includes/class-flexi-settings.php:107
-msgid "Extension"
-msgstr "Extensión"
+msgid "Addon"
+msgstr ""
 
 #: includes/class-flexi-settings.php:126
 msgid "Icons & user access settings"
@@ -910,7 +900,6 @@ msgid "Submission Form Settings"
 msgstr "Configuración del formulario de envío"
 
 #: includes/class-flexi-settings.php:155
-#| msgid "Category Thumbnail"
 msgid "Category & Tags"
 msgstr ""
 
@@ -1030,10 +1019,11 @@ msgid "Flexi home page with shortcode [flexi-primary]"
 msgstr "Página de inicio de Flexi con código corto [flexi-primario]"
 
 #: includes/class-flexi-settings.php:270
+#: includes/user_dashboard/class-flexi-user-dashboard.php:59
 msgid "Select gallery layout"
 msgstr "Seleccionar diseño de galería"
 
-#: includes/class-flexi-settings.php:271 includes/class-flexi-settings.php:428
+#: includes/class-flexi-settings.php:271 includes/class-flexi-settings.php:470
 msgid ""
 "Selected layout will be used as default layout, if not specified in "
 "shortcode parameter."
@@ -1042,18 +1032,22 @@ msgstr ""
 "especifica en el parámetro de código corto."
 
 #: includes/class-flexi-settings.php:279
+#: includes/user_dashboard/class-flexi-user-dashboard.php:67
 msgid "Post per page"
 msgstr "Correo por página"
 
 #: includes/class-flexi-settings.php:280
+#: includes/user_dashboard/class-flexi-user-dashboard.php:68
 msgid "Number of images/post/videos to be shown at a time."
 msgstr "Número de imágenes/post/vídeos que se mostrarán a la vez."
 
 #: includes/class-flexi-settings.php:288
+#: includes/user_dashboard/class-flexi-user-dashboard.php:76
 msgid "Number of Columns"
 msgstr "Número de columnas"
 
 #: includes/class-flexi-settings.php:289
+#: includes/user_dashboard/class-flexi-user-dashboard.php:77
 msgid ""
 "Maximum number of post to be shown horizontally & changes based on screen "
 "size. May not work for all layouts."
@@ -1085,76 +1079,128 @@ msgstr ""
 "Muestra etiquetas por encima de la galería, sólo si hay pocas etiquetas "
 "disponibles."
 
-#: includes/class-flexi-settings.php:320
+#: includes/class-flexi-settings.php:317
+#| msgid "Display at Detail Page"
+msgid "Display post title"
+msgstr ""
+
+#: includes/class-flexi-settings.php:318
+msgid "Title of the flexi post"
+msgstr ""
+
+#: includes/class-flexi-settings.php:324
+#| msgid "Display at Popup"
+msgid "Display post excerpt"
+msgstr ""
+
+#: includes/class-flexi-settings.php:325
+#| msgid "Number of words of short description"
+msgid "Short description"
+msgstr ""
+
+#: includes/class-flexi-settings.php:331
+#| msgid "Flexi Custom Fields"
+msgid "Display custom fields"
+msgstr ""
+
+#: includes/class-flexi-settings.php:332
+msgid "Associated custom fields enabled"
+msgstr ""
+
+#: includes/class-flexi-settings.php:338
+msgid "Display icon toolbar"
+msgstr ""
+
+#: includes/class-flexi-settings.php:339
+msgid "Icons like profile, trash, download etc."
+msgstr ""
+
+#: includes/class-flexi-settings.php:345
+#| msgid "Display at Popup"
+msgid "Display category"
+msgstr ""
+
+#: includes/class-flexi-settings.php:346
+msgid "Associated category of post with link"
+msgstr ""
+
+#: includes/class-flexi-settings.php:352
+#| msgid "Display at Detail Page"
+msgid "Display tag"
+msgstr ""
+
+#: includes/class-flexi-settings.php:353
+msgid "Associated tag of post with link"
+msgstr ""
+
+#: includes/class-flexi-settings.php:362
 msgid "Form submission access"
 msgstr "Acceso de envío de formularios"
 
-#: includes/class-flexi-settings.php:321
+#: includes/class-flexi-settings.php:363
 msgid "It will enable/disable frontend form as specified."
 msgstr "Habilitará/desactivará el formulario de frontend según se especifique."
 
-#: includes/class-flexi-settings.php:324
+#: includes/class-flexi-settings.php:366
 msgid "Everyone"
 msgstr "Todos"
 
-#: includes/class-flexi-settings.php:325
+#: includes/class-flexi-settings.php:367
 msgid "Only members"
 msgstr "Sólo miembros"
 
-#: includes/class-flexi-settings.php:326
+#: includes/class-flexi-settings.php:368
 msgid "Only with Publish Post rights"
 msgstr "Sólo con derechos de publicación de publicación"
 
-#: includes/class-flexi-settings.php:327
+#: includes/class-flexi-settings.php:369
 msgid "Disable submission"
 msgstr "Inhabilitar envío"
 
-#: includes/class-flexi-settings.php:333
+#: includes/class-flexi-settings.php:375
 msgid "Auto approve post"
 msgstr "Aprobación automática de correo"
 
-#: includes/class-flexi-settings.php:334
+#: includes/class-flexi-settings.php:376
 msgid "Automatically publish Post as soon as user submit."
 msgstr "Publicar automáticamente Post tan pronto como envíe el usuario."
 
-#: includes/class-flexi-settings.php:340
+#: includes/class-flexi-settings.php:382
 msgid "File size allowed (MB)"
 msgstr "Tamaño de archivo permitido (MB)"
 
-#: includes/class-flexi-settings.php:341
+#: includes/class-flexi-settings.php:383
 msgid "Maximum file size allowed to upload by visitor. Your sever limit is:"
 msgstr ""
 "Tamaño máximo de archivo permitido para subir por visitante. Su límite de "
 "sever es:"
 
-#: includes/class-flexi-settings.php:351
+#: includes/class-flexi-settings.php:393
 msgid "Assign default user"
 msgstr "Asignar usuario predeterminado"
 
-#: includes/class-flexi-settings.php:352
+#: includes/class-flexi-settings.php:394
 msgid ""
 "Type the username to assign for guest submit else no author is assigned."
 msgstr ""
 "Escriba el nombre de usuario a asignar para el envío de invitado de otro "
 "modo no se asigna ningún autor."
 
-#: includes/class-flexi-settings.php:359
+#: includes/class-flexi-settings.php:401
 msgid "Submission form"
 msgstr "Formulario de presentación"
 
-#: includes/class-flexi-settings.php:360
-#| msgid ""
-#| "Page which will be used at frontend to let users to submit flexi post."
+#: includes/class-flexi-settings.php:402
 msgid ""
 "Page which will be used at frontend to let users to submit flexi post. Link "
 "this page in your frontend menu."
 msgstr ""
 
-#: includes/class-flexi-settings.php:367
+#: includes/class-flexi-settings.php:409
 msgid "Edit Flexi Post Page"
 msgstr "Editar página de post de Flexi"
 
-#: includes/class-flexi-settings.php:368
+#: includes/class-flexi-settings.php:410
 msgid ""
 "Page with shortcode [flexi-form] with edit=\"true\" as parameter. Lets "
 "visitor to edit submitted post."
@@ -1162,173 +1208,166 @@ msgstr ""
 "Página con shortcode [flexi-form] con edit=\"true \" como parámetro. Permite "
 "al visitante editar el mensaje enviado."
 
-#: includes/class-flexi-settings.php:377
+#: includes/class-flexi-settings.php:419
 msgid "Edit icon"
 msgstr "Icono de edición"
 
-#: includes/class-flexi-settings.php:378
+#: includes/class-flexi-settings.php:420
 msgid "Edit icon at gallery & detail page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:384
+#: includes/class-flexi-settings.php:426
 msgid "Delete icon"
 msgstr "Icono de supresión"
 
-#: includes/class-flexi-settings.php:385
+#: includes/class-flexi-settings.php:427
 msgid "Trash icon at gallery & detail page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:391
+#: includes/class-flexi-settings.php:433
 msgid "User icon"
 msgstr "Icono de usuario"
 
-#: includes/class-flexi-settings.php:392
+#: includes/class-flexi-settings.php:434
 msgid "Profile icon at gallery & detail page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:398
+#: includes/class-flexi-settings.php:440
 msgid "Download icon"
 msgstr "Icono de descarga"
 
-#: includes/class-flexi-settings.php:399
+#: includes/class-flexi-settings.php:441
 msgid "Download icon at gallery & detail page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:407
+#: includes/class-flexi-settings.php:449
 msgid "Enable Lightbox or Popup"
 msgstr "Habilitar Lightbox o Popup"
 
-#: includes/class-flexi-settings.php:408
+#: includes/class-flexi-settings.php:450
 msgid "If popup is unchecked, It will open content in single dedicated page."
 msgstr ""
 "Si la ventana emergente no está seleccionada, se abrirá el contenido en una "
 "única página dedicada."
 
-#: includes/class-flexi-settings.php:414
+#: includes/class-flexi-settings.php:456
 msgid "Popup style"
 msgstr "Estilo emergente"
 
-#: includes/class-flexi-settings.php:415
+#: includes/class-flexi-settings.php:457
 msgid "Layout of lightbox"
 msgstr "Diseño de la caja de luz"
 
-#: includes/class-flexi-settings.php:418
+#: includes/class-flexi-settings.php:460
 msgid "Regular"
 msgstr "Regular"
 
-#: includes/class-flexi-settings.php:419
-#| msgid "Complex"
+#: includes/class-flexi-settings.php:461
 msgid "Simple"
 msgstr ""
 
-#: includes/class-flexi-settings.php:420
+#: includes/class-flexi-settings.php:462
 msgid "Simple with info"
 msgstr ""
 
-#: includes/class-flexi-settings.php:421
+#: includes/class-flexi-settings.php:463
 msgid "Custom"
 msgstr "Personalizado"
 
-#: includes/class-flexi-settings.php:427
+#: includes/class-flexi-settings.php:469
 msgid "Select Detail Layout"
 msgstr "Seleccione Diseño de detalles"
 
-#: includes/class-flexi-settings.php:438
+#: includes/class-flexi-settings.php:480
 msgid "Default Post Category"
 msgstr "Categoría posterior predeterminada"
 
-#: includes/class-flexi-settings.php:439
-#| msgid ""
-#| "This category will be selected if no category is assigned by visitor."
+#: includes/class-flexi-settings.php:481
 msgid ""
 "This category will be selected if no category is assigned by visitor while "
 "submitting form."
 msgstr ""
 
-#: includes/class-flexi-settings.php:445
-#| msgid "Category Field"
+#: includes/class-flexi-settings.php:487
 msgid "Category Page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:446
+#: includes/class-flexi-settings.php:488
 msgid ""
 "Page which will be used to display albums. Should contain [flexi-category] "
 "as shortcode."
 msgstr ""
 
-#: includes/class-flexi-settings.php:452
-#| msgid "Category Thumbnail"
+#: includes/class-flexi-settings.php:494
 msgid "Category count"
 msgstr ""
 
-#: includes/class-flexi-settings.php:453
+#: includes/class-flexi-settings.php:495
 msgid "Display post count of specific category at category page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:464
+#: includes/class-flexi-settings.php:506
 msgid "Thumbnail size"
 msgstr "Tamaño de miniatura"
 
-#: includes/class-flexi-settings.php:465 includes/class-flexi-settings.php:488
-#: includes/class-flexi-settings.php:502
+#: includes/class-flexi-settings.php:507 includes/class-flexi-settings.php:530
+#: includes/class-flexi-settings.php:544
 msgid "Width"
 msgstr "Anchura"
 
-#: includes/class-flexi-settings.php:466 includes/class-flexi-settings.php:489
-#: includes/class-flexi-settings.php:503
+#: includes/class-flexi-settings.php:508 includes/class-flexi-settings.php:531
+#: includes/class-flexi-settings.php:545
 msgid "Height"
 msgstr "Altura"
 
-#: includes/class-flexi-settings.php:467
+#: includes/class-flexi-settings.php:509
 msgid "Applied at gallery page"
 msgstr "Aplicado en la página de galería"
 
-#: includes/class-flexi-settings.php:487
+#: includes/class-flexi-settings.php:529
 msgid "Medium size"
 msgstr "Tamaño medio"
 
-#: includes/class-flexi-settings.php:501
+#: includes/class-flexi-settings.php:543
 msgid "Large size"
 msgstr "Tamaño grande"
 
-#: includes/class-flexi-settings.php:504
+#: includes/class-flexi-settings.php:546
 msgid "Specially applied at detail page"
 msgstr "Especialmente aplicada en la página de detalle"
 
-#: includes/class-flexi-settings.php:518
+#: includes/class-flexi-settings.php:560
 msgid "Image Detail Page"
 msgstr "Página de detalles de imagen"
 
-#: includes/class-flexi-settings.php:519
+#: includes/class-flexi-settings.php:561
 msgid "Replaces the SLUG value used by custom post type \"flexi\"."
 msgstr ""
 "Sustituye el valor de SLUG utilizado por el tipo de publicación "
 "personalizado \"flexi\"."
 
-#: includes/class-flexi-settings.php:792
+#: includes/class-flexi-settings.php:834
 msgid "Select layout"
 msgstr "Seleccione el diseño"
 
-#: includes/class-flexi-settings.php:874
+#: includes/class-flexi-settings.php:916
 msgid "Choose File"
 msgstr "Seleccione Archivo"
 
-#: includes/class-flexi-settings.php:926
+#: includes/class-flexi-settings.php:968
 msgid "Select a page"
 msgstr "Cómo seleccionar una página"
 
-#: includes/class-flexi-settings.php:949
+#: includes/class-flexi-settings.php:991
 #: includes/widgets/gallery_widgets.php:339
 msgid "Select category"
 msgstr "Seleccionar categoría"
 
 #: includes/class-flexi-standalone-gallery.php:66
-#| msgid "Select a page"
 msgid "Select new image to replace"
 msgstr ""
 
 #: includes/class-flexi-standalone-gallery.php:75
-#| msgid "Static image"
 msgid "Replace image"
 msgstr ""
 
@@ -1337,7 +1376,6 @@ msgid "Go back"
 msgstr ""
 
 #: includes/class-flexi-standalone-gallery.php:158
-#| msgid "Manage"
 msgid "Manage Media"
 msgstr ""
 
@@ -1410,54 +1448,55 @@ msgid "Required Flexi-PRO"
 msgstr "Flexi-PRO necesario"
 
 #: includes/functions.php:806
-#| msgid "Insert into %s"
 msgid "Insert tag"
 msgstr ""
 
 #: includes/functions.php:808
-#| msgid "Description Field"
 msgid "Description"
 msgstr ""
 
 #: includes/functions.php:809
-#| msgid "Select layout"
 msgid "Select file"
 msgstr ""
 
-#: includes/functions.php:1015
+#: includes/functions.php:1017
 msgid "Title cannot be blank."
 msgstr "El título no puede estar en blanco."
 
-#: includes/functions.php:1017
+#: includes/functions.php:1019
 msgid "Invalid file type"
 msgstr "Tipo de archivo no válido"
 
-#: includes/functions.php:1019
+#: includes/functions.php:1021
 msgid "Only image files are allowed."
 msgstr "Sólo se permiten archivos de imagen."
 
-#: includes/functions.php:1021
+#: includes/functions.php:1023
 msgid "File size is too big."
 msgstr "El tamaño del archivo es demasiado grande."
 
-#: includes/functions.php:1023
+#: includes/functions.php:1025
 msgid "Captcha security code is invalid."
 msgstr "El código de seguridad de Captcha no es válido."
 
-#: includes/functions.php:1045
+#: includes/functions.php:1047
 msgid "Flexi Primary Gallery"
 msgstr "Galería primaria Flexi"
 
-#: includes/functions.php:1052
+#: includes/functions.php:1054
 msgid "Flexi User Dashboard"
 msgstr "Flexi User Dashboard"
 
-#: includes/functions.php:1066
+#: includes/functions.php:1068
+#| msgid "Flexi Categories"
+msgid "Flexi Category"
+msgstr ""
+
+#: includes/functions.php:1075
 msgid "Flexi Edit/Modify"
 msgstr "Flexi Edit/Modify"
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:35
-#| msgid "Flexi User Dashboard"
 msgid "User Dashboard"
 msgstr ""
 
@@ -1475,91 +1514,90 @@ msgid ""
 msgstr ""
 "Page with shortcode [flexi-user-dashboard]. Display Gallery of own posts."
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:59
+#: includes/user_dashboard/class-flexi-user-dashboard.php:60
+#| msgid ""
+#| "Selected layout will be used as default layout, if not specified in "
+#| "shortcode parameter."
+msgid "Selected layout will be used as layout for dashboard page only."
+msgstr ""
+
+#: includes/user_dashboard/class-flexi-user-dashboard.php:86
 msgid "\"My Dashboard\" button"
 msgstr "Botón \"Mi panel de control\""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:60
-#| msgid "\"My Dashboard\" button"
+#: includes/user_dashboard/class-flexi-user-dashboard.php:87
 msgid "Display \"My Dashboard\" button at common toolbar"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:67
+#: includes/user_dashboard/class-flexi-user-dashboard.php:94
 msgid "\"My Gallery\" button"
 msgstr "Botón \"Mi Galería\""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:68
+#: includes/user_dashboard/class-flexi-user-dashboard.php:95
 msgid "Display button at \"My Dashboard\""
 msgstr "Botón de visualización en \"Mi panel de instrumentos\""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:75
-#| msgid "Submission form"
+#: includes/user_dashboard/class-flexi-user-dashboard.php:102
 msgid "\"Submission form\" button"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:76
+#: includes/user_dashboard/class-flexi-user-dashboard.php:103
 msgid ""
 "Display post/submit button at \"My Dashboard\". Title displayed on button is "
 "based on form page linked."
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:83
+#: includes/user_dashboard/class-flexi-user-dashboard.php:110
 msgid "\"Login/Logout\" button"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:84
+#: includes/user_dashboard/class-flexi-user-dashboard.php:111
 msgid "Display logout/login button at user dashboard & common toolbar."
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:90
+#: includes/user_dashboard/class-flexi-user-dashboard.php:117
 msgid "Logout Button Label"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:91
+#: includes/user_dashboard/class-flexi-user-dashboard.php:118
 msgid "Label of Logout button. Eg. Sign out"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:98
+#: includes/user_dashboard/class-flexi-user-dashboard.php:125
 msgid "Login Button Label"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:99
+#: includes/user_dashboard/class-flexi-user-dashboard.php:126
 msgid "Label of Login button. Eg. Sign in"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:137
-msgid "Search post"
-msgstr "Correo de búsqueda"
+#: includes/user_dashboard/class-flexi-user-dashboard.php:173
+#, fuzzy
+#| msgid "Search"
+msgid "My search"
+msgstr "Búsqueda"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:138
+#: includes/user_dashboard/class-flexi-user-dashboard.php:177
 msgid "Search"
 msgstr "Búsqueda"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:144
-msgid "My Posts"
-msgstr "Mis mensajes"
+#: includes/user_dashboard/class-flexi-user-dashboard.php:201
+msgid "Published"
+msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:276
+#: includes/user_dashboard/class-flexi-user-dashboard.php:207
+#, fuzzy
+#| msgid "Under Review"
+msgid "Under review"
+msgstr "En revisión"
+
+#: includes/user_dashboard/class-flexi-user-dashboard.php:336
 msgid "My Gallery"
 msgstr "Mi galería"
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:355
+#: includes/user_dashboard/class-flexi-user-dashboard.php:415
 msgid "My Dashboard"
 msgstr "My Dashboard"
-
-#: includes/user_dashboard/class-flexi-user-gallery.php:94
-#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:158
-#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:161
-msgid "Under Review"
-msgstr "En revisión"
-
-#: includes/user_dashboard/class-flexi-user-gallery.php:106
-msgid "Public"
-msgstr ""
-
-#: includes/user_dashboard/class-flexi-user-gallery.php:143
-msgid "Total number of records you have submitted: "
-msgstr "Número total de registros que ha enviado: "
 
 #: includes/widgets/categories.php:155 includes/widgets/tags.php:76
 msgid "New title"
@@ -1593,16 +1631,15 @@ msgstr "Flexi Showcase"
 msgid "Display specified set of gallery"
 msgstr "Visualizar el conjunto de galería especificado"
 
-#: public/class-flexi-public.php:138
+#: public/class-flexi-public.php:145
 msgid "Are you sure you want to delete?"
 msgstr "¿Está seguro de que desea suprimir?"
 
-#: public/class-flexi-public.php:139
+#: public/class-flexi-public.php:146
 msgid "Download file?"
 msgstr "¿Descargar archivo?"
 
 #: public/partials/layout/category/basic/footer.php:6
-#| msgid "Select category"
 msgid "No category"
 msgstr ""
 
@@ -1673,6 +1710,11 @@ msgstr "-- Ocultar --"
 msgid "Location"
 msgstr "Ubicación"
 
+#: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:158
+#: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:161
+msgid "Under Review"
+msgstr "En revisión"
+
 #: public/partials/layout/detail/complex/class-flexi-detail-layout-complex.php:31
 msgid "Complex - Layout"
 msgstr "Complejo-Diseño"
@@ -1689,7 +1731,6 @@ msgid ""
 msgstr ""
 
 #: public/partials/layout/gallery/attach_footer.php:21
-#| msgid "Load More Button"
 msgid "Load More"
 msgstr ""
 
@@ -1714,6 +1755,18 @@ msgid ""
 "    <li>This popup is accessed with parameter popup=\"custom\"</li>\n"
 "    </ul>"
 msgstr ""
+
+#~ msgid "Extension"
+#~ msgstr "Extensión"
+
+#~ msgid "Search post"
+#~ msgstr "Correo de búsqueda"
+
+#~ msgid "My Posts"
+#~ msgstr "Mis mensajes"
+
+#~ msgid "Total number of records you have submitted: "
+#~ msgstr "Número total de registros que ha enviado: "
 
 #~ msgid "Flexi- Basic Detail Layout"
 #~ msgstr "Flexi-Diseño de detalle básico"

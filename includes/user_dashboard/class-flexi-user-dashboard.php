@@ -159,10 +159,6 @@ class Flexi_User_Dashboard
                 }
 
 ?>
-                <script>
-
-                </script>
-
                 <div class="fl-card">
                     <div class="fl-card-content">
                         <div class="fl-columns fl-is-mobile fl-is-centered">
