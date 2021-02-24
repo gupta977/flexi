@@ -30,7 +30,7 @@ register_block_type(
       ),
       'form_class'        => array(
         'type'    => 'string',
-        'default' => 'pure-form pure-form-stacked',
+        'default' => 'flexi_form_style',
       ),
       'form_title'        => array(
         'type'    => 'string',

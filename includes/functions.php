@@ -486,7 +486,7 @@ function flexi_get_button_url($param = '', $ajax = true, $type = 'submission_for
 function flexi_default_args($params)
 {
     $value = array(
-        'class'         => 'pure-form pure-form-stacked',
+        'class'         => 'flexi_form_style',
         'title'         => 'Submit',
         'detail_layout' => 'default',
         'edit_page' => '0',
@@ -880,7 +880,7 @@ function flexi_create_pages()
         $str_post_image = '
         <!-- wp:shortcode -->
         [flexi-common-toolbar]
-        [flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"][flexi-form-tag type="post_title" title="Title" value="" required="true"][flexi-form-tag type="category" title="Select category"][flexi-form-tag type="tag" title="Insert tag"][flexi-form-tag type="article" title="Description" ][flexi-form-tag type="file" title="Select file" required="true"][flexi-form-tag type="submit" name="submit" value="Submit Now"]
+        [flexi-form class="flexi_form_style" title="Submit to Flexi" name="my_form" ajax="true"][flexi-form-tag type="post_title" title="Title" value="" required="true"][flexi-form-tag type="category" title="Select category"][flexi-form-tag type="tag" title="Insert tag"][flexi-form-tag type="article" title="Description" ][flexi-form-tag type="file" title="Select file" required="true"][flexi-form-tag type="submit" name="submit" value="Submit Now"]
         [/flexi-form]
         <!-- /wp:shortcode -->
 		';
@@ -895,7 +895,7 @@ function flexi_create_pages()
   <!-- wp:shortcode -->
   [flexi-common-toolbar]
   [flexi-standalone edit="true"]
-  [flexi-form class="pure-form pure-form-stacked" title="Update Flexi" name="my_form" ajax="true" edit="true"]
+  [flexi-form class="flexi_form_style" title="Update Flexi" name="my_form" ajax="true" edit="true"]
   [flexi-form-tag type="post_title" title="Title" edit="true" required="true"]
   [flexi-form-tag type="category" title="Select category" edit="true"]
   [flexi-form-tag type="tag" title="Insert tag" edit="true"]

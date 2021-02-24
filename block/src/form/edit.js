@@ -126,7 +126,7 @@ class FlexiGalleryEdit extends Component {
 								options={[
 									{
 										label: "Stacked",
-										value: "pure-form pure-form-stacked",
+										value: "flexi_form_style",
 									},
 								]}
 								onChange={(value) => setAttributes({ form_class: value })}

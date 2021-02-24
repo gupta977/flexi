@@ -116,7 +116,7 @@ class Flexi_Admin_Dashboard_Pro
 
     <div id="reCaptcha" style="display:none;">
       <p>
-        [flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"]<br>
+        [flexi-form class="flexi_form_style" title="Submit to Flexi" name="my_form" ajax="true"]<br>
         [flexi-form-tag type="post_title" title="Title" value=""]<br>
         [flexi-form-tag type="file" title="Select file"]<br>
         <code>[flexi-form-tag type="captcha" title="Security"]</code><br>
@@ -127,7 +127,7 @@ class Flexi_Admin_Dashboard_Pro
 
     <div id="drag" style="display:none;">
       <p>
-        [flexi-form class="pure-form pure-form-stacked" title="Submit to Flexi" name="my_form" ajax="true"]<br>
+        [flexi-form class="flexi_form_style" title="Submit to Flexi" name="my_form" ajax="true"]<br>
         [flexi-form-tag type="post_title" title="Title" value=""]<br>
         <code>[flexi-form-tag type="file_multiple" title="Drag &amp; Drop multiple files" class="flexi_drag_file" multiple="true"]</code><br>
         [flexi-form-tag type="submit" name="submit" value="Submit Now"]<br>

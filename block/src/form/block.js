@@ -76,7 +76,7 @@ registerBlockType("cgb/block-flexi-block-form", {
 		},
 		form_class: {
 			type: "string",
-			default: "pure-form pure-form-stacked",
+			default: "flexi_form_style",
 		},
 		form_title: {
 			type: "string",
