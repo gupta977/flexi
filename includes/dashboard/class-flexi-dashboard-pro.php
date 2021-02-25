@@ -142,7 +142,7 @@ class Flexi_Admin_Dashboard_Pro
         [flexi-form-tag type="post_title" title="Title" edit="true" ]<br>
         [flexi-form-tag type="category" title="Select category" edit="true"]<br>
         [flexi-form-tag type="tag" title="Insert tag" edit="true"]<br>
-        [flexi-form-tag type="article" title="Description" placeholder="Content" edit="true"]<br>
+        [flexi-form-tag type="article" class="fl-textarea" title="Description" placeholder="Content" edit="true"]<br>
         [flexi-form-tag type="submit" name="submit" value="Update Now"]<br>
         [/flexi-form]<br>
       </p>

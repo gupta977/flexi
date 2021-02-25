@@ -146,7 +146,7 @@ function flexi_form_render_callback($args)
     }
 
     if (isset($args['enable_desp']) && '1' == $args['enable_desp']) {
-      $shortcode .= '[flexi-form-tag type="article" title="' . $args['desp_label'] . '" placeholder="' . $args['desp_placeholder'] . '"]';
+      $shortcode .= '[flexi-form-tag type="article" class="fl-textarea" title="' . $args['desp_label'] . '" placeholder="' . $args['desp_placeholder'] . '"]';
     }
 
     if (isset($args['enable_file']) && '1' == $args['enable_file']) {

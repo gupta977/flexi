@@ -117,7 +117,7 @@ class Flexi_Shortcode_Form
                             jQuery("#flexi_form").slideUp();
                         });
                     </script>
-                    <a id="flexi_attach_form_link" href="#admin-ajax.php?action=flexi_send_again&amp;post_id=1683" class="pure-button flexi_send_again"><span class="dashicons dashicons-plus"></span> New</a>
+                    <a id="flexi_attach_form_link" href="#admin-ajax.php?action=flexi_send_again&amp;post_id=1683" class="la-button flexi_send_again"><span class="dashicons dashicons-plus"></span> New</a>
 
                 <?php
                 }
@@ -369,9 +369,11 @@ action="' . admin_url("admin-ajax.php") . '"
         $abc = "";
 
         ob_start();
+
+
         if ('post_title' == $attr['type']) {
             echo '<div class="fl-field">';
-            echo $frm->addLabelFor("user-submitted-title", __($attr['title'], 'flexi'), array('class' => $attr['class']));
+            echo $frm->addLabelFor("user-submitted-title", __($attr['title'], 'flexi'));
             echo '<div class="fl-control">';
             // arguments: type, name, value
             if ('' == $attr['edit']) {
@@ -385,7 +387,7 @@ action="' . admin_url("admin-ajax.php") . '"
             echo '</div>';
         } else if ('video_url' == $attr['type']) {
             echo '<div class="fl-field">';
-            echo $frm->addLabelFor("user-submitted-url", __($attr['title'], 'flexi'), array('class' => $attr['class']));
+            echo $frm->addLabelFor("user-submitted-url", __($attr['title'], 'flexi'));
             echo '<div class="fl-control">';
             if ('' == $attr['edit']) {
                 echo $frm->addInput('url', "user-submitted-url", $attr['value'], array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
@@ -397,7 +399,7 @@ action="' . admin_url("admin-ajax.php") . '"
             echo '</div>';
         } else if ('category' == $attr['type']) {
             echo '<div class="fl-field">';
-            echo $frm->addLabelFor('cat', __($attr['title'], 'flexi'), array('class' => $attr['class']));
+            echo $frm->addLabelFor('cat', __($attr['title'], 'flexi'));
             echo '<div class="fl-control"><div class="fl-select">';
             if ('' == $attr['edit']) {
                 echo flexi_droplist_album('flexi_category', '', array(), $attr['id']);
@@ -411,7 +413,7 @@ action="' . admin_url("admin-ajax.php") . '"
             echo '</div>';
         } else if ('tag_list' == $attr['type']) {
             echo '<div class="fl-field">';
-            echo $frm->addLabelFor('tags', __($attr['title'], 'flexi'), array('class' => $attr['class']));
+            echo $frm->addLabelFor('tags', __($attr['title'], 'flexi'));
             echo '<div class="fl-control">';
             if ('' == $attr['edit']) {
                 echo flexi_droplist_tag('flexi_tag', '', array(), $attr['id']);
@@ -425,7 +427,7 @@ action="' . admin_url("admin-ajax.php") . '"
             echo '</div>';
         } else if ('tag' == $attr['type']) {
             echo '<div class="fl-field">';
-            echo $frm->addLabelFor("tags", __($attr['title'], 'flexi'), array('class' => $attr['class']));
+            echo $frm->addLabelFor("tags", __($attr['title'], 'flexi'));
             echo '<div class="fl-control">';
             // arguments: type, name, value
             if ('' == $attr['edit']) {
@@ -462,11 +464,24 @@ action="' . admin_url("admin-ajax.php") . '"
                             <?php echo __($attr['title'], 'flexi'); ?>
                         </span>
                     </span>
+                    <span class="fl-file-name" id="flexi_filename">
+                        &nbsp;
+                    </span>
                 </label>
             </div>
+            <script>
+                var file = document.getElementById("file");
+                file.onchange = function() {
+                    if (file.files.length > 0) {
+
+                        document.getElementById('flexi_filename').innerHTML = file.files[0].name;
+
+                    }
+                };
+            </script>
 <?php
             //echo '<div class="fl-file fl-is-boxed">';
-            // echo $frm->addLabelFor('user-submitted-image[]', __($attr['title'], 'flexi'), array('class' => $attr['class']));
+            // echo $frm->addLabelFor('user-submitted-image[]', __($attr['title'], 'flexi') );
             // echo '<div class="fl-control">';
             //  echo $frm->addInput('file', "user-submitted-image[]", '', array('id' => 'file', 'class' => $attr['class'], 'required' => $attr['required']));
             //  echo '</div>';
@@ -484,7 +499,7 @@ action="' . admin_url("admin-ajax.php") . '"
             echo '</div>';
         } else if ('article' == $attr['type']) {
             echo '<div class="fl-field">';
-            echo $frm->addLabelFor('user-submitted-content', __($attr['title'], 'flexi'), array('class' => $attr['class']));
+            echo $frm->addLabelFor('user-submitted-content', __($attr['title'], 'flexi'));
             echo '<div class="fl-control">';
             // arguments: name, rows, cols, value, optional assoc. array
             if ('' == $attr['edit']) {
@@ -493,7 +508,7 @@ action="' . admin_url("admin-ajax.php") . '"
                     $attr['rows'],
                     $attr['cols'],
                     '',
-                    array('id' => $attr['id'], 'placeholder' => $attr['placeholder'], 'required' => $attr['required'])
+                    array('id' => $attr['id'], 'placeholder' => $attr['placeholder'], 'required' => $attr['required'], 'class' => $attr['class'])
                 );
             } else {
                 if (isset($_GET['id'])) {
@@ -502,7 +517,7 @@ action="' . admin_url("admin-ajax.php") . '"
                         $attr['rows'],
                         $attr['cols'],
                         flexi_get_detail($_GET['id'], 'post_content'),
-                        array('id' => $attr['id'], 'placeholder' => $attr['placeholder'], 'required' => $attr['required'])
+                        array('id' => $attr['id'], 'placeholder' => $attr['placeholder'], 'required' => $attr['required'], 'class' => $attr['class'])
                     );
                 }
             }
@@ -512,14 +527,14 @@ action="' . admin_url("admin-ajax.php") . '"
             echo '<div class="fl-field">';
             if ('' == $attr['edit']) {
                 // arguments: for (id of associated form element), text
-                echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'), array('class' => $attr['class']));
+                echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
                 // arguments: type, name, value
                 echo '<div class="fl-control">';
                 echo $frm->addInput('text', $attr['name'], $attr['value'], array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
                 echo '</div>';
             } else {
                 // arguments: for (id of associated form element), text
-                echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'), array('class' => $attr['class']));
+                echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
                 // arguments: type, name, value
                 echo '<div class="fl-control">';
                 echo $frm->addInput('text', $attr['name'], flexi_custom_field_value($_GET['id'], $attr['name']), array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
@@ -530,14 +545,14 @@ action="' . admin_url("admin-ajax.php") . '"
             echo '<div class="fl-field">';
             if ('' == $attr['edit']) {
                 // arguments: for (id of associated form element), text
-                echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'), array('class' => $attr['class']));
+                echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
                 echo '<div class="fl-control">';
                 // arguments: type, name, value
                 echo $frm->addInput($attr['new_type'], $attr['name'], $attr['value'], array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
                 echo '</div>';
             } else {
                 // arguments: for (id of associated form element), text
-                echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'), array('class' => $attr['class']));
+                echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
                 echo '<div class="fl-control">';
                 // arguments: type, name, value
                 echo $frm->addInput($attr['new_type'], $attr['name'], flexi_custom_field_value($_GET['id'], $attr['name']), array('placeholder' => $attr['placeholder'], 'class' => $attr['class'], 'required' => $attr['required']));
@@ -560,13 +575,14 @@ action="' . admin_url("admin-ajax.php") . '"
             echo '<div class="fl-field">';
             echo '<div class="fl-control">';
             $values = explode(',', $attr['value']);
-            echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'), array('class' => $attr['class']));
+            echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
             foreach ($values as $option) {
                 $val     = explode(":", $option);
                 $caption = isset($val[1]) ? $val[1] : $val[0];
 
 
                 if ("radio" == $attr['type']) {
+                    echo '<label class="fl-radio">';
                     if ('' == $attr['edit']) {
                         echo $frm->addInput('radio', $attr['name'], $val[0], array('required' => $attr['required'])) . ' ' . $caption . ' ';
                     } else {
@@ -578,9 +594,12 @@ action="' . admin_url("admin-ajax.php") . '"
                             }
                         }
                     }
+                    echo '</label>';
                 }
 
+
                 if ("checkbox" == $attr['type']) {
+                    echo '<label class="fl-checkbox">';
                     if ('' == $attr['edit']) {
                         echo $frm->addInput('checkbox', $val[0], $caption, array('required' => $attr['required'])) . ' ' . $caption . ' ';
                     } else {
@@ -592,6 +611,7 @@ action="' . admin_url("admin-ajax.php") . '"
                             }
                         }
                     }
+                    echo '&nbsp;</label>';
                 }
             }
             echo '</div>';
@@ -615,7 +635,7 @@ action="' . admin_url("admin-ajax.php") . '"
              *   name, array containing option values, array containing option text,
              *   optional: selected option's value, header, additional attributes in associative array
              */
-            echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'), array('class' => $attr['class']));
+            echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
             if ('' == $attr['placeholder']) {
                 echo $frm->addSelectListArrays($attr['name'], $val, $label, '');
             } else {
@@ -624,7 +644,7 @@ action="' . admin_url("admin-ajax.php") . '"
             echo '</div>';
         } else if ('textarea' == $attr['type']) {
             echo '<div class="fl-field">';
-            echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'), array('class' => $attr['class']));
+            echo $frm->addLabelFor($attr['name'], __($attr['title'], 'flexi'));
             echo '<div class="fl-control">';
             // arguments: name, rows, cols, value, optional assoc. array
             if ('' == $attr['edit']) {
@@ -743,7 +763,7 @@ $link       = get_permalink($id);
 
 if ("#" != $link) {
 $extra_icon = array(
-array("dashicons-visibility", __('View', 'flexi'), $link, $id, 'pure-button'),
+array("dashicons-visibility", __('View', 'flexi'), $link, $id, 'fl-button'),
 
 );
 }

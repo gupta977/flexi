@@ -80,7 +80,7 @@ class Flexi_Admin_Dashboard_Pages
           [flexi-form-tag type="post_title" title="Title" value="" placeholder="Main Title" required="true"]<br>
           [flexi-form-tag type="category" title="Select category"]<br>
           [flexi-form-tag type="tag" title="Insert tag"]<br>
-          [flexi-form-tag type="article" title="Description" placeholder="Content"]<br>
+          [flexi-form-tag type="article" class="fl-textarea" title="Description" placeholder="Content"]<br>
           [flexi-form-tag type="file" title="Select file" required="true"]<br>
           [flexi-form-tag type="submit" name="submit" value="Submit Now"]<br>
           [/flexi-form]
@@ -122,7 +122,7 @@ class Flexi_Admin_Dashboard_Pages
           [flexi-form-tag type="post_title" title="Title" placeholder="Main Title" edit="true" required="true"]
           [flexi-form-tag type="category" title="Select category" edit="true"]
           [flexi-form-tag type="tag" title="Insert tag" edit="true"]
-          [flexi-form-tag type="article" title="Description" placeholder="Content" edit="true"]
+          [flexi-form-tag type="article" class="fl-textarea" title="Description" placeholder="Content" edit="true"]
           [flexi-form-tag type="submit" name="submit" value="Update Now"]
           [/flexi-form]<br>
         </p>

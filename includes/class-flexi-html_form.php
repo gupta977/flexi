@@ -71,7 +71,7 @@ class flexi_HTML_Form
     // for attribute refers to id of associated form element
     public function addLabelFor($forID, $text, $attr_ar = array())
     {
-        $str = "<label for=\"$forID\"";
+        $str = "<label class='fl-label' for=\"$forID\"";
         if ($attr_ar) {
             $str .= $this->addAttributes($attr_ar);
         }
