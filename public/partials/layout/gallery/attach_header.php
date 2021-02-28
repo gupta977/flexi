@@ -18,34 +18,6 @@ if (false == $clear) {
 
 
 
-
-   <style>
-      .flexi_gallery_sidebar {
-         padding-left: 10px;
-         padding-right: 10px;
-         margin: 15px 0px;
-         border-radius: 6px;
-      }
-
-      .flexi_gallery_sidebar .flexi_frame_4 {
-         margin-bottom: 10px;
-      }
-
-      .flexi_gallery_sidebar .widget-title {
-         font-family: "Poppins", sans-serif;
-         font-size: 1.125rem;
-         font-weight: 700;
-         letter-spacing: 0.0625rem;
-         padding: 0;
-         position: relative;
-         margin: 10px;
-      }
-
-      .flexi_gallery_sidebar .widget_categories {
-         list-style: none;
-      }
-   </style>
-
 <?php
 }
 //Display tags
@@ -55,7 +27,8 @@ if ($show_tag) {
 //var_dump($evalue);
 if (false == $clear && is_active_sidebar('flexi-gallery-sidebar') &&  is_flexi_page('primary_page', 'flexi_image_layout_settings')) {
 
-   echo "<div class='pure-g'><div class='pure-u-1-1 pure-u-md-4-5'>";
+   //echo "<div class='pure-g'><div class='pure-u-1-1 pure-u-md-4-5'>";
+   echo '<div class="fl-columns"><div class="fl-column fl-is-three-quarters">';
 }
 
 
