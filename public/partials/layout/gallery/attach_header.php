@@ -4,19 +4,11 @@ $toolbar = new Flexi_Gallery_Toolbar();
 if (false == $clear) {
 ?>
 
-   <div class="pure-g">
-      <div class="pure-u-1-3" style="text-align:left;">
-         <?php do_action('flexi_gallery_top_center', $atts) ?>
-      </div>
-      <div class="pure-u-1-3" style="text-align:center;">
+   <div class="fl-columns">
+      <div class="fl-column">
          <div class="flexi_label"><?php echo $toolbar->label(); ?></div>
       </div>
-      <div class="pure-u-1-3" style="text-align:right;">
-         <?php do_action('flexi_gallery_top_right', $atts) ?>
-      </div>
    </div>
-
-
 
 <?php
 }
@@ -27,7 +19,6 @@ if ($show_tag) {
 //var_dump($evalue);
 if (false == $clear && is_active_sidebar('flexi-gallery-sidebar') &&  is_flexi_page('primary_page', 'flexi_image_layout_settings')) {
 
-   //echo "<div class='pure-g'><div class='pure-u-1-1 pure-u-md-4-5'>";
    echo '<div class="fl-columns"><div class="fl-column fl-is-three-quarters">';
 }
 
