@@ -135,7 +135,7 @@ function flexi_form_render_callback($args)
 
     $shortcode .= '[flexi-form class="' . $args['form_class'] . '" title="' . $args['form_title'] . '" name="' . sanitize_title_with_dashes($args['form_title']) . '" ajax="' . $enable_ajax . '" ' . $flexi_type . ']';
 
-    $shortcode .= '[flexi-form-tag type="post_title" title="' . $args['title_label'] . '" value="" placeholder="' . $args['title_placeholder'] . '" required="true"]';
+    $shortcode .= '[flexi-form-tag type="post_title" class="fl-input" title="' . $args['title_label'] . '" value="" placeholder="' . $args['title_placeholder'] . '" required="true"]';
 
     if (isset($args['enable_category']) && '1' == $args['enable_category']) {
       $shortcode .= '[flexi-form-tag type="category" title="' . $args['category_label'] . '" id="' . $args['cat'] . '"]';
@@ -181,6 +181,7 @@ function flexi_form_render_callback($args)
 
 ?>
     <link rel='stylesheet' id='flexi_public_css-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/flexi-public.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
+    <link rel='stylesheet' id='flexi_min-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/flexi-public-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
 
     <link rel='stylesheet' id='flexi_purecss_base-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/base-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
     <link rel='stylesheet' id='flexi_purecss_grids-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/grids-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />

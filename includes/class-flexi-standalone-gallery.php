@@ -61,7 +61,7 @@ class Flexi_Standalone_Gallery
               ?>
 
               <hr>
-              <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image pure-form" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
+              <form id="flexi-request-form-update-primary" class="flexi_ajax_update_image" method="post" enctype="multipart/form-data" action="http://localhost/wp5/wp-admin/admin-ajax.php">
                 <fieldset>
                   <legend><?php echo __("Select new image to replace", "flexi"); ?></legend>
                   <input type="file" name="user-submitted-image[]" accept="image/*" value="" id="file" class="" required="">

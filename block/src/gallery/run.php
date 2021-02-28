@@ -210,6 +210,8 @@ function flexi_gallery_render_callback($args)
 ?>
     <link rel='stylesheet' id='flexi_public_layout' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/partials/layout/gallery/<?php echo $args['layout']; ?>/style.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
     <link rel='stylesheet' id='flexi_public_css-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/flexi-public.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
+    <link rel='stylesheet' id='flexi_min-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/flexi-public-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
+
     <link rel='stylesheet' id='flexi_fancybox-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/jquery.fancybox.min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
     <link rel='stylesheet' id='flexi_purecss_base-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/base-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
     <link rel='stylesheet' id='flexi_purecss_grids-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/grids-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />

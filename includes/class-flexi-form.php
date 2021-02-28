@@ -168,7 +168,7 @@ action="' . admin_url("admin-ajax.php") . '"
                 }
 
                 if (trim($content) == "") {
-                    $default = ' [flexi-form-tag type="post_title" title="Title"]
+                    $default = ' [flexi-form-tag type="post_title" class="fl-input" title="Title"]
      [flexi-form-tag type="file" title="Select file" required="true"]
          [flexi-form-tag type="submit" name="submit" value="Submit Now"]';
                     echo do_shortcode($default);
@@ -453,32 +453,36 @@ action="' . admin_url("admin-ajax.php") . '"
             echo '</div>';
         } else if ('file' == $attr['type']) {
         ?>
-            <div class="fl-file fl-is-boxed">
-                <label class="fl-file-label">
-                    <input type="file" name="user-submitted-image[]" value="" id="file" class="fl-file-input" required="">
-                    <span class="fl-file-cta">
-                        <span class="fl-file-icon">
-                            <i class="fas fa-upload"></i>
+            <div class="fl-field">
+                <div id="file-js-flexi" class="fl-file fl-has-name">
+                    <label class="fl-file-label">
+                        <input type="file" name="user-submitted-image[]" value="" id="file" class="fl-file-input" required="">
+                        <span class="fl-file-cta">
+                            <span class="fl-file-icon">
+                                <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="fl-file-label">
+                                <?php echo __($attr['title'], 'flexi'); ?>
+                            </span>
                         </span>
-                        <span class="fl-file-label">
-                            <?php echo __($attr['title'], 'flexi'); ?>
+                        <span class="fl-file-name">
+                            <?php echo __('No file selected', 'flexi'); ?>
                         </span>
-                    </span>
-                    <span class="fl-file-name" id="flexi_filename">
-                        &nbsp;
-                    </span>
-                </label>
+                    </label>
+                </div>
             </div>
             <script>
-                var file = document.getElementById("file");
-                file.onchange = function() {
-                    if (file.files.length > 0) {
-
-                        document.getElementById('flexi_filename').innerHTML = file.files[0].name;
-
+                const fileInput = document.querySelector('#file-js-flexi input[type=file]');
+                fileInput.onchange = () => {
+                    if (fileInput.files.length > 0) {
+                        const fileName = document.querySelector('#file-js-flexi .fl-file-name');
+                        fileName.textContent = fileInput.files[0].name;
                     }
-                };
+                }
             </script>
+
+
+
 <?php
             //echo '<div class="fl-file fl-is-boxed">';
             // echo $frm->addLabelFor('user-submitted-image[]', __($attr['title'], 'flexi') );

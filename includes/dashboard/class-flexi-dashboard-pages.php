@@ -77,7 +77,7 @@ class Flexi_Admin_Dashboard_Pages
       <div id="sample_post_form" style="display:none;">
         <p>
           [flexi-form class="flexi_form_style" title="Submit to Flexi" name="my_form" ajax="true"]<br>
-          [flexi-form-tag type="post_title" title="Title" value="" placeholder="Main Title" required="true"]<br>
+          [flexi-form-tag type="post_title" class="fl-input" title="Title" value="" placeholder="Main Title" required="true"]<br>
           [flexi-form-tag type="category" title="Select category"]<br>
           [flexi-form-tag type="tag" title="Insert tag"]<br>
           [flexi-form-tag type="article" class="fl-textarea" title="Description" placeholder="Content"]<br>
@@ -119,7 +119,7 @@ class Flexi_Admin_Dashboard_Pages
         <p>
           [flexi-standalone]
           [flexi-form class="flexi_form_style" title="Update Flexi" name="my_form" ajax="true" edit="true"]
-          [flexi-form-tag type="post_title" title="Title" placeholder="Main Title" edit="true" required="true"]
+          [flexi-form-tag type="post_title" class="fl-input" title="Title" placeholder="Main Title" edit="true" required="true"]
           [flexi-form-tag type="category" title="Select category" edit="true"]
           [flexi-form-tag type="tag" title="Insert tag" edit="true"]
           [flexi-form-tag type="article" class="fl-textarea" title="Description" placeholder="Content" edit="true"]
