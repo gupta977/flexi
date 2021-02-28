@@ -279,7 +279,7 @@ div.flexi_gallery_grid {
   box-sizing: border-box;
 }
 .flexi_responsive_fixed {
-  padding: 0px;
+  padding: 2px;
   float: left;
   box-sizing: border-box;
 }

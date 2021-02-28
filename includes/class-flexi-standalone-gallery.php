@@ -175,20 +175,17 @@ class Flexi_Standalone_Gallery
       } else {
 
         ?>
-        <div class="pure-g">
-          <div class="pure-u-1-1" style='text-align: center;'>
 
-
-            <div class="flexi_margin-box" style="text-align: center;">
-              <div class="flexi-image-wrapper_large"><img id="flexi_large_image" src="<?php echo flexi_image_src('large', $flexi_post); ?>"></div>
-            </div>
-
-
+        <div class="fl-columns fl-is-centered fl-is-vcentered">
+          <div class="fl-column fl-is-narrow">
+            <div class="flexi-image-wrapper_large"><img id="flexi_large_image" src="<?php echo flexi_image_src('large', $flexi_post); ?>"></div>
           </div>
-          <div class="pure-u-1">
-            <div class="flexi_margin-box">
-              <div id="flexi_thumb_image"> <?php flexi_standalone_gallery($id, 'thumbnail', 75, 75); ?></div>
-            </div>
+        </div>
+
+        <div class="fl-columns fl-is-centered fl-is-vcentered">
+          <div class="fl-column fl-is-narrow">
+            <?php flexi_standalone_gallery($id, 'thumbnail', 75, 75);
+            ?>
           </div>
         </div>
 <?php
