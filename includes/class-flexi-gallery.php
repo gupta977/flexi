@@ -523,6 +523,27 @@ class Flexi_Shortcode_Gallery
         --flexi_padding: <?php echo $padding; ?>px;
       }
     </style>
+    <?php
+    if (isset($_GET['flexi_layout'])) {
+    ?>
+      <style>
+        .fl-column {
+          border-radius: .500em;
+          border: dotted;
+        }
+      </style>
+      <script>
+        jQuery(document).ready(function() {
+          var colors = ['red', 'blue', 'green', 'yellow', 'cyan', 'orange', 'pink', 'grey', 'white', 'black', 'rosybrown', 'tan', 'plum', 'saddlebrown'];
+          jQuery.each(jQuery('.fl-column'), function() {
+            var new_color = colors[Math.floor(Math.random() * colors.length)];
+            jQuery(this).css('background-color', new_color);
+          });
+        });
+      </script>
+    <?php
+    }
+    ?>
 
 <?php
     $put = ob_get_clean();
