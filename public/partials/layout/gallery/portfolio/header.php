@@ -1,2 +1,2 @@
 <div id="flexi_gallery">
-<div class="pure-g" id="flexi_main_loop">
+    <div class="fl-columns fl-is-multiline" id="flexi_main_loop">

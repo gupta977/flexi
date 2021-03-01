@@ -1,7 +1,16 @@
 <?php
 $data = flexi_image_data('thumbnail', get_the_ID(), $popup);
+if ($column == "1") {
+  $column_set = "12";
+} else if ($column == "2") {
+  $column_set = "6";
+} else if ($column == "3") {
+  $column_set = "4";
+} else {
+  $column_set = "3";
+}
 ?>
-<div class="pure-u-1 pure-u-md-1-<?php echo $column; ?> flexi_gallery_child flexi_padding" id="flexi_<?php echo get_the_ID(); ?>" style="position: relative;" data-tags="<?php echo $tags; ?>">
+<div class="fl-column fl-is-<?php echo $column_set; ?> flexi_gallery_child flexi_padding" id="flexi_<?php echo get_the_ID(); ?>" style="position: relative;" data-tags="<?php echo $tags; ?>">
   <!-- Loop start -->
 
 
