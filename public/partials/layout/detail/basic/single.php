@@ -5,18 +5,18 @@
         <?php do_action('flexi_location_1', '1', $post, 'basic'); ?>
       </div>
     </div>
-    <div class="fl-column bd-notification fl-is-full">
+    <div class="fl-column fl-is-full">
       <div style='text-align: center;'>
         <?php do_action('flexi_location_2', '2', $post, 'basic'); ?>
       </div>
     </div>
-    <div class="fl-column bd-notification fl-is-half">
+    <div class="fl-column fl-is-half">
       <div style='text-align: left;'>
         <?php do_action('flexi_location_3', '3', $post, 'basic'); ?>
       </div>
 
     </div>
-    <div class="fl-column bd-notification fl-is-half">
+    <div class="fl-column fl-is-half">
       <div style='text-align: right;'>
         <?php do_action('flexi_location_4', '4', $post, 'basic'); ?>
       </div>
