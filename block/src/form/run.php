@@ -158,7 +158,7 @@ function flexi_form_render_callback($args)
     }
 
     if (isset($args['enable_url']) && '1' == $args['enable_url']) {
-      $shortcode .= '[flexi-form-tag type="video_url" title="' . $args['url_label'] . '" value="" placeholder="eg. https://www.youtube.com/watch?v=uqyVWtWFQkY" required="true" class="pure-input-1"]';
+      $shortcode .= '[flexi-form-tag type="video_url" title="' . $args['url_label'] . '" value="" placeholder="eg. https://www.youtube.com/watch?v=uqyVWtWFQkY" required="true"]';
     }
 
     if (isset($args['enable_security']) && '1' == $args['enable_security']) {
@@ -183,11 +183,6 @@ function flexi_form_render_callback($args)
     <link rel='stylesheet' id='flexi_public_css-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/flexi-public.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
     <link rel='stylesheet' id='flexi_min-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/flexi-public-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
 
-    <link rel='stylesheet' id='flexi_purecss_base-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/base-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
-    <link rel='stylesheet' id='flexi_purecss_grids-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/grids-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
-    <link rel='stylesheet' id='flexi_purecss_responsive-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/grids-responsive-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
-    <link rel='stylesheet' id='flexi_purecss_buttons-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/buttons-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
-    <link rel='stylesheet' id='flexi_purecss_forms-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/purecss/forms-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
 <?php
 
   }
