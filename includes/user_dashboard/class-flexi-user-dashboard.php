@@ -82,6 +82,13 @@ class Flexi_User_Dashboard
                 'sanitize_callback' => 'sanitize_key',
             ),
             array(
+                'name'              => 'enable_dashboard_search',
+                'label'             => __('Disable search box', 'flexi'),
+                'description'       => __('Hide search input box from user dashboard', 'flexi'),
+                'type'              => 'checkbox',
+                'sanitize_callback' => 'intval',
+            ),
+            array(
                 'name'              => 'enable_dashboard_button',
                 'label'             => __('"My Dashboard" button', 'flexi'),
                 'description'       => __('Display "My Dashboard" button at common toolbar', 'flexi'),
@@ -166,20 +173,27 @@ class Flexi_User_Dashboard
                                 <?php echo flexi_author($current_user->user_login); ?>
                             </div>
 
-                            <div class="fl-column fl-has-text-right">
-                                <form id="theForm">
-                                    <div class="fl-field fl-has-addons">
-                                        <div class="fl-control">
-                                            <input id="search_value" class="fl-input" name="search" type="text" placeholder="<?php echo __('My search', 'flexi'); ?>">
+                            <?php
+                            $enable_search = flexi_get_option('enable_dashboard_search', 'flexi_user_dashboard_settings', 1);
+                            if ("1" == $enable_search) {
+                            ?>
+                                <div class="fl-column fl-has-text-right">
+                                    <form id="theForm">
+                                        <div class="fl-field fl-has-addons">
+                                            <div class="fl-control">
+                                                <input id="search_value" class="fl-input" name="search" type="text" placeholder="<?php echo __('My search', 'flexi'); ?>">
+                                            </div>
+                                            <div class="fl-control">
+                                                <a id="flexi_search" class="fl-button fl-is-info">
+                                                    <?php echo __("Search", "flexi"); ?>
+                                                </a>
+                                            </div>
                                         </div>
-                                        <div class="fl-control">
-                                            <a id="flexi_search" class="fl-button fl-is-info">
-                                                <?php echo __("Search", "flexi"); ?>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                                    </form>
+                                </div>
+                            <?php
+                            }
+                            ?>
                         </div>
 
 
