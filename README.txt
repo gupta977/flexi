@@ -201,6 +201,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 3.5 =
+* Removed puress.io support
+* Option to remove search box from user dashboard
+
 = 3.4 =
 * Added fontawesome support
 * Option to disable fontawesome if used by theme
