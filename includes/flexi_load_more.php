@@ -55,7 +55,7 @@ function flexi_load_more()
         $args = array(
             'post_type'      => 'flexi',
             'paged'          => $paged,
-            's'              => $search,
+            's'              => flexi_get_param_value('keyword', $search),
             'posts_per_page' => $postsperpage,
             'orderby'        => $orderby,
             'post_status'    => explode(',', $post_status),
@@ -83,7 +83,7 @@ function flexi_load_more()
     } else {
         $args = array(
             'post_type'      => 'flexi',
-            's'              => $search,
+            's'              => flexi_get_param_value('keyword', $search),
             'paged'          => $paged,
             'posts_per_page' => $postsperpage,
             'author'    => $user,
@@ -119,6 +119,32 @@ function flexi_load_more()
         );
 
         array_push($args['meta_query'], $attach_array);
+    }
+
+    //Query based on Custom fields
+    for ($z = 1; $z <= 20; $z++) {
+        $param_value = flexi_get_param_value('flexi_field_' . $z, $search);
+        //If search used in URL
+        if ($param_value != '') {
+            $attach_array = array(
+                'key'     => 'flexi_field_' . $z,
+                'value'   => $param_value,
+                'compare' => '=',
+            );
+
+            array_push($args['meta_query'], $attach_array);
+        } else {
+            if (isset($params['flexi_field_' . $z])) {
+
+                $attach_array = array(
+                    'key'     => 'flexi_field_' . $z,
+                    'value'   => $params['flexi_field_' . $z],
+                    'compare' => '=',
+                );
+
+                array_push($args['meta_query'], $attach_array);
+            }
+        }
     }
 
     $query = new WP_Query($args);

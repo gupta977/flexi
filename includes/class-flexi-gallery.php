@@ -289,7 +289,7 @@ class Flexi_Shortcode_Gallery
     if ("" != $album || "" != $keyword) {
       $args = array(
         'post_type'      => 'flexi',
-        's'              => $search,
+        's'              => flexi_get_param_value('keyword', $search),
         'paged'          => $paged,
         'posts_per_page' => $postsperpage,
         'author'    => $user,
@@ -318,7 +318,7 @@ class Flexi_Shortcode_Gallery
     } else {
       $args = array(
         'post_type'      => 'flexi',
-        's'              => $search,
+        's'              => flexi_get_param_value('keyword', $search),
         'paged'          => $paged,
         'posts_per_page' => $postsperpage,
         'author'    => $user,
@@ -356,13 +356,17 @@ class Flexi_Shortcode_Gallery
       array_push($args['meta_query'], $attach_array);
     }
 
+
+
+
     //Query based on Custom fields
     for ($z = 1; $z <= 20; $z++) {
+      $param_value = flexi_get_param_value('flexi_field_' . $z, $search);
       //If search used in URL
-      if (isset($_GET['flexi_field_' . $z])) {
+      if ($param_value != '') {
         $attach_array = array(
           'key'     => 'flexi_field_' . $z,
-          'value'   => $_GET['flexi_field_' . $z],
+          'value'   => $param_value,
           'compare' => '=',
         );
 

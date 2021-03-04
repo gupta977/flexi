@@ -1089,8 +1089,10 @@ function flexi_evalue_setarray($evalue)
     $values = explode(',', $evalue);
     foreach ($values as $option) {
         $cap = explode(":", $option);
-        if ('' != $cap[0]) {
-            $main[$cap[0]] = trim($cap[1]);
+        if (isset($cap[1])) {
+            if ('' != $cap[0]) {
+                $main[$cap[0]] = trim($cap[1]);
+            }
         }
     }
     return $main;
@@ -1107,6 +1109,20 @@ function flexi_evalue_toggle($key, $evalue)
         return 'display:none';
     }
 }
+
+
+//Get parameter value from long string
+function flexi_get_param_value($key, $search)
+{
+    $extra_param = flexi_evalue_setarray($search);
+    //flexi_log($extra_param);
+    if (isset($extra_param[$key])) {
+        return $extra_param[$key];
+    } else {
+        return '';
+    }
+}
+
 
 //Get error code while submitting form
 function flexi_get_error($result)

@@ -63,7 +63,7 @@ jQuery(document).ready(function() {
 
 		var search_value = jQuery("#search_value").val();
 		var cur_url = window.location.href;
-		var i = flexi_updateUrl(cur_url, 'search', search_value);
+		var i = flexi_updateUrl(cur_url, 'search', 'keyword:'+search_value);
 		window.location.replace(i);
 	});
 });
