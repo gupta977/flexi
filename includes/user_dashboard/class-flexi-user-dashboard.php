@@ -241,31 +241,7 @@ class Flexi_User_Dashboard
         }
         return ob_get_clean();
     }
-    /*
-    //Add My-Dashboard button after form submit
-    public function flexi_add_icon_submit_toolbar($icon, $id = '')
-    {
 
-        $extra_icon = array();
-
-        $link         = flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings');
-        $enable_addon = flexi_get_option('enable_dashboard_button', 'flexi_user_dashboard_settings', 1);
-
-        if ("#" != $link && "1" == $enable_addon) {
-            $extra_icon = array(
-                array("home", __('My Dashboard', 'flexi'), $link, $id, 'flexi_css_button'),
-
-            );
-        }
-
-        // combine the two arrays
-        if (is_array($extra_icon) && is_array($icon)) {
-            $icon = array_merge($extra_icon, $icon);
-        }
-
-        return $icon;
-    }
-*/
     //Styles only related to user dashboard
     public function enqueue_styles()
     {
@@ -274,35 +250,7 @@ class Flexi_User_Dashboard
         $my_gallery_id   = flexi_get_option('my_gallery', 'flexi_user_dashboard_settings', 0);
         $current_page_id = get_queried_object_id();
     }
-    /*
-    //button toolbar for user dashboard
-    public function flexi_member_toolbar()
-    {
-        global $post;
-        $icon = array();
 
-        $list = '';
-
-        if (has_filter('flexi_member_toolbar')) {
-            $icon = apply_filters('flexi_member_toolbar', $icon);
-        }
-
-        if (count($icon) > 0) {
-            $list .= '<div class="flexi_member_toolbar_group" role="toolbar" id="flexi_member_toolbar_' . get_the_ID() . '">';
-        }
-
-        for ($r = 0; $r < count($icon); $r++) {
-
-            if ("" != $icon[$r][0]) {
-                $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][3] . '"><span class="' . $icon[$r][3] . '-icon"><span class="flexi_icon_' . $icon[$r][0] . '"></span></span><span class="' . $icon[$r][3] . '-text">' . $icon[$r][1] . '</span></a> ';
-            }
-        }
-        if (count($icon) > 0) {
-            $list .= '</div>';
-        }
-        return $list;
-    }
-*/
 
     //common button toolbar shortcode: [flexi-common-toolbar]
     public function flexi_common_toolbar()
@@ -335,25 +283,27 @@ class Flexi_User_Dashboard
 
     public function gallery_button($icon)
     {
-        $enable_addon = flexi_get_option('enable_mygallery_button', 'flexi_user_dashboard_settings', 1);
+        if (is_user_logged_in()) {
+            $enable_addon = flexi_get_option('enable_mygallery_button', 'flexi_user_dashboard_settings', 1);
 
-        if ("1" == $enable_addon) {
+            if ("1" == $enable_addon) {
 
-            $extra_icon   = array();
-            $post_form_id = flexi_get_option('primary_page', 'flexi_image_layout_settings', 0);
-            $link         = get_permalink($post_form_id);
-            $current_user = wp_get_current_user();
+                $extra_icon   = array();
+                $post_form_id = flexi_get_option('primary_page', 'flexi_image_layout_settings', 0);
+                $link         = get_permalink($post_form_id);
+                $current_user = wp_get_current_user();
 
-            $link = add_query_arg("flexi_user", $current_user->user_login, $link);
+                $link = add_query_arg("flexi_user", $current_user->user_login, $link);
 
-            $extra_icon = array(
-                array('gallery', __('My Gallery', 'flexi'), $link, 'flexi_css_button'),
+                $extra_icon = array(
+                    array('gallery', __('My Gallery', 'flexi'), $link, 'flexi_css_button'),
 
-            );
+                );
 
-            // combine the two arrays
-            if (is_array($extra_icon) && is_array($icon)) {
-                $icon = array_merge($extra_icon, $icon);
+                // combine the two arrays
+                if (is_array($extra_icon) && is_array($icon)) {
+                    $icon = array_merge($extra_icon, $icon);
+                }
             }
         }
         return $icon;
@@ -417,22 +367,24 @@ class Flexi_User_Dashboard
 
     public function user_dashboard_button($icon)
     {
-        $extra_icon = array();
-        $link         = flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings');
-        $enable_addon = flexi_get_option('enable_dashboard_button', 'flexi_user_dashboard_settings', 1);
-        $current_page_id = get_the_ID();
-        $dashboard_page_id    = flexi_get_option('my_gallery', 'flexi_user_dashboard_settings', 0);
-        if ($current_page_id != $dashboard_page_id) {
-            if ("#" != $link && "1" == $enable_addon) {
+        if (is_user_logged_in()) {
+            $extra_icon = array();
+            $link         = flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings');
+            $enable_addon = flexi_get_option('enable_dashboard_button', 'flexi_user_dashboard_settings', 1);
+            $current_page_id = get_the_ID();
+            $dashboard_page_id    = flexi_get_option('my_gallery', 'flexi_user_dashboard_settings', 0);
+            if ($current_page_id != $dashboard_page_id) {
+                if ("#" != $link && "1" == $enable_addon) {
 
-                $extra_icon = array(
-                    array("home", __('My Dashboard', 'flexi'), $link, 'flexi_css_button'),
+                    $extra_icon = array(
+                        array("home", __('My Dashboard', 'flexi'), $link, 'flexi_css_button'),
 
-                );
-            }
-            // combine the two arrays
-            if (is_array($extra_icon) && is_array($icon)) {
-                $icon = array_merge($extra_icon, $icon);
+                    );
+                }
+                // combine the two arrays
+                if (is_array($extra_icon) && is_array($icon)) {
+                    $icon = array_merge($extra_icon, $icon);
+                }
             }
         }
         return $icon;
