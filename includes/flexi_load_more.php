@@ -128,8 +128,8 @@ function flexi_load_more()
         if ($param_value != '') {
             $attach_array = array(
                 'key'     => 'flexi_field_' . $z,
-                'value'   => $param_value,
-                'compare' => '=',
+                'value'   => explode('..', $param_value),
+                'compare' => 'IN',
             );
 
             array_push($args['meta_query'], $attach_array);
@@ -138,8 +138,8 @@ function flexi_load_more()
 
                 $attach_array = array(
                     'key'     => 'flexi_field_' . $z,
-                    'value'   => $params['flexi_field_' . $z],
-                    'compare' => '=',
+                    'value'   => explode('..', $params['flexi_field_' . $z]),
+                    'compare' => 'IN',
                 );
 
                 array_push($args['meta_query'], $attach_array);

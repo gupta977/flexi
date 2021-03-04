@@ -366,8 +366,8 @@ class Flexi_Shortcode_Gallery
       if ($param_value != '') {
         $attach_array = array(
           'key'     => 'flexi_field_' . $z,
-          'value'   => $param_value,
-          'compare' => '=',
+          'value'   => explode('..', $param_value),
+          'compare' => 'IN',
         );
 
         array_push($args['meta_query'], $attach_array);
@@ -376,8 +376,8 @@ class Flexi_Shortcode_Gallery
 
           $attach_array = array(
             'key'     => 'flexi_field_' . $z,
-            'value'   => $params['flexi_field_' . $z],
-            'compare' => '=',
+            'value'   => explode('..', $params['flexi_field_' . $z]),
+            'compare' => 'IN',
           );
 
           array_push($args['meta_query'], $attach_array);
