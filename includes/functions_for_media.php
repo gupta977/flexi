@@ -176,7 +176,6 @@ function flexi_image_data($size = 'full', $post_id = '', $popup = "on")
             $data['src']   = admin_url('admin-ajax.php?action=flexi_ajax_post_view&id=' . $flexi_post->ID . '&nonce=' . $nonce);
             $data['extra'] = 'custom-lightbox data-type="ajax"';
             $data['popup'] = 'flexi_show_popup_' . $popup;
-            $data['title'] = '';
         } else if ('simple' == $popup) {
             $data['url']   = flexi_image_src('large', $flexi_post);
             $data['src']   = $data['url'];
