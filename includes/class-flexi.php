@@ -191,6 +191,9 @@ class Flexi
     //Load Ajax Delete
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi_ajax_delete.php';
 
+    //Load like option
+    require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi_ajax_like.php';
+
     //Load Ajax Download
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-flexi_ajax_download.php';
 

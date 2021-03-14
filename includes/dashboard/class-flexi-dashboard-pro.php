@@ -34,7 +34,7 @@ class Flexi_Admin_Dashboard_Pro
 
     <div style="text-align:right;"> <a href="https://odude.com/product-category/flexi/" class="button-secondary">Purchase/Renew Flexi-PRO</a> </div>
 
-    <div class="update-nag">
+    <div class="card">
 
       <form method="post">
         <b>Enter license key: </b>
@@ -58,12 +58,12 @@ class Flexi_Admin_Dashboard_Pro
 
         $res = flexi_process_license($_POST['flexi_license']);
         if ('404' == $res->data->status) {
-          echo '<div class="update-nag">' . $res->message . '</div>';
+          echo '<div class="card"><h3>' . $res->message . '</h3></div>';
         } else {
-          echo '<div class="update-nag">License activated</div>';
+          echo '<div class="card"><h3>License activated</h3></div>';
         }
       } else {
-        echo '<div class="update-nag"><code>flexi-pro plugin is not installed or activated.</code></div>';
+        echo '<div class="card><code>flexi-pro plugin is not installed or activated.</code></div>';
       }
     }
 
@@ -73,7 +73,7 @@ class Flexi_Admin_Dashboard_Pro
       <h3 class="title">Flexi-PRO Status</h3>
       <b>Flexi Version: </b> <?php echo FLEXI_VERSION; ?><br>
       <b>Flexi-PRO status:</b> <?php if (is_flexi_pro()) {
-                                  echo "Activated";
+                                  echo "#####.....<b>Activated</b>.....#####";
                                 } else {
                                   echo "Not activated";
                                 } ?><br>

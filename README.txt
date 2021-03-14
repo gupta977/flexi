@@ -203,6 +203,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 3.6 =
 * 'My Dashboard' & 'My Gallery' button only displays only to logged in user.
+* Filter gallery by custom fields with help of shortcode
 
 
 = 3.5 =

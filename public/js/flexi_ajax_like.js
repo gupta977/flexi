@@ -1,5 +1,5 @@
 jQuery(document).ready(function () {
-  jQuery(document).on("click", "#flexi_ajax_delete", function (e) {
+  jQuery(document).on("click", "#flexi_ajax_like", function (e) {
     e.preventDefault();
     post_id = jQuery(this).attr("data-post_id");
     media_id = jQuery(this).attr("data-media_id");
@@ -11,17 +11,19 @@ jQuery(document).ready(function () {
         type: "post",
         dataType: "json",
         url: myAjax.ajaxurl,
-        data: { action: "flexi_ajax_delete", post_id: post_id, nonce: nonce, media_id:media_id },
+        data: { action: "flexi_ajax_like", post_id: post_id, nonce: nonce, media_id:media_id },
         success: function (response) {
           if (response.type == "success") {
             if(media_id)
             {
-              jQuery("#flexi_media_" + media_id).slideUp("slow");
+              //jQuery("#flexi_media_" + media_id).slideUp("slow");
+              alert("aa");
             }
             else
             {
-              jQuery("#flexi_content_" + post_id).slideUp("slow");
-              jQuery("#flexi_" + post_id).slideUp();
+             // jQuery("#flexi_content_" + post_id).slideUp("slow");
+             // jQuery("#flexi_" + post_id).slideUp();
+             alert("ggg");
             }
             
                         
@@ -33,7 +35,7 @@ jQuery(document).ready(function () {
     }
   });
   jQuery("#abc").click(function (e) {
-    //alert("hi");
+    alert("hi");
   });
   jQuery(".xyz").click(function (e) {
     // alert("bye");
