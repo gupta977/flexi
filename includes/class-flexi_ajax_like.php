@@ -7,7 +7,7 @@ class flexi_like
         add_action('wp_enqueue_scripts', array($this, "enqueue_script"));
         add_action("wp_ajax_flexi_ajax_like", array($this, "flexi_ajax_like"));
         add_action("wp_ajax_nopriv_flexi_ajax_like", array($this, "flexi_ajax_like"));
-        add_action('flexi_loop_portfolio', array($this, 'display_like'));
+        add_action('flexi_loop_portfolio', array($this, 'display_like'), 10, 1);
     }
 
     //include js file
@@ -61,18 +61,18 @@ class flexi_like
         die();
     }
 
-    public function display_like()
+    public function display_like($evalue)
     {
         $nonce   = wp_create_nonce("flexi_ajax_like");
         $id = get_the_ID();
 ?>
-        <span class="fl-icon-text fl-tag">
+        <span style="<?php echo flexi_evalue_toggle('like', $evalue); ?>" class="fl-icon-text fl-tag">
             <span id="flexi_like" data-key_type="like" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" class="fl-icon">
                 <i class="fas fa-thumbs-up"></i>
             </span>
             <span id="flexi_like_count_<?php echo $id; ?>"><?php echo $this->get_like_count($id, 'flexi_like_count'); ?></span>
         </span>
-        <span class="fl-icon-text fl-tag">
+        <span style="<?php echo flexi_evalue_toggle('unlike', $evalue); ?>" class="fl-icon-text fl-tag">
             <span id="flexi_like" data-key_type="unlike" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" class="fl-icon">
                 <i class="fas fa-thumbs-down"></i>
             </span>

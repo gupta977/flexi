@@ -416,28 +416,28 @@ class FLEXI_Admin_Settings
             'flexi_icon_settings'               => array(
                 array(
                     'name'              => 'edit_flexi_icon',
-                    'label'             => __('Edit icon', 'flexi') . '<span class="dashicons dashicons-edit"></span>',
+                    'label'             => __('Edit submission button', 'flexi') . '<span class="dashicons dashicons-edit"></span>',
                     'description'       => __('Edit icon at gallery & detail page.', 'flexi') . ' ' . $edit_help,
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
                 ),
                 array(
                     'name'              => 'delete_flexi_icon',
-                    'label'             => __('Delete icon', 'flexi') . '<span class="dashicons dashicons-trash"></span>',
+                    'label'             => __('Delete submission button', 'flexi') . '<span class="dashicons dashicons-trash"></span>',
                     'description'       => __('Trash icon at gallery & detail page.', 'flexi'),
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
                 ),
                 array(
                     'name'              => 'user_flexi_icon',
-                    'label'             => __('User icon', 'flexi') . '<span class="dashicons dashicons-admin-users"></span>',
+                    'label'             => __('User gallery button', 'flexi') . '<span class="dashicons dashicons-admin-users"></span>',
                     'description'       => __('Profile icon at gallery & detail page.', 'flexi'),
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
                 ),
                 array(
                     'name'              => 'download_flexi_icon',
-                    'label'             => __('Download icon', 'flexi') . '<span class="dashicons dashicons-download"></span>',
+                    'label'             => __('Download media button', 'flexi') . '<span class="dashicons dashicons-download"></span>',
                     'description'       => __('Download icon at gallery & detail page.', 'flexi'),
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',

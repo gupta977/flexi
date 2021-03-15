@@ -46,7 +46,7 @@ class Flexi_Public_Detail
 
                 array(
                     'name'              => 'detail_flexi_icon',
-                    'label'             => __('Detail icon', 'flexi') . ' <span class="dashicons dashicons-external"></span>',
+                    'label'             => __('Detail view button', 'flexi') . ' <span class="dashicons dashicons-external"></span>',
                     'description'       => __('Detail icon at gallery lightbox', 'flexi') . ' ' . $this->help,
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
