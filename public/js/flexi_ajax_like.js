@@ -20,16 +20,19 @@ jQuery(document).ready(function () {
               //alert(response.data_count);
               // jQuery("#flexi_like_count_"+post_id).slideUp("slow");
 
-
+              var p = FlexiloadPrompt();
+             
 
               if (key_type == "like") {
                 jQuery("#flexi_like_count_" + post_id).empty();
                 jQuery("#flexi_like_count_" + post_id).append(response.data_count).fadeIn("slow");
+                p.success('<i class="fas fa-thumbs-up"></i>');
               }
 
               if (key_type == "unlike") {
                 jQuery("#flexi_unlike_count_" + post_id).empty();
                 jQuery("#flexi_unlike_count_" + post_id).append(response.data_count).fadeIn("slow");
+                p.warn('<i class="fas fa-thumbs-down"></i>');
               }
               var cookie_name = 'flexi_c_' + post_id;
               flexi_setCookie(cookie_name, 1, 365);
@@ -44,14 +47,17 @@ jQuery(document).ready(function () {
 
 
           } else {
-            alert("Error" + post_id);
+            p.error('<i class="fas fa-times"></i>');
           }
         },
       });
     }
     else {
-      alert("alrady");
-      console.log(flexi_cookie);
+      //alert("alrady");
+      var p = FlexiloadPrompt();
+      p.error('<i class="fas fa-ban"></i>');
+     
+     // console.log(flexi_cookie);
     }
   });
 });

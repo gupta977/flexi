@@ -1,3 +1,151 @@
+/* Notification */
+/*flexi-prompt*/
+.flexi-prompt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.flexi-prompt * {
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.flexi-promptContent {
+  transition: 0.4s;
+  max-height: 0;
+  opacity: 0;
+}
+
+.flexi-promptContent > div {
+  border-radius: 2px;
+  transition: 0.4s;
+  padding: 10px 75px;
+  transform: translateY(100%);
+  user-select: none;
+  text-align: center;
+  word-break: break-all;
+  color: white;
+}
+
+.flexi-promptError {
+  background-color: #ff3b3b;
+  box-shadow: 0px 0px 16px -6px #ff1c1c;
+}
+
+.flexi-promptSuccess {
+  background-color: #00c700;
+  box-shadow: 0px 0px 16px -6px #00b800;
+}
+
+.flexi-promptWarn {
+  background-color: #ffc800;
+  color: black !important;
+  box-shadow: 0px 0px 16px -6px #ccb800;
+}
+
+.flexi-promptInform {
+  background-color: #368fe7;
+  box-shadow: 0px 0px 16px -6px #1b7fe4;
+}
+
+.flexi-promptShow {
+  margin-top: 10px;
+  opacity: 1;
+  /*    max-height: 500px;*/
+}
+
+.flexi-promptShow > div {
+  transform: translateY(0);
+}
+
+.flexi-promptOut > div {
+  transform: translateY(-100%);
+}
+
+.flexi-promptKeep {
+  z-index: 1;
+  pointer-events: all;
+}
+
+.flexi-promptShake:hover {
+  animation: shake 0.4s;
+  -webkit-animation: shake 0.4s;
+}
+
+.flexi-promptClick {
+  cursor: pointer;
+}
+
+.flexi-promptClick:active {
+  transform: scale(0.93);
+  transition: transform 0.2s;
+}
+
+@keyframes flexi-shake {
+  0% {
+      transform: translateX(0px);
+  }
+
+  33% {
+      transform: translateX(5px);
+  }
+
+  66% {
+      transform: translateX(-5px);
+  }
+
+  100% {
+      transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes flexi-shake {
+  0% {
+      transform: translateX(0px);
+  }
+
+  33% {
+      transform: translateX(5px);
+  }
+
+  66% {
+      transform: translateX(-5px);
+  }
+
+  100% {
+      transform: translateX(0px);
+  }
+}
+
+@media (max-width: 650px) {
+  .flexi-prompt {
+      padding: 10px;
+  }
+
+  .flexi-promptContent {
+      width: 100%;
+  }
+
+  .flexi-promptShow {
+      margin-top: 0;
+      margin-bottom: 10px;
+  }
+
+  .flexi-promptContent > div {
+      padding: 10px 10px;
+  }
+}
+
+
 /* Sidebar of primary gallery */
 .flexi_gallery_sidebar {
   padding-left: 10px;
