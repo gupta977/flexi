@@ -66,8 +66,8 @@ class flexi_like
         $nonce   = wp_create_nonce("flexi_ajax_like");
         $id = get_the_ID();
 ?>
-        <p class="fl-buttons">
-        <div style="<?php echo flexi_evalue_toggle('like', $evalue); ?>" class="fl-button fl-is-small">
+
+        <div style=" <?php echo flexi_evalue_toggle('like', $evalue); ?>" class="fl-button fl-is-small">
             <span id="flexi_like" data-key_type="like" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" class="fl-icon fl-is-small">
                 <i class="fas fa-thumbs-up"></i>
             </span>
@@ -80,17 +80,6 @@ class flexi_like
             </span>
             <span id="flexi_unlike_count_<?php echo $id; ?>"><?php echo $this->get_like_count($id, 'flexi_unlike_count'); ?></span>
         </div>
-
-        <div style="<?php echo flexi_evalue_toggle('count', $evalue); ?>" class="fl-button fl-is-small">
-            <span id="flexi_count" class="fl-icon fl-is-small">
-                <i class="far fa-eye"></i>
-            </span>
-            <span><?php echo $this->get_like_count($id, 'flexi_unlike_count'); ?></span>
-        </div>
-        </p>
-
-
-
 
 
 <?php

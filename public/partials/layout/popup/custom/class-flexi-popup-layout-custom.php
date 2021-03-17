@@ -51,6 +51,7 @@ class Flexi_Popup_Layout_Custom
       "Category"      => "category",
       "Tags"          => "tags",
       "Icon Grid"     => "icon_grid",
+      "Module Grid"      => "module_grid",
       "Custom Fields" => "custom_fields",
     );
 
@@ -162,6 +163,8 @@ class Flexi_Popup_Layout_Custom
         echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
       } else if ('icon_grid' == $value) {
         echo flexi_show_icon_grid();
+      } else if ('module_grid' == $value) {
+        echo flexi_show_module_grid();
       } else if ('custom_fields' == $value) {
         echo flexi_custom_field_loop($post, 'detail');
       } else {
@@ -197,6 +200,7 @@ class Flexi_Popup_Layout_Custom
     flexi_get_option('flexi_custom_fields', 'flexi_popup_layout_custom', 'location4');
     flexi_get_option('flexi_category', 'flexi_popup_layout_custom', 'location3');
     flexi_get_option('flexi_tags', 'flexi_popup_layout_custom', 'location3');
+    flexi_get_option('flexi_module_grid', 'flexi_popup_layout_custom', 'location2');
   }
 }
 

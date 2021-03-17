@@ -53,6 +53,7 @@ class Flexi_Detail_Layout_Basic
       "Category"       => "category",
       "Tags"           => "tags",
       "Icon Grid"      => "icon_grid",
+      "Module Grid"      => "module_grid",
       "Custom Fields"  => "custom_fields",
       "Sub-Gallery" => "standalone"
       // "Wordpress <a href='" . admin_url('widgets.php') . "'>Widgets</a>" => "widgets",
@@ -173,6 +174,8 @@ class Flexi_Detail_Layout_Basic
         echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
       } else if ('icon_grid' == $value) {
         echo flexi_show_icon_grid();
+      } else if ('module_grid' == $value) {
+        echo flexi_show_module_grid();
       } else if ('custom_fields' == $value) {
         echo flexi_custom_field_loop($post, 'detail');
       } else {
@@ -208,6 +211,7 @@ class Flexi_Detail_Layout_Basic
     flexi_get_option('flexi_custom_fields', 'flexi_detail_layout_basic', 'location4');
     flexi_get_option('flexi_category', 'flexi_detail_layout_basic', 'location3');
     flexi_get_option('flexi_tags', 'flexi_detail_layout_basic', 'location3');
+    flexi_get_option('flexi_module_grid', 'flexi_detail_layout_basic', 'location2');
   }
 }
 
