@@ -43,6 +43,7 @@ if ($column == "1") {
         }
 
         ?>
+        <div class="fl-buttons fl-has-addons" style="margin-bottom: 0rem"> <?php do_action("flexi_loop_portfolio", $evalue); ?></div>
 
         <span class="flexi_set_bottom" style="<?php echo flexi_evalue_toggle('icon', $evalue); ?>"><?php echo flexi_show_icon_grid(); ?></span>
 

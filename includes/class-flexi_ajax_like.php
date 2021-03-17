@@ -4,10 +4,14 @@ class flexi_like
     //Display like button
     public function __construct()
     {
-        add_action('wp_enqueue_scripts', array($this, "enqueue_script"));
-        add_action("wp_ajax_flexi_ajax_like", array($this, "flexi_ajax_like"));
-        add_action("wp_ajax_nopriv_flexi_ajax_like", array($this, "flexi_ajax_like"));
-        add_action('flexi_loop_portfolio', array($this, 'display_like'), 10, 1);
+        if (flexi_get_option('evalue_like', 'flexi_image_layout_settings', 1) == 1) {
+            add_action('wp_enqueue_scripts', array($this, "enqueue_script"));
+            add_action("wp_ajax_flexi_ajax_like", array($this, "flexi_ajax_like"));
+            add_action("wp_ajax_nopriv_flexi_ajax_like", array($this, "flexi_ajax_like"));
+            add_action('flexi_loop_portfolio', array($this, 'display_like'), 10, 1);
+        }
+        add_action('flexi_module_grid', array($this, 'display_like'));
+        add_filter('flexi_settings_fields', array($this, 'add_fields'));
     }
 
     //include js file
@@ -65,24 +69,34 @@ class flexi_like
     {
         $nonce   = wp_create_nonce("flexi_ajax_like");
         $id = get_the_ID();
+        if ($evalue == null) {
+            $evalue = 'like:on,unlike:on';
+        }
+        if (flexi_get_option('evalue_like', 'flexi_image_layout_settings', 1) == 1) {
 ?>
 
-        <div style=" <?php echo flexi_evalue_toggle('like', $evalue); ?>" class="fl-button fl-is-small">
-            <span id="flexi_like" data-key_type="like" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" class="fl-icon fl-is-small">
-                <i class="fas fa-thumbs-up"></i>
-            </span>
-            <span id="flexi_like_count_<?php echo $id; ?>"><?php echo $this->get_like_count($id, 'flexi_like_count'); ?></span>
-        </div>
+            <div style=" <?php echo flexi_evalue_toggle('like', $evalue); ?>" class="fl-button fl-is-small">
+                <span id="flexi_like" data-key_type="like" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" class="fl-icon fl-is-small">
+                    <i class="fas fa-thumbs-up"></i>
+                </span>
+                <span id="flexi_like_count_<?php echo $id; ?>"><?php echo $this->get_like_count($id, 'flexi_like_count'); ?></span>
+            </div>
+        <?php
+        }
+        if (flexi_get_option('evalue_unlike', 'flexi_image_layout_settings', 1) == 1) {
+        ?>
 
-        <div style="<?php echo flexi_evalue_toggle('unlike', $evalue); ?>" class="fl-button fl-is-small">
-            <span id="flexi_like" data-key_type="unlike" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" class="fl-icon fl-is-small">
-                <i class="fas fa-thumbs-down"></i>
-            </span>
-            <span id="flexi_unlike_count_<?php echo $id; ?>"><?php echo $this->get_like_count($id, 'flexi_unlike_count'); ?></span>
-        </div>
+
+            <div style="<?php echo flexi_evalue_toggle('unlike', $evalue); ?>" class="fl-button fl-is-small">
+                <span id="flexi_like" data-key_type="unlike" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" class="fl-icon fl-is-small">
+                    <i class="fas fa-thumbs-down"></i>
+                </span>
+                <span id="flexi_unlike_count_<?php echo $id; ?>"><?php echo $this->get_like_count($id, 'flexi_unlike_count'); ?></span>
+            </div>
 
 
 <?php
+        }
     }
     //Total number of like & unlike
     public function get_like_count($id, $key)
@@ -107,6 +121,33 @@ class flexi_like
         $count = (int) get_post_meta($post_id, $key, true);
         $count--;
         update_post_meta($post_id, $key, $count);
+    }
+
+
+    //enable/disable option at Gallery -> Gallery Settings
+    public function add_fields($new)
+    {
+
+        $fields = array('flexi_image_layout_settings' => array(
+
+            array(
+                'name'              => 'evalue_like',
+                'label'             => __('Display like', 'flexi') . ' (evalue)',
+                'description'       => __('Let user to like the post.', 'flexi'),
+                'type'              => 'checkbox',
+                'sanitize_callback' => 'intval',
+            ),
+            array(
+                'name'              => 'evalue_unlike',
+                'label'             => __('Display un-like', 'flexi') . ' (evalue)',
+                'description'       => __('Let user to un-like the post.', 'flexi'),
+                'type'              => 'checkbox',
+                'sanitize_callback' => 'intval',
+            ),
+        ),);
+        $new = array_merge_recursive($new, $fields);
+
+        return $new;
     }
 }
 

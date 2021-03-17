@@ -204,6 +204,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 3.6 =
 * 'My Dashboard' & 'My Gallery' button only displays only to logged in user.
 * Filter gallery by custom fields with help of shortcode
+* Added like, unlike, view count option for gallery and detail page. 
 
 
 = 3.5 =

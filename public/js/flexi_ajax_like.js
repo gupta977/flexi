@@ -1,6 +1,7 @@
 jQuery(document).ready(function () {
   jQuery(document).on("click", "#flexi_like", function (e) {
     e.preventDefault();
+    var p = FlexiloadPrompt();
     post_id = jQuery(this).attr("data-post_id");
     media_id = jQuery(this).attr("data-media_id");
     key_type = jQuery(this).attr("data-key_type");
@@ -20,7 +21,7 @@ jQuery(document).ready(function () {
               //alert(response.data_count);
               // jQuery("#flexi_like_count_"+post_id).slideUp("slow");
 
-              var p = FlexiloadPrompt();
+             
              
 
               if (key_type == "like") {
@@ -54,7 +55,7 @@ jQuery(document).ready(function () {
     }
     else {
       //alert("alrady");
-      var p = FlexiloadPrompt();
+     
       p.error('<i class="fas fa-ban"></i>');
      
      // console.log(flexi_cookie);

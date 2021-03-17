@@ -191,6 +191,15 @@ class Flexi_Shortcode_Gallery
     if (flexi_get_option('evalue_tag', 'flexi_image_layout_settings', 1) == 1) {
       $evalue_params .= "tag:on,";
     }
+    if (flexi_get_option('evalue_count', 'flexi_image_layout_settings', 1) == 1) {
+      $evalue_params .= "count:on,";
+    }
+    if (flexi_get_option('evalue_like', 'flexi_image_layout_settings', 1) == 1) {
+      $evalue_params .= "like:on,";
+    }
+    if (flexi_get_option('evalue_unlike', 'flexi_image_layout_settings', 1) == 1) {
+      $evalue_params .= "unlike:on,";
+    }
 
     if (isset($params['evalue'])) {
       $evalue = $params['evalue'];
