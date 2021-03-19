@@ -32,25 +32,6 @@ class flexi_view_count
         return $container;
     }
 
-    public function display_view_count1($evalue)
-    {
-        if ($evalue == null) {
-            $evalue = 'count:on';
-        }
-        $id = get_the_ID();
-        //Increase count is each load
-        $this->increase_count($id, 'flexi_view_count');
-?>
-        <div style="<?php echo flexi_evalue_toggle('count', $evalue); ?>" class="fl-button fl-is-small fl-is-static">
-            <span id="flexi_count" class="fl-icon fl-is-small">
-                <i class="far fa-eye"></i>
-            </span>
-            <span><?php echo $this->get_view_count($id, 'flexi_view_count'); ?></span>
-        </div>
-
-
-<?php
-    }
     //Total number of like & unlike
     public function get_view_count($id, $key)
     {
