@@ -12,7 +12,7 @@ class flexi_view_count
     public function display_view_count($container, $evalue = '', $id = '')
     {
         $enable = flexi_get_option('evalue_count', 'flexi_image_layout_settings', 1);
-
+        $this->increase_count($id, 'flexi_view_count');
         //If page is detail page
         if ($evalue == '') {
             $evalue .= "count:on";

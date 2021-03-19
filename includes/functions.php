@@ -972,11 +972,6 @@ function flexi_show_addon_grid($evalue, $id)
 }
 
 
-function flexi_show_module_grid()
-{
-    return '<div class="fl-buttons fl-has-addons" style="margin-bottom: 0rem">' . do_action("flexi_module_grid") . '</div>';
-    //return flexi_show_addon_grid();
-}
 
 //Icon container. Eg. Author icon, Delete icon, Edit icon
 function flexi_show_icon_grid()

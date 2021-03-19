@@ -164,7 +164,7 @@ class Flexi_Popup_Layout_Custom
       } else if ('icon_grid' == $value) {
         echo flexi_show_icon_grid();
       } else if ('module_grid' == $value) {
-        echo flexi_show_module_grid();
+        echo flexi_show_addon_grid('', get_the_ID());
       } else if ('custom_fields' == $value) {
         echo flexi_custom_field_loop($post, 'detail');
       } else {
