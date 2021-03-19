@@ -4,14 +4,17 @@ class flexi_like
     //Display like button
     public function __construct()
     {
-        if (flexi_get_option('evalue_like', 'flexi_image_layout_settings', 1) == 1) {
-            add_action('wp_enqueue_scripts', array($this, "enqueue_script"));
-            add_action("wp_ajax_flexi_ajax_like", array($this, "flexi_ajax_like"));
-            add_action("wp_ajax_nopriv_flexi_ajax_like", array($this, "flexi_ajax_like"));
-            add_action('flexi_loop_portfolio', array($this, 'display_like'), 10, 1);
-        }
-        add_action('flexi_module_grid', array($this, 'display_like'));
+        //  if (flexi_get_option('evalue_like', 'flexi_image_layout_settings', 1) == 1) {
+        add_action('wp_enqueue_scripts', array($this, "enqueue_script"));
+        add_action("wp_ajax_flexi_ajax_like", array($this, "flexi_ajax_like"));
+        add_action("wp_ajax_nopriv_flexi_ajax_like", array($this, "flexi_ajax_like"));
+        // add_action('flexi_loop_portfolio', array($this, 'display_like'), 10, 1);
+        // }
+        // add_action('flexi_module_grid', array($this, 'display_like'));
         add_filter('flexi_settings_fields', array($this, 'add_fields'));
+
+        add_filter('flexi_addon_grid', array($this, 'display_unlike_button'), 10, 3);
+        add_filter('flexi_addon_grid', array($this, 'display_like_button'), 10, 3);
     }
 
     //include js file
@@ -63,6 +66,46 @@ class flexi_like
         }
 
         die();
+    }
+
+    public function display_like_button($container, $evalue = '', $id = '')
+    {
+        $extra_icon = array();
+        $nonce   = wp_create_nonce("flexi_ajax_like");
+        $div = '<div id="flexi_like" data-key_type="like" data-nonce="' . $nonce . '" data-post_id="' . $id . '" style="' . flexi_evalue_toggle('like', $evalue) . '" class="fl-button fl-is-small">
+        <span class="fl-icon fl-is-small"><i class="fas fa-thumbs-up"></i></span>
+        <span id="flexi_like_count_' . $id . '">' . $this->get_like_count($id, 'flexi_like_count') . '</span></div>';
+        $extra_icon = array(
+            array('field has-addons', $div),
+
+        );
+
+        // combine the two arrays
+        if (is_array($extra_icon) && is_array($container)) {
+            $container = array_merge($extra_icon, $container);
+        }
+
+        return $container;
+    }
+
+    public function display_unlike_button($container, $evalue = '', $id = '')
+    {
+        $extra_icon = array();
+        $nonce   = wp_create_nonce("flexi_ajax_unlike");
+        $div = '<div id="flexi_like" data-key_type="unlike" data-nonce="' . $nonce . '" data-post_id="' . $id . '" style="' . flexi_evalue_toggle('unlike', $evalue) . '" class="fl-button fl-is-small">
+        <span class="fl-icon fl-is-small"><i class="fas fa-thumbs-down"></i></span>
+        <span id="flexi_unlike_count_' . $id . '">' . $this->get_like_count($id, 'flexi_unlike_count') . '</span></div>';
+        $extra_icon = array(
+            array('field has-addons', $div),
+
+        );
+
+        // combine the two arrays
+        if (is_array($extra_icon) && is_array($container)) {
+            $container = array_merge($extra_icon, $container);
+        }
+
+        return $container;
     }
 
     public function display_like($evalue)

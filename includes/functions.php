@@ -944,9 +944,38 @@ function flexi_excerpt($limit = null, $separator = null, $post = null)
     return $excerpt;
 }
 
+//Add on grid
+function flexi_show_addon_grid($evalue, $id)
+{
+    //0-div_class,
+    $group = array();
+    $list = '';
+
+    if (has_filter('flexi_addon_grid')) {
+        $group = apply_filters('flexi_addon_grid', $group, $evalue, $id);
+    }
+
+    if (count($group) > 0) {
+        $list .= '<div class="' . $group[0][0] . '">';
+    }
+
+    for ($r = 0; $r < count($group); $r++) {
+        if (isset($group[$r][1])) {
+            $list .= $group[$r][1];
+        }
+    }
+
+    if (count($group) > 0) {
+        $list .= '</div>';
+    }
+    return $list;
+}
+
+
 function flexi_show_module_grid()
 {
     return '<div class="fl-buttons fl-has-addons" style="margin-bottom: 0rem">' . do_action("flexi_module_grid") . '</div>';
+    //return flexi_show_addon_grid();
 }
 
 //Icon container. Eg. Author icon, Delete icon, Edit icon

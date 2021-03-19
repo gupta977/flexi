@@ -7,11 +7,32 @@ class flexi_view_count
         if (flexi_get_option('evalue_count', 'flexi_image_layout_settings', 1) == 1) {
             add_action('flexi_loop_portfolio', array($this, 'display_view_count'), 10, 1);
         }
-        add_action('flexi_module_grid', array($this, 'display_view_count'));
+        //add_action('flexi_module_grid', array($this, 'display_view_count'));
         add_filter('flexi_settings_fields', array($this, 'add_fields'));
+        add_filter('flexi_addon_grid', array($this, 'display_view_count'), 10, 3);
     }
 
-    public function display_view_count($evalue)
+    public function display_view_count($container, $evalue = '', $id = '')
+    {
+        $extra_icon = array();
+
+        $div = '<div style="' . flexi_evalue_toggle('count', $evalue) . '" class="fl-button fl-is-small">
+        <span class="fl-icon fl-is-small"><i class="far fa-eye"></i></span>
+        <span>' . $this->get_view_count($id, 'flexi_view_count') . '</span></div>';
+        $extra_icon = array(
+            array('field has-addons', $div),
+
+        );
+
+        // combine the two arrays
+        if (is_array($extra_icon) && is_array($container)) {
+            $container = array_merge($extra_icon, $container);
+        }
+
+        return $container;
+    }
+
+    public function display_view_count1($evalue)
     {
         if ($evalue == null) {
             $evalue = 'count:on';
