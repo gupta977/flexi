@@ -75,8 +75,8 @@ class flexi_like
         if (flexi_get_option('evalue_like', 'flexi_image_layout_settings', 1) == 1) {
 ?>
 
-            <div style=" <?php echo flexi_evalue_toggle('like', $evalue); ?>" class="fl-button fl-is-small">
-                <span id="flexi_like" data-key_type="like" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" class="fl-icon fl-is-small">
+            <div id="flexi_like" data-key_type="like" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" style=" <?php echo flexi_evalue_toggle('like', $evalue); ?>" class="fl-button fl-is-small">
+                <span class="fl-icon fl-is-small">
                     <i class="fas fa-thumbs-up"></i>
                 </span>
                 <span id="flexi_like_count_<?php echo $id; ?>"><?php echo $this->get_like_count($id, 'flexi_like_count'); ?></span>
@@ -87,8 +87,8 @@ class flexi_like
         ?>
 
 
-            <div style="<?php echo flexi_evalue_toggle('unlike', $evalue); ?>" class="fl-button fl-is-small">
-                <span id="flexi_like" data-key_type="unlike" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" class="fl-icon fl-is-small">
+            <div id="flexi_like" data-key_type="unlike" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" style="<?php echo flexi_evalue_toggle('unlike', $evalue); ?>" class="fl-button fl-is-small">
+                <span class="fl-icon fl-is-small">
                     <i class="fas fa-thumbs-down"></i>
                 </span>
                 <span id="flexi_unlike_count_<?php echo $id; ?>"><?php echo $this->get_like_count($id, 'flexi_unlike_count'); ?></span>

@@ -117,7 +117,7 @@ class Flexi_Shortcode_Form
                             jQuery("#flexi_form").slideUp();
                         });
                     </script>
-                    <a id="flexi_attach_form_link" href="#admin-ajax.php?action=flexi_send_again&amp;post_id=1683" class="la-button flexi_send_again"><span class="dashicons dashicons-plus"></span> New</a>
+                    <a id="flexi_attach_form_link" href="#admin-ajax.php?action=flexi_send_again&amp;post_id=1683" class="fl-button flexi_send_again"><span class="dashicons dashicons-plus"></span> New</a>
 
                 <?php
                 }
