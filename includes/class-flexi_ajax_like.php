@@ -12,7 +12,6 @@ class flexi_like
         // }
         // add_action('flexi_module_grid', array($this, 'display_like'));
         add_filter('flexi_settings_fields', array($this, 'add_fields'));
-
         add_filter('flexi_addon_grid', array($this, 'display_unlike_button'), 10, 3);
         add_filter('flexi_addon_grid', array($this, 'display_like_button'), 10, 3);
     }
@@ -70,19 +69,32 @@ class flexi_like
 
     public function display_like_button($container, $evalue = '', $id = '')
     {
-        $extra_icon = array();
-        $nonce   = wp_create_nonce("flexi_ajax_like");
-        $div = '<div id="flexi_like" data-key_type="like" data-nonce="' . $nonce . '" data-post_id="' . $id . '" style="' . flexi_evalue_toggle('like', $evalue) . '" class="fl-button fl-is-small">
+
+        $enable = flexi_get_option('evalue_like', 'flexi_image_layout_settings', 1);
+
+        //If page is detail page
+        if ($evalue == '') {
+            $evalue .= "like:on";
+        }
+
+        $toggle = flexi_evalue_toggle('like', $evalue);
+        //flexi_log($toggle);
+
+        if (($enable == 1)) {
+            $extra_icon = array();
+            $nonce   = wp_create_nonce("flexi_ajax_like");
+            $div = '<div id="flexi_like" data-key_type="like" data-nonce="' . $nonce . '" data-post_id="' . $id . '" style="' . flexi_evalue_toggle('like', $evalue) . '" class="fl-button fl-is-small">
         <span class="fl-icon fl-is-small"><i class="fas fa-thumbs-up"></i></span>
         <span id="flexi_like_count_' . $id . '">' . $this->get_like_count($id, 'flexi_like_count') . '</span></div>';
-        $extra_icon = array(
-            array('field has-addons', $div),
+            $extra_icon = array(
+                array('field has-addons', $div),
 
-        );
+            );
 
-        // combine the two arrays
-        if (is_array($extra_icon) && is_array($container)) {
-            $container = array_merge($extra_icon, $container);
+            // combine the two arrays
+            if (is_array($extra_icon) && is_array($container)) {
+                $container = array_merge($extra_icon, $container);
+            }
         }
 
         return $container;
@@ -90,57 +102,37 @@ class flexi_like
 
     public function display_unlike_button($container, $evalue = '', $id = '')
     {
-        $extra_icon = array();
-        $nonce   = wp_create_nonce("flexi_ajax_unlike");
-        $div = '<div id="flexi_like" data-key_type="unlike" data-nonce="' . $nonce . '" data-post_id="' . $id . '" style="' . flexi_evalue_toggle('unlike', $evalue) . '" class="fl-button fl-is-small">
+        $enable = flexi_get_option('evalue_unlike', 'flexi_image_layout_settings', 1);
+
+        //If page is detail page
+        if ($evalue == '') {
+            $evalue .= "unlike:on";
+        }
+
+        $toggle = flexi_evalue_toggle('unlike', $evalue);
+        //flexi_log($toggle);
+
+        if (($enable == 1)) {
+            $extra_icon = array();
+            $nonce   = wp_create_nonce("flexi_ajax_unlike");
+            $div = '<div id="flexi_like" data-key_type="unlike" data-nonce="' . $nonce . '" data-post_id="' . $id . '" style="' . flexi_evalue_toggle('unlike', $evalue) . '" class="fl-button fl-is-small">
         <span class="fl-icon fl-is-small"><i class="fas fa-thumbs-down"></i></span>
         <span id="flexi_unlike_count_' . $id . '">' . $this->get_like_count($id, 'flexi_unlike_count') . '</span></div>';
-        $extra_icon = array(
-            array('field has-addons', $div),
+            $extra_icon = array(
+                array('field has-addons', $div),
 
-        );
+            );
 
-        // combine the two arrays
-        if (is_array($extra_icon) && is_array($container)) {
-            $container = array_merge($extra_icon, $container);
+            // combine the two arrays
+            if (is_array($extra_icon) && is_array($container)) {
+                $container = array_merge($extra_icon, $container);
+            }
         }
 
         return $container;
     }
 
-    public function display_like($evalue)
-    {
-        $nonce   = wp_create_nonce("flexi_ajax_like");
-        $id = get_the_ID();
-        if ($evalue == null) {
-            $evalue = 'like:on,unlike:on';
-        }
-        if (flexi_get_option('evalue_like', 'flexi_image_layout_settings', 1) == 1) {
-?>
 
-            <div id="flexi_like" data-key_type="like" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" style=" <?php echo flexi_evalue_toggle('like', $evalue); ?>" class="fl-button fl-is-small">
-                <span class="fl-icon fl-is-small">
-                    <i class="fas fa-thumbs-up"></i>
-                </span>
-                <span id="flexi_like_count_<?php echo $id; ?>"><?php echo $this->get_like_count($id, 'flexi_like_count'); ?></span>
-            </div>
-        <?php
-        }
-        if (flexi_get_option('evalue_unlike', 'flexi_image_layout_settings', 1) == 1) {
-        ?>
-
-
-            <div id="flexi_like" data-key_type="unlike" data-nonce="<?php echo $nonce; ?>" data-post_id="<?php echo $id; ?>" style="<?php echo flexi_evalue_toggle('unlike', $evalue); ?>" class="fl-button fl-is-small">
-                <span class="fl-icon fl-is-small">
-                    <i class="fas fa-thumbs-down"></i>
-                </span>
-                <span id="flexi_unlike_count_<?php echo $id; ?>"><?php echo $this->get_like_count($id, 'flexi_unlike_count'); ?></span>
-            </div>
-
-
-<?php
-        }
-    }
     //Total number of like & unlike
     public function get_like_count($id, $key)
     {
