@@ -32,8 +32,6 @@ class flexi_like
         }
         $post_id = $_REQUEST["post_id"];
         $key = $_REQUEST["key_type"];
-
-        flexi_log($key . '---' . $post_id);
         $count = 0;
         if ($key == 'like') {
             $this->increase_like($post_id, 'flexi_like_count');
