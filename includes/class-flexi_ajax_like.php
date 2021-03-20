@@ -32,6 +32,8 @@ class flexi_like
         }
         $post_id = $_REQUEST["post_id"];
         $key = $_REQUEST["key_type"];
+
+        flexi_log($key . '---' . $post_id);
         $count = 0;
         if ($key == 'like') {
             $this->increase_like($post_id, 'flexi_like_count');
@@ -114,7 +116,7 @@ class flexi_like
 
         if (($enable == 1)) {
             $extra_icon = array();
-            $nonce   = wp_create_nonce("flexi_ajax_unlike");
+            $nonce   = wp_create_nonce("flexi_ajax_like");
             $div = '<div id="flexi_like" data-key_type="unlike" data-nonce="' . $nonce . '" data-post_id="' . $id . '" style="' . flexi_evalue_toggle('unlike', $evalue) . '" class="fl-button fl-is-small">
         <span class="fl-icon fl-is-small"><i class="fas fa-thumbs-down"></i></span>
         <span id="flexi_unlike_count_' . $id . '">' . $this->get_like_count($id, 'flexi_unlike_count') . '</span></div>';
