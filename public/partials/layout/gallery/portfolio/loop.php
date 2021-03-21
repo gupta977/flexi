@@ -36,10 +36,12 @@ if ($column == "1") {
       echo '<span style="' . flexi_evalue_toggle('category', $evalue) . '"><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
       echo '<span style="' . flexi_evalue_toggle('tag', $evalue) . '"><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
       ?>
-      <?php echo  flexi_show_addon_gallery($evalue, get_the_ID()); ?>
+
       <span style="<?php echo flexi_evalue_toggle('icon', $evalue); ?>"><?php echo flexi_show_icon_grid(); ?></span>
 
     </div>
+    <?php echo  flexi_show_addon_gallery($evalue, get_the_ID(), 'portfolio'); ?>
+
   </div>
 
   <!-- Loop End -->

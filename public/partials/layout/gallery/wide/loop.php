@@ -43,7 +43,7 @@ if ($column == "1") {
         }
 
         ?>
-        <?php echo  flexi_show_addon_gallery($evalue, get_the_ID()); ?>
+        <?php echo  flexi_show_addon_gallery($evalue, get_the_ID(), 'all'); ?>
         <span class="flexi_set_bottom" style="<?php echo flexi_evalue_toggle('icon', $evalue); ?>"><?php echo flexi_show_icon_grid(); ?></span>
 
       </div>

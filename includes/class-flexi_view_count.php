@@ -6,7 +6,8 @@ class flexi_view_count
     {
         //add_action('flexi_module_grid', array($this, 'display_view_count'));
         add_filter('flexi_settings_fields', array($this, 'add_fields'));
-        add_filter('flexi_addon_gallery', array($this, 'display_view_count'), 9, 3);
+        add_filter('flexi_addon_gallery_all', array($this, 'display_view_count'), 9, 4);
+        add_filter('flexi_addon_gallery_portfolio', array($this, 'display_view_count'), 9, 4);
     }
 
     public function display_view_count($container, $evalue = '', $id = '')
