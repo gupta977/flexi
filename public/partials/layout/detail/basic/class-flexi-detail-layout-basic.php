@@ -175,7 +175,7 @@ class Flexi_Detail_Layout_Basic
       } else if ('icon_grid' == $value) {
         echo flexi_show_icon_grid();
       } else if ('module_grid' == $value) {
-        echo flexi_show_addon_grid('', get_the_ID());
+        echo flexi_show_addon_gallery('', get_the_ID());
       } else if ('custom_fields' == $value) {
         echo flexi_custom_field_loop($post, 'detail');
       } else {

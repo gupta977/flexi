@@ -945,14 +945,14 @@ function flexi_excerpt($limit = null, $separator = null, $post = null)
 }
 
 //Add on grid
-function flexi_show_addon_grid($evalue, $id)
+function flexi_show_addon_gallery($evalue, $id)
 {
     //0-div_class,
     $group = array();
     $list = '';
 
-    if (has_filter('flexi_addon_grid')) {
-        $group = apply_filters('flexi_addon_grid', $group, $evalue, $id);
+    if (has_filter('flexi_addon_gallery')) {
+        $group = apply_filters('flexi_addon_gallery', $group, $evalue, $id);
     }
 
     if (count($group) > 0) {

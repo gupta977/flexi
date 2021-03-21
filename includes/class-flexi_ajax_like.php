@@ -12,8 +12,8 @@ class flexi_like
         // }
         // add_action('flexi_module_grid', array($this, 'display_like'));
         add_filter('flexi_settings_fields', array($this, 'add_fields'));
-        add_filter('flexi_addon_grid', array($this, 'display_unlike_button'), 10, 3);
-        add_filter('flexi_addon_grid', array($this, 'display_like_button'), 10, 3);
+        add_filter('flexi_addon_gallery', array($this, 'display_unlike_button'), 10, 3);
+        add_filter('flexi_addon_gallery', array($this, 'display_like_button'), 10, 3);
     }
 
     //include js file
