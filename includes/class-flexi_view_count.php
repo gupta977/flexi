@@ -29,7 +29,7 @@ class flexi_view_count
         <span class="fl-icon fl-is-small"><i class="far fa-eye"></i></span>
         <span>' . $this->get_view_count($id, 'flexi_view_count') . '</span></div>';
             $extra_icon = array(
-                array('field has-addons', $div),
+                array('fl-field fl-has-addons', $div),
 
             );
 

@@ -972,7 +972,6 @@ function flexi_show_addon_gallery($evalue, $id, $layout)
 }
 
 
-
 //Icon container. Eg. Author icon, Delete icon, Edit icon
 function flexi_show_icon_grid()
 {
@@ -985,7 +984,7 @@ function flexi_show_icon_grid()
     }
 
     if (count($icon) > 0) {
-        $list .= '<div class="flexi_icon_grid_group" id="flexi_' . get_the_ID() . '">';
+        $list .= '<div class="fl-field fl-has-addons" id="flexi_' . get_the_ID() . '">';
     }
 
     for ($r = 0; $r < count($icon); $r++) {
@@ -998,10 +997,10 @@ function flexi_show_icon_grid()
         if (!isset($icon[$r][6])) {
             $icon[$r][6] = "";
         }
-
+        //0-icon,1-title,2-url,3-argument or nonce,4-5-class_a,6-parameter
         if ("" != $icon[$r][0]) {
-            $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][5] . '" ' . $icon[$r][6] . '="' . $icon[$r][3] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '" title="' . $icon[$r][1] . '"><span class="' . $icon[$r][5] . '-border"><span class="flexi_icon_' . $icon[$r][0] . '"></span></span></a> ';
-            //$list .= '<a class="' . $icon[$r][3] . '" href="' . $icon[$r][2] . '" title="' . $icon[$r][1] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '" ' . $icon[$r][5] . '><small>&nbsp;<span class="dashicons ' . $icon[$r][0] . '">&nbsp;</span>&nbsp;</small></a>';
+            $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][5] . '" ' . $icon[$r][6] . '="' . $icon[$r][3] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '" title="' . $icon[$r][1] . '"><span class="fl-icon fl-is-small fl-has-text-black"><i class="' . $icon[$r][0] . '"></i></span></a>';
+            // $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][5] . '" ' . $icon[$r][6] . '="' . $icon[$r][3] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '" title="' . $icon[$r][1] . '"><span class="' . $icon[$r][5] . '-border"><span class="flexi_icon_' . $icon[$r][0] . '"></span></span></a> ';
         }
     }
     if (count($icon) > 0) {
@@ -1009,6 +1008,7 @@ function flexi_show_icon_grid()
     }
     return $list;
 }
+
 
 //button toolbar to display after user submit post
 function flexi_post_toolbar_grid($id, $bool)
