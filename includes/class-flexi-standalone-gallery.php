@@ -154,8 +154,11 @@ class Flexi_Standalone_Gallery
               $link = flexi_get_button_url($id, false, 'edit_standalone_page', 'flexi_standalone_settings');
               $link = add_query_arg("manage", "media", $link);
               $link = add_query_arg("id", $id, $link);
-              // echo "<a href='" . $link . "'><span class='dashicons dashicons-admin-tools'></span> Manage media</a>";
-              echo '<a href="' . $link . '" class="flexi_css_button"><span class="flexi_css_button-icon"></span><span class="flexi_css_button-text">' . __("Manage Media", "flexi") . '</span></a>';
+              // echo '<a href="' . $link . '" class="flexi_css_button"><span class="flexi_css_button-icon"></span><span class="flexi_css_button-text">' . __("Manage Media", "flexi") . '</span></a>';
+              echo '<a href="' . $link . '" class="fl-button">
+              <span class="fl-icon"><i class="fas fa-grip-horizontal"></i></span>
+              <span>' . __("Manage Media", "flexi") . '</span>
+            </a>';
             }
           }
 
