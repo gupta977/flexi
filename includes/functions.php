@@ -258,13 +258,13 @@ function flexi_get_taxonomy_raw($post_id, $taxonomy_name)
 }
 
 //Generate gallery_tags link for above gallery
-function flexi_generate_tags($tags_array, $flexi_tag_class = 'flexi_tag--inverse', $filter_class = 'filter_tag')
+function flexi_generate_tags($tags_array, $flexi_tag_class = 'fl-tag', $filter_class = 'filter_tag')
 {
     $taglink = '';
     if (count($tags_array) > 1) {
-        $taglink .= '<div class="flexi_tags" style="margin: 5px">';
+        $taglink .= '<div class="fl-tags" style="margin: 5px">';
 
-        $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' ' . $flexi_tag_class . ' flexi_tag_active">' . __('Show All', 'flexi') . '</a> ';
+        $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' ' . $flexi_tag_class . ' fl-has-text-weight-bold">' . __('Show All', 'flexi') . '</a> ';
         if (count($tags_array) > 1) {
             foreach ($tags_array as $tags => $value) {
                 $taglink .= '<a href="javascript:void(0)" id="' . $tags . '" class="' . $filter_class . ' ' . $flexi_tag_class . ' ">' . $value . '</a> ';

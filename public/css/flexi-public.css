@@ -1,4 +1,9 @@
-/* Notification */
+/* Equal hight in grid */
+.flexi-card-equal-height {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 /*flexi-prompt*/
 .flexi-prompt {
   position: fixed;

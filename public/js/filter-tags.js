@@ -28,12 +28,12 @@ jQuery(function ($) {
 
     if (pos == "show_all") {
       //alert("show all");
-      $(".flexi_tag_active").removeClass("flexi_tag_active");
+      $(".fl-has-text-weight-bold").removeClass("fl-has-text-weight-bold");
       $(this).addClass("active");
       $imgs.hide().fadeIn(500);
     } else {
-      $(".flexi_tag_active").removeClass("flexi_tag_active");
-      $(this).addClass("flexi_tag_active"); // Make clicked item active
+      $(".fl-has-text-weight-bold").removeClass("fl-has-text-weight-bold");
+      $(this).addClass("fl-has-text-weight-bold"); // Make clicked item active
 
       $imgs // With all of the images
         .hide() // Hide them

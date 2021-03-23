@@ -12,7 +12,7 @@ if ($column == "1") {
 ?>
 <div class="fl-column fl-is-<?php echo $column_set; ?> flexi_gallery_child flexi_padding" id="flexi_<?php echo get_the_ID(); ?>" style="position: relative;" data-tags="<?php echo $tags; ?>">
   <!-- Loop start -->
-  <div class="fl-card">
+  <div class="fl-card flexi-card-equal-height">
     <div class="fl-card-image">
       <div class="fl-image flexi-gallery-portfolio_sub">
         <div class="flexi-gallery-portfolio_img <?php echo $data['popup']; ?> flexi_effect" id="<?php echo $hover_effect; ?>">
