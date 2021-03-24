@@ -84,7 +84,10 @@ class Flexi_Standalone_Gallery
                 $link = add_query_arg("manage", "standalone", $link);
                 $link = add_query_arg("id", $id, $link);
                 $button_label = flexi_get_option('standalone_button_label', 'flexi_standalone_settings', "Add Sub-Gallery");
-                echo "<hr><a class='fl-button' href='" . $link . "'>" . $button_label . "</a><br><br>";
+                //echo "<hr><a class='fl-button' href='" . $link . "'>" . $button_label . "</a><br><br>";
+                echo '<hr><a href=' . $link . ' class="fl-button fl-is-medium">
+                <span class="fl-icon"><i class="fas fa-folder-plus"></i></span>
+                <span>' . $button_label . '</span></a>';
               }
             } else {
 
