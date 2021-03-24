@@ -3,12 +3,7 @@
 $toolbar = new Flexi_Gallery_Toolbar();
 if (false == $clear) {
 ?>
-
-   <div class="fl-columns">
-      <div class="fl-column">
-         <div class="flexi_label"><?php echo $toolbar->label(); ?></div>
-      </div>
-   </div>
+<?php echo $toolbar->label(); ?>
 
 <?php
 }

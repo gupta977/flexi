@@ -106,6 +106,9 @@ function flexi_standalone_gallery($post_id, $img_size = 'thumbnail', $width = 15
 //Custom Fields
 function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = true)
 {
+    $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
+
+
     $group = '';
 
     if ($css) {
@@ -125,7 +128,8 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
             if (in_array($page, $display)) {
                 if ('' != $value[0]) {
                     if ($css) {
-                        $group .= '<li><label>' . $label . '<span class="dashicons dashicons-arrow-right"></span></label><span>' . $value[0] . '</span></li>';
+                        $link = add_query_arg('search', 'flexi_field_' . $x . ':' . $value[0], $link);
+                        $group .= '<li><label>' . $label . '<span class="dashicons dashicons-arrow-right"></span></label><span><a href="' . $link . '">' . $value[0] . '</a></span></li>';
                     } else {
                         $group .= $label . ': ' . $value[0] . " ";
                     }
