@@ -178,7 +178,7 @@ class Flexi_User_Dashboard
                             if ("1" == $enable_search) {
                             ?>
                                 <div class="fl-column fl-has-text-right">
-                                    <form id="theForm">
+                                    <form id="theForm" onkeydown="return event.key != 'Enter';">
                                         <div class="fl-field fl-has-addons">
                                             <div class="fl-control">
                                                 <input id="search_value" class="fl-input" name="search" type="text" placeholder="<?php echo __('My search', 'flexi'); ?>">
