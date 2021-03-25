@@ -16,12 +16,13 @@ if ($column == "1") {
   <div class="fl-columns fl-is-gapless fl-card fl-mb-1 fl-mx-1">
 
     <div class="fl-column fl-is-one-quarter">
-      <div class="flexi-gallery-wide_img <?php echo $data['popup']; ?>  flexi_effect" id="<?php echo $hover_effect; ?>">
+      <div class="fl-image  <?php echo $data['popup']; ?>  flexi_effect" id="<?php echo $hover_effect; ?>">
         <?php echo '<a ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">'; ?>
         <img src="<?php echo esc_url(flexi_image_src('thumbnail', $post)); ?>" alt="<?php echo $data['title']; ?>" />
         <div class="flexi_figcaption"><?php echo $data['title']; ?></div>
         </a>
       </div>
+
     </div>
 
     <div class="fl-column">
