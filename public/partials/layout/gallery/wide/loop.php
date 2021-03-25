@@ -13,18 +13,20 @@ if ($column == "1") {
 <div class="fl-column fl-is-<?php echo $column_set; ?> flexi_gallery_child flexi_padding" id="flexi_<?php echo get_the_ID(); ?>" style="position: relative;" data-tags="<?php echo $tags; ?>">
   <!-- Loop start -->
 
+  <div class="fl-columns fl-is-gapless fl-card fl-mb-1 fl-mx-1">
 
-  <div class="flexi-gallery-wide flexi_frame_2">
-    <div class="flexi-gallery-wide_sub">
+    <div class="fl-column fl-is-one-quarter">
       <div class="flexi-gallery-wide_img <?php echo $data['popup']; ?>  flexi_effect" id="<?php echo $hover_effect; ?>">
         <?php echo '<a ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">'; ?>
         <img src="<?php echo esc_url(flexi_image_src('thumbnail', $post)); ?>" alt="<?php echo $data['title']; ?>" />
         <div class="flexi_figcaption"><?php echo $data['title']; ?></div>
         </a>
       </div>
-      <div class="flexi-gallery-wide_info">
-        <h2 style="<?php flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></h2>
+    </div>
 
+    <div class="fl-column">
+      <div class="fl-card-content fl-p-1">
+        <div class="fl-title fl-is-6 fl-is-spaced" style="<?php flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></div>
         <?php
         if (flexi_evalue_toggle('excerpt', $evalue) == '') {
           echo "<span>" . flexi_excerpt(20) . "</span>";
@@ -48,6 +50,7 @@ if ($column == "1") {
 
       </div>
     </div>
+
   </div>
   <!-- Loop End -->
 </div>
