@@ -130,7 +130,6 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
                 if ('' != $value[0]) {
                     if ($css) {
                         $enable_link = flexi_get_option('flexi_field_' . $x . '_link', 'flexi_custom_fields', '');
-                        flexi_log($enable_link);
                         if ($enable_link != '') {
                             $link = add_query_arg('search', 'flexi_field_' . $x . ':' . $value[0], $link);
                             $group .= '<li><label>' . $label . '<span class="dashicons dashicons-arrow-right"></span></label><span><a href="' . $link . '">' . $value[0] . '</a></span></li>';
@@ -451,7 +450,7 @@ function flexi_login_link()
 {
 
     echo "<div class='flexi_alert-box flexi_notice'>" . __("Login", "flexi") . "</div>";
-    echo "<div class='flexi_frame_4' style='padding:30px;'>";
+    echo "<div class='fl-box' style='padding:30px;'>";
     $args = array(
         'echo'           => true,
         'redirect'       => flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings'),
