@@ -41,7 +41,9 @@ class flexi_tag_Widget extends WP_Widget
 
         $selected_slug = get_query_var('flexi_tag', "");
 
-
+        if (isset($args['before_content'])) {
+            echo $args['before_content'];
+        }
         $myterms = get_terms($taxonomies, $query_args);
         $output = "<select onChange='window.location.href=this.value'>";
         $output .= "<option value='default'>- " . __('None', 'flexi') . " -</option>";
@@ -59,6 +61,9 @@ class flexi_tag_Widget extends WP_Widget
         $output .= "</select>";
 
         echo $output;
+        if (isset($args['after_content'])) {
+            echo $args['after_content'];
+        }
 
         // echo __('Hello, World!', 'text_domain');
         echo $args['after_widget'];
