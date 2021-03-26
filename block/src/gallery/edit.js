@@ -73,6 +73,9 @@ class FlexiGalleryEdit extends Component {
 			evalue_custom,
 			evalue_icon,
 			evalue_tag,
+			evalue_count,
+			evalue_like,
+			evalue_unlike,
 			evalue_category,
 			at_sidebar,
 			popup_style,
@@ -341,6 +344,33 @@ class FlexiGalleryEdit extends Component {
 									label="Display Tag List"
 									checked={evalue_tag}
 									onChange={toggleAttribute("evalue_tag")}
+								/>
+							)}
+									{(layout == "table" ||
+								layout == "portfolio" ||
+								layout == "wide") && (
+								<ToggleControl
+									label="Display View Count"
+									checked={evalue_count}
+									onChange={toggleAttribute("evalue_count")}
+								/>
+							)}
+											{(layout == "table" ||
+								layout == "portfolio" ||
+								layout == "wide") && (
+								<ToggleControl
+									label="Enable Like"
+									checked={evalue_like}
+									onChange={toggleAttribute("evalue_like")}
+								/>
+							)}
+											{(layout == "table" ||
+								layout == "portfolio" ||
+								layout == "wide") && (
+								<ToggleControl
+									label="Enable Unlike"
+									checked={evalue_unlike}
+									onChange={toggleAttribute("evalue_unlike")}
 								/>
 							)}
 							{(layout == "portfolio" || layout == "wide") && (

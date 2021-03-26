@@ -146,6 +146,18 @@ registerBlockType("cgb/block-flexi-block", {
 			type: "boolean",
 			default: true,
 		},
+		evalue_count: {
+			type: "boolean",
+			default: true,
+		},
+		evalue_like: {
+			type: "boolean",
+			default: true,
+		},
+		evalue_unlike: {
+			type: "boolean",
+			default: true,
+		},
 		at_sidebar: {
 			type: "boolean",
 			default: true,

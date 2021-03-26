@@ -96,6 +96,18 @@ register_block_type(
         'type'    => 'boolean',
         'default' => true,
       ),
+      'evalue_count'      => array(
+        'type'    => 'boolean',
+        'default' => true,
+      ),
+      'evalue_like'      => array(
+        'type'    => 'boolean',
+        'default' => true,
+      ),
+      'evalue_unlike'      => array(
+        'type'    => 'boolean',
+        'default' => true,
+      ),
       'evalue_category' => array(
         'type'    => 'boolean',
         'default' => true,
@@ -157,6 +169,16 @@ function flexi_gallery_render_callback($args)
     if (isset($args['evalue_tag']) && '1' == $args['evalue_tag']) {
       $evalue .= "tag:on,";
     }
+    if (isset($args['evalue_count']) && '1' == $args['evalue_count']) {
+      $evalue .= "count:on,";
+    }
+    if (isset($args['evalue_like']) && '1' == $args['evalue_like']) {
+      $evalue .= "like:on,";
+    }
+    if (isset($args['evalue_unlike']) && '1' == $args['evalue_unlike']) {
+      $evalue .= "unlike:on,";
+    }
+
 
     if (isset($args['at_sidebar']) && '1' == $args['at_sidebar']) {
       $at_sidebar = "clear='true'";
@@ -211,7 +233,7 @@ function flexi_gallery_render_callback($args)
     <link rel='stylesheet' id='flexi_public_layout' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/partials/layout/gallery/<?php echo $args['layout']; ?>/style.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
     <link rel='stylesheet' id='flexi_public_css-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/flexi-public.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
     <link rel='stylesheet' id='flexi_min-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/flexi-public-min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
-
+    <script type='text/javascript' src='<?php echo FLEXI_PLUGIN_URL; ?>/public/js/fontawesome.js?ver=<?php echo FLEXI_VERSION; ?>' id='flexi_fontawesome-js'></script>
     <link rel='stylesheet' id='flexi_fancybox-css' href='<?php echo FLEXI_PLUGIN_URL; ?>/public/css/jquery.fancybox.min.css?ver=<?php echo FLEXI_VERSION; ?>' media='all' />
 
 <?php
