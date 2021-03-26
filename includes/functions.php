@@ -120,6 +120,7 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
         $label   = flexi_get_option('flexi_field_' . $x . '_label', 'flexi_custom_fields', '');
         $display = flexi_get_option('flexi_field_' . $x . '_display', 'flexi_custom_fields', '');
         $value   = get_post_meta($post->ID, 'flexi_field_' . $x, '');
+        //flexi_log($value);
 
         if (!$value) {
             $value[0] = '';
@@ -128,8 +129,14 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
             if (in_array($page, $display)) {
                 if ('' != $value[0]) {
                     if ($css) {
-                        $link = add_query_arg('search', 'flexi_field_' . $x . ':' . $value[0], $link);
-                        $group .= '<li><label>' . $label . '<span class="dashicons dashicons-arrow-right"></span></label><span><a href="' . $link . '">' . $value[0] . '</a></span></li>';
+                        $enable_link = flexi_get_option('flexi_field_' . $x . '_link', 'flexi_custom_fields', '');
+                        flexi_log($enable_link);
+                        if ($enable_link != '') {
+                            $link = add_query_arg('search', 'flexi_field_' . $x . ':' . $value[0], $link);
+                            $group .= '<li><label>' . $label . '<span class="dashicons dashicons-arrow-right"></span></label><span><a href="' . $link . '">' . $value[0] . '</a></span></li>';
+                        } else {
+                            $group .= '<li><label>' . $label . '<span class="dashicons dashicons-arrow-right"></span></label><span>' . $value[0] . '</span></li>';
+                        }
                     } else {
                         $group .= $label . ': ' . $value[0] . " ";
                     }

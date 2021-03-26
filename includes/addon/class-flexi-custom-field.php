@@ -90,6 +90,15 @@ class Flexi_Addon_Custom_Fields
                         'popup'   => __('Display at Popup', 'flexi'),
                     ),
                 ),
+                array(
+                    'name'        => 'flexi_field_1_link',
+                    'label'       => '',
+                    'description' => '',
+                    'type'        => 'multicheck',
+                    'options'     => array(
+                        'link'   => __('Enable link to search', 'flexi'),
+                    ),
+                ),
             ),);
 
             $count = 3;
@@ -117,6 +126,15 @@ class Flexi_Addon_Custom_Fields
                             'gallery' => __('Display at Gallery Page', 'flexi'),
                             'detail'  => __('Display at Detail Page', 'flexi'),
                             'popup'   => __('Display at Popup', 'flexi'),
+                        ),
+                    ),
+                    array(
+                        'name'        => 'flexi_field_' . $x . '_link',
+                        'label'       => '',
+                        'description' => '',
+                        'type'        => 'multicheck',
+                        'options'     => array(
+                            'link'   => __('Enable link to search', 'flexi'),
                         ),
                     ),
                 ),);

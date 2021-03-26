@@ -27,8 +27,9 @@ class Flexi_Gallery_Toolbar
                 for ($z = 1; $z <= 20; $z++) {
                     $param_value = flexi_get_param_value('flexi_field_' . $z, $search);
                     if ($param_value != '') {
+                        $label   = flexi_get_option('flexi_field_' . $z . '_label', 'flexi_custom_fields', '');
                         $o .= '<div class="fl-control"><div class="fl-tags fl-has-addons">';
-                        $o .= '<span class="fl-tag">flexi_field_' . $z . '</span> <span class="fl-tag fl-is-info">' . $param_value . '</span>';
+                        $o .= '<span class="fl-tag">' . $label . '</span> <span class="fl-tag fl-is-info">' . $param_value . '</span>';
                         $o .= "</div></div>";
                     }
                 }
