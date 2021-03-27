@@ -21,6 +21,41 @@ class Flexi_Shortcode_Gallery
 
   public function flexi_gallery($params)
   {
+    $check_enable_gallery = flexi_get_option('enable_gallery', 'flexi_image_layout_settings', 'everyone');
+    $enable_gallery_access = true;
+    $notice = "";
+    if (empty($params)) {
+      // flexi_log("..." . $check_enable_gallery);
+      if ('everyone' == $check_enable_gallery) {
+        $enable_gallery_access = true;
+      } else if ('member' == $check_enable_gallery) {
+        if (!is_user_logged_in()) {
+          $enable_gallery_access = false;
+          $notice = flexi_login_link();
+          return '';
+        }
+      } else if ('publish_posts' == $check_enable_gallery) {
+        if (!is_user_logged_in()) {
+          $enable_gallery_access = false;
+          $notice = "<div class='flexi_alert-box flexi_error'>" . __('Disabled', 'flexi') . "</div>";
+        } else {
+          if (current_user_can('publish_posts')) {
+            $notice = "<div class='flexi_alert-box flexi_notice'>" . __('Publicly accessible disabled', 'flexi') . "</div>";
+            $enable_gallery_access = true;
+          } else {
+            $enable_gallery_access = false;
+            $notice = "<div class='flexi_alert-box flexi_warning'>" . __('You do not have proper rights', 'flexi') . "</div>";
+          }
+        }
+      } else {
+        $enable_gallery_access = false;
+        $notice = "<div class='flexi_alert-box flexi_error'>" . __('Disabled', 'flexi') . "</div>";
+      }
+
+
+      //flexi_log("primary");
+    }
+
     global $post;
     global $wp_query;
     $atts = array();
@@ -427,30 +462,33 @@ class Flexi_Shortcode_Gallery
       $count = 0;
       $put   = "";
       ob_start();
-
+      echo $notice;
       $check_file = FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/' . $layout . '/loop.php';
-      if (file_exists($check_file)) {
-        wp_register_style('flexi_' . $layout . '_layout', FLEXI_PLUGIN_URL . '/public/partials/layout/gallery/' . $layout . '/style.css', null, FLEXI_VERSION);
-        wp_enqueue_style('flexi_' . $layout . '_layout');
-        require FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/attach_header.php';
-        while ($query->have_posts()) : $query->the_post();
-          require FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/attach_loop.php';
-          $count++;
-        endwhile;
-        require FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/attach_footer.php';
-        $put = ob_get_clean();
-        wp_reset_query();
-        wp_reset_postdata();
+      if ($enable_gallery_access) {
+        if (file_exists($check_file)) {
+          wp_register_style('flexi_' . $layout . '_layout', FLEXI_PLUGIN_URL . '/public/partials/layout/gallery/' . $layout . '/style.css', null, FLEXI_VERSION);
+          wp_enqueue_style('flexi_' . $layout . '_layout');
+          require FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/attach_header.php';
+          while ($query->have_posts()) : $query->the_post();
+            require FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/attach_loop.php';
+            $count++;
+          endwhile;
+          require FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/attach_footer.php';
+          $put = ob_get_clean();
+          wp_reset_query();
+          wp_reset_postdata();
 
-        if (flexi_execute_shortcode()) {
-          return $put;
+          if (flexi_execute_shortcode()) {
+            return $put;
+          } else {
+
+            return '';
+          }
         } else {
-
-          return '';
+          return __("Layout not available", 'flexi') . ': ' . $layout;
         }
-      } else {
-        return __("Layout not available", 'flexi') . ': ' . $layout;
       }
+      return '';
     }
   }
 

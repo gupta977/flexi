@@ -273,6 +273,19 @@ class FLEXI_Admin_Settings
                     'sanitize_callback' => 'sanitize_key',
                     'step'              => 'gallery',
                 ),
+                array(
+                    'name'              => 'enable_gallery',
+                    'label'             => __('Primary gallery access', 'flexi'),
+                    'description'       => __('It will enable/disable primary gallery page based on selection', 'flexi'),
+                    'type'              => 'select',
+                    'options'           => array(
+                        'everyone'      => __('Everyone', 'flexi'),
+                        'member'        => __('Only members', 'flexi'),
+                        'publish_posts' => __('Only with Publish Post rights', 'flexi'),
+                        'disable_gallery'  => __('Disable gallery', 'flexi'),
+                    ),
+                    'sanitize_callback' => 'sanitize_key',
+                ),
 
                 array(
                     'name'              => 'perpage',
