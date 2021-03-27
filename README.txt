@@ -208,7 +208,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Updated css at gallery, buttons, tabs, tags
 * custom fields can be navigated by clicking on URL 
 * Updated flexi_gallery_sidebar css style
-* Option to restrict primary gallery from public & members.
+* Option to restrict primary gallery & detail from public & members.
 
 
 = 3.5 =

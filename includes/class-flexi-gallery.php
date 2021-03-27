@@ -25,7 +25,6 @@ class Flexi_Shortcode_Gallery
     $enable_gallery_access = true;
     $notice = "";
     if (empty($params)) {
-      // flexi_log("..." . $check_enable_gallery);
       if ('everyone' == $check_enable_gallery) {
         $enable_gallery_access = true;
       } else if ('member' == $check_enable_gallery) {
@@ -51,9 +50,6 @@ class Flexi_Shortcode_Gallery
         $enable_gallery_access = false;
         $notice = "<div class='flexi_alert-box flexi_error'>" . __('Disabled', 'flexi') . "</div>";
       }
-
-
-      //flexi_log("primary");
     }
 
     global $post;
