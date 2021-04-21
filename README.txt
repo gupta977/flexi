@@ -20,27 +20,8 @@ Fall in Love with this plugin like we do!
 
 Look Screenshots below for quick understanding of it's scope. You can do lot more then listed. :)
 
-[FLEXI PLUGIN](https://odude.com/flexi-plugin/)
-
-== Live Demo ==
-[Masonry Layout](https://odude.com/demo/flexi/flexi-gallery/)
-[Wide Layout](https://odude.com/demo/flexi/flexi-gallery-wide/)
-[Regular Layout](https://odude.com/demo/flexi/flexi-gallery-regular/)
-[Basic Layout](https://odude.com/demo/flexi/flexi-gallery-basic/)
-[Portfolio Layout](https://odude.com/demo/flexi/flexi-gallery-portfolio/)
-[Table Layout](https://odude.com/demo/flexi/flexi-gallery-table/)
-[Stress Free Gallery](https://odude.com/demo/flexi/stress-free-gallery/)
-[Gallery of each post as Sub-Gallery](https://odude.com/demo/flexi/flexi-categories/standalone-gallery/)
-
-[Submit File Form](https://odude.com/demo/flexi/post-image/)
-[Submit YouTube/Vimeo Video](https://odude.com/demo/flexi/post-video-url/)
-[Submit MP4 Video with dynamic animated thumbnail](https://odude.com/demo/flexi/submit-mp4-video/)
-[Form with custom field](https://odude.com/demo/flexi/flexi-custom-fields/)
-
-[User Dashboard](https://odude.com/demo/flexi/my-gallery/)
-[Gallery filtered by Category](https://odude.com/demo/flexi/flexi-gallery/?flexi_category=animals)
-
-[youtube https://youtu.be/2EUZPCMlwq8]
+[FLEXI PLUGIN](https://flexi.odude.com/)
+[Live Demo](https://odude.com/demo/flexi/flexi-gallery/)
 
 == Help ==
 <a href="https://odude.com/docs/flexi-gallery/">Documentation</a>
@@ -78,6 +59,8 @@ Look Screenshots below for quick understanding of it's scope. You can do lot mor
 *   **File size limit** - Specify each file size (MB) limit that the visitors can upload. 
 *   **Conflict Management** - Special settings available to manage the conflict with other plugins & theme.
 *   **Live Reloading** - If gallery & form is on same page, the submitted post will be visible as soon as form is posted without any page refresh.
+*   **Like/Unlike button** - Option to display like & unlike button at gallery & detail page.
+*   **Count Post** - View count for each post can be displayed at gallery & detail page. 
 
 = Layout Builder =
 * **Basic - Detail layout** - 5 changeable location
@@ -141,7 +124,7 @@ You can also add/remove form fields based on pages & posts.
 * German language (de_DE)
 * Italian Language (it_IT)
 * Dutch language (nl_NL)
-* Hindi India language (hi_IN) (Thanks to Aaditya Naman Gupta)
+* Hindi India language (hi_IN)
 * Spanish Language (es_ES)
 * French Language (fr_FR)
 * English Language (en_US)
@@ -201,6 +184,9 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 3.7 =
+* Updated wide & portfolio layout to display custom fields from 2 to 5
+
 = 3.6 =
 * 'My Dashboard' & 'My Gallery' button only displays only to logged in user.
 * Filter gallery by custom fields with help of shortcode

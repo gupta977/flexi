@@ -34,7 +34,7 @@ if ($column == "1") {
         }
 
         if (flexi_evalue_toggle('custom', $evalue) == '') {
-          echo '<span>' . flexi_custom_field_loop($post, 'gallery', 2) . '</span>';
+          echo '<span>' . flexi_custom_field_loop($post, 'gallery', 5) . '</span>';
         }
 
         if (flexi_evalue_toggle('category', $evalue) == '') {

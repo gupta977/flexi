@@ -29,7 +29,7 @@ if ($column == "1") {
         <?php echo flexi_excerpt(20); ?>
       </div>
 
-      <span style="<?php echo flexi_evalue_toggle('custom', $evalue); ?>"><?php echo flexi_custom_field_loop($post, 'gallery', 2); ?></span>
+      <span style="<?php echo flexi_evalue_toggle('custom', $evalue); ?>"><?php echo flexi_custom_field_loop($post, 'gallery', 5); ?></span>
 
 
       <?php
