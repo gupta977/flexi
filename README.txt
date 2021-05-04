@@ -18,10 +18,12 @@ With our plugin you can let your visitors to post images, YouTube , vimeo , PDF,
 Just download and use blocks to generate gallery & forms.
 Fall in Love with this plugin like we do!
 
-Look Screenshots below for quick understanding of it's scope. You can do lot more then listed. :)
+Look Screenshots for quick understanding of it's scope. You can do lot more then listed. :)
 
 [FLEXI PLUGIN](https://flexi.odude.com/)
 [Live Demo](https://odude.com/demo/flexi/flexi-gallery/)
+
+[youtube https://youtu.be/hC9lTU4ATy8]
 
 == Help ==
 <a href="https://odude.com/docs/flexi-gallery/">Documentation</a>
@@ -184,6 +186,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 3.8 =
+* Introduced [flexi-profile-toolbar] to display user buttons on social profile tab only. 
+* Post Button at social profile tab. Only displayed for logged-in and own profile gallery page.
+
 = 3.7 =
 * Updated wide & portfolio layout to display custom fields from 2 to 5
 

@@ -8,12 +8,13 @@ class Flexi_User_Dashboard
     {
         add_shortcode('flexi-user-dashboard', array($this, 'flexi_user_dashboard'));
         add_shortcode('flexi-common-toolbar', array($this, 'flexi_common_toolbar'));
-        // add_filter("flexi_submit_toolbar", array($this, 'flexi_add_icon_submit_toolbar'), 10, 2);
+        add_shortcode('flexi-profile-toolbar', array($this, 'flexi_profile_toolbar'));
         add_action('wp', array($this, 'enqueue_styles'));
         add_filter('flexi_settings_sections', array($this, 'add_section'));
         add_filter('flexi_settings_fields', array($this, 'add_fields_general'));
         add_filter("flexi_common_toolbar", array($this, 'logout_button'), 10, 1);
         add_filter("flexi_common_toolbar", array($this, 'submission_form_button'), 10, 1);
+        add_filter("flexi_profile_toolbar", array($this, 'submission_form_button_profile'), 10, 1);
         add_filter("flexi_common_toolbar", array($this, 'gallery_button'), 10, 1);
         add_filter("flexi_common_toolbar", array($this, 'user_dashboard_button'), 10, 1);
         add_action('flexi_activated', array($this, 'set_value'));
@@ -91,7 +92,7 @@ class Flexi_User_Dashboard
             array(
                 'name'              => 'enable_dashboard_button',
                 'label'             => __('"My Dashboard" button', 'flexi'),
-                'description'       => __('Display "My Dashboard" button at common toolbar', 'flexi'),
+                'description'       => __('Display "My Dashboard" button at "Common Toolbar"', 'flexi'),
                 'type'              => 'checkbox',
                 'sanitize_callback' => 'intval',
             ),
@@ -99,7 +100,7 @@ class Flexi_User_Dashboard
             array(
                 'name'              => 'enable_mygallery_button',
                 'label'             => __('"My Gallery" button', 'flexi'),
-                'description'       => __('Display button at "My Dashboard"', 'flexi'),
+                'description'       => __('Display button at "My Dashboard" & "Common Toolbar"', 'flexi'),
                 'type'              => 'checkbox',
                 'sanitize_callback' => 'intval',
             ),
@@ -107,7 +108,7 @@ class Flexi_User_Dashboard
             array(
                 'name'              => 'enable_submission_form_button',
                 'label'             => __('"Submission form" button', 'flexi'),
-                'description'       => __('Display post/submit button at "My Dashboard". Title displayed on button is based on form page linked.', 'flexi'),
+                'description'       => __('Display submission button at "My Dashboard" & "Common Toolbar". Title displayed on button is based on form page linked.', 'flexi'),
                 'type'              => 'checkbox',
                 'sanitize_callback' => 'intval',
             ),
@@ -284,6 +285,37 @@ class Flexi_User_Dashboard
         return $list;
     }
 
+    //profile button toolbar shortcode: [flexi-profile-toolbar]
+    public function flexi_profile_toolbar()
+    {
+        global $post;
+        $icon = array();
+
+        $list = '';
+
+        if (has_filter('flexi_profile_toolbar')) {
+            $icon = apply_filters('flexi_profile_toolbar', $icon);
+        }
+
+        if (count($icon) > 0) {
+            $list .= '<div class="fl-buttons" role="toolbar" id="flexi-profile-toolbar_' . get_the_ID() . '">';
+        }
+
+        for ($r = 0; $r < count($icon); $r++) {
+
+            if ("" != $icon[$r][0]) {
+                $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][3] . '">
+                    <span class="fl-icon"><i class="' . $icon[$r][0] . '"></i></span>
+                    <span>' . $icon[$r][1] . '</span>
+                  </a>';
+            }
+        }
+        if (count($icon) > 0) {
+            $list .= '</div>';
+        }
+        return $list;
+    }
+
 
     public function gallery_button($icon)
     {
@@ -334,6 +366,48 @@ class Flexi_User_Dashboard
             // combine the two arrays
             if (is_array($extra_icon) && is_array($icon)) {
                 $icon = array_merge($extra_icon, $icon);
+            }
+        }
+        return $icon;
+    }
+
+    public function submission_form_button_profile($icon)
+    {
+        $enable_addon = flexi_get_option('enable_submission_form_button', 'flexi_user_dashboard_settings', 1);
+
+        if ("1" == $enable_addon) {
+
+            if (is_user_logged_in()) {
+                $enable_buddypress = flexi_get_option('enable_buddypress', 'flexi_extension', 0);
+                $enable_um = flexi_get_option('enable_ultimate_member', 'flexi_extension', 0);
+                if ("1" == $enable_buddypress) {
+                    $user_info = bp_get_displayed_user_username();
+                } else  if ("1" == $enable_um) {
+                    $user_info = get_userdata(um_profile_id());
+                } else {
+                    $user_info = '';
+                }
+
+                $current_user = wp_get_current_user();
+
+                if ($user_info == $current_user->user_login) {
+                    $extra_icon   = array();
+                    $post_form_id = flexi_get_option('submission_form', 'flexi_form_settings', 0);
+                    $post_form_object = get_post($post_form_id);
+                    $link         = get_permalink($post_form_id);
+
+                    // flexi_log($post_form_object);
+                    $post_title = $post_form_object->post_title;
+                    $extra_icon = array(
+                        array('fas fa-image', __($post_title, 'flexi'), $link, 'fl-button'),
+
+                    );
+
+                    // combine the two arrays
+                    if (is_array($extra_icon) && is_array($icon)) {
+                        $icon = array_merge($extra_icon, $icon);
+                    }
+                }
             }
         }
         return $icon;

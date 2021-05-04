@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
-"POT-Creation-Date: 2021-04-21 16:17+0545\n"
+"POT-Creation-Date: 2021-05-04 10:41+0545\n"
 "PO-Revision-Date: 2020-02-09 12:49+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
@@ -220,7 +220,7 @@ msgstr ""
 msgid "Displays activity when any flexi post is posted."
 msgstr ""
 
-#: includes/addon/class-flexi-buddypress.php:161
+#: includes/addon/class-flexi-buddypress.php:162
 #, php-format
 msgid "%s has posted: <a target=\"_blank\" href = \"%s\">%s</a>"
 msgstr ""
@@ -959,7 +959,7 @@ msgid "Flexi home page with shortcode [flexi-primary]"
 msgstr ""
 
 #: includes/class-flexi-settings.php:270
-#: includes/user_dashboard/class-flexi-user-dashboard.php:59
+#: includes/user_dashboard/class-flexi-user-dashboard.php:60
 msgid "Select gallery layout"
 msgstr ""
 
@@ -992,22 +992,22 @@ msgid "Disable gallery"
 msgstr ""
 
 #: includes/class-flexi-settings.php:292
-#: includes/user_dashboard/class-flexi-user-dashboard.php:67
+#: includes/user_dashboard/class-flexi-user-dashboard.php:68
 msgid "Post per page"
 msgstr ""
 
 #: includes/class-flexi-settings.php:293
-#: includes/user_dashboard/class-flexi-user-dashboard.php:68
+#: includes/user_dashboard/class-flexi-user-dashboard.php:69
 msgid "Number of images/post/videos to be shown at a time."
 msgstr ""
 
 #: includes/class-flexi-settings.php:301
-#: includes/user_dashboard/class-flexi-user-dashboard.php:76
+#: includes/user_dashboard/class-flexi-user-dashboard.php:77
 msgid "Number of Columns"
 msgstr ""
 
 #: includes/class-flexi-settings.php:302
-#: includes/user_dashboard/class-flexi-user-dashboard.php:77
+#: includes/user_dashboard/class-flexi-user-dashboard.php:78
 msgid "Maximum number of post to be shown horizontally & changes based on screen size. May not work for all layouts."
 msgstr ""
 
@@ -1436,103 +1436,103 @@ msgstr ""
 msgid "Flexi Edit/Modify"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:35
+#: includes/user_dashboard/class-flexi-user-dashboard.php:36
 msgid "User Dashboard"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:36
+#: includes/user_dashboard/class-flexi-user-dashboard.php:37
 msgid "Configuration for user dashboard page."
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:52
+#: includes/user_dashboard/class-flexi-user-dashboard.php:53
 msgid "Member \"User Dashboard\" Page"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:53
+#: includes/user_dashboard/class-flexi-user-dashboard.php:54
 msgid "Page with shortcode [flexi-user-dashboard]. Display gallery of own posts."
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:60
+#: includes/user_dashboard/class-flexi-user-dashboard.php:61
 msgid "Selected layout will be used as layout for dashboard page only."
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:86
+#: includes/user_dashboard/class-flexi-user-dashboard.php:87
 msgid "Disable search box"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:87
+#: includes/user_dashboard/class-flexi-user-dashboard.php:88
 msgid "Hide search input box from user dashboard"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:93
+#: includes/user_dashboard/class-flexi-user-dashboard.php:94
 msgid "\"My Dashboard\" button"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:94
-msgid "Display \"My Dashboard\" button at common toolbar"
-msgstr ""
-
-#: includes/user_dashboard/class-flexi-user-dashboard.php:101
-msgid "\"My Gallery\" button"
+#: includes/user_dashboard/class-flexi-user-dashboard.php:95
+msgid "Display \"My Dashboard\" button at \"Common Toolbar\""
 msgstr ""
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:102
-msgid "Display button at \"My Dashboard\""
+msgid "\"My Gallery\" button"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:109
-msgid "\"Submission form\" button"
+#: includes/user_dashboard/class-flexi-user-dashboard.php:103
+msgid "Display button at \"My Dashboard\" & \"Common Toolbar\""
 msgstr ""
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:110
-msgid "Display post/submit button at \"My Dashboard\". Title displayed on button is based on form page linked."
+msgid "\"Submission form\" button"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:117
-msgid "\"Login/Logout\" button"
+#: includes/user_dashboard/class-flexi-user-dashboard.php:111
+msgid "Display submission button at \"My Dashboard\" & \"Common Toolbar\". Title displayed on button is based on form page linked."
 msgstr ""
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:118
+msgid "\"Login/Logout\" button"
+msgstr ""
+
+#: includes/user_dashboard/class-flexi-user-dashboard.php:119
 msgid "Display logout/login button at user dashboard & common toolbar."
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:124
+#: includes/user_dashboard/class-flexi-user-dashboard.php:125
 msgid "Logout Button Label"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:125
+#: includes/user_dashboard/class-flexi-user-dashboard.php:126
 msgid "Label of Logout button. Eg. Sign out"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:132
+#: includes/user_dashboard/class-flexi-user-dashboard.php:133
 msgid "Login Button Label"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:133
+#: includes/user_dashboard/class-flexi-user-dashboard.php:134
 msgid "Label of Login button. Eg. Sign in"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:184
+#: includes/user_dashboard/class-flexi-user-dashboard.php:185
 msgid "My search"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:188
+#: includes/user_dashboard/class-flexi-user-dashboard.php:189
 msgid "Search"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:215
+#: includes/user_dashboard/class-flexi-user-dashboard.php:216
 msgid "Published"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:221
+#: includes/user_dashboard/class-flexi-user-dashboard.php:222
 msgid "Under review"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:303
+#: includes/user_dashboard/class-flexi-user-dashboard.php:335
 msgid "My Gallery"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:384
+#: includes/user_dashboard/class-flexi-user-dashboard.php:458
 msgid "My Dashboard"
 msgstr ""
 

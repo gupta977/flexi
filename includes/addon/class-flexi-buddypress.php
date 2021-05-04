@@ -140,6 +140,7 @@ class Flexi_Addon_BuddyPress
     {
 
         $user_info = bp_get_displayed_user_username();
+        echo do_shortcode('[flexi-profile-toolbar]');
         echo do_shortcode('[flexi-gallery user="' . $user_info . '" ] ');
     }
 
