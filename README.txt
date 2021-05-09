@@ -186,6 +186,12 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 3.9 =
+* New tab "Layout" added on dashboard
+* Option to create own gallery layout with own php codes.
+* Option to delete imported layouts
+
+
 = 3.8 =
 * Introduced [flexi-profile-toolbar] to display user buttons on social profile tab only. 
 * Post Button at social profile tab. Only displayed for logged-in and own profile gallery page.

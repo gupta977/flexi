@@ -133,6 +133,7 @@ class Flexi
     //Admin Dashboard classes
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/dashboard/class-flexi-dashboard-intro.php';
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/dashboard/class-flexi-dashboard-pages.php';
+    require_once plugin_dir_path(dirname(__FILE__)) . 'includes/dashboard/class-flexi-dashboard-layout.php';
     require_once plugin_dir_path(dirname(__FILE__)) . 'includes/dashboard/class-flexi-dashboard-pro.php';
 
     //User Dashboard
