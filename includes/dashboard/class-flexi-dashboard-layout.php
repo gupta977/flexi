@@ -3,8 +3,8 @@ class Flexi_Admin_Dashboard_Layout
 {
   public function __construct()
   {
-    //add_action('flexi_plugin_update', array($this, 'overwrite_layouts'));
-    add_action('init', array($this, 'overwrite_layouts'));
+    add_action('flexi_plugin_update', array($this, 'overwrite_layouts'));
+    //  add_action('init', array($this, 'overwrite_layouts'));
     add_filter('flexi_dashboard_tab', array($this, 'add_tabs'));
     add_action('flexi_dashboard_tab_content', array($this, 'add_content'));
   }
@@ -32,7 +32,7 @@ class Flexi_Admin_Dashboard_Layout
   {
     require_once(ABSPATH . 'wp-admin/includes/file.php');
     global $wp_filesystem;
-    //flexi_log("ok");
+
     //Copy to gallery layout
     // Connecting to the filesystem.
     if (!WP_Filesystem()) {
@@ -46,11 +46,12 @@ class Flexi_Admin_Dashboard_Layout
 
     //$wp_filesystem->mkdir($target_dir);
     $upload_dir = wp_upload_dir();
-    $src_dir = $upload_dir['basedir'] . '/flexi_gallery/';  //upload dir.
+    $src_dir = $upload_dir['basedir'] . '/flexi/flexi_gallery/';  //upload dir.
     $target_dir = FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/';
     // Now copy all the files in the source directory to the target directory.
     copy_dir($src_dir, $target_dir, $skip_list = array());
   }
+
   // function to delete all files and subfolders from folder
   public function deleteAll($dir, $remove = false)
   {
@@ -70,23 +71,105 @@ class Flexi_Admin_Dashboard_Layout
       }
   }
 
+  //Upload .zip file
+  public function flexi_upload_file($file = array(), $path = '')
+  {
+    if (!empty($file)) {
+
+      $upload_dir = $path;
+      $uploaded   = move_uploaded_file($file['tmp_name'], $upload_dir . $file['name']);
+      if ($uploaded) {
+        echo "<p>Uploaded successfully</p>";
+      } else {
+        echo "<p>Some error in upload</p> ";
+        print_r($file['error']);
+      }
+    }
+  }
+
+
   public function flexi_dashboard_content()
   {
+    ob_start();
+    $this->overwrite_layouts();
     $safe_layout = array("basic", "masonry", "portfolio", "regular", "table", "wide");
+    $layout_page = admin_url('admin.php?page=flexi');
+    $layout_page = add_query_arg('tab', 'layout', $layout_page);
+
+    //Import layout 
+    if (isset($_POST['import'])) {
+
+
+      if (!empty($_FILES)) {
+        $file = $_FILES['flexi_layout'];   // file array
+
+
+        $uploded_file = basename($file["name"]);
+        $FileType = strtolower(pathinfo($uploded_file, PATHINFO_EXTENSION));
+
+        //Check if file contains flexi_
+        if (strpos($uploded_file, 'flexi_') !== false) {
+
+          if ($FileType == "zip") {
+            //upload zip file
+            $upload_dir = wp_upload_dir();
+            $base_path = $upload_dir['basedir'] . '/flexi/';  //upload dir.
+            $path = $upload_dir['basedir'] . '/flexi/flexi_gallery/';  //upload dir.
+            if (!is_dir($base_path)) {
+              mkdir($base_path);
+            }
+            if (!is_dir($path)) {
+              mkdir($path);
+            }
+            $attachment_id = $this->flexi_upload_file($file, $path);
+
+            //unzipping file
+            WP_Filesystem();
+            $unzipfile = unzip_file($path . '/' . $uploded_file, $path);
+            if (is_wp_error($unzipfile)) {
+              echo '<p>There was an error unzipping the file.</p>';
+            } else {
+              echo "<p>Successfully unzipped the file to wp-upload folder !</p>";
+              //Delete .zip file uploaded
+              unlink($path . '/' . $uploded_file);
+              //copy files from upload folder to gallery
+              $this->overwrite_layouts();
+            }
+          } else {
+            echo '<p>it\'s not a valid zip file</p></div>';
+          }
+        } else {
+          echo '<p>This is not a valid Flexi Gallery layout zip file</p>';
+        }
+      }
+    }
+
+
+    //Delete layout
     if (isset($_GET['delete'])) {
       $del_layout = $_GET['delete'];
       if (!in_array($del_layout, $safe_layout)) {
         $del_path = FLEXI_BASE_DIR  .  'public/partials/layout/gallery/' . $del_layout;
         $upload_dir = wp_upload_dir();
-        $src_dir = $upload_dir['basedir'] . '/flexi_gallery/' . $del_layout;
+        $src_dir = $upload_dir['basedir'] . '/flexi/flexi_gallery/' . $del_layout;
 
         $this->deleteAll($del_path, true);
         $this->deleteAll($src_dir, true);
       }
     }
-    ob_start();
+
 ?>
     <h3>Gallery Layouts</h3>
+    <div style="text-align:right">
+
+      <b>Import Flexi Gallery Layout .zip File</b>
+      <form class="pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="<?php echo $layout_page; ?>">
+        <input id="flexi_layout" name="flexi_layout" type="file" size="25" required />
+        <input type="submit" value="Import" name="import" class="button button-primary">
+      </form>
+
+    </div>
+
     <div class="theme-browser rendered">
       <div class="themes wp-clearfix">
         <?php
@@ -125,8 +208,6 @@ class Flexi_Admin_Dashboard_Layout
                 ?>
                   <div class="theme-actions">
                     <?php
-                    $layout_page = admin_url('admin.php?page=flexi');
-                    $layout_page = add_query_arg('tab', 'layout', $layout_page);
                     $layout_page = add_query_arg('delete', trim($file), $layout_page);
                     ?>
                     <a class="button button-primary customize load-customize hide-if-no-customize" href="<?php echo $layout_page; ?>">Delete</a>
