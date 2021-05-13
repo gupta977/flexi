@@ -184,6 +184,7 @@ class Flexi_Admin_Dashboard_Layout
           if (!strpos($file, '.') && "." != $file && ".." != $file) {
             $style_path = FLEXI_BASE_DIR  .  'public/partials/layout/' . $folder . '/' . $file . '/style.css';
             $version = $this->get_layout_info($style_path, 'version');
+            $url = $this->get_layout_info($style_path, 'url');
             $screenshot = FLEXI_BASE_DIR  .  'public/partials/layout/' . $folder . '/' . $file . '/screenshot.png';
             if (file_exists($screenshot)) {
               $screenshot = FLEXI_ROOT_URL .  'public/partials/layout/' . $folder . '/' . $file . '/screenshot.png';
@@ -193,12 +194,13 @@ class Flexi_Admin_Dashboard_Layout
             }
         ?>
             <div class="theme active" tabindex="0" aria-describedby="dukan-lite-action dukan-lite-name" data-slug="dukan-lite">
+              <a href="<?php echo $url; ?>" target="_blank">
+                <div class="theme-screenshot">
+                  <img src="<?php echo $screenshot; ?>" alt="">
+                </div>
 
-              <div class="theme-screenshot">
-                <img src="<?php echo $screenshot; ?>" alt="">
-              </div>
-
-              <span class="more-details" id="dukan-lite-action">Theme Details</span>
+                <span class="more-details" id="dukan-lite-action">Source Code</span>
+              </a>
               <div class="theme-id-container">
 
                 <h2 class="theme-name" id="dukan-lite-name">
