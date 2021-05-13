@@ -159,8 +159,11 @@ class Flexi_Admin_Dashboard_Layout
     }
 
 ?>
+
+    <div style="text-align:right;"> <a href="#" class="button-secondary">More FREE/PAID Gallery</a> </div>
+
     <h3>Gallery Layouts</h3>
-    <div style="text-align:right">
+    <div class="about-text card">
 
       <b>Import Flexi Gallery Layout .zip File</b>
       <form class="pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="<?php echo $layout_page; ?>">

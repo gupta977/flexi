@@ -201,6 +201,9 @@ class FLEXI_Admin_Settings
         $edit_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/modify-submission-form/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
         $category_help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/shortcode/flexi-category/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
 
+        //Import layout page link
+        $layout_page = admin_url('admin.php?page=flexi');
+        $layout_page = add_query_arg('tab', 'layout', $layout_page);
 
         $fields = array(
 
@@ -268,7 +271,7 @@ class FLEXI_Admin_Settings
                 array(
                     'name'              => 'gallery_layout',
                     'label'             => __('Select gallery layout', 'flexi'),
-                    'description'       => __('Selected layout will be used as default layout, if not specified in shortcode parameter.', 'flexi'),
+                    'description'       => __('Selected layout will be used as default layout, if not specified in shortcode parameter.', 'flexi') . ' <a href="' . $layout_page . '">' . __("Import Layout", "flexi") . '</a>',
                     'type'              => 'layout',
                     'sanitize_callback' => 'sanitize_key',
                     'step'              => 'gallery',
