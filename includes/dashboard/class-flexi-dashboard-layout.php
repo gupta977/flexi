@@ -46,8 +46,8 @@ class Flexi_Admin_Dashboard_Layout
 
     //$wp_filesystem->mkdir($target_dir);
     $upload_dir = wp_upload_dir();
-    $src_dir = $upload_dir['basedir'] . '/flexi/flexi_gallery/';  //upload dir.
-    $target_dir = FLEXI_PLUGIN_DIR . 'public/partials/layout/gallery/';
+    $src_dir = $upload_dir['basedir'] . '/flexi/layout/';  //upload dir.
+    $target_dir = FLEXI_PLUGIN_DIR . 'public/partials/layout/';
     // Now copy all the files in the source directory to the target directory.
     copy_dir($src_dir, $target_dir, $skip_list = array());
   }
@@ -114,7 +114,7 @@ class Flexi_Admin_Dashboard_Layout
             //upload zip file
             $upload_dir = wp_upload_dir();
             $base_path = $upload_dir['basedir'] . '/flexi/';  //upload dir.
-            $path = $upload_dir['basedir'] . '/flexi/flexi_gallery/';  //upload dir.
+            $path = $upload_dir['basedir'] . '/flexi/layout/';  //upload dir.
             if (!is_dir($base_path)) {
               mkdir($base_path);
             }
@@ -149,11 +149,40 @@ class Flexi_Admin_Dashboard_Layout
     if (isset($_GET['delete'])) {
       $del_layout = $_GET['delete'];
       if (!in_array($del_layout, $safe_layout)) {
-        $del_path = FLEXI_BASE_DIR  .  'public/partials/layout/gallery/' . $del_layout;
-        $upload_dir = wp_upload_dir();
-        $src_dir = $upload_dir['basedir'] . '/flexi/flexi_gallery/' . $del_layout;
 
+        //Delete gallery layout
+        $del_path = FLEXI_BASE_DIR  .  'public/partials/layout/gallery/' . $del_layout;
         $this->deleteAll($del_path, true);
+        $upload_dir = wp_upload_dir();
+        $src_dir = $upload_dir['basedir'] . '/flexi/layout/gallery/' . $del_layout;
+        $this->deleteAll($src_dir, true);
+
+        //Delete detail layout
+        $del_path = FLEXI_BASE_DIR  .  'public/partials/layout/detail/' . $del_layout;
+        $this->deleteAll($del_path, true);
+        $upload_dir = wp_upload_dir();
+        $src_dir = $upload_dir['basedir'] . '/flexi/layout/detail/' . $del_layout;
+        $this->deleteAll($src_dir, true);
+
+        //Delete detail layout
+        $del_path = FLEXI_BASE_DIR  .  'public/partials/layout/detail/' . $del_layout;
+        $this->deleteAll($del_path, true);
+        $upload_dir = wp_upload_dir();
+        $src_dir = $upload_dir['basedir'] . '/flexi/layout/detail/' . $del_layout;
+        $this->deleteAll($src_dir, true);
+
+        //category detail layout
+        $del_path = FLEXI_BASE_DIR  .  'public/partials/layout/category/' . $del_layout;
+        $this->deleteAll($del_path, true);
+        $upload_dir = wp_upload_dir();
+        $src_dir = $upload_dir['basedir'] . '/flexi/layout/category/' . $del_layout;
+        $this->deleteAll($src_dir, true);
+
+        //Delete popup layout
+        $del_path = FLEXI_BASE_DIR  .  'public/partials/layout/popup/' . $del_layout;
+        $this->deleteAll($del_path, true);
+        $upload_dir = wp_upload_dir();
+        $src_dir = $upload_dir['basedir'] . '/flexi/layout/popup/' . $del_layout;
         $this->deleteAll($src_dir, true);
       }
     }
