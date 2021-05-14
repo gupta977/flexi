@@ -129,6 +129,7 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
             if (in_array($page, $display)) {
                 if ('' != $value[0]) {
                     if ($css) {
+                        //If enabled search at custom field settings
                         $enable_link = flexi_get_option('flexi_field_' . $x . '_link', 'flexi_custom_fields', '');
                         if ($enable_link != '') {
                             $link = add_query_arg('search', 'flexi_field_' . $x . ':' . $value[0], $link);
@@ -154,6 +155,7 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
 
     return $group;
 }
+
 
 //Page Number
 //flexi-pagination is same as woocommerce-pagination css
