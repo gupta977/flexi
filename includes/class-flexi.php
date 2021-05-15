@@ -72,7 +72,7 @@ class Flexi
     if (defined('FLEXI_VERSION')) {
       $this->version = FLEXI_VERSION;
     } else {
-      $this->version = '3.0';
+      $this->version = '3.8';
     }
     $this->plugin_name = 'flexi';
 
@@ -80,11 +80,6 @@ class Flexi
     $this->set_locale();
     $this->define_admin_hooks();
     $this->define_public_hooks();
-
-    // Path to the plugin directory
-    if (!defined('FLEXI_PLUGIN_DIR')) {
-      define('FLEXI_PLUGIN_DIR', plugin_dir_path(dirname(__FILE__)));
-    }
   }
 
   /**

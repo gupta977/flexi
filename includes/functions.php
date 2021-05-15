@@ -477,18 +477,26 @@ function flexi_login_link()
 //Get post button link
 function flexi_get_button_url($param = '', $ajax = true, $type = 'submission_form', $setting_tab = 'flexi_form_settings')
 {
+    $url = "#";
     if ($ajax) {
         $url = '#admin-ajax.php?action=flexi_send_again&post_id=' . $param;
     } else {
         $default_post = flexi_get_option($type, $setting_tab, '0');
 
         if ('0' != $default_post && '' != $default_post) {
-            if ('' == $param) {
-                $url = esc_url(get_page_link($default_post));
+            $flexi_post = get_post($default_post);
+            if ($flexi_post && 0 != $default_post) {
+                if ('' == $param) {
+                    $url = esc_url(get_page_link($default_post));
+                } else {
+                    $url = esc_url(add_query_arg('id', $param, get_page_link($default_post)));
+                }
             } else {
-                $url = esc_url(add_query_arg('id', $param, get_page_link($default_post)));
+
+                flexi_missing_pages($type);
             }
         } else {
+            flexi_missing_pages($type);
             $url = "#";
         }
     }
@@ -867,7 +875,62 @@ function flexi_set_option($field_name, $section = 'flexi_general_settings', $def
     return;
 }
 
-//Create required pages
+//Generate missing pages
+function flexi_missing_pages($lost_file)
+{
+
+    if ($lost_file == 'category_page') {
+        //Assign category page
+        $cat_id = wp_insert_post(array('post_title' => 'Flexi Category', 'post_content' => '<!-- wp:shortcode -->[flexi-category parent="" padding="10"]<!-- /wp:shortcode -->', 'post_type' => 'page', 'post_status' => 'publish'));
+        flexi_set_option('category_page', 'flexi_categories_settings', $cat_id);
+    }
+
+    if ($lost_file == 'primary_page') {
+
+        $aid = wp_insert_post(array('post_title' => 'Primary Gallery', 'post_content' => '<!-- wp:shortcode -->[flexi-primary]<!-- /wp:shortcode -->', 'post_type' => 'page', 'post_status' => 'publish'));
+        flexi_set_option('primary_page', 'flexi_image_layout_settings', $aid);
+    }
+
+    if ($lost_file == 'submission_form') {
+        $str_post_image = '
+        <!-- wp:shortcode -->
+        [flexi-common-toolbar]
+        [flexi-form class="flexi_form_style" title="Submit to Flexi" name="my_form" ajax="true"][flexi-form-tag type="post_title" class="fl-input" title="Title" value="" required="true"][flexi-form-tag type="category" title="Select category"][flexi-form-tag type="tag" title="Insert tag"][flexi-form-tag type="article" class="fl-textarea" title="Description" ][flexi-form-tag type="file" title="Select file" required="true"][flexi-form-tag type="submit" name="submit" value="Submit Now"]
+        [/flexi-form]
+        <!-- /wp:shortcode -->
+        ';
+
+        $bid = wp_insert_post(array('post_title' => 'Post Image', 'post_content' => $str_post_image, 'post_type' => 'page', 'post_status' => 'publish'));
+        flexi_set_option('submission_form', 'flexi_form_settings', $bid);
+    }
+
+    if ($lost_file == 'my_gallery') {
+        $did = wp_insert_post(array('post_title' => 'User Dashboard', 'post_content' => '   <!-- wp:shortcode -->[flexi-user-dashboard]<!-- /wp:shortcode -->', 'post_type' => 'page', 'post_status' => 'publish'));
+        flexi_set_option('my_gallery', 'flexi_user_dashboard_settings', $did);
+    }
+
+    if ($lost_file == 'edit_flexi_page') {
+
+        $str_edit_image = '
+        <!-- wp:shortcode -->
+        [flexi-common-toolbar]
+        [flexi-standalone edit="true"]
+        [flexi-form class="flexi_form_style" title="Update Flexi" name="my_form" ajax="true" edit="true"]
+        [flexi-form-tag type="post_title" class="fl-input" title="Title" edit="true" required="true"]
+        [flexi-form-tag type="category" title="Select category" edit="true"]
+        [flexi-form-tag type="tag" title="Insert tag" edit="true"]
+        [flexi-form-tag type="article" class="fl-textarea" title="Description" placeholder="Content" edit="true"]
+        [flexi-form-tag type="submit" name="submit" value="Update Now"]
+        [/flexi-form]
+        <!-- /wp:shortcode -->
+            ';
+
+        $eid = wp_insert_post(array('post_title' => 'Edit Flexi Post', 'post_content' => $str_edit_image, 'post_type' => 'page', 'post_status' => 'publish'));
+        flexi_set_option('edit_flexi_page', 'flexi_form_settings', $eid);
+    }
+}
+
+//Create all required pages
 function flexi_create_pages()
 {
     global $wpdb;
@@ -883,46 +946,14 @@ function flexi_create_pages()
     if (!$wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[flexi-gallery]%'")) {
 
         //Assign category page
-        $cat_id = wp_insert_post(array('post_title' => 'Flexi Category', 'post_content' => '<!-- wp:shortcode -->[flexi-category parent="" padding="10"]<!-- /wp:shortcode -->', 'post_type' => 'page', 'post_status' => 'publish'));
-        flexi_set_option('category_page', 'flexi_categories_settings', $cat_id);
+        flexi_missing_pages('category_page');
+        flexi_missing_pages('primary_page');
+        flexi_missing_pages('submission_form');
+        flexi_missing_pages('my_gallery');
+        flexi_missing_pages('edit_flexi_page');
 
-
-        $aid = wp_insert_post(array('post_title' => 'Primary Gallery', 'post_content' => '<!-- wp:shortcode -->[flexi-primary]<!-- /wp:shortcode -->', 'post_type' => 'page', 'post_status' => 'publish'));
-        flexi_set_option('primary_page', 'flexi_image_layout_settings', $aid);
-
-        $str_post_image = '
-        <!-- wp:shortcode -->
-        [flexi-common-toolbar]
-        [flexi-form class="flexi_form_style" title="Submit to Flexi" name="my_form" ajax="true"][flexi-form-tag type="post_title" class="fl-input" title="Title" value="" required="true"][flexi-form-tag type="category" title="Select category"][flexi-form-tag type="tag" title="Insert tag"][flexi-form-tag type="article" class="fl-textarea" title="Description" ][flexi-form-tag type="file" title="Select file" required="true"][flexi-form-tag type="submit" name="submit" value="Submit Now"]
-        [/flexi-form]
-        <!-- /wp:shortcode -->
-		';
-
-        $bid = wp_insert_post(array('post_title' => 'Post Image', 'post_content' => $str_post_image, 'post_type' => 'page', 'post_status' => 'publish'));
-        flexi_set_option('submission_form', 'flexi_form_settings', $bid);
-
-        $did = wp_insert_post(array('post_title' => 'User Dashboard', 'post_content' => '   <!-- wp:shortcode -->[flexi-user-dashboard]<!-- /wp:shortcode -->', 'post_type' => 'page', 'post_status' => 'publish'));
-        flexi_set_option('my_gallery', 'flexi_user_dashboard_settings', $did);
-
-        $str_edit_image = '
-  <!-- wp:shortcode -->
-  [flexi-common-toolbar]
-  [flexi-standalone edit="true"]
-  [flexi-form class="flexi_form_style" title="Update Flexi" name="my_form" ajax="true" edit="true"]
-  [flexi-form-tag type="post_title" class="fl-input" title="Title" edit="true" required="true"]
-  [flexi-form-tag type="category" title="Select category" edit="true"]
-  [flexi-form-tag type="tag" title="Insert tag" edit="true"]
-  [flexi-form-tag type="article" class="fl-textarea" title="Description" placeholder="Content" edit="true"]
-  [flexi-form-tag type="submit" name="submit" value="Update Now"]
-  [/flexi-form]
-  <!-- /wp:shortcode -->
-		';
-
-        $eid = wp_insert_post(array('post_title' => 'Edit Flexi Post', 'post_content' => $str_edit_image, 'post_type' => 'page', 'post_status' => 'publish'));
-        flexi_set_option('edit_flexi_page', 'flexi_form_settings', $eid);
+        add_option('flexi_pages_created', true);
     }
-
-    add_option('flexi_pages_created', true);
 }
 
 // Flexi Excerpt Function ;)
