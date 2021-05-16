@@ -189,7 +189,7 @@ class Flexi_Admin_Dashboard_Layout
 
 ?>
 
-    <div style="text-align:right;"> <a href="https://flexi.odude.com/showcase/" class="button-secondary">More FREE/PAID Gallery</a> </div>
+    <div style="text-align:right;"> <a href="https://flexi.odude.com/layout/" class="button-secondary">More FREE/PAID Gallery</a> </div>
 
     <h3>Gallery Layouts</h3>
     <div class="about-text card">
