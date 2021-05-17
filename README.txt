@@ -190,7 +190,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * New tab "Layout" added on dashboard
 * Option to create own gallery layout with own php codes.
 * Option to delete imported layouts
-
+* Fixed recreation of flexi-pages if it is accidentally deleted. 
 
 = 3.8 =
 * Introduced [flexi-profile-toolbar] to display user buttons on social profile tab only. 
