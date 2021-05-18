@@ -269,6 +269,13 @@ function flexi_get_taxonomy_raw($post_id, $taxonomy_name)
     return rtrim($data, ',') . ',';
 }
 
+//Get Style value from settings
+function flexi_app_style($field, $default)
+{
+    return flexi_get_option($field, 'flexi_app_style_settings', $default);
+}
+
+
 //Generate gallery_tags link for above gallery
 function flexi_generate_tags($tags_array, $flexi_tag_class = 'fl-tag', $filter_class = 'filter_tag')
 {

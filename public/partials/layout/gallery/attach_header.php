@@ -9,7 +9,9 @@ if (false == $clear) {
 }
 //Display tags
 if ($show_tag) {
-   echo flexi_generate_tags($tags_array, 'fl-tag', 'filter_tag') . "<div style='clear:both;'></div>";
+   $style_tag = flexi_app_style('flexi_style_tag', 'fl-tag');
+
+   echo flexi_generate_tags($tags_array, $style_tag, 'filter_tag') . "<div style='clear:both;'></div>";
 }
 //var_dump($evalue);
 if (false == $clear && is_active_sidebar('flexi-gallery-sidebar') &&  is_flexi_page('primary_page', 'flexi_image_layout_settings')) {

@@ -9,6 +9,7 @@ if ($column == "1") {
 } else {
   $column_set = "3";
 }
+
 ?>
 <div class="fl-column fl-is-<?php echo $column_set; ?> flexi_gallery_child flexi_padding" id="flexi_<?php echo get_the_ID(); ?>" style="position: relative;" data-tags="<?php echo $tags; ?>">
   <!-- Loop start -->
@@ -24,7 +25,7 @@ if ($column == "1") {
       </div>
     </div>
     <div class="fl-card-content">
-      <div class="fl-title fl-is-4 fl-mb-1" style="<?php echo flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></div>
+      <div class="<?php echo flexi_app_style('flexi_style_heading', 'fl-title fl-is-4 fl-mb-1'); ?>" style="<?php echo flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></div>
       <div class="fl-content fl-mb-1 fl-is-size-6" style="<?php echo flexi_evalue_toggle('excerpt', $evalue); ?>">
         <?php echo flexi_excerpt(20); ?>
       </div>
