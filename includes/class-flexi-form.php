@@ -715,7 +715,7 @@ action="' . admin_url("admin-ajax.php") . '"
             // if (isset($options['show_trash_icon'])) {
             if ("1" == $edit_flexi_icon) {
                 $extra_icon = array(
-                    array("far fa-edit", __('Modify', 'flexi'), $link, '#', $post->ID, 'fl-button fl-is-small flexi_css_button'),
+                    array("far fa-edit", __('Modify', 'flexi'), $link, '#', $post->ID, 'fl-is-small flexi_css_button'),
 
                 );
             }

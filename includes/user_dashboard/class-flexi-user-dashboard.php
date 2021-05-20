@@ -272,7 +272,8 @@ class Flexi_User_Dashboard
         for ($r = 0; $r < count($icon); $r++) {
 
             if ("" != $icon[$r][0]) {
-                $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][3] . '">
+                $style_css = flexi_get_option('flexi_style_common_toolbar', 'flexi_app_style_settings', $icon[$r][3]);
+                $list .= '<a href="' . $icon[$r][2] . '" class="fl-button ' . $style_css . '">
                 <span class="fl-icon"><i class="' . $icon[$r][0] . '"></i></span>
                 <span>' . $icon[$r][1] . '</span>
               </a>';
@@ -332,7 +333,7 @@ class Flexi_User_Dashboard
                 $link = add_query_arg("flexi_user", $current_user->user_login, $link);
 
                 $extra_icon = array(
-                    array('far fa-images', __('My Gallery', 'flexi'), $link, 'fl-button'),
+                    array('far fa-images', __('My Gallery', 'flexi'), $link, 'fl-is-light'),
 
                 );
 
@@ -359,7 +360,7 @@ class Flexi_User_Dashboard
             // flexi_log($post_form_object);
             $post_title = $post_form_object->post_title;
             $extra_icon = array(
-                array('fas fa-image', __($post_title, 'flexi'), $link, 'fl-button'),
+                array('fas fa-image', __($post_title, 'flexi'), $link, 'fl-is-light'),
 
             );
 
@@ -399,7 +400,7 @@ class Flexi_User_Dashboard
                     // flexi_log($post_form_object);
                     $post_title = $post_form_object->post_title;
                     $extra_icon = array(
-                        array('fas fa-image', __($post_title, 'flexi'), $link, 'fl-button'),
+                        array('fas fa-image', __($post_title, 'flexi'), $link, 'fl-is-light'),
 
                     );
 
@@ -430,7 +431,7 @@ class Flexi_User_Dashboard
             }
 
             $extra_icon = array(
-                array("fas fa-sign-out-alt", $button_label, $link, 'fl-button'),
+                array("fas fa-sign-out-alt", $button_label, $link, ''),
 
             );
 
@@ -455,7 +456,7 @@ class Flexi_User_Dashboard
                 if ("#" != $link && "1" == $enable_addon) {
 
                     $extra_icon = array(
-                        array("fas fa-tachometer-alt", __('My Dashboard', 'flexi'), $link, 'fl-button'),
+                        array("fas fa-tachometer-alt", __('My Dashboard', 'flexi'), $link, 'fl-is-light'),
 
                     );
                 }

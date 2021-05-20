@@ -30,7 +30,7 @@ class Flexi_User
             //Hide profile icon in usre dashboard page
             if ("1" == $user_flexi_icon  && $my_gallery != $current_page_id) {
                 $extra_icon = array(
-                    array("far fa-user", __('Profile', 'flexi'), $link, '#', $post->ID, 'fl-button fl-is-small flexi_css_button'),
+                    array("far fa-user", __('Profile', 'flexi'), $link, '#', $post->ID, 'fl-is-small flexi_css_button'),
 
                 );
             }

@@ -46,7 +46,7 @@ class Flexi_Addon_Appearance_Style
         $enable_addon = flexi_get_option('enable_app_style', 'flexi_extension', 0);
         if ("1" == $enable_addon) {
 
-            $description = ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=detail&section=flexi_app_style_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a>';
+            $description = ' <a style="text-decoration: none;" href="' . admin_url('admin.php?page=flexi_settings&tab=general&section=flexi_app_style_settings') . '"><span class="dashicons dashicons-admin-tools"></span></a>';
         } else {
             $description = '';
         }
@@ -77,20 +77,32 @@ class Flexi_Addon_Appearance_Style
             $fields = array(
                 'flexi_app_style_settings' => array(
 
-
-                    array(
-                        'name'        => 'flexi_style_tag',
-                        'type'        => 'text',
-                        'label'       => __('Tag style', 'flexi'),
-                        'description' => __('fl-tag', 'flexi'),
-                    ),
                     array(
                         'name'        => 'flexi_style_heading',
                         'type'        => 'text',
                         'label'       => __('Title Heading', 'flexi'),
-                        'description' => __('fl-title fl-is-4 fl-mb-1', 'flexi'),
+                        'description' => __('fl-is-4 fl-mb-1 fl-has-text-success', 'flexi'),
+                    ),
+                    array(
+                        'name'        => 'flexi_style_tag',
+                        'type'        => 'text',
+                        'label'       => __('Gallery filter tag style', 'flexi'),
+                        'description' => __('fl-is-medium', 'flexi'),
                     ),
 
+                    array(
+                        'name'        => 'flexi_style_icon_grid',
+                        'type'        => 'text',
+                        'label'       => __('Icon grid buttons', 'flexi'),
+                        'description' => __('fl-is-small flexi_css_button', 'flexi'),
+                    ),
+
+                    array(
+                        'name'        => 'flexi_style_common_toolbar',
+                        'type'        => 'text',
+                        'label'       => __('Common toolbar buttons', 'flexi'),
+                        'description' => __('fl-is-light', 'flexi'),
+                    ),
 
                 ),
             );

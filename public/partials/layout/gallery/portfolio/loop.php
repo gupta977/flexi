@@ -25,7 +25,7 @@ if ($column == "1") {
       </div>
     </div>
     <div class="fl-card-content">
-      <div class="<?php echo flexi_app_style('flexi_style_heading', 'fl-title fl-is-4 fl-mb-1'); ?>" style="<?php echo flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></div>
+      <div class="fl-title <?php echo flexi_get_option('flexi_style_heading', 'flexi_app_style_settings', 'fl-is-4 fl-mb-1'); ?>" style="<?php echo flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></div>
       <div class="fl-content fl-mb-1 fl-is-size-6" style="<?php echo flexi_evalue_toggle('excerpt', $evalue); ?>">
         <?php echo flexi_excerpt(20); ?>
       </div>

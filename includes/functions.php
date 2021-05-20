@@ -269,24 +269,17 @@ function flexi_get_taxonomy_raw($post_id, $taxonomy_name)
     return rtrim($data, ',') . ',';
 }
 
-//Get Style value from settings
-function flexi_app_style($field, $default)
-{
-    return flexi_get_option($field, 'flexi_app_style_settings', $default);
-}
-
-
 //Generate gallery_tags link for above gallery
-function flexi_generate_tags($tags_array, $flexi_tag_class = 'fl-tag', $filter_class = 'filter_tag')
+function flexi_generate_tags($tags_array, $flexi_tag_class = 'fl-is-medium', $filter_class = 'filter_tag')
 {
     $taglink = '';
     if (count($tags_array) > 1) {
         $taglink .= '<div class="fl-tags" style="margin: 5px">';
 
-        $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' ' . $flexi_tag_class . ' fl-has-text-weight-bold">' . __('Show All', 'flexi') . '</a> ';
+        $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' fl-tag ' . $flexi_tag_class . ' fl-has-text-weight-bold">' . __('Show All', 'flexi') . '</a> ';
         if (count($tags_array) > 1) {
             foreach ($tags_array as $tags => $value) {
-                $taglink .= '<a href="javascript:void(0)" id="' . $tags . '" class="' . $filter_class . ' ' . $flexi_tag_class . ' ">' . $value . '</a> ';
+                $taglink .= '<a href="javascript:void(0)" id="' . $tags . '" class="' . $filter_class . ' fl-tag ' . $flexi_tag_class . ' ">' . $value . '</a> ';
             }
         }
 
@@ -1030,7 +1023,7 @@ function flexi_show_icon_grid()
     }
 
     if (count($icon) > 0) {
-        $list .= '<div class="fl-field fl-has-addons" id="flexi_' . get_the_ID() . '">';
+        $list .= '<div class="fl-field fl-buttons" id="flexi_' . get_the_ID() . '">';
     }
 
     for ($r = 0; $r < count($icon); $r++) {
@@ -1045,7 +1038,9 @@ function flexi_show_icon_grid()
         }
         //0-icon,1-title,2-url,3-argument or nonce,4-5-class_a,6-parameter
         if ("" != $icon[$r][0]) {
-            $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][5] . '" ' . $icon[$r][6] . '="' . $icon[$r][3] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '" title="' . $icon[$r][1] . '"><span class="fl-icon fl-is-small fl-has-text-black"><i class="' . $icon[$r][0] . '"></i></span></a>';
+            $style_css = flexi_get_option('flexi_style_icon_grid', 'flexi_app_style_settings', $icon[$r][5]);
+
+            $list .= '<a href="' . $icon[$r][2] . '" class="fl-button ' . $style_css . '" ' . $icon[$r][6] . '="' . $icon[$r][3] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '" title="' . $icon[$r][1] . '"><span class="fl-icon fl-is-small fl-has-text-black"><i class="' . $icon[$r][0] . '"></i></span></a>';
             // $list .= '<a href="' . $icon[$r][2] . '" class="' . $icon[$r][5] . '" ' . $icon[$r][6] . '="' . $icon[$r][3] . '" data-nonce="' . $nonce . '" data-post_id="' . $icon[$r][4] . '" title="' . $icon[$r][1] . '"><span class="' . $icon[$r][5] . '-border"><span class="flexi_icon_' . $icon[$r][0] . '"></span></span></a> ';
         }
     }

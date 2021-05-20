@@ -9,7 +9,7 @@ if (false == $clear) {
 }
 //Display tags
 if ($show_tag) {
-   $style_tag = flexi_app_style('flexi_style_tag', 'fl-tag');
+   $style_tag = flexi_get_option('flexi_style_tag', 'flexi_app_style_settings', 'fl-tag');
 
    echo flexi_generate_tags($tags_array, $style_tag, 'filter_tag') . "<div style='clear:both;'></div>";
 }
