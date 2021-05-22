@@ -25,7 +25,7 @@ echo '<div class="flexi_gallery_grid">';
 
 
     <div class="flexi_details" style="<?php echo flexi_evalue_toggle('title', $evalue); ?>">
-        <h3><?php echo $data['title']; ?></h3>
+        <?php echo $data['title']; ?>
     </div>
 
 </div>

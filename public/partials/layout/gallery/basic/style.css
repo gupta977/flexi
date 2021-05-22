@@ -31,11 +31,6 @@ url=https://github.com/gupta977/flexi/tree/master/public/partials/layout/gallery
 
 .flexi-list-small .flexi_details {
   margin-bottom: 10px;
-}
-
-/* Title */
-
-.flexi-list-small .flexi_details h3 {
   display: block;
   font-size: 12px;
   margin: 0 0 3px 0;
