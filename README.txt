@@ -186,6 +186,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 4.0 =
+* Appearance CSS style tab added in General settings
+* Update SKIP URL after Installation
+
 = 3.9 =
 * New tab "Layout" added on dashboard
 * Option to create own gallery layout with own php codes.

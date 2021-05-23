@@ -29,7 +29,7 @@ foreach ($this->sections as $section) {
     $flexi_activated = get_option('flexi_activated');
     //if (true) {
     if ($flexi_activated) {
-        //Setup completed at: \flexi\includes\user_dashboard\class-flexi-user-dashboard.php
+
 
         //Create Pages and assign to settings
         $flexi_pages_created = get_option('flexi_pages_created');
@@ -48,7 +48,7 @@ foreach ($this->sections as $section) {
 
             <p><?php echo "<a href='" . flexi_get_button_url('', false, 'submission_form', 'flexi_form_settings') . "' class='button button-primary'>" . __('Post to Configure', 'flexi') . "</a>" ?>
                 <br> <br><?php
-                            echo "<a href='" . flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings') . "' >" . __('Skip, I have already done.', 'flexi') . "</a><br>"
+                            echo "<a href='" . admin_url('admin.php?page=flexi&activated=true') . "' >" . __('Skip, I have already done.', 'flexi') . "</a><br>"
                             ?>
             </p>
         </div>

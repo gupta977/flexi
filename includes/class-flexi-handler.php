@@ -13,13 +13,7 @@ class Flexi_Service_Handler
     {
 
         //Flexi setup complete, enable backend settings
-        $flexi_activated = get_option('flexi_activated');
-        if ($flexi_activated) {
-            if (get_option('flexi_activated', false)) {
-                delete_option('flexi_activated');
-                delete_option('flexi_pages_created');
-            }
-        }
+        flexi_install_complete();
     }
 }
 $links = new Flexi_Service_Handler();

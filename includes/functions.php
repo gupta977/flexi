@@ -1050,6 +1050,17 @@ function flexi_show_icon_grid()
     return $list;
 }
 
+//Flexi activated
+function flexi_install_complete()
+{
+    $flexi_activated = get_option('flexi_activated');
+    if ($flexi_activated) {
+        if (get_option('flexi_activated', false)) {
+            delete_option('flexi_activated');
+            delete_option('flexi_pages_created');
+        }
+    }
+}
 
 //button toolbar to display after user submit post
 function flexi_post_toolbar_grid($id, $bool)

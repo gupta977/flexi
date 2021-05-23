@@ -1,4 +1,9 @@
 <?php
+
+if (isset($_GET['activated'])) {
+	flexi_install_complete();
+}
+
 $flexi_activated = get_option('flexi_activated');
 if ($flexi_activated) {
 
