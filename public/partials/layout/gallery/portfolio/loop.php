@@ -12,6 +12,7 @@ if ($column == "1") {
 
 $style_base_color = flexi_get_option('flexi_style_base_color', 'flexi_app_style_settings', '');
 $style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_settings', '');
+$style_title = flexi_get_option('flexi_style_heading', 'flexi_app_style_settings', 'fl-is-4 fl-mb-1');
 ?>
 
 <div class="fl-column fl-is-<?php echo $column_set; ?> flexi_gallery_child flexi_padding" id="flexi_<?php echo get_the_ID(); ?>" style="position: relative;" data-tags="<?php echo $tags; ?>">
@@ -28,7 +29,7 @@ $style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_
       </div>
     </div>
     <div class="fl-card-content">
-      <div class="fl-title <?php echo flexi_get_option('flexi_style_heading', 'flexi_app_style_settings', 'fl-is-4 fl-mb-1'); ?>" style="<?php echo flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></div>
+      <div class="fl-title <?php echo $style_title; ?>" style="<?php echo flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></div>
       <div class="fl-content fl-mb-1 fl-is-size-6 <?php echo $style_text_color; ?>" style="<?php echo flexi_evalue_toggle('excerpt', $evalue); ?>">
         <?php echo flexi_excerpt(20); ?>
       </div>

@@ -1,5 +1,5 @@
 <ul class="flexi-responsive-table" id="flexi_gallery">
-    <li class="flexi-table-header">
+    <li class="flexi-table-header <?php echo $style_base_color; ?> <?php echo $style_text_color; ?>">
 
         <div class="flexi-col flexi-col-2"><?php echo __("Title", "flexi"); ?></div>
 

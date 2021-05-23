@@ -9,11 +9,16 @@ if ($column == "1") {
 } else {
   $column_set = "3";
 }
+
+
+$style_base_color = flexi_get_option('flexi_style_base_color', 'flexi_app_style_settings', '');
+$style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_settings', '');
+$style_title = flexi_get_option('flexi_style_heading', 'flexi_app_style_settings', 'fl-is-4 fl-mb-1');
 ?>
 <div class="fl-column fl-is-<?php echo $column_set; ?> flexi_gallery_child flexi_padding" id="flexi_<?php echo get_the_ID(); ?>" style="position: relative;" data-tags="<?php echo $tags; ?>">
   <!-- Loop start -->
 
-  <div class="fl-columns fl-is-gapless fl-card fl-mb-1 fl-mx-1">
+  <div class="fl-columns fl-is-gapless fl-card fl-mb-1 fl-mx-1 <?php echo $style_base_color; ?> <?php echo $style_text_color; ?>">
 
     <div class="fl-column fl-is-one-quarter">
       <div class="fl-image  <?php echo $data['popup']; ?>  flexi_effect" id="<?php echo $hover_effect; ?>">
@@ -27,7 +32,7 @@ if ($column == "1") {
 
     <div class="fl-column">
       <div class="fl-card-content fl-p-1">
-        <div class="fl-title fl-is-6 fl-is-spaced" style="<?php flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></div>
+        <div class="fl-title fl-is-6 fl-is-spaced <?php echo $style_title; ?>" style="<?php flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></div>
         <?php
         if (flexi_evalue_toggle('excerpt', $evalue) == '') {
           echo "<span>" . flexi_excerpt(20) . "</span>";

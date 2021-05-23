@@ -1,7 +1,7 @@
 <?php
 class Flexi_Addon_Appearance_Style
 {
-    private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/shortcode-holder/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
+    private $help = ' <a style="text-decoration: none;" href="https://odude.com/blog/docs/flexi-gallery/tutorial/appearance-css-style/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
 
 
     public function __construct()
@@ -49,6 +49,7 @@ class Flexi_Addon_Appearance_Style
                     'description'       => __('Applied on text only', 'flexi'),
                     'type'              => 'select',
                     'options'           => array(
+                        ''      => __('None', 'flexi'),
                         'fl-has-text-white'      => __('White', 'flexi'),
                         'fl-has-text-black'        => __('Black', 'flexi'),
                         'fl-has-text-danger' => __('Red', 'flexi'),
@@ -62,6 +63,7 @@ class Flexi_Addon_Appearance_Style
                     'description'       => __('Applied on containers.', 'flexi'),
                     'type'              => 'select',
                     'options'           => array(
+                        ''      => __('None', 'flexi'),
                         'fl-has-background-white'      => __('White', 'flexi'),
                         'fl-has-background-black'        => __('Black', 'flexi'),
                         'fl-has-background-danger' => __('Red', 'flexi'),
