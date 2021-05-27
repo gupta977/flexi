@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
-"POT-Creation-Date: 2021-05-04 10:41+0545\n"
+"POT-Creation-Date: 2021-05-27 08:33+0545\n"
 "PO-Revision-Date: 2020-02-09 12:49+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
@@ -19,63 +19,62 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: includes/cmb2\n"
 "X-Poedit-SearchPathExcluded-2: public/js\n"
 
-#: admin/class-flexi-admin.php:124
+#: admin/class-flexi-admin.php:122
 msgid "flexi"
 msgstr ""
 
-#: admin/class-flexi-admin.php:125 admin/partials/settings.php:64
-#: admin/partials/settings.php:65
+#: admin/class-flexi-admin.php:123 admin/class-flexi-admin.php:150
+#: admin/class-flexi-admin.php:157 admin/partials/dashboard.php:12
+#: admin/partials/dashboard.php:24 admin/partials/settings.php:42
+#: admin/partials/settings.php:62 admin/partials/settings.php:64
+#: admin/partials/settings.php:65 includes/class-flexi-settings.php:61
+#: includes/functions.php:1129 includes/functions.php:1136
+#: includes/functions.php:1143 includes/functions.php:1150
+#: includes/functions.php:1157
 msgid "Flexi"
 msgstr ""
 
-#: admin/class-flexi-admin.php:135 admin/class-flexi-admin.php:136
+#: admin/class-flexi-admin.php:133 admin/class-flexi-admin.php:134
 #: admin/partials/settings.php:64
 msgid "Dashboard"
 msgstr ""
 
-#: admin/class-flexi-admin.php:144 admin/class-flexi-admin.php:145
+#: admin/class-flexi-admin.php:142 admin/class-flexi-admin.php:143
 msgid "All Posts"
 msgstr ""
 
-#: admin/class-flexi-admin.php:152
-msgid "Flexi Categories"
-msgstr ""
-
-#: admin/class-flexi-admin.php:153 includes/class-flexi-admin-column.php:23
+#: admin/class-flexi-admin.php:150 admin/class-flexi-admin.php:151
+#: includes/class-flexi-admin-column.php:23
 msgid "Categories"
 msgstr ""
 
-#: admin/class-flexi-admin.php:159
-msgid "Flexi Tags"
-msgstr ""
-
-#: admin/class-flexi-admin.php:160 includes/class-flexi-admin-column.php:24
-#: includes/functions.php:818
+#: admin/class-flexi-admin.php:157 admin/class-flexi-admin.php:158
+#: includes/class-flexi-admin-column.php:24 includes/functions.php:828
 msgid "Tags"
 msgstr ""
 
-#: admin/partials/dashboard.php:7 admin/partials/dashboard.php:19
+#: admin/partials/dashboard.php:12 admin/partials/dashboard.php:24
 #: admin/partials/settings.php:42
-msgid "Welcome to Flexi"
+msgid "Welcome to"
 msgstr ""
 
-#: admin/partials/dashboard.php:22
+#: admin/partials/dashboard.php:27
 msgid "Let visitors to post images,video,audio,youtube from frontend with full controls."
 msgstr ""
 
-#: admin/partials/dashboard.php:23
+#: admin/partials/dashboard.php:28
 msgid "Post files"
 msgstr ""
 
-#: admin/partials/dashboard.php:24
+#: admin/partials/dashboard.php:29
 msgid "View Gallery"
 msgstr ""
 
-#: admin/partials/dashboard.php:25
+#: admin/partials/dashboard.php:30
 msgid "Documentation"
 msgstr ""
 
-#: admin/partials/dashboard.php:26
+#: admin/partials/dashboard.php:31
 msgid "Live Demo"
 msgstr ""
 
@@ -88,7 +87,7 @@ msgid "Skip, I have already done."
 msgstr ""
 
 #: admin/partials/settings.php:62
-msgid "Flexi Plugin Settings"
+msgid "Plugin Settings"
 msgstr ""
 
 #: admin/partials/settings.php:65
@@ -101,7 +100,7 @@ msgstr ""
 msgid "Flexi-Pro"
 msgstr ""
 
-#: block/src/form/block.js:59 includes/functions.php:1101
+#: block/src/form/block.js:59
 msgid "Flexi Submission Form"
 msgstr ""
 
@@ -184,6 +183,74 @@ msgstr ""
 
 #: block/src/init.php:88
 msgid "Flexi Plugin"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:30
+msgid "Appearance CSS Style"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:31
+msgid "Change colors, fonts of flexi elements using your own css style classes."
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:48
+msgid "Text color"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:49
+msgid "Applied on text only"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:52
+#: includes/addon/class-flexi-appearance-style.php:66
+#: includes/class-flexi-settings.php:239 includes/class-flexi-settings.php:252
+#: includes/functions.php:705 includes/functions.php:742
+#: includes/widgets/tags.php:49
+msgid "None"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:53
+#: includes/addon/class-flexi-appearance-style.php:67
+msgid "White"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:54
+#: includes/addon/class-flexi-appearance-style.php:68
+msgid "Black"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:55
+#: includes/addon/class-flexi-appearance-style.php:69
+msgid "Red"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:56
+#: includes/addon/class-flexi-appearance-style.php:70
+msgid "Green"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:62
+msgid "Base color"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:63
+msgid "Applied on Flexi containers"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:78
+msgid "Gallery title heading"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:84
+msgid "Gallery filter tag style"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:91
+msgid "Icon grid buttons"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:98
+msgid "Common toolbar buttons"
 msgstr ""
 
 #: includes/addon/class-flexi-buddypress.php:33
@@ -535,7 +602,7 @@ msgstr ""
 
 #: includes/class-flexi-admin-column.php:21
 #: public/partials/layout/gallery/table/header.php:4
-#: public/partials/layout/gallery/table/loop.php:7
+#: public/partials/layout/gallery/table/loop.php:10
 msgid "Title"
 msgstr ""
 
@@ -651,7 +718,8 @@ msgstr ""
 msgid "Add widgets here to appear in Flexi - Primary Gallery"
 msgstr ""
 
-#: includes/class-flexi-links.php:17 includes/class-flexi-settings.php:62
+#: includes/class-flexi-links.php:17 includes/class-flexi-settings.php:61
+#: includes/class-flexi-settings.php:62
 msgid "Settings"
 msgstr ""
 
@@ -800,10 +868,6 @@ msgstr ""
 msgid "Choose from the most used %s"
 msgstr ""
 
-#: includes/class-flexi-settings.php:61
-msgid "Flexi - Settings"
-msgstr ""
-
 #: includes/class-flexi-settings.php:103
 msgid "General"
 msgstr ""
@@ -880,404 +944,402 @@ msgstr ""
 msgid "A new sub-tab is created as soon as extension is enabled.<br>Click on blue tools icon to navigate<br><b>Note:</b> Disable any extension, will not delete the old settings. It is just hidden."
 msgstr ""
 
-#: includes/class-flexi-settings.php:210
+#: includes/class-flexi-settings.php:213
 msgid "Space between images"
 msgstr ""
 
-#: includes/class-flexi-settings.php:211
+#: includes/class-flexi-settings.php:214
 msgid "Padding between images. Set shortcode [flexi-gallery padding=\"0\"] for none"
 msgstr ""
 
-#: includes/class-flexi-settings.php:221
+#: includes/class-flexi-settings.php:224
 msgid "Excerpt Length"
 msgstr ""
 
-#: includes/class-flexi-settings.php:222
+#: includes/class-flexi-settings.php:225
 msgid "Number of words of short description"
 msgstr ""
 
-#: includes/class-flexi-settings.php:232
+#: includes/class-flexi-settings.php:235
 msgid "Thumbnail hover effect"
 msgstr ""
 
-#: includes/class-flexi-settings.php:233
+#: includes/class-flexi-settings.php:236
 msgid "Effect on mouse over image."
 msgstr ""
 
-#: includes/class-flexi-settings.php:236 includes/class-flexi-settings.php:249
-#: includes/functions.php:695 includes/functions.php:732
-#: includes/widgets/tags.php:49
-msgid "None"
-msgstr ""
-
-#: includes/class-flexi-settings.php:237
+#: includes/class-flexi-settings.php:240
 msgid "Blur"
 msgstr ""
 
-#: includes/class-flexi-settings.php:238
+#: includes/class-flexi-settings.php:241
 msgid "Grayscale"
 msgstr ""
 
-#: includes/class-flexi-settings.php:239
+#: includes/class-flexi-settings.php:242
 msgid "Zoom In"
 msgstr ""
 
-#: includes/class-flexi-settings.php:245
+#: includes/class-flexi-settings.php:248
 msgid "Thumbnail hover style"
 msgstr ""
 
-#: includes/class-flexi-settings.php:246
+#: includes/class-flexi-settings.php:249
 msgid "Display title or icon on mouse over image"
 msgstr ""
 
-#: includes/class-flexi-settings.php:250
+#: includes/class-flexi-settings.php:253
 msgid "Slide title"
 msgstr ""
 
-#: includes/class-flexi-settings.php:251
+#: includes/class-flexi-settings.php:254
 msgid "Pull up card"
 msgstr ""
 
-#: includes/class-flexi-settings.php:252
+#: includes/class-flexi-settings.php:255
 msgid "Slide right"
 msgstr ""
 
-#: includes/class-flexi-settings.php:253
+#: includes/class-flexi-settings.php:256
 msgid "Pull up title"
 msgstr ""
 
-#: includes/class-flexi-settings.php:254
+#: includes/class-flexi-settings.php:257
 msgid "Top & Bottom"
 msgstr ""
 
-#: includes/class-flexi-settings.php:263
+#: includes/class-flexi-settings.php:266
 msgid "Primary Gallery Page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:264
+#: includes/class-flexi-settings.php:267
 msgid "Flexi home page with shortcode [flexi-primary]"
 msgstr ""
 
-#: includes/class-flexi-settings.php:270
+#: includes/class-flexi-settings.php:273
 #: includes/user_dashboard/class-flexi-user-dashboard.php:60
 msgid "Select gallery layout"
 msgstr ""
 
-#: includes/class-flexi-settings.php:271 includes/class-flexi-settings.php:483
+#: includes/class-flexi-settings.php:274 includes/class-flexi-settings.php:486
 msgid "Selected layout will be used as default layout, if not specified in shortcode parameter."
 msgstr ""
 
-#: includes/class-flexi-settings.php:278
+#: includes/class-flexi-settings.php:274
+msgid "Import Layout"
+msgstr ""
+
+#: includes/class-flexi-settings.php:281
 msgid "Primary gallery access"
 msgstr ""
 
-#: includes/class-flexi-settings.php:279
+#: includes/class-flexi-settings.php:282
 msgid "It will enable/disable primary gallery page based on selection"
 msgstr ""
 
-#: includes/class-flexi-settings.php:282 includes/class-flexi-settings.php:379
+#: includes/class-flexi-settings.php:285 includes/class-flexi-settings.php:382
 msgid "Everyone"
 msgstr ""
 
-#: includes/class-flexi-settings.php:283 includes/class-flexi-settings.php:380
+#: includes/class-flexi-settings.php:286 includes/class-flexi-settings.php:383
 msgid "Only members"
 msgstr ""
 
-#: includes/class-flexi-settings.php:284 includes/class-flexi-settings.php:381
+#: includes/class-flexi-settings.php:287 includes/class-flexi-settings.php:384
 msgid "Only with Publish Post rights"
 msgstr ""
 
-#: includes/class-flexi-settings.php:285
+#: includes/class-flexi-settings.php:288
 msgid "Disable gallery"
 msgstr ""
 
-#: includes/class-flexi-settings.php:292
+#: includes/class-flexi-settings.php:295
 #: includes/user_dashboard/class-flexi-user-dashboard.php:68
 msgid "Post per page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:293
+#: includes/class-flexi-settings.php:296
 #: includes/user_dashboard/class-flexi-user-dashboard.php:69
 msgid "Number of images/post/videos to be shown at a time."
 msgstr ""
 
-#: includes/class-flexi-settings.php:301
+#: includes/class-flexi-settings.php:304
 #: includes/user_dashboard/class-flexi-user-dashboard.php:77
 msgid "Number of Columns"
 msgstr ""
 
-#: includes/class-flexi-settings.php:302
+#: includes/class-flexi-settings.php:305
 #: includes/user_dashboard/class-flexi-user-dashboard.php:78
 msgid "Maximum number of post to be shown horizontally & changes based on screen size. May not work for all layouts."
 msgstr ""
 
-#: includes/class-flexi-settings.php:311
+#: includes/class-flexi-settings.php:314
 msgid "Navigation Style"
 msgstr ""
 
-#: includes/class-flexi-settings.php:315
+#: includes/class-flexi-settings.php:318
 msgid "Page Number"
 msgstr ""
 
-#: includes/class-flexi-settings.php:316
+#: includes/class-flexi-settings.php:319
 msgid "Load More Button"
 msgstr ""
 
-#: includes/class-flexi-settings.php:317
+#: includes/class-flexi-settings.php:320
 msgid " Mouse Scroll"
 msgstr ""
 
-#: includes/class-flexi-settings.php:323
+#: includes/class-flexi-settings.php:326
 msgid "Gallery sorting tags"
 msgstr ""
 
-#: includes/class-flexi-settings.php:324
+#: includes/class-flexi-settings.php:327
 msgid "Shows tags above gallery, only if few tags available."
 msgstr ""
 
-#: includes/class-flexi-settings.php:330
+#: includes/class-flexi-settings.php:333
 msgid "Display post title"
 msgstr ""
 
-#: includes/class-flexi-settings.php:331
+#: includes/class-flexi-settings.php:334
 msgid "Title of the flexi post"
 msgstr ""
 
-#: includes/class-flexi-settings.php:337
+#: includes/class-flexi-settings.php:340
 msgid "Display post excerpt"
 msgstr ""
 
-#: includes/class-flexi-settings.php:338
+#: includes/class-flexi-settings.php:341
 msgid "Short description"
 msgstr ""
 
-#: includes/class-flexi-settings.php:344
+#: includes/class-flexi-settings.php:347
 msgid "Display custom fields"
 msgstr ""
 
-#: includes/class-flexi-settings.php:345
+#: includes/class-flexi-settings.php:348
 msgid "Associated custom fields enabled"
 msgstr ""
 
-#: includes/class-flexi-settings.php:351
+#: includes/class-flexi-settings.php:354
 msgid "Display icon toolbar"
 msgstr ""
 
-#: includes/class-flexi-settings.php:352
+#: includes/class-flexi-settings.php:355
 msgid "Icons like profile, trash, download etc."
 msgstr ""
 
-#: includes/class-flexi-settings.php:358
+#: includes/class-flexi-settings.php:361
 msgid "Display category"
 msgstr ""
 
-#: includes/class-flexi-settings.php:359
+#: includes/class-flexi-settings.php:362
 msgid "Associated category of post with link"
 msgstr ""
 
-#: includes/class-flexi-settings.php:365
+#: includes/class-flexi-settings.php:368
 msgid "Display tag"
 msgstr ""
 
-#: includes/class-flexi-settings.php:366
+#: includes/class-flexi-settings.php:369
 msgid "Associated tag of post with link"
 msgstr ""
 
-#: includes/class-flexi-settings.php:375
+#: includes/class-flexi-settings.php:378
 msgid "Form submission access"
 msgstr ""
 
-#: includes/class-flexi-settings.php:376
+#: includes/class-flexi-settings.php:379
 msgid "It will enable/disable frontend form as specified."
 msgstr ""
 
-#: includes/class-flexi-settings.php:382
+#: includes/class-flexi-settings.php:385
 msgid "Disable submission"
 msgstr ""
 
-#: includes/class-flexi-settings.php:388
+#: includes/class-flexi-settings.php:391
 msgid "Auto approve post"
 msgstr ""
 
-#: includes/class-flexi-settings.php:389
+#: includes/class-flexi-settings.php:392
 msgid "Automatically publish Post as soon as user submit."
 msgstr ""
 
-#: includes/class-flexi-settings.php:395
+#: includes/class-flexi-settings.php:398
 msgid "File size allowed (MB)"
 msgstr ""
 
-#: includes/class-flexi-settings.php:396
+#: includes/class-flexi-settings.php:399
 msgid "Maximum file size allowed to upload by visitor. Your sever limit is:"
 msgstr ""
 
-#: includes/class-flexi-settings.php:406
+#: includes/class-flexi-settings.php:409
 msgid "Assign default user"
 msgstr ""
 
-#: includes/class-flexi-settings.php:407
+#: includes/class-flexi-settings.php:410
 msgid "Type the username to assign for guest submit else no author is assigned."
 msgstr ""
 
-#: includes/class-flexi-settings.php:414
+#: includes/class-flexi-settings.php:417
 msgid "Submission form"
 msgstr ""
 
-#: includes/class-flexi-settings.php:415
+#: includes/class-flexi-settings.php:418
 msgid "Page which will be used at frontend to let users to submit flexi post. Link this page in your frontend menu."
 msgstr ""
 
-#: includes/class-flexi-settings.php:422
+#: includes/class-flexi-settings.php:425
 msgid "Edit Flexi Post Page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:423
+#: includes/class-flexi-settings.php:426
 msgid "Page with shortcode [flexi-form] with edit=\"true\" as parameter. Lets visitor to edit submitted post."
 msgstr ""
 
-#: includes/class-flexi-settings.php:432
+#: includes/class-flexi-settings.php:435
 msgid "Edit submission button"
 msgstr ""
 
-#: includes/class-flexi-settings.php:433
+#: includes/class-flexi-settings.php:436
 msgid "Edit icon at gallery & detail page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:439
+#: includes/class-flexi-settings.php:442
 msgid "Delete submission button"
 msgstr ""
 
-#: includes/class-flexi-settings.php:440
+#: includes/class-flexi-settings.php:443
 msgid "Trash icon at gallery & detail page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:446
+#: includes/class-flexi-settings.php:449
 msgid "User gallery button"
 msgstr ""
 
-#: includes/class-flexi-settings.php:447
+#: includes/class-flexi-settings.php:450
 msgid "Profile icon at gallery & detail page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:453
+#: includes/class-flexi-settings.php:456
 msgid "Download media button"
 msgstr ""
 
-#: includes/class-flexi-settings.php:454
+#: includes/class-flexi-settings.php:457
 msgid "Download icon at gallery & detail page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:462
+#: includes/class-flexi-settings.php:465
 msgid "Enable Lightbox or Popup"
 msgstr ""
 
-#: includes/class-flexi-settings.php:463
+#: includes/class-flexi-settings.php:466
 msgid "If popup is unchecked, It will open content in single dedicated page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:469
+#: includes/class-flexi-settings.php:472
 msgid "Popup style"
 msgstr ""
 
-#: includes/class-flexi-settings.php:470
+#: includes/class-flexi-settings.php:473
 msgid "Layout of lightbox"
 msgstr ""
 
-#: includes/class-flexi-settings.php:473
+#: includes/class-flexi-settings.php:476
 msgid "Regular"
 msgstr ""
 
-#: includes/class-flexi-settings.php:474
+#: includes/class-flexi-settings.php:477
 msgid "Simple"
 msgstr ""
 
-#: includes/class-flexi-settings.php:475
+#: includes/class-flexi-settings.php:478
 msgid "Simple with info"
 msgstr ""
 
-#: includes/class-flexi-settings.php:476
+#: includes/class-flexi-settings.php:479
 msgid "Custom"
 msgstr ""
 
-#: includes/class-flexi-settings.php:482
+#: includes/class-flexi-settings.php:485
 msgid "Select Detail Layout"
 msgstr ""
 
-#: includes/class-flexi-settings.php:493
+#: includes/class-flexi-settings.php:496
 msgid "Default Post Category"
 msgstr ""
 
-#: includes/class-flexi-settings.php:494
+#: includes/class-flexi-settings.php:497
 msgid "This category will be selected if no category is assigned by visitor while submitting form."
 msgstr ""
 
-#: includes/class-flexi-settings.php:500
+#: includes/class-flexi-settings.php:503
 msgid "Category Page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:501
+#: includes/class-flexi-settings.php:504
 msgid "Page which will be used to display albums. Should contain [flexi-category] as shortcode."
 msgstr ""
 
-#: includes/class-flexi-settings.php:507
+#: includes/class-flexi-settings.php:510
 msgid "Category count"
 msgstr ""
 
-#: includes/class-flexi-settings.php:508
+#: includes/class-flexi-settings.php:511
 msgid "Display post count of specific category at category page."
 msgstr ""
 
-#: includes/class-flexi-settings.php:519
+#: includes/class-flexi-settings.php:522
 msgid "Thumbnail size"
 msgstr ""
 
-#: includes/class-flexi-settings.php:520 includes/class-flexi-settings.php:543
-#: includes/class-flexi-settings.php:557
+#: includes/class-flexi-settings.php:523 includes/class-flexi-settings.php:546
+#: includes/class-flexi-settings.php:560
 msgid "Width"
 msgstr ""
 
-#: includes/class-flexi-settings.php:521 includes/class-flexi-settings.php:544
-#: includes/class-flexi-settings.php:558
+#: includes/class-flexi-settings.php:524 includes/class-flexi-settings.php:547
+#: includes/class-flexi-settings.php:561
 msgid "Height"
 msgstr ""
 
-#: includes/class-flexi-settings.php:522
+#: includes/class-flexi-settings.php:525
 msgid "Applied at gallery page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:542
+#: includes/class-flexi-settings.php:545
 msgid "Medium size"
 msgstr ""
 
-#: includes/class-flexi-settings.php:556
+#: includes/class-flexi-settings.php:559
 msgid "Large size"
 msgstr ""
 
-#: includes/class-flexi-settings.php:559
+#: includes/class-flexi-settings.php:562
 msgid "Specially applied at detail page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:573
+#: includes/class-flexi-settings.php:576
 msgid "Image Detail Page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:574
+#: includes/class-flexi-settings.php:577
 msgid "Replaces the SLUG value used by custom post type \"flexi\"."
 msgstr ""
 
-#: includes/class-flexi-settings.php:847
+#: includes/class-flexi-settings.php:850
 msgid "Select layout"
 msgstr ""
 
-#: includes/class-flexi-settings.php:929
+#: includes/class-flexi-settings.php:932
 msgid "Choose File"
 msgstr ""
 
-#: includes/class-flexi-settings.php:981
+#: includes/class-flexi-settings.php:984
 msgid "Select a page"
 msgstr ""
 
-#: includes/class-flexi-settings.php:1004
+#: includes/class-flexi-settings.php:1007
 #: includes/widgets/gallery_widgets.php:339
 msgid "Select category"
 msgstr ""
@@ -1348,6 +1410,10 @@ msgstr ""
 msgid "Guide"
 msgstr ""
 
+#: includes/dashboard/class-flexi-dashboard-layout.php:15
+msgid "Layout"
+msgstr ""
+
 #: includes/flexi_ajax_post.php:95
 msgid "Your submission is under review"
 msgstr ""
@@ -1360,84 +1426,81 @@ msgstr ""
 msgid "Submission failed"
 msgstr ""
 
-#: includes/functions.php:277
+#: includes/functions.php:279
 msgid "Show All"
 msgstr ""
 
-#: includes/functions.php:383
+#: includes/functions.php:385 includes/functions.php:1150
 msgid "Category"
 msgstr ""
 
-#: includes/functions.php:452 includes/functions.php:461
+#: includes/functions.php:454 includes/functions.php:463
 msgid "Login"
 msgstr ""
 
-#: includes/functions.php:458
+#: includes/functions.php:460
 msgid "Username"
 msgstr ""
 
-#: includes/functions.php:459
+#: includes/functions.php:461
 msgid "Password"
 msgstr ""
 
-#: includes/functions.php:460
+#: includes/functions.php:462
 msgid "Remember Me"
 msgstr ""
 
-#: includes/functions.php:649
+#: includes/functions.php:659
 msgid "Required Flexi-PRO"
 msgstr ""
 
-#: includes/functions.php:817
+#: includes/functions.php:827
 msgid "Insert tag"
 msgstr ""
 
-#: includes/functions.php:819
+#: includes/functions.php:829
 msgid "Description"
 msgstr ""
 
-#: includes/functions.php:820
+#: includes/functions.php:830
 msgid "Select file"
 msgstr ""
 
-#: includes/functions.php:1057
+#: includes/functions.php:1099
 msgid "Title cannot be blank."
 msgstr ""
 
-#: includes/functions.php:1059
+#: includes/functions.php:1101
 msgid "Invalid file type"
 msgstr ""
 
-#: includes/functions.php:1061
+#: includes/functions.php:1103
 msgid "Only image files are allowed."
 msgstr ""
 
-#: includes/functions.php:1063
+#: includes/functions.php:1105
 msgid "File size is too big."
 msgstr ""
 
-#: includes/functions.php:1065
+#: includes/functions.php:1107
 msgid "Captcha security code is invalid."
 msgstr ""
 
-#: includes/functions.php:1087
-msgid "Flexi Primary Gallery"
+#: includes/functions.php:1129
+msgid "Primary Gallery"
 msgstr ""
 
-#: includes/functions.php:1094
-msgid "Flexi User Dashboard"
-msgstr ""
-
-#: includes/functions.php:1108
-msgid "Flexi Category"
-msgstr ""
-
-#: includes/functions.php:1115
-msgid "Flexi Edit/Modify"
-msgstr ""
-
+#: includes/functions.php:1136
 #: includes/user_dashboard/class-flexi-user-dashboard.php:36
 msgid "User Dashboard"
+msgstr ""
+
+#: includes/functions.php:1143
+msgid "Submission Form"
+msgstr ""
+
+#: includes/functions.php:1157
+msgid "Edit/Modify"
 msgstr ""
 
 #: includes/user_dashboard/class-flexi-user-dashboard.php:37
@@ -1528,11 +1591,11 @@ msgstr ""
 msgid "Under review"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:335
+#: includes/user_dashboard/class-flexi-user-dashboard.php:336
 msgid "My Gallery"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:458
+#: includes/user_dashboard/class-flexi-user-dashboard.php:459
 msgid "My Dashboard"
 msgstr ""
 

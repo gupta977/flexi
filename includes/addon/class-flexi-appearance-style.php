@@ -60,7 +60,7 @@ class Flexi_Addon_Appearance_Style
                 array(
                     'name'              => 'flexi_style_base_color',
                     'label'             => __('Base color', 'flexi'),
-                    'description'       => __('Applied on containers.', 'flexi'),
+                    'description'       => __('Applied on Flexi containers', 'flexi'),
                     'type'              => 'select',
                     'options'           => array(
                         ''      => __('None', 'flexi'),
@@ -76,27 +76,27 @@ class Flexi_Addon_Appearance_Style
                     'name'        => 'flexi_style_heading',
                     'type'        => 'text',
                     'label'       => __('Gallery title heading', 'flexi'),
-                    'description' => __('fl-is-4 fl-mb-1 fl-has-text-success', 'flexi'),
+                    'description' => 'fl-is-4 fl-mb-1 fl-has-text-success',
                 ),
                 array(
                     'name'        => 'flexi_style_tag',
                     'type'        => 'text',
                     'label'       => __('Gallery filter tag style', 'flexi'),
-                    'description' => __('fl-is-medium', 'flexi'),
+                    'description' => 'fl-is-medium',
                 ),
 
                 array(
                     'name'        => 'flexi_style_icon_grid',
                     'type'        => 'text',
                     'label'       => __('Icon grid buttons', 'flexi'),
-                    'description' => __('fl-is-small flexi_css_button', 'flexi'),
+                    'description' => 'fl-is-small flexi_css_button',
                 ),
 
                 array(
                     'name'        => 'flexi_style_common_toolbar',
                     'type'        => 'text',
                     'label'       => __('Common toolbar buttons', 'flexi'),
-                    'description' => __('fl-is-light', 'flexi'),
+                    'description' => 'fl-is-light',
                 ),
 
             ),

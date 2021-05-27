@@ -1126,35 +1126,35 @@ function flexi_page_post_state_label($states, $post)
     $primary_page = flexi_get_option('primary_page', 'flexi_image_layout_settings', 0);
     if (0 != $primary_page) {
         if ($primary_page == $post->ID) {
-            $states['flexi-primary'] = __('Flexi Primary Gallery', 'flexi');
+            $states['flexi-primary'] =  __('Flexi', 'flexi') . ' ' . __('Primary Gallery', 'flexi');
         }
     }
 
     $my_gallery = flexi_get_option('my_gallery', 'flexi_user_dashboard_settings', 0);
     if (0 != $my_gallery) {
         if ($my_gallery == $post->ID) {
-            $states['flexi-user-dashboard'] = __('Flexi User Dashboard', 'flexi');
+            $states['flexi-user-dashboard'] =  __('Flexi', 'flexi') . ' ' . __('User Dashboard', 'flexi');
         }
     }
 
     $submission_form = flexi_get_option('submission_form', 'flexi_form_settings', 0);
     if (0 != $submission_form) {
         if ($submission_form == $post->ID) {
-            $states['flexi-submission-form'] = __('Flexi Submission Form', 'flexi');
+            $states['flexi-submission-form'] =  __('Flexi', 'flexi') . ' ' . __('Submission Form', 'flexi');
         }
     }
 
     $category_page = flexi_get_option('category_page', 'flexi_categories_settings', 0);
     if (0 != $category_page) {
         if ($category_page == $post->ID) {
-            $states['flexi-edit'] = __('Flexi Category', 'flexi');
+            $states['flexi-edit'] =  __('Flexi', 'flexi') . ' ' . __('Category', 'flexi');
         }
     }
 
     $edit_flexi_page = flexi_get_option('edit_flexi_page', 'flexi_form_settings', 0);
     if (0 != $edit_flexi_page) {
         if ($edit_flexi_page == $post->ID) {
-            $states['flexi-edit'] = __('Flexi Edit/Modify', 'flexi');
+            $states['flexi-edit'] =  __('Flexi', 'flexi') . ' ' . __('Edit/Modify', 'flexi');
         }
     }
 

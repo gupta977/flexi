@@ -147,14 +147,14 @@ class Flexi_Admin
 
     add_submenu_page(
       'flexi',
-      __('Flexi Categories', 'flexi'),
+      __('Flexi', 'flexi') . ' ' . __('Categories', 'flexi'),
       __('Categories', 'flexi'),
       'manage_options',
       'edit-tags.php?taxonomy=flexi_category&amp;post_type=flexi'
     );
     add_submenu_page(
       'flexi',
-      __('Flexi Tags', 'flexi'),
+      __('Flexi', 'flexi') . ' ' . __('Tags', 'flexi'),
       __('Tags', 'flexi'),
       'manage_options',
       'edit-tags.php?taxonomy=flexi_tag&amp;post_type=flexi'

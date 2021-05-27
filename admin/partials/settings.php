@@ -39,7 +39,7 @@ foreach ($this->sections as $section) {
 
     ?>
         <div class="card">
-            <h1><?php esc_html_e('Welcome to Flexi', 'flexi'); ?></h1>
+            <h1><?php esc_html_e('Welcome to', 'flexi'); ?> <?php echo  __('Flexi', 'flexi'); ?></h1>
             <p>Flexi is activated but not yet fully setup. Follow the steps below to auto configure the installation.</p>
             <p>
 
@@ -59,7 +59,7 @@ foreach ($this->sections as $section) {
 
     ?>
 
-        <h1><?php esc_html_e('Flexi Plugin Settings', 'flexi'); ?></h1>
+        <h1><?php  echo __('Flexi', 'flexi') . ' ' .__('Plugin Settings', 'flexi'); ?></h1>
         <div style="text-align:right">
             <a href="<?php echo admin_url('admin.php?page=flexi'); ?>" class="button"><?php echo __('Flexi', 'flexi'); ?> <?php echo __('Dashboard', 'flexi'); ?> </a>
             <a href="<?php echo admin_url('admin.php?page=flexi&tab=pages'); ?>" class="button"><?php echo __('Flexi', 'flexi'); ?> <?php echo __('Health', 'flexi'); ?> </a>

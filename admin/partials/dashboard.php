@@ -9,7 +9,7 @@ if ($flexi_activated) {
 
 ?>
 	<div class="card">
-		<h1><?php esc_html_e('Welcome to Flexi', 'flexi'); ?></h1>
+		<h1><?php esc_html_e('Welcome to', 'flexi'); ?> <?php echo  __('Flexi', 'flexi'); ?></h1>
 		<p>Go to setting page first to complete installation.</p>
 		<a href="<?php echo admin_url('admin.php?page=flexi_settings'); ?>" class="button">Setting page</a>
 	</div>
@@ -21,7 +21,7 @@ if ($flexi_activated) {
 
 ?>
 	<div class="wrap about-wrap">
-		<h1><?php echo __('Welcome to Flexi', 'flexi') . ' ' . FLEXI_VERSION; ?></h1>
+		<h1><?php echo __('Welcome to', 'flexi') . ' ' . __('Flexi', 'flexi') . ' ' . FLEXI_VERSION; ?></h1>
 		<div class="about-text">
 			<div class="card">
 				<?php echo __('Let visitors to post images,video,audio,youtube from frontend with full controls.', 'flexi'); ?><br>

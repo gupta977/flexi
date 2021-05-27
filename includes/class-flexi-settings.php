@@ -58,7 +58,7 @@ class FLEXI_Admin_Settings
     {
         add_submenu_page(
             'flexi',
-            __('Flexi - Settings', 'flexi'),
+             __('Flexi', 'flexi') . ' - ' . __('Settings', 'flexi'),
             __('Settings', 'flexi'),
             'manage_options',
             'flexi_settings',
