@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
-"POT-Creation-Date: 2021-05-27 08:33+0545\n"
+"POT-Creation-Date: 2021-05-27 16:39+0545\n"
 "PO-Revision-Date: 2020-02-09 12:49+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
