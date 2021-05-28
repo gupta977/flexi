@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-27 16:40+0545\n"
-"PO-Revision-Date: 2021-05-27 16:40+0545\n"
+"POT-Creation-Date: 2021-05-28 11:56+0545\n"
+"PO-Revision-Date: 2021-05-28 11:58+0545\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -55,10 +55,8 @@ msgstr "Schlagwörter"
 
 #: admin/partials/dashboard.php:12 admin/partials/dashboard.php:24
 #: admin/partials/settings.php:42
-#, fuzzy
-#| msgid "Welcome to Flexi"
 msgid "Welcome to"
-msgstr "Willkommen bei Flexi"
+msgstr "Willkommen bei"
 
 #: admin/partials/dashboard.php:27
 msgid ""
@@ -93,10 +91,8 @@ msgid "Skip, I have already done."
 msgstr ""
 
 #: admin/partials/settings.php:62
-#, fuzzy
-#| msgid "Flexi Plugin Settings"
 msgid "Plugin Settings"
-msgstr "Flexi Plugin Einstellungen"
+msgstr "Plugin Einstellungen"
 
 #: admin/partials/settings.php:65
 #: includes/dashboard/class-flexi-dashboard-pages.php:13
@@ -203,10 +199,8 @@ msgid ""
 msgstr ""
 
 #: includes/addon/class-flexi-appearance-style.php:48
-#, fuzzy
-#| msgid "Text format"
 msgid "Text color"
-msgstr "Textformat"
+msgstr "Textfarbe"
 
 #: includes/addon/class-flexi-appearance-style.php:49
 msgid "Applied on text only"
@@ -1557,10 +1551,8 @@ msgid "Guide"
 msgstr ""
 
 #: includes/dashboard/class-flexi-dashboard-layout.php:15
-#, fuzzy
-#| msgid "Detail Layout"
 msgid "Layout"
-msgstr "Detail Layout"
+msgstr "Layout"
 
 #: includes/flexi_ajax_post.php:95
 msgid "Your submission is under review"
@@ -1635,10 +1627,8 @@ msgid "Captcha security code is invalid."
 msgstr "Der Captcha-Sicherheitscode ist ungültig."
 
 #: includes/functions.php:1129
-#, fuzzy
-#| msgid "Primary Gallery Page"
 msgid "Primary Gallery"
-msgstr "Hauptgalerie-Seite"
+msgstr "Primäre Galerie"
 
 #: includes/functions.php:1136
 #: includes/user_dashboard/class-flexi-user-dashboard.php:36
@@ -1646,10 +1636,8 @@ msgid "User Dashboard"
 msgstr "Benutzer-Dashboard"
 
 #: includes/functions.php:1143
-#, fuzzy
-#| msgid "Submission form"
 msgid "Submission Form"
-msgstr "Übermittlungsformular"
+msgstr "Eingabeformular"
 
 #: includes/functions.php:1157
 #, fuzzy

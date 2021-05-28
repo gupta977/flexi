@@ -129,7 +129,7 @@ You can also add/remove form fields based on pages & posts.
 * Hindi India language (hi_IN)
 * Spanish Language (es_ES)
 * French Language (fr_FR)
-* English Language (en_US)
+* Danish Language (da_DK)
 
 = PRO KEY FEATURES =
 
@@ -189,6 +189,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 4.0 =
 * Appearance CSS style tab added in General settings
 * Update SKIP URL after Installation
+* Added Danish language file and updated all language files
 
 = 3.9 =
 * New tab "Layout" added on dashboard
