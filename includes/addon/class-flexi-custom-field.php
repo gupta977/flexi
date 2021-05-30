@@ -4,10 +4,46 @@ class Flexi_Addon_Custom_Fields
     private $help = ' <a style="text-decoration: none;" href="https://odude.com/docs/flexi-gallery/tutorial/custom-field/" target="_blank"><span class="dashicons dashicons-editor-help"></span></a>';
     public function __construct()
     {
-
+        add_filter('manage_flexi_posts_columns', array($this, 'new_column'), 10, 2);
+        add_action('manage_flexi_posts_custom_column', array($this, 'manage_flexi_columns'), 10, 2);
         add_filter('flexi_settings_sections', array($this, 'add_section'));
         add_filter('flexi_settings_fields', array($this, 'add_extension'));
         add_filter('flexi_settings_fields', array($this, 'add_fields'));
+    }
+
+    //Add column to admin dashboard
+    public function new_column($columns)
+    {
+        $new_columns = array();
+        for ($x = 1; $x <= 2; $x++) {
+            $label   = flexi_get_option('flexi_field_' . $x . '_label', 'flexi_custom_fields', '');
+            $display = flexi_get_option('flexi_field_' . $x . '_display', 'flexi_custom_fields', '');
+            if (is_array($display)) {
+                if (in_array('admin', $display)) {
+                    $new_columns['flexi_field_' . $x] = __($label);
+                }
+            }
+        }
+
+
+        return array_merge_recursive($columns, $new_columns);
+    }
+
+    //Custom fields value
+    public function manage_flexi_columns($column, $post_id)
+    {
+
+        for ($x = 1; $x <= 2; $x++) {
+
+            $value   = get_post_meta($post_id, 'flexi_field_' . $x, '');
+            if (!$value) {
+                $value[0] = '';
+            }
+
+            if ($column == 'flexi_field_' . $x) {
+                echo $value[0];
+            }
+        }
     }
 
     //add_filter flexi_settings_tabs
@@ -88,6 +124,7 @@ class Flexi_Addon_Custom_Fields
                         'gallery' => __('Display at Gallery Page', 'flexi'),
                         'detail'  => __('Display at Detail Page', 'flexi'),
                         'popup'   => __('Display at Popup', 'flexi'),
+                        'admin'   => __('Display at Admin', 'flexi') . ' <a href="edit.php?post_type=flexi">' . __('All Posts', 'flexi') . "</a>",
                     ),
                 ),
                 array(
@@ -126,6 +163,7 @@ class Flexi_Addon_Custom_Fields
                             'gallery' => __('Display at Gallery Page', 'flexi'),
                             'detail'  => __('Display at Detail Page', 'flexi'),
                             'popup'   => __('Display at Popup', 'flexi'),
+                            'admin'   => __('Display at Admin', 'flexi') . ' <a href="edit.php?post_type=flexi">' . __('All Posts', 'flexi') . "</a>",
                         ),
                     ),
                     array(
