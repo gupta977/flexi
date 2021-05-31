@@ -58,7 +58,7 @@ class FLEXI_Admin_Settings
     {
         add_submenu_page(
             'flexi',
-             __('Flexi', 'flexi') . ' - ' . __('Settings', 'flexi'),
+            __('Flexi', 'flexi') . ' - ' . __('Settings', 'flexi'),
             __('Settings', 'flexi'),
             'manage_options',
             'flexi_settings',
@@ -302,7 +302,7 @@ class FLEXI_Admin_Settings
                 array(
                     'name'              => 'column',
                     'label'             => __('Number of Columns', 'flexi'),
-                    'description'       => __('Maximum number of post to be shown horizontally & changes based on screen size. May not work for all layouts.', 'flexi'),
+                    'description'       => __('Maximum number of post to be shown horizontally. Works only on masonry, portfolio, wide layout', 'flexi'),
                     'type'              => 'number',
                     'size'              => 'small',
                     'min'               => '1',

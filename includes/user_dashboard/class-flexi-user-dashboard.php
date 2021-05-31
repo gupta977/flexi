@@ -75,7 +75,7 @@ class Flexi_User_Dashboard
             array(
                 'name'              => 'column',
                 'label'             => __('Number of Columns', 'flexi'),
-                'description'       => __('Maximum number of post to be shown horizontally & changes based on screen size. May not work for all layouts.', 'flexi'),
+                'description'       => __('Maximum number of post to be shown horizontally. Works only on masonry, portfolio, wide layout', 'flexi'),
                 'type'              => 'number',
                 'size'              => 'small',
                 'min'               => '1',

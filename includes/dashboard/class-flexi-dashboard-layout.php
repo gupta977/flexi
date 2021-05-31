@@ -92,7 +92,7 @@ class Flexi_Admin_Dashboard_Layout
   {
     ob_start();
     $this->overwrite_layouts();
-    $safe_layout = array("basic", "masonry", "portfolio", "regular", "table", "wide");
+    $safe_layout = array("basic", "masonry", "portfolio", "regular", "table", "wide", "datatable");
     $layout_page = admin_url('admin.php?page=flexi');
     $layout_page = add_query_arg('tab', 'layout', $layout_page);
 
