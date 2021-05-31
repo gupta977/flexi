@@ -1,56 +1,41 @@
 /*!
 version=3.9
-url=https://github.com/gupta977/flexi/tree/master/public/partials/layout/gallery/table
+url=https://github.com/gupta977/flexi/tree/master/public/partials/layout/gallery/datatable
 */
 
-.flexi-responsive-table li {
-  border-radius: 3px;
-  padding: 20px 25px;
-  display: flex;
-  justify-content: space-between;
+.flexi-list-small {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2px;
+}
+
+.flexi-list-small .flexi-list-sub {
+  display: inline-block;
+  margin: 0 0px 0px;
+}
+
+/* Photo */
+
+.flexi-list-small .flexi-list-sub > a {
+  display: block;
+  text-decoration: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  border: 4px solid #ffffff;
+  outline: 1px solid #d0d0d0;
+  box-shadow: 0 2px 1px #ddd;
+}
+
+.flexi-list-small .flexi_details {
   margin-bottom: 10px;
-}
-.flexi-responsive-table .flexi-table-header {
-  background-color: #eff2f3;
-  font-size: 14px;
-  letter-spacing: 0.03em;
-  font-weight: 700;
-}
-.flexi-responsive-table .flexi-table-row {
-  background-color: #ffffff;
-  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
-}
-.flexi-responsive-table .flexi-col-1 {
-  flex-basis: 10%;
-}
-.flexi-responsive-table .flexi-col-2 {
-  flex-basis: 40%;
-}
-.flexi-responsive-table .flexi-col-3 {
-  flex-basis: 25%;
-}
-.flexi-responsive-table .flexi-col-4 {
-  flex-basis: 25%;
-}
-@media all and (max-width: 767px) {
-  .flexi-responsive-table .flexi-table-header {
-    display: none;
-  }
-  .flexi-responsive-table li {
-    display: block;
-  }
-  .flexi-responsive-table .flexi-col {
-    flex-basis: 100%;
-  }
-  .flexi-responsive-table .flexi-col {
-    display: flex;
-    padding: 10px 0;
-  }
-  .flexi-responsive-table .flexi-col:before {
-    color: #6C7A89;
-    padding-right: 10px;
-    content: attr(data-label);
-    flex-basis: 50%;
-    text-align: right;
-  }
+  display: block;
+  font-size: 12px;
+  margin: 0 0 3px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
 }

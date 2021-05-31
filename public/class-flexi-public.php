@@ -121,7 +121,6 @@ class Flexi_Public
     $enable_conflict_fontawesome = flexi_get_option('conflict_disable_fontawesome', 'flexi_conflict_settings', 0);
     if ("1" != $enable_conflict_fontawesome) {
       wp_enqueue_script($this->plugin_name . '_fontawesome', plugin_dir_url(__FILE__) . 'js/fontawesome.js', '', $this->version, false);
-      //wp_enqueue_script($this->plugin_name . '_fontawesome', 'https://use.fontawesome.com/releases/v5.0.1/js/all.js', '', $this->version, false);
     }
 
     wp_enqueue_script($this->plugin_name . '_tags', plugin_dir_url(__FILE__) . 'js/jquery.tagsinput.js', '', $this->version, false);

@@ -188,6 +188,8 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 4.1 =
 * Admin All Posts now has option to show custom fields
+* Complete change of table layout
+* Old table layout is renamed as demo3 which can be found one layout showcase.
 
 = 4.0 =
 * Appearance CSS style tab added in General settings
