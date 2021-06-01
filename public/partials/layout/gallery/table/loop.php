@@ -1,17 +1,13 @@
 <?php
 $data = flexi_image_data('thumbnail', get_the_ID(), $popup);
 $style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_settings', '');
-
-$link_enable = flexi_get_param_value("link", $evalue);
+$title_enable = flexi_get_param_value('title', $evalue);
 ?>
 
 <tr>
     <td>
         <?php
-        if ($link_enable == "off") {
-            echo $data['title'];
-        } else {
-
+        if ($title_enable == "on") {
         ?>
             <div class="<?php echo $data['popup']; ?>"> <?php echo '<a ' . $data['extra'] . ' href="' . $data['url'] . '" data-caption="' . $data['title'] . '" data-src="' . $data['src'] . '" border="0">'; ?><?php echo $data['title']; ?></a></div>
         <?php
@@ -19,6 +15,7 @@ $link_enable = flexi_get_param_value("link", $evalue);
         ?>
     </td>
     <?php
+    //Custom Fields
     $count = 20;
     $c = 1;
     if (flexi_evalue_toggle('custom', $evalue) == '') {
@@ -41,5 +38,29 @@ $link_enable = flexi_get_param_value("link", $evalue);
             }
         }
     }
+    ?>
+
+    <?php
+    //Custom php_field functions
+    //0=label, 1-function_name, 2-parameter1 3-parameter2, 4-parameter3
+    $php_func = flexi_php_field_value($php_field, 1);
+    $param_1 = flexi_php_field_value($php_field, 2);
+    $param_2 = flexi_php_field_value($php_field, 3);
+    $param_3 = flexi_php_field_value($php_field, 4);
+
+    for ($x = 0; $x < count($php_func); $x++) {
+
+        if (!isset($param_1[$x]))
+            $param_1[$x] = "";
+
+        if (!isset($param_2[$x]))
+            $param_2[$x] = "";
+
+        if (!isset($param_3[$x]))
+            $param_3[$x] = "";
+
+        echo '<th>' . flexi_php_field_execute($php_func[$x], $param_1[$x], $param_2[$x], $param_3[$x]) . '</th>';
+    }
+
     ?>
 </tr>

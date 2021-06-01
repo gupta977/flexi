@@ -8,6 +8,8 @@ if ($style_class == '') {
   $style_class = "display compact responsive nowrap";
 }
 
+$title_enable = flexi_get_param_value('title', $evalue);
+
 ?>
 <style>
   #flexi_tag_filter {
@@ -31,11 +33,18 @@ if ($style_class == '') {
     });
   });
 </script>
+
 <table id="table_id" class="<?php echo $style_class; ?>" style="width:100%" data-page-length='<?php echo $postsperpage; ?>'>
   <thead>
     <tr>
-      <th><?php echo __('Title', 'flexi'); ?></th>
       <?php
+      if ($title_enable == "on") {
+        echo '<th>' . __('Title', 'flexi') . '</th>';
+      }
+      ?>
+
+      <?php
+      //Custom Fields
       $count = 20;
       $c = 1;
       if (flexi_evalue_toggle('custom', $evalue) == '') {
@@ -55,6 +64,14 @@ if ($style_class == '') {
         }
       }
       ?>
+      <?php
+      //Label from custom php_field parameter
+      $label = flexi_php_field_value($php_field, 0);
+      for ($x = 0; $x < count($label); $x++) {
+        echo '<th>' . $label[$x] . '</th>';
+      }
+      ?>
+
     </tr>
   </thead>
   <tbody>

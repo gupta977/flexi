@@ -1191,6 +1191,35 @@ function flexi_evalue_toggle($key, $evalue)
     }
 }
 
+//Get parameter for php function with parameters
+//0=label, 1-function_name, 2-parameter1 3-parameter2, 4-parameter3
+function flexi_php_field_value($php_field, $index = 0)
+{
+    //Add label as function into array
+    $field_param = array();
+
+    $values = explode(',', $php_field);
+    foreach ($values as $option) {
+        $cap = explode(":", $option);
+        if (isset($cap[$index]))
+            array_push($field_param, trim($cap[$index]));
+    }
+    return $field_param;
+}
+
+//PHP field execute function sent in parameter
+function flexi_php_field_execute($func_name, $param_1, $param_2, $param_3)
+{
+    $func_name = trim($func_name);
+
+    if (function_exists($func_name)) {
+        return $func_name($param_1, $param_2, $param_3);
+    } else {
+        return $func_name . "('" . $param_1 . "','" . $param_2 . ",'" . $param_3 . "') is invalid PHP function";
+    }
+
+    return $func_name;
+}
 
 //Get parameter value from long string
 function flexi_get_param_value($key, $search)

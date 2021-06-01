@@ -16,6 +16,7 @@ jQuery(document).ready(function () {
     popup = jQuery("#popup").text();
     padding = jQuery("#padding").text();
     hover_effect = jQuery("#hover_effect").text();
+    php_field = jQuery("#php_field").text();
     hover_caption = jQuery("#hover_caption").text();
     evalue = jQuery("#evalue").text();
     column = jQuery("#column").text();
@@ -49,6 +50,7 @@ jQuery(document).ready(function () {
         popup: popup,
         padding: padding,
         hover_effect: hover_effect,
+        php_field: php_field,
         hover_caption: hover_caption,
         evalue: evalue,
         column: column,

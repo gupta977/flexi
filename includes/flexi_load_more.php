@@ -18,6 +18,7 @@ function flexi_load_more()
     $keyword       = $_REQUEST['keyword'];
     $padding       = $_REQUEST['padding'];
     $hover_effect  = $_REQUEST['hover_effect'];
+    $php_field  = $_REQUEST['php_field'];
     $hover_caption = $_REQUEST['hover_caption'];
     $evalue        = $_REQUEST['evalue'];
     $column        = $_REQUEST['column'];

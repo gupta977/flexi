@@ -269,7 +269,14 @@ class Flexi_Shortcode_Gallery
       $hover_effect = flexi_get_option('hover_effect', 'flexi_gallery_appearance_settings', 'flexi_effect_2');
     }
 
-    //hover_effect
+    //Custom PHP fields
+    if (isset($params['php_field'])) {
+      $php_field = $params['php_field'];
+    } else {
+      $php_field = "";
+    }
+
+    //hover_caption
     if (isset($params['hover_caption'])) {
       $hover_caption = $params['hover_caption'];
     } else {
