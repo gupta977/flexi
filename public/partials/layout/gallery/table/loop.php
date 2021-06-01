@@ -59,7 +59,8 @@ $title_enable = flexi_get_param_value('title', $evalue);
         if (!isset($param_3[$x]))
             $param_3[$x] = "";
 
-        echo '<th>' . flexi_php_field_execute($php_func[$x], $param_1[$x], $param_2[$x], $param_3[$x]) . '</th>';
+        if ($php_func[$x] != "")
+            echo '<td>' . flexi_php_field_execute($php_func[$x], $param_1[$x], $param_2[$x], $param_3[$x]) . '</td>';
     }
 
     ?>

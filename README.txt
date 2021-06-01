@@ -190,6 +190,8 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Admin All Posts now has option to show custom fields
 * Complete change of table layout
 * Old table layout is renamed as demo3 which can be found one layout showcase.
+* New attribute php_field added to flexi-gallery shortcode
+* Updated portfolio layout with php_field support
 
 = 4.0 =
 * Appearance CSS style tab added in General settings
