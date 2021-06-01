@@ -1211,11 +1211,12 @@ function flexi_php_field_value($php_field, $index = 0)
 function flexi_php_field_execute($func_name, $param_1, $param_2, $param_3)
 {
     $func_name = trim($func_name);
-
-    if (function_exists($func_name)) {
-        return $func_name($param_1, $param_2, $param_3);
-    } else {
-        return $func_name . "('" . $param_1 . "','" . $param_2 . ",'" . $param_3 . "') is invalid PHP function";
+    if ($func_name != "") {
+        if (function_exists($func_name)) {
+            return $func_name($param_1, $param_2, $param_3);
+        } else {
+            return $func_name . "('" . $param_1 . "','" . $param_2 . ",'" . $param_3 . "') is invalid PHP function";
+        }
     }
 
     return $func_name;

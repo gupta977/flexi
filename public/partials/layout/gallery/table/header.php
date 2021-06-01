@@ -1,8 +1,5 @@
 <?php
-if ('scroll' == $navigation || 'button' == $navigation) {
-  $navigation = "off";
-}
-
+$navigation = "off";
 $style_class = flexi_get_param_value("class", $evalue);
 if ($style_class == '') {
   $style_class = "display compact responsive nowrap";
