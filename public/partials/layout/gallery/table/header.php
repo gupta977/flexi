@@ -34,7 +34,7 @@ $title_enable = flexi_get_param_value('title', $evalue);
   });
 </script>
 
-<table id="table_id" class="<?php echo $style_class; ?>" style="width:100%" data-page-length='<?php echo $postsperpage; ?>'>
+<table id="table_id" class="<?php echo $style_class; ?>" style="width:100%">
   <thead>
     <tr>
       <?php
@@ -66,7 +66,8 @@ $title_enable = flexi_get_param_value('title', $evalue);
       ?>
       <?php
       //Label from custom php_field parameter
-      $label = flexi_php_field_value($php_field, 0);
+      //0=function, 1-parameter1 (label), 2-parameter2 3-parameter3, 4-parameter4
+      $label = flexi_php_field_value($php_field, 1);
       for ($x = 0; $x < count($label); $x++) {
         echo '<th>' . $label[$x] . '</th>';
       }

@@ -42,8 +42,8 @@ $title_enable = flexi_get_param_value('title', $evalue);
 
     <?php
     //Custom php_field functions
-    //0=label, 1-function_name, 2-parameter1 3-parameter2, 4-parameter3
-    $php_func = flexi_php_field_value($php_field, 1);
+    //0=function, 1-parameter1 (label), 2-parameter2 3-parameter3, 4-parameter4
+    $php_func = flexi_php_field_value($php_field, 0);
     $param_1 = flexi_php_field_value($php_field, 2);
     $param_2 = flexi_php_field_value($php_field, 3);
     $param_3 = flexi_php_field_value($php_field, 4);

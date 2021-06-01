@@ -1192,7 +1192,7 @@ function flexi_evalue_toggle($key, $evalue)
 }
 
 //Get parameter for php function with parameters
-//0=label, 1-function_name, 2-parameter1 3-parameter2, 4-parameter3
+//0=function, 1-parameter1 (label), 2-parameter2 3-parameter3, 4-parameter4
 function flexi_php_field_value($php_field, $index = 0)
 {
     //Add label as function into array
