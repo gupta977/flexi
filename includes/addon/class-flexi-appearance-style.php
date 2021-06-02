@@ -22,18 +22,17 @@ class Flexi_Addon_Appearance_Style
     //Add Section title
     public function add_section($new)
     {
-        $enable_addon = flexi_get_option('enable_app_style', 'flexi_extension', 0);
-        if ("1" == $enable_addon) {
-            $sections = array(
-                array(
-                    'id'          => 'flexi_app_style_settings',
-                    'title'       => __('Appearance CSS Style', 'flexi'),
-                    'description' => __('Change colors, fonts of flexi elements using your own css style classes.', 'flexi') . ' ' . $this->help,
-                    'tab'         => 'general',
-                ),
-            );
-            $new = array_merge($new, $sections);
-        }
+
+        $sections = array(
+            array(
+                'id'          => 'flexi_app_style_settings',
+                'title'       => __('Appearance CSS Style', 'flexi'),
+                'description' => __('Change colors, fonts of flexi elements using your own css style classes.', 'flexi') . ' ' . $this->help,
+                'tab'         => 'general',
+            ),
+        );
+        $new = array_merge($new, $sections);
+
         return $new;
     }
 

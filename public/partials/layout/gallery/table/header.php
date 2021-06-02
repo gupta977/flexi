@@ -66,7 +66,8 @@ $title_enable = flexi_get_param_value('title', $evalue);
       //0=Label, 1-Function, 2-parameter2 3-parameter3, 4-parameter4
       $label = flexi_php_field_value($php_field, 0);
       for ($x = 0; $x < count($label); $x++) {
-        echo '<th>' . $label[$x] . '</th>';
+        if ($label[$x] != "")
+          echo '<th>' . $label[$x] . '</th>';
       }
       ?>
 
