@@ -36,8 +36,8 @@ $style_title = flexi_get_option('flexi_style_heading', 'flexi_app_style_settings
 
       <?php
       //Custom php_field functions
-      //0=function, 1-parameter1 (label), 2-parameter2 3-parameter3, 4-parameter4
-      $php_func = flexi_php_field_value($php_field, 0);
+      //0=Label, 1-Function, 2-parameter2 3-parameter3, 4-parameter4
+      $php_func = flexi_php_field_value($php_field, 1);
       $param_1 = flexi_php_field_value($php_field, 2);
       $param_2 = flexi_php_field_value($php_field, 3);
       $param_3 = flexi_php_field_value($php_field, 4);
