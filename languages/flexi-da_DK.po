@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
 "POT-Creation-Date: 2021-05-27 17:03+0545\n"
-"PO-Revision-Date: 2021-05-28 11:56+0545\n"
+"PO-Revision-Date: 2021-06-01 19:48+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
 "Language: da_DK\n"
@@ -36,7 +36,7 @@ msgstr ""
 #: admin/class-flexi-admin.php:133 admin/class-flexi-admin.php:134
 #: admin/partials/settings.php:64
 msgid "Dashboard"
-msgstr ""
+msgstr "Kontrolpanel"
 
 #: admin/class-flexi-admin.php:142 admin/class-flexi-admin.php:143
 msgid "All Posts"
@@ -73,7 +73,7 @@ msgstr ""
 
 #: admin/partials/dashboard.php:30
 msgid "Documentation"
-msgstr ""
+msgstr "Dokumentation"
 
 #: admin/partials/dashboard.php:31
 msgid "Live Demo"
@@ -160,7 +160,7 @@ msgstr ""
 
 #: block/src/gallery/block.js:62
 msgid "gallery"
-msgstr ""
+msgstr "galleri"
 
 #: block/src/gallery/block.js:62
 msgid "picture"
@@ -908,11 +908,11 @@ msgstr ""
 
 #: includes/class-flexi-settings.php:103
 msgid "General"
-msgstr ""
+msgstr "Generelt"
 
 #: includes/class-flexi-settings.php:104
 msgid "Gallery"
-msgstr ""
+msgstr "Galleri"
 
 #: includes/class-flexi-settings.php:105
 msgid "Form"
@@ -1502,15 +1502,15 @@ msgstr ""
 
 #: includes/functions.php:454 includes/functions.php:463
 msgid "Login"
-msgstr ""
+msgstr "Log ind"
 
 #: includes/functions.php:460
 msgid "Username"
-msgstr ""
+msgstr "Brugernavn"
 
 #: includes/functions.php:461
 msgid "Password"
-msgstr ""
+msgstr "Adgangskode"
 
 #: includes/functions.php:462
 msgid "Remember Me"

@@ -228,7 +228,7 @@ class Flexi_Admin_Dashboard_Layout
                   <img src="<?php echo $screenshot; ?>" alt="">
                 </div>
 
-                <span class="more-details" id="dukan-lite-action">Source Code</span>
+                <span class="more-details" id="dukan-lite-action">Detail</span>
               </a>
               <div class="theme-id-container">
 
