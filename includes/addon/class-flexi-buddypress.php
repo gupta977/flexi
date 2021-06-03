@@ -103,7 +103,7 @@ class Flexi_Addon_BuddyPress
     public function add_flexi_buddypress_tab($tabs)
     {
         $enable_addon = flexi_get_option('enable_buddypress', 'flexi_extension', 0);
-        if ("1" == $enable_addon) {
+        if ("1" == $enable_addon && function_exists('bp_get_displayed_user_username')) {
             global $bp;
 
             $yourtab = flexi_get_option('buddypress_tab_name', 'flexi_buddypress_settings', 'Gallery');
@@ -127,7 +127,9 @@ class Flexi_Addon_BuddyPress
 
         add_action('bp_template_title', array($this, 'flexi_buddypress_yourtab_title'));
         add_action('bp_template_content', array($this, 'flexi_buddypress_yourtab_content'));
-        bp_core_load_template('buddypress/members/single/plugins');
+        if (function_exists('bp_get_displayed_user_username')) {
+            bp_core_load_template('buddypress/members/single/plugins');
+        }
     }
     public function flexi_buddypress_yourtab_title()
     {
@@ -139,9 +141,11 @@ class Flexi_Addon_BuddyPress
     public function flexi_buddypress_yourtab_content()
     {
 
-        $user_info = bp_get_displayed_user_username();
-        echo do_shortcode('[flexi-profile-toolbar]');
-        echo do_shortcode('[flexi-gallery user="' . $user_info . '" ] ');
+        if (function_exists('bp_get_displayed_user_username')) {
+            $user_info = bp_get_displayed_user_username();
+            echo do_shortcode('[flexi-profile-toolbar]');
+            echo do_shortcode('[flexi-gallery user="' . $user_info . '" ] ');
+        }
     }
 
     //Add it into buddypress activity
@@ -149,7 +153,7 @@ class Flexi_Addon_BuddyPress
     {
         $enable_addon = flexi_get_option('enable_buddypress', 'flexi_extension', 0);
         $enable_activity = flexi_get_option('enable_buddypress_activity', 'flexi_buddypress_settings', 1);
-        if ("1" == $enable_addon && "1" == $enable_activity) {
+        if ("1" == $enable_addon && "1" == $enable_activity && function_exists('bp_core_get_userlink')) {
             if (is_user_logged_in()) {
                 $link   = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
                 $author = wp_get_current_user();

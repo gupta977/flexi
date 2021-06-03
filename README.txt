@@ -51,7 +51,7 @@ Look Screenshots for quick understanding of it's scope. You can do lot more then
 *   **Standalone Gallery** - It will display large image with small thumbnail separated from gallery group.
 *   **Gallery Filter** - Gallery can be filter based on different type (user, category, tags, type)
 *   **Gallery Sorting** - Gallery sorting based on (ID, date, name, random, modified)
-*   **Submission Form** - Form can be generated with Guten block and advance features and sorting options with the help of powerful shortcode. Separate forms for video urls & images.
+*   **Submission Form** - Form can be generated with Gutenblock and advance features and sorting options with the help of powerful shortcode. Separate forms for video urls & images.
 *   **Powerful Ajax** - Gallery, form have ajax and classic support. No change in page URL if ajax is enabled.
 *   **Icon Management** - Toggle view of various icons like view,trash, edit, profile
 *   **Temporary Disable** - Ability to temporary disable all forms in one click from settings.
@@ -63,6 +63,9 @@ Look Screenshots for quick understanding of it's scope. You can do lot more then
 *   **Live Reloading** - If gallery & form is on same page, the submitted post will be visible as soon as form is posted without any page refresh.
 *   **Like/Unlike button** - Option to display like & unlike button at gallery & detail page.
 *   **Count Post** - View count for each post can be displayed at gallery & detail page. 
+*   **Personal layout** - Developers can create their own gallery. Make a Installation file and handover to client for importing.
+*   **PHP function** - Own php functions can be added through shortcode to gallery so that gallery goes beyond the current features. 
+*   **CSS Classes** - Options to add own css classes through shortcode. In setting page 'appearance & style' to change look & feel.
 
 = Layout Builder =
 * **Basic - Detail layout** - 5 changeable location
@@ -186,6 +189,11 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 4.2 =
+* Now all inserted tags converted into lowercase
+* Fixed Ulitmate-member & BuddyPress plugin not to get executed when plugin is inactive.
+
+
 = 4.1 =
 * Admin All Posts now has option to show custom fields
 * Complete change of table layout

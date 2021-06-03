@@ -115,8 +115,10 @@ class Flexi_Addon_Ultimate_Member
 
     public function um_profile_content_flexi_default($args)
     {
-        $user_info = get_userdata(um_profile_id());
-        echo do_shortcode('[flexi-gallery user="' . $user_info->user_login . '" ] ');
+        if (function_exists('um_profile_id')) {
+            $user_info = get_userdata(um_profile_id());
+            echo do_shortcode('[flexi-gallery user="' . $user_info->user_login . '" ] ');
+        }
     }
 }
 
