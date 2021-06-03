@@ -131,7 +131,9 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
                     if ($css) {
                         //If enabled search at custom field settings
                         $enable_link = flexi_get_option('flexi_field_' . $x . '_link', 'flexi_custom_fields', '');
-                        if ($enable_link != '') {
+
+
+                        if (in_array('link', $display)) {
                             $link = add_query_arg('search', 'flexi_field_' . $x . ':' . $value[0], $link);
                             $group .= '<li><label>' . $label . '<span class="dashicons dashicons-arrow-right"></span></label><span><a href="' . $link . '">' . $value[0] . '</a></span></li>';
                         } else {

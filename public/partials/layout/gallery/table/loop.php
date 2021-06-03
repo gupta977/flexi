@@ -2,6 +2,8 @@
 $data = flexi_image_data('thumbnail', get_the_ID(), $popup);
 $style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_settings', '');
 $title_enable = flexi_get_param_value('title', $evalue);
+
+
 ?>
 
 <tr>
@@ -28,7 +30,17 @@ $title_enable = flexi_get_param_value('title', $evalue);
             }
             if (is_array($display)) {
                 if (in_array('gallery', $display)) {
-                    echo ' <td>' . $value[0] . '</td>';
+                    if (in_array('php_func', $display)) {
+                        if (function_exists('flexi_field_' . $x . '_php')) {
+                            // echo 'flexi_field_' . $x . '_php'($value[0]);
+                            $func_name = 'flexi_field_' . $x . '_php';
+                            echo ' <td>' . $func_name($value[0]) . '</td>';
+                        } else {
+                            echo ' <td><code>flexi_field_' . $x . '_php($value)</code></td>';
+                        }
+                    } else {
+                        echo ' <td>' . $value[0] . '</td>';
+                    }
 
                     if ($count == $c) {
                         break;

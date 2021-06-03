@@ -63,7 +63,14 @@ class Flexi_Addon_Custom_Fields
                 array(
                     'id'          => 'flexi_custom_fields',
                     'title'       => __('Flexi Custom Fields', 'flexi'),
-                    'description' => __('These are the reserved input field name assigned at submission form with [flexi-form-tag name="....."] shortcode. Custom fields display is based on layouts used. It will not work for all layouts.', 'flexi') . ' ' . $this->help,
+                    'description' => __('These are the reserved input field name assigned at submission form with [flexi-form-tag name="....."] shortcode. Custom fields display is based on layouts used. It will not work for all layouts.<br><br><b>Execute PHP function</b>: It is used to execute custom php function by developers. Create function manually as these function do not exist.
+                    Eg. <pre>
+                    function flexi_field_2_php($value)
+                    {
+                        // Converts value into uppercase
+                        return strtoupper($value);
+                    }
+                    </pre>', 'flexi') . ' ' . $this->help,
                     'tab'         => 'form',
                 ),
             );
@@ -125,14 +132,7 @@ class Flexi_Addon_Custom_Fields
                         'detail'  => __('Display at Detail Page', 'flexi'),
                         'popup'   => __('Display at Popup', 'flexi'),
                         'admin'   => __('Display at Admin', 'flexi') . ' <a href="edit.php?post_type=flexi">' . __('All Posts', 'flexi') . "</a>",
-                    ),
-                ),
-                array(
-                    'name'        => 'flexi_field_1_link',
-                    'label'       => '',
-                    'description' => '',
-                    'type'        => 'multicheck',
-                    'options'     => array(
+                        'php_func'   => __('Execute php function', 'flexi'),
                         'link'   => __('Enable link to search', 'flexi'),
                     ),
                 ),
@@ -164,14 +164,7 @@ class Flexi_Addon_Custom_Fields
                             'detail'  => __('Display at Detail Page', 'flexi'),
                             'popup'   => __('Display at Popup', 'flexi'),
                             'admin'   => __('Display at Admin', 'flexi') . ' <a href="edit.php?post_type=flexi">' . __('All Posts', 'flexi') . "</a>",
-                        ),
-                    ),
-                    array(
-                        'name'        => 'flexi_field_' . $x . '_link',
-                        'label'       => '',
-                        'description' => '',
-                        'type'        => 'multicheck',
-                        'options'     => array(
+                            'php_func'   => __('Execute php function', 'flexi') . ' <code>flexi_field_' . $x . '_php($value)</code>',
                             'link'   => __('Enable link to search', 'flexi'),
                         ),
                     ),

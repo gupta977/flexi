@@ -192,6 +192,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 = 4.2 =
 * Now all inserted tags converted into lowercase
 * Fixed Ulitmate-member & BuddyPress plugin not to get executed when plugin is inactive.
+* Custom fields now supports custom php function. Specially built for developers with own layouts. 
 
 
 = 4.1 =
