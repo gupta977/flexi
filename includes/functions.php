@@ -7,7 +7,7 @@ require_once plugin_dir_path(__FILE__) . 'functions_post_url.php';
 require_once plugin_dir_path(__FILE__) . 'functions_for_media.php';
 
 //Gets link of post author with it's avatar icon.
-function flexi_author($author = '', $redirect = true)
+function flexi_author($author = '', $redirect = true, $image = true)
 {
     if ('' == $author) {
         $author = get_user_by('id', get_the_author_meta('ID'));
@@ -29,14 +29,22 @@ function flexi_author($author = '', $redirect = true)
         $linku = "";
     }
 
-    return '<ul class="flexi_user-list">
-                <li>
-                    <div class="flexi-user-avatar">
-                        <a href="' . $linku . '"><img src="' . get_avatar_url($author->user_email, $size = '50') . '" width="50" alt="' . $author->display_name . '" /></a>
+    if ($image) {
+        return '
+                <div class="fl-media">
+                    <div class="fl-media-left">
+                        <figure class="fl-image fl-is-48x48">
+                            <a href="' . $linku . '"><img src="' . get_avatar_url($author->user_email, $size = '50') . '" width="50" alt="' . $author->display_name . '" /></a>
+                        </figure>
                     </div>
-                        <p class="flexi-user-name"><a href="' . $linku . '">' . $author->first_name . ' ' . $author->last_name . '</a><span>@' . $author->user_login . '</span></p>
-                </li>
-            </ul>';
+                    <div class="fl-media-content">
+                        <p class="fl-title fl-is-6">' . $author->first_name . ' ' . $author->last_name . '</p>
+                        <p class="fl-subtitle fl-is-7">@' . $author->user_login . '</p>
+                    </div>
+                </div>';
+    } else {
+        return '<a href="' . $linku . '"> ' . $author->first_name . ' ' . $author->last_name . '</a>';
+    }
 }
 
 //Custom field get id

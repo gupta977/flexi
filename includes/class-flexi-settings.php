@@ -136,7 +136,7 @@ class FLEXI_Admin_Settings
             array(
                 'id'          => 'flexi_image_layout_settings',
                 'title'       => __('Gallery Settings', 'flexi'),
-                'description' => __('Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>Specific settings will be inactive if same attribute is used in shortcode.<br>It is advisable use one gallery per page to avoid conflict.<br>Settings will be not be implemented, if shortcode contains specific attributes. ', 'flexi'),
+                'description' => __('Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>Specific settings will be inactive if same attribute is used in shortcode.<br>It is advisable use one gallery per page to avoid conflict.<br>Settings will be not be implemented, if shortcode contains specific attributes. (evalue) are option which can be passed via shortcode.', 'flexi'),
                 'tab'         => 'gallery',
             ),
             array(
@@ -367,6 +367,27 @@ class FLEXI_Admin_Settings
                     'name'              => 'evalue_tag',
                     'label'             => __('Display tag', 'flexi') . ' (evalue)',
                     'description'       => __('Associated tag of post with link', 'flexi'),
+                    'type'              => 'checkbox',
+                    'sanitize_callback' => 'intval',
+                ),
+                array(
+                    'name'              => 'evalue_date',
+                    'label'             => __('Display date', 'flexi') . ' (evalue)',
+                    'description'       => __('Published date', 'flexi'),
+                    'type'              => 'checkbox',
+                    'sanitize_callback' => 'intval',
+                ),
+                array(
+                    'name'              => 'evalue_author',
+                    'label'             => __('Display author name', 'flexi') . ' (evalue)',
+                    'description'       => __('Publisher name', 'flexi'),
+                    'type'              => 'checkbox',
+                    'sanitize_callback' => 'intval',
+                ),
+                array(
+                    'name'              => 'evalue_profile_icon',
+                    'label'             => __('Display profile avatar', 'flexi') . ' (evalue)',
+                    'description'       => __('Profile avatar with link', 'flexi'),
                     'type'              => 'checkbox',
                     'sanitize_callback' => 'intval',
                 ),

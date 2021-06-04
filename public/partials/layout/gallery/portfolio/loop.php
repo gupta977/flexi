@@ -30,9 +30,25 @@ $style_title = flexi_get_option('flexi_style_heading', 'flexi_app_style_settings
     </div>
     <div class="fl-card-content">
       <div class="fl-title <?php echo $style_title; ?>" style="<?php echo flexi_evalue_toggle('title', $evalue); ?>"><?php echo $data['title']; ?></div>
-      <div class="fl-content fl-mb-1 fl-is-size-6 <?php echo $style_text_color; ?>" style="<?php echo flexi_evalue_toggle('excerpt', $evalue); ?>">
-        <?php echo flexi_excerpt(20); ?>
-      </div>
+
+      <?php
+      //Display excerpt
+      if (flexi_evalue_toggle('excerpt', $evalue) != 'display:none') {
+      ?>
+        <div class="fl-content fl-mb-1 fl-is-size-6 <?php echo $style_text_color; ?>">
+          <?php echo flexi_excerpt(20); ?>
+        </div>
+      <?php
+      }
+      ?>
+
+
+      <?php
+      //Display profile icon or avatar
+      if (flexi_evalue_toggle('profile_icon', $evalue) != 'display:none') {
+        echo flexi_author();
+      }
+      ?>
 
       <?php
       //Custom php_field functions
@@ -56,18 +72,39 @@ $style_title = flexi_get_option('flexi_style_heading', 'flexi_app_style_settings
         echo '<div>' . flexi_php_field_execute($php_func[$x], $param_1[$x], $param_2[$x], $param_3[$x]) . '</div>';
       }
 
+
+      if (flexi_evalue_toggle('category', $evalue) != 'display:none')
+        echo flexi_custom_field_loop($post, 'gallery', 5);
+
+      if (flexi_evalue_toggle('category', $evalue) != 'display:none')
+        echo '<div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . '</div>';
+
+      if (flexi_evalue_toggle('tag', $evalue) != 'display:none')
+        echo '<div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div>';
+
+      if (flexi_evalue_toggle('author', $evalue) != 'display:none') {
+
+        echo '<span class="fl-icon-text">
+        <span class="fl-icon">
+        <i class="fas fa-user-alt"></i>
+        </span>
+        <span>' . flexi_author('', true, false) . '</span>
+      </span>';
+      }
+
+      if (flexi_evalue_toggle('date', $evalue) != 'display:none') {
+        echo '<span class="fl-icon-text">
+                <span class="fl-icon">
+                  <i class="far fa-calendar-alt"></i>
+                </span>
+                <span>' . get_the_date() . '</span>
+              </span>';
+      }
+
+
+      if (flexi_evalue_toggle('icon', $evalue) != 'display:none')
+        echo flexi_show_icon_grid();
       ?>
-
-
-      <span style="<?php echo flexi_evalue_toggle('custom', $evalue); ?>"><?php echo flexi_custom_field_loop($post, 'gallery', 5); ?></span>
-
-
-      <?php
-      echo '<span style="' . flexi_evalue_toggle('category', $evalue) . '"><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
-      echo '<span style="' . flexi_evalue_toggle('tag', $evalue) . '"><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
-      ?>
-
-      <span style="<?php echo flexi_evalue_toggle('icon', $evalue); ?>"><?php echo flexi_show_icon_grid(); ?></span>
 
     </div>
     <?php echo  flexi_show_addon_gallery($evalue, get_the_ID(), 'portfolio'); ?>
