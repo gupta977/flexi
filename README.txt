@@ -196,6 +196,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Added profile avatar at portfolio layout via gallery settings or shortcode in gallery evalue="profile_icon:on"
 * Added posted Author name evalue="author:on"
 * Added posted date evalue="date:on"
+* Fixed scrollbar on custom popup
 
 
 

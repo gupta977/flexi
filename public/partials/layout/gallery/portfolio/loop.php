@@ -73,7 +73,7 @@ $style_title = flexi_get_option('flexi_style_heading', 'flexi_app_style_settings
       }
 
 
-      if (flexi_evalue_toggle('category', $evalue) != 'display:none')
+      if (flexi_evalue_toggle('custom', $evalue) != 'display:none')
         echo flexi_custom_field_loop($post, 'gallery', 5);
 
       if (flexi_evalue_toggle('category', $evalue) != 'display:none')

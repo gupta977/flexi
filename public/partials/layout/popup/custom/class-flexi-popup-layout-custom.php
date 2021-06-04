@@ -144,7 +144,7 @@ class Flexi_Popup_Layout_Custom
       } else if ('title' == $value) {
 
 ?>
-        <h3 class="flexi_headline"> <?php echo get_the_title(); ?></h3>
+        <div class="fl-is-size-4"> <?php echo get_the_title(); ?></div>
 
       <?php
 

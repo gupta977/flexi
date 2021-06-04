@@ -188,18 +188,11 @@
   text-decoration: none;
 }
 
-.flexi_title_bold {
-  font: bold 16px sans-serif;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin: 0;
-  color: #2b2b2b;
-}
+
 
 /* override fancybox padding for custom lightbox */
 .fancybox-content {
-  padding: 18px 1px 5px 1px;
+  padding: 12px;
 }
 
 /* List tags,album in small text with icons */
