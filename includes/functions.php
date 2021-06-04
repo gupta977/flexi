@@ -300,30 +300,27 @@ function flexi_generate_tags($tags_array, $flexi_tag_class = 'fl-is-medium', $fi
 }
 
 //Flexi List TAGs & Category
-function flexi_list_tags($post, $class = "flexi_tag--inverse", $class_main = "flexi_tags", $icon = "", $type = "flexi_tag")
+function flexi_list_tags($post, $class1 = "fl-icon-text", $class2 = "fl-icon", $icon = "fas fa-arrow-right", $type = "flexi_tag")
 {
     //Returns All Term Items for "my_taxonomy"
     $term_list = wp_get_post_terms($post->ID, $type, array("fields" => "all"));
     //var_dump($term_list);
     $output = "";
     if (count($term_list) > 0) {
-        $output .= '<div class="' . $class_main . '">';
-    }
+        $output .= '<span class="' . $class1 . '">
+        <span class="' . $class2 . '">
+        <i class="' . $icon . '"></i>
+        </span><span>';
 
-    if ("" != $icon && count($term_list) > 0) {
-        $output .= '<span class="' . $icon . '"></span>';
-    }
+        for ($x = 0; $x < count($term_list); $x++) {
 
-    for ($x = 0; $x < count($term_list); $x++) {
+            $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
+            $link = add_query_arg($type, $term_list[$x]->slug, $link);
 
-        $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
-        $link = add_query_arg($type, $term_list[$x]->slug, $link);
+            $output .= '<a href="' . $link . '">' . $term_list[$x]->name . '</a> ';
+        }
 
-        $output .= ' <a href="' . $link . '" class="' . $class . '">' . $term_list[$x]->name . '</a> ';
-    }
-
-    if (count($term_list) > 0) {
-        $output .= '</div>';
+        $output .= '</span></span>';
     }
 
     return $output;

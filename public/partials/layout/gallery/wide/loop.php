@@ -43,11 +43,11 @@ $style_title = flexi_get_option('flexi_style_heading', 'flexi_app_style_settings
         }
 
         if (flexi_evalue_toggle('category', $evalue) == '') {
-          echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
+          echo '<span>' . flexi_list_tags($post, "fl-icon-text", "fl-icon", "fas fa-folder", "flexi_category") . '</span>';
         }
 
         if (flexi_evalue_toggle('tag', $evalue) == '') {
-          echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
+          echo '<span>' . flexi_list_tags($post, "fl-icon-text", "fl-icon", "fas fa-tag", "flexi_tag") . '</span>';
         }
 
         ?>

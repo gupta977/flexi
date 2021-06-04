@@ -172,9 +172,9 @@ class Flexi_Detail_Layout_Complex
         <div id="flexi_thumb_image" style='text-align: center;'> <?php flexi_standalone_gallery(get_the_ID(), 'thumbnail', 75, 75); ?></div>
 <?php
       } else if ('category' == $value) {
-        echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . ' </div></span>';
+        echo '<span>' . flexi_list_tags($post, "fl-icon-text", "fl-icon", "fas fa-folder", "flexi_category") . ' </span>';
       } else if ('tags' == $value) {
-        echo '<span><div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div></span>';
+        echo '<span>' . flexi_list_tags($post, "fl-icon-text", "fl-icon", "fas fa-tag", "flexi_tag") . ' </span>';
       } else if ('icon_grid' == $value) {
         echo flexi_show_icon_grid();
       } else if ('module_grid' == $value) {

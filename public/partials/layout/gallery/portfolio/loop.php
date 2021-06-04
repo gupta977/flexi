@@ -77,10 +77,10 @@ $style_title = flexi_get_option('flexi_style_heading', 'flexi_app_style_settings
         echo flexi_custom_field_loop($post, 'gallery', 5);
 
       if (flexi_evalue_toggle('category', $evalue) != 'display:none')
-        echo '<div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-category", "flexi_category") . '</div>';
+        echo  flexi_list_tags($post, "fl-icon-text", "fl-icon", "fas fa-folder", "flexi_category");
 
       if (flexi_evalue_toggle('tag', $evalue) != 'display:none')
-        echo '<div class="flexi_text_group">' . flexi_list_tags($post, "", "flexi_text_small", "dashicons dashicons-tag", "flexi_tag") . ' </div>';
+        echo  flexi_list_tags($post, "fl-icon-text", "fl-icon", "fas fa-tag", "flexi_tag");
 
       if (flexi_evalue_toggle('author', $evalue) != 'display:none') {
 
