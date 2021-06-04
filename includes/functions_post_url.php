@@ -7,7 +7,7 @@
 //$detail_layout = layout name for post detail page. Not required if lightbox is enabled.
 function flexi_submit_url($title, $url, $content, $category, $detail_layout, $tags = '', $edit_page = '0')
 {
-
+    $tags = strtolower($tags);
     $post_type    = 'flexi';
     $taxonomy     = 'flexi_category';
     $tag_taxonomy = 'flexi_tag';

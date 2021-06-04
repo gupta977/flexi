@@ -8,6 +8,7 @@
 function flexi_submit($title, $files, $content, $category, $detail_layout, $tags = '', $edit_page = '0')
 {
 
+  $tags = strtolower($tags);
   $post_type    = 'flexi';
   $taxonomy     = 'flexi_category';
   $tag_taxonomy = 'flexi_tag';
@@ -31,15 +32,6 @@ function flexi_submit($title, $files, $content, $category, $detail_layout, $tags
     $check_file_exist = "";
   }
 
-  /*
- //It will only check file type is image
- if (!empty($check_file_exist)) {
- $file_data  = flexi_check_images($files, $newPost);
- $file_count = $file_data['file_count'];
- //flexi_log($file_data);
- $newPost['error'] = array_unique(array_merge($file_data['error'], $newPost['error']));
- }
-  */
 
   $file_count = flexi_upload_get_file_count($files);
 
@@ -265,32 +257,6 @@ function flexi_check_images($files)
   if (true) {
 
     $i = 0;
-    /*
-$image = @getimagesize($temp[$i]);
-
-if (false === $image) {
-$error[] = 'file-type';
-//error_log("Check file size");
-//break;
-} else {
-if (function_exists('exif_imagetype')) {
-if (isset($temp[$i]) && !exif_imagetype($temp[$i])) {
-$error[] = 'exif_imagetype';
-//break;
-}
-}
-
-}*/
-
-    //$file = wp_max_upload_size( $temp[$i] );
-    // if ( $file['error'] != '0' )
-    //{
-    //if ($temp[$i] < wp_max_upload_size()) {
-    // $error[] = 'max-filesize';
-    // }
-
-    //}
-
   } else {
     $files = false;
   }

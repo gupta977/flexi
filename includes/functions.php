@@ -278,10 +278,10 @@ function flexi_generate_tags($tags_array, $flexi_tag_class = 'fl-is-medium', $fi
     if (count($tags_array) > 1) {
         $taglink .= '<div class="fl-tags" style="margin: 5px" id="flexi_tag_filter">';
 
-        $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' fl-tag ' . $flexi_tag_class . ' fl-has-text-weight-bold">' . __('Show All', 'flexi') . '</a> ';
+        $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' fl-tag ' . $flexi_tag_class . ' fl-has-text-weight-bold">' . __('Show all', 'flexi') . '</a> ';
         if (count($tags_array) > 1) {
             foreach ($tags_array as $tags => $value) {
-                $taglink .= '<a href="javascript:void(0)" id="' . $tags . '" class="' . $filter_class . ' fl-tag ' . $flexi_tag_class . ' ">' . $value . '</a> ';
+                $taglink .= '<a href="javascript:void(0)" id="' . $tags . '" class="' . $filter_class . ' fl-tag ' . $flexi_tag_class . ' ">' . ucfirst($value) . '</a> ';
             }
         }
 
