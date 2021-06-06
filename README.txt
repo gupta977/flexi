@@ -197,6 +197,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Added posted Author name evalue="author:on"
 * Added posted date evalue="date:on"
 * Fixed scrollbar on custom popup
+* Fixed category post count
 
 
 

@@ -1283,3 +1283,22 @@ function flexi_set_value($key, $value, $instance)
     }
     return $output;
 }
+
+//Count album category 
+
+function flexi_total_cat_post_count($id, $old_count)
+{
+    //return count of post in category child of ID 15
+    //return count of post in category child of ID 15
+    $count = 0;
+    $taxonomy = 'flexi_category';
+    $args = array('child_of' => $id, 'pad_counts' => 1);
+    $tax_terms = get_terms($taxonomy, $args);
+    foreach ($tax_terms as $tax_term) {
+        $count += $tax_term->count;
+    }
+    if ($count == 0) {
+        return $old_count;
+    }
+    return $count;
+}
