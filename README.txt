@@ -198,6 +198,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Added posted date evalue="date:on"
 * Fixed scrollbar on custom popup
 * Fixed category post count
+* View all button added on category page
 
 
 

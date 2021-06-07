@@ -83,8 +83,9 @@ class Flexi_Category
     $put   = "";
     ob_start();
 
-    if (!empty($terms) && !is_wp_error($terms)) {
 
+    //if (!empty($terms) && !is_wp_error($terms)) {
+    if (!is_wp_error($terms)) {
       $check_file = FLEXI_PLUGIN_DIR . 'public/partials/layout/category/' . $layout . '/loop.php';
       if (file_exists($check_file)) {
         if (isset($params['column']) && $params['column'] > 0) {
@@ -111,7 +112,6 @@ class Flexi_Category
         } else {
           $padding = flexi_get_option('image_space', 'flexi_gallery_appearance_settings', 0) . 'px';
         }
-
 
 
         $category_page_link = flexi_get_button_url('', false, 'category_page', 'flexi_categories_settings');
