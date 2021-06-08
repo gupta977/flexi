@@ -150,9 +150,11 @@ class Flexi_Meta_boxes
       'type'       => 'checkbox',
     ));
 
+
+
     $cmb_category->add_field(array(
       'name'       => 'Link to sub-category',
-      'desc'       => 'Category page is linked which displays sub-category',
+      'desc'       =>  '<a href="' . admin_url('admin.php?page=flexi_settings&tab=gallery&section=flexi_categories_settings') . '">' . __("Category", "flexi") . '</a> ' . __("page is linked which displays sub-category", "flexi"),
       'id'         => 'flexi_link_sub_cate',
       'show_names' => true, // Show field names on the left
       'type'       => 'checkbox',

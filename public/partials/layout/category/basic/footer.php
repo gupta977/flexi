@@ -7,7 +7,7 @@ if (0 == $count_category) {
 } else {
     $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
     $link = add_query_arg('flexi_category', $term_slug, $link);
-    echo "<a href='" . $link . "' class='fl-button fl-is-fullwidth'>View all</a>";
+    echo "<a href='" . $link . "' class='fl-button fl-is-fullwidth'>" . __("View all", "flexi") . "</a>";
 }
 
 ?>

@@ -78,6 +78,7 @@ class Flexi_Admin_Dashboard_Pages
       Page should contain <code>[flexi-form]</code> shortcode enclosed with <code>[flexi-form-tag]</code>. Link this page at <a href="<?php echo admin_url('nav-menus.php'); ?>">frontend menu</a>.
       <div id="sample_post_form" style="display:none;">
         <p>
+          [flexi-common-toolbar]
           [flexi-form class="flexi_form_style" title="Submit to Flexi" name="my_form" ajax="true"]<br>
           [flexi-form-tag type="post_title" class="fl-input" title="Title" value="" placeholder="Main Title" required="true"]<br>
           [flexi-form-tag type="category" title="Select category"]<br>
@@ -119,7 +120,8 @@ class Flexi_Admin_Dashboard_Pages
       Page should contain <code>[flexi-form edit="true"]</code> shortcode enclosed with <code>[flexi-form-tag edit="true"]</code>
       <div id="sample_edit_form" style="display:none;">
         <p>
-          [flexi-standalone]
+          [flexi-common-toolbar]
+          [flexi-standalone edit="true"]
           [flexi-form class="flexi_form_style" title="Update Flexi" name="my_form" ajax="true" edit="true"]
           [flexi-form-tag type="post_title" class="fl-input" title="Title" placeholder="Main Title" edit="true" required="true"]
           [flexi-form-tag type="category" title="Select category" edit="true"]

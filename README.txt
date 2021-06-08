@@ -145,7 +145,7 @@ You can also add/remove form fields based on pages & posts.
 * **File Size** - Visitors can upload more then 100MB cap limit to 9999MB.
 * **Animated thumbnail** - High quality animated gif file for mp4 and other video formats
 
-> If any suggestion, contact me directly at navneet@odude.com
+> If any suggestion, contact at navneet@odude.com
 > Byte update at https://github.com/gupta977/flexi/
 
 == Installation ==
@@ -191,8 +191,8 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 4.2 =
 * Now all inserted tags converted into lowercase
-* Fixed Ulitmate-member & BuddyPress plugin not to get executed when plugin is inactive.
-* Custom fields now supports custom php function. Specially built for developers with own layouts. 
+* Fixed Ulitmate-member & BuddyPress plugin not to get executed when the plugin is inactive.
+* Custom fields now support custom php functions. Specially built for developers with their own layouts. 
 * Added profile avatar at portfolio layout via gallery settings or shortcode in gallery evalue="profile_icon:on"
 * Added posted Author name evalue="author:on"
 * Added posted date evalue="date:on"
@@ -277,47 +277,3 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 * Added "Logout button" toggle switch with label input
 * Removed action 'flexi-member-toolbar'
 * Added edit_page parameter in form shortcode. Separate modification form for selected submission page.
-
-= 2.9 =
-* Fixed show_mine parameter in flexi-gallery shortcode
-
-= 2.8 =
-* Added post button on "User Dashboard" page
-* Option to remove post button at "User Dashboard" settings.
-
-= 2.7 =
-* Gallery by author username issue fixed
-
-= 2.5 =
-* Fixed wide layout
-* Added custom field on popup for table layout
-
-= 2.4 =
-* Added Gallery - Table Layout
-* No count shown if category count is empty for [flexi-category]
-* Block editor- Gallery block toggle controls based on layout selection
-
-= 2.2 =
-* Added multiple youtube url format
-* Added [flexi-category] shortcode
-* Added option at category creation page.
-* Moved category & tags tab settings to gallery tab.
-* Category count on/off at settings.
-
-= 2.1 =
-* Added dashboard buttons at Flexi Settings
-* Updated blank thumbnail for youtube
-
-= 2.0 =
-* User updated need to re-assign 'user dashboard' page.
-* Added new .js file for wordpress 5.5 and above
-* Updated languages
-* User Dashboard has own setting tab. Old user should manually update the User Dashboard page.
-* Updated Flexi Pages into Flexi Health with option to investigate wrong Flexi Settings. 
-
-
-== Upgrade Notice ==
-
-= 1.0.35 =
-It will not loose any data after update but recommended to take backup.
-Some issues on pupup & guten gallery builder. We are working on. 

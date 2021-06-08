@@ -136,7 +136,7 @@ class FLEXI_Admin_Settings
             array(
                 'id'          => 'flexi_image_layout_settings',
                 'title'       => __('Gallery Settings', 'flexi'),
-                'description' => __('Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>Specific settings will be inactive if same attribute is used in shortcode.<br>It is advisable use one gallery per page to avoid conflict.<br>Settings will be not be implemented, if shortcode contains specific attributes. (evalue) are option which can be passed via shortcode.', 'flexi'),
+                'description' => __('Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>Specific settings will be inactive if same attribute is used in shortcode.<br>It is advisable use one gallery per page to avoid conflict.<br>Settings will be not implemented, if shortcode contains specific attributes. (evalue) are option which can be passed via shortcode.', 'flexi'),
                 'tab'         => 'gallery',
             ),
             array(
@@ -205,6 +205,9 @@ class FLEXI_Admin_Settings
         $layout_page = admin_url('admin.php?page=flexi');
         $layout_page = add_query_arg('tab', 'layout', $layout_page);
 
+        //User dashboard link
+        $user_dashboard_page_link = admin_url('admin.php?page=flexi_settings&tab=general&section=flexi_user_dashboard_settings');
+
         $fields = array(
 
             'flexi_gallery_appearance_settings' => array(
@@ -261,6 +264,7 @@ class FLEXI_Admin_Settings
             ),
 
             'flexi_image_layout_settings'       => array(
+
                 array(
                     'name'              => 'primary_page',
                     'label'             => __('Primary Gallery Page', 'flexi'),
@@ -319,6 +323,13 @@ class FLEXI_Admin_Settings
                         'button' => __('Load More Button', 'flexi'),
                         'scroll' => __(' Mouse Scroll', 'flexi'),
                     ),
+                    'sanitize_callback' => 'sanitize_key',
+                ),
+                array(
+                    'name'              => 'user_dashboard_link',
+                    'label'             => __('User Dashboard', 'flexi'),
+                    'description'       => "<a href='" . $user_dashboard_page_link . "'>" . __('Separate dashboard settings', 'flexi') . '</a>',
+                    'type'              => 'html',
                     'sanitize_callback' => 'sanitize_key',
                 ),
                 array(
