@@ -31,7 +31,7 @@ function flexi_author($author = '', $redirect = true, $image = true)
 
     if ($image) {
         return '
-                <div class="fl-media">
+                <div class="fl-media fl-mb-1">
                     <div class="fl-media-left">
                         <figure class="fl-image fl-is-48x48">
                             <a href="' . $linku . '"><img src="' . get_avatar_url($author->user_email, $size = '50') . '" width="50" alt="' . $author->display_name . '" /></a>
@@ -115,13 +115,9 @@ function flexi_standalone_gallery($post_id, $img_size = 'thumbnail', $width = 15
 function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = true)
 {
     $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
-
+    $record_count = false;
 
     $group = '';
-
-    if ($css) {
-        $group .= '<ul class="flexi_list">';
-    }
 
     $c = 1;
     for ($x = 1; $x <= 20; $x++) {
@@ -138,6 +134,7 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
                 if ('' != $value[0]) {
                     if ($css) {
                         //If enabled search at custom field settings
+                        $record_count = true;
                         $enable_link = flexi_get_option('flexi_field_' . $x . '_link', 'flexi_custom_fields', '');
 
 
@@ -159,8 +156,10 @@ function flexi_custom_field_loop($post, $page = 'detail', $count = 20, $css = tr
             }
         }
     }
-    if ($css) {
-        $group .= "</ul>";
+
+
+    if ($record_count && $css) {
+        $group = '<ul class="flexi_list">' . $group . '</ul>';
     }
 
     return $group;
