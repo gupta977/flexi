@@ -27,7 +27,7 @@ class Flexi_Addon_Appearance_Style
             array(
                 'id'          => 'flexi_app_style_settings',
                 'title'       => __('Appearance CSS Style', 'flexi'),
-                'description' => __('Change colors, fonts of flexi elements using your own css style classes.', 'flexi') . ' ' . $this->help,
+                'description' => __('Change colors, fonts of flexi elements using your own css style classes.<br>Form colors can abe achieved by using class attribute in shortcode.', 'flexi') . ' ' . $this->help,
                 'tab'         => 'general',
             ),
         );

@@ -13,7 +13,7 @@
  * @package           Flexi
  *
  * @wordpress-plugin
- * Plugin Name:       Flexi - Frontend Post
+ * Plugin Name:       Flexi - Guest Submit
  * Plugin URI:        https://odude.com/
  * Description:       User submitted images/video into gallery
  * Version:           4.2

@@ -1,4 +1,4 @@
-=== Flexi - Frontend Post ===
+=== Flexi - Guest Submit ===
 Contributors: odude
 Donate link: https://odude.com/
 Tags: gallery, photo gallery, image gallery, video gallery, Frontend, visitor
@@ -189,6 +189,10 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 4.3 =
+* added label_class attribute to flexi-form-tag shortcode
+
+
 = 4.2 =
 * Now all inserted tags converted into lowercase
 * Fixed Ulitmate-member & BuddyPress plugin not to get executed when the plugin is inactive.
