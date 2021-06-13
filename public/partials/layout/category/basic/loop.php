@@ -22,7 +22,7 @@ echo '<div class="flexi_gallery_grid">';
     ?>
 
     <div class="flexi_details_category">
-        <h3><?php echo $term->name; ?> <?php echo  $count_result; ?></h3>
+        <div class="<?php echo $style_text_color; ?>"><?php echo $term->name; ?> <?php echo  $count_result; ?></div>
     </div>
 
 </div>

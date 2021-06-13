@@ -11,3 +11,6 @@ $header_file = FLEXI_PLUGIN_DIR . 'public/partials/layout/category/' . $layout .
 if (file_exists($header_file)) {
     require $header_file;
 }
+
+$style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_settings', '');
+$style_button = flexi_get_option('flexi_style_button', 'flexi_app_style_settings', 'fl-button');
