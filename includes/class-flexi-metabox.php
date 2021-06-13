@@ -198,10 +198,10 @@ class Flexi_Meta_boxes
       'name'              => 'Detail Layout',
       'desc'              => 'Select detail layout',
       'show_option_none'  => '-- ' . __('Default', 'flexi') . ' --',
-      'option_none_value' => '',
+      'option_none_value' => 'default',
       'id'                => 'flexi_layout',
       'type'              => 'select',
-      //'show_option_none'  => true,
+      'show_option_none'  => true,
       'default'           => 'default',
       'options'           => array(
         'basic'   => __('Basic', 'flexi'),

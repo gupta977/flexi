@@ -30,6 +30,7 @@ function flexi_author($author = '', $redirect = true, $image = true)
     }
 
     if ($image) {
+        $style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_settings', '');
         return '
                 <div class="fl-media fl-mb-1">
                     <div class="fl-media-left">
@@ -38,8 +39,8 @@ function flexi_author($author = '', $redirect = true, $image = true)
                         </figure>
                     </div>
                     <div class="fl-media-content">
-                        <p class="fl-title fl-is-6">' . $author->first_name . ' ' . $author->last_name . '</p>
-                        <p class="fl-subtitle fl-is-7">@' . $author->user_login . '</p>
+                        <p class="fl-title fl-is-6 ' . $style_text_color . '">' . $author->first_name . ' ' . $author->last_name . '</p>
+                        <p class="fl-subtitle fl-is-7 ' . $style_text_color . '">@' . $author->user_login . '</p>
                     </div>
                 </div>';
     } else {
@@ -382,7 +383,26 @@ function flexi_album_single($term_slug, $class = 'flexi_user-list')
     if ($term) {
         $link = get_permalink(flexi_get_option('primary_page', 'flexi_image_layout_settings', 0));
         $link = add_query_arg("flexi_category", $term->slug, $link);
+        $style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_settings', '');
 
+        return '
+        <div class="fl-media fl-mb-1">
+            <div class="fl-media-left">
+                <figure class="fl-image fl-is-48x48">
+                    <a href="' . $link . '"><img class="fl-is-rounded" src="' . flexi_album_image($term_slug) . '" width="50" alt="' . $term->name . '" /></a>
+                </figure>
+            </div>
+            <div class="fl-media-content">
+                <p class="fl-title fl-is-6 ' . $style_text_color . '">' . $term->name . '</p>
+                <p class="fl-subtitle fl-is-7 ' . $style_text_color . '"> <span class="icon-text">
+                <span class="icon">
+                  <i class="fas fa-folder"></i>
+                </span>
+                <span> ' . __('Category', 'flexi') . '</span>
+              </span></p>
+            </div>
+        </div>';
+        /*
         return '<ul class="' . $class . '">
                     <li>
                         <div class="flexi-user-avatar">
@@ -391,6 +411,7 @@ function flexi_album_single($term_slug, $class = 'flexi_user-list')
                          <p class="flexi-user-name"><a href="' . $link . '">' . $term->name . '</a><span>' . __('Category', 'flexi') . '</span></p>
                     </li>
                 </ul>';
+                */
     } else {
         return "";
     }
