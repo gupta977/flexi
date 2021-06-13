@@ -191,6 +191,7 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 == Changelog ==
 = 4.3 =
 * added label_class attribute to flexi-form-tag shortcode
+* CSS appearance applied over login box, user dashboard, regular buttons
 
 
 = 4.2 =

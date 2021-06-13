@@ -456,9 +456,11 @@ function flexi_layout_list($args = '')
 //Displays login link
 function flexi_login_link()
 {
+    $style_base_color = flexi_get_option('flexi_style_base_color', 'flexi_app_style_settings', '');
+    $style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_settings', '');
 
     echo "<div class='flexi_alert-box flexi_notice'>" . __("Login", "flexi") . "</div>";
-    echo "<div class='fl-box' style='padding:30px;'>";
+    echo "<div class='fl-box " . $style_base_color . " " . $style_text_color . "' style='padding:30px;'>";
     $args = array(
         'echo'           => true,
         'redirect'       => flexi_get_button_url('', false, 'my_gallery', 'flexi_user_dashboard_settings'),
@@ -893,7 +895,7 @@ function flexi_missing_pages($lost_file)
 
     if ($lost_file == 'primary_page') {
 
-        $aid = wp_insert_post(array('post_title' => 'Primary Gallery', 'post_content' => '[flexi-primary]', 'post_type' => 'page', 'post_status' => 'publish'));
+        $aid = wp_insert_post(array('post_title' => 'Primary Gallery', 'post_content' => '[flexi-common-toolbar] [flexi-primary]', 'post_type' => 'page', 'post_status' => 'publish'));
         flexi_set_option('primary_page', 'flexi_image_layout_settings', $aid);
     }
 
@@ -909,7 +911,7 @@ function flexi_missing_pages($lost_file)
     }
 
     if ($lost_file == 'my_gallery') {
-        $did = wp_insert_post(array('post_title' => 'User Dashboard', 'post_content' => '[flexi-user-dashboard]', 'post_type' => 'page', 'post_status' => 'publish'));
+        $did = wp_insert_post(array('post_title' => 'User Dashboard', 'post_content' => '[flexi-common-toolbar] [flexi-user-dashboard]', 'post_type' => 'page', 'post_status' => 'publish'));
         flexi_set_option('my_gallery', 'flexi_user_dashboard_settings', $did);
     }
 

@@ -18,7 +18,7 @@ if (false == $clear && is_active_sidebar('flexi-gallery-sidebar') &&  is_flexi_p
 if ('scroll' == $navigation || 'button' == $navigation) {
   // AJAX lazy loading
   echo "<div style='clear:both;'></div>";
-  echo "<div id='flexi_load_more' style='text-align:center'><a id='load_more_link' class='flexi_load_more fl-button' style='margin:5px; font-size: 80%;' href='#'>" . __("Load More", "flexi") . "</a></div>";
+  echo "<div id='flexi_load_more' style='text-align:center'><a id='load_more_link' class='flexi_load_more " . $style_button . "' style='margin:5px; font-size: 80%;' href='#'>" . __("Load More", "flexi") . "</a></div>";
   echo "<div id='reset' style='display:none'>false</div>";
   echo "<a id='load_more_reset' class='flexi_load_more' style='margin:5px; font-size: 80%;' href='admin-ajax.php?action=flexi_load_more' data-post_id='" . get_the_ID() . "' data-paged='" . $query->max_num_pages . "' data-reset='true'></a>";
 ?>

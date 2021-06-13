@@ -166,8 +166,11 @@ class Flexi_User_Dashboard
                     $tab_arg = "public";
                 }
 
+                $style_base_color = flexi_get_option('flexi_style_base_color', 'flexi_app_style_settings', '');
+                $style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_settings', '');
+
 ?>
-                <div class="fl-card">
+                <div class="fl-card <?php echo $style_base_color; ?> <?php echo $style_text_color; ?>">
                     <div class="fl-card-content">
                         <div class="fl-columns fl-is-mobile fl-is-centered">
                             <div class="fl-column fl-is-one-third fl-has-text-centered">
@@ -196,14 +199,6 @@ class Flexi_User_Dashboard
                             }
                             ?>
                         </div>
-
-
-                        <div class="fl-columns fl-is-mobile fl-is-centered">
-                            <div class="fl-column fl-is-full fl-has-text-centered">
-                                <?php echo do_shortcode("[flexi-common-toolbar]"); ?>
-                            </div>
-                        </div>
-
 
                         <div class="fl-columns fl-is-mobile fl-is-centered">
                             <div class="fl-column fl-is-full">

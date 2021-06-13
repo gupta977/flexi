@@ -3,6 +3,7 @@
 $style_base_color = flexi_get_option('flexi_style_base_color', 'flexi_app_style_settings', '');
 $style_text_color = flexi_get_option('flexi_style_text_color', 'flexi_app_style_settings', '');
 $style_title = flexi_get_option('flexi_style_heading', 'flexi_app_style_settings', 'fl-is-4 fl-mb-1');
+$style_button = flexi_get_option('flexi_style_button', 'flexi_app_style_settings', 'fl-button');
 
 //Displays Toolbar
 $toolbar = new Flexi_Gallery_Toolbar();

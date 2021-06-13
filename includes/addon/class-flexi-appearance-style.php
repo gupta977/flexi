@@ -45,29 +45,15 @@ class Flexi_Addon_Appearance_Style
                 array(
                     'name'              => 'flexi_style_text_color',
                     'label'             => __('Text color', 'flexi'),
-                    'description'       => __('Applied on text only', 'flexi'),
-                    'type'              => 'select',
-                    'options'           => array(
-                        ''      => __('None', 'flexi'),
-                        'fl-has-text-white'      => __('White', 'flexi'),
-                        'fl-has-text-black'        => __('Black', 'flexi'),
-                        'fl-has-text-danger' => __('Red', 'flexi'),
-                        'fl-has-text-success'  => __('Green', 'flexi'),
-                    ),
+                    'description'       => __('fl-has-text-black fl-has-text-danger fl-has-text-success', 'flexi'),
+                    'type'              => 'text',
                     'sanitize_callback' => 'sanitize_key',
                 ),
                 array(
                     'name'              => 'flexi_style_base_color',
-                    'label'             => __('Base color', 'flexi'),
-                    'description'       => __('Applied on Flexi containers', 'flexi'),
-                    'type'              => 'select',
-                    'options'           => array(
-                        ''      => __('None', 'flexi'),
-                        'fl-has-background-white'      => __('White', 'flexi'),
-                        'fl-has-background-black'        => __('Black', 'flexi'),
-                        'fl-has-background-danger' => __('Red', 'flexi'),
-                        'fl-has-background-success'  => __('Green', 'flexi'),
-                    ),
+                    'label'             => __('Base/container color', 'flexi'),
+                    'description'       => __('fl-has-background-black fl-has-background-white', 'flexi'),
+                    'type'              => 'text',
                     'sanitize_callback' => 'sanitize_key',
                 ),
 
@@ -82,6 +68,12 @@ class Flexi_Addon_Appearance_Style
                     'type'        => 'text',
                     'label'       => __('Gallery filter tag style', 'flexi'),
                     'description' => 'fl-is-medium',
+                ),
+                array(
+                    'name'        => 'flexi_style_button',
+                    'type'        => 'text',
+                    'label'       => __('Flexi regular buttons', 'flexi'),
+                    'description' => 'fl-button fl-is-small fl-is-info',
                 ),
 
                 array(
