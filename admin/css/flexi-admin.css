@@ -75,3 +75,14 @@ a:hover .tooltip {
   -ms-transform: scale(1);
   transform: scale(1);
 }
+
+.flexi_card{
+position: relative;
+margin-top: 20px;
+padding: .7em 2em 1em;
+min-width: 255px;
+border: 1px solid #c3c4c7;
+box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+background: #fff;
+box-sizing: border-box;
+}

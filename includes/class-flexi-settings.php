@@ -136,7 +136,7 @@ class FLEXI_Admin_Settings
             array(
                 'id'          => 'flexi_image_layout_settings',
                 'title'       => __('Gallery Settings', 'flexi'),
-                'description' => __('Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes.<br>Specific settings will be inactive if same attribute is used in shortcode.<br>It is advisable use one gallery per page to avoid conflict.<br>Settings will be not implemented, if shortcode contains specific attributes. (evalue) are option which can be passed via shortcode.', 'flexi'),
+                'description' => __('Settings will be applied on <code>[flexi-primary] & [flexi-gallery]</code> shortcodes.<br>Specific settings will be inactive if same attribute is used in shortcode.<br>It is advisable use one gallery per page to avoid conflict.<br>Settings will be not implemented, if shortcode contains specific attributes. (evalue) are option which can be passed via shortcode. <br><code>[flexi-common-toolbar]</code> can be added by editing gallery page if dashboard buttons required. ', 'flexi'),
                 'tab'         => 'gallery',
             ),
             array(
@@ -268,7 +268,7 @@ class FLEXI_Admin_Settings
                 array(
                     'name'              => 'primary_page',
                     'label'             => __('Primary Gallery Page', 'flexi'),
-                    'description'       => __('Flexi home page with shortcode [flexi-primary]', 'flexi') . ' ' . $primary_help,
+                    'description'       => __('Flexi home page with shortcode [flexi-common-toolbar] [flexi-primary]', 'flexi') . ' ' . $primary_help,
                     'type'              => 'pages',
                     'sanitize_callback' => 'sanitize_key',
                 ),
@@ -690,7 +690,7 @@ class FLEXI_Admin_Settings
     {
         foreach ($this->sections as $section) {
             if ($section['id'] == $args['id']) {
-                printf('<div class="inside">%s</div>', '<div class="card">' . $section['description'] . '</div>');
+                printf('<div class="inside">%s</div>', '<div class="flexi_card">' . $section['description'] . '</div>');
                 break;
             }
         }
