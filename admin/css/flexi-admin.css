@@ -18,63 +18,7 @@
   height: 200px;
 }
 
-/* Tool Tip */
-
-.tooltip-container {
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip {
-  opacity: 0;
-  z-index: 99;
-
-  display: block;
-
-  padding: 5px 10px;
-  border-radius: 3px;
-  text-align: center;
-
-  background: rgba(227, 247, 174, 0.9);
-  border: 1px solid rgba(34, 34, 34, 0.9);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -o-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  position: absolute;
-  right: -200px;
-  bottom: 40px;
-  width: 300px;
-}
-
-.tooltip:before,
-.tooltip:after {
-  content: "";
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid rgba(51, 51, 51, 0.9);
-  position: absolute;
-  bottom: -10px;
-  left: 20%;
-}
-
-.tooltip-container:hover .tooltip,
-a:hover .tooltip {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -o-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
+/* Setting message box */
 
 .flexi_card{
 position: relative;
