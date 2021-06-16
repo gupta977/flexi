@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
-"POT-Creation-Date: 2021-06-08 12:53+0545\n"
-"PO-Revision-Date: 2021-06-08 12:53+0545\n"
+"POT-Creation-Date: 2021-06-16 11:38+0545\n"
+"PO-Revision-Date: 2021-06-16 11:39+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
 "Language: da_DK\n"
@@ -27,9 +27,9 @@ msgstr ""
 #: admin/partials/dashboard.php:24 admin/partials/settings.php:42
 #: admin/partials/settings.php:62 admin/partials/settings.php:64
 #: admin/partials/settings.php:65 includes/class-flexi-settings.php:61
-#: includes/functions.php:1136 includes/functions.php:1143
-#: includes/functions.php:1150 includes/functions.php:1157
-#: includes/functions.php:1164
+#: includes/functions.php:1158 includes/functions.php:1165
+#: includes/functions.php:1172 includes/functions.php:1179
+#: includes/functions.php:1186
 msgid "Flexi"
 msgstr ""
 
@@ -50,7 +50,7 @@ msgid "Categories"
 msgstr "Kategorier"
 
 #: admin/class-flexi-admin.php:157 admin/class-flexi-admin.php:158
-#: includes/class-flexi-admin-column.php:26 includes/functions.php:835
+#: includes/class-flexi-admin-column.php:26 includes/functions.php:857
 msgid "Tags"
 msgstr "Tags"
 
@@ -195,6 +195,7 @@ msgstr ""
 #: includes/addon/class-flexi-appearance-style.php:30
 msgid ""
 "Change colors, fonts of flexi elements using your own css style classes."
+"<br>Form colors can abe achieved by using class attribute in shortcode."
 msgstr ""
 
 #: includes/addon/class-flexi-appearance-style.php:47
@@ -202,58 +203,34 @@ msgid "Text color"
 msgstr ""
 
 #: includes/addon/class-flexi-appearance-style.php:48
-msgid "Applied on text only"
-msgstr ""
-
-#: includes/addon/class-flexi-appearance-style.php:51
-#: includes/addon/class-flexi-appearance-style.php:65
-#: includes/class-flexi-settings.php:242 includes/class-flexi-settings.php:255
-#: includes/functions.php:712 includes/functions.php:749
-#: includes/widgets/tags.php:49
-msgid "None"
-msgstr "Ingen"
-
-#: includes/addon/class-flexi-appearance-style.php:52
-#: includes/addon/class-flexi-appearance-style.php:66
-msgid "White"
-msgstr ""
-
-#: includes/addon/class-flexi-appearance-style.php:53
-#: includes/addon/class-flexi-appearance-style.php:67
-msgid "Black"
+msgid "fl-has-text-black fl-has-text-danger fl-has-text-success"
 msgstr ""
 
 #: includes/addon/class-flexi-appearance-style.php:54
-#: includes/addon/class-flexi-appearance-style.php:68
-msgid "Red"
-msgstr "Rød"
+msgid "Base/container color"
+msgstr ""
 
 #: includes/addon/class-flexi-appearance-style.php:55
-#: includes/addon/class-flexi-appearance-style.php:69
-msgid "Green"
-msgstr "Grøn"
-
-#: includes/addon/class-flexi-appearance-style.php:61
-msgid "Base color"
+msgid "fl-has-background-black fl-has-background-white"
 msgstr ""
 
-#: includes/addon/class-flexi-appearance-style.php:62
-msgid "Applied on Flexi containers"
-msgstr ""
-
-#: includes/addon/class-flexi-appearance-style.php:77
+#: includes/addon/class-flexi-appearance-style.php:63
 msgid "Gallery title heading"
 msgstr ""
 
-#: includes/addon/class-flexi-appearance-style.php:83
+#: includes/addon/class-flexi-appearance-style.php:69
 msgid "Gallery filter tag style"
 msgstr ""
 
-#: includes/addon/class-flexi-appearance-style.php:90
+#: includes/addon/class-flexi-appearance-style.php:75
+msgid "Flexi regular buttons"
+msgstr ""
+
+#: includes/addon/class-flexi-appearance-style.php:82
 msgid "Icon grid buttons"
 msgstr ""
 
-#: includes/addon/class-flexi-appearance-style.php:97
+#: includes/addon/class-flexi-appearance-style.php:89
 msgid "Common toolbar buttons"
 msgstr ""
 
@@ -727,7 +704,7 @@ msgstr "Behandler"
 
 #: includes/class-flexi-form.php:267 includes/flexi_ajax_post.php:92
 msgid "Submission completed"
-msgstr ""
+msgstr "Afsendelsen er fuldført"
 
 #: includes/class-flexi-form.php:269 includes/class-flexi-form.php:331
 msgid "Your submission is under review."
@@ -739,15 +716,15 @@ msgstr ""
 msgid "Successfully updated"
 msgstr ""
 
-#: includes/class-flexi-form.php:469
+#: includes/class-flexi-form.php:470
 msgid "No file selected"
 msgstr ""
 
-#: includes/class-flexi-form.php:718
+#: includes/class-flexi-form.php:719
 msgid "Modify"
 msgstr "Ændre"
 
-#: includes/class-flexi-form.php:748
+#: includes/class-flexi-form.php:749
 msgid "New"
 msgstr "Nyt"
 
@@ -780,8 +757,8 @@ msgstr ""
 msgid "Category Thumbnail"
 msgstr ""
 
-#: includes/class-flexi-metabox.php:157 includes/functions.php:392
-#: includes/functions.php:1157
+#: includes/class-flexi-metabox.php:157 includes/functions.php:401
+#: includes/functions.php:1179
 msgid "Category"
 msgstr ""
 
@@ -958,11 +935,13 @@ msgstr ""
 
 #: includes/class-flexi-settings.php:139
 msgid ""
-"Settings will be applied on [flexi-primary] & [flexi-gallery] shortcodes."
-"<br>Specific settings will be inactive if same attribute is used in "
-"shortcode.<br>It is advisable use one gallery per page to avoid conflict."
+"Settings will be applied on <code>[flexi-primary] & [flexi-gallery]</code> "
+"shortcodes.<br>Specific settings will be inactive if same attribute is used "
+"in shortcode.<br>It is advisable use one gallery per page to avoid conflict."
 "<br>Settings will be not implemented, if shortcode contains specific "
-"attributes. (evalue) are option which can be passed via shortcode."
+"attributes. (evalue) are option which can be passed via shortcode. "
+"<br><code>[flexi-common-toolbar]</code> can be added by editing gallery page "
+"if dashboard buttons required. "
 msgstr ""
 
 #: includes/class-flexi-settings.php:144
@@ -1036,6 +1015,12 @@ msgstr ""
 msgid "Effect on mouse over image."
 msgstr ""
 
+#: includes/class-flexi-settings.php:242 includes/class-flexi-settings.php:255
+#: includes/functions.php:734 includes/functions.php:771
+#: includes/widgets/tags.php:49
+msgid "None"
+msgstr "Ingen"
+
 #: includes/class-flexi-settings.php:243
 msgid "Blur"
 msgstr ""
@@ -1081,7 +1066,7 @@ msgid "Primary Gallery Page"
 msgstr ""
 
 #: includes/class-flexi-settings.php:271
-msgid "Flexi home page with shortcode [flexi-primary]"
+msgid "Flexi home page with shortcode [flexi-common-toolbar] [flexi-primary]"
 msgstr ""
 
 #: includes/class-flexi-settings.php:277
@@ -1161,7 +1146,7 @@ msgstr ""
 msgid " Mouse Scroll"
 msgstr ""
 
-#: includes/class-flexi-settings.php:330 includes/functions.php:1143
+#: includes/class-flexi-settings.php:330 includes/functions.php:1165
 #: includes/user_dashboard/class-flexi-user-dashboard.php:36
 msgid "User Dashboard"
 msgstr ""
@@ -1488,15 +1473,15 @@ msgstr ""
 #: includes/class-flexi_ajax_download.php:54
 #: includes/class-flexi_ajax_update_image.php:22
 msgid "Login Please !"
-msgstr ""
+msgstr "Log på venligst!"
 
 #: includes/class-flexi_ajax_delete.php:111
 msgid "Delete"
-msgstr ""
+msgstr "Slet"
 
 #: includes/class-flexi_ajax_download.php:74
 msgid "Download"
-msgstr ""
+msgstr "Download"
 
 #: includes/class-flexi_ajax_like.php:193
 msgid "Display like"
@@ -1547,67 +1532,67 @@ msgstr ""
 msgid "Show all"
 msgstr ""
 
-#: includes/functions.php:461 includes/functions.php:470
+#: includes/functions.php:483 includes/functions.php:492
 msgid "Login"
 msgstr "Log ind"
 
-#: includes/functions.php:467
+#: includes/functions.php:489
 msgid "Username"
 msgstr "Brugernavn"
 
-#: includes/functions.php:468
+#: includes/functions.php:490
 msgid "Password"
 msgstr "Adgangskode"
 
-#: includes/functions.php:469
+#: includes/functions.php:491
 msgid "Remember Me"
 msgstr ""
 
-#: includes/functions.php:666
+#: includes/functions.php:688
 msgid "Required Flexi-PRO"
 msgstr ""
 
-#: includes/functions.php:834
+#: includes/functions.php:856
 msgid "Insert tag"
 msgstr ""
 
-#: includes/functions.php:836
+#: includes/functions.php:858
 msgid "Description"
 msgstr ""
 
-#: includes/functions.php:837
+#: includes/functions.php:859
 msgid "Select file"
 msgstr ""
 
-#: includes/functions.php:1106
+#: includes/functions.php:1128
 msgid "Title cannot be blank."
 msgstr ""
 
-#: includes/functions.php:1108
+#: includes/functions.php:1130
 msgid "Invalid file type"
 msgstr ""
 
-#: includes/functions.php:1110
+#: includes/functions.php:1132
 msgid "Only image files are allowed."
 msgstr ""
 
-#: includes/functions.php:1112
+#: includes/functions.php:1134
 msgid "File size is too big."
 msgstr ""
 
-#: includes/functions.php:1114
+#: includes/functions.php:1136
 msgid "Captcha security code is invalid."
 msgstr ""
 
-#: includes/functions.php:1136
+#: includes/functions.php:1158
 msgid "Primary Gallery"
 msgstr ""
 
-#: includes/functions.php:1150
+#: includes/functions.php:1172
 msgid "Submission Form"
 msgstr ""
 
-#: includes/functions.php:1164
+#: includes/functions.php:1186
 msgid "Edit/Modify"
 msgstr ""
 
@@ -1686,27 +1671,27 @@ msgstr ""
 msgid "Label of Login button. Eg. Sign in"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:185
+#: includes/user_dashboard/class-flexi-user-dashboard.php:188
 msgid "My search"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:189
+#: includes/user_dashboard/class-flexi-user-dashboard.php:192
 msgid "Search"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:216
+#: includes/user_dashboard/class-flexi-user-dashboard.php:211
 msgid "Published"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:222
+#: includes/user_dashboard/class-flexi-user-dashboard.php:217
 msgid "Under review"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:336
+#: includes/user_dashboard/class-flexi-user-dashboard.php:331
 msgid "My Gallery"
 msgstr ""
 
-#: includes/user_dashboard/class-flexi-user-dashboard.php:459
+#: includes/user_dashboard/class-flexi-user-dashboard.php:454
 msgid "My Dashboard"
 msgstr ""
 
@@ -1716,7 +1701,7 @@ msgstr ""
 
 #: includes/widgets/categories.php:151 includes/widgets/tags.php:84
 msgid "Title:"
-msgstr ""
+msgstr "Titel:"
 
 #: includes/widgets/categories.php:155 includes/widgets/categories.php:158
 msgid "Select Parent"
@@ -1755,10 +1740,8 @@ msgid "No category"
 msgstr ""
 
 #: public/partials/layout/category/basic/footer.php:10
-#, fuzzy
-#| msgid "View Gallery"
 msgid "View all"
-msgstr "Vis Galleri"
+msgstr "Vis alle"
 
 #: public/partials/layout/detail/basic/class-flexi-detail-layout-basic.php:31
 msgid "Basic - Layout"
@@ -1876,6 +1859,12 @@ msgid ""
 "    <li>This popup is accessed with parameter popup=\"custom\"</li>\n"
 "    </ul>"
 msgstr ""
+
+#~ msgid "Red"
+#~ msgstr "Rød"
+
+#~ msgid "Green"
+#~ msgstr "Grøn"
 
 #~ msgid "Author"
 #~ msgstr "Forfatter"
