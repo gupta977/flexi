@@ -24,5 +24,4 @@ $data = flexi_image_data('thumbnail', get_the_ID(), $popup);
 <div class="godude-desc flexi_desc_<?php echo get_the_ID(); ?>">
       <p><?php echo flexi_custom_field_loop($post, 'popup', 1, false) ?></p>
       <p><?php echo flexi_excerpt(); ?></p>
-      <p><?php echo flexi_show_icon_grid(); ?></p>
 </div>
