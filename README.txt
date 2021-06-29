@@ -189,6 +189,11 @@ At Flexi Settings all configuration are ready, but do check all automatically cr
 10. Simple easy setting page
 
 == Changelog ==
+= 4.4 =
+* 'Popup with info" CSS is updated.
+* Removed grid-toolbar from masonry popup.
+* Removed 5px css margin from gallery tags
+
 = 4.3 =
 * added label_class attribute to flexi-form-tag shortcode
 * CSS appearance applied over login box, user dashboard, regular buttons, category

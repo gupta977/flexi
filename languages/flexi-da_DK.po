@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Flexi\n"
-"POT-Creation-Date: 2021-06-16 11:38+0545\n"
-"PO-Revision-Date: 2021-06-16 11:39+0545\n"
+"POT-Creation-Date: 2021-06-29 07:45+0545\n"
+"PO-Revision-Date: 2021-06-29 07:47+0545\n"
 "Last-Translator: \n"
 "Language-Team: navneet@odude.com\n"
 "Language: da_DK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html__\n"
@@ -154,7 +154,7 @@ msgstr ""
 
 #: block/src/form/edit.js:265
 msgid "Submit Button"
-msgstr ""
+msgstr "Send besked"
 
 #: block/src/gallery/block.js:59
 msgid "Flexi Gallery"
@@ -659,7 +659,7 @@ msgstr ""
 
 #: includes/class-flexi-category.php:165 includes/class-flexi-category.php:193
 msgid "Posts"
-msgstr ""
+msgstr "Indlæg"
 
 #: includes/class-flexi-detail.php:49
 msgid "Detail view button"
@@ -760,7 +760,7 @@ msgstr ""
 #: includes/class-flexi-metabox.php:157 includes/functions.php:401
 #: includes/functions.php:1179
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #: includes/class-flexi-metabox.php:157
 msgid "page is linked which displays sub-category"
@@ -1094,7 +1094,7 @@ msgstr ""
 
 #: includes/class-flexi-settings.php:289 includes/class-flexi-settings.php:414
 msgid "Everyone"
-msgstr ""
+msgstr "Alle"
 
 #: includes/class-flexi-settings.php:290 includes/class-flexi-settings.php:415
 msgid "Only members"
@@ -1224,10 +1224,9 @@ msgid "Display author name"
 msgstr ""
 
 #: includes/class-flexi-settings.php:394
-#, fuzzy
 #| msgid "Username"
 msgid "Publisher name"
-msgstr "Brugernavn"
+msgstr ""
 
 #: includes/class-flexi-settings.php:400
 msgid "Display profile avatar"

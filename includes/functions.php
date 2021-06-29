@@ -284,7 +284,7 @@ function flexi_generate_tags($tags_array, $flexi_tag_class = 'fl-is-medium', $fi
 {
     $taglink = '';
     if (count($tags_array) > 1) {
-        $taglink .= '<div class="fl-tags" style="margin: 5px" id="flexi_tag_filter">';
+        $taglink .= '<div class="fl-tags" id="flexi_tag_filter">';
 
         $taglink .= '<a href="javascript:void(0)" id="show_all" class="' . $filter_class . ' fl-tag ' . $flexi_tag_class . ' fl-has-text-weight-bold">' . __('Show all', 'flexi') . '</a> ';
         if (count($tags_array) > 1) {
@@ -968,7 +968,7 @@ function flexi_create_pages()
     flexi_set_option('l_width', 'flexi_media_settings', 600);
     flexi_set_option('l_height', 'flexi_media_settings', 400);
 
-    if (!$wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[flexi-gallery]%'")) {
+    if (!$wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[flexi-%'")) {
 
         //Assign category page
         flexi_missing_pages('category_page');
